@@ -1,9 +1,11 @@
+import { Options } from 'wide-text-types'
+
 /**
  * Create wide text from normal text
  * @param text Input text
  * @param options Options
  */
-function createWideText (text: string, options: createWideText.Options = {}) {
+function createWideText (text: string, options: Options = {}) {
   const {
     charSep = 1,
     wordSep = 2
@@ -16,20 +18,6 @@ function createWideText (text: string, options: createWideText.Options = {}) {
     .split(' ')
     .map(word => Array.from(word).join(actualCharSep))
     .join(actualWordSep)
-}
-
-namespace createWideText {
-  export interface Options {
-    /**
-     * Number of spaces between characters in a word
-     */
-    charSep?: number
-
-    /**
-     * Number of spaces between words
-     */
-    wordSep?: number
-  }
 }
 
 export = createWideText
