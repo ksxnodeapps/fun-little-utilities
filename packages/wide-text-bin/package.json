@@ -1,6 +1,6 @@
 {
   "name": "wide-text-bin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI program to create w i d e  t e x t from normal text",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
