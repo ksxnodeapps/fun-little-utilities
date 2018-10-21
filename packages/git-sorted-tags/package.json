@@ -19,7 +19,7 @@
     "git",
     "tag"
   ],
-  "bin": "index",
+  "bin": "git-sorted-tags",
   "dependencies": {
     "tslib": "^1.9.3",
     "sort-versions": "^0.0.0",
