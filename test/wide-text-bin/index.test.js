@@ -8,8 +8,6 @@ it('--help', xjest.snapSpawn.snap(spawnSync, [bin, '--help']))
 
 describe('when call', () => {
   const inputs = [
-    'abc',
-    'a b c',
     'hello world',
     'foo bar baz',
     'abc de f'
