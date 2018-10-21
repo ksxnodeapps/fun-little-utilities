@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`--help 1`] = `
+"
+error: null
+signal: null
+status: 0
+stderr: ((EMPTY))
+stdout: |+
+
+  index <text> [options]
+
+  Options:
+    --version      Show version number                                   [boolean]
+    --charSep, -c  Size of separator between characters in a word
+                                                             [number] [default: 1]
+    --wordSep, -w  Size of separator between words           [number] [default: 2]
+    --help         Show help                                             [boolean]
+
+
+"
+`;
