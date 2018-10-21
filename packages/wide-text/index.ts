@@ -1,3 +1,8 @@
+/**
+ * Create wide text from normal text
+ * @param text Input text
+ * @param options Options
+ */
 function createWideText (text: string, options: createWideText.Options = {}) {
   const {
     charSep = 1,
@@ -15,7 +20,14 @@ function createWideText (text: string, options: createWideText.Options = {}) {
 
 namespace createWideText {
   export interface Options {
+    /**
+     * Number of spaces between characters in a word
+     */
     charSep?: number
+
+    /**
+     * Number of spaces between words
+     */
     wordSep?: number
   }
 }
