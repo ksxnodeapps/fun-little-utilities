@@ -7,7 +7,7 @@ Like `git tag` but with sorted versions
 ### Getting help message
 
 ```sh
-git sorted-tags -- --help
+git-sorted-tags --help
 ```
 
 ### Get sorted tags
