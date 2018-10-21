@@ -1,5 +1,6 @@
-import { compare, valid } from 'semver'
-import { Version } from 'sort-versions-types'
+import { compare, valid, SemVer } from 'semver'
 
-export = (versions: Iterable<Version>, loose?: boolean): Version[] =>
-  Array.from(versions).filter(x => valid(x)).sort((a, b) => compare(a, b, loose))
+export =
+  <Version extends string | SemVer>
+    (versions: Iterable<Version>, loose?: boolean): Version[] =>
+      Array.from(versions).filter(x => valid(x)).sort((a, b) => compare(a, b, loose))

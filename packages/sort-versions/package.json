@@ -21,7 +21,6 @@
   "dependencies": {
     "semver": "^5.6.0",
     "tslib": "^1.9.3",
-    "sort-versions-types": "^0.0.0",
     "@types/semver": "^5.5.0",
     "@types/node": "^10.12.0"
   },
