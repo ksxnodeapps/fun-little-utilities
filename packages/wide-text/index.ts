@@ -1,19 +1,22 @@
 function createWideText (text: string, options: createWideText.Options = {}) {
   const {
-    charSep = ' ',
-    wordSep = '  '
+    charSep = 1,
+    wordSep = 2
   } = options
+
+  const actualCharSep = ' '.repeat(charSep)
+  const actualWordSep = ' '.repeat(wordSep)
 
   return text
     .split(' ')
-    .map(word => Array.from(word).join(charSep))
-    .join(wordSep)
+    .map(word => Array.from(word).join(actualCharSep))
+    .join(actualWordSep)
 }
 
 namespace createWideText {
   export interface Options {
-    charSep?: string
-    wordSep?: string
+    charSep?: number
+    wordSep?: number
   }
 }
 

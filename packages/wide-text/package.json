@@ -17,7 +17,6 @@
     "text"
   ],
   "main": "index.js",
-  "bin": "bin/main",
   "dependencies": {
     "tslib": "^1.9.3",
     "@types/node": "^10.12.0"
