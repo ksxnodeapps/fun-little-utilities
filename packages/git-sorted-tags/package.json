@@ -1,7 +1,7 @@
 {
   "name": "git-sorted-tags",
   "version": "0.0.0",
-  "description": "Like git tags but with sorted versions",
+  "description": "Like git tag but with sorted versions",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
@@ -15,9 +15,11 @@
   "keywords": [
     "sort",
     "version",
-    "semver"
+    "semver",
+    "git",
+    "tag"
   ],
-  "main": "index.js",
+  "bin": "index",
   "dependencies": {
     "tslib": "^1.9.3",
     "sort-versions": "^0.0.0",
