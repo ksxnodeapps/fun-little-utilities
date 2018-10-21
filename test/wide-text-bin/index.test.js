@@ -2,7 +2,7 @@ const iter = require('iter-tools')
 const xjest = require('extra-jest')
 const { spawnSync } = require('@tools/preloaded-node')
 const createWideText = require('wide-text')
-const bin = require.resolve('wide-text-bin')
+const bin = require('wide-text-bin').bin
 
 it('--help', xjest.snapSpawn.snap(spawnSync, [bin, '--help']))
 

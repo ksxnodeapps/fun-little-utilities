@@ -8,7 +8,7 @@ status: 0
 stderr: ((EMPTY))
 stdout: |+
 
-  index <text> [options]
+  wide-text <text> [options]
 
   Options:
     --version      Show version number                                   [boolean]

@@ -19,9 +19,9 @@
     "command"
   ],
   "bin": {
-    "widen": "index",
-    "wide-text": "index",
-    "create-wide-text": "index"
+    "widen": "wide-text",
+    "wide-text": "wide-text",
+    "create-wide-text": "wide-text"
   },
   "dependencies": {
     "yargs": "^12.0.2",
