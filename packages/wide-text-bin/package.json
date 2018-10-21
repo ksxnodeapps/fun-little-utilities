@@ -18,7 +18,11 @@
     "cli",
     "command"
   ],
-  "bin": "index",
+  "bin": {
+    "widen": "bin",
+    "wide-text": "bin",
+    "create-wide-text": "bin"
+  },
   "dependencies": {
     "yargs": "^12.0.2",
     "tslib": "^1.9.3",
