@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "dependencies": {
+    "iter-tools": "^6.1.4",
+    "extra-jest": "^0.0.23",
+    "wide-text": "file:../../packages/wide-text",
+    "wide-text-bin": "file:../../packages/wide-text-bin",
+    "@tools/preloaded-node": "file:../../tools/preloaded-node"
+  }
+}
