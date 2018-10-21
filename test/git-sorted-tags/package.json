@@ -1,8 +1,0 @@
-{
-  "private": true,
-  "dependencies": {
-    "extra-jest": "^0.0.23",
-    "git-sorted-tags": "file:../../packages/git-sorted-tags",
-    "@tools/preloaded-node": "file:../../tools/preloaded-node"
-  }
-}
