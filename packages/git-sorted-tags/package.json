@@ -1,6 +1,6 @@
 {
   "name": "git-sorted-tags",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Like git tag but with sorted versions",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
