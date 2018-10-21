@@ -7,7 +7,7 @@ it('matches snapshot', () => {
     'invalid 0',
     '2.0.1',
     'v1.0.0',
-    'invalid 2',
+    'invalid 1',
     '1.0.1',
     '0.1.2',
     'v0.0.0'
