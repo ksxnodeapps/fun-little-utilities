@@ -12,9 +12,9 @@ stdout: |+
 
   Options:
     --version      Show version number                                   [boolean]
-    --charSep, -c  Size of separator between characters in a word
+    --charSep, -c  Number of spaces between characters in a word
                                                              [number] [default: 1]
-    --wordSep, -w  Size of separator between words           [number] [default: 2]
+    --wordSep, -w  Number of spaces between words            [number] [default: 2]
     --help         Show help                                             [boolean]
 
 
