@@ -18,7 +18,7 @@ const { argv } = yargs
   .help()
 
 const {
-  _: [text],
+  _: inputs,
   charSep,
   wordSep
 } = argv as {
@@ -26,5 +26,7 @@ const {
   readonly wordSep: number
 } & typeof argv
 
-const result = createWideText(text, { charSep, wordSep })
-console.info(result)
+for (const text of inputs) {
+  const output = createWideText(text, { charSep, wordSep })
+  console.info(output)
+}

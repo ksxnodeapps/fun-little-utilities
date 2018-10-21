@@ -20,3 +20,19 @@ stdout: |+
 
 "
 `;
+
+exports[`when call with multiple inputs at once 1`] = `
+"
+error: null
+signal: null
+status: 0
+stderr: ((EMPTY))
+stdout: |+
+
+  h e l l o  w o r l d
+  f o o  b a r  b a z
+  a b c  d e  f
+
+
+"
+`;

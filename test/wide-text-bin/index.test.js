@@ -48,4 +48,6 @@ describe('when call', () => {
     const received = getReceived(['--charSep=3', '--wordSep=6'])
     expect(received).toEqual(expected)
   })
+
+  it('with multiple inputs at once', xjest.snapSpawn.snap(spawnSync, [bin, ...inputs]))
 })
