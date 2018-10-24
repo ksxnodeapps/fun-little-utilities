@@ -1,7 +1,7 @@
 dependencies:
   '@types/node': 10.12.0
   '@types/yargs': 12.0.1
-  sort-versions: 'link:../sort-versions'
+  sort-versions: 0.0.0
   tslib: 1.9.3
   yargs: 12.0.2
 packages:
@@ -9,6 +9,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3TUHC3jsBAB7qVRGxT6lWyYo2v96BMmD2PTcl47H25Lu7UXtFH/2qqmKiVrnel6Ne//0TFYf6uvNX+HW2FRkLQ==
+  /@types/semver/5.5.0:
+    dev: false
+    resolution:
+      integrity: sha512-41qEJgBH/TWgo5NFSvBCJ1qkoi3Q6ONSF2avrHq1LVEZfYpdHmj0y9SuTK+u9ZhG1sYQKBL1AWXKyLWP4RaUoQ==
   /@types/yargs/12.0.1:
     dev: false
     resolution:
@@ -285,6 +289,17 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
+  /sort-versions/0.0.0:
+    dependencies:
+      '@types/node': 10.12.0
+      '@types/semver': 5.5.0
+      semver: 5.6.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-o7tRjLCNB8pGbnG1gswvX3hl8ONvm55wjspXIM+efy1XGdodoPrRviNPUJWqjtPEe7NgU1ZmiN5W9EBIdtmdZQ==
   /string-width/1.0.2:
     dependencies:
       code-point-at: 1.1.0
@@ -387,6 +402,6 @@ shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
   '@types/yargs': ^12.0.1
-  sort-versions: ^0.0.1
+  sort-versions: ^0.0.0
   tslib: ^1.9.3
   yargs: ^12.0.2
