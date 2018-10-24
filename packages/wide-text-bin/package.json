@@ -26,7 +26,7 @@
   "dependencies": {
     "yargs": "^12.0.2",
     "tslib": "^1.9.3",
-    "wide-text": "^0.0.1",
+    "wide-text": "^0.0.0",
     "@types/yargs": "^12.0.1",
     "@types/node": "^10.12.0"
   },
