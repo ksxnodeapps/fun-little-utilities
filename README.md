@@ -50,6 +50,6 @@ This starts a Node.js REPL where you can import every module inside `packages/` 
 pnpm run repl
 ```
 
-## LICENSE
+## License
 
 [MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://github.com/KSXGitHub)

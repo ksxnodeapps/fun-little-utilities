@@ -16,6 +16,6 @@ git-sorted-tags --help
 git sorted-tags
 ```
 
-## LICENSE
+## License
 
 [MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://github.com/KSXGitHub)

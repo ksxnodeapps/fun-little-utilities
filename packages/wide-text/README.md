@@ -10,6 +10,6 @@ createWideText('abc def ghi') // expect: 'a b c  d e f  g h i'
 createWideText('abc def ghi', { charSep: 0, wordSep: 3 }) // expect: 'abc   def   ghi'
 ```
 
-## LICENSE
+## License
 
 [MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://github.com/KSXGitHub)

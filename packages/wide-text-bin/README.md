@@ -29,6 +29,6 @@ wide-text 'abc def ghi'
 wide-text -c 0 -w 3 'abc def ghi'
 ```
 
-## LICENSE
+## License
 
 [MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://github.com/KSXGitHub)
