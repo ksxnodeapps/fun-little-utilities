@@ -17,4 +17,4 @@ shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
   tslib: ^1.9.3
-  wide-text-types: ^0.0.0
+  wide-text-types: ^0.0.1

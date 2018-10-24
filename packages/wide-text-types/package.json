@@ -1,6 +1,6 @@
 {
   "name": "wide-text-types",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "TypeScript types used by wide-text package",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
