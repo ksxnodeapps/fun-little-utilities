@@ -1,0 +1,7 @@
+dependencies:
+  catls-lib: 'link:../../packages/catls-lib'
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  catls-lib: 'file:../../packages/catls-lib'

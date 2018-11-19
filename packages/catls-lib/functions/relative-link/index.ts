@@ -1,18 +1,15 @@
-import {
-  dirname,
-  join,
-  sep
-} from 'path'
+import { dirname, join, sep } from 'path'
+import { PATH_SEP_REGEX, WIN_ROOT_REGEX } from '../../constants'
 
 function relativeLink (link: string, target: string): string {
-  const [first] = target.split(/\/|\\/)
+  const [first] = target.split(PATH_SEP_REGEX)
 
-  return first === '' || /a-z+:/.test(first)
+  return first === '' || WIN_ROOT_REGEX.test(first)
     ? target
     : notRoot(link, target)
 
   function notRoot (link: string, target: string): string {
-    const [first, ...rest] = target.split(/\/|\\/)
+    const [first, ...rest] = target.split(PATH_SEP_REGEX)
 
     switch (first) {
       case '.':
