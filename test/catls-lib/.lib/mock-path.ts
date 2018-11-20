@@ -1,5 +1,4 @@
 import path from 'path'
-import { PATH_SEP_REGEX } from 'catls-lib'
 
 function mockPath () {
   const OLD_SEP = path.sep
@@ -18,21 +17,27 @@ function mockPath () {
     .spyOn(path, 'dirname')
     .mockImplementation(
       (path: string) => path
-        .split(PATH_SEP_REGEX)
+        .split(SEP)
         .filter(Boolean)
         .slice(0, -1)
         .join(SEP)
     )
 
+  const isAbsolute = jest
+    .spyOn(path, 'isAbsolute')
+    .mockImplementation((path: string) => path.startsWith('/'))
+
   const restore = () => {
     sep.mockRestore()
     dirname.mockRestore()
+    isAbsolute.mockRestore()
   }
 
   return {
     spy: {
       sep,
-      dirname
+      dirname,
+      isAbsolute
     },
     restore
   }

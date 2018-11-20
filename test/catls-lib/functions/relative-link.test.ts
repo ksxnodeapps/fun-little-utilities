@@ -11,11 +11,11 @@ function expectExpression<X> (expression: () => X) {
   }
 }
 
-it('works with unix absolute path', () => {
+it('works with absolute path', () => {
   expectExpression(() => [
-    relativeLink('a/b/c', '/'),
-    relativeLink('a/b/c', '/foo'),
-    relativeLink('a/b/c', '/foo/bar')
+    relativeLink('a/b/link', '/'),
+    relativeLink('a/b/link', '/foo'),
+    relativeLink('a/b/link', '/foo/bar')
   ]).toEqual([
     '/',
     '/foo',
@@ -23,16 +23,40 @@ it('works with unix absolute path', () => {
   ])
 })
 
-it('works with windows absolute path', () => {
+it('works with inward relative path', () => {
   expectExpression(() => [
-    relativeLink('a\\b\\c', 'C:'),
-    relativeLink('a\\b\\c', 'C:\\'),
-    relativeLink('a\\b\\c', 'C:\\foo'),
-    relativeLink('a\\b\\c', 'C:\\foo\\bar')
+    relativeLink('a/b/link', ''),
+    relativeLink('a/b/link', 'foo'),
+    relativeLink('a/b/link', 'foo/bar')
   ]).toEqual([
-    'C:',
-    'C:\\',
-    'C:\\foo',
-    'C:\\foo\\bar'
+    'a/b',
+    'a/b/foo',
+    'a/b/foo/bar'
+  ])
+})
+
+it('works with outward relative path', () => {
+  expectExpression(() => [
+    relativeLink('a/b/link', '.'),
+    relativeLink('a/b/link', './foo'),
+    relativeLink('a/b/link', '..'),
+    relativeLink('a/b/link', '../foo'),
+    relativeLink('a/b/link', '../..'),
+    relativeLink('a/b/link', '../../foo'),
+    relativeLink('a/b/link', '../../..'),
+    relativeLink('a/b/link', '../../../foo'),
+    relativeLink('a/b/link', '../../../..'),
+    relativeLink('a/b/link', '../../../../foo')
+  ]).toEqual([
+    'a/b',
+    'a/b/foo',
+    'a',
+    'a/foo',
+    '.',
+    'foo',
+    '..',
+    '../foo',
+    '../..',
+    '../../foo'
   ])
 })
