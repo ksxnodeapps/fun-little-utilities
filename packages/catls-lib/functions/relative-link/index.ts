@@ -1,4 +1,4 @@
-import { dirname, join, sep } from 'path'
+import path from 'path'
 import { PATH_SEP_REGEX, WIN_ROOT_REGEX } from '../../constants'
 
 function relativeLink (link: string, target: string): string {
@@ -13,11 +13,11 @@ function relativeLink (link: string, target: string): string {
 
     switch (first) {
       case '.':
-        return notRoot(link, rest.join(sep))
+        return notRoot(link, rest.join(path.sep))
       case '..':
-        return notRoot(dirname(link), rest.join(sep))
+        return notRoot(path.dirname(link), rest.join(path.sep))
       default:
-        return join(dirname(link), target)
+        return path.join(path.dirname(link), target)
     }
   }
 }
