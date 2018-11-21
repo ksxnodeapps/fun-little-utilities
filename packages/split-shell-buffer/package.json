@@ -1,7 +1,7 @@
 {
   "name": "split-shell-buffer",
   "version": "0.0.0",
-  "description": "Spliting shell strings while preserving CSI escape sequences",
+  "description": "Spliting shell strings while preserving SGR escape sequences",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
@@ -16,6 +16,8 @@
     "csi",
     "ansi",
     "split",
+    "csi",
+    "sgr",
     "shell"
   ],
   "dependencies": {
