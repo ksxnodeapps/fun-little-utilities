@@ -1,14 +1,13 @@
 dependencies:
-  '@types/node': 10.12.0
+  '@types/node': 10.12.10
   '@types/semver': 5.5.0
   semver: 5.6.0
-  sort-versions-types: 'link:../sort-versions-types'
   tslib: 1.9.3
 packages:
-  /@types/node/10.12.0:
+  /@types/node/10.12.10:
     dev: false
     resolution:
-      integrity: sha512-3TUHC3jsBAB7qVRGxT6lWyYo2v96BMmD2PTcl47H25Lu7UXtFH/2qqmKiVrnel6Ne//0TFYf6uvNX+HW2FRkLQ==
+      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
   /@types/semver/5.5.0:
     dev: false
     resolution:
