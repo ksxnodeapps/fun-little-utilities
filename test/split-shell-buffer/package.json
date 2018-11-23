@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "split-shell-buffer": "file:../../packages/split-shell-buffer"
+  }
+}

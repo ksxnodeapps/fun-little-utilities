@@ -21,6 +21,9 @@
     "shell"
   ],
   "dependencies": {
+    "iter-tools": "^6.1.6",
+    "create-array-equal": "^0.0.1",
+    "typescript-char-code": "^0.0.1",
     "tslib": "^1.9.3",
     "@types/node": "^10.12.0"
   },
