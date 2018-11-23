@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "static-type-assert": "^3.0.1",
     "split-shell-buffer": "file:../../packages/split-shell-buffer"
   }
 }
