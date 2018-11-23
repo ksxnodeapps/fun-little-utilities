@@ -1,39 +1,41 @@
-import { map, reduce, slice } from 'iter-tools'
+import { slice } from 'iter-tools'
 import createArrayEqual from 'create-array-equal'
 import SpecialCharacter from './utils/special-character'
 import Digit from './utils/digit'
+import StringWritable from './utils/string-writable'
 import { isResetSequence } from './utils/sequence-tests'
 
-const { Start, StartFollow, End, Newline } = SpecialCharacter
+const { Start, StartFollow, End, EndOfLine } = SpecialCharacter
 const { Zero } = Digit
-const arrayEqual = createArrayEqual<Splitter.Element>()
+const arrayEqual = createArrayEqual<Splitter.Sequence>()
+const RESET = [Start, StartFollow, Zero, End]
 
 class Splitter implements Iterable<Splitter.Element> {
   private readonly data: Splitter.Data
-  private readonly prefix: Splitter.Element
-  private readonly suffix: Splitter.Element
+  private readonly prefix: Splitter.Sequence
+  private readonly suffix: Splitter.Sequence
 
   constructor (options: Splitter.ConstructorOptions) {
     this.data = options.data
     this.prefix = options.prefix || []
-    this.suffix = options.suffix || [Newline]
+    this.suffix = options.suffix || []
   }
 
   public * [Symbol.iterator] (): IterableIterator<Splitter.Element> {
-    const { data } = this
-    let escape = Array<Splitter.Element>()
-    let newEscape = Array<Splitter.Element>()
-    let currentEscape: Splitter.Element = []
+    const { data, prefix, suffix } = this
+    let escape = Array<Splitter.Sequence>()
+    let newEscape = Array<Splitter.Sequence>()
+    let currentEscape: Splitter.Sequence = []
     let isInEscape = false
-    let currentLine: Splitter.Element = []
+    let currentLine: Splitter.Sequence = []
 
-    const createYieldValue = (): Splitter.Element => [
-      ...escape.flat(),
-      ...currentLine,
-      ...escape.length
-        ? [Start, StartFollow, Zero, End] // '\e[0m'
-        : []
-    ]
+    const createYieldValue = (): Splitter.Element => ({
+      format: Array.from(escape),
+      reset: escape.length ? RESET : [],
+      main: currentLine,
+      prefix,
+      suffix
+    })
 
     function pushCurrentLine (char: Splitter.Code) {
       currentLine = [...currentLine, char]
@@ -79,8 +81,7 @@ class Splitter implements Iterable<Splitter.Element> {
           break
 
         // Restore SGR state from previous line
-        case Newline:
-          console.log({ Newline, currentLine })
+        case EndOfLine:
           yield createYieldValue()
           currentLine = []
           escape = [...escape, ...newEscape]
@@ -97,17 +98,17 @@ class Splitter implements Iterable<Splitter.Element> {
     yield createYieldValue()
   }
 
-  public toString (): string {
-    const { prefix, suffix } = this
+  public toString (options: Splitter.toString.Options = {}): string {
+    const { finalNewLine, ...rest } = options
+    const writable = new StringWritable(rest)
 
-    return reduce(
-      '',
-      (prev, current) => prev + current,
-      map(
-        line => String.fromCodePoint(...prefix, ...line, ...suffix),
-        this
-      )
-    )
+    if (finalNewLine) {
+      this.writeln(writable)
+    } else {
+      this.write(writable)
+    }
+
+    return writable.toString()
   }
 
   public static fromString (text: string) {
@@ -115,17 +116,59 @@ class Splitter implements Iterable<Splitter.Element> {
       data: new Buffer(text)
     })
   }
+
+  public * lines (): IterableIterator<Splitter.Sequence> {
+    for (const element of this) {
+      const { format, reset, main, prefix, suffix } = element
+      yield [...reset, ...prefix, ...format.flat(1), ...main, ...suffix]
+    }
+  }
+
+  public write (writable: Splitter.Writable): void {
+    let mkline = (line: Splitter.Sequence): Array<number> => {
+      mkline = line => [EndOfLine, ...line] // non-first lines have leading eol
+      return [...line] // first line has no leading eol
+    }
+
+    for (const line of this.lines()) {
+      writable.write(Buffer.from(mkline(line)))
+    }
+  }
+
+  public writeln (writable: Splitter.Writable): void {
+    for (const line of this.lines()) {
+      writable.write(Buffer.from([...line, EndOfLine]))
+    }
+  }
 }
 
 namespace Splitter {
   export type Code = number
-  export type Element = ReadonlyArray<Code>
+  export type Sequence = ReadonlyArray<Code>
   export type Data = Iterable<Code>
 
   export interface ConstructorOptions {
     readonly data: Data
-    readonly prefix?: Element
-    readonly suffix?: Element
+    readonly prefix?: Sequence
+    readonly suffix?: Sequence
+  }
+
+  export interface Element {
+    readonly format: ReadonlyArray<Sequence>
+    readonly reset: Sequence
+    readonly main: Sequence
+    readonly prefix: Sequence
+    readonly suffix: Sequence
+  }
+
+  export interface Writable {
+    write (buffer: Buffer): void
+  }
+
+  export namespace toString {
+    export interface Options extends StringWritable.ConstructorOptions {
+      readonly finalNewLine?: boolean
+    }
   }
 }
 
