@@ -144,7 +144,7 @@ class Splitter implements Iterable<Splitter.Element> {
 
 namespace Splitter {
   export type Code = number
-  export type Sequence = ReadonlyArray<Code>
+  export type Sequence = ArrayLike<Code>
   export type Data = Iterable<Code>
 
   export interface ConstructorOptions {
@@ -169,6 +169,13 @@ namespace Splitter {
     export interface Options extends StringWritable.ConstructorOptions {
       readonly finalNewLine?: boolean
     }
+  }
+
+  /**
+   * @private
+   */
+  interface ArrayLike<X> extends Iterable<X> {
+    readonly length: number
   }
 }
 
