@@ -11,7 +11,7 @@ describe('toString()', () => {
       Splitter.fromString(normalText)
     ).toEqual(
       new Splitter({
-        data: new Buffer(normalText)
+        data: Buffer.from(normalText)
       })
     )
   })
