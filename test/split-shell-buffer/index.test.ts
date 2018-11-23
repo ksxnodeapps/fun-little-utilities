@@ -6,6 +6,16 @@ describe('toString()', () => {
     'jkl mno pqrs'
   ].join('\n')
 
+  it('constructs correct object', () => {
+    expect(
+      Splitter.fromString(normalText)
+    ).toEqual(
+      new Splitter({
+        data: new Buffer(normalText)
+      })
+    )
+  })
+
   it('default options', () => {
     expect(
       Splitter
