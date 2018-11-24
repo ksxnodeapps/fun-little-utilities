@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`correctly indents styled text 1`] = `
+"  abc [1mdef [2m
+[0m  [1m[2mghi [0;0mjkl [91;22;3m
+[0m  [91;22;3mmno pqrs [m
+  tuv wxyz
+  01 [2m23 [1m45
+[0m  [2m[1m67 [m89
+  foo
+  bar"
+`;
