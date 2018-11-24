@@ -23,15 +23,15 @@ class Splitter implements Iterable<Splitter.Element> {
 
   public * [Symbol.iterator] (): IterableIterator<Splitter.Element> {
     const { data, prefix, suffix } = this
-    let escape = Array<Splitter.Sequence>()
-    let newEscape = Array<Splitter.Sequence>()
+    let leadingCharacters = Array<Splitter.Sequence>()
+    let nextLeadingCharacters = Array<Splitter.Sequence>()
     let currentEscape: Splitter.Sequence = []
     let isInEscape = false
     let currentLine: Splitter.Sequence = []
 
     const createYieldValue = (): Splitter.Element => ({
-      format: Array.from(escape),
-      reset: escape.length ? RESET : [],
+      format: Array.from(leadingCharacters),
+      reset: leadingCharacters.length ? RESET : [],
       main: currentLine,
       prefix,
       suffix
@@ -69,9 +69,9 @@ class Splitter implements Iterable<Splitter.Element> {
             // If meet '\e[m', '\e[0m', '\e[00m'...
             // NOTE: No need for 'm' suffix
             if (isResetSequence(slice({ start: 2 }, currentEscape))) {
-              newEscape = [] // empty newEscape if meet '\e[0m'
+              nextLeadingCharacters = [] // empty newEscape if meet '\e[0m'
             } else {
-              newEscape.push([...currentEscape, End]) // otherwise, add '\e[Xm'
+              nextLeadingCharacters.push([...currentEscape, End]) // otherwise, add '\e[Xm'
             }
 
             currentEscape = []
@@ -84,8 +84,8 @@ class Splitter implements Iterable<Splitter.Element> {
         case EndOfLine:
           yield createYieldValue()
           currentLine = []
-          escape = [...newEscape]
-          newEscape = []
+          leadingCharacters = [...nextLeadingCharacters]
+          nextLeadingCharacters = []
           break
 
         // When the character is not special
