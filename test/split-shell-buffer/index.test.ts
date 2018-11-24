@@ -162,7 +162,7 @@ describe('setSuffix()', () => {
 
     expect(
       new Splitter({ data: [] })
-        .setPrefix(suffix)
+        .setSuffix(suffix)
     ).toEqual(
       new Splitter({ data: [], suffix })
     )
