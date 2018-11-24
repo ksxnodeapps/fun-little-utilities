@@ -1,11 +1,11 @@
 import Splitter from 'split-shell-buffer'
 
-describe('toString()', () => {
-  const normalText = [
-    'abc def ghi',
-    'jkl mno pqrs'
-  ].join('\n')
+const normalText = [
+  'abc def ghi',
+  'jkl mno pqrs'
+].join('\n')
 
+describe('constructor', () => {
   it('constructs correct object', () => {
     expect(
       Splitter.fromString(normalText)
@@ -15,7 +15,9 @@ describe('toString()', () => {
       })
     )
   })
+})
 
+describe('toString()', () => {
   it('default options', () => {
     expect(
       Splitter
