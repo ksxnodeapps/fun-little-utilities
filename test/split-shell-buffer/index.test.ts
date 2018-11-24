@@ -131,10 +131,10 @@ describe('writeln()', () => {
   })
 })
 
-describe('setPrefix()', () => {
+describe('withPrefix()', () => {
   it('creates a new instance', () => {
     const a = new Splitter({ data: [] })
-    const b = a.setPrefix([])
+    const b = a.withPrefix([])
     expect(b).not.toBe(a)
   })
 
@@ -143,17 +143,17 @@ describe('setPrefix()', () => {
 
     expect(
       new Splitter({ data: [] })
-        .setPrefix(prefix)
+        .withPrefix(prefix)
     ).toEqual(
       new Splitter({ data: [], prefix })
     )
   })
 })
 
-describe('setSuffix()', () => {
+describe('withSuffix()', () => {
   it('creates a new instance', () => {
     const a = new Splitter({ data: [] })
-    const b = a.setSuffix([])
+    const b = a.withSuffix([])
     expect(b).not.toBe(a)
   })
 
@@ -162,7 +162,7 @@ describe('setSuffix()', () => {
 
     expect(
       new Splitter({ data: [] })
-        .setSuffix(suffix)
+        .withSuffix(suffix)
     ).toEqual(
       new Splitter({ data: [], suffix })
     )

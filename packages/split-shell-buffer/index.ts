@@ -124,12 +124,12 @@ class Splitter implements Iterable<Splitter.Element> {
     }
   }
 
-  public setPrefix (prefix: Splitter.Sequence): Splitter {
+  public withPrefix (prefix: Splitter.Sequence): Splitter {
     const { data, suffix } = this
     return new Splitter({ data, prefix, suffix })
   }
 
-  public setSuffix (suffix: Splitter.Sequence): Splitter {
+  public withSuffix (suffix: Splitter.Sequence): Splitter {
     const { data, prefix } = this
     return new Splitter({ data, prefix, suffix })
   }
