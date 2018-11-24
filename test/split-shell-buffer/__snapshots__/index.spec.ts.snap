@@ -3,6 +3,10 @@
 exports[`toString() with default options with styled text 1`] = `
 "abc [1mdef [2m
 [0m[1m[2mghi [0;0mjkl [91;22;3m
-[0m[1m[2m[91;22;3mmno pqrs [m
-[0m[1m[2m[91;22;3mtuv wxyz"
+[0m[91;22;3mmno pqrs [m
+tuv wxyz
+01 [2m23 [1m45
+[0m[2m[1m67 [m89
+foo
+bar"
 `;
