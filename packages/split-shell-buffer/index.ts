@@ -84,7 +84,7 @@ class Splitter implements Iterable<Splitter.Element> {
         case EndOfLine:
           yield createYieldValue()
           currentLine = []
-          escape = [...escape, ...newEscape]
+          escape = [...newEscape]
           newEscape = []
           break
 
