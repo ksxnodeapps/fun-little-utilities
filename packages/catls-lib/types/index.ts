@@ -15,7 +15,7 @@ export namespace Unit {
 
     export type LinkReader = (link: string) => string | Promise<string>
 
-    export type Handler = (param: Handler.Param) => void
+    export type Handler = (param: Handler.Param) => void | Promise<void>
 
     export namespace Handler {
       export type Param =
