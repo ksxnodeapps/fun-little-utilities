@@ -7,6 +7,12 @@ exports[`toString() with default options with styled text 1`] = `
 tuv wxyz
 01 [2m23 [1m45
 [0m[2m[1m67 [m89
-foo
+ -- [4munderline[0] -- [24m
+[0m[4m[24m[4m -- underline[1][24m -- 
+[0m[4m[24m -- [7minverse[0] -- [27m
+[0m[7m[27m[7m -- inverse[1][27m -- 
+[0m[7m[27m -- [4m[7munderline.inverse[0] -- [27m[24m
+[0m[4m[7m[27m[24m[4m[7m -- underline.inverse[1][27m[24m -- 
+[0m[4m[7m[27m[24mfoo
 bar"
 `;

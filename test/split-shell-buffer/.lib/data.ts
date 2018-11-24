@@ -1,3 +1,5 @@
+import chalk from 'chalk'
+
 export const normalText = [
   'abc def ghi',
   'jkl mno pqrs'
@@ -10,6 +12,9 @@ export const styledText = [
   'tuv wxyz',
   '01 \x1B[2m23 \x1B[1m45',
   '67 \x1B[m89',
+  ' -- ' + chalk.underline('underline[0] -- \n -- underline[1]') + ' -- ',
+  ' -- ' + chalk.inverse('inverse[0] -- \n -- inverse[1]') + ' -- ',
+  ' -- ' + chalk.underline.inverse('underline.inverse[0] -- \n -- underline.inverse[1]') + ' -- ',
   'foo',
   'bar'
 ].join('\n')
