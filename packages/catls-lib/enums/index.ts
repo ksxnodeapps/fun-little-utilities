@@ -1,3 +1,5 @@
+// tslint:disable:no-unnecessary-qualifier
+
 export enum UnitType {
   NonExist,
   Symlink,

@@ -113,7 +113,7 @@ class Splitter implements Iterable<Splitter.Element> {
 
   public static fromString (text: string) {
     return new Splitter({
-      data: new Buffer(text)
+      data: Buffer.from(text)
     })
   }
 

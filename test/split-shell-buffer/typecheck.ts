@@ -1,3 +1,5 @@
+// tslint:disable:no-unused-expression
+
 import process from 'process'
 import assert from 'static-type-assert'
 import Splitter from 'split-shell-buffer'
