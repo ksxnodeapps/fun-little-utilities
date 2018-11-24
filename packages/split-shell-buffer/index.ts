@@ -124,6 +124,16 @@ class Splitter implements Iterable<Splitter.Element> {
     }
   }
 
+  public setPrefix (prefix: Splitter.Sequence): Splitter {
+    const { data, suffix } = this
+    return new Splitter({ data, prefix, suffix })
+  }
+
+  public setSuffix (suffix: Splitter.Sequence): Splitter {
+    const { data, prefix } = this
+    return new Splitter({ data, prefix, suffix })
+  }
+
   public write (writable: Splitter.Writable): void {
     let mkline = (line: Splitter.Sequence): Array<number> => {
       mkline = line => [EndOfLine, ...line] // non-first lines have leading eol

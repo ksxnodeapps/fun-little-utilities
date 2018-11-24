@@ -130,3 +130,41 @@ describe('writeln()', () => {
     expect(text).toBe(normalText + '\n')
   })
 })
+
+describe('setPrefix()', () => {
+  it('creates a new instance', () => {
+    const a = new Splitter({ data: [] })
+    const b = a.setPrefix([])
+    expect(b).not.toBe(a)
+  })
+
+  it('creates an instance with modified prefix', () => {
+    const prefix = Buffer.from('prefix')
+
+    expect(
+      new Splitter({ data: [] })
+        .setPrefix(prefix)
+    ).toEqual(
+      new Splitter({ data: [], prefix })
+    )
+  })
+})
+
+describe('setSuffix()', () => {
+  it('creates a new instance', () => {
+    const a = new Splitter({ data: [] })
+    const b = a.setSuffix([])
+    expect(b).not.toBe(a)
+  })
+
+  it('creates an instance with modified suffix', () => {
+    const suffix = Buffer.from('prefix')
+
+    expect(
+      new Splitter({ data: [] })
+        .setPrefix(suffix)
+    ).toEqual(
+      new Splitter({ data: [], suffix })
+    )
+  })
+})
