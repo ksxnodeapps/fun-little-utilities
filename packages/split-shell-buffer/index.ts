@@ -134,6 +134,12 @@ class Splitter implements Iterable<Splitter.Element> {
     return new Splitter({ data, prefix, suffix })
   }
 
+  public withIndent (indent: number): Splitter {
+    return this.withPrefix(
+      Buffer.from(' '.repeat(indent))
+    )
+  }
+
   public write (writable: Splitter.Writable): void {
     let mkline = (line: Splitter.Sequence): Array<number> => {
       mkline = line => [EndOfLine, ...line] // non-first lines have leading eol

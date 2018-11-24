@@ -168,3 +168,15 @@ describe('withSuffix()', () => {
     )
   })
 })
+
+describe('withIndent()', () => {
+  it('calls withPrefix()', () => {
+    expect(
+      new Splitter({ data: [] })
+        .withIndent(4)
+    ).toEqual(
+      new Splitter({ data: [] })
+        .withPrefix(Buffer.from(' '.repeat(4)))
+    )
+  })
+})

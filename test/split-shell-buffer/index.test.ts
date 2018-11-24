@@ -14,7 +14,7 @@ it('correctly indents', () => {
   expect(
     Splitter
       .fromString(normalText)
-      .withPrefix(Buffer.from('  '))
+      .withIndent(2)
       .toString()
   ).toBe(
     Splitter
