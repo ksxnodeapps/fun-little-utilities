@@ -13,3 +13,7 @@ This file concerns with intended use cases of `Splitter`.
 ### `typecheck.ts`
 
 This file concerns with type definition of `Splitter`'s methods.
+
+### `preview.ts`
+
+Run `pnpx execute runPreloadedNode test/split-shell-buffer/preview.ts` to execute this file.
