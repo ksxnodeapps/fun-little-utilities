@@ -62,7 +62,7 @@ describe('toString()', () => {
 describe('write()', () => {
   const splitter = Splitter.fromString(normalText)
 
-  it('pass instances of Buffer to writable.write', () => {
+  it('passes instances of Buffer to writable.write', () => {
     splitter.write({
       write (instance) {
         expect(instance).toBeInstanceOf(Buffer)
@@ -70,7 +70,7 @@ describe('write()', () => {
     })
   })
 
-  it('pass buffers by line to writable.write', () => {
+  it('passes buffers by line to writable.write', () => {
     let count = 0
 
     splitter.write({
@@ -82,7 +82,7 @@ describe('write()', () => {
     expect(count).toBe(normalText.split('\n').length)
   })
 
-  it('pass buffers that resemble original text to writable.write', () => {
+  it('passes buffers that resemble original text to writable.write', () => {
     let text = ''
 
     splitter.write({
@@ -98,7 +98,7 @@ describe('write()', () => {
 describe('writeln()', () => {
   const splitter = Splitter.fromString(normalText)
 
-  it('pass instances of Buffer to writable.write', () => {
+  it('passes instances of Buffer to writable.write', () => {
     splitter.writeln({
       write (instance) {
         expect(instance).toBeInstanceOf(Buffer)
@@ -106,7 +106,7 @@ describe('writeln()', () => {
     })
   })
 
-  it('pass buffers by line to writable.write', () => {
+  it('passes buffers by line to writable.write', () => {
     let count = 0
 
     splitter.writeln({
@@ -118,7 +118,7 @@ describe('writeln()', () => {
     expect(count).toBe(normalText.split('\n').length)
   })
 
-  it('pass buffers that resemble original text with trailing eol to writable.write', () => {
+  it('passes buffers that resemble original text with trailing eol to writable.write', () => {
     let text = ''
 
     splitter.writeln({
