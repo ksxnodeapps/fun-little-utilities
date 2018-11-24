@@ -68,7 +68,7 @@ class Splitter implements Iterable<Splitter.Element> {
 
             // If meet '\e[m', '\e[0m', '\e[00m'...
             // NOTE: No need for 'm' suffix
-            if (isResetSequence(slice(2, currentEscape))) {
+            if (isResetSequence(slice({ start: 2 }, currentEscape))) {
               newEscape = [] // empty newEscape if meet '\e[0m'
             } else {
               newEscape.push([...currentEscape, End]) // otherwise, add '\e[Xm'
