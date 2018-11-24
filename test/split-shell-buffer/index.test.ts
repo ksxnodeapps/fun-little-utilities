@@ -19,7 +19,7 @@ it('correctly indents normal text', () => {
   )
 })
 
-describe('indented styled text matches snapshot', () => {
+it('indented styled text matches snapshot', () => {
   expect(
     Splitter
       .fromString(styledText)
@@ -28,7 +28,7 @@ describe('indented styled text matches snapshot', () => {
   ).toMatchSnapshot()
 })
 
-describe('indentation part of indented styled text only contain spaces and leading reset sequence', () => {
+it('indentation part of indented styled text only contain spaces and leading reset sequence', () => {
   const indent = 4
   const regex = /^(\x1B\[(0|;)*m)? {4}/
 

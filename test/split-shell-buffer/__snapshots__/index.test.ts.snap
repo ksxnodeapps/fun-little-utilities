@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
+exports[`indented styled text matches snapshot 1`] = `
 "  abc [1mdef [2m
 [0m  [1m[2mghi [0;0mjkl [91;22;3m
 [0m  [91;22;3mmno pqrs [m
