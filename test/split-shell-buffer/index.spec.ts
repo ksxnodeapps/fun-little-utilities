@@ -15,21 +15,21 @@ describe('constructor', () => {
 
 describe('toString()', () => {
   describe('with default options', () => {
-    it('with normal text', () => {
+    it('with normal text', async () => {
       expect(
-        Splitter
+        await Splitter
           .fromString(normalText)
           .toString()
       ).toEqual(
-        Splitter
+        await Splitter
           .fromString(normalText)
           .toString({ finalNewLine: false, encoding: 'utf8' })
       )
     })
 
-    it('with styled text', () => {
+    it('with styled text', async () => {
       expect(
-        Splitter
+        await Splitter
           .fromString(styledText)
           .toString()
       ).toMatchSnapshot()
@@ -37,25 +37,25 @@ describe('toString()', () => {
   })
 
   describe('preserves normal text', () => {
-    it('without options', () => {
+    it('without options', async () => {
       expect(
-        Splitter
+        await Splitter
           .fromString(normalText)
           .toString()
       ).toEqual(normalText)
     })
 
-    it('with finalNewLine = true', () => {
+    it('with finalNewLine = true', async () => {
       expect(
-        Splitter
+        await Splitter
           .fromString(normalText)
           .toString({ finalNewLine: true })
       ).toEqual(normalText + '\n')
     })
 
-    it('with encoding = "hex"', () => {
+    it('with encoding = "hex"', async () => {
       expect(
-        Splitter
+        await Splitter
           .fromString(normalText)
           .toString({ encoding: 'hex' })
       ).toEqual(
@@ -69,18 +69,18 @@ describe('write()', () => {
   describe('with normal text', () => {
     const splitter = Splitter.fromString(normalText)
 
-    it('passes instances of Buffer to writable.write', () => {
-      splitter.write({
+    it('passes instances of Buffer to writable.write', async () => {
+      await splitter.write({
         write (instance) {
           expect(instance).toBeInstanceOf(Buffer)
         }
       })
     })
 
-    it('passes buffers by line to writable.write', () => {
+    it('passes buffers by line to writable.write', async () => {
       let count = 0
 
-      splitter.write({
+      await splitter.write({
         write () {
           count += 1
         }
@@ -89,10 +89,10 @@ describe('write()', () => {
       expect(count).toBe(normalText.split('\n').length)
     })
 
-    it('passes buffers that resemble original text to writable.write', () => {
+    it('passes buffers that resemble original text to writable.write', async () => {
       let text = ''
 
-      splitter.write({
+      await splitter.write({
         write (buffer) {
           text += buffer.toString()
         }
@@ -105,18 +105,18 @@ describe('write()', () => {
   describe('with styled text', () => {
     const splitter = Splitter.fromString(styledText)
 
-    it('passes instances of Buffer to writable.write', () => {
-      splitter.write({
+    it('passes instances of Buffer to writable.write', async () => {
+      await splitter.write({
         write (instance) {
           expect(instance).toBeInstanceOf(Buffer)
         }
       })
     })
 
-    it('passes buffers by line to writable.write', () => {
+    it('passes buffers by line to writable.write', async () => {
       let count = 0
 
-      splitter.write({
+      await splitter.write({
         write () {
           count += 1
         }
@@ -125,16 +125,16 @@ describe('write()', () => {
       expect(count).toBe(styledText.split('\n').length)
     })
 
-    it('passes buffers that resemble toString() to writable.write', () => {
+    it('passes buffers that resemble toString() to writable.write', async () => {
       let text = ''
 
-      splitter.write({
+      await splitter.write({
         write (buffer) {
           text += buffer.toString()
         }
       })
 
-      expect(text).toBe(splitter.toString())
+      expect(text).toBe(await splitter.toString())
     })
   })
 })
@@ -143,18 +143,18 @@ describe('writeln()', () => {
   describe('with normal text', () => {
     const splitter = Splitter.fromString(normalText)
 
-    it('passes instances of Buffer to writable.write', () => {
-      splitter.writeln({
+    it('passes instances of Buffer to writable.write', async () => {
+      await splitter.writeln({
         write (instance) {
           expect(instance).toBeInstanceOf(Buffer)
         }
       })
     })
 
-    it('passes buffers by line to writable.write', () => {
+    it('passes buffers by line to writable.write', async () => {
       let count = 0
 
-      splitter.writeln({
+      await splitter.writeln({
         write () {
           count += 1
         }
@@ -163,10 +163,10 @@ describe('writeln()', () => {
       expect(count).toBe(normalText.split('\n').length)
     })
 
-    it('passes buffers that resemble original text with trailing eol to writable.write', () => {
+    it('passes buffers that resemble original text with trailing eol to writable.write', async () => {
       let text = ''
 
-      splitter.writeln({
+      await splitter.writeln({
         write (buffer) {
           text += buffer.toString()
         }
@@ -179,18 +179,18 @@ describe('writeln()', () => {
   describe('with styled text', () => {
     const splitter = Splitter.fromString(styledText)
 
-    it('passes instances of Buffer to writable.write', () => {
-      splitter.writeln({
+    it('passes instances of Buffer to writable.write', async () => {
+      await splitter.writeln({
         write (instance) {
           expect(instance).toBeInstanceOf(Buffer)
         }
       })
     })
 
-    it('passes buffers by line to writable.write', () => {
+    it('passes buffers by line to writable.write', async () => {
       let count = 0
 
-      splitter.writeln({
+      await splitter.writeln({
         write () {
           count += 1
         }
@@ -199,16 +199,16 @@ describe('writeln()', () => {
       expect(count).toBe(styledText.split('\n').length)
     })
 
-    it('passes buffers that resemble toString() with trailing eol to writable.write', () => {
+    it('passes buffers that resemble toString() with trailing eol to writable.write', async () => {
       let text = ''
 
-      splitter.writeln({
+      await splitter.writeln({
         write (buffer) {
           text += buffer.toString()
         }
       })
 
-      expect(text).toBe(splitter.toString() + '\n')
+      expect(text).toBe(await splitter.toString() + '\n')
     })
   })
 })
@@ -252,12 +252,12 @@ describe('withSuffix()', () => {
 })
 
 describe('withIndent()', () => {
-  it('calls withPrefix()', () => {
+  it('calls withPrefix()', async () => {
     expect(
-      new Splitter({ data: [] })
+      await new Splitter({ data: [] })
         .withIndent(4)
     ).toEqual(
-      new Splitter({ data: [] })
+      await new Splitter({ data: [] })
         .withPrefix(Buffer.from(' '.repeat(4)))
     )
   })

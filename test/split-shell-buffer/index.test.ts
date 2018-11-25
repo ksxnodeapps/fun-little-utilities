@@ -1,42 +1,44 @@
 import Splitter from 'split-shell-buffer'
 import { normalText, styledText } from './.lib/data'
 
-it('correctly indents normal text', () => {
+it('correctly indents normal text', async () => {
   const indentedNormalText = [
     '  abc def ghi',
     '  jkl mno pqrs'
   ].join('\n')
 
   expect(
-    Splitter
+    await Splitter
       .fromString(normalText)
       .withIndent(2)
       .toString()
   ).toBe(
-    Splitter
+    await Splitter
       .fromString(indentedNormalText)
       .toString()
   )
 })
 
-it('indented styled text matches snapshot', () => {
+it('indented styled text matches snapshot', async () => {
   expect(
-    Splitter
+    await Splitter
       .fromString(styledText)
       .withIndent(2)
       .toString()
   ).toMatchSnapshot()
 })
 
-it('indentation part of indented styled text only contain spaces and leading reset sequence', () => {
+it('indentation part of indented styled text only contain spaces and leading reset sequence', async () => {
   const indent = 4
   const regex = /^(\x1B\[(0|;)*m)? {4}/
 
   expect(
-    Splitter
-      .fromString(styledText)
-      .withIndent(indent)
-      .toString()
+    (
+      await Splitter
+        .fromString(styledText)
+        .withIndent(indent)
+        .toString()
+    )
       .split('\n')
       .every(text => regex.test(text))
   ).toBe(true)

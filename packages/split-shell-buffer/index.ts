@@ -1,5 +1,6 @@
 import { slice } from 'iter-tools'
 import createArrayEqual from 'create-array-equal'
+import 'monorepo-shared-assets/.polyfill'
 import SpecialCharacter from './utils/special-character'
 import Digit from './utils/digit'
 import StringWritable from './utils/string-writable'
@@ -10,7 +11,7 @@ const { Zero } = Digit
 const arrayEqual = createArrayEqual<Splitter.Sequence>()
 const RESET = [Start, StartFollow, Zero, End]
 
-class Splitter implements Iterable<Splitter.Element> {
+class Splitter implements AsyncIterable<Splitter.Element> {
   private readonly data: Splitter.Data
   private readonly prefix: Splitter.Sequence
   private readonly suffix: Splitter.Sequence
@@ -21,7 +22,7 @@ class Splitter implements Iterable<Splitter.Element> {
     this.suffix = options.suffix || []
   }
 
-  public * [Symbol.iterator] (): IterableIterator<Splitter.Element> {
+  public async * [Symbol.asyncIterator] (): AsyncIterableIterator<Splitter.Element> {
     const { data, prefix, suffix } = this
     let leadingCharacters = Array<Splitter.Sequence>()
     let nextLeadingCharacters = Array<Splitter.Sequence>()
@@ -45,7 +46,7 @@ class Splitter implements Iterable<Splitter.Element> {
       currentEscape = [...currentEscape, char]
     }
 
-    for (const char of data) {
+    for await (const char of data) {
       // Handle special characters
       switch (char) {
         case Start:
@@ -98,14 +99,14 @@ class Splitter implements Iterable<Splitter.Element> {
     yield createYieldValue()
   }
 
-  public toString (options: Splitter.toString.Options = {}): string {
+  public async toString (options: Splitter.toString.Options = {}): Promise<string> {
     const { finalNewLine, ...rest } = options
     const writable = new StringWritable(rest)
 
     if (finalNewLine) {
-      this.writeln(writable)
+      await this.writeln(writable)
     } else {
-      this.write(writable)
+      await this.write(writable)
     }
 
     return writable.toString()
@@ -117,8 +118,10 @@ class Splitter implements Iterable<Splitter.Element> {
     })
   }
 
-  public * lines (): IterableIterator<Splitter.Sequence> {
-    for (const element of this) {
+  public async * lines (): AsyncIterableIterator<Splitter.Sequence> {
+    // workaround https://github.com/palantir/tslint/issues/3997
+    // tslint:disable-next-line:await-promise
+    for await (const element of this) {
       const { format, reset, main, prefix, suffix } = element
       yield [...reset, ...prefix, ...format.flat(1), ...main, ...suffix]
     }
@@ -140,19 +143,19 @@ class Splitter implements Iterable<Splitter.Element> {
     )
   }
 
-  public write (writable: Splitter.Writable): void {
+  public async write (writable: Splitter.Writable): Promise<void> {
     let mkline = (line: Splitter.Sequence): Array<number> => {
       mkline = line => [EndOfLine, ...line] // non-first lines have leading eol
       return [...line] // first line has no leading eol
     }
 
-    for (const line of this.lines()) {
+    for await (const line of this.lines()) {
       writable.write(Buffer.from(mkline(line)))
     }
   }
 
-  public writeln (writable: Splitter.Writable): void {
-    for (const line of this.lines()) {
+  public async writeln (writable: Splitter.Writable): Promise<void> {
+    for await (const line of this.lines()) {
       writable.write(Buffer.from([...line, EndOfLine]))
     }
   }
@@ -161,7 +164,7 @@ class Splitter implements Iterable<Splitter.Element> {
 namespace Splitter {
   export type Code = number
   export type Sequence = ArrayLike<Code>
-  export type Data = Iterable<Code>
+  export type Data = AsyncIterable<Code> | Iterable<Code>
 
   export interface ConstructorOptions {
     readonly data: Data

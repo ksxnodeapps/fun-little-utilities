@@ -2,6 +2,7 @@ dependencies:
   '@types/node': 10.12.10
   create-array-equal: 0.0.1
   iter-tools: 6.1.6
+  monorepo-shared-assets: 0.0.17
   tslib: 1.9.3
   typescript-char-code: 0.0.1
 packages:
@@ -15,6 +16,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/ramda/0.25.42:
+    dev: false
+    resolution:
+      integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
   /create-array-equal/0.0.1:
     dependencies:
       '@types/node': 10.12.10
@@ -30,6 +35,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
+  /immutable/3.8.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
   /iter-tools/6.1.6:
     dependencies:
       '@babel/runtime': 7.1.5
@@ -44,6 +55,22 @@ packages:
     dev: false
     resolution:
       integrity: sha512-2ARbmay5TrhFxFqcyFxPigmRToDuo8yxvIMdvwsDYNd/oZKnvsFT5L3I7s8WLXR7/tThYeffN9ouDtFFk4wzsA==
+  /monorepo-shared-assets/0.0.17:
+    dependencies:
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
+      immutable: 3.8.2
+      ramda: 0.25.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
+  /ramda/0.25.0:
+    dev: false
+    resolution:
+      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
   /regenerator-runtime/0.12.1:
     dev: false
     resolution:
@@ -94,5 +121,6 @@ specifiers:
   '@types/node': ^10.12.0
   create-array-equal: ^0.0.1
   iter-tools: ^6.1.6
+  monorepo-shared-assets: ^0.0.17
   tslib: ^1.9.3
   typescript-char-code: ^0.0.1
