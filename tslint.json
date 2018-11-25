@@ -1,6 +1,7 @@
 {
   "extends": "tslint-config-standard",
   "rules": {
-    "no-implicit-dependencies": true
+    "no-implicit-dependencies": true,
+    "await-promise": false
   }
 }
