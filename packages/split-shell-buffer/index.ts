@@ -145,16 +145,16 @@ class Splitter implements AsyncIterable<Splitter.Element> {
     const iterate = (): AsyncIterableIterator<Buffer> => ({
       next: () => new Promise((resolve, reject) => {
         stream.on('data', value => addQueue(
-          () => resolve({ done: false, value }))
-        )
+          () => resolve({ done: false, value })
+        ))
 
         stream.on('error', error => addQueue(
-          () => reject(error))
-        )
+          () => reject(error)
+        ))
 
         stream.on('close', () => addQueue(
-          () => resolve({ done: true, value: undefined as any }))
-        )
+          () => resolve({ done: true, value: undefined as any })
+        ))
       }),
 
       // I could let the function returns 'this'
