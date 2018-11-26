@@ -121,7 +121,7 @@ class Splitter implements AsyncIterable<Splitter.Element> {
   public static fromIterableStream (stream: Splitter.IterableStream): Splitter {
     async function * iterate () {
       for await (const chunk of stream) {
-        for (const char of chunk) {
+        for (const char of Buffer.from(chunk as Buffer)) {
           yield char
         }
       }
@@ -213,7 +213,7 @@ namespace Splitter {
   export type Code = number
   export type Sequence = ArrayLike<Code>
   export type Data = AsyncIterable<Code> | Iterable<Code>
-  export type IterableStream = AsyncIterable<Iterable<Code>>
+  export type IterableStream = AsyncIterable<Buffer | string>
 
   export interface ConstructorOptions {
     readonly data: Data
