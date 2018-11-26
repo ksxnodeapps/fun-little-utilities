@@ -254,10 +254,10 @@ describe('withSuffix()', () => {
 describe('withIndent()', () => {
   it('calls withPrefix()', async () => {
     expect(
-      await new Splitter({ data: [] })
+      new Splitter({ data: [] })
         .withIndent(4)
     ).toEqual(
-      await new Splitter({ data: [] })
+      new Splitter({ data: [] })
         .withPrefix(Buffer.from(' '.repeat(4)))
     )
   })
