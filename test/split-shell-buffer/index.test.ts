@@ -51,7 +51,7 @@ describe('works with child processes', () => {
       await Splitter
         .fromEventedStream(spawnExecutable().stdout)
         .toString()
-    ).toEqual([
+    ).toBe([
       'stdout 0',
       'stdout 1',
       'stdout 2',
@@ -64,7 +64,7 @@ describe('works with child processes', () => {
       await Splitter
         .fromEventedStream(spawnExecutable().stderr)
         .toString()
-    ).toEqual([
+    ).toBe([
       'stderr 0',
       'stderr 1',
       'stderr 2',
