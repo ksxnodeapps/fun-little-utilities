@@ -118,6 +118,54 @@ class Splitter implements AsyncIterable<Splitter.Element> {
     })
   }
 
+  public static fromIterableStream (stream: Splitter.IterableStream): Splitter {
+    async function * iterate () {
+      for await (const chunk of stream) {
+        for (const char of chunk) {
+          yield char
+        }
+      }
+    }
+
+    const data = {
+      [Symbol.asyncIterator]: iterate
+    }
+
+    return new Splitter({ data })
+  }
+
+  public static fromEventedStream (stream: Splitter.EventedStream): Splitter {
+    let queue = Promise.resolve()
+
+    function addQueue (fn: () => void) {
+      queue = queue.then(fn)
+    }
+
+    const iterate = (): AsyncIterableIterator<Buffer> => ({
+      next: () => new Promise((resolve, reject) => {
+        stream.on('data', value => addQueue(
+          () => resolve({ done: false, value }))
+        )
+
+        stream.on('error', error => addQueue(
+          () => reject(error))
+        )
+
+        stream.on('close', () => addQueue(
+          () => resolve({ done: true, value: undefined as any }))
+        )
+      }),
+
+      [Symbol.asyncIterator] () {
+        return this
+      }
+    })
+
+    return Splitter.fromIterableStream({
+      [Symbol.asyncIterator]: iterate
+    })
+  }
+
   public async * lines (): AsyncIterableIterator<Splitter.Sequence> {
     // workaround https://github.com/palantir/tslint/issues/3997
     // tslint:disable-next-line:await-promise
@@ -165,6 +213,7 @@ namespace Splitter {
   export type Code = number
   export type Sequence = ArrayLike<Code>
   export type Data = AsyncIterable<Code> | Iterable<Code>
+  export type IterableStream = AsyncIterable<Iterable<Code>>
 
   export interface ConstructorOptions {
     readonly data: Data
@@ -182,6 +231,18 @@ namespace Splitter {
 
   export interface Writable {
     write (buffer: Buffer): void
+  }
+
+  export interface EventedStream {
+    on (event: 'data', listener: EventedStream.DataEventListener): void
+    on (event: 'error', listener: EventedStream.ErrorEventListener): void
+    on (event: 'close', listener: EventedStream.CloseEventListener): void
+  }
+
+  export namespace EventedStream {
+    export type DataEventListener = (data: Buffer) => void
+    export type ErrorEventListener = (error: any) => void
+    export type CloseEventListener = () => void
   }
 
   export namespace toString {
