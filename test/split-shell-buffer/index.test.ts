@@ -44,7 +44,7 @@ describe('works with child processes', () => {
   {
     // Some Node.js versions do not support asyncIterator
     const describe = mkDesc(
-      typeof Symbol.asyncIterator === 'symbol' &&
+      'asyncIterator' in Symbol &&
       Symbol.asyncIterator in process.stdin
     )
 
