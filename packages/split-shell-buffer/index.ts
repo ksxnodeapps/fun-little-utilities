@@ -112,7 +112,7 @@ class Splitter implements AsyncIterable<Splitter.Element> {
     return writable.toString()
   }
 
-  public static fromString (text: string) {
+  public static fromString (text: string): Splitter {
     return new Splitter({
       data: Buffer.from(text)
     })
