@@ -1,8 +1,15 @@
 import process from 'process'
-import { fromString, toString, fromIterableStream, fromEventedStream, fromChildProcess } from 'split-shell-buffer'
 import { mkDesc } from './.lib/conditional-test'
 import { normalText, styledText } from './.lib/data'
 import spawnExecutable from './.lib/spawn-executable'
+
+import {
+  fromString,
+  toString,
+  fromIterableStream,
+  fromEventedStream,
+  fromChildProcess
+} from 'split-shell-buffer'
 
 it('correctly indents normal text', async () => {
   const indentedNormalText = [
