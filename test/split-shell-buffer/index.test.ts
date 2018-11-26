@@ -1,5 +1,6 @@
 import Splitter from 'split-shell-buffer'
 import { normalText, styledText } from './.lib/data'
+import spawnExecutable from './.lib/spawn-executable'
 
 it('correctly indents normal text', async () => {
   const indentedNormalText = [
@@ -42,4 +43,19 @@ it('indentation part of indented styled text only contain spaces and leading res
       .split('\n')
       .every(text => regex.test(text))
   ).toBe(true)
+})
+
+describe('works with child processes', () => {
+  it('via fromEventedStream() on stdout', async () => {
+    expect(
+      await Splitter
+        .fromEventedStream(spawnExecutable().stdout)
+        .toString()
+    ).toEqual([
+      'stdout 0',
+      'stdout 1',
+      'stdout 2',
+      ''
+    ].join('\n'))
+  })
 })
