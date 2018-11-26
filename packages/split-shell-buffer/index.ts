@@ -166,6 +166,23 @@ class Splitter implements AsyncIterable<Splitter.Element> {
     })
   }
 
+  public static fromChildProcess (cp: Splitter.ChildProcess): Splitter {
+    const { stdout, stderr } = cp
+
+    const stream: Splitter.EventedStream = {
+      on (event: any, fn: any) {
+        if (event === 'close') {
+          cp.on('close', fn)
+        } else {
+          stdout.on(event, fn)
+          stderr.on(event, fn)
+        }
+      }
+    }
+
+    return Splitter.fromEventedStream(stream)
+  }
+
   public async * lines (): AsyncIterableIterator<Splitter.Sequence> {
     // workaround https://github.com/palantir/tslint/issues/3997
     // tslint:disable-next-line:await-promise
@@ -242,6 +259,16 @@ namespace Splitter {
   export namespace EventedStream {
     export type DataEventListener = (data: Buffer) => void
     export type ErrorEventListener = (error: any) => void
+    export type CloseEventListener = () => void
+  }
+
+  export interface ChildProcess {
+    readonly stdout: EventedStream
+    readonly stderr: EventedStream
+    on (event: 'close', listener: ChildProcess.CloseEventListener): void
+  }
+
+  export namespace ChildProcess {
     export type CloseEventListener = () => void
   }
 

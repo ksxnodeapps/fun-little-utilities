@@ -71,4 +71,23 @@ describe('works with child processes', () => {
       ''
     ].join('\n'))
   })
+
+  it('via fromChildProcess', async () => {
+    expect(new Set(
+      (
+        await Splitter
+          .fromChildProcess(spawnExecutable())
+          .toString()
+      )
+        .split('\n')
+    )).toEqual(new Set([
+      'stdout 0',
+      'stderr 0',
+      'stdout 1',
+      'stdout 2',
+      'stderr 1',
+      'stderr 2',
+      ''
+    ]))
+  })
 })
