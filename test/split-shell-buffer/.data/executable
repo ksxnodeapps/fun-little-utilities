@@ -1,0 +1,7 @@
+#! /usr/bin/env node
+console.info('stdout 0')
+console.error('stderr 0')
+console.info('stdout 1')
+console.info('stdout 2')
+console.error('stderr 1')
+console.error('stderr 2')
