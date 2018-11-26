@@ -1,3 +1,4 @@
+import process from 'process'
 import Splitter from 'split-shell-buffer'
 import { styledText } from './.lib/data'
 
@@ -15,4 +16,15 @@ async function main () {
   console.info()
 }
 
-main()
+enum ExitStatus {
+  Success = 0,
+  Failure = 1
+}
+
+main().then(
+  () => process.exit(ExitStatus.Success),
+  error => {
+    console.error(error)
+    process.exit(ExitStatus.Failure)
+  }
+)
