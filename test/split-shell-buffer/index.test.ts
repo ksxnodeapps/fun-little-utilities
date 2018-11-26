@@ -1,4 +1,6 @@
+import process from 'process'
 import Splitter from 'split-shell-buffer'
+import { mkDesc } from './.lib/conditional-test'
 import { normalText, styledText } from './.lib/data'
 import spawnExecutable from './.lib/spawn-executable'
 
@@ -46,6 +48,42 @@ it('indentation part of indented styled text only contain spaces and leading res
 })
 
 describe('works with child processes', () => {
+  {
+    // Some Node.js versions do not support asyncIterator
+    const describe = mkDesc(
+      typeof Symbol.asyncIterator === 'symbol' &&
+      Symbol.asyncIterator in process.stdin
+    )
+
+    describe('via fromIterableStream()', () => {
+      it('on stdout', async () => {
+        expect(
+          await Splitter
+            .fromIterableStream(spawnExecutable().stdout)
+            .toString()
+        ).toBe([
+          'stdout 0',
+          'stdout 1',
+          'stdout 2',
+          ''
+        ].join('\n'))
+      })
+
+      it('on stderr', async () => {
+        expect(
+          await Splitter
+            .fromIterableStream(spawnExecutable().stderr)
+            .toString()
+        ).toBe([
+          'stderr 0',
+          'stderr 1',
+          'stderr 2',
+          ''
+        ].join('\n'))
+      })
+    })
+  }
+
   describe('via fromEventedStream()', () => {
     it('on stdout', async () => {
       expect(
