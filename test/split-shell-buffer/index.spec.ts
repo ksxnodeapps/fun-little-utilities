@@ -252,7 +252,7 @@ describe('withSuffix()', () => {
 })
 
 describe('withIndent()', () => {
-  it('calls withPrefix()', async () => {
+  it('calls withPrefix()', () => {
     expect(
       new Splitter({ data: [] })
         .withIndent(4)
