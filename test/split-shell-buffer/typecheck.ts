@@ -1,6 +1,8 @@
 // tslint:disable:no-unused-expression
+// tslint:disable:no-floating-promises
 
 import process from 'process'
+import childProcess from 'child_process'
 import assert from 'static-type-assert'
 import Splitter from 'split-shell-buffer'
 
@@ -21,3 +23,7 @@ new Splitter({ data: Buffer.from('') })
 new Splitter({ data: Buffer.from(''), prefix: Buffer.from(''), suffix: Buffer.from('') })
 new Splitter({ data: [0, 1, 2, 3] })
 new Splitter({ data: [0, 1], prefix: [2, 3], suffix: [4, 5] })
+
+Splitter.fromEventedStream(process.stdin)
+Splitter.fromEventedStream(childProcess.spawn('').stdout)
+Splitter.fromEventedStream(childProcess.spawn('').stderr)
