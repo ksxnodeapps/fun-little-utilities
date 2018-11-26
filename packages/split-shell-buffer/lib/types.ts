@@ -46,16 +46,12 @@ export namespace ChildProcess {
   export type CloseEventListener = () => void
 }
 
-export namespace create {
-  export interface Param {
-    readonly data: Data
-    readonly prefix?: Sequence
-    readonly suffix?: Sequence
-  }
+export interface ConstructorOptions {
+  readonly data: Data
+  readonly prefix?: Sequence
+  readonly suffix?: Sequence
 }
 
-export namespace toString {
-  export interface Options extends StringWritable.ConstructorOptions {
-    readonly finalNewLine?: boolean
-  }
+export interface ToStringOptions extends StringWritable.ConstructorOptions {
+  readonly finalNewLine?: boolean
 }

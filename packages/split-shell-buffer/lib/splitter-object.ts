@@ -5,7 +5,7 @@ class SplitterObject implements types.Splitter {
   public readonly prefix: types.Sequence
   public readonly suffix: types.Sequence
 
-  constructor (options: types.create.Param) {
+  constructor (options: types.ConstructorOptions) {
     this.data = options.data
     this.prefix = options.prefix || []
     this.suffix = options.suffix || []
