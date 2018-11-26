@@ -14,9 +14,11 @@ assert.compare<all.Sequence, ReadonlyArray<all.Code>>('broaderLeft')
 assert.compare<all.Sequence, all.Code[]>('broaderLeft')
 assert.compare<all.Writable, typeof process.stdout>('broaderLeft')
 assert.compare<all.Writable, typeof process.stderr>('broaderLeft')
+assert.compare<all.Splitter, all.SplitterObject>('broaderLeft')
 
 const splitter = all.create({ data: [] })
 assert<all.SplitterObject>(splitter)
+assert<all.Splitter>(splitter)
 all.write(process.stdout, splitter)
 all.write(process.stdin, splitter)
 
