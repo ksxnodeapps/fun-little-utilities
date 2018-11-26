@@ -1,7 +1,7 @@
 import Splitter from 'split-shell-buffer'
 import { normalText, styledText } from './.lib/data'
 
-describe('constructor', () => {
+describe('static fromString()', () => {
   it('constructs correct object', () => {
     expect(
       Splitter.fromString(normalText)
