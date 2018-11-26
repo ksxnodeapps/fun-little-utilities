@@ -58,4 +58,17 @@ describe('works with child processes', () => {
       ''
     ].join('\n'))
   })
+
+  it('via fromEventedStream() on stderr', async () => {
+    expect(
+      await Splitter
+        .fromEventedStream(spawnExecutable().stderr)
+        .toString()
+    ).toEqual([
+      'stderr 0',
+      'stderr 1',
+      'stderr 2',
+      ''
+    ].join('\n'))
+  })
 })
