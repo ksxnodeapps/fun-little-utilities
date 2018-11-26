@@ -1,4 +1,5 @@
 import { slice } from 'iter-tools'
+import { flatten } from 'ramda'
 import createArrayEqual from 'create-array-equal'
 import 'monorepo-shared-assets/.polyfill'
 import SpecialCharacter from './utils/special-character'
@@ -188,7 +189,8 @@ class Splitter implements AsyncIterable<Splitter.Element> {
     // tslint:disable-next-line:await-promise
     for await (const element of this) {
       const { format, reset, main, prefix, suffix } = element
-      yield [...reset, ...prefix, ...format.flat(1), ...main, ...suffix]
+      const flattenFormat: Splitter.Sequence = flatten(format) as any
+      yield [...reset, ...prefix, ...flattenFormat, ...main, ...suffix]
     }
   }
 

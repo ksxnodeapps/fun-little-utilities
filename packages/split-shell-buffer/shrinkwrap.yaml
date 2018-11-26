@@ -1,8 +1,10 @@
 dependencies:
   '@types/node': 10.12.10
+  '@types/ramda': 0.25.42
   create-array-equal: 0.0.1
   iter-tools: 6.1.6
   monorepo-shared-assets: 0.0.17
+  ramda: 0.26.0
   tslib: 1.9.3
   typescript-char-code: 0.0.1
 packages:
@@ -71,6 +73,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-maK1XqpgsOo5DwjhROjqDvpm1vkphLQbpleVv+b3t5Y9uOQ0t8hTHT582+mDs7RLrex1kd4lWYizNXWLVjsq9w==
   /regenerator-runtime/0.12.1:
     dev: false
     resolution:
@@ -119,8 +125,10 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
+  '@types/ramda': ^0.25.42
   create-array-equal: ^0.0.1
   iter-tools: ^6.1.6
   monorepo-shared-assets: ^0.0.17
+  ramda: ^0.26.0
   tslib: ^1.9.3
   typescript-char-code: ^0.0.1
