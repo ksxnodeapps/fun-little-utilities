@@ -1,6 +1,6 @@
-import Splitter from '../index'
+import * as types from '../lib/types'
 
-class StringWritable implements Splitter.Writable {
+class StringWritable implements types.Writable {
   private readonly encoding: StringWritable.Encoding
   private data = ''
 

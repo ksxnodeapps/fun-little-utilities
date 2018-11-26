@@ -4,30 +4,31 @@
 import process from 'process'
 import childProcess from 'child_process'
 import assert from 'static-type-assert'
-import Splitter from 'split-shell-buffer'
+import * as all from 'split-shell-buffer'
 
-assert.compare<Splitter.Data, Buffer>('broaderLeft')
-assert.compare<Splitter.Data, ReadonlyArray<Splitter.Code>>('broaderLeft')
-assert.compare<Splitter.Data, Splitter.Code[]>('broaderLeft')
-assert.compare<Splitter.Sequence, Buffer>('broaderLeft')
-assert.compare<Splitter.Sequence, ReadonlyArray<Splitter.Code>>('broaderLeft')
-assert.compare<Splitter.Sequence, Splitter.Code[]>('broaderLeft')
-assert.compare<Splitter.Writable, typeof process.stdout>('broaderLeft')
-assert.compare<Splitter.Writable, typeof process.stderr>('broaderLeft')
+assert.compare<all.Data, Buffer>('broaderLeft')
+assert.compare<all.Data, ReadonlyArray<all.Code>>('broaderLeft')
+assert.compare<all.Data, all.Code[]>('broaderLeft')
+assert.compare<all.Sequence, Buffer>('broaderLeft')
+assert.compare<all.Sequence, ReadonlyArray<all.Code>>('broaderLeft')
+assert.compare<all.Sequence, all.Code[]>('broaderLeft')
+assert.compare<all.Writable, typeof process.stdout>('broaderLeft')
+assert.compare<all.Writable, typeof process.stderr>('broaderLeft')
 
-const splitter = new Splitter({ data: [] })
-splitter.write(process.stdout)
-splitter.writeln(process.stdout)
+const splitter = all.create({ data: [] })
+assert<all.SplitterObject>(splitter)
+all.write(process.stdout, splitter)
+all.write(process.stdin, splitter)
 
-new Splitter({ data: Buffer.from('') })
-new Splitter({ data: Buffer.from(''), prefix: Buffer.from(''), suffix: Buffer.from('') })
-new Splitter({ data: [0, 1, 2, 3] })
-new Splitter({ data: [0, 1], prefix: [2, 3], suffix: [4, 5] })
+all.create({ data: Buffer.from('') })
+all.create({ data: Buffer.from(''), prefix: Buffer.from(''), suffix: Buffer.from('') })
+all.create({ data: [0, 1, 2, 3] })
+all.create({ data: [0, 1], prefix: [2, 3], suffix: [4, 5] })
 
-Splitter.fromIterableStream(process.stdin)
-Splitter.fromIterableStream(childProcess.spawn('').stdout)
-Splitter.fromIterableStream(childProcess.spawn('').stderr)
+all.fromIterableStream(process.stdin)
+all.fromIterableStream(childProcess.spawn('').stdout)
+all.fromIterableStream(childProcess.spawn('').stderr)
 
-Splitter.fromEventedStream(process.stdin)
-Splitter.fromEventedStream(childProcess.spawn('').stdout)
-Splitter.fromEventedStream(childProcess.spawn('').stderr)
+all.fromEventedStream(process.stdin)
+all.fromEventedStream(childProcess.spawn('').stdout)
+all.fromEventedStream(childProcess.spawn('').stderr)

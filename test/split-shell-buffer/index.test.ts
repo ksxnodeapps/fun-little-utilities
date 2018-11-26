@@ -1,5 +1,5 @@
 import process from 'process'
-import Splitter from 'split-shell-buffer'
+import { fromString, toString, fromIterableStream, fromEventedStream, fromChildProcess } from 'split-shell-buffer'
 import { mkDesc } from './.lib/conditional-test'
 import { normalText, styledText } from './.lib/data'
 import spawnExecutable from './.lib/spawn-executable'
@@ -11,23 +11,17 @@ it('correctly indents normal text', async () => {
   ].join('\n')
 
   expect(
-    await Splitter
-      .fromString(normalText)
-      .withIndent(2)
-      .toString()
-  ).toBe(
-    await Splitter
-      .fromString(indentedNormalText)
-      .toString()
-  )
+    await toString(
+      fromString(normalText).withIndent(2)
+    )
+  ).toBe(indentedNormalText)
 })
 
 it('indented styled text matches snapshot', async () => {
   expect(
-    await Splitter
-      .fromString(styledText)
-      .withIndent(2)
-      .toString()
+    await toString(
+      fromString(styledText).withIndent(2)
+    )
   ).toMatchSnapshot()
 })
 
@@ -37,10 +31,9 @@ it('indentation part of indented styled text only contain spaces and leading res
 
   expect(
     (
-      await Splitter
-        .fromString(styledText)
-        .withIndent(indent)
-        .toString()
+      await toString(
+        fromString(styledText).withIndent(indent)
+      )
     )
       .split('\n')
       .every(text => regex.test(text))
@@ -58,9 +51,9 @@ describe('works with child processes', () => {
     describe('via fromIterableStream()', () => {
       it('on stdout', async () => {
         expect(
-          await Splitter
-            .fromIterableStream(spawnExecutable().stdout)
-            .toString()
+          await toString(
+            fromIterableStream(spawnExecutable().stdout)
+          )
         ).toBe([
           'stdout 0',
           'stdout 1',
@@ -71,9 +64,9 @@ describe('works with child processes', () => {
 
       it('on stderr', async () => {
         expect(
-          await Splitter
-            .fromIterableStream(spawnExecutable().stderr)
-            .toString()
+          await toString(
+            fromIterableStream(spawnExecutable().stderr)
+          )
         ).toBe([
           'stderr 0',
           'stderr 1',
@@ -87,9 +80,9 @@ describe('works with child processes', () => {
   describe('via fromEventedStream()', () => {
     it('on stdout', async () => {
       expect(
-        await Splitter
-          .fromEventedStream(spawnExecutable().stdout)
-          .toString()
+        await toString(
+          fromEventedStream(spawnExecutable().stdout)
+        )
       ).toBe([
         'stdout 0',
         'stdout 1',
@@ -100,9 +93,9 @@ describe('works with child processes', () => {
 
     it('on stderr', async () => {
       expect(
-        await Splitter
-          .fromEventedStream(spawnExecutable().stderr)
-          .toString()
+        await toString(
+          fromEventedStream(spawnExecutable().stderr)
+        )
       ).toBe([
         'stderr 0',
         'stderr 1',
@@ -115,9 +108,9 @@ describe('works with child processes', () => {
   it('via fromChildProcess', async () => {
     expect(new Set(
       (
-        await Splitter
-          .fromChildProcess(spawnExecutable())
-          .toString()
+        await toString(
+          fromChildProcess(spawnExecutable())
+        )
       )
         .split('\n')
     )).toEqual(new Set([

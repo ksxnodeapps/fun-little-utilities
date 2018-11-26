@@ -1,5 +1,5 @@
 import process from 'process'
-import Splitter from 'split-shell-buffer'
+import { fromString, toString } from 'split-shell-buffer'
 import { styledText } from './.lib/data'
 
 async function main () {
@@ -8,11 +8,11 @@ async function main () {
   console.info()
 
   console.info('SPLITTED')
-  console.info(await Splitter.fromString(styledText).toString())
+  console.info(await toString(fromString(styledText)))
   console.info()
 
   console.info('SPLITTED AND INDENTED')
-  console.info(await Splitter.fromString(styledText).withIndent(4).toString())
+  console.info(await toString(fromString(styledText).withIndent(4)))
   console.info()
 }
 
