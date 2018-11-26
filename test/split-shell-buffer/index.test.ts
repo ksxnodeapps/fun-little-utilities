@@ -46,30 +46,32 @@ it('indentation part of indented styled text only contain spaces and leading res
 })
 
 describe('works with child processes', () => {
-  it('via fromEventedStream() on stdout', async () => {
-    expect(
-      await Splitter
-        .fromEventedStream(spawnExecutable().stdout)
-        .toString()
-    ).toBe([
-      'stdout 0',
-      'stdout 1',
-      'stdout 2',
-      ''
-    ].join('\n'))
-  })
+  describe('via fromEventedStream()', () => {
+    it('on stdout', async () => {
+      expect(
+        await Splitter
+          .fromEventedStream(spawnExecutable().stdout)
+          .toString()
+      ).toBe([
+        'stdout 0',
+        'stdout 1',
+        'stdout 2',
+        ''
+      ].join('\n'))
+    })
 
-  it('via fromEventedStream() on stderr', async () => {
-    expect(
-      await Splitter
-        .fromEventedStream(spawnExecutable().stderr)
-        .toString()
-    ).toBe([
-      'stderr 0',
-      'stderr 1',
-      'stderr 2',
-      ''
-    ].join('\n'))
+    it('on stderr', async () => {
+      expect(
+        await Splitter
+          .fromEventedStream(spawnExecutable().stderr)
+          .toString()
+      ).toBe([
+        'stderr 0',
+        'stderr 1',
+        'stderr 2',
+        ''
+      ].join('\n'))
+    })
   })
 
   it('via fromChildProcess', async () => {
