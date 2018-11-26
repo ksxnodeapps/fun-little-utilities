@@ -218,7 +218,7 @@ describe('writeln()', () => {
   })
 })
 
-describe('withPrefix()', () => {
+describe('SplitterObject::withPrefix()', () => {
   it('creates a new instance', () => {
     const a = fromIterable([])
     const b = a.withPrefix([])
@@ -237,7 +237,7 @@ describe('withPrefix()', () => {
   })
 })
 
-describe('withSuffix()', () => {
+describe('SplitterObject::withSuffix()', () => {
   it('creates a new instance', () => {
     const a = fromIterable([])
     const b = a.withSuffix([])
@@ -256,7 +256,7 @@ describe('withSuffix()', () => {
   })
 })
 
-describe('withIndent()', () => {
+describe('SplitterObject::withIndent()', () => {
   it('calls withPrefix()', () => {
     expect(
       fromIterable([])
