@@ -1,3 +1,4 @@
+import 'monorepo-shared-assets/.polyfill'
 import SplitterObject from './lib/splitter-object'
 import create from './lib/create'
 import fromIterable from './lib/from-iterable'
