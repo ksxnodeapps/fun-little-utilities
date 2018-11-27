@@ -1,3 +1,4 @@
+import 'monorepo-shared-assets/.polyfill'
 import { AsyncNextFuncLike, AsyncNextFunc } from './types'
 import createAsyncNextFunc from './create-async-next-func'
 

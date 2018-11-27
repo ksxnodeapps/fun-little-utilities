@@ -1,4 +1,3 @@
-import './polyfill'
 export * from './lib/types'
 
 import createIterableIterator from './lib/create-iterable-iterator'
