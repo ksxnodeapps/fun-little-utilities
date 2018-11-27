@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createIterableIterator() is an iterator 1`] = `
+Array [
+  IteratorResultInstance {
+    "done": false,
+    "value": 0,
+  },
+  IteratorResultInstance {
+    "done": false,
+    "value": 1,
+  },
+  IteratorResultInstance {
+    "done": false,
+    "value": 2,
+  },
+  IteratorResultInstance {
+    "done": false,
+    "value": 3,
+  },
+  IteratorResultInstance {
+    "done": false,
+    "value": 4,
+  },
+  IteratorResultInstance {
+    "done": true,
+    "value": undefined,
+  },
+]
+`;
