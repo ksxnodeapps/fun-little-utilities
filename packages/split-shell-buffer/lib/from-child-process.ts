@@ -20,8 +20,8 @@ function fromChildProcess (cp: types.ChildProcess): SplitterObject {
           break
 
         case 'data':
-          stdout.on(event, fn)
-          stderr.on(event, fn)
+          stdout.on('data', fn)
+          stderr.on('data', fn)
           break
       }
     }
