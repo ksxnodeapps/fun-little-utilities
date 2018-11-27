@@ -23,9 +23,9 @@ class AsyncIteratorResultInstance<Value> extends Promise<IteratorResultInstance<
 namespace AsyncIteratorResultInstance {
   export type ConstructorParam<Value> =
     AsyncIteratorResultLike<Value> |
-    Callback<Value>
+    Executor<Value>
 
-  export interface Callback<Value> {
+  export interface Executor<Value> {
     (resolve: Resolver<Value>, reject: Rejector): void
   }
 
