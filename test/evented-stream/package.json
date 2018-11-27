@@ -1,7 +1,8 @@
 {
   "private": true,
   "dependencies": {
-    "monorepo-shared-assets": "^0.0.17",
-    "iterate-evented-stream": "file:../../packages/iterate-evented-stream"
+    "static-type-assert": "^3.0.1",
+    "iterate-evented-stream": "file:../../packages/iterate-evented-stream",
+    "evented-stream-types": "file:../../packages/evented-stream-types"
   }
 }
