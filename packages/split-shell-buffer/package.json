@@ -27,6 +27,7 @@
     "typescript-char-code": "^0.0.1",
     "monorepo-shared-assets": "^0.0.17",
     "tslib": "^1.9.3",
+    "construct-iterator": "^0.0.0",
     "@types/ramda": "^0.25.42",
     "@types/node": "^10.12.0"
   },
