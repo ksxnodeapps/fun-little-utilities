@@ -23,6 +23,8 @@ describe('deals with async next()', () => {
     const create = () => createAsyncIterableIterator(mknext(5))
 
     it('is iterable', async () => {
+      // workaround https://github.com/palantir/tslint/issues/3997
+      // tslint:disable-next-line:await-promise
       for await (const x of create()) {
         expect(typeof x).toBe('number')
       }
@@ -90,6 +92,8 @@ describe('deals with sync next()', () => {
     const create = () => createAsyncIterableIterator(mknext(5))
 
     it('is iterable', async () => {
+      // workaround https://github.com/palantir/tslint/issues/3997
+      // tslint:disable-next-line:await-promise
       for await (const x of create()) {
         expect(typeof x).toBe('number')
       }
