@@ -50,10 +50,12 @@ export interface ChildProcess {
   readonly stdout: EventedStream
   readonly stderr: EventedStream
   on (event: 'close', listener: ChildProcess.CloseEventListener): void
+  on (event: 'error', listener: ChildProcess.ErrorEventListener): void
 }
 
 export namespace ChildProcess {
   export type CloseEventListener = () => void
+  export type ErrorEventListener = () => void
 }
 
 export interface ConstructorOptions {

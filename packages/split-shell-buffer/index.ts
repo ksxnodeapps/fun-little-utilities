@@ -11,8 +11,10 @@ import elements from './lib/elements'
 import lines from './lib/lines'
 import write from './lib/write'
 import writeln from './lib/writeln'
+import * as errorClasses from './lib/error-classes'
 import * as types from './lib/types'
 
+export * from './lib/error-classes'
 export * from './lib/types'
 
 export {
@@ -28,5 +30,6 @@ export {
   lines,
   write,
   writeln,
+  errorClasses,
   types
 }

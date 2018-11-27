@@ -11,6 +11,8 @@ import {
   toString,
   write,
   writeln,
+  StdOutError,
+  StdErrError,
   SplitterObject,
   SequenceFunc,
   EventedStream,
@@ -261,6 +263,58 @@ describe('fromChildProcess()', () => {
       'err 2',
       ''
     ].join('\n'))
+  })
+
+  it('when stdout from provided child process emits an error', async () => {
+    const { splitter, process, emitStdOut } = new Init()
+    const expectedError = new Error('Expected')
+
+    emitStdOut(100, 'error', expectedError)
+
+    await toString(splitter).then(
+      () => {
+        throw new Error('Expecting a rejection but it resolves')
+      },
+
+      (error: StdOutError) => {
+        expect(error).toBeInstanceOf(StdOutError)
+        expect(error.error).toBe(expectedError)
+        expect(error.stream).toBe(process.stdout)
+        expect(error.name).toBe('StdOutError')
+        expect(error.message).toBe(String(error.error))
+      }
+    )
+  })
+
+  it('when stderr from provided child process emits an error', async () => {
+    const { splitter, process, emitStdErr } = new Init()
+    const expectedError = new Error('Expected')
+
+    emitStdErr(100, 'error', expectedError)
+
+    await toString(splitter).then(
+      () => {
+        throw new Error('Expecting a rejection but it resolves')
+      },
+
+      (error: StdErrError) => {
+        expect(error).toBeInstanceOf(StdErrError)
+        expect(error.error).toBe(expectedError)
+        expect(error.stream).toBe(process.stderr)
+        expect(error.name).toBe('StdErrError')
+        expect(error.message).toBe(String(error.error))
+      }
+    )
+  })
+
+  it('when provided child process emits an error', async () => {
+    const { splitter, emitProcess } = new Init()
+    const error = new Error('Expected')
+
+    emitProcess(100, 'error', error)
+
+    // tslint:disable-next-line:no-floating-promises
+    expect(toString(splitter)).rejects.toBe(error)
   })
 })
 
