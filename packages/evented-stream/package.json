@@ -1,0 +1,33 @@
+{
+  "name": "evented-stream",
+  "version": "0.0.0",
+  "description": "Collection of evented-stream packages",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "stream",
+    "iterate",
+    "asynchronous",
+    "event",
+    "async",
+    "iterable"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.3",
+    "iterate-evented-stream": "^0.0.0",
+    "evented-stream-types": "^0.0.0",
+    "@types/ramda": "^0.25.42",
+    "@types/node": "^10.12.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}
