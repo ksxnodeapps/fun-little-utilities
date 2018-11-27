@@ -3,6 +3,7 @@ import createArrayEqual from 'create-array-equal'
 import SpecialCharacter from '../utils/special-character'
 import Digit from '../utils/digit'
 import { isResetSequence } from '../utils/sequence-tests'
+import callMaybeFunction from '../utils/call-maybe-function'
 import * as types from './types'
 
 const { Start, StartFollow, End, EndOfLine } = SpecialCharacter
@@ -22,8 +23,8 @@ async function * iterateElements (splitter: types.Splitter): AsyncIterableIterat
     format: Array.from(leadingCharacters),
     reset: leadingCharacters.length ? RESET : [],
     main: currentLine,
-    prefix,
-    suffix
+    prefix: callMaybeFunction(prefix, { splitter, currentLine, leadingCharacters }),
+    suffix: callMaybeFunction(suffix, { splitter, currentLine, leadingCharacters })
   })
 
   function pushCurrentLine (char: types.Code) {

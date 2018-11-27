@@ -47,6 +47,21 @@ it('indentation part of indented styled text only contain spaces and leading res
   ).toBe(true)
 })
 
+it('numbered styled text matches snapshot', async () => {
+  let index = 0
+
+  const prefix = () => {
+    index += 1
+    return Buffer.from(`${index}. `)
+  }
+
+  expect(
+    await toString(
+      fromString(styledText).withPrefix(prefix)
+    )
+  ).toMatchSnapshot()
+})
+
 describe('works with child processes', () => {
   {
     // Some Node.js versions do not support asyncIterator

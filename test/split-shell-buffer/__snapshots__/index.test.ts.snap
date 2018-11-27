@@ -16,3 +16,20 @@ exports[`indented styled text matches snapshot 1`] = `
 [0m  [4m[7m[27m[24mfoo
   bar"
 `;
+
+exports[`numbered styled text matches snapshot 1`] = `
+"1. abc [1mdef [2m
+[0m2. [1m[2mghi [0;0mjkl [91;22;3m
+[0m3. [91;22;3mmno pqrs [m
+4. tuv wxyz
+5. 01 [2m23 [1m45
+[0m6. [2m[1m67 [m89
+7.  -- [4munderline[0] -- [24m
+[0m8. [4m[24m[4m -- underline[1][24m -- 
+[0m9. [4m[24m -- [7minverse[0] -- [27m
+[0m10. [7m[27m[7m -- inverse[1][27m -- 
+[0m11. [7m[27m -- [4m[7munderline.inverse[0] -- [27m[24m
+[0m12. [4m[7m[27m[24m[4m[7m -- underline.inverse[1][27m[24m -- 
+[0m13. [4m[7m[27m[24mfoo
+14. bar"
+`;

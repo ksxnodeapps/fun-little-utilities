@@ -2,8 +2,8 @@ import * as types from './types'
 
 class SplitterObject implements types.Splitter {
   public readonly data: types.Data
-  public readonly prefix: types.Sequence
-  public readonly suffix: types.Sequence
+  public readonly prefix: types.SequenceFunc
+  public readonly suffix: types.SequenceFunc
 
   constructor (options: types.ConstructorOptions) {
     this.data = options.data
@@ -11,12 +11,12 @@ class SplitterObject implements types.Splitter {
     this.suffix = options.suffix || []
   }
 
-  public withPrefix (prefix: types.Sequence): SplitterObject {
+  public withPrefix (prefix: types.SequenceFunc): SplitterObject {
     const { data, suffix } = this
     return new SplitterObject({ data, prefix, suffix })
   }
 
-  public withSuffix (suffix: types.Sequence): SplitterObject {
+  public withSuffix (suffix: types.SequenceFunc): SplitterObject {
     const { data, prefix } = this
     return new SplitterObject({ data, prefix, suffix })
   }

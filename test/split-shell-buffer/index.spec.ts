@@ -12,6 +12,7 @@ import {
   write,
   writeln,
   SplitterObject,
+  SequenceFunc,
   EventedStream,
   ChildProcess
 } from 'split-shell-buffer'
@@ -29,20 +30,77 @@ class ChildProcessObject extends EventEmitter implements ChildProcess {
 
 describe('create()', () => {
   describe('constructs an object', () => {
-    const splitter = create({
-      data: Buffer.from(normalText)
+    describe('without providing optional properties', () => {
+      const splitter = create({
+        data: Buffer.from(normalText)
+      })
+
+      it('which is an instance of SplitterObject', () => {
+        expect(splitter).toBeInstanceOf(SplitterObject)
+      })
+
+      it('which has desired properties', () => {
+        expect(splitter).toMatchObject({
+          prefix: [],
+          suffix: [],
+          data: Buffer.from(normalText)
+        })
+      })
     })
+  })
+
+  describe('with prefix and suffix as instances of Buffer', () => {
+    const data = Buffer.from(normalText)
+    const prefix = Buffer.from('<prefix>')
+    const suffix = Buffer.from('<suffix>')
+
+    const splitter = create({ data, prefix, suffix })
 
     it('which is an instance of SplitterObject', () => {
       expect(splitter).toBeInstanceOf(SplitterObject)
     })
 
     it('which has desired properties', () => {
-      expect(splitter).toMatchObject({
-        prefix: [],
-        suffix: [],
-        data: Buffer.from(normalText)
-      })
+      expect(splitter).toMatchObject({ data, prefix, suffix })
+    })
+  })
+
+  describe('with prefix and suffix as functions that return instances of Buffer', () => {
+    type SeqParam = SequenceFunc.Param
+    const data = Buffer.from(normalText)
+
+    const createTracker = (collection: SeqParam[], data: Buffer) => (param: SeqParam) => {
+      collection.push(param)
+      return data
+    }
+
+    const prefixParamCollection = Array<SeqParam>()
+    const prefix = createTracker(prefixParamCollection, Buffer.from('<prefix>'))
+
+    const suffixParamCollection = Array<SeqParam>()
+    const suffix = createTracker(suffixParamCollection, Buffer.from('<suffix>'))
+
+    const splitter = create({ data, prefix, suffix })
+    const stringPromise = toString(splitter)
+
+    it('which is an instance of SplitterObject', () => {
+      expect(splitter).toBeInstanceOf(SplitterObject)
+    })
+
+    it('which has desired properties', () => {
+      expect(splitter).toMatchObject({ data, prefix, suffix })
+    })
+
+    it('calls prefix and suffix as functions with desired parameters', async () => {
+      await stringPromise
+      expect({ prefixParamCollection, suffixParamCollection }).toMatchSnapshot()
+    })
+
+    it('produces desired string', async () => {
+      expect(await stringPromise).toBe([
+        '<prefix>abc def ghi<suffix>',
+        '<prefix>jkl mno pqrs<suffix>'
+      ].join('\n'))
     })
   })
 })

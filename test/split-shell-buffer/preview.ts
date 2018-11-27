@@ -1,5 +1,5 @@
 import process from 'process'
-import { fromString, toString } from 'split-shell-buffer'
+import { fromString, toString, SequenceFunc } from 'split-shell-buffer'
 import { styledText } from './.lib/data'
 
 async function main () {
@@ -14,6 +14,19 @@ async function main () {
   console.info('SPLITTED AND INDENTED')
   console.info(await toString(fromString(styledText).withIndent(4)))
   console.info()
+
+  console.info('SPLITTED AND NUMBERED')
+  console.info(await toString(fromString(styledText).withPrefix(getNumberingPrefix())))
+  console.info()
+}
+
+function getNumberingPrefix (): SequenceFunc {
+  let index = 0
+
+  return () => {
+    index += 1
+    return Buffer.from(`${index}. `)
+  }
 }
 
 enum ExitStatus {

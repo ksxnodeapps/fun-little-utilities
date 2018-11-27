@@ -1,15 +1,25 @@
 import StringWritable from '../utils/string-writable'
-import { ArrayLike } from '../utils/types'
+import { ArrayLike, MaybeFunc } from '../utils/types'
 
 export type Code = number
 export type Sequence = ArrayLike<Code>
 export type Data = AsyncIterable<Code> | Iterable<Code>
 export type IterableStream = AsyncIterable<Buffer | string>
 
+export type SequenceFunc = MaybeFunc<Sequence, [SequenceFunc.Param]>
+
+export namespace SequenceFunc {
+  export interface Param {
+    readonly splitter: Splitter
+    readonly currentLine: Sequence
+    readonly leadingCharacters: ReadonlyArray<Sequence>
+  }
+}
+
 export interface Splitter {
   readonly data: Data
-  readonly prefix: Sequence
-  readonly suffix: Sequence
+  readonly prefix: SequenceFunc
+  readonly suffix: SequenceFunc
 }
 
 export interface Element {
@@ -48,8 +58,8 @@ export namespace ChildProcess {
 
 export interface ConstructorOptions {
   readonly data: Data
-  readonly prefix?: Sequence
-  readonly suffix?: Sequence
+  readonly prefix?: SequenceFunc
+  readonly suffix?: SequenceFunc
 }
 
 export interface ToStringOptions extends StringWritable.ConstructorOptions {

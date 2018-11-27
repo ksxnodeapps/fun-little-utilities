@@ -26,6 +26,7 @@ all.create({ data: Buffer.from('') })
 all.create({ data: Buffer.from(''), prefix: Buffer.from(''), suffix: Buffer.from('') })
 all.create({ data: [0, 1, 2, 3] })
 all.create({ data: [0, 1], prefix: [2, 3], suffix: [4, 5] })
+all.create({ data: [0, 1], prefix: () => [2, 3], suffix: () => [4, 5] })
 
 all.fromIterableStream(process.stdin)
 all.fromIterableStream(childProcess.spawn('').stdout)
