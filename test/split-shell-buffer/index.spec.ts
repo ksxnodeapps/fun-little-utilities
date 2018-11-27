@@ -23,9 +23,9 @@ const mkemit = (emitter: EventEmitter) => (timeout: number, event: string, ...ar
   setTimeout(() => emitter.emit(event, ...args), timeout)
 }
 
-class EventedStreamObject extends EventEmitter implements EventedStream {}
+class EventedStreamObject extends EventEmitter implements EventedStream<string | Buffer, any> {}
 
-class ChildProcessObject extends EventEmitter implements ChildProcess {
+class ChildProcessObject extends EventEmitter implements ChildProcess<string | Buffer, any> {
   public readonly stdout = new EventedStreamObject()
   public readonly stderr = new EventedStreamObject()
 }
@@ -276,7 +276,7 @@ describe('fromChildProcess()', () => {
         throw new Error('Expecting a rejection but it resolves')
       },
 
-      (error: StdOutError) => {
+      (error: StdOutError<string | Buffer>) => {
         expect(error).toBeInstanceOf(StdOutError)
         expect(error.error).toBe(expectedError)
         expect(error.stream).toBe(process.stdout)
@@ -297,7 +297,7 @@ describe('fromChildProcess()', () => {
         throw new Error('Expecting a rejection but it resolves')
       },
 
-      (error: StdErrError) => {
+      (error: StdErrError<string | Buffer>) => {
         expect(error).toBeInstanceOf(StdErrError)
         expect(error.error).toBe(expectedError)
         expect(error.stream).toBe(process.stderr)
