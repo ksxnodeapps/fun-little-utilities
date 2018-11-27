@@ -3,6 +3,7 @@ dependencies:
   '@types/ramda': 0.25.42
   construct-iterator: 'link:../construct-iterator'
   create-array-equal: 0.0.1
+  evented-stream-types: 'link:../evented-stream-types'
   iter-tools: 6.1.6
   iterate-evented-stream: 'link:../iterate-evented-stream'
   monorepo-shared-assets: 0.0.17
@@ -129,6 +130,7 @@ specifiers:
   '@types/node': ^10.12.0
   '@types/ramda': ^0.25.42
   create-array-equal: ^0.0.1
+  evented-stream-types: ^0.0.0
   iter-tools: ^6.1.6
   iterate-evented-stream: ^0.0.0
   monorepo-shared-assets: ^0.0.17

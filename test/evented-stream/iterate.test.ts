@@ -1,6 +1,7 @@
 import { spawn } from 'child_process'
 import * as assets from 'monorepo-shared-assets'
-import iterateEventedStream, { EventedStream } from 'iterate-evented-stream'
+import iterateEventedStream from 'iterate-evented-stream'
+import { EventedStream } from 'evented-stream-types'
 import getAsyncArray = assets.asyncIter.fns.getArray
 const executable = require.resolve('./.data/executable')
 

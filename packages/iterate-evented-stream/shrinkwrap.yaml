@@ -3,6 +3,7 @@ dependencies:
   '@types/ramda': 0.25.42
   advanced-map-initialized: 0.0.2
   construct-iterator: 'link:../construct-iterator'
+  evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.17
   remote-controlled-promise: 0.0.4
   tslib: 1.9.3
@@ -101,6 +102,7 @@ specifiers:
   '@types/node': ^10.12.0
   '@types/ramda': ^0.25.42
   advanced-map-initialized: ^0.0.2
+  evented-stream-types: ^0.0.0
   monorepo-shared-assets: ^0.0.17
   remote-controlled-promise: ^0.0.4
   tslib: ^1.9.3

@@ -1,4 +1,4 @@
-import { EventedStream } from 'iterate-evented-stream'
+import { EventedStream } from 'evented-stream-types'
 import StringWritable from '../utils/string-writable'
 import { ArrayLike, MaybeFunc } from '../utils/types'
 

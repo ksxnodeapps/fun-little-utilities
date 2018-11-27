@@ -1,6 +1,7 @@
 import 'monorepo-shared-assets/.polyfill'
 import AdvancedMapInitialized from 'advanced-map-initialized'
 import createControlledPromise, { ControlledPromise } from 'remote-controlled-promise'
+import { EventedStream } from 'evented-stream-types'
 
 interface Undone<Value> {
   readonly done: false
@@ -17,7 +18,7 @@ const done: Done = { done: true }
 
 type State<Value> = Undone<Value> | Done
 
-export function iterate<Chunk, Err = any> (
+function iterate<Chunk, Err = any> (
   stream: EventedStream<Chunk, Err>
 ): AsyncIterableIterator<Chunk> {
   type Controller = ControlledPromise<State<Chunk>>
@@ -64,21 +65,4 @@ export function iterate<Chunk, Err = any> (
   return iterate(0)
 }
 
-export interface EventedStream<Chunk, Err = any> {
-  readonly addListener: EventedStream.ListenerModifier<Chunk, Err>
-  readonly removeListener: EventedStream.ListenerModifier<Chunk, Err>
-}
-
-export namespace EventedStream {
-  export interface ListenerModifier<Chunk, Err = any> {
-    (event: 'data', listener: DataEventListener<Chunk>): void
-    (event: 'error', listener: ErrorEventListener<Err>): void
-    (event: 'close', listener: CloseEventListener): void
-  }
-
-  export type DataEventListener<Chunk> = (chunk: Chunk) => void
-  export type ErrorEventListener<Err = any> = (error: Err) => void
-  export type CloseEventListener = () => void
-}
-
-export default iterate
+export = iterate
