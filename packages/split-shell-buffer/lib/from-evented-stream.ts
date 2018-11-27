@@ -1,4 +1,4 @@
-import { createAsyncIterableIterator, IteratorResultLike } from 'construct-iterator'
+import { createAsyncIterableIterator, IteratorResultLike, done, undone } from 'construct-iterator'
 import * as types from './types'
 import SplitterObject from './splitter-object'
 import fromIterableStream from './from-iterable-stream'
@@ -13,7 +13,7 @@ function fromEventedStream (stream: types.EventedStream): SplitterObject {
   const iterate = () => createAsyncIterableIterator(
     () => new Promise<IteratorResultLike<string | Buffer>>((resolve, reject) => {
       stream.on('data', value => addQueue(
-        () => resolve({ done: false, value })
+        () => resolve(undone(value))
       ))
 
       stream.on('error', error => addQueue(
@@ -21,7 +21,7 @@ function fromEventedStream (stream: types.EventedStream): SplitterObject {
       ))
 
       stream.on('close', () => addQueue(
-        () => resolve({ done: true })
+        () => resolve(done)
       ))
     })
   )

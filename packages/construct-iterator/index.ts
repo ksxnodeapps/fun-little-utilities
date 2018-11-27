@@ -12,6 +12,8 @@ import IteratorResultInstance from './lib/iterator-result-instance'
 import AsyncIterableIteratorInstance from './lib/async-iterable-iterator-instance'
 import AsyncIteratorInstance from './lib/async-iterator-instance'
 import AsyncIteratorResultInstance from './lib/async-iterator-result-instance'
+import done from './lib/done'
+import undone from './lib/undone'
 
 export {
   createIterableIterator,
@@ -25,5 +27,7 @@ export {
   IteratorResultInstance,
   AsyncIterableIteratorInstance,
   AsyncIteratorInstance,
-  AsyncIteratorResultInstance
+  AsyncIteratorResultInstance,
+  done,
+  undone
 }
