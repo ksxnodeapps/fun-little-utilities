@@ -40,13 +40,16 @@ export interface Writable {
 export interface ChildProcess<Chunk, Err = any> {
   readonly stdout: EventedStream<Chunk, Err>
   readonly stderr: EventedStream<Chunk, Err>
-  addListener (event: 'close', listener: ChildProcess.CloseEventListener): void
-  addListener (event: 'error', listener: ChildProcess.ErrorEventListener): void
-  removeListener (event: 'close', listener: ChildProcess.CloseEventListener): void
-  removeListener (event: 'error', listener: ChildProcess.ErrorEventListener): void
+  readonly addListener: ChildProcess.ListenerModifier
+  readonly removeListener: ChildProcess.ListenerModifier
 }
 
 export namespace ChildProcess {
+  export interface ListenerModifier {
+    (event: 'close', listener: CloseEventListener): void
+    (event: 'error', listener: ErrorEventListener): void
+  }
+
   export type CloseEventListener = () => void
   export type ErrorEventListener = () => void
 }
