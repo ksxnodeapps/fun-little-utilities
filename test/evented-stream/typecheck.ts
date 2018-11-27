@@ -1,7 +1,7 @@
 import { spawn } from 'child_process'
 import process from 'process'
 import assert from 'static-type-assert'
-import { EventedStream } from 'evented-stream-types'
+import { EventedStream } from 'evented-stream'
 
 const cp = spawn('')
 
