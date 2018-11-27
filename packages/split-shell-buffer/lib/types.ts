@@ -35,9 +35,9 @@ export interface Writable {
 }
 
 export interface EventedStream {
-  on (event: 'data', listener: EventedStream.DataEventListener): void
-  on (event: 'error', listener: EventedStream.ErrorEventListener): void
-  on (event: 'close', listener: EventedStream.CloseEventListener): void
+  addListener (event: 'data', listener: EventedStream.DataEventListener): void
+  addListener (event: 'error', listener: EventedStream.ErrorEventListener): void
+  addListener (event: 'close', listener: EventedStream.CloseEventListener): void
 }
 
 export namespace EventedStream {
@@ -49,8 +49,8 @@ export namespace EventedStream {
 export interface ChildProcess {
   readonly stdout: EventedStream
   readonly stderr: EventedStream
-  on (event: 'close', listener: ChildProcess.CloseEventListener): void
-  on (event: 'error', listener: ChildProcess.ErrorEventListener): void
+  addListener (event: 'close', listener: ChildProcess.CloseEventListener): void
+  addListener (event: 'error', listener: ChildProcess.ErrorEventListener): void
 }
 
 export namespace ChildProcess {

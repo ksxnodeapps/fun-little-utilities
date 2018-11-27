@@ -7,21 +7,21 @@ function fromChildProcess (cp: types.ChildProcess): SplitterObject {
   const { stdout, stderr } = cp
 
   const stream: types.EventedStream = {
-    on (event: any, fn: any): void {
+    addListener (event: any, fn: any): void {
       switch (event) {
         case 'close':
-          cp.on('close', fn)
+          cp.addListener('close', fn)
           break
 
         case 'error':
-          cp.on('error', fn)
-          stdout.on('error', error => fn(new StdOutError(stdout, error)))
-          stderr.on('error', error => fn(new StdErrError(stderr, error)))
+          cp.addListener('error', fn)
+          stdout.addListener('error', error => fn(new StdOutError(stdout, error)))
+          stderr.addListener('error', error => fn(new StdErrError(stderr, error)))
           break
 
         case 'data':
-          stdout.on('data', fn)
-          stderr.on('data', fn)
+          stdout.addListener('data', fn)
+          stderr.addListener('data', fn)
           break
       }
     }

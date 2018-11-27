@@ -12,15 +12,15 @@ function fromEventedStream (stream: types.EventedStream): SplitterObject {
 
   const iterate = () => createAsyncIterableIterator(
     () => new Promise<IteratorResultLike<string | Buffer>>((resolve, reject) => {
-      stream.on('data', value => addQueue(
+      stream.addListener('data', value => addQueue(
         () => resolve(undone(value))
       ))
 
-      stream.on('error', error => addQueue(
+      stream.addListener('error', error => addQueue(
         () => reject(error)
       ))
 
-      stream.on('close', () => addQueue(
+      stream.addListener('close', () => addQueue(
         () => resolve(done)
       ))
     })
