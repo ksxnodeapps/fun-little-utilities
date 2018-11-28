@@ -1,6 +1,5 @@
 dependencies:
   '@types/node': 10.12.10
-  '@types/ramda': 0.25.42
   evented-stream-types: 'link:../evented-stream-types'
   iterate-evented-stream: 'link:../iterate-evented-stream'
   tslib: 1.9.3
@@ -9,10 +8,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
-  /@types/ramda/0.25.42:
-    dev: false
-    resolution:
-      integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
   /tslib/1.9.3:
     dev: false
     resolution:
@@ -22,7 +17,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
-  '@types/ramda': ^0.25.42
   evented-stream-types: ^0.0.0
   iterate-evented-stream: ^0.0.0
   tslib: ^1.9.3

@@ -24,7 +24,6 @@
     "tslib": "^1.9.3",
     "iterate-evented-stream": "^0.0.0",
     "evented-stream-types": "^0.0.0",
-    "@types/ramda": "^0.25.42",
     "@types/node": "^10.12.0"
   },
   "engines": {
