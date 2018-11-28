@@ -5,5 +5,5 @@ import iterateEventedStream from 'iterate-evented-stream'
 
 export =
   <Chunk extends string | Buffer>
-    (stream: types.EventedStream<Chunk, any>): SplitterObject =>
+    (stream: types.EventedStream<Chunk>): SplitterObject =>
       fromIterableStream({ [Symbol.asyncIterator]: () => iterateEventedStream(stream) })

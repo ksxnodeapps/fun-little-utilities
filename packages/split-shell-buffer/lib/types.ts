@@ -37,7 +37,7 @@ export interface Writable {
   write (buffer: Buffer): void
 }
 
-export interface ChildProcess<Chunk, Err = any> {
+export interface ChildProcess<Chunk, Err = Error> {
   readonly stdout: EventedStream<Chunk, Err>
   readonly stderr: EventedStream<Chunk, Err>
   readonly addListener: ChildProcess.ListenerModifier
