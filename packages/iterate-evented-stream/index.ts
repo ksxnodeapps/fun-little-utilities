@@ -30,7 +30,7 @@ function iterate<Chunk, Err = any> (
     () => createControlledPromise()
   )
 
-  {
+  ; (() => {
     let promiseDictIndex = 0
 
     function forward (fn: (chunk: Controller) => void) {
@@ -50,7 +50,7 @@ function iterate<Chunk, Err = any> (
       stream.removeListener('error', errorListener)
       stream.removeListener('close', listener)
     })
-  }
+  })()
 
   async function * iterate (index: number): AsyncIterableIterator<Chunk> {
     const state = await promiseDict.get(index).promise

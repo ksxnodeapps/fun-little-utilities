@@ -18,6 +18,7 @@ function combineEventedStream<StreamChunk, StreamError = any> (
   const createEvtMod = (modfn: EvtModFn): EvtMod => (event: Event, fn: any) => {
     switch (event) {
       case 'close':
+        // tslint:disable-next-line:no-floating-promises
         Promise.all(collection.map(
           stream => new Promise<void>(resolve => {
             stream.addListener('close', () => resolve())
