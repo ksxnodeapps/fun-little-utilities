@@ -1,0 +1,91 @@
+dependencies:
+  event-target-proxy: 'link:../../packages/event-target-proxy'
+  iter-tools: 6.1.7
+  static-type-assert: 3.0.1
+packages:
+  /@babel/runtime-corejs2/7.1.5:
+    dependencies:
+      core-js: 2.5.7
+      regenerator-runtime: 0.12.1
+    dev: false
+    resolution:
+      integrity: sha512-WsYRwQsFhVmxkAqwypPTZyV9GpkqMEaAr2zOItOmqSX2GBFaI+eq98CN81e13o0zaUKJOQGYyjhNVqj56nnkYg==
+  /@babel/runtime/7.1.5:
+    dependencies:
+      regenerator-runtime: 0.12.1
+    dev: false
+    resolution:
+      integrity: sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
+  /core-js/2.5.7:
+    dev: false
+    resolution:
+      integrity: sha512-RszJCAxg/PP6uzXVXL6BsxSXx/B05oJAQ2vkJRjyjrEcNVycaqOmNb5OTxZPE3xa5gwZduqza6L9JOCenh/Ecw==
+  /dequeue/1.0.5:
+    dev: false
+    resolution:
+      integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
+  /iter-tools/6.1.7:
+    dependencies:
+      '@babel/runtime': 7.1.5
+      '@babel/runtime-corejs2': 7.1.5
+      dequeue: 1.0.5
+      little-ds-toolkit: 1.1.0
+      typescript-tuple: 1.7.3
+      typescript-union: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-UlHmWCnzDuwSNzz7MwBl5mUwnMYKC2StNjaWeRTasEmgc5A+5mPcX7pHUETMf5XRaBeznyK5gXsEH+J83IswGw==
+  /little-ds-toolkit/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-2ARbmay5TrhFxFqcyFxPigmRToDuo8yxvIMdvwsDYNd/oZKnvsFT5L3I7s8WLXR7/tThYeffN9ouDtFFk4wzsA==
+  /regenerator-runtime/0.12.1:
+    dev: false
+    resolution:
+      integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+  /static-type-assert/3.0.1:
+    dependencies:
+      typescript-compare: 0.0.2
+    dev: false
+    peerDependencies:
+      typescript: ^3.0.3
+    resolution:
+      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+  /typescript-compare/0.0.2:
+    dependencies:
+      typescript-logic: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+  /typescript-logic/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
+  /typescript-tuple/1.7.3:
+    dev: false
+    engines:
+      typescript: ^3.0.0
+    resolution:
+      integrity: sha512-ygCTfD6CX5ul+J0sZhq2MSouMNAeJpRXAFkYPUZomv457KWg15DuS7n+ubv15LtbX27iVo6DkuiX/5yyNdBvVg==
+  /typescript-union/0.0.0:
+    dependencies:
+      typescript-tuple: 1.7.3
+      utility-types: 2.1.0
+    dev: false
+    peerDependencies:
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-sWOTNcTOXw27cJhfvjSbxrKggb4XD+fPIFkjIqqnycdVqStj/3IR3QVEMZOheWY5ELGS3PCwuHFDVWAbK9UHvA==
+  /utility-types/2.1.0:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-/nP2gqavggo6l38rtQI/CdeV+2fmBGXVvHgj9kV2MAnms3TIi77Mz9BtapPFI0+GZQCqqom0vACQ+VlTTaCovw==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  event-target-proxy: 'file:../../packages/event-target-proxy'
+  iter-tools: ^6.1.7
+  static-type-assert: ^3.0.1
