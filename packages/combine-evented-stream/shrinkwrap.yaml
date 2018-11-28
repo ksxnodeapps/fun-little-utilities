@@ -1,9 +1,6 @@
 dependencies:
   '@types/node': 10.12.10
-  combine-evented-stream: 'link:../combine-evented-stream'
   evented-stream-types: 'link:../evented-stream-types'
-  iterate-evented-stream: 'link:../iterate-evented-stream'
-  join-evented-stream: 'link:../join-evented-stream'
   tslib: 1.9.3
 packages:
   /@types/node/10.12.10:
@@ -19,7 +16,5 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
-  combine-evented-stream: ^0.0.0
   evented-stream-types: ^0.0.0
-  iterate-evented-stream: ^0.0.0
   tslib: ^1.9.3
