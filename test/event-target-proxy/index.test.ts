@@ -67,7 +67,7 @@ describe('create()', () => {
     expect(proxy).toBeInstanceOf(EventTargetProxy)
   })
 
-  describe('when transformer that merely returns provided listener as-is', () => {
+  describe('with a transformer that merely returns provided listener as-is', () => {
     it('calls provided listener as-is', async () => {
       const init = new InitAsIs()
       const record = Array<any>()
@@ -80,7 +80,7 @@ describe('create()', () => {
       )
     })
 
-    describe('when emitter emits wrong event', () => {
+    describe('when the emitter emits wrong events', () => {
       it('does not all listener', async () => {
         const { proxy, target, confirmEmittingStopped, whenEmittingStopped } = new InitAsIs()
         const record = Array<any>()
@@ -103,7 +103,7 @@ describe('create()', () => {
     })
   })
 
-  describe('with transformer that ignores provided transformer', () => {
+  describe('with a transformer that ignores provided listener', () => {
     it('ignores provided listener', async () => {
       const provided = (x: any) => recordProvided.push(x)
       const replacement = (x: any) => recordReplacement.push(x)
