@@ -285,7 +285,6 @@ describe('EventTargetProxy::removeListener', () => {
       const { target, proxy } = new InitAsIs()
       const listener = () => undefined
 
-
       for (const event of 'abc') {
         proxy.addListener(event, listener)
       }
