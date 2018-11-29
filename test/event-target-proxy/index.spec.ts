@@ -125,7 +125,7 @@ it('exports create function by default', () => {
 
 describe('create', () => {
   it('creates an instance of EventTargetProxy', () => {
-    const { proxy } = new InitAsIs()
+    const proxy = create(new MockedEventEmitter(), x => x.listener)
     expect(proxy).toBeInstanceOf(EventTargetProxy)
   })
 })
