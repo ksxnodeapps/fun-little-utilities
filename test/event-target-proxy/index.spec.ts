@@ -123,6 +123,13 @@ it('exports create function by default', () => {
   expect(defaultImport).toBe(create)
 })
 
+describe('create', () => {
+  it('creates an instance of EventTargetProxy', () => {
+    const { proxy } = new InitAsIs()
+    expect(proxy).toBeInstanceOf(EventTargetProxy)
+  })
+})
+
 describe('create.EvtTrgPrx', () => {
   it('is EventTargetProxy', () => {
     expect(create.EvtTrgPrx).toBe(EventTargetProxy)

@@ -62,11 +62,6 @@ describe('create()', () => {
     return { order, init, listener }
   }
 
-  it('creates an instance of EventTargetProxy', () => {
-    const { proxy } = new InitAsIs()
-    expect(proxy).toBeInstanceOf(EventTargetProxy)
-  })
-
   describe('with a transformer that merely returns provided listener as-is', () => {
     it('calls provided listener as-is', async () => {
       const init = new InitAsIs()
