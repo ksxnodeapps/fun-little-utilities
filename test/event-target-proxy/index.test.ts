@@ -103,6 +103,20 @@ describe('create()', () => {
     })
   })
 
+  describe('with a transformer that returns a listener that merely calls provided listener as-is', () => {
+    it('calls provided listener as-is', async () => {
+      const init = new InitEventEmitter(({ listener }) => (x: any) => listener(x))
+      const record = Array<any>()
+
+      const listener = (x: any) => record.push(x)
+      const { order } = await handleInit(init, listener)
+
+      expect(record).toEqual(
+        Array.from(enumerate(order))
+      )
+    })
+  })
+
   describe('with a transformer that ignores provided listener', () => {
     it('ignores provided listener', async () => {
       const provided = (x: any) => recordProvided.push(x)
