@@ -13,8 +13,8 @@ export interface ListenerModifier<Event, Listener> {
   (event: Event, listener: Listener): void
 }
 
-export interface ListenerTransformer<Event, Listener> {
-  (param: ListenerTransformer.Param<Event, Listener>): Listener
+export interface ListenerTransformer<Event, ProvidedListener, TransformedListener> {
+  (param: ListenerTransformer.Param<Event, ProvidedListener>): TransformedListener
 }
 
 export namespace ListenerTransformer {
@@ -37,14 +37,13 @@ export abstract class EventTargetProxy<Event, Listener> implements EventTarget<E
  */
 export function create<
   Event = AnyEvent,
-  Listener = AnyListener
+  ProvidedListener = AnyListener,
+  TransformedListener = ProvidedListener
 > (
-  target: EventTarget<Event, Listener>,
-  transform: ListenerTransformer<Event, Listener>
-): create.EvtTrgPrx<Event, Listener> {
-  type UserProvidedListener = Listener
-  type TransformedListener = Listener
-  type Mod = ListenerModifier<Event, Listener>
+  target: EventTarget<Event, TransformedListener>,
+  transform: ListenerTransformer<Event, ProvidedListener, TransformedListener>
+): create.EvtTrgPrx<Event, ProvidedListener> {
+  type Mod = ListenerModifier<Event, ProvidedListener>
 
   /**
    * This class is used to create `listeners` object
@@ -52,7 +51,7 @@ export function create<
    * It is in this class that key pairs are compared
    */
   class LocalMultiKeyMap extends MultiKeyMap<
-    [Event, UserProvidedListener],
+    [Event, ProvidedListener],
     TransformedListener
   > {
     constructor () {
@@ -66,7 +65,7 @@ export function create<
    * It is in this class that `TransformedListener`s are created
    */
   class LocalInitMap extends InitMap<
-    [Event, UserProvidedListener],
+    [Event, ProvidedListener],
     TransformedListener,
     LocalMultiKeyMap
   > {
@@ -97,7 +96,7 @@ export function create<
     listeners.delete([event, listener])
   }
 
-  class EvtTrgPrx extends EventTargetProxy<Event, Listener> {
+  class EvtTrgPrx extends EventTargetProxy<Event, ProvidedListener> {
     public readonly addListener = add
     public readonly removeListener = remove
   }
