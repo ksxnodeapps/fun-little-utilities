@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
 import { enumerate } from 'iter-tools'
 
-import defaultImport, {
+import {
   create,
   EventTargetProxy,
   ListenerTransformer,
@@ -44,10 +44,6 @@ class InitAsIs extends InitEventEmitter {
     super(x => x.listener)
   }
 }
-
-it('exports create function by default', () => {
-  expect(defaultImport).toBe(create)
-})
 
 describe('create()', () => {
   async function handleInit (init: InitEventEmitter, listener: AnyListener) {
@@ -160,11 +156,5 @@ describe('create()', () => {
         order.map((event, value) => ({ event, value, listener }))
       )
     })
-  })
-})
-
-describe('create.EvtTrgPrx', () => {
-  it('is EventTargetProxy', () => {
-    expect(create.EvtTrgPrx).toBe(EventTargetProxy)
   })
 })
