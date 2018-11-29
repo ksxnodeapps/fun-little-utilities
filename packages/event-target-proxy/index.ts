@@ -91,6 +91,7 @@ export function create<
   }
 
   const remove: Mod = (event, listener) => {
+    if (!listeners.has([event, listener])) return
     const transformed = listeners.get([event, listener])
     target.removeListener(event, transformed)
     listeners.delete([event, listener])
