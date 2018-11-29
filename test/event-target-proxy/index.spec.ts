@@ -10,7 +10,7 @@ import defaultImport, {
 
 type AnyEvent = string | symbol
 type AnyListener = (...args: any[]) => void
-type AnyTransformer = ListenerTransformer<AnyEvent, AnyListener>
+type AnyTransformer = ListenerTransformer<AnyEvent, AnyListener, AnyListener>
 
 function expectPairsFrom<Element> (collection: Iterable<Element>) {
   type Pair = [Element, Element]

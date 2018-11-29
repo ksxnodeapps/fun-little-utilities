@@ -10,7 +10,7 @@ import {
 
 type AnyEvent = string | symbol
 type AnyListener = (...args: any[]) => void
-type AnyTransformer = ListenerTransformer<AnyEvent, AnyListener>
+type AnyTransformer = ListenerTransformer<AnyEvent, AnyListener, AnyListener>
 
 class Init<Target extends EventTarget<any, any>> {
   public readonly target: Target
