@@ -2,8 +2,8 @@ import { EventedStream } from 'evented-stream-types'
 
 class ChunkCarrier<
   Stream extends EventedStream<Chunk, Error>,
-  Chunk = Stream extends EventedStream<infer X, any> ? X : any,
-  Error = Stream extends EventedStream<any, infer X> ? X : any
+  Chunk = any,
+  Error = any
 > {
   public readonly stream: Stream
   public readonly chunk: Chunk

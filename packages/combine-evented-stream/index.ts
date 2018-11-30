@@ -5,12 +5,15 @@ import EventedStreamCombination from './lib/evented-stream-combination'
 import ChunkCarrier from './lib/chunk-carrier'
 import ErrorCarrier from './lib/error-carrier'
 
-function combineEventedStream<StreamChunk, StreamError = any> (
-  source: Iterable<EventedStream<StreamChunk, StreamError>>
-): EventedStreamCombination<StreamChunk, StreamError> {
-  type Stream = EventedStream<StreamChunk, StreamError>
-  type Chunk = ChunkCarrier<Stream>
-  type Error = ErrorCarrier<Stream>
+function combineEventedStream<
+  Stream extends EventedStream<StreamChunk, StreamError>,
+  StreamChunk = any,
+  StreamError = any
+> (
+  source: Iterable<Stream>
+): EventedStreamCombination<Stream, StreamChunk, StreamError> {
+  type Chunk = ChunkCarrier<Stream, StreamChunk, StreamError>
+  type Error = ErrorCarrier<Stream, StreamError, StreamChunk>
   type EvtMod = EventedStream.ListenerModifier<Chunk, Error>
   type Event = 'close' | 'error' | 'data'
   type EvtModFn = <Event> (target: EventTarget<Event>, event: Event, fn: any) => void
@@ -23,11 +26,11 @@ function combineEventedStream<StreamChunk, StreamError = any> (
       switch (event) {
         case 'data':
           return (chunk: StreamChunk) =>
-            listener(new ChunkCarrier(chunk, stream))
+            listener(new ChunkCarrier<Stream, StreamChunk, StreamError>(chunk, stream))
 
         case 'error':
           return (error: StreamError) =>
-            listener(new ErrorCarrier(error, stream))
+            listener(new ErrorCarrier<Stream, StreamError, StreamChunk>(error, stream))
       }
     }
   ))
@@ -55,7 +58,7 @@ function combineEventedStream<StreamChunk, StreamError = any> (
     }
   }
 
-  class EvtStrCmb extends EventedStreamCombination<StreamChunk, StreamError> {
+  class EvtStrCmb extends EventedStreamCombination<Stream, StreamChunk, StreamError> {
     public readonly addListener =
       createEvtMod((target, event, fn) => target.addListener(event, fn))
 

@@ -3,8 +3,8 @@ import Base from './error-base'
 
 class ErrorCarrier<
   Stream extends EventedStream<Chunk, Error>,
-  Error = Stream extends EventedStream<any, infer X> ? X : any,
-  Chunk = Stream extends EventedStream<infer X, any> ? X : any
+  Error = any,
+  Chunk = any
 > extends Base {
   public readonly error: Error
   public readonly stream: Stream

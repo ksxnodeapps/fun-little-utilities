@@ -14,7 +14,7 @@ class StreamError extends Error {
   }
 }
 
-abstract class MockedEmitter<Chunk extends StreamChunk>
+abstract class MockedEmitter<Chunk extends StreamChunk = StreamChunk>
 extends EventEmitter
 implements EventedStream<Chunk, StreamError> {
   public emit (event: 'data', chunk: StreamChunk): boolean
@@ -47,7 +47,8 @@ class Init {
     new FourthEmitter()
   ]
 
-  public readonly combination = combineEventedStream<StreamChunk, StreamError>(this.streamCollection)
+  public readonly combination =
+    combineEventedStream<MockedEmitter, StreamChunk, StreamError>(this.streamCollection)
 
   public readonly emit = {
     data:
