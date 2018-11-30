@@ -100,6 +100,12 @@ describe('when all streams emit data', () => {
       chunk => expect(chunk.stream).toBe(streamCollection[chunk.chunk])
     )
   })
+
+  it('data have desired valueOf() values', async () => {
+    for (const chunk of await arrayPromise) {
+      expect(chunk.valueOf()).toBe(chunk.chunk)
+    }
+  })
 })
 
 describe('when one of the streams emits error', () => {
