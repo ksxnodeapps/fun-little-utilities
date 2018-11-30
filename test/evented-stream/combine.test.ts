@@ -68,6 +68,16 @@ class Init {
   public readonly arrayPromise = this.getArray()
 }
 
+expect.addSnapshotSerializer({
+  test (value: any): boolean {
+    return value instanceof MockedEmitter
+  },
+
+  print (value: MockedEmitter<any>): string {
+    return `${value.constructor.name} {}`
+  }
+})
+
 describe('when all streams emit data', () => {
   const { arrayPromise, emit, streamCollection } = new Init()
   const order: ReadonlyArray<StreamChunk> = [0, 3, 1, 2, 3, 0, 1, 1, 3, 0, 2, 3, 3, 3]

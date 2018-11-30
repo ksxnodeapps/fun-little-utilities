@@ -4,115 +4,59 @@ exports[`when all streams emit data matches snapshot 1`] = `
 Array [
   ChunkCarrier {
     "chunk": 0,
-    "stream": FirstEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FirstEmitter {},
   },
   ChunkCarrier {
     "chunk": 3,
-    "stream": FourthEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FourthEmitter {},
   },
   ChunkCarrier {
     "chunk": 1,
-    "stream": SecondEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": SecondEmitter {},
   },
   ChunkCarrier {
     "chunk": 2,
-    "stream": ThirdEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": ThirdEmitter {},
   },
   ChunkCarrier {
     "chunk": 3,
-    "stream": FourthEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FourthEmitter {},
   },
   ChunkCarrier {
     "chunk": 0,
-    "stream": FirstEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FirstEmitter {},
   },
   ChunkCarrier {
     "chunk": 1,
-    "stream": SecondEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": SecondEmitter {},
   },
   ChunkCarrier {
     "chunk": 1,
-    "stream": SecondEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": SecondEmitter {},
   },
   ChunkCarrier {
     "chunk": 3,
-    "stream": FourthEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FourthEmitter {},
   },
   ChunkCarrier {
     "chunk": 0,
-    "stream": FirstEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FirstEmitter {},
   },
   ChunkCarrier {
     "chunk": 2,
-    "stream": ThirdEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": ThirdEmitter {},
   },
   ChunkCarrier {
     "chunk": 3,
-    "stream": FourthEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FourthEmitter {},
   },
   ChunkCarrier {
     "chunk": 3,
-    "stream": FourthEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FourthEmitter {},
   },
   ChunkCarrier {
     "chunk": 3,
-    "stream": FourthEmitter {
-      "_events": Object {},
-      "_eventsCount": 0,
-      "_maxListeners": undefined,
-    },
+    "stream": FourthEmitter {},
   },
 ]
 `;
