@@ -1,3 +1,4 @@
+import proxify, { EventTarget } from 'event-target-proxy'
 import * as types from './types'
 import { StdOutError, StdErrError } from './error-classes'
 import SplitterObject from './splitter-object'
@@ -6,47 +7,48 @@ import fromEventedStream from './from-evented-stream'
 function fromChildProcess<Chunk extends string | Buffer> (cp: types.ChildProcess<Chunk>): SplitterObject {
   const { stdout, stderr } = cp
 
-  const stream: types.EventedStream<Chunk, any> = {
-    addListener (event: any, fn: any): void {
-      switch (event) {
-        case 'close':
-          cp.addListener('close', fn)
-          break
+  const proxifiedStdOut = proxify<'error' | 'data'>(
+    stdout as EventTarget<'error' | 'data'>,
+    ({ event, listener }) => event === 'error'
+      ? ((error: Error) => listener(new StdOutError(stdout, error)))
+      : listener
+  )
 
-        case 'error':
-          cp.addListener('error', fn)
-          stdout.addListener('error', error => fn(new StdOutError(stdout, error)))
-          stderr.addListener('error', error => fn(new StdErrError(stderr, error)))
-          break
+  const proxifiedStdErr = proxify<'error' | 'data'>(
+    stderr as EventTarget<'error' | 'data'>,
+    ({ event, listener }) => event === 'error'
+      ? ((error: Error) => listener(new StdErrError(stderr, error)))
+      : listener
+  )
 
-        case 'data':
-          stdout.addListener('data', fn)
-          stderr.addListener('data', fn)
-          break
-      }
-    },
+  const createEvtMod = (
+    modfn: <Event> (
+      target: EventTarget<Event>,
+      event: Event,
+      fn: any
+    ) => void
+  ) => (event: 'close' | 'error' | 'data', fn: any) => {
+    switch (event) {
+      case 'close':
+        modfn(cp, 'close', fn)
+        break
 
-    removeListener (event: any, fn: any): void {
-      switch (event) {
-        case 'close':
-          cp.removeListener('close', fn)
-          break
+      case 'error':
+        modfn(cp, 'error', fn)
+        modfn(proxifiedStdOut, 'error', fn)
+        modfn(proxifiedStdErr, 'error', fn)
+        break
 
-        case 'error':
-          cp.removeListener('error', fn)
-          stdout.removeListener('error', error => fn(new StdOutError(stdout, error)))
-          stderr.removeListener('error', error => fn(new StdErrError(stderr, error)))
-          break
-
-        case 'data':
-          stdout.removeListener('data', fn)
-          stderr.removeListener('data', fn)
-          break
-      }
+      case 'data':
+        modfn(proxifiedStdOut, 'data', fn)
+        modfn(proxifiedStdErr, 'data', fn)
+        break
     }
   }
 
-  return fromEventedStream(stream)
+  const addListener = createEvtMod((target, event, fn) => target.addListener(event, fn))
+  const removeListener = createEvtMod((target, event, fn) => target.removeListener(event, fn))
+  return fromEventedStream({ addListener, removeListener })
 }
 
 export = fromChildProcess
