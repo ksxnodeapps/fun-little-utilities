@@ -6,3 +6,4 @@ export * from 'evented-stream-types'
 export { iterateEventedStream, combineEventedStream, types }
 
 export const iterate = iterateEventedStream
+export const combine = combineEventedStream
