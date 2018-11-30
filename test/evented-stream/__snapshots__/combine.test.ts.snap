@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when all streams emit data matches snapshot 1`] = `
+Array [
+  ChunkCarrier {
+    "chunk": 0,
+    "stream": FirstEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 1,
+    "stream": SecondEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 2,
+    "stream": ThirdEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 0,
+    "stream": FirstEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 1,
+    "stream": SecondEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 1,
+    "stream": SecondEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 0,
+    "stream": FirstEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 2,
+    "stream": ThirdEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {
+      "_events": Object {},
+      "_eventsCount": 0,
+      "_maxListeners": undefined,
+    },
+  },
+]
+`;
+
+exports[`when one of the streams emits error rejects with a reason that matches snapshot 1`] = `[ErrorCarrier: StreamError: Expected]`;
