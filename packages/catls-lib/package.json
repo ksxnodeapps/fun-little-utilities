@@ -19,6 +19,8 @@
   "dependencies": {
     "fs-extra": "^7.0.0",
     "shell-escape": "^0.2.0",
+    "typescript-miscellaneous": "^0.1.1",
+    "convenient-typescript-utilities": "^0.0.3",
     "tslib": "^1.9.3",
     "split-shell-buffer": "^0.0.0",
     "@types/fs-extra": "^5.0.4",

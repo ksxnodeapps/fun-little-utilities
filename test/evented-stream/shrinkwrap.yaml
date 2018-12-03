@@ -1,7 +1,5 @@
 dependencies:
   evented-stream: 'link:../../packages/evented-stream'
-  evented-stream-types: 'link:../../packages/evented-stream-types'
-  iterate-evented-stream: 'link:../../packages/iterate-evented-stream'
   monorepo-shared-assets: 0.0.17
   static-type-assert: 3.0.1
 packages:

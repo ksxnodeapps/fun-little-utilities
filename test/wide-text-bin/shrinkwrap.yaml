@@ -2,7 +2,6 @@ dependencies:
   '@tools/preloaded-node': 'link:../../tools/preloaded-node'
   extra-jest: 0.0.23
   iter-tools: 6.1.4
-  preloaded-node: 'link:../../tools/preloaded-node'
   wide-text: 'link:../../packages/wide-text'
   wide-text-bin: 'link:../../packages/wide-text-bin'
 packages:

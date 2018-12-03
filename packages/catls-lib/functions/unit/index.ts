@@ -4,29 +4,24 @@ import { UnitType } from '../../enums'
 import relativeLink from '../relative-link'
 const { NonExist, Symlink, File, Directory, Unknown } = UnitType
 
-function unit (options: Unit.Options): Promise<void> {
-  interface MainParam extends Unit.Options {
-    readonly followSymlink: number
-    readonly visited: ReadonlyArray<string>
-  }
-
+async function unit (options: Unit.Options): Promise<number> {
   const {
-    followSymlink = 0,
-    ...rest
+    name,
+    handleNonExist,
+    handleSymlink,
+    handleFile,
+    handleDirectory,
+    handleUnknown,
+    followSymlink,
+    getLink,
+    getStat,
+    getLoop,
+    addStatusCode
   } = options
 
-  async function main (options: MainParam): Promise<void> {
-    const {
-      name,
-      handle,
-      followSymlink,
-      getLink,
-      getStat,
-      visited
-    } = options
-
+  const main: Unit.LoopBody = async (name, followSymlink, visited) => {
     if (!existsSync(name)) {
-      return handle({
+      return handleNonExist({
         type: NonExist,
         options
       })
@@ -38,7 +33,7 @@ function unit (options: Unit.Options): Promise<void> {
       const content = await getLink(name)
       const target = relativeLink(name, content)
 
-      await handle({
+      const status = await handleSymlink({
         type: Symlink,
         content,
         target,
@@ -47,19 +42,17 @@ function unit (options: Unit.Options): Promise<void> {
       })
 
       if (followSymlink && !visited.includes(target)) {
-        return main({
-          ...options,
-          name: target,
-          followSymlink: followSymlink - 1,
-          visited: [target, ...visited]
-        })
+        return addStatusCode(
+          status,
+          await loop(name, followSymlink - 1, [target, ...visited])
+        )
       }
 
-      return
+      return status
     }
 
     if (stats.isFile()) {
-      return handle({
+      return handleFile({
         type: File,
         options,
         stats
@@ -67,25 +60,23 @@ function unit (options: Unit.Options): Promise<void> {
     }
 
     if (stats.isDirectory()) {
-      return handle({
+      return handleDirectory({
         type: Directory,
         options,
         stats
       })
     }
 
-    return handle({
+    return handleUnknown({
       type: Unknown,
       options,
       stats
     })
   }
 
-  return main({
-    visited: [],
-    followSymlink,
-    ...rest
-  })
+  const loop = getLoop(main)
+
+  return main(name, followSymlink, [])
 }
 
 export = unit

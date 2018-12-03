@@ -3,7 +3,6 @@ dependencies:
   combine-evented-stream: 'link:../combine-evented-stream'
   evented-stream-types: 'link:../evented-stream-types'
   iterate-evented-stream: 'link:../iterate-evented-stream'
-  join-evented-stream: 'link:../join-evented-stream'
   tslib: 1.9.3
 packages:
   /@types/node/10.12.10:
