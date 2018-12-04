@@ -50,6 +50,7 @@ export namespace Unit {
     readonly getLink: Options.LinkGetter
     readonly getLoop: Options.LoopGetter
     readonly addStatusCode: Options.StatusCodeAdder
+    readonly heading: Options.HeadingFunc
     readonly handleNonExist: Options.Handler.NonExist
     readonly handleSymlink: Options.Handler.Symlink
     readonly handleFile: Options.Handler.File
@@ -62,6 +63,14 @@ export namespace Unit {
     export type LinkGetter = (name: string) => MaybePromise<string>
     export type LoopGetter = (body: LoopBody) => LoopBody
     export type StatusCodeAdder = (current: number, addend: number) => MaybePromise<number>
+    export type HeadingFunc = (param: HeadingFunc.Param) => MaybePromise<void>
+
+    export namespace HeadingFunc {
+      export interface Param {
+        readonly options: Options
+        readonly name: string
+      }
+    }
 
     export namespace Handler {
       export type NonExist = (param: Param.NonExist) => Return

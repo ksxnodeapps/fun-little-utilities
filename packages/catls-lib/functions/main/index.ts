@@ -47,7 +47,11 @@ async function main (param: Main.Param): Promise<number> {
   //   They all write data to process.{stdout,stderr}
   for (const name of list) {
     const statusAddend = await unit({
-      followSymlink: actualFollowSymlink,
+      heading (param) {
+        const heading = `📁 Item: ${param.name}`
+        const rule = '—'.repeat(heading.length)
+        stdout.write(`\n${rule}\n${heading}\n\n`)
+      },
 
       handleNonExist (param) {
         stderr.write(`[ERROR] No such file or directory: ${param.options.name}`)
@@ -90,6 +94,7 @@ async function main (param: Main.Param): Promise<number> {
         return 0
       },
 
+      followSymlink: actualFollowSymlink,
       getLink,
       getStat,
       getLoop,

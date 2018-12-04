@@ -7,6 +7,7 @@ const { NonExist, Symlink, File, Directory, Unknown } = UnitType
 async function unit (options: Unit.Options): Promise<number> {
   const {
     name,
+    heading,
     handleNonExist,
     handleSymlink,
     handleFile,
@@ -20,6 +21,8 @@ async function unit (options: Unit.Options): Promise<number> {
   } = options
 
   const main: Unit.LoopBody = async (name, followSymlink, visited) => {
+    await heading({ name, options })
+
     if (!existsSync(name)) {
       return handleNonExist({
         type: NonExist,
