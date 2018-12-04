@@ -1,29 +1,37 @@
 import process from 'process'
-import { spawnSync } from 'child_process'
+import { spawn } from 'child_process'
+import { fromChildProcess, writeln } from 'split-shell-buffer'
+import event2promise from 'ts-await-event'
 const script = require.resolve('./executable')
 
-function execute (...args: string[]): void {
-  console.info(`\n$ catls ${args.join(' ')}\n`)
+async function execute (...args: string[]): Promise<void> {
+  console.info(`\n$ catls ${args.join(' ')}`)
 
-  const { status, signal } = spawnSync(
+  const cp = spawn(
     'node',
     [script, ...args],
     {
-      cwd: __dirname,
-      stdio: 'inherit'
+      cwd: __dirname
     }
   )
 
-  console.info()
+  const closeEventPromise = event2promise<'close', number>(cp, 'close')
+  const splitter = fromChildProcess(cp).withPrefix(Buffer.from('  | '))
+  await writeln(process.stdout, splitter)
 
-  if (status) {
-    console.info({ status, signal })
-    console.error(`Spawned process exits with code ${status}. Terminating.`)
-    return process.exit(status)
-  }
+  const status = await closeEventPromise
+  console.info(`  status: ${status}`)
+
+  console.info()
 }
 
-execute('--help')
-execute('--noScript', 'data/foo/bar.txt', 'data/foo/baz.txt')
-execute('data/foo/bar.txt', 'data/foo/baz.txt')
-console.info('DONE.\n')
+async function main (): Promise<void> {
+  await execute('--help')
+  await execute('--noScript', 'data/foo/bar.txt', 'data/foo/baz.txt')
+  await execute('data/foo/bar.txt', 'data/foo/baz.txt')
+}
+
+main().catch(error => {
+  console.error(error)
+  process.exit(-1)
+})

@@ -1,9 +1,13 @@
 dependencies:
   '@tools/preloaded-node': 'link:../../tools/preloaded-node'
   catls: 'link:../../packages/catls'
+  split-shell-buffer: 'link:../../packages/split-shell-buffer'
+  ts-await-event: 'link:../../packages/ts-await-event'
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@tools/preloaded-node': ../../tools/preloaded-node
+  '@tools/preloaded-node': 'file:../../tools/preloaded-node'
   catls: 'file:../../packages/catls'
+  split-shell-buffer: 'file:../../packages/split-shell-buffer'
+  ts-await-event: 'file:../../packages/ts-await-event'
