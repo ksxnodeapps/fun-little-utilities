@@ -43,6 +43,8 @@ async function main (param: Main.Param): Promise<number> {
   const execute = executor(dontFakeInteractive)
   let currentStatus = 0
 
+  // Don't run unit(...) in parallel:
+  //   They all write data to process.{stdout,stderr}
   for (const name of list) {
     const statusAddend = await unit({
       followSymlink: actualFollowSymlink,
