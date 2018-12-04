@@ -27,8 +27,8 @@ async function execute (...args: string[]): Promise<void> {
 
 async function main (): Promise<void> {
   await execute('--help')
-  await execute('--noScript', 'data/foo/bar.txt', 'data/foo/baz.txt')
-  await execute('data/foo/bar.txt', 'data/foo/baz.txt')
+  await execute('--noScript', 'data/folder/bar.txt', 'data/folder/baz.txt')
+  await execute('data/folder/bar.txt', 'data/folder/baz.txt')
 }
 
 main().catch(error => {
