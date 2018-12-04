@@ -21,5 +21,5 @@ function execute (...args: string[]): void {
   }
 }
 
-execute('data/foo/bar.txt')
+execute('data/foo/bar.txt', 'data/foo/baz.txt')
 console.info('\n\nDONE.\n')
