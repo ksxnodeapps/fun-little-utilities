@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "static-type-assert": "^3.0.1",
+    "ts-await-event": "file:../../packages/ts-await-event"
+  }
+}
