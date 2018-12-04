@@ -56,7 +56,6 @@ async function main () {
   console.info('SPAWNED → SPLITTED AND NUMBERED → WRITELN')
   await writeln(process.stdout, fromChildProcess(execute()).withPrefix(getNumberingPrefix()))
   console.info()
-
 }
 
 function getNumberingPrefix (): SequenceFunc {
