@@ -24,7 +24,7 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       describe: 'Do not use script command',
       type: 'boolean'
     })
-    .option('handleNonArguments', {
+    .option('followSymlink', {
       alias: ['onZeroArgs', 'z'],
       describe: 'Follow symlink, value can be a natural number or Infinite',
       type: 'string',

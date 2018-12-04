@@ -26,9 +26,20 @@ async function execute (...args: string[]): Promise<void> {
 }
 
 async function main (): Promise<void> {
+  await execute()
   await execute('--help')
-  await execute('--noScript', 'data/folder/bar.txt', 'data/folder/baz.txt')
-  await execute('data/folder/bar.txt', 'data/folder/baz.txt')
+
+  await execute(
+    '--noScript',
+    'data.tsignore/folder/foo.txt',
+    'data.tsignore/folder/bar.txt',
+    'data.tsignore/folder/baz.txt'
+  )
+  await execute(
+    'data.tsignore/folder/foo.txt',
+    'data.tsignore/folder/bar.txt',
+    'data.tsignore/folder/baz.txt'
+  )
 }
 
 main().catch(error => {
