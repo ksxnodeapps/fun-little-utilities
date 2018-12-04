@@ -14,6 +14,8 @@ function execute (...args: string[]): void {
     }
   )
 
+  console.info()
+
   if (status) {
     console.info({ status, signal })
     console.error(`Spawned process exits with code ${status}. Terminating.`)
@@ -21,5 +23,7 @@ function execute (...args: string[]): void {
   }
 }
 
+execute('--help')
+execute('--noScript', 'data/foo/bar.txt', 'data/foo/baz.txt')
 execute('data/foo/bar.txt', 'data/foo/baz.txt')
 console.info('\n\nDONE.\n')
