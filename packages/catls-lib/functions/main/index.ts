@@ -65,6 +65,7 @@ async function main (param: Main.Param): Promise<number> {
 
       handleFile (param) {
         stdout.write(statInfo('File', param.stats))
+        stdout.write('[DATA]\n')
         return showExecData({
           cmd: cat,
           args: [...catArguments, param.options.name],
