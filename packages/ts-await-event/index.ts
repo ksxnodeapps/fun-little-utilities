@@ -1,6 +1,6 @@
 function awaitEvent<Event, Param> (
   target: awaitEvent.Target<Event, Param>,
-  event: Event,
+  event: Event
 ): Promise<Param> {
   return new Promise<Param>(
     resolve =>
