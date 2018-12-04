@@ -1,5 +1,6 @@
 import yargs from 'yargs'
-import { CommandLineOptions, SymlinkResolution } from 'catls-lib'
+import { CommandLineOptions, EmptyArgumentHandlingMethod, SymlinkResolution } from 'catls-lib'
+const { Quiet, Warn, Error } = EmptyArgumentHandlingMethod
 const { Agnostic, Relative, Ultimate } = SymlinkResolution
 
 const coerceSubArgs = (list: string) => list.split(/\s*,\s*/).filter(Boolean)
@@ -23,6 +24,12 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       alias: ['noInteractive', 'noScript', 'n'],
       describe: 'Do not use script command',
       type: 'boolean'
+    })
+    .option('handleEmptyArguments', {
+      alias: ['onZeroArgs', 'z'],
+      describe: 'What to do when there is no arguments',
+      choices: [Quiet, Warn, Error],
+      default: Error
     })
     .option('followSymlink', {
       alias: 'follow',
