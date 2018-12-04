@@ -7,15 +7,15 @@ async function main () {
   console.info(styledText)
   console.info()
 
-  console.info('STYLED TEXT ⤞ SPLITTED')
+  console.info('STYLED TEXT → SPLITTED')
   console.info(await toString(fromString(styledText)))
   console.info()
 
-  console.info('STYLED TEXT ⤞ SPLITTED AND INDENTED')
+  console.info('STYLED TEXT → SPLITTED AND INDENTED')
   console.info(await toString(fromString(styledText).withIndent(4)))
   console.info()
 
-  console.info('STYLED TEXT ⤞ SPLITTED AND NUMBERED')
+  console.info('STYLED TEXT → SPLITTED AND NUMBERED')
   console.info(await toString(fromString(styledText).withPrefix(getNumberingPrefix())))
   console.info()
 }
