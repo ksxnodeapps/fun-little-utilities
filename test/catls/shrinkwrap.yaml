@@ -1,0 +1,9 @@
+dependencies:
+  '@tools/preloaded-node': 'link:../../tools/preloaded-node'
+  catls: 'link:../../packages/catls'
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  '@tools/preloaded-node': ../../tools/preloaded-node
+  catls: 'file:../../packages/catls'

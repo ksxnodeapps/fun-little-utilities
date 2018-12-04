@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "catls": "file:../../packages/catls",
+    "@tools/preloaded-node": "../../tools/preloaded-node"
+  }
+}
