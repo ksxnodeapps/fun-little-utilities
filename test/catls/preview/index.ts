@@ -3,7 +3,7 @@ import { spawnSync } from 'child_process'
 const script = require.resolve('./executable')
 
 function execute (...args: string[]): void {
-  console.info(`$ catls ${args.join(' ')}\n`)
+  console.info(`\n$ catls ${args.join(' ')}\n`)
 
   const { status, signal } = spawnSync(
     'node',
@@ -26,4 +26,4 @@ function execute (...args: string[]): void {
 execute('--help')
 execute('--noScript', 'data/foo/bar.txt', 'data/foo/baz.txt')
 execute('data/foo/bar.txt', 'data/foo/baz.txt')
-console.info('\n\nDONE.\n')
+console.info('DONE.\n')
