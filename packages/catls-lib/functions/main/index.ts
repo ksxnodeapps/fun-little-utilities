@@ -93,7 +93,7 @@ async function main (param: Main.Param): Promise<number> {
   })))
 
   return statusCodeList.reduce(
-    async (prev, current) => addStatusCode(await prev, await current),
+    async (prev, current) => addStatusCode(await prev, current),
     Promise.resolve(0)
   )
 }
