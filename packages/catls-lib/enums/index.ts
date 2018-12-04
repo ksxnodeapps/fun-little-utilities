@@ -3,7 +3,8 @@
 export enum ExitStatus {
   Success = 0,
   InsufficientArguments = 1,
-  NoEnt = 2
+  NoEnt = 2,
+  UncaughtError = 3
 }
 
 export enum EmptyArgumentHandlingMethod {
