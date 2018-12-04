@@ -2,7 +2,7 @@ import yargs from 'yargs'
 import { CommandLineOptions, SymlinkResolution } from 'catls-lib'
 const { Agnostic, Relative, Ultimate } = SymlinkResolution
 
-const coerceSubArgs = (list: string) => list.split(/\s*,\s*/)
+const coerceSubArgs = (list: string) => list.split(/\s*,\s*/).filter(Boolean)
 
 function getCliArgs (): CommandLineOptions & yargs.Arguments {
   const { argv } = yargs
