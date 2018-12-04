@@ -25,7 +25,7 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       type: 'boolean'
     })
     .option('followSymlink', {
-      alias: ['onZeroArgs', 'z'],
+      alias: 'follow',
       describe: 'Follow symlink, value can be a natural number or Infinite',
       type: 'string',
       default: '0'
