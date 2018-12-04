@@ -1,16 +1,10 @@
 dependencies:
-  '@types/js-yaml': 3.11.2
   '@types/node': 10.12.1
   '@types/yargs': 12.0.1
   catls-lib: 'link:../catls-lib'
-  js-yaml: 3.12.0
   tslib: 1.9.3
   yargs: 12.0.2
 packages:
-  /@types/js-yaml/3.11.2:
-    dev: false
-    resolution:
-      integrity: sha512-JRDtMPEqXrzfuYAdqbxLot1GvAr/QvicIZAnOAigZaj8xVMhuSJTg/xsv9E1TvyL+wujYhRLx9ZsQ0oFOSmwyA==
   /@types/node/10.12.1:
     dev: false
     resolution:
@@ -31,12 +25,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
-  /argparse/1.0.10:
-    dependencies:
-      sprintf-js: 1.0.3
-    dev: false
-    resolution:
-      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   /camelcase/4.1.0:
     dev: false
     engines:
@@ -77,13 +65,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-Ikpp5scV3MSYxY39ymh45ZLEecsTdv/Xj2CaQfI8RLMuwi7XvjX9H/fhraiSuU+C5w5NTDu4ZU72xNiZnurBPg==
-  /esprima/4.0.1:
-    dev: false
-    engines:
-      node: '>=4'
-    hasBin: true
-    resolution:
-      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
   /execa/0.10.0:
     dependencies:
       cross-spawn: 6.0.5
@@ -146,14 +127,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
-  /js-yaml/3.12.0:
-    dependencies:
-      argparse: 1.0.10
-      esprima: 4.0.1
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-PIt2cnwmPfL4hKNwqeiuz4bKfnzHTBv6HyVgjahA6mPLwPDzjDWrplJBMjHUFxku/N3FlmrbyPclad+I+4mJ3A==
   /lcid/2.0.0:
     dependencies:
       invert-kv: 2.0.0
@@ -312,10 +285,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
-  /sprintf-js/1.0.3:
-    dev: false
-    resolution:
-      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /string-width/1.0.2:
     dependencies:
       code-point-at: 1.1.0
@@ -416,10 +385,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/js-yaml': ^3.11.2
   '@types/node': ^10.12.0
   '@types/yargs': ^12.0.1
   catls-lib: ^0.0.0
-  js-yaml: ^3.12.0
   tslib: ^1.9.3
   yargs: ^12.0.2
