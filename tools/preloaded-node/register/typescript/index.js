@@ -5,6 +5,10 @@ const { compilerOptions } = require(config)
 
 require('ts-node').register({
   typeCheck: true,
+  ignoreDiagnostics: [
+    2554,
+    7031
+  ],
   compilerOptions: {
     ...compilerOptions,
     noUnusedLocals: false,
