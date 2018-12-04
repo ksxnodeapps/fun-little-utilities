@@ -6,6 +6,7 @@ dependencies:
   fs-extra: 7.0.0
   shell-escape: 0.2.0
   split-shell-buffer: 'link:../split-shell-buffer'
+  ts-await-event: 'link:../ts-await-event'
   tslib: 1.9.3
   typescript-miscellaneous: 0.1.1
 packages:
@@ -93,5 +94,6 @@ specifiers:
   fs-extra: ^7.0.0
   shell-escape: ^0.2.0
   split-shell-buffer: ^0.0.0
+  ts-await-event: ^0.0.0
   tslib: ^1.9.3
   typescript-miscellaneous: ^0.1.1

@@ -23,6 +23,7 @@
     "convenient-typescript-utilities": "^0.0.3",
     "tslib": "^1.9.3",
     "split-shell-buffer": "^0.0.0",
+    "ts-await-event": "^0.0.0",
     "@types/fs-extra": "^5.0.4",
     "@types/shell-escape": "^0.2.0",
     "@types/node": "^10.12.0"
