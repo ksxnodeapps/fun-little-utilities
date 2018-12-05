@@ -13,6 +13,9 @@ async function execute (args: string[], WDIR: string): Promise<void> {
     {
       env: {
         ...process.env,
+
+        // I can't change working directory before the script registers TypeScript loader,
+        // so I pass it as an environment variable instead
         WDIR
       }
     }
