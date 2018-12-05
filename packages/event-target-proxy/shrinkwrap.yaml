@@ -38,7 +38,7 @@ packages:
       '@types/node': 10.12.10
       advanced-map-types: 0.0.2
       tslib: 1.9.3
-      typescript-miscellaneous: 0.1.0
+      typescript-miscellaneous: 0.1.1
     deprecated: Depends on wrong version of "convenient-typescript-utilities"
     dev: false
     engines:
@@ -83,7 +83,7 @@ packages:
     dependencies:
       '@types/node': 10.12.10
       tslib: 1.9.3
-      typescript-miscellaneous: 0.1.0
+      typescript-miscellaneous: 0.1.1
     deprecated: Depends on wrong version of "convenient-typescript-utilities"
     dev: false
     engines:
@@ -108,7 +108,7 @@ packages:
       '@types/node': 10.12.10
       iter-tools: 6.1.7
       tslib: 1.9.3
-      typescript-miscellaneous: 0.1.0
+      typescript-miscellaneous: 0.1.1
     dev: false
     engines:
       node: '>= 8.9.0'
@@ -141,7 +141,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
-  /typescript-miscellaneous/0.1.0:
+  /typescript-miscellaneous/0.1.1:
     dependencies:
       '@types/node': 10.12.10
       tslib: 1.9.3
@@ -150,7 +150,7 @@ packages:
       node: '>= 8.9.0'
       typescript: '>= 3.0.0'
     resolution:
-      integrity: sha512-JPy2LNt44g/q4nJo4CzzGgfrA5LOHQl7I2XKVfK1gGz9F5WhataKRLrahk7RTMTckq31gkKe5LgiSkjxB2Ubiw==
+      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
   /typescript-tuple/1.7.3:
     dev: false
     engines:
