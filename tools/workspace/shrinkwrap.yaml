@@ -1,7 +1,7 @@
 dependencies:
   '@tools/places': 'link:../places'
   exec-inline: 0.0.2
-  nested-workspace-helper: 0.2.8
+  nested-workspace-helper: 0.2.9
   number-enum: 3.0.0
 packages:
   /@babel/runtime-corejs2/7.1.5:
@@ -41,6 +41,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
+  /@types/ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-6FCz2E3SrkgbuV3piRNfjThSRyMbcIxHknnGYPfrg4k55PHnNRR80boVdl1AME/KfDW+FBVmKrKPyRbFo8HjaQ==
   /@types/semver/5.5.0:
     dev: false
     resolution:
@@ -347,13 +351,13 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
-  /nested-workspace-helper/0.2.8:
+  /nested-workspace-helper/0.2.9:
     dependencies:
       '@types/fs-extra': 5.0.4
       '@types/js-yaml': 3.11.2
       '@types/node': 10.12.10
       '@types/node-fetch': 2.1.4
-      '@types/ramda': 0.25.42
+      '@types/ramda': 0.26.0
       '@types/semver': 5.5.0
       '@types/yargs': 12.0.1
       chalk: 2.4.1
@@ -362,9 +366,9 @@ packages:
       js-yaml: 3.12.0
       monorepo-shared-assets: 0.0.17
       node-fetch: 2.3.0
-      ramda: 0.25.0
+      ramda: 0.26.0
       semver: 5.6.0
-      smart-publish: 0.0.2
+      smart-publish: 0.0.3
       tslib: 1.9.3
       yargs: 12.0.5
     dev: false
@@ -372,7 +376,7 @@ packages:
       node: '>= 8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-f2AInCDKpIMfiqLEM8Qd3co7xIBVfqpEVjwl+/tTdCdN7KSnLNbVlwdSUD5Ce0Ryz0wRB1hdyjZUghI2seF9qg==
+      integrity: sha512-khjJpABCs7XXVajeTEg4rj0UT4QX5qIfp+Fbml0zC1vOA8BX5rth0MsAFBHZyPF2RHoj47Ta+15CasqPEFWdcQ==
   /nice-try/1.0.5:
     dev: false
     resolution:
@@ -471,6 +475,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-maK1XqpgsOo5DwjhROjqDvpm1vkphLQbpleVv+b3t5Y9uOQ0t8hTHT582+mDs7RLrex1kd4lWYizNXWLVjsq9w==
   /regenerator-runtime/0.12.1:
     dev: false
     resolution:
@@ -512,7 +520,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
-  /smart-publish/0.0.2:
+  /smart-publish/0.0.3:
     dependencies:
       '@types/node': 10.12.10
       '@types/semver': 5.5.0
@@ -525,7 +533,7 @@ packages:
       node: '>= 8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-q2Cq+gdGbJ0zUBcJ0vUTyndQvbE6VJsgxndZkb65gg7esObCHxw3LENjM56lIQHtKSon6Ai8yr4YOyw+uYNLGQ==
+      integrity: sha512-II4Rfd97vH/zYGvpr3sJr3HcspgJRWxTfdpp/4Dyj0WXXsbv44qFWKFemF/f/zFQGdcYyYpTjZqwZHSiLhEZEw==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
@@ -664,5 +672,5 @@ shrinkwrapVersion: 3
 specifiers:
   '@tools/places': 'file:../places'
   exec-inline: ^0.0.2
-  nested-workspace-helper: ^0.2.8
+  nested-workspace-helper: ^0.2.9
   number-enum: ^3.0.0
