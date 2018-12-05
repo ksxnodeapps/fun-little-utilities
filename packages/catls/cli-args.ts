@@ -15,7 +15,7 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       default: 'cat'
     })
     .option('ls', {
-      alias: ['cmdLs', 'ls'],
+      alias: ['cmdLs', 'l'],
       describe: 'Ls program',
       type: 'string',
       default: 'ls'
@@ -64,6 +64,7 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       coerce: coerceSubArgs,
       default: ''
     })
+    .help()
 
   return argv as any
 }
