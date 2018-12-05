@@ -64,6 +64,22 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       coerce: coerceSubArgs,
       default: ''
     })
+    .example(
+      '$0 directory-or-file',
+      'Execute cat or ls on directory-or-file'
+    )
+    .example(
+      '$0 --follow=inf symlink',
+      'Show information of symlink and its targets'
+    )
+    .example(
+      '$0 --lsArguments=--all --ls=colorls directory',
+      'Execute colorls on directory'
+    )
+    .example(
+      'env CMD_LS=colorls LS_ARGUMENTS=--all $0 directory',
+      'Specifying options via environment variables'
+    )
     .help()
 
   return argv as any

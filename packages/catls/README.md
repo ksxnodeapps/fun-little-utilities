@@ -31,6 +31,17 @@ Options:
                                             arguments to pass to cat
                                                           [string] [default: ""]
   -h, --help                                Show help                  [boolean]
+
+Examples:
+  catls directory-or-file                   Execute cat or ls on
+                                            directory-or-file
+  catls --follow=inf symlink                Show information of symlink and its
+                                            targets
+  catls --lsArguments=--all                 Execute colorls on directory
+  --ls=colorls directory
+  env CMD_LS=colorls LS_ARGUMENTS=--all     Specifying options via environment
+  catls directory                           variables
+
 ```
 
 ## License
