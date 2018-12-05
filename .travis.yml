@@ -29,7 +29,7 @@ install:
   - bash ci/install.sh
 
 script:
-  - pnpm test
+  - pnpm test -- --verbose
   - pnpm run build
 
 after_script:
