@@ -1,7 +1,7 @@
 {
   "name": "catls",
   "version": "0.0.0",
-  "description": "List and display files",
+  "description": "Invoke ls on directories, cat on files",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
