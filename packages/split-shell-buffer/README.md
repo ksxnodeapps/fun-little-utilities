@@ -1,10 +1,10 @@
 # Split Shell Buffer
 
-Spliting shell strings while preserving [SGR escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters)
+Splitting shell strings while preserving [SGR escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters)
 
 ## Motivation
 
-When I was creating [`catls`](https://npmjs.com/package/catls), I needed to spawn a program and prints output (stdout and/or stderr) of said program to `process.stdout` with some prefix (e.g. indentation, bullets, numbers, etc.) whilst preseving some of UNIX control sequences (specifically, sequences that control colors).
+When I was creating [`catls`](https://npmjs.com/package/catls), I needed to spawn a program and prints output (stdout and/or stderr) of said program to `process.stdout` with some prefix (e.g. indentation, bullets, numbers, etc.) whilst preserving some of UNIX control sequences (specifically, sequences that control colors).
 
 ## Preview
 
