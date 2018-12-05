@@ -1,0 +1,5 @@
+#! /usr/bin/env node
+const process = require('process')
+require('@tools/preloaded-node/register')
+process.chdir(process.env.WDIR)
+require('catls/catls')

@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "construct-iterator": "file:../../packages/construct-iterator"
+  }
+}

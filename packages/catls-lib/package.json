@@ -1,0 +1,34 @@
+{
+  "name": "catls-lib",
+  "version": "0.0.0",
+  "description": "Core APIs used by catls",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "cat",
+    "ls"
+  ],
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "shell-escape": "^0.2.0",
+    "typescript-miscellaneous": "^0.1.1",
+    "convenient-typescript-utilities": "^0.0.3",
+    "tslib": "^1.9.3",
+    "split-shell-buffer": "^0.0.0",
+    "ts-await-event": "^0.0.0",
+    "@types/fs-extra": "^5.0.4",
+    "@types/shell-escape": "^0.2.0",
+    "@types/node": "^10.12.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}

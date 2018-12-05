@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when all streams emit data matches snapshot 1`] = `
+Array [
+  ChunkCarrier {
+    "chunk": 0,
+    "stream": FirstEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 1,
+    "stream": SecondEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 2,
+    "stream": ThirdEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 0,
+    "stream": FirstEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 1,
+    "stream": SecondEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 1,
+    "stream": SecondEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 0,
+    "stream": FirstEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 2,
+    "stream": ThirdEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {},
+  },
+  ChunkCarrier {
+    "chunk": 3,
+    "stream": FourthEmitter {},
+  },
+]
+`;
+
+exports[`when one of the streams emits error rejects with a reason that matches snapshot 1`] = `[ErrorCarrier: StreamError: Expected]`;

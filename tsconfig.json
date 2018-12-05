@@ -22,6 +22,7 @@
     "emitDecoratorMetadata": true
   },
   "exclude": [
+    "**/*.tsignore",
     "node_modules"
   ]
 }

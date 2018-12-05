@@ -1,0 +1,99 @@
+dependencies:
+  '@types/fs-extra': 5.0.4
+  '@types/node': 10.12.1
+  '@types/shell-escape': 0.2.0
+  convenient-typescript-utilities: 0.0.3
+  fs-extra: 7.0.0
+  shell-escape: 0.2.0
+  split-shell-buffer: 'link:../split-shell-buffer'
+  ts-await-event: 'link:../ts-await-event'
+  tslib: 1.9.3
+  typescript-miscellaneous: 0.1.1
+packages:
+  /@types/fs-extra/5.0.4:
+    dependencies:
+      '@types/node': 10.12.1
+    dev: false
+    resolution:
+      integrity: sha512-DsknoBvD8s+RFfSGjmERJ7ZOP1HI0UZRA3FSI+Zakhrc/Gy26YQsLI+m5V5DHxroHRJqCDLKJp7Hixn8zyaF7g==
+  /@types/node/10.12.1:
+    dev: false
+    resolution:
+      integrity: sha512-i1sl+WCX2OCHeUi9oi7PiCNUtYFrpWhpcx878vpeq/tlZTKzcFdHePlyFHVbWqeuKN0SRPl/9ZFDSTsfv9h7VQ==
+  /@types/node/10.12.10:
+    dev: false
+    resolution:
+      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/shell-escape/0.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-7kUdtJtUylvyISJbe9FMcvMTjRdP0EvNDO1WbT0lT22k/IPBiPRTpmWaKu5HTWLCGLQRWVHrzVHZktTDvvR23g==
+  /convenient-typescript-utilities/0.0.3:
+    dependencies:
+      '@types/node': 10.12.10
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-kHjMz9faySaKMx9ZRwv9oTogYRXCGaKPYq+xsLEswBo+0a5r8l5Xk/7Q+vqDLMYMrTm2oW7wEgtiDcXonr8Nkg==
+  /fs-extra/7.0.0:
+    dependencies:
+      graceful-fs: 4.1.11
+      jsonfile: 4.0.0
+      universalify: 0.1.2
+    dev: false
+    engines:
+      node: '>=6 <7 || >=8'
+    resolution:
+      integrity: sha512-EglNDLRpmaTWiD/qraZn6HREAEAHJcJOmxNEYwq6xeMKnVMAy3GUcFB+wXt2C6k4CNvB/mP1y/U3dzvKKj5OtQ==
+  /graceful-fs/4.1.11:
+    dev: false
+    engines:
+      node: '>=0.4.0'
+    resolution:
+      integrity: sha1-Dovf5NHduIVNZOBOp8AOKgJuVlg=
+  /jsonfile/4.0.0:
+    dev: false
+    optionalDependencies:
+      graceful-fs: 4.1.11
+    resolution:
+      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+  /shell-escape/0.2.0:
+    dev: false
+    resolution:
+      integrity: sha1-aP0CXrBJC09WegJ/C/IkgLX4QTM=
+  /tslib/1.9.3:
+    dev: false
+    resolution:
+      integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /typescript-miscellaneous/0.1.1:
+    dependencies:
+      '@types/node': 10.12.10
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
+  /universalify/0.1.2:
+    dev: false
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  '@types/fs-extra': ^5.0.4
+  '@types/node': ^10.12.0
+  '@types/shell-escape': ^0.2.0
+  convenient-typescript-utilities: ^0.0.3
+  fs-extra: ^7.0.0
+  shell-escape: ^0.2.0
+  split-shell-buffer: ^0.0.0
+  ts-await-event: ^0.0.0
+  tslib: ^1.9.3
+  typescript-miscellaneous: ^0.1.1

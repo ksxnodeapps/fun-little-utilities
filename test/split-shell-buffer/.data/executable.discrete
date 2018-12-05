@@ -1,0 +1,17 @@
+#! /usr/bin/env node
+let timeout = 0
+
+function act (fn, ...args) {
+  setTimeout(() => fn(...args), timeout)
+  timeout += 256
+}
+
+const info = (...args) => act(console.info, ...args)
+const error = (...args) => act(console.error, ...args)
+
+info('stdout 0')
+error('stderr 0')
+info('stdout 1')
+info('stdout 2')
+error('stderr 1')
+error('stderr 2')

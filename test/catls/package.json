@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "fs-extra": "^7.0.0",
+    "fs-tree-utils": "^0.1.6",
+    "unique-temp-path": "^0.1.1",
+    "@types/fs-extra": "^5.0.4",
+    "catls": "file:../../packages/catls",
+    "ts-await-event": "file:../../packages/ts-await-event",
+    "split-shell-buffer": "file:../../packages/split-shell-buffer",
+    "@tools/preloaded-node": "file:../../tools/preloaded-node"
+  }
+}

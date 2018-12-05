@@ -1,0 +1,31 @@
+{
+  "name": "combine-evented-stream",
+  "version": "0.0.0",
+  "description": "Combine multiple evented streams into one",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "combine",
+    "stream",
+    "event",
+    "join",
+    "async"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.3",
+    "evented-stream-types": "^0.0.0",
+    "event-target-proxy": "^0.0.0",
+    "@types/node": "^10.12.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}

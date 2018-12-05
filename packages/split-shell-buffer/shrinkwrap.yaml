@@ -1,0 +1,140 @@
+dependencies:
+  '@types/node': 10.12.10
+  '@types/ramda': 0.25.42
+  create-array-equal: 0.0.1
+  event-target-proxy: 'link:../event-target-proxy'
+  evented-stream-types: 'link:../evented-stream-types'
+  iter-tools: 6.1.6
+  iterate-evented-stream: 'link:../iterate-evented-stream'
+  monorepo-shared-assets: 0.0.17
+  ramda: 0.26.0
+  tslib: 1.9.3
+  typescript-char-code: 0.0.1
+packages:
+  /@babel/runtime/7.1.5:
+    dependencies:
+      regenerator-runtime: 0.12.1
+    dev: false
+    resolution:
+      integrity: sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
+  /@types/node/10.12.10:
+    dev: false
+    resolution:
+      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/ramda/0.25.42:
+    dev: false
+    resolution:
+      integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
+  /create-array-equal/0.0.1:
+    dependencies:
+      '@types/node': 10.12.10
+      iter-tools: 6.1.6
+      tslib: 1.9.3
+      typescript-miscellaneous: 0.1.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-QCpEgP2tYOfEK41zZzltXNWaB6HJYhZVVBEFc5o6+6FyHf4AUEVb0mBXJPYGNAPN/nT+TFFW4+ar8R3TQ1XxXg==
+  /dequeue/1.0.5:
+    dev: false
+    resolution:
+      integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
+  /immutable/3.8.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+  /iter-tools/6.1.6:
+    dependencies:
+      '@babel/runtime': 7.1.5
+      dequeue: 1.0.5
+      little-ds-toolkit: 1.1.0
+      typescript-tuple: 1.7.3
+      typescript-union: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-dCJ5FTc9xv10Cs84sd7oYt0mHbjcQQTKI+5K2E60qDVH5Jn7gtWhtRkeDeflIwRUC7W1sa+Jca/Vs5YT0B9DZw==
+  /little-ds-toolkit/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-2ARbmay5TrhFxFqcyFxPigmRToDuo8yxvIMdvwsDYNd/oZKnvsFT5L3I7s8WLXR7/tThYeffN9ouDtFFk4wzsA==
+  /monorepo-shared-assets/0.0.17:
+    dependencies:
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
+      immutable: 3.8.2
+      ramda: 0.25.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
+  /ramda/0.25.0:
+    dev: false
+    resolution:
+      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-maK1XqpgsOo5DwjhROjqDvpm1vkphLQbpleVv+b3t5Y9uOQ0t8hTHT582+mDs7RLrex1kd4lWYizNXWLVjsq9w==
+  /regenerator-runtime/0.12.1:
+    dev: false
+    resolution:
+      integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+  /tslib/1.9.3:
+    dev: false
+    resolution:
+      integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /typescript-char-code/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-FQZzao2um2HVSIy7XTSMuttHhpKKEaRqIx1Le0WdMRotSBn+MwBKanl6gwpIyRS7545GeclToggLjEVGzrQmqg==
+  /typescript-miscellaneous/0.1.0:
+    dependencies:
+      '@types/node': 10.12.10
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-JPy2LNt44g/q4nJo4CzzGgfrA5LOHQl7I2XKVfK1gGz9F5WhataKRLrahk7RTMTckq31gkKe5LgiSkjxB2Ubiw==
+  /typescript-tuple/1.7.3:
+    dev: false
+    engines:
+      typescript: ^3.0.0
+    resolution:
+      integrity: sha512-ygCTfD6CX5ul+J0sZhq2MSouMNAeJpRXAFkYPUZomv457KWg15DuS7n+ubv15LtbX27iVo6DkuiX/5yyNdBvVg==
+  /typescript-union/0.0.0:
+    dependencies:
+      typescript-tuple: 1.7.3
+      utility-types: 2.1.0
+    dev: false
+    peerDependencies:
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-sWOTNcTOXw27cJhfvjSbxrKggb4XD+fPIFkjIqqnycdVqStj/3IR3QVEMZOheWY5ELGS3PCwuHFDVWAbK9UHvA==
+  /utility-types/2.1.0:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-/nP2gqavggo6l38rtQI/CdeV+2fmBGXVvHgj9kV2MAnms3TIi77Mz9BtapPFI0+GZQCqqom0vACQ+VlTTaCovw==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  '@types/node': ^10.12.0
+  '@types/ramda': ^0.25.42
+  create-array-equal: ^0.0.1
+  event-target-proxy: ^0.0.0
+  evented-stream-types: ^0.0.0
+  iter-tools: ^6.1.6
+  iterate-evented-stream: ^0.0.0
+  monorepo-shared-assets: ^0.0.17
+  ramda: ^0.26.0
+  tslib: ^1.9.3
+  typescript-char-code: ^0.0.1
