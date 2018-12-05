@@ -4,7 +4,7 @@ Spliting shell strings while preserving [SGR escape sequences](https://en.wikipe
 
 ## Motivation
 
-When I was creating `catls`, I needed to spawn a program and prints output (stdout and/or stderr) of said program to `process.stdout` with some prefix (e.g. indentation, bullets, numbers, etc.) whilst preseving some of UNIX control sequences (specifically, sequences that control colors).
+When I was creating [`catls`](https://npmjs.com/package/catls), I needed to spawn a program and prints output (stdout and/or stderr) of said program to `process.stdout` with some prefix (e.g. indentation, bullets, numbers, etc.) whilst preseving some of UNIX control sequences (specifically, sequences that control colors).
 
 ## Preview
 
