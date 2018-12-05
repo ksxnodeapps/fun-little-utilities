@@ -80,6 +80,7 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
       'env CMD_LS=colorls LS_ARGUMENTS=--all $0 directory',
       'Specifying options via environment variables'
     )
+    .env('')
     .help()
 
   return argv as any
