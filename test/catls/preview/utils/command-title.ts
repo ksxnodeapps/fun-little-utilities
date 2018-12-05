@@ -1,14 +1,15 @@
 import chalk from 'chalk'
+const dollar = chalk.bold('$')
 
 function styledArgument (text: string): string {
-  if (/^-/.test(text)) return chalk.dim(text)
-  return text
+  if (/^-/.test(text)) return chalk.bold.dim(text)
+  return chalk.bold(text)
 }
 
 function commandTitle (script: string, args: ReadonlyArray<string>): string {
-  const styledScript = chalk.yellow(script)
+  const styledScript = chalk.bold.yellow(script)
   const styledArgs = args.map(styledArgument).join(' ')
-  return `$ ${styledScript} ${styledArgs}`
+  return `${dollar} ${styledScript} ${styledArgs}`
 }
 
 export = commandTitle

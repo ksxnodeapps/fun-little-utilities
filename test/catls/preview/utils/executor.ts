@@ -7,7 +7,7 @@ import commandTitle from './command-title'
 const script = require.resolve('../executable')
 
 async function execute (args: string[], WDIR: string): Promise<void> {
-  console.info(chalk.bold(commandTitle('catls', args)))
+  console.info(commandTitle('catls', args))
 
   const cp = spawn(
     'node',
