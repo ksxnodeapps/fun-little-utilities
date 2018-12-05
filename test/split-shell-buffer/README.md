@@ -18,7 +18,7 @@ This file concerns with type definition of `Splitter`'s methods.
 
 Run `pnpx execute runPreloadedNode test/split-shell-buffer/preview.ts` to execute this file.
 
-## `preview.discrete.ts`
+### `preview.discrete.ts`
 
 Like `preview.ts` but with child processes having timeout between chunks of data.
 
