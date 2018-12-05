@@ -1,6 +1,6 @@
 {
   "name": "split-shell-buffer",
-  "version": "0.0.0",
+  "version": "1.0.0-rc",
   "description": "Splitting shell strings while preserving SGR escape sequences",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

@@ -382,6 +382,6 @@ shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
   '@types/yargs': ^12.0.1
-  catls-lib: ^0.0.0
+  catls-lib: ^0.0.1
   tslib: ^1.9.3
   yargs: ^12.0.2

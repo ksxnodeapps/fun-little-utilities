@@ -87,7 +87,7 @@ specifiers:
   convenient-typescript-utilities: ^0.0.3
   fs-extra: ^7.0.0
   shell-escape: ^0.2.0
-  split-shell-buffer: ^0.0.0
+  split-shell-buffer: ^1.0.0-rc
   ts-await-event: ^0.0.0
   tslib: ^1.9.3
   typescript-miscellaneous: ^0.1.1
