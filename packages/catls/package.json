@@ -1,6 +1,6 @@
 {
   "name": "catls",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Invoke ls on directories, cat on files",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
