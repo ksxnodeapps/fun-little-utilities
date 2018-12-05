@@ -1,11 +1,13 @@
 import process from 'process'
 import { spawn } from 'child_process'
+import chalk from 'chalk'
 import event2promise from 'ts-await-event'
 import { writeln, fromChildProcess } from 'split-shell-buffer'
+import commandTitle from './command-title'
 const script = require.resolve('../executable')
 
 async function execute (args: string[], WDIR: string): Promise<void> {
-  console.info(`\n$ catls ${args.join(' ')}`)
+  console.info(chalk.bold(commandTitle('catls', args)))
 
   const cp = spawn(
     'node',
@@ -22,11 +24,12 @@ async function execute (args: string[], WDIR: string): Promise<void> {
   )
 
   const closeEventPromise = event2promise<'close', number>(cp, 'close')
-  const splitter = fromChildProcess(cp).withPrefix(Buffer.from('  | '))
+  const prefix = Buffer.from(chalk.dim('  | '))
+  const splitter = fromChildProcess(cp).withPrefix(prefix)
   await writeln(process.stdout, splitter)
 
   const status = await closeEventPromise
-  console.info(`  status: ${status}`)
+  console.info(`  status: ${chalk.redBright(String(status))}`)
 
   console.info()
 }
