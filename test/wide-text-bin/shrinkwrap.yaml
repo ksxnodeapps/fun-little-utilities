@@ -1,44 +1,47 @@
 dependencies:
   '@tools/preloaded-node': 'link:../../tools/preloaded-node'
   extra-jest: 0.0.23
-  iter-tools: 6.1.4
+  iter-tools: 6.1.7
   wide-text: 'link:../../packages/wide-text'
   wide-text-bin: 'link:../../packages/wide-text-bin'
 packages:
-  /@babel/runtime/7.1.2:
+  /@babel/runtime-corejs2/7.1.5:
+    dependencies:
+      core-js: 2.5.7
+      regenerator-runtime: 0.12.1
+    dev: false
+    resolution:
+      integrity: sha512-WsYRwQsFhVmxkAqwypPTZyV9GpkqMEaAr2zOItOmqSX2GBFaI+eq98CN81e13o0zaUKJOQGYyjhNVqj56nnkYg==
+  /@babel/runtime/7.1.5:
     dependencies:
       regenerator-runtime: 0.12.1
     dev: false
     resolution:
-      integrity: sha512-Y3SCjmhSupzFB6wcv1KmmFucH6gDVnI30WjOcicV10ju0cZjak3Jcs67YLIXBrmZYw1xCrVeJPbycFwrqNyxpg==
+      integrity: sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
   /@types/fs-extra/5.0.4:
     dependencies:
-      '@types/node': 10.12.0
+      '@types/node': 10.12.10
     dev: false
     resolution:
       integrity: sha512-DsknoBvD8s+RFfSGjmERJ7ZOP1HI0UZRA3FSI+Zakhrc/Gy26YQsLI+m5V5DHxroHRJqCDLKJp7Hixn8zyaF7g==
-  /@types/node/10.12.0:
+  /@types/node/10.12.10:
     dev: false
     resolution:
-      integrity: sha512-3TUHC3jsBAB7qVRGxT6lWyYo2v96BMmD2PTcl47H25Lu7UXtFH/2qqmKiVrnel6Ne//0TFYf6uvNX+HW2FRkLQ==
-  /@types/ramda/0.25.39:
+      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/ramda/0.25.42:
     dev: false
     resolution:
-      integrity: sha512-GJr1BOUjtdLexxQLhflMw1tCDav3csdUTC7twHx0GZUF9RTWGnJkYnUFAZE5cv1YnefgZabdfC8GvtJgVmQL7A==
+      integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
     dev: false
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  /clone-regexp/2.1.0:
-    dependencies:
-      is-regexp: 2.0.0
+  /core-js/2.5.7:
     dev: false
-    engines:
-      node: '>=6'
     resolution:
-      integrity: sha512-Ujn//SX3jg4duyQGM37swl+Sk95zmQnraZO0fGVZQEq1fJJML8mJaEkbT70ns/kBcdU7HLzpF8VJUmsb1lDD8Q==
+      integrity: sha512-RszJCAxg/PP6uzXVXL6BsxSXx/B05oJAQ2vkJRjyjrEcNVycaqOmNb5OTxZPE3xa5gwZduqza6L9JOCenh/Ecw==
   /dequeue/1.0.5:
     dev: false
     resolution:
@@ -53,14 +56,15 @@ packages:
   /extra-jest/0.0.23:
     dependencies:
       '@types/fs-extra': 5.0.4
-      '@types/node': 10.12.0
-      '@types/ramda': 0.25.39
-      fs-extra: 7.0.0
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
+      fs-extra: 7.0.1
       fs-tree-utils: 0.1.6
       js-yaml: 3.12.0
       ramda: 0.25.0
       tslib: 1.9.3
       unique-temp-path: 0.1.1
+    deprecated: 'Missing dependencies: @types/js-yaml'
     dev: false
     engines:
       node: '>= 8.9.0'
@@ -68,22 +72,22 @@ packages:
       jest: ^23.5.0
     resolution:
       integrity: sha512-yiDX2n1FJOUN4/uD67zNwzO/D6wQccd87A4MsPDZL562U0k5CwOlNx9sqaPe966nffQiX4ZWs4xruf5Ljb23Fw==
-  /fs-extra/7.0.0:
+  /fs-extra/7.0.1:
     dependencies:
-      graceful-fs: 4.1.11
+      graceful-fs: 4.1.15
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: false
     engines:
       node: '>=6 <7 || >=8'
     resolution:
-      integrity: sha512-EglNDLRpmaTWiD/qraZn6HREAEAHJcJOmxNEYwq6xeMKnVMAy3GUcFB+wXt2C6k4CNvB/mP1y/U3dzvKKj5OtQ==
+      integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   /fs-tree-utils/0.1.6:
     dependencies:
       '@types/fs-extra': 5.0.4
-      '@types/node': 10.12.0
-      '@types/ramda': 0.25.39
-      fs-extra: 7.0.0
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
+      fs-extra: 7.0.1
       monorepo-shared-assets: 0.0.17
       ramda: 0.25.0
       tslib: 1.9.3
@@ -92,35 +96,27 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-qsOeiFlr2zfQXkLziZh5FLxRPHmUm3Cfwj4cTjVVVij1gtHGkS11/6nxGA1l7ndvb2d+iKiQartR0cewodT5zg==
-  /graceful-fs/4.1.11:
+  /graceful-fs/4.1.15:
     dev: false
-    engines:
-      node: '>=0.4.0'
     resolution:
-      integrity: sha1-Dovf5NHduIVNZOBOp8AOKgJuVlg=
+      integrity: sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
   /immutable/3.8.2:
     dev: false
     engines:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
-  /is-regexp/2.0.0:
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-B5NGyyvXTmppdR/g7ei6cu5DXhvzBLNcajOXJ3OR1tmW39iiF7444beL1lQjL393j8vDOTWGnSV2r/5cKuNqkg==
-  /iter-tools/6.1.4:
+  /iter-tools/6.1.7:
     dependencies:
-      '@babel/runtime': 7.1.2
-      clone-regexp: 2.1.0
+      '@babel/runtime': 7.1.5
+      '@babel/runtime-corejs2': 7.1.5
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.0
       typescript-tuple: 1.7.3
       typescript-union: 0.0.0
     dev: false
     resolution:
-      integrity: sha512-MpUCYuPa7w8CzoHFWRycVsWBookzztSYjFaeYWHBUmumtuNWKtAbhUnAS+9tEku9GA961a8xa7CeH5Vm0+pQ5g==
+      integrity: sha512-UlHmWCnzDuwSNzz7MwBl5mUwnMYKC2StNjaWeRTasEmgc5A+5mPcX7pHUETMf5XRaBeznyK5gXsEH+J83IswGw==
   /js-yaml/3.12.0:
     dependencies:
       argparse: 1.0.10
@@ -132,7 +128,7 @@ packages:
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
-      graceful-fs: 4.1.11
+      graceful-fs: 4.1.15
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /little-ds-toolkit/1.1.0:
@@ -141,8 +137,8 @@ packages:
       integrity: sha512-2ARbmay5TrhFxFqcyFxPigmRToDuo8yxvIMdvwsDYNd/oZKnvsFT5L3I7s8WLXR7/tThYeffN9ouDtFFk4wzsA==
   /monorepo-shared-assets/0.0.17:
     dependencies:
-      '@types/node': 10.12.0
-      '@types/ramda': 0.25.39
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
       immutable: 3.8.2
       ramda: 0.25.0
       tslib: 1.9.3
@@ -184,7 +180,7 @@ packages:
       integrity: sha512-sWOTNcTOXw27cJhfvjSbxrKggb4XD+fPIFkjIqqnycdVqStj/3IR3QVEMZOheWY5ELGS3PCwuHFDVWAbK9UHvA==
   /unique-temp-path/0.1.1:
     dependencies:
-      '@types/node': 10.12.0
+      '@types/node': 10.12.10
       tslib: 1.9.3
     dev: false
     engines:

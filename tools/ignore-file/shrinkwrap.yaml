@@ -4,7 +4,7 @@ dependencies:
   '@types/fs-extra': 5.0.4
   '@types/js-yaml': 3.11.2
   '@types/minimatch': 3.0.3
-  fs-extra: 7.0.0
+  fs-extra: 7.0.1
   fs-tree-utils: 0.1.6
   js-yaml: 3.12.0
   minimatch: 3.0.4
@@ -12,7 +12,7 @@ dependencies:
 packages:
   /@types/fs-extra/5.0.4:
     dependencies:
-      '@types/node': 10.12.0
+      '@types/node': 10.12.10
     dev: false
     resolution:
       integrity: sha512-DsknoBvD8s+RFfSGjmERJ7ZOP1HI0UZRA3FSI+Zakhrc/Gy26YQsLI+m5V5DHxroHRJqCDLKJp7Hixn8zyaF7g==
@@ -24,14 +24,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/10.12.0:
+  /@types/node/10.12.10:
     dev: false
     resolution:
-      integrity: sha512-3TUHC3jsBAB7qVRGxT6lWyYo2v96BMmD2PTcl47H25Lu7UXtFH/2qqmKiVrnel6Ne//0TFYf6uvNX+HW2FRkLQ==
-  /@types/ramda/0.25.39:
+      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/ramda/0.25.42:
     dev: false
     resolution:
-      integrity: sha512-GJr1BOUjtdLexxQLhflMw1tCDav3csdUTC7twHx0GZUF9RTWGnJkYnUFAZE5cv1YnefgZabdfC8GvtJgVmQL7A==
+      integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -60,22 +60,22 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-  /fs-extra/7.0.0:
+  /fs-extra/7.0.1:
     dependencies:
-      graceful-fs: 4.1.11
+      graceful-fs: 4.1.15
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: false
     engines:
       node: '>=6 <7 || >=8'
     resolution:
-      integrity: sha512-EglNDLRpmaTWiD/qraZn6HREAEAHJcJOmxNEYwq6xeMKnVMAy3GUcFB+wXt2C6k4CNvB/mP1y/U3dzvKKj5OtQ==
+      integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   /fs-tree-utils/0.1.6:
     dependencies:
       '@types/fs-extra': 5.0.4
-      '@types/node': 10.12.0
-      '@types/ramda': 0.25.39
-      fs-extra: 7.0.0
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
+      fs-extra: 7.0.1
       monorepo-shared-assets: 0.0.17
       ramda: 0.25.0
       tslib: 1.9.3
@@ -84,12 +84,10 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-qsOeiFlr2zfQXkLziZh5FLxRPHmUm3Cfwj4cTjVVVij1gtHGkS11/6nxGA1l7ndvb2d+iKiQartR0cewodT5zg==
-  /graceful-fs/4.1.11:
+  /graceful-fs/4.1.15:
     dev: false
-    engines:
-      node: '>=0.4.0'
     resolution:
-      integrity: sha1-Dovf5NHduIVNZOBOp8AOKgJuVlg=
+      integrity: sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
   /immutable/3.8.2:
     dev: false
     engines:
@@ -107,7 +105,7 @@ packages:
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
-      graceful-fs: 4.1.11
+      graceful-fs: 4.1.15
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /minimatch/3.0.4:
@@ -118,8 +116,8 @@ packages:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
   /monorepo-shared-assets/0.0.17:
     dependencies:
-      '@types/node': 10.12.0
-      '@types/ramda': 0.25.39
+      '@types/node': 10.12.10
+      '@types/ramda': 0.25.42
       immutable: 3.8.2
       ramda: 0.25.0
       tslib: 1.9.3
