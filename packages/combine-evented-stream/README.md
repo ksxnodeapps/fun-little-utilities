@@ -31,7 +31,7 @@ stream.addListener('close', () => {
 })
 ```
 
-**Utilize `iterate-evented-stream`:**
+**Utilize [`iterate-evented-stream`](https://npmjs.com/package/iterate-evented-stream):**
 
 Assuming the context of execution below is async.
 

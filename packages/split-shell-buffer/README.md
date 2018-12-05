@@ -10,13 +10,9 @@ When I was creating `catls`, I needed to spawn a program and prints output (stdo
 
 Run one of the commands below (in top-level folder of this repository):
 
-```sh
-pnpx execute runPreloadedNode test/split-shell-buffer/preview.ts
-```
+<pre><code>pnpx execute runPreloadedNode <a href='https://git.io/fpX7e'>test/split-shell-buffer/preview.ts</a></code></pre>
 
-```sh
-pnpx execute runPreloadedNode test/split-shell-buffer/preview.discrete.ts
-```
+<pre><code>pnpx execute runPreloadedNode <a href='https://git.io/fpX7s'>test/split-shell-buffer/preview.discrete.ts</a></code></pre>
 
 ## Usage Example
 

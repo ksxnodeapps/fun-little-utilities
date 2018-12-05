@@ -1,6 +1,6 @@
 ## CatLs Lib
 
-Core APIs used by catls
+Core APIs used by [`catls`](https://npmjs.com/package/catls)
 
 ## License
 
