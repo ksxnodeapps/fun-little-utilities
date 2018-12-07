@@ -1,23 +1,27 @@
 dependencies:
-  '@types/node': 10.12.10
-  '@types/ramda': 0.25.42
+  '@types/node': 10.12.12
+  '@types/ramda': 0.26.0
   advanced-map-initialized: 0.0.2
-  evented-stream-types: 'link:../evented-stream-types'
+  evented-stream-types: 0.0.0
   monorepo-shared-assets: 0.0.17
   remote-controlled-promise: 0.0.4
   tslib: 1.9.3
 packages:
-  /@types/node/10.12.10:
+  /@types/node/10.12.12:
     dev: false
     resolution:
-      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /@types/ramda/0.25.42:
     dev: false
     resolution:
       integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
+  /@types/ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-6FCz2E3SrkgbuV3piRNfjThSRyMbcIxHknnGYPfrg4k55PHnNRR80boVdl1AME/KfDW+FBVmKrKPyRbFo8HjaQ==
   /advanced-map-base/0.0.2:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       advanced-map-types: 0.0.2
       tslib: 1.9.3
       typescript-miscellaneous: 0.1.1
@@ -29,7 +33,7 @@ packages:
       integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
   /advanced-map-initialized/0.0.2:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       advanced-map-base: 0.0.2
       advanced-map-types: 0.0.2
       tslib: 1.9.3
@@ -40,7 +44,7 @@ packages:
       integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
   /advanced-map-types/0.0.2:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       tslib: 1.9.3
       typescript-miscellaneous: 0.1.1
     deprecated: Depends on wrong version of "convenient-typescript-utilities"
@@ -49,6 +53,15 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
+  /evented-stream-types/0.0.0:
+    dependencies:
+      '@types/node': 10.12.12
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-YOgju9kySRhOc8bvuJ0frhlm2hxi1cq5tWFGLvQqm1Uvdn/eg7tFh1z4hZa51XMmvxrCaolvCMecp6f6BWTuYg==
   /immutable/3.8.2:
     dev: false
     engines:
@@ -57,7 +70,7 @@ packages:
       integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
   /monorepo-shared-assets/0.0.17:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       '@types/ramda': 0.25.42
       immutable: 3.8.2
       ramda: 0.25.0
@@ -73,7 +86,7 @@ packages:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
   /remote-controlled-promise/0.0.4:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       tslib: 1.9.3
     dev: false
     engines:
@@ -86,7 +99,7 @@ packages:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
   /typescript-miscellaneous/0.1.1:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       tslib: 1.9.3
     dev: false
     engines:
@@ -99,7 +112,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.0
-  '@types/ramda': ^0.25.42
+  '@types/ramda': ^0.26.0
   advanced-map-initialized: ^0.0.2
   evented-stream-types: ^0.0.0
   monorepo-shared-assets: ^0.0.17
