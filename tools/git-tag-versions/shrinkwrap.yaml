@@ -3,12 +3,12 @@ dependencies:
   '@types/yargs': 12.0.1
   chalk: 2.4.1
   git-ts: 0.0.5
-  nested-workspace-helper: 0.2.8
+  nested-workspace-helper: 0.2.9
   yargs: 12.0.5
 packages:
   /@types/fs-extra/5.0.4:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
     dev: false
     resolution:
       integrity: sha512-DsknoBvD8s+RFfSGjmERJ7ZOP1HI0UZRA3FSI+Zakhrc/Gy26YQsLI+m5V5DHxroHRJqCDLKJp7Hixn8zyaF7g==
@@ -18,7 +18,7 @@ packages:
       integrity: sha512-JRDtMPEqXrzfuYAdqbxLot1GvAr/QvicIZAnOAigZaj8xVMhuSJTg/xsv9E1TvyL+wujYhRLx9ZsQ0oFOSmwyA==
   /@types/node-fetch/2.1.4:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
     dev: false
     resolution:
       integrity: sha512-tR1ekaXUGpmzOcDXWU9BW73YfA2/VW1DF1FH+wlJ82BbCSnWTbdX+JkqWQXWKIGsFPnPsYadbXfNgz28g+ccWg==
@@ -26,10 +26,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/node/10.12.12:
+    dev: false
+    resolution:
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /@types/ramda/0.25.42:
     dev: false
     resolution:
       integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
+  /@types/ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-6FCz2E3SrkgbuV3piRNfjThSRyMbcIxHknnGYPfrg4k55PHnNRR80boVdl1AME/KfDW+FBVmKrKPyRbFo8HjaQ==
   /@types/semver/5.5.0:
     dev: false
     resolution:
@@ -137,7 +145,7 @@ packages:
       integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
   /exec-inline/0.0.2:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       tslib: 1.9.3
     dev: false
     engines:
@@ -179,7 +187,7 @@ packages:
   /fs-tree-utils/0.1.6:
     dependencies:
       '@types/fs-extra': 5.0.4
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       '@types/ramda': 0.25.42
       fs-extra: 7.0.1
       monorepo-shared-assets: 0.0.17
@@ -312,7 +320,7 @@ packages:
       integrity: sha512-jf84uxzwiuiIVKiOLpfYk7N46TSy8ubTonmneY9vrpHNAnp0QBt2BxWV9dO3/j+BoVAb+a5G6YDPW3M5HOdMWQ==
   /monorepo-shared-assets/0.0.17:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       '@types/ramda': 0.25.42
       immutable: 3.8.2
       ramda: 0.25.0
@@ -322,13 +330,13 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
-  /nested-workspace-helper/0.2.8:
+  /nested-workspace-helper/0.2.9:
     dependencies:
       '@types/fs-extra': 5.0.4
       '@types/js-yaml': 3.11.2
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       '@types/node-fetch': 2.1.4
-      '@types/ramda': 0.25.42
+      '@types/ramda': 0.26.0
       '@types/semver': 5.5.0
       '@types/yargs': 12.0.1
       chalk: 2.4.1
@@ -337,9 +345,9 @@ packages:
       js-yaml: 3.12.0
       monorepo-shared-assets: 0.0.17
       node-fetch: 2.3.0
-      ramda: 0.25.0
+      ramda: 0.26.1
       semver: 5.6.0
-      smart-publish: 0.0.2
+      smart-publish: 0.0.3
       tslib: 1.9.3
       yargs: 12.0.5
     dev: false
@@ -347,7 +355,7 @@ packages:
       node: '>= 8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-f2AInCDKpIMfiqLEM8Qd3co7xIBVfqpEVjwl+/tTdCdN7KSnLNbVlwdSUD5Ce0Ryz0wRB1hdyjZUghI2seF9qg==
+      integrity: sha512-khjJpABCs7XXVajeTEg4rj0UT4QX5qIfp+Fbml0zC1vOA8BX5rth0MsAFBHZyPF2RHoj47Ta+15CasqPEFWdcQ==
   /nice-try/1.0.5:
     dev: false
     resolution:
@@ -438,6 +446,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /ramda/0.26.1:
+    dev: false
+    resolution:
+      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
   /require-directory/2.1.1:
     dev: false
     engines:
@@ -475,9 +487,9 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
-  /smart-publish/0.0.2:
+  /smart-publish/0.0.3:
     dependencies:
-      '@types/node': 10.12.10
+      '@types/node': 10.12.12
       '@types/semver': 5.5.0
       chalk: 2.4.1
       exec-inline: 0.0.2
@@ -488,7 +500,7 @@ packages:
       node: '>= 8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-q2Cq+gdGbJ0zUBcJ0vUTyndQvbE6VJsgxndZkb65gg7esObCHxw3LENjM56lIQHtKSon6Ai8yr4YOyw+uYNLGQ==
+      integrity: sha512-II4Rfd97vH/zYGvpr3sJr3HcspgJRWxTfdpp/4Dyj0WXXsbv44qFWKFemF/f/zFQGdcYyYpTjZqwZHSiLhEZEw==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
@@ -608,5 +620,5 @@ specifiers:
   '@types/yargs': ^12.0.1
   chalk: ^2.4.1
   git-ts: ^0.0.5
-  nested-workspace-helper: ^0.2.6
-  yargs: ^12.0.2
+  nested-workspace-helper: ^0.2.9
+  yargs: ^12.0.5
