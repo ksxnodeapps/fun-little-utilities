@@ -1,41 +1,49 @@
 dependencies:
-  '@types/node': 10.12.10
-  '@types/ramda': 0.25.42
+  '@types/node': 10.12.12
+  '@types/ramda': 0.26.0
   create-array-equal: 0.0.1
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
   iter-tools: 6.1.7
   iterate-evented-stream: 'link:../iterate-evented-stream'
   monorepo-shared-assets: 0.0.17
-  ramda: 0.26.0
+  ramda: 0.26.1
   tslib: 1.9.3
   typescript-char-code: 0.0.1
 packages:
-  /@babel/runtime-corejs2/7.1.5:
+  /@babel/runtime-corejs2/7.2.0:
     dependencies:
-      core-js: 2.5.7
+      core-js: 2.6.0
       regenerator-runtime: 0.12.1
     dev: false
     resolution:
-      integrity: sha512-WsYRwQsFhVmxkAqwypPTZyV9GpkqMEaAr2zOItOmqSX2GBFaI+eq98CN81e13o0zaUKJOQGYyjhNVqj56nnkYg==
-  /@babel/runtime/7.1.5:
+      integrity: sha512-kPfmKoRI8Hpo5ZJGACWyrc9Eq1j3ZIUpUAQT2yH045OuYpccFJ9kYA/eErwzOM2jeBG1sC8XX1nl1EArtuM8tg==
+  /@babel/runtime/7.2.0:
     dependencies:
       regenerator-runtime: 0.12.1
     dev: false
     resolution:
-      integrity: sha512-xKnPpXG/pvK1B90JkwwxSGii90rQGKtzcMt2gI5G6+M0REXaq6rOHsGC2ay6/d0Uje7zzvSzjEzfR3ENhFlrfA==
+      integrity: sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
   /@types/node/10.12.10:
     dev: false
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/node/10.12.12:
+    dev: false
+    resolution:
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /@types/ramda/0.25.42:
     dev: false
     resolution:
       integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
-  /core-js/2.5.7:
+  /@types/ramda/0.26.0:
     dev: false
     resolution:
-      integrity: sha512-RszJCAxg/PP6uzXVXL6BsxSXx/B05oJAQ2vkJRjyjrEcNVycaqOmNb5OTxZPE3xa5gwZduqza6L9JOCenh/Ecw==
+      integrity: sha512-6FCz2E3SrkgbuV3piRNfjThSRyMbcIxHknnGYPfrg4k55PHnNRR80boVdl1AME/KfDW+FBVmKrKPyRbFo8HjaQ==
+  /core-js/2.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-kLRC6ncVpuEW/1kwrOXYX6KQASCVtrh1gQr/UiaVgFlf9WE5Vp+lNe5+h3LuMr5PAucWnnEXwH0nQHRH/gpGtw==
   /create-array-equal/0.0.1:
     dependencies:
       '@types/node': 10.12.10
@@ -59,8 +67,8 @@ packages:
       integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
   /iter-tools/6.1.7:
     dependencies:
-      '@babel/runtime': 7.1.5
-      '@babel/runtime-corejs2': 7.1.5
+      '@babel/runtime': 7.2.0
+      '@babel/runtime-corejs2': 7.2.0
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.0
       typescript-tuple: 1.7.3
@@ -88,10 +96,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
-  /ramda/0.26.0:
+  /ramda/0.26.1:
     dev: false
     resolution:
-      integrity: sha512-maK1XqpgsOo5DwjhROjqDvpm1vkphLQbpleVv+b3t5Y9uOQ0t8hTHT582+mDs7RLrex1kd4lWYizNXWLVjsq9w==
+      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
   /regenerator-runtime/0.12.1:
     dev: false
     resolution:
@@ -139,14 +147,14 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^10.12.0
-  '@types/ramda': ^0.25.42
+  '@types/node': ^10.12.12
+  '@types/ramda': ^0.26.0
   create-array-equal: ^0.0.1
   event-target-proxy: ^0.0.0
   evented-stream-types: ^0.0.0
-  iter-tools: ^6.1.6
+  iter-tools: ^6.1.7
   iterate-evented-stream: ^0.0.0
   monorepo-shared-assets: ^0.0.17
-  ramda: ^0.26.0
+  ramda: ^0.26.1
   tslib: ^1.9.3
   typescript-char-code: ^0.0.1

@@ -1,6 +1,6 @@
 dependencies:
   '@types/fs-extra': 5.0.4
-  '@types/node': 10.12.10
+  '@types/node': 10.12.12
   '@types/shell-escape': 0.2.0
   convenient-typescript-utilities: 0.0.3
   fs-extra: 7.0.1
@@ -20,6 +20,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/node/10.12.12:
+    dev: false
+    resolution:
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /@types/shell-escape/0.2.0:
     dev: false
     resolution:
@@ -82,10 +86,10 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/fs-extra': ^5.0.4
-  '@types/node': ^10.12.0
+  '@types/node': ^10.12.12
   '@types/shell-escape': ^0.2.0
   convenient-typescript-utilities: ^0.0.3
-  fs-extra: ^7.0.0
+  fs-extra: ^7.0.1
   shell-escape: ^0.2.0
   split-shell-buffer: ^1.0.0-rc
   ts-await-event: ^0.0.0

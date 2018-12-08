@@ -1,6 +1,6 @@
 dependencies:
-  '@types/node': 10.12.10
-  '@types/ramda': 0.25.42
+  '@types/node': 10.12.12
+  '@types/ramda': 0.26.0
   advanced-map-initialized: 0.0.2
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.17
@@ -11,10 +11,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/node/10.12.12:
+    dev: false
+    resolution:
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /@types/ramda/0.25.42:
     dev: false
     resolution:
       integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
+  /@types/ramda/0.26.0:
+    dev: false
+    resolution:
+      integrity: sha512-6FCz2E3SrkgbuV3piRNfjThSRyMbcIxHknnGYPfrg4k55PHnNRR80boVdl1AME/KfDW+FBVmKrKPyRbFo8HjaQ==
   /advanced-map-base/0.0.2:
     dependencies:
       '@types/node': 10.12.10
@@ -98,8 +106,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^10.12.0
-  '@types/ramda': ^0.25.42
+  '@types/node': ^10.12.12
+  '@types/ramda': ^0.26.0
   advanced-map-initialized: ^0.0.2
   evented-stream-types: ^0.0.0
   monorepo-shared-assets: ^0.0.17

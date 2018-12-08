@@ -1,14 +1,14 @@
 dependencies:
-  '@types/node': 10.12.10
+  '@types/node': 10.12.12
   combine-evented-stream: 'link:../combine-evented-stream'
   evented-stream-types: 'link:../evented-stream-types'
   iterate-evented-stream: 'link:../iterate-evented-stream'
   tslib: 1.9.3
 packages:
-  /@types/node/10.12.10:
+  /@types/node/10.12.12:
     dev: false
     resolution:
-      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /tslib/1.9.3:
     dev: false
     resolution:
@@ -17,7 +17,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^10.12.0
+  '@types/node': ^10.12.12
   combine-evented-stream: ^0.0.0
   evented-stream-types: ^0.0.0
   iterate-evented-stream: ^0.0.0

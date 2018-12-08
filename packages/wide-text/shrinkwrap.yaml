@@ -1,12 +1,12 @@
 dependencies:
-  '@types/node': 10.12.10
+  '@types/node': 10.12.12
   tslib: 1.9.3
   wide-text-types: 'link:../wide-text-types'
 packages:
-  /@types/node/10.12.10:
+  /@types/node/10.12.12:
     dev: false
     resolution:
-      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
   /tslib/1.9.3:
     dev: false
     resolution:
@@ -15,6 +15,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^10.12.0
+  '@types/node': ^10.12.12
   tslib: ^1.9.3
   wide-text-types: ^0.0.1
