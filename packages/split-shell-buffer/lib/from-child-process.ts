@@ -30,18 +30,18 @@ function fromChildProcess<Chunk extends string | Buffer> (cp: types.ChildProcess
   ) => (event: 'close' | 'error' | 'data', fn: any) => {
     switch (event) {
       case 'close':
-        modfn(cp, 'close', fn)
+        modfn<'close'>(cp, 'close', fn)
         break
 
       case 'error':
-        modfn(cp, 'error', fn)
+        modfn<'error'>(cp, 'error', fn)
         modfn(proxifiedStdOut, 'error', fn)
         modfn(proxifiedStdErr, 'error', fn)
         break
 
       case 'data':
-        modfn(proxifiedStdOut, 'data', fn)
-        modfn(proxifiedStdErr, 'data', fn)
+        modfn<'data'>(proxifiedStdOut, 'data', fn)
+        modfn<'data'>(proxifiedStdErr, 'data', fn)
         break
     }
   }
