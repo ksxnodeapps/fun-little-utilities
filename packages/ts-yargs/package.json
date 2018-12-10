@@ -1,7 +1,7 @@
 {
   "name": "ts-yargs",
   "version": "0.0.0",
-  "description": "It's yargs but with stronger TypeScript definitions",
+  "description": "It's a subset of yargs but with stronger TypeScript definitions",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
