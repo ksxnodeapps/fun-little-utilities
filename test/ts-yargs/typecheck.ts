@@ -41,7 +41,7 @@ const { argv } = yargs
   })
   .option('h', {
     describe: 'choices',
-    choices: ['foo', 'bar', 123, 456] as ['foo', 'bar', 123, 456],
+    choices: ['foo', 'bar', 123, 456],
     default: 123
   })
 

@@ -15,7 +15,8 @@ interface Yargs<Data> {
 
   option<
     Name extends string,
-    Choices extends ReadonlyArray<string | number>
+    Choices extends ReadonlyArray<Base>,
+    Base extends string | number = string | number
   > (
     name: Name,
     desc: ChoicesDesc<Choices>
