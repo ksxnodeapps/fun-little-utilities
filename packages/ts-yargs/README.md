@@ -1,6 +1,6 @@
 # TS Yargs
 
-It's a subset yargs but with stronger TypeScript definitions
+It's a subset [yargs](http://yargs.js.org/) but with stronger TypeScript definitions
 
 ## License
 
