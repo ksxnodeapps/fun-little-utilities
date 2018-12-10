@@ -24,5 +24,5 @@ specifiers:
   '@types/node': ^10.12.12
   '@types/yargs': ^12.0.1
   catls-lib: ^0.0.1
-  ts-yargs: ^0.0.0
+  ts-yargs: ^0.0.1
   tslib: ^1.9.3
