@@ -1,5 +1,3 @@
-import base from 'yargs'
-
 interface Yargs<Data> {
   readonly argv: Data & {
     readonly _: ReadonlyArray<string>

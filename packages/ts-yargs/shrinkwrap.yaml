@@ -1,6 +1,5 @@
 dependencies:
   '@types/node': 10.12.12
-  '@types/yargs': 12.0.1
   tslib: 1.9.3
   yargs: 12.0.5
 packages:
@@ -8,10 +7,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
-  /@types/yargs/12.0.1:
-    dev: false
-    resolution:
-      integrity: sha512-UVjo2oH79aRNcsDlFlnQ/iJ67Jd7j6uSg7jUJP/RZ/nUjAh5ElmnwlD5K/6eGgETJUgCHkiWn91B8JjXQ6ubAw==
   /ansi-regex/2.1.1:
     dev: false
     engines:
@@ -380,6 +375,5 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.12
-  '@types/yargs': ^12.0.1
   tslib: ^1.9.3
   yargs: ^12.0.5
