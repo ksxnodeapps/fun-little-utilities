@@ -2,7 +2,7 @@ import base from 'yargs'
 
 interface Yargs<Data> {
   readonly argv: Data & {
-    readonly _: string
+    readonly _: ReadonlyArray<string>
     readonly $0: string
   }
 

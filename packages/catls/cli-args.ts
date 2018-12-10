@@ -1,11 +1,11 @@
-import yargs from 'yargs'
-import { CommandLineOptions, EmptyArgumentHandlingMethod, SymlinkResolution } from 'catls-lib'
+import yargs from 'ts-yargs'
+import { EmptyArgumentHandlingMethod, SymlinkResolution } from 'catls-lib'
 const { Quiet, Warn, Error } = EmptyArgumentHandlingMethod
 const { Agnostic, Relative, Ultimate } = SymlinkResolution
 
 const coerceSubArgs = (list: string) => list.split(/\s*,\s*/).filter(Boolean)
 
-function getCliArgs (): CommandLineOptions & yargs.Arguments {
+function getCliArgs () {
   const { argv } = yargs
     .alias('h', 'help')
     .option('cat', {
@@ -23,7 +23,8 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
     .option('dontFakeInteractive', {
       alias: ['noInteractive', 'noScript', 'n'],
       describe: 'Do not use script command',
-      type: 'boolean'
+      type: 'boolean',
+      default: false
     })
     .option('handleEmptyArguments', {
       alias: ['onZeroArgs', 'z'],
@@ -83,7 +84,7 @@ function getCliArgs (): CommandLineOptions & yargs.Arguments {
     .env('')
     .help()
 
-  return argv as any
+  return argv
 }
 
 export = getCliArgs

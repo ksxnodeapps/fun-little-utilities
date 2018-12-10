@@ -18,7 +18,7 @@
   ],
   "bin": "catls",
   "dependencies": {
-    "yargs": "^12.0.5",
+    "ts-yargs": "^0.0.0",
     "tslib": "^1.9.3",
     "catls-lib": "^0.0.1",
     "@types/yargs": "^12.0.1",

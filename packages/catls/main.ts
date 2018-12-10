@@ -3,7 +3,7 @@ import { main, ExitStatus } from 'catls-lib'
 import getCliArgs from './cli-args'
 
 const { stdout, stderr } = process
-const { _: list, ...rest } = getCliArgs()
+const { _: list, $0: _, ...rest } = getCliArgs()
 
 main({
   addStatusCode: (current, addend) => current + addend,

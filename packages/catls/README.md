@@ -12,7 +12,7 @@ Options:
   --cat, --cmdCat, -c                       Cat program[string] [default: "cat"]
   --ls, --cmdLs, -l                         Ls program  [string] [default: "ls"]
   --dontFakeInteractive, --noInteractive,   Do not use script command
-  --noScript, -n                                                       [boolean]
+  --noScript, -n                                      [boolean] [default: false]
   --handleEmptyArguments, --onZeroArgs, -z  What to do when there is no
                                             arguments
                           [choices: "quiet", "warn", "error"] [default: "error"]
