@@ -1,6 +1,6 @@
 {
   "name": "catls-lib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Core APIs used by catls",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
