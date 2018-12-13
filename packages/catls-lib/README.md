@@ -1,4 +1,4 @@
-## CatLs Lib
+# CatLs Lib
 
 Core APIs used by [`catls`](https://npmjs.com/package/catls)
 
