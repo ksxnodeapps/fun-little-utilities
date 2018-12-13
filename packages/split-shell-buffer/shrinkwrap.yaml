@@ -1,13 +1,11 @@
 dependencies:
   '@types/node': 10.12.12
-  '@types/ramda': 0.26.0
   create-array-equal: 0.0.1
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
   iter-tools: 6.1.7
   iterate-evented-stream: 'link:../iterate-evented-stream'
   monorepo-shared-assets: 0.0.17
-  ramda: 0.26.1
   tslib: 1.9.3
   typescript-char-code: 0.0.1
 packages:
@@ -36,10 +34,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-m8IcEWgJZTb47UARqp2d58f+C8yDxpTC6ElU/muO0z1bYhdgf6LHcO2SE9f1Mt3SJnKCh6GtjKEC99hq6vPnDA==
-  /@types/ramda/0.26.0:
-    dev: false
-    resolution:
-      integrity: sha512-6FCz2E3SrkgbuV3piRNfjThSRyMbcIxHknnGYPfrg4k55PHnNRR80boVdl1AME/KfDW+FBVmKrKPyRbFo8HjaQ==
   /core-js/2.6.0:
     dev: false
     resolution:
@@ -96,10 +90,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
-  /ramda/0.26.1:
-    dev: false
-    resolution:
-      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
   /regenerator-runtime/0.12.1:
     dev: false
     resolution:
@@ -148,13 +138,11 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.12
-  '@types/ramda': ^0.26.0
   create-array-equal: ^0.0.1
   event-target-proxy: ^0.0.0
   evented-stream-types: ^0.0.0
   iter-tools: ^6.1.7
   iterate-evented-stream: ^0.0.0
   monorepo-shared-assets: ^0.0.17
-  ramda: ^0.26.1
   tslib: ^1.9.3
   typescript-char-code: ^0.0.1

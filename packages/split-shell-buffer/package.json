@@ -22,7 +22,6 @@
   ],
   "dependencies": {
     "iter-tools": "^6.1.7",
-    "ramda": "^0.26.1",
     "create-array-equal": "^0.0.1",
     "typescript-char-code": "^0.0.1",
     "monorepo-shared-assets": "^0.0.17",
@@ -30,7 +29,6 @@
     "event-target-proxy": "^0.0.0",
     "iterate-evented-stream": "^0.0.0",
     "evented-stream-types": "^0.0.0",
-    "@types/ramda": "^0.26.0",
     "@types/node": "^10.12.12"
   },
   "engines": {

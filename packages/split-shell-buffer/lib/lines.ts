@@ -1,4 +1,4 @@
-import { flatten } from 'ramda'
+import flatten from '../utils/simple-flatten'
 import * as types from './types'
 import elements from './elements'
 
