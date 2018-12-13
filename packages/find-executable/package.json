@@ -1,0 +1,29 @@
+{
+  "name": "find-executable",
+  "version": "0.0.0",
+  "description": "Search for a name that is executable",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "executable",
+    "realpath"
+  ],
+  "bin": "find-executable",
+  "dependencies": {
+    "ts-yargs": "^0.0.1",
+    "find-executable-lib": "^0.0.0",
+    "tslib": "^1.9.3",
+    "@types/node": "^10.12.12"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}

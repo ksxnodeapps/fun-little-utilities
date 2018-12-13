@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "find-executable": "file:../../packages/find-executable",
+    "ts-await-event": "file:../../packages/ts-await-event",
+    "split-shell-buffer": "file:../../packages/split-shell-buffer",
+    "@tools/preloaded-node": "file:../../tools/preloaded-node"
+  }
+}
