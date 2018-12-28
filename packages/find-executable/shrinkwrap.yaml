@@ -17,6 +17,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@types/node': ^10.12.12
-  find-executable-lib: ^0.0.0
+  find-executable-lib: ^0.0.1
   ts-yargs: ^0.0.1
   tslib: ^1.9.3
