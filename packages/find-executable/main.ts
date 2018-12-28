@@ -13,5 +13,9 @@ const { argv } = yargs
   })
   .help()
 
-const status = main(argv)
+const status = main({
+  cliOptions: argv,
+  logger: console
+})
+
 process.exit(status)

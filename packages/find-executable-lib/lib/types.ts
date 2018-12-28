@@ -14,7 +14,16 @@ export namespace FindingResult {
   }
 }
 
+export interface MainOptions {
+  readonly cliOptions: CommandLineOptions
+  readonly logger: Logger
+}
+
 export interface CommandLineOptions {
   readonly _: ReadonlyArray<string>
   readonly filter: DisplaySelection
+}
+
+export interface Logger {
+  info (...args: any[]): void
 }

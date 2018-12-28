@@ -1,15 +1,16 @@
 import os from 'os'
-import { CommandLineOptions } from './types'
+import { MainOptions } from './types'
 import find from './find'
 import display from './display'
 
-function main (cliOptions: CommandLineOptions): number {
+function main (options: MainOptions): number {
+  const { cliOptions, logger } = options
   const { _: list, filter } = cliOptions
 
   const result = find(list)
 
   if (result.found) {
-    console.info(display(result, filter))
+    logger.info(display(result, filter))
     return 0
   }
 
