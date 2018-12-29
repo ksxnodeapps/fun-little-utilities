@@ -1,13 +1,22 @@
 import { Action, ActionType, ActionInstance } from './action'
 
+/**
+ * Console method that takes arguments
+ */
 export interface FnWithData {
   (...args: any[]): void
 }
 
+/**
+ * Console method that takes no arguments
+ */
 export interface FnWithoutData {
   (): void
 }
 
+/**
+ * Interface of a console
+ */
 export interface Console {
   readonly log: FnWithData
   readonly info: FnWithData
@@ -16,10 +25,20 @@ export interface Console {
   readonly clear: FnWithoutData
 }
 
+/**
+ * Interface of a console data getter
+ */
 export interface ConsoleDatabase {
+  /**
+   * Get actions from database
+   * @returns Array of `Action` objects
+   */
   getActions (): ReadonlyArray<Action>
 }
 
+/**
+ * A fake console
+ */
 export class ConsoleInstance implements Console, ConsoleDatabase {
   private readonly actions = Array<ActionInstance>()
 
@@ -31,6 +50,10 @@ export class ConsoleInstance implements Console, ConsoleDatabase {
     this.actions.push(new ActionInstance.WithoutData(type))
   }
 
+  /**
+   * Get all recorded actions
+   * @returns Recorded actions
+   */
   public readonly getActions = (): ReadonlyArray<Action> => this.actions
 
   public readonly log = this.fnWithData(ActionType.Log)
