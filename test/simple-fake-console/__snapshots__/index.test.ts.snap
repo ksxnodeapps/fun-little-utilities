@@ -97,3 +97,11 @@ log + info: |-
 
 "
 `;
+
+exports[`Before executing Console::{log,info,error,warn} getString() to match snapshot 1`] = `
+"
+error + warn: ''
+log + info: ''
+
+"
+`;

@@ -15,6 +15,34 @@ it('ActionType matches snapshot', () => {
   expect(sfc.ActionType).toMatchSnapshot()
 })
 
+describe('Before executing Console::{log,info,error,warn}', () => {
+  class Init extends InitBase {
+    protected init () {
+      return undefined
+    }
+  }
+
+  it('ConsoleInstance::getActions() is empty', () => {
+    const { console } = new Init()
+    expect(console.getActions()).toEqual([])
+  })
+
+  it('getString() to match snapshot', () => {
+    const { console } = new Init()
+
+    xjest.snap.safe({
+      'log + info': sfc.getString({
+        console,
+        types: [sfc.ActionType.Log, sfc.ActionType.Info]
+      }),
+      'error + warn': sfc.getString({
+        console,
+        types: [sfc.ActionType.Error, sfc.ActionType.Warn]
+      })
+    })()
+  })
+})
+
 describe('After executing Console::{log,info,error,warn}', () => {
   class Init extends InitBase {
     protected init (console: sfc.ConsoleInstance): void {
