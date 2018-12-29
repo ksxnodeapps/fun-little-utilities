@@ -15,7 +15,7 @@ it('ActionType matches snapshot', () => {
   expect(sfc.ActionType).toMatchSnapshot()
 })
 
-describe('Before executing Console::{log,info,error,warn}', () => {
+describe('Before executing console methods', () => {
   class Init extends InitBase {
     protected init () {
       return undefined
@@ -27,7 +27,7 @@ describe('Before executing Console::{log,info,error,warn}', () => {
     expect(console.getActions()).toEqual([])
   })
 
-  it('getString() to match snapshot', () => {
+  it('getString() matches snapshot', () => {
     const { console } = new Init()
 
     xjest.snap.safe({
@@ -43,7 +43,7 @@ describe('Before executing Console::{log,info,error,warn}', () => {
   })
 })
 
-describe('After executing Console::{log,info,error,warn}', () => {
+describe('After executing methods', () => {
   class Init extends InitBase {
     protected init (console: sfc.ConsoleInstance): void {
       console.log('a', 0)

@@ -10,7 +10,7 @@ Object {
 }
 `;
 
-exports[`After executing Console::{log,info,error,warn} ConsoleInstance::getActions() matches snapshot 1`] = `
+exports[`After executing methods ConsoleInstance::getActions() matches snapshot 1`] = `
 Array [
   ActionInstance {
     "data": Array [
@@ -82,7 +82,7 @@ Array [
 ]
 `;
 
-exports[`After executing Console::{log,info,error,warn} getString() matches snapshot 1`] = `
+exports[`After executing methods getString() matches snapshot 1`] = `
 "
 error + warn: |-
   c 3 4 5
@@ -98,7 +98,7 @@ log + info: |-
 "
 `;
 
-exports[`Before executing Console::{log,info,error,warn} getString() to match snapshot 1`] = `
+exports[`Before executing console methods getString() matches snapshot 1`] = `
 "
 error + warn: ''
 log + info: ''
