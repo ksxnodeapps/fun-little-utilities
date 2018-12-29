@@ -2,6 +2,7 @@
 
 exports[`ActionType matches snapshot 1`] = `
 Object {
+  "Clear": "clear",
   "Error": "error",
   "Info": "info",
   "Log": "log",
@@ -46,6 +47,9 @@ Array [
     "type": "warn",
   },
   ActionInstance {
+    "type": "clear",
+  },
+  ActionInstance {
     "data": Array [
       "foo",
       "bar",
@@ -71,6 +75,9 @@ Array [
       456,
     ],
     "type": "warn",
+  },
+  ActionInstance {
+    "type": "clear",
   },
 ]
 `;

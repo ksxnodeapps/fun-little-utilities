@@ -14,13 +14,18 @@ console.log('hello', 'world')
 console.info(0, 1, 2, 3)
 console.error(new Error('foo'))
 console.warn('Warning')
+console.clear()
 
 // Get all actions
 //
-// Result: Array<{
-//   type: 'log' | 'info' | 'error' | 'warn',
-//   data: any[]
-// }>
+// Result: Array<
+//   {
+//     type: 'log' | 'info' | 'error' | 'warn',
+//     data: any[]
+//   } | {
+//     type: 'clear'
+//   }
+// >
 console.getActions()
 
 // Get string from selected types of actions

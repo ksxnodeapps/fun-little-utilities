@@ -22,10 +22,12 @@ describe('After executing Console::{log,info,error,warn}', () => {
       console.info('b', 1, 2)
       console.error('c', 3, 4, 5)
       console.warn('d', 7, 8, 9, 10)
+      console.clear()
       console.log('foo', 'bar')
       console.info('baz')
       console.error('hello', 'world')
       console.warn(123, 456)
+      console.clear()
     }
   }
 
