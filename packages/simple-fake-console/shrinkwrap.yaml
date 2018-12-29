@@ -14,5 +14,5 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^10.12.12
+  '@types/node': ^10.12.18
   tslib: ^1.9.3

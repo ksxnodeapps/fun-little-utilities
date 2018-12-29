@@ -1,18 +1,18 @@
 dependencies:
-  '@types/node': 10.12.12
-  '@types/yargs': 12.0.1
+  '@types/node': 10.12.18
+  '@types/yargs': 12.0.4
   tslib: 1.9.3
   wide-text: 'link:../wide-text'
   yargs: 12.0.5
 packages:
-  /@types/node/10.12.12:
+  /@types/node/10.12.18:
     dev: false
     resolution:
-      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
-  /@types/yargs/12.0.1:
+      integrity: sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
+  /@types/yargs/12.0.4:
     dev: false
     resolution:
-      integrity: sha512-UVjo2oH79aRNcsDlFlnQ/iJ67Jd7j6uSg7jUJP/RZ/nUjAh5ElmnwlD5K/6eGgETJUgCHkiWn91B8JjXQ6ubAw==
+      integrity: sha512-hBYcOaYPnlAPj2OZbivFFzsW61mN0L3N0Aq4KwRt/ZXlw1c25Srj8413MBu5IhFGOyOdjLi2/qOqtStDTXGs9g==
   /ansi-regex/2.1.1:
     dev: false
     engines:
@@ -380,8 +380,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^10.12.12
-  '@types/yargs': ^12.0.1
+  '@types/node': ^10.12.18
+  '@types/yargs': ^12.0.4
   tslib: ^1.9.3
   wide-text: ^0.0.1
   yargs: ^12.0.5

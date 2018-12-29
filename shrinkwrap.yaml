@@ -1,10 +1,10 @@
 devDependencies:
   '@tools/scripts': 'link:tools/scripts'
   '@types/jest': 23.3.10
-  '@types/node': 10.12.12
+  '@types/node': 10.12.18
   standard: 12.0.1
   toolcheck: 0.0.5
-  tslint: 5.11.0
+  tslint: 5.12.0
   tslint-config-standard: 8.0.1
   typescript: 3.2.2
 packages:
@@ -22,10 +22,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
-  /@types/node/10.12.12:
+  /@types/node/10.12.18:
     dev: true
     resolution:
-      integrity: sha512-Pr+6JRiKkfsFvmU/LK68oBRCQeEg36TyAbPhc2xpez24OOZZCuoIhWGTd39VZy6nGafSbxzGouFPTFD/rR1A0A==
+      integrity: sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
   /@types/which/1.3.1:
     dev: true
     resolution:
@@ -1322,6 +1322,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-AicPrAC7Qu1JxPCZ9ZgCZlY35QgFnNqc+0LtbRNxnVw4TXvjQ72wnuL9JQcEBgXkI9JM8MsT9kaQoHcpCRJOYA==
+  /resolve/1.9.0:
+    dependencies:
+      path-parse: 1.0.6
+    dev: true
+    resolution:
+      integrity: sha512-TZNye00tI67lwYvzxCxHGjwTNlUV70io54/Ed4j6PscB8xVfuBJpRenI/o6dVk0cY0PYTY27AgCoGGxRnYuItQ==
   /restore-cursor/2.0.0:
     dependencies:
       onetime: 2.0.1
@@ -1568,7 +1574,7 @@ packages:
       typescript: ^2.2.0 || ^3.0.0
     resolution:
       integrity: sha512-WlSXE+J2vY/VPgIcqQuijMQiel+UtmXS+4nvK4ZzlDiqBfXse8FAvkNnTcYhnQyOTW5KFM+uRRGXxYhFpuBc6w==
-  /tslint/5.11.0:
+  /tslint/5.12.0:
     dependencies:
       babel-code-frame: 6.26.0
       builtin-modules: 1.1.1
@@ -1578,7 +1584,7 @@ packages:
       glob: 7.1.3
       js-yaml: 3.12.0
       minimatch: 3.0.4
-      resolve: 1.8.1
+      resolve: 1.9.0
       semver: 5.6.0
       tslib: 1.9.3
       tsutils: 2.29.0
@@ -1589,7 +1595,7 @@ packages:
     peerDependencies:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev'
     resolution:
-      integrity: sha1-mPMMAurjzecAYgHkwzywi0hYHu0=
+      integrity: sha512-CKEcH1MHUBhoV43SA/Jmy1l24HJJgI0eyLbBNSRyFlsQvb9v6Zdq+Nz2vEOH00nC5SUx4SneJ59PZUS/ARcokQ==
   /tsutils/2.29.0:
     dependencies:
       tslib: 1.9.3
@@ -1675,9 +1681,9 @@ shrinkwrapVersion: 3
 specifiers:
   '@tools/scripts': 'file:./tools/scripts'
   '@types/jest': ^23.3.10
-  '@types/node': ^10.12.12
+  '@types/node': ^10.12.18
   standard: ^12.0.1
   toolcheck: ^0.0.5
-  tslint: ^5.11.0
+  tslint: ^5.12.0
   tslint-config-standard: ^8.0.1
   typescript: ^3.2.2

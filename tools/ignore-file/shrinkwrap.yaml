@@ -2,7 +2,7 @@ dependencies:
   '@tools/places': 'link:../places'
   '@tools/preloaded-node': 'link:../preloaded-node'
   '@types/fs-extra': 5.0.4
-  '@types/js-yaml': 3.11.2
+  '@types/js-yaml': 3.11.4
   '@types/minimatch': 3.0.3
   fs-extra: 7.0.1
   fs-tree-utils: 0.1.6
@@ -16,10 +16,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-DsknoBvD8s+RFfSGjmERJ7ZOP1HI0UZRA3FSI+Zakhrc/Gy26YQsLI+m5V5DHxroHRJqCDLKJp7Hixn8zyaF7g==
-  /@types/js-yaml/3.11.2:
+  /@types/js-yaml/3.11.4:
     dev: false
     resolution:
-      integrity: sha512-JRDtMPEqXrzfuYAdqbxLot1GvAr/QvicIZAnOAigZaj8xVMhuSJTg/xsv9E1TvyL+wujYhRLx9ZsQ0oFOSmwyA==
+      integrity: sha512-a42nbZzOlxbH3ORDg/brU+zlRQS8mSvZCEY4Xery66/NIA7yX4T9qk6yL9qpw4AhgwzEgc1XIhHRnivQW+zlkw==
   /@types/minimatch/3.0.3:
     dev: false
     resolution:
@@ -151,7 +151,7 @@ specifiers:
   '@tools/places': 'file:../places'
   '@tools/preloaded-node': 'file:../preloaded-node'
   '@types/fs-extra': ^5.0.4
-  '@types/js-yaml': ^3.11.2
+  '@types/js-yaml': ^3.11.4
   '@types/minimatch': ^3.0.3
   fs-extra: ^7.0.1
   fs-tree-utils: ^0.1.6

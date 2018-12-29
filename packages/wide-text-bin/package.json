@@ -27,8 +27,8 @@
     "yargs": "^12.0.5",
     "tslib": "^1.9.3",
     "wide-text": "^0.0.1",
-    "@types/yargs": "^12.0.1",
-    "@types/node": "^10.12.12"
+    "@types/yargs": "^12.0.4",
+    "@types/node": "^10.12.18"
   },
   "engines": {
     "node": ">= 8.9.0"

@@ -1,6 +1,6 @@
 dependencies:
   '@tools/places': 'link:../places'
-  '@types/yargs': 12.0.1
+  '@types/yargs': 12.0.4
   chalk: 2.4.1
   git-ts: 0.0.5
   nested-workspace-helper: 0.2.9
@@ -46,6 +46,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-UVjo2oH79aRNcsDlFlnQ/iJ67Jd7j6uSg7jUJP/RZ/nUjAh5ElmnwlD5K/6eGgETJUgCHkiWn91B8JjXQ6ubAw==
+  /@types/yargs/12.0.4:
+    dev: false
+    resolution:
+      integrity: sha512-hBYcOaYPnlAPj2OZbivFFzsW61mN0L3N0Aq4KwRt/ZXlw1c25Srj8413MBu5IhFGOyOdjLi2/qOqtStDTXGs9g==
   /ansi-regex/2.1.1:
     dev: false
     engines:
@@ -617,7 +621,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@tools/places': 'file:../places'
-  '@types/yargs': ^12.0.1
+  '@types/yargs': ^12.0.4
   chalk: ^2.4.1
   git-ts: ^0.0.5
   nested-workspace-helper: ^0.2.9
