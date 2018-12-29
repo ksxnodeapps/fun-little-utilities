@@ -1,0 +1,27 @@
+{
+  "name": "simple-fake-console",
+  "version": "0.0.0",
+  "description": "Create fake consoles for testing purpose",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "console",
+    "fake",
+    "test"
+  ],
+  "dependencies": {
+    "tslib": "^1.9.3",
+    "@types/node": "^10.12.12"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}

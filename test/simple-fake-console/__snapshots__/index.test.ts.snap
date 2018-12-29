@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionType matches snapshot 1`] = `
+Object {
+  "Error": "error",
+  "Info": "info",
+  "Log": "log",
+  "Warn": "warn",
+}
+`;
+
+exports[`After executing Console::{log,info,error,warn} ConsoleInstance::getActions() matches snapshot 1`] = `
+Array [
+  ActionInstance {
+    "data": Array [
+      "a",
+      0,
+    ],
+    "type": "log",
+  },
+  ActionInstance {
+    "data": Array [
+      "b",
+      1,
+      2,
+    ],
+    "type": "info",
+  },
+  ActionInstance {
+    "data": Array [
+      "c",
+      3,
+      4,
+      5,
+    ],
+    "type": "error",
+  },
+  ActionInstance {
+    "data": Array [
+      "d",
+      7,
+      8,
+      9,
+      10,
+    ],
+    "type": "warn",
+  },
+  ActionInstance {
+    "data": Array [
+      "foo",
+      "bar",
+    ],
+    "type": "log",
+  },
+  ActionInstance {
+    "data": Array [
+      "baz",
+    ],
+    "type": "info",
+  },
+  ActionInstance {
+    "data": Array [
+      "hello",
+      "world",
+    ],
+    "type": "error",
+  },
+  ActionInstance {
+    "data": Array [
+      123,
+      456,
+    ],
+    "type": "warn",
+  },
+]
+`;
+
+exports[`After executing Console::{log,info,error,warn} getString() matches snapshot 1`] = `
+"
+error + warn: |-
+  c 3 4 5
+  d 7 8 9 10
+  hello world
+  123 456
+log + info: |-
+  a 0
+  b 1 2
+  foo bar
+  baz
+
+"
+`;

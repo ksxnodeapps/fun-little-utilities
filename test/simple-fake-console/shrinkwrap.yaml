@@ -1,0 +1,168 @@
+dependencies:
+  extra-jest: 0.0.24
+  simple-fake-console: 'link:../../packages/simple-fake-console'
+  static-type-assert: 3.0.1
+packages:
+  /@types/fs-extra/5.0.4:
+    dependencies:
+      '@types/node': 10.12.18
+    dev: false
+    resolution:
+      integrity: sha512-DsknoBvD8s+RFfSGjmERJ7ZOP1HI0UZRA3FSI+Zakhrc/Gy26YQsLI+m5V5DHxroHRJqCDLKJp7Hixn8zyaF7g==
+  /@types/js-yaml/3.11.4:
+    dev: false
+    resolution:
+      integrity: sha512-a42nbZzOlxbH3ORDg/brU+zlRQS8mSvZCEY4Xery66/NIA7yX4T9qk6yL9qpw4AhgwzEgc1XIhHRnivQW+zlkw==
+  /@types/node/10.12.18:
+    dev: false
+    resolution:
+      integrity: sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
+  /@types/ramda/0.25.45:
+    dev: false
+    resolution:
+      integrity: sha512-J+xlbNyag7wgYRSuvRwu9zZY7t0vM4KMUVHxWLUMegqlz9+97v6jYo2JlvfsVC3qtulx7PKenFKzWCWsdVSCDw==
+  /argparse/1.0.10:
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
+  /esprima/4.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
+  /extra-jest/0.0.24:
+    dependencies:
+      '@types/fs-extra': 5.0.4
+      '@types/js-yaml': 3.11.4
+      '@types/node': 10.12.18
+      '@types/ramda': 0.25.45
+      fs-extra: 7.0.1
+      fs-tree-utils: 0.1.6
+      js-yaml: 3.12.0
+      ramda: 0.25.0
+      tslib: 1.9.3
+      unique-temp-path: 0.1.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    peerDependencies:
+      jest: ^23.5.0
+    resolution:
+      integrity: sha512-j/cbnWwEMtS2oJl1v2UJRAvOVg+vNN+LjiYyKXjws/8pDfniDna7w2VVq2pSLaqbLEoHnieqm01GJ8kw431EPQ==
+  /fs-extra/7.0.1:
+    dependencies:
+      graceful-fs: 4.1.15
+      jsonfile: 4.0.0
+      universalify: 0.1.2
+    dev: false
+    engines:
+      node: '>=6 <7 || >=8'
+    resolution:
+      integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
+  /fs-tree-utils/0.1.6:
+    dependencies:
+      '@types/fs-extra': 5.0.4
+      '@types/node': 10.12.18
+      '@types/ramda': 0.25.45
+      fs-extra: 7.0.1
+      monorepo-shared-assets: 0.0.17
+      ramda: 0.25.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-qsOeiFlr2zfQXkLziZh5FLxRPHmUm3Cfwj4cTjVVVij1gtHGkS11/6nxGA1l7ndvb2d+iKiQartR0cewodT5zg==
+  /graceful-fs/4.1.15:
+    dev: false
+    resolution:
+      integrity: sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
+  /immutable/3.8.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+  /js-yaml/3.12.0:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-PIt2cnwmPfL4hKNwqeiuz4bKfnzHTBv6HyVgjahA6mPLwPDzjDWrplJBMjHUFxku/N3FlmrbyPclad+I+4mJ3A==
+  /jsonfile/4.0.0:
+    dev: false
+    optionalDependencies:
+      graceful-fs: 4.1.15
+    resolution:
+      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+  /monorepo-shared-assets/0.0.17:
+    dependencies:
+      '@types/node': 10.12.18
+      '@types/ramda': 0.25.45
+      immutable: 3.8.2
+      ramda: 0.25.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
+  /ramda/0.25.0:
+    dev: false
+    resolution:
+      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /sprintf-js/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+  /static-type-assert/3.0.1:
+    dependencies:
+      typescript-compare: 0.0.2
+    dev: false
+    peerDependencies:
+      typescript: ^3.0.3
+    resolution:
+      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+  /tslib/1.9.3:
+    dev: false
+    resolution:
+      integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /typescript-compare/0.0.2:
+    dependencies:
+      typescript-logic: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+  /typescript-logic/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
+  /unique-temp-path/0.1.1:
+    dependencies:
+      '@types/node': 10.12.18
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-hYlBbvWrpY5sitojnCwIuWH8FNx7CzNyGqG+CbxRDOe3ehqrPmMRj3D2jy3/6C35+VbRBUVy6f2o29y3SyJ/ag==
+  /universalify/0.1.2:
+    dev: false
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  extra-jest: ^0.0.24
+  simple-fake-console: 'file:../../packages/simple-fake-console'
+  static-type-assert: ^3.0.1
