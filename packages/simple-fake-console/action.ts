@@ -1,3 +1,5 @@
+// tslint:disable:no-unnecessary-qualifier
+
 /**
  * Each type corresponds with a console method
  */
