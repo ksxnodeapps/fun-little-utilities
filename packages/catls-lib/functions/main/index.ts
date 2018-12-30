@@ -2,7 +2,7 @@ import { readlink } from 'fs-extra'
 import { Main } from '../../types'
 import { ExitStatus, EmptyArgumentHandlingMethod } from '../../enums'
 import unit from '../unit'
-import num2str from '../number-to-string'
+import str2num from '../string-to-number'
 import symlinkRoutingFunctions from '../symlink-routing-functions'
 import statInfo from '../stat-info'
 import unknownStatType from '../unknown-stat-type'
@@ -39,7 +39,7 @@ async function main (param: Main.Param): Promise<number> {
     }
   }
 
-  const actualFollowSymlink = num2str(followSymlink)
+  const actualFollowSymlink = str2num(followSymlink)
   const { getLink, getLoop, getStat } = symlinkRoutingFunctions(symlinkResolution)
   const execute = executor({ dontFakeInteractive, spawn })
   let currentStatus = 0
