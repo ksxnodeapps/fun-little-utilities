@@ -1,6 +1,6 @@
 {
   "name": "evented-stream",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Collection of evented-stream packages",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "tslib": "^1.9.3",
-    "iterate-evented-stream": "^0.0.1",
+    "iterate-evented-stream": "^0.0.2",
     "combine-evented-stream": "^0.0.0",
     "evented-stream-types": "^0.0.0",
     "@types/node": "^10.12.18"
