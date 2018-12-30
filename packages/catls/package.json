@@ -20,7 +20,7 @@
   "dependencies": {
     "ts-yargs": "^0.0.1",
     "tslib": "^1.9.3",
-    "catls-lib": "^0.0.5",
+    "catls-lib": "^0.0.4",
     "@types/node": "^10.12.18"
   },
   "engines": {
