@@ -22,7 +22,8 @@ async function main (param: Main.Param): Promise<number> {
     dontFakeInteractive,
     followSymlink,
     symlinkResolution,
-    addStatusCode
+    addStatusCode,
+    spawn
   } = param
 
   if (!list.length) {
@@ -40,7 +41,7 @@ async function main (param: Main.Param): Promise<number> {
 
   const actualFollowSymlink = num2str(followSymlink)
   const { getLink, getLoop, getStat } = symlinkRoutingFunctions(symlinkResolution)
-  const execute = executor(dontFakeInteractive)
+  const execute = executor({ dontFakeInteractive, spawn })
   let currentStatus = 0
 
   // Don't run unit(...) in parallel:

@@ -1,7 +1,8 @@
-import { spawn } from 'child_process'
 import { Executor } from '../../types'
 
-function executor (dontFakeInteractive: boolean): Executor {
+function executor (options: Executor.Options): Executor {
+  const { dontFakeInteractive, spawn } = options
+
   if (dontFakeInteractive) return spawn
 
   const shEscMdl = import('shell-escape')

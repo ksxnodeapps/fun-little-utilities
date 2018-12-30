@@ -25,6 +25,7 @@ export namespace Main {
     readonly stdout: Writable
     readonly stderr: Writable
     readonly addStatusCode: StatusCodeAdder
+    readonly spawn: Executor
   }
 
   export type StatusCodeAdder = (current: number, addend: number) => MaybePromise<number>
@@ -144,6 +145,13 @@ export namespace UnknownStatInfo {
 
 export interface Executor {
   (cmd: string, args: ReadonlyArray<string>): MaybePromise<ChildProcess>
+}
+
+export namespace Executor {
+  export interface Options {
+    readonly spawn: Executor
+    readonly dontFakeInteractive: boolean
+  }
 }
 
 export interface Writable {

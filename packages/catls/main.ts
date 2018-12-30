@@ -1,4 +1,5 @@
 import process from 'process'
+import { spawn } from 'child_process'
 import { main, ExitStatus } from 'catls-lib'
 import getCliArgs from './cli-args'
 
@@ -10,6 +11,7 @@ main({
   list,
   stdout,
   stderr,
+  spawn,
   ...rest
 }).then(
   status => process.exit(status),
