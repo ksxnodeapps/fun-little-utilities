@@ -1,18 +1,258 @@
 dependencies:
   '@types/node': 10.12.18
-  combine-evented-stream: 'link:../combine-evented-stream'
-  evented-stream-types: 'link:../evented-stream-types'
-  iterate-evented-stream: 'link:../iterate-evented-stream'
+  combine-evented-stream: 0.0.0
+  evented-stream-types: 0.0.0
+  iterate-evented-stream: 0.0.0
   tslib: 1.9.3
 packages:
+  /@babel/runtime-corejs2/7.2.0:
+    dependencies:
+      core-js: 2.6.1
+      regenerator-runtime: 0.12.1
+    dev: false
+    resolution:
+      integrity: sha512-kPfmKoRI8Hpo5ZJGACWyrc9Eq1j3ZIUpUAQT2yH045OuYpccFJ9kYA/eErwzOM2jeBG1sC8XX1nl1EArtuM8tg==
+  /@babel/runtime/7.2.0:
+    dependencies:
+      regenerator-runtime: 0.12.1
+    dev: false
+    resolution:
+      integrity: sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
   /@types/node/10.12.18:
     dev: false
     resolution:
       integrity: sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
+  /@types/ramda/0.25.45:
+    dev: false
+    resolution:
+      integrity: sha512-J+xlbNyag7wgYRSuvRwu9zZY7t0vM4KMUVHxWLUMegqlz9+97v6jYo2JlvfsVC3qtulx7PKenFKzWCWsdVSCDw==
+  /advanced-map-altered-equal/0.0.3:
+    dependencies:
+      '@types/node': 10.12.18
+      advanced-map-base: 0.0.2
+      advanced-map-types: 0.0.2
+      convenient-typescript-utilities: 0.0.3
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-Upvw6pfcn7MjE45gKM1R7QbNMCOKPtjyxZQcqANJj/tHYlLZ+X3mClYHbEg56TJ3FVIcPUS6TsgUnBQL0gLBqA==
+  /advanced-map-base/0.0.2:
+    dependencies:
+      '@types/node': 10.12.18
+      advanced-map-types: 0.0.2
+      tslib: 1.9.3
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
+  /advanced-map-initialized/0.0.2:
+    dependencies:
+      '@types/node': 10.12.18
+      advanced-map-base: 0.0.2
+      advanced-map-types: 0.0.2
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
+  /advanced-map-multi-key-base/0.0.3:
+    dependencies:
+      '@types/node': 10.12.18
+      advanced-map-altered-equal: 0.0.3
+      advanced-map-types: 0.0.2
+      create-array-equal: 0.0.1
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-mDPvBu3KKQlJ0GIA59JYQladqrIAtrZoHSt5TFebqcA0BAYiImgTyIjfROxtMb/0VYQgSeM/IWvmQizJmLoJvA==
+  /advanced-map-mutable-multi-key/0.0.3:
+    dependencies:
+      '@types/node': 10.12.18
+      advanced-map-multi-key-base: 0.0.3
+      advanced-map-types: 0.0.2
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-5jWNMOV+rSDsn+9ybkMydgMRPiGm3/wqb7tQCIjWbpkVS2QUnlBjvodtGEoGOmXtLBHkybPy/t2TPHhsjFwrVw==
+  /advanced-map-types/0.0.2:
+    dependencies:
+      '@types/node': 10.12.18
+      tslib: 1.9.3
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
+  /combine-evented-stream/0.0.0:
+    dependencies:
+      '@types/node': 10.12.18
+      event-target-proxy: 0.0.0
+      evented-stream-types: 0.0.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-vordY+MuBJNi55ZvdvE78F+VWh7QbsEf6I8s5/YjXrMekK1hpp2msjro4Cao53GRA5Bc637Khq4nNtLf2MP87w==
+  /convenient-typescript-utilities/0.0.3:
+    dependencies:
+      '@types/node': 10.12.18
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-kHjMz9faySaKMx9ZRwv9oTogYRXCGaKPYq+xsLEswBo+0a5r8l5Xk/7Q+vqDLMYMrTm2oW7wEgtiDcXonr8Nkg==
+  /core-js/2.6.1:
+    dev: false
+    resolution:
+      integrity: sha512-L72mmmEayPJBejKIWe2pYtGis5r0tQ5NaJekdhyXgeMQTpJoBsH0NL4ElY2LfSoV15xeQWKQ+XTTOZdyero5Xg==
+  /create-array-equal/0.0.1:
+    dependencies:
+      '@types/node': 10.12.18
+      iter-tools: 6.1.7
+      tslib: 1.9.3
+      typescript-miscellaneous: 0.1.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-QCpEgP2tYOfEK41zZzltXNWaB6HJYhZVVBEFc5o6+6FyHf4AUEVb0mBXJPYGNAPN/nT+TFFW4+ar8R3TQ1XxXg==
+  /dequeue/1.0.5:
+    dev: false
+    resolution:
+      integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
+  /event-target-proxy/0.0.0:
+    dependencies:
+      '@types/node': 10.12.18
+      advanced-map-initialized: 0.0.2
+      advanced-map-mutable-multi-key: 0.0.3
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-zoW+7JtTK23xDi/N317fiE1TA0rdKBzynP84kJKLbQLTvcBORGNkAlALspShC1LDtt0H2nkySt+TJtpBc3sLbw==
+  /evented-stream-types/0.0.0:
+    dependencies:
+      '@types/node': 10.12.18
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-YOgju9kySRhOc8bvuJ0frhlm2hxi1cq5tWFGLvQqm1Uvdn/eg7tFh1z4hZa51XMmvxrCaolvCMecp6f6BWTuYg==
+  /immutable/3.8.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+  /iter-tools/6.1.7:
+    dependencies:
+      '@babel/runtime': 7.2.0
+      '@babel/runtime-corejs2': 7.2.0
+      dequeue: 1.0.5
+      little-ds-toolkit: 1.1.0
+      typescript-tuple: 1.7.3
+      typescript-union: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-UlHmWCnzDuwSNzz7MwBl5mUwnMYKC2StNjaWeRTasEmgc5A+5mPcX7pHUETMf5XRaBeznyK5gXsEH+J83IswGw==
+  /iterate-evented-stream/0.0.0:
+    dependencies:
+      '@types/node': 10.12.18
+      '@types/ramda': 0.25.45
+      advanced-map-initialized: 0.0.2
+      evented-stream-types: 0.0.0
+      monorepo-shared-assets: 0.0.17
+      remote-controlled-promise: 0.0.4
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-M2jVY9iZRXTn1YcYKUAs/hEQtVRvzqiUMhZus+CKB6p6jKA0DteF2AXk1SHafnFVe/ZqeC53bdys7orZUP0Hzg==
+  /little-ds-toolkit/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-2ARbmay5TrhFxFqcyFxPigmRToDuo8yxvIMdvwsDYNd/oZKnvsFT5L3I7s8WLXR7/tThYeffN9ouDtFFk4wzsA==
+  /monorepo-shared-assets/0.0.17:
+    dependencies:
+      '@types/node': 10.12.18
+      '@types/ramda': 0.25.45
+      immutable: 3.8.2
+      ramda: 0.25.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
+  /ramda/0.25.0:
+    dev: false
+    resolution:
+      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /regenerator-runtime/0.12.1:
+    dev: false
+    resolution:
+      integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+  /remote-controlled-promise/0.0.4:
+    dependencies:
+      '@types/node': 10.12.18
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-W7bYnBI034KWmaxEerPxuUcrvnC4RX7H42vNH5aXIAObwwEX7gEsbL9wbCZxMUsCJDGDd3CiQFSyjZkw3xsnDw==
   /tslib/1.9.3:
     dev: false
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /typescript-miscellaneous/0.1.1:
+    dependencies:
+      '@types/node': 10.12.18
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
+  /typescript-tuple/1.7.3:
+    dev: false
+    engines:
+      typescript: ^3.0.0
+    resolution:
+      integrity: sha512-ygCTfD6CX5ul+J0sZhq2MSouMNAeJpRXAFkYPUZomv457KWg15DuS7n+ubv15LtbX27iVo6DkuiX/5yyNdBvVg==
+  /typescript-union/0.0.0:
+    dependencies:
+      typescript-tuple: 1.7.3
+      utility-types: 2.1.0
+    dev: false
+    peerDependencies:
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-sWOTNcTOXw27cJhfvjSbxrKggb4XD+fPIFkjIqqnycdVqStj/3IR3QVEMZOheWY5ELGS3PCwuHFDVWAbK9UHvA==
+  /utility-types/2.1.0:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-/nP2gqavggo6l38rtQI/CdeV+2fmBGXVvHgj9kV2MAnms3TIi77Mz9BtapPFI0+GZQCqqom0vACQ+VlTTaCovw==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -20,5 +260,5 @@ specifiers:
   '@types/node': ^10.12.18
   combine-evented-stream: ^0.0.0
   evented-stream-types: ^0.0.0
-  iterate-evented-stream: ^0.0.1
+  iterate-evented-stream: ^0.0.0
   tslib: ^1.9.3
