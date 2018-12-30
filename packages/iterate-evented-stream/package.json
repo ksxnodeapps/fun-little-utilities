@@ -1,6 +1,6 @@
 {
   "name": "iterate-evented-stream",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create an AsyncIterable from an evented stream",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
