@@ -20,7 +20,7 @@ In order for an `EventEmitter` to be a valid `EventTarget`,
   * `removeListener`
 
 * Iteration stops when the `EventEmitter` emits `'close'` or `'error'`
-  * If it emits `'close'`, iteration is consider completed.
+  * If it emits `'close'`, iteration is considered completed.
   * If it emits `'error'`, iteration throws the emitted error.
 
 ```javascript
