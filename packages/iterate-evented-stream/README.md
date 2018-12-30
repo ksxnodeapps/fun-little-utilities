@@ -34,7 +34,7 @@ setTimeout(() => emitter.emit('data', '300 ms'), 300)
 setTimeout(() => emitter.emit('data', '400 ms'), 400)
 setTimeout(() => emitter.emit('close'), 500)
 
-for await (const chunk of emitter) {
+for await (const chunk of iterate(emitter)) {
   console.log(chunk)
 }
 ```
