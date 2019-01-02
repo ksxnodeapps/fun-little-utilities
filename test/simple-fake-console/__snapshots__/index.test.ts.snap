@@ -10,7 +10,7 @@ Object {
 }
 `;
 
-exports[`after executing methods ConsoleInstance::getActions() matches snapshot 1`] = `
+exports[`after executing methods ConsoleDatabase::getActions() matches snapshot 1`] = `
 Array [
   ActionInstance {
     "data": Array [

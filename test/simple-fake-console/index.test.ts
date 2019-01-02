@@ -22,7 +22,7 @@ describe('before executing console methods', () => {
     }
   }
 
-  it('ConsoleInstance::getActions() is empty', () => {
+  it('ConsoleDatabase::getActions() is empty', () => {
     const { console } = new Init()
     expect(console.getActions()).toEqual([])
   })
@@ -59,7 +59,7 @@ describe('after executing methods', () => {
     }
   }
 
-  it('ConsoleInstance::getActions() matches snapshot', () => {
+  it('ConsoleDatabase::getActions() matches snapshot', () => {
     const { console } = new Init()
     expect(console.getActions()).toMatchSnapshot()
   })
