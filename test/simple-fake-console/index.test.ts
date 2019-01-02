@@ -15,7 +15,7 @@ it('ActionType matches snapshot', () => {
   expect(sfc.ActionType).toMatchSnapshot()
 })
 
-describe('Before executing console methods', () => {
+describe('before executing console methods', () => {
   class Init extends InitBase {
     protected init () {
       return undefined
@@ -43,7 +43,7 @@ describe('Before executing console methods', () => {
   })
 })
 
-describe('After executing methods', () => {
+describe('after executing methods', () => {
   class Init extends InitBase {
     protected init (console: sfc.ConsoleInstance): void {
       console.log('a', 0)
