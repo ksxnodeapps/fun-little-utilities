@@ -1,19 +1,22 @@
 import * as types from '../lib/types'
 
+const symEncoding = Symbol('symEncoding')
+const symData = Symbol('symData')
+
 class StringWritable implements types.Writable {
-  private readonly encoding: StringWritable.Encoding
-  private data = ''
+  private readonly [symEncoding]: StringWritable.Encoding
+  private [symData] = ''
 
   constructor (options: StringWritable.ConstructorOptions = {}) {
-    this.encoding = options.encoding || 'utf8'
+    this[symEncoding] = options.encoding || 'utf8'
   }
 
   public write (buffer: Buffer): void {
-    this.data += buffer.toString(this.encoding)
+    this[symData] += buffer.toString(this[symEncoding])
   }
 
   public toString (): string {
-    return this.data
+    return this[symData]
   }
 }
 
