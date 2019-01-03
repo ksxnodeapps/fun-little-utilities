@@ -59,7 +59,16 @@ export namespace StreamEventEmitter {
  * Interface of a stream data getter
  */
 export interface StreamDatabase<Chunk extends string | Buffer, Err> {
+  /**
+   * Get recorded method calls
+   * @return Array of recorded method calls
+   */
   getMethodCalls (): ReadonlyArray<MethodCall<Chunk, Err>>
+
+  /**
+   * Get chunks that has been passed to `.write()`
+   * @return Array of recorded chunks
+   */
   getChunks (): ReadonlyArray<Chunk>
 }
 
