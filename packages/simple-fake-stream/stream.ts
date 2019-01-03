@@ -36,12 +36,18 @@ export interface WritableStream<Chunk extends string | Buffer> {
 export interface Stream<Chunk extends string | Buffer, Err = any>
 extends ReadableStream<Chunk, Err>, WritableStream<Chunk> {}
 
+/**
+ * Interface of an event emitter
+ */
 export interface StreamEventEmitter<Chunk extends string | Buffer, Err = any> {
   readonly emit: StreamEventEmitter.EmitFunc<void, Chunk, Err>
   readonly asyncEmit: StreamEventEmitter.EmitFunc<Promise<void>, Chunk, Err>
 }
 
 export namespace StreamEventEmitter {
+  /**
+   * Function that emits events
+   */
   export interface EmitFunc<Return, Chunk extends string | Buffer, Err = any> {
     (event: 'data', data: Chunk): Return
     (event: 'error', error: Err): Return
