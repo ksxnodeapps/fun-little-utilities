@@ -57,107 +57,109 @@ export interface StreamDatabase<Chunk extends string | Buffer, Err> {
   getChunks (): ReadonlyArray<Chunk>
 }
 
-interface StreamInstanceBaseClass {
-  new <Chunk extends string | Buffer, Err>
-    (options?: StreamInstance.ConstructorOptions):
-      StreamInstanceBaseClass.Instance<Chunk, Err>
-}
-
-namespace StreamInstanceBaseClass {
-  export interface Instance<Chunk extends string | Buffer, Err = any>
-  extends Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {}
-}
-
-namespace event2mtdcall {
-  export const data = MethodCallInstance.EventModifier.Data
-  export const error = MethodCallInstance.EventModifier.Error
-  export const close = MethodCallInstance.EventModifier.Close
-}
-
-function recordListenerModifier<
-  Chunk extends string | Buffer,
-  Err
-> (
-  db: Array<MethodCall<Chunk, Err>>,
-  name: MethodName.EventModifier,
-  event: 'data' | 'error' | 'close',
-  listener: any
-): void {
-  type Constructor = new (name: any, listener: any) => any
-  const Instance: Constructor = event2mtdcall[event]
-  const instance = new Instance(name, listener)
-  db.push(instance)
-}
-
-/**
- * `StreamInstance` extends `EventEmitter` indirectly via this name
- */
-const StreamInstanceBase: StreamInstanceBaseClass =
-class <Chunk extends string | Buffer, Err = any>
-implements Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {
-  private readonly events = new EventEmitter()
-  private readonly methodCalls = Array<MethodCall<Chunk, Err>>()
-  private readonly dataEventTimeout: number
-
-  constructor (options: StreamInstance.ConstructorOptions = {}) {
-    const { dataEventTimeout = 0 } = options
-    this.dataEventTimeout = dataEventTimeout
+namespace prvEvtEmt {
+  interface StreamInstanceBaseClass {
+    new <Chunk extends string | Buffer, Err>
+      (options?: StreamInstance.ConstructorOptions):
+        StreamInstanceBaseClass.Instance<Chunk, Err>
   }
 
-  public addListener (event: any, listener: any): void {
-    this.events.addListener(event, listener)
-    recordListenerModifier(this.methodCalls, MethodName.addListener, event, listener)
+  namespace StreamInstanceBaseClass {
+    export interface Instance<Chunk extends string | Buffer, Err = any>
+    extends Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {}
   }
 
-  public removeListener (event: any, listener: any): void {
-    this.events.removeListener(event, listener)
-    recordListenerModifier(this.methodCalls, MethodName.removeListener, event, listener)
+  namespace event2mtdcall {
+    export const data = MethodCallInstance.EventModifier.Data
+    export const error = MethodCallInstance.EventModifier.Error
+    export const close = MethodCallInstance.EventModifier.Close
   }
 
-  public on (event: any, listener: any): void {
-    this.events.on(event, listener)
-    recordListenerModifier(this.methodCalls, MethodName.on, event, listener)
+  function recordListenerModifier<
+    Chunk extends string | Buffer,
+    Err
+  > (
+    db: Array<MethodCall<Chunk, Err>>,
+    name: MethodName.EventModifier,
+    event: 'data' | 'error' | 'close',
+    listener: any
+  ): void {
+    type Constructor = new (name: any, listener: any) => any
+    const Instance: Constructor = event2mtdcall[event]
+    const instance = new Instance(name, listener)
+    db.push(instance)
   }
 
-  public once (event: any, listener: any): void {
-    this.events.once(event, listener)
-    recordListenerModifier(this.methodCalls, MethodName.once, event, listener)
-  }
+  /**
+   * `StreamInstance` extends `EventEmitter` indirectly via this name
+   */
+  export const StreamInstanceBase: StreamInstanceBaseClass =
+  class <Chunk extends string | Buffer, Err = any>
+  implements Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {
+    private readonly events = new EventEmitter()
+    private readonly methodCalls = Array<MethodCall<Chunk, Err>>()
+    private readonly dataEventTimeout: number
 
-  public write (chunk: Chunk): void {
-    this.methodCalls.push(new MethodCallInstance.Write(chunk))
-    void this.asyncEmit('data', chunk)
-  }
+    constructor (options: StreamInstance.ConstructorOptions = {}) {
+      const { dataEventTimeout = 0 } = options
+      this.dataEventTimeout = dataEventTimeout
+    }
 
-  public emit (...args: [any, ...any[]]): void {
-    this.events.emit(...args)
-  }
+    public addListener (event: any, listener: any): void {
+      this.events.addListener(event, listener)
+      recordListenerModifier(this.methodCalls, MethodName.addListener, event, listener)
+    }
 
-  public asyncEmit (...args: [any, ...any[]]): Promise<void> {
-    return new Promise(resolve => setTimeout(() => {
-      this.emit(...args)
-      resolve()
-    }, this.dataEventTimeout))
-  }
+    public removeListener (event: any, listener: any): void {
+      this.events.removeListener(event, listener)
+      recordListenerModifier(this.methodCalls, MethodName.removeListener, event, listener)
+    }
 
-  public getMethodCalls () {
-    return this.methodCalls
-  }
+    public on (event: any, listener: any): void {
+      this.events.on(event, listener)
+      recordListenerModifier(this.methodCalls, MethodName.on, event, listener)
+    }
 
-  public getChunks () {
-    return this
-      .methodCalls
-      .filter((x): x is MethodCall.Write<Chunk> => x.name === MethodName.write)
-      .map(x => x.data)
-  }
+    public once (event: any, listener: any): void {
+      this.events.once(event, listener)
+      recordListenerModifier(this.methodCalls, MethodName.once, event, listener)
+    }
 
-  public async * [Symbol.asyncIterator] () {
-    yield * this.getChunks()
+    public write (chunk: Chunk): void {
+      this.methodCalls.push(new MethodCallInstance.Write(chunk))
+      void this.asyncEmit('data', chunk)
+    }
+
+    public emit (...args: [any, ...any[]]): void {
+      this.events.emit(...args)
+    }
+
+    public asyncEmit (...args: [any, ...any[]]): Promise<void> {
+      return new Promise(resolve => setTimeout(() => {
+        this.emit(...args)
+        resolve()
+      }, this.dataEventTimeout))
+    }
+
+    public getMethodCalls () {
+      return this.methodCalls
+    }
+
+    public getChunks () {
+      return this
+        .methodCalls
+        .filter((x): x is MethodCall.Write<Chunk> => x.name === MethodName.write)
+        .map(x => x.data)
+    }
+
+    public async * [Symbol.asyncIterator] () {
+      yield * this.getChunks()
+    }
   }
 }
 
 export class StreamInstance<Chunk extends string | Buffer, Err = any>
-extends StreamInstanceBase<Chunk, Err>
+extends prvEvtEmt.StreamInstanceBase<Chunk, Err>
 implements Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {}
 
 export namespace StreamInstance {
