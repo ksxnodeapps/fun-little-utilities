@@ -94,62 +94,43 @@ function recordListenerModifier<
  */
 const StreamInstanceBase: StreamInstanceBaseClass =
 class <Chunk extends string | Buffer, Err = any>
-extends EventEmitter
 implements Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {
+  private readonly events = new EventEmitter()
   private readonly methodCalls = Array<MethodCall<Chunk, Err>>()
   private readonly dataEventTimeout: number
-  private listenerModifierRecorderLock = 0
-
-  private recordListenerModifier (
-    name: MethodName.EventModifier,
-    event: 'data' | 'error' | 'close',
-    listener: any
-  ): void {
-    if (this.listenerModifierRecorderLock > 0) return
-    recordListenerModifier(this.methodCalls, name, event, listener)
-  }
-
-  private callBaseListenerModifier (
-    fn: EventedStream.ListenerModifier<Chunk, Err>,
-    event: any,
-    listener: any
-  ): void {
-    this.listenerModifierRecorderLock += 1
-    fn.call(this, event, listener)
-    this.listenerModifierRecorderLock -= 1
-  }
-
-  private modifyEventListener (method: MethodName.EventModifier, event: any, listener: any): this {
-    this.callBaseListenerModifier(super[method], event, listener)
-    this.recordListenerModifier(method, event, listener)
-    return this
-  }
 
   constructor (options: StreamInstance.ConstructorOptions = {}) {
-    super()
     const { dataEventTimeout = 0 } = options
     this.dataEventTimeout = dataEventTimeout
   }
 
-  public addListener (event: any, listener: any): this {
-    return this.modifyEventListener(MethodName.addListener, event, listener)
+  public addListener (event: any, listener: any): void {
+    this.events.addListener(event, listener)
+    recordListenerModifier(this.methodCalls, MethodName.addListener, event, listener)
   }
 
-  public removeListener (event: any, listener: any): this {
-    return this.modifyEventListener(MethodName.removeListener, event, listener)
+  public removeListener (event: any, listener: any): void {
+    this.events.removeListener(event, listener)
+    recordListenerModifier(this.methodCalls, MethodName.removeListener, event, listener)
   }
 
-  public on (event: any, listener: any): this {
-    return this.modifyEventListener(MethodName.on, event, listener)
+  public on (event: any, listener: any): void {
+    this.events.on(event, listener)
+    recordListenerModifier(this.methodCalls, MethodName.on, event, listener)
   }
 
-  public once (event: any, listener: any): this {
-    return this.modifyEventListener(MethodName.once, event, listener)
+  public once (event: any, listener: any): void {
+    this.events.once(event, listener)
+    recordListenerModifier(this.methodCalls, MethodName.once, event, listener)
   }
 
   public write (chunk: Chunk): void {
     this.methodCalls.push(new MethodCallInstance.Write(chunk))
     void this.asyncEmit('data', chunk)
+  }
+
+  public emit (...args: [any, ...any[]]): void {
+    this.events.emit(...args)
   }
 
   public asyncEmit (...args: [any, ...any[]]): Promise<void> {
