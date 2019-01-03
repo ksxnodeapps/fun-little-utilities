@@ -101,7 +101,8 @@ namespace prvEvtEmt {
   const symDataEventTimeout = Symbol('symDataEventTimeout')
 
   /**
-   * `StreamInstance` extends `EventEmitter` indirectly via this name
+   * `StreamInstance` is a subclass of `StreamInstanceBase`
+   * which in turn is a wrapper of `EventEmitter`
    */
   export const StreamInstanceBase: StreamInstanceBaseClass =
   class <Chunk extends string | Buffer, Err = any>
