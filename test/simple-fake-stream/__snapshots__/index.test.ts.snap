@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MethodName matches snapshot 1`] = `
+Object {
+  "addListener": "addListener",
+  "on": "on",
+  "once": "once",
+  "removeListener": "removeListener",
+  "write": "write",
+}
+`;
+
+exports[`when WritableStream::write is called StreamDatabase::getMethodCalls() matches snapshot 1`] = `
+Array [
+  MethodCallInstance {
+    "data": "foo",
+    "name": "write",
+  },
+  MethodCallInstance {
+    "data": "bar",
+    "name": "write",
+  },
+  MethodCallInstance {
+    "data": "baz",
+    "name": "write",
+  },
+]
+`;

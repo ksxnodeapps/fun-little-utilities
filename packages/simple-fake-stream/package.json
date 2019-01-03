@@ -1,0 +1,31 @@
+{
+  "name": "simple-fake-stream",
+  "version": "0.0.2",
+  "description": "Create fake streams for testing purpose",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "stream",
+    "readable",
+    "writable",
+    "fake",
+    "test"
+  ],
+  "dependencies": {
+    "monorepo-shared-assets": "^0.0.17",
+    "tslib": "^1.9.3",
+    "evented-stream-types": "^0.0.0",
+    "@types/node": "^10.12.18"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}
