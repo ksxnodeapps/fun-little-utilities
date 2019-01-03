@@ -1,0 +1,28 @@
+{
+  "name": "class-wrappers",
+  "version": "0.0.0",
+  "description": "Wrapper utilities to work with classes",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "class",
+    "wrapper",
+    "utility"
+  ],
+  "dependencies": {
+    "iter-tools": "^6.1.7",
+    "tslib": "^1.9.3",
+    "@types/node": "^10.12.18"
+  },
+  "engines": {
+    "node": ">= 8.9.0"
+  }
+}
