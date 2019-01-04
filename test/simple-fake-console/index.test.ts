@@ -15,14 +15,14 @@ it('ActionType matches snapshot', () => {
   expect(sfc.ActionType).toMatchSnapshot()
 })
 
-describe('Before executing console methods', () => {
+describe('before executing console methods', () => {
   class Init extends InitBase {
     protected init () {
       return undefined
     }
   }
 
-  it('ConsoleInstance::getActions() is empty', () => {
+  it('ConsoleDatabase::getActions() is empty', () => {
     const { console } = new Init()
     expect(console.getActions()).toEqual([])
   })
@@ -43,7 +43,7 @@ describe('Before executing console methods', () => {
   })
 })
 
-describe('After executing methods', () => {
+describe('after executing methods', () => {
   class Init extends InitBase {
     protected init (console: sfc.ConsoleInstance): void {
       console.log('a', 0)
@@ -59,7 +59,7 @@ describe('After executing methods', () => {
     }
   }
 
-  it('ConsoleInstance::getActions() matches snapshot', () => {
+  it('ConsoleDatabase::getActions() matches snapshot', () => {
     const { console } = new Init()
     expect(console.getActions()).toMatchSnapshot()
   })

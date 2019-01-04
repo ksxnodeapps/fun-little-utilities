@@ -142,7 +142,7 @@ specifiers:
   event-target-proxy: ^0.0.0
   evented-stream-types: ^0.0.0
   iter-tools: ^6.1.7
-  iterate-evented-stream: ^0.0.0
+  iterate-evented-stream: ^0.0.2
   monorepo-shared-assets: ^0.0.17
   tslib: ^1.9.3
   typescript-char-code: ^0.0.1

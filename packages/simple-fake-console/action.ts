@@ -1,5 +1,7 @@
 // tslint:disable:no-unnecessary-qualifier
 
+import { AnyClass } from './utils'
+
 /**
  * Each type corresponds with a console method
  */
@@ -79,15 +81,13 @@ export type ActionInstance =
   ActionInstance.WithoutData
 
 export namespace ActionInstance {
-  function rename<Class extends Function> (Base: Class): Class {
-    // @ts-ignore
+  function rename<Class extends AnyClass> (Base: Class): Class {
     return class ActionInstance extends Base {}
   }
 
   /**
    * Base class of all `ActionInstance` classes
    */
-  @rename
   export abstract class Base {}
 
   /**

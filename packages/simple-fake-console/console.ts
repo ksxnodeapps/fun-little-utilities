@@ -36,29 +36,33 @@ export interface ConsoleDatabase {
   getActions (): ReadonlyArray<Action>
 }
 
+const symActions = Symbol('symActions')
+const symFnWithData = Symbol('symFnWithData')
+const symFnWithoutData = Symbol('symFnWithoutData')
+
 /**
  * A fake console
  */
 export class ConsoleInstance implements Console, ConsoleDatabase {
-  private readonly actions = Array<ActionInstance>()
+  private readonly [symActions] = Array<ActionInstance>()
 
-  private readonly fnWithData = (type: ActionType.WithData): FnWithData => (...data) => {
-    this.actions.push(new ActionInstance.WithData(type, data))
+  private readonly [symFnWithData] = (type: ActionType.WithData): FnWithData => (...data) => {
+    this[symActions].push(new ActionInstance.WithData(type, data))
   }
 
-  private readonly fnWithoutData = (type: ActionType.WithoutData): FnWithoutData => () => {
-    this.actions.push(new ActionInstance.WithoutData(type))
+  private readonly [symFnWithoutData] = (type: ActionType.WithoutData): FnWithoutData => () => {
+    this[symActions].push(new ActionInstance.WithoutData(type))
   }
 
   /**
    * Get all recorded actions
    * @returns Recorded actions
    */
-  public readonly getActions = (): ReadonlyArray<Action> => this.actions
+  public readonly getActions = (): ReadonlyArray<Action> => this[symActions]
 
-  public readonly log = this.fnWithData(ActionType.Log)
-  public readonly info = this.fnWithData(ActionType.Info)
-  public readonly error = this.fnWithData(ActionType.Error)
-  public readonly warn = this.fnWithData(ActionType.Warn)
-  public readonly clear = this.fnWithoutData(ActionType.Clear)
+  public readonly log = this[symFnWithData](ActionType.Log)
+  public readonly info = this[symFnWithData](ActionType.Info)
+  public readonly error = this[symFnWithData](ActionType.Error)
+  public readonly warn = this[symFnWithData](ActionType.Warn)
+  public readonly clear = this[symFnWithoutData](ActionType.Clear)
 }

@@ -1,0 +1,48 @@
+dependencies:
+  '@types/node': 10.12.18
+  evented-stream-types: 'link:../evented-stream-types'
+  monorepo-shared-assets: 0.0.17
+  tslib: 1.9.3
+packages:
+  /@types/node/10.12.18:
+    dev: false
+    resolution:
+      integrity: sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
+  /@types/ramda/0.25.45:
+    dev: false
+    resolution:
+      integrity: sha512-J+xlbNyag7wgYRSuvRwu9zZY7t0vM4KMUVHxWLUMegqlz9+97v6jYo2JlvfsVC3qtulx7PKenFKzWCWsdVSCDw==
+  /immutable/3.8.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+  /monorepo-shared-assets/0.0.17:
+    dependencies:
+      '@types/node': 10.12.18
+      '@types/ramda': 0.25.45
+      immutable: 3.8.2
+      ramda: 0.25.0
+      tslib: 1.9.3
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
+  /ramda/0.25.0:
+    dev: false
+    resolution:
+      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /tslib/1.9.3:
+    dev: false
+    resolution:
+      integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  '@types/node': ^10.12.18
+  evented-stream-types: ^0.0.0
+  monorepo-shared-assets: ^0.0.17
+  tslib: ^1.9.3
