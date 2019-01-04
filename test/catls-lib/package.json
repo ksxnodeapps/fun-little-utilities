@@ -1,6 +1,8 @@
 {
   "private": true,
   "dependencies": {
-    "catls-lib": "file:../../packages/catls-lib"
+    "extra-jest": "^0.0.24",
+    "catls-lib": "file:../../packages/catls-lib",
+    "simple-fake-stream": "file:../../packages/simple-fake-stream"
   }
 }
