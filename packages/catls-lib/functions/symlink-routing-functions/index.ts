@@ -7,15 +7,16 @@ import LinkGetter = SymlinkRoutingFunctions.LinkGetter
 import LoopGetter = SymlinkRoutingFunctions.LoopGetter
 const { Agnostic, Relative, Ultimate } = SymlinkResolution
 
-const symFns = Symbol()
+const symFns = Symbol('FileSystemFunctions')
 abstract class ReturnInstance implements Return {
-  protected [symFns]: FileSystemFunctions
+  protected readonly [symFns]: FileSystemFunctions
   public abstract readonly getStat: StatGetter
   public abstract readonly getLink: LinkGetter
   public abstract readonly getLoop: LoopGetter
 
   constructor (fsfn: FileSystemFunctions) {
     this[symFns] = fsfn
+    return Object.create(this) // hide private properties from jest snapshot
   }
 }
 
