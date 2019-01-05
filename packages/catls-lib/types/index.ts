@@ -1,4 +1,3 @@
-import { Stats } from 'fs-extra'
 import { MaybePromise } from 'typescript-miscellaneous'
 import { ChildProcess as ChildProcessBase } from 'split-shell-buffer'
 import { UnitType, EmptyArgumentHandlingMethod, SymlinkResolution } from '../enums'
@@ -26,12 +25,29 @@ export namespace Main {
     readonly stderr: Writable
     readonly addStatusCode: StatusCodeAdder
     readonly spawn: Executor
+    readonly fsPromise: FileSystemFunctions
   }
 
   export type StatusCodeAdder = (current: number, addend: number) => MaybePromise<number>
+
+  export interface FileSystemFunctions extends
+    SymlinkRoutingFunctions.FileSystemFunctions,
+    Unit.Options.FileSystemFunctions {}
+
+  export interface Stats extends
+    Unit.Stats,
+    StatInfo.Stats,
+    UnknownStatInfo.Stats {}
 }
 
 export namespace SymlinkRoutingFunctions {
+  export interface FileSystemFunctions {
+    readonly stat: StatGetter
+    readonly lstat: StatGetter
+    readonly readlink: LinkGetter
+    readonly realpath: LinkGetter
+  }
+
   export interface Return {
     readonly getStat: StatGetter
     readonly getLink: LinkGetter
@@ -57,6 +73,7 @@ export namespace Unit {
     readonly handleFile: Options.Handler.File
     readonly handleDirectory: Options.Handler.Directory
     readonly handleUnknown: Options.Handler.Unknown
+    readonly fsPromise: Options.FileSystemFunctions
   }
 
   export namespace Options {
@@ -94,7 +111,7 @@ export namespace Unit {
 
         export interface Exist extends Base {
           readonly type: UnitType.Exist
-          readonly stats: Stats
+          readonly stats: Main.Stats
         }
 
         export interface Symlink extends Exist {
@@ -116,6 +133,20 @@ export namespace Unit {
         }
       }
     }
+
+    export interface FileSystemFunctions {
+      readonly existsSync: (name: string) => boolean
+    }
+  }
+
+  export interface Stats extends StatInfo.Stats, UnknownStatInfo.Stats {
+    readonly isSymbolicLink: Stats.Method
+    readonly isFile: Stats.Method
+    readonly isDirectory: Stats.Method
+  }
+
+  export namespace Stats {
+    export type Method = () => boolean
   }
 
   export type LoopBody = (

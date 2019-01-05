@@ -17,14 +17,12 @@
     "ls"
   ],
   "dependencies": {
-    "fs-extra": "^7.0.1",
     "shell-escape": "^0.2.0",
     "typescript-miscellaneous": "^0.1.1",
     "convenient-typescript-utilities": "^0.0.3",
     "tslib": "^1.9.3",
     "split-shell-buffer": "^1.0.0-rc.2",
     "ts-await-event": "^0.0.0",
-    "@types/fs-extra": "^5.0.4",
     "@types/shell-escape": "^0.2.0",
     "@types/node": "^10.12.18"
   },

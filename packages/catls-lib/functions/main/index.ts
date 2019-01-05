@@ -1,4 +1,3 @@
-import { readlink } from 'fs-extra'
 import { Main } from '../../types'
 import { ExitStatus, EmptyArgumentHandlingMethod } from '../../enums'
 import unit from '../unit'
@@ -23,8 +22,11 @@ async function main (param: Main.Param): Promise<number> {
     followSymlink,
     symlinkResolution,
     addStatusCode,
-    spawn
+    spawn,
+    fsPromise
   } = param
+
+  const { readlink } = fsPromise
 
   if (!list.length) {
     switch (handleEmptyArguments) {
@@ -40,7 +42,7 @@ async function main (param: Main.Param): Promise<number> {
   }
 
   const actualFollowSymlink = str2num(followSymlink)
-  const { getLink, getLoop, getStat } = symlinkRoutingFunctions(symlinkResolution)
+  const { getLink, getLoop, getStat } = symlinkRoutingFunctions(symlinkResolution, fsPromise)
   const execute = executor({ dontFakeInteractive, spawn })
   let currentStatus = 0
 
@@ -100,7 +102,8 @@ async function main (param: Main.Param): Promise<number> {
       getStat,
       getLoop,
       name,
-      addStatusCode
+      addStatusCode,
+      fsPromise
     })
 
     currentStatus = await addStatusCode(currentStatus, statusAddend)
