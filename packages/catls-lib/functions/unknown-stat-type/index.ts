@@ -1,6 +1,6 @@
-import { UnknownStatInfo } from '../../types'
+import { UnknownStatType } from '../../types'
 
-function unknownStatType (stats: UnknownStatInfo.Stats): string {
+function unknownStatType (stats: UnknownStatType.Stats): string {
   if (stats.isBlockDevice()) return 'BlockDevice'
   if (stats.isCharacterDevice()) return 'CharacterDevice'
   if (stats.isFIFO()) return 'FIFO'

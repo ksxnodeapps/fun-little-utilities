@@ -37,7 +37,7 @@ export namespace Main {
   export interface Stats extends
     Unit.Stats,
     StatInfo.Stats,
-    UnknownStatInfo.Stats {}
+    UnknownStatType.Stats {}
 }
 
 export namespace SymlinkRoutingFunctions {
@@ -139,7 +139,7 @@ export namespace Unit {
     }
   }
 
-  export interface Stats extends StatInfo.Stats, UnknownStatInfo.Stats {
+  export interface Stats extends StatInfo.Stats, UnknownStatType.Stats {
     readonly isSymbolicLink: Stats.Method
     readonly isFile: Stats.Method
     readonly isDirectory: Stats.Method
@@ -165,7 +165,7 @@ export namespace ShowExecData {
   }
 }
 
-export namespace UnknownStatInfo {
+export namespace UnknownStatType {
   export interface Stats extends StatInfo.Stats {
     isBlockDevice (): boolean
     isCharacterDevice (): boolean
