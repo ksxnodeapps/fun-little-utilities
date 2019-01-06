@@ -166,7 +166,7 @@ export namespace ShowExecData {
 }
 
 export namespace UnknownStatType {
-  export interface Stats extends StatInfo.Stats {
+  export interface Stats {
     isBlockDevice (): boolean
     isCharacterDevice (): boolean
     isFIFO (): boolean
