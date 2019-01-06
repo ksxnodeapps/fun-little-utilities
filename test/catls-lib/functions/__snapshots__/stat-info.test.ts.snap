@@ -9,9 +9,9 @@ exports[`matches snapshot 1`] = `
     body.baz: body.qux
     Size: 34
     Mode: 12
-    Modified: 1234-06-06T00:01:29.354Z
-    Accessed: 1999-03-02T18:02:03.789Z
-    Changed: 2005-04-03T19:06:04.222Z
+    Modified: 1234-06-06T07:08:09.354Z
+    Accessed: 1999-03-03T01:02:03.789Z
+    Changed: 2005-04-04T02:06:04.222Z
 
 
 "

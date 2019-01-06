@@ -1,10 +1,11 @@
 import * as xjest from 'extra-jest'
 import { statInfo, StatInfo } from 'catls-lib'
+import UTCDate from '../.lib/utc-date'
 
 const STATS: StatInfo.Stats = {
-  atime: new Date(1999, 2, 3, 1, 2, 3, 789),
-  ctime: new Date(2005, 3, 4, 2, 6, 4, 222),
-  mtime: new Date(1234, 5, 6, 7, 8, 9, 354),
+  atime: new UTCDate(1999, 2, 3, 1, 2, 3, 789),
+  ctime: new UTCDate(2005, 3, 4, 2, 6, 4, 222),
+  mtime: new UTCDate(1234, 5, 6, 7, 8, 9, 354),
   mode: 12,
   size: 34
 }
