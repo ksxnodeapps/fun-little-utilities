@@ -31,3 +31,11 @@ export enum SymlinkResolution {
   Relative = 'relative',
   Ultimate = 'ultimate'
 }
+
+export enum UnknownStatTypeName {
+  BlockDevice = 'BlockDevice',
+  CharacterDevice = 'CharacterDevice',
+  FIFO = 'FIFO',
+  Socket = 'Socket',
+  Unknown = 'Unknown'
+}
