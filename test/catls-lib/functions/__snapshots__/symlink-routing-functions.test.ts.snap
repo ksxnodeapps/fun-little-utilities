@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when resolution is agnostic result matches snapshot 1`] = `
+AgnosticFunctions {
+  "getLink": "Something goes wrong: Should not end up calling this",
+  "getLoop": [Function],
+  "getStat": [MockFunction],
+}
+`;
+
+exports[`when resolution is relative result matches snapshot 1`] = `
+RelativeFunctions {
+  "getLink": [MockFunction],
+  "getLoop": [Function],
+  "getStat": [MockFunction],
+}
+`;
+
+exports[`when resolution is ultimate result matches snapshot 1`] = `
+UltimateFunctions {
+  "getLink": [MockFunction],
+  "getLoop": [Function],
+  "getStat": [MockFunction],
+}
+`;
