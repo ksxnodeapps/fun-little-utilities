@@ -82,29 +82,24 @@ namespace FileSystemInstance {
   export const ItemType = UnitType
 
   const itemClassWithoutContent =
-    <Type extends ItemType>
-      (type: Type): (new (name: string) => ItemBase<Type>) =>
-        class ItemInstance extends ItemBase<Type> {
-          constructor (name: string) {
-            super(name, type)
-          }
+    <Type extends ItemType> (type: Type): (new () => ItemBase<Type>) =>
+      class ItemInstance extends ItemBase<Type> {
+        constructor () {
+          super(type)
         }
+      }
 
   const itemClassWithContent =
-    <Type extends ItemType>
-      (type: Type): (
-        new <Content>
-          (name: string, content: Content) =>
-            ItemBase<Type> & { readonly content: Content }
-      ) =>
-        class ItemInstance<Content> extends itemClassWithoutContent(type) {
-          constructor (
-            name: string,
-            public readonly content: Content
-          ) {
-            super(name)
-          }
-        }
+    <Type extends ItemType> (type: Type): (
+      new <Content> (content: Content) =>
+        ItemBase<Type> & { readonly content: Content }
+    ) => class ItemInstance<Content> extends itemClassWithoutContent(type) {
+      constructor (
+        public readonly content: Content
+      ) {
+        super()
+      }
+    }
 
   export type Item =
     NonExist |
@@ -115,7 +110,6 @@ namespace FileSystemInstance {
 
   export abstract class ItemBase<Type extends ItemType> {
     constructor (
-      public readonly name: string,
       public readonly type: Type
     ) {}
   }
