@@ -36,7 +36,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
     return true
   }
 
-  public readonly stat = (name: string) => {
+  public readonly stat = (name: string): FakeStats => {
     if (!this.existsSync(name)) {
       throw new Error(`ENOENT: No such file or directory, stat '${name}'`)
     }
@@ -60,7 +60,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
     return item.content
   }
 
-  public readonly realpath = (name: string) => {
+  public readonly realpath = (name: string): string => {
     const item = this[symDict][name]
     return item.type === UnitType.Symlink
       ? this.realpath(item.content)
@@ -81,28 +81,30 @@ namespace FileSystemInstance {
   export type ItemType = UnitType
   export const ItemType = UnitType
 
-  function itemClassWithoutContent<Type extends ItemType> (type: Type) {
-    class ItemInstance extends ItemBase<Type> {
-      constructor (name: string) {
-        super(name, type)
-      }
-    }
+  const itemClassWithoutContent =
+    <Type extends ItemType>
+      (type: Type): (new (name: string) => ItemBase<Type>) =>
+        class ItemInstance extends ItemBase<Type> {
+          constructor (name: string) {
+            super(name, type)
+          }
+        }
 
-    return ItemInstance
-  }
-
-  function itemClassWithContent<Type extends ItemType> (type: Type) {
-    class ItemInstance<Content> extends itemClassWithoutContent(type) {
-      constructor (
-        name: string,
-        public readonly content: Content
-      ) {
-        super(name)
-      }
-    }
-
-    return ItemInstance
-  }
+  const itemClassWithContent =
+    <Type extends ItemType>
+      (type: Type): (
+        new <Content>
+          (name: string, content: Content) =>
+            ItemBase<Type> & { readonly content: Content }
+      ) =>
+        class ItemInstance<Content> extends itemClassWithoutContent(type) {
+          constructor (
+            name: string,
+            public readonly content: Content
+          ) {
+            super(name)
+          }
+        }
 
   export type Item =
     NonExist |
