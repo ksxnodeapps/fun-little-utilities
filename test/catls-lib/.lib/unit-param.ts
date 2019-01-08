@@ -36,7 +36,7 @@ export class UnitParam extends UnitParamSharedProperties implements Unit.Options
 
     this.fsPromise = options.fsPromise
     this.name = options.name
-    this.followSymlink = this.followSymlink
+    this.followSymlink = options.followSymlink
 
     const fns = symlinkRoutingFunctions(options.symlinkResolution, options.fsPromise)
     this.getLink = jest.fn(fns.getLink)
