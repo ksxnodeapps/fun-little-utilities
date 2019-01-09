@@ -3,7 +3,6 @@ import { Main, UnitType, StatInfo } from 'catls-lib'
 import FakeStats from './fake-stats'
 
 const symDict = Symbol('symDict')
-const symStatInfo = Symbol('symStatInfo')
 const symMkStats = Symbol('symMkFakeStats')
 
 class FileSystemInstanceBase {
