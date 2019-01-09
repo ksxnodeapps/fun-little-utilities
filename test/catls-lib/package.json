@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "utility-types": "^3.2.1",
     "extra-jest": "^0.0.24",
     "catls-lib": "file:../../packages/catls-lib",
     "simple-fake-stream": "file:../../packages/simple-fake-stream"

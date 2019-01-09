@@ -1,3 +1,4 @@
+import { Omit } from 'utility-types'
 import { Main, UnitType, StatInfo } from 'catls-lib'
 import FakeStats from './fake-stats'
 
@@ -7,16 +8,12 @@ const symMkStats = Symbol('symMkFakeStats')
 
 class FileSystemInstanceBase {
   protected readonly [symDict]: FileSystemInstance.Dict
-  protected readonly [symStatInfo]: StatInfo.Stats
 
-  constructor (options: FileSystemInstance.ConstructorOptions) {
-    const { dict, statInfo } = options
+  constructor (dict: FileSystemInstance.Dict) {
     this[symDict] = dict
-    this[symStatInfo] = statInfo
   }
 
-  protected [symMkStats] (type: FakeStats.Type): FakeStats {
-    const statInfo = this[symStatInfo]
+  protected [symMkStats] (type: FakeStats.Type, statInfo: StatInfo.Stats): FakeStats {
     return new FakeStats(
       type,
       statInfo.size,
@@ -45,10 +42,13 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
 
     return item.type === UnitType.Symlink
       ? this.stat(item.content)
-      : this[symMkStats](item.type)
+      : this[symMkStats](item.type, item.statInfo)
   }
 
-  public readonly lstat = (name: string) => this[symMkStats](this[symDict][name].type)
+  public readonly lstat = (name: string) => {
+    const item = this[symDict][name]
+    return this[symMkStats](item.type, item.statInfo)
+  }
 
   public readonly readlink = (name: string) => {
     const item = this[symDict][name]
@@ -69,11 +69,6 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
 }
 
 namespace FileSystemInstance {
-  export interface ConstructorOptions {
-    readonly dict: Dict
-    readonly statInfo: StatInfo.Stats
-  }
-
   export type Dict = {
     readonly [name: string]: Item
   }
@@ -82,24 +77,42 @@ namespace FileSystemInstance {
   export const ItemType = UnitType
 
   const itemClassWithoutContent =
-    <Type extends ItemType> (type: Type): (new () => ItemBase<Type>) =>
+    <Type extends ItemType> (type: Type): (
+      new (statInfo: StatInfo.Stats) => ItemBase<Type>
+    ) =>
       class ItemInstance extends ItemBase<Type> {
-        constructor () {
-          super(type)
+        constructor (statInfo: StatInfo.Stats) {
+          super(type, statInfo)
         }
       }
 
   const itemClassWithContent =
     <Type extends ItemType> (type: Type): (
-      new <Content> (content: Content) =>
+      new <Content> (statInfo: StatInfo.Stats, content: Content) =>
         ItemBase<Type> & { readonly content: Content }
     ) => class ItemInstance<Content> extends itemClassWithoutContent(type) {
       constructor (
+        statInfo: StatInfo.Stats,
         public readonly content: Content
       ) {
-        super()
+        super(statInfo)
       }
     }
+
+  const fileItemClass = (): (
+    new (
+      statInfo: Omit<StatInfo.Stats, 'size'>,
+      content: string
+    ) => ItemBase<UnitType.File>
+  ) => class File extends itemClassWithContent(ItemType.File)<string> {
+    constructor (
+      statInfo: Omit<StatInfo.Stats, 'size'>,
+      content: string
+    ) {
+      const size = content.length
+      super({ ...statInfo, size }, content)
+    }
+  }
 
   export type Item =
     NonExist |
@@ -110,13 +123,14 @@ namespace FileSystemInstance {
 
   export abstract class ItemBase<Type extends ItemType> {
     constructor (
-      public readonly type: Type
+      public readonly type: Type,
+      public readonly statInfo: StatInfo.Stats
     ) {}
   }
 
   export class NonExist extends itemClassWithoutContent(ItemType.NonExist) {}
   export class Symlink extends itemClassWithContent(ItemType.Symlink)<string> {}
-  export class File extends itemClassWithContent(ItemType.File)<string> {}
+  export class File extends fileItemClass() {}
   export class Directory extends itemClassWithContent(ItemType.Directory)<ReadonlyArray<string>> {}
   export class Unknown extends itemClassWithoutContent(ItemType.Unknown) {}
 }
