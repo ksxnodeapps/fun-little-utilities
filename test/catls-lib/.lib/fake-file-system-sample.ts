@@ -176,6 +176,7 @@ export const fsPromiseDict = {
   )
 }
 
+export type DictKey = keyof typeof fsPromiseDict
 export const fsPromise = new FakeFileSystem(fsPromiseDict)
-export const getStats = (name: keyof typeof fsPromiseDict) => fsPromiseDict[name].statInfo
-export const getStatsPattern = (name: keyof typeof fsPromiseDict) => expect.objectContaining(getStats(name))
+export const getStats = (name: DictKey) => fsPromiseDict[name].statInfo
+export const getStatsPattern = (name: DictKey) => expect.objectContaining(getStats(name))
