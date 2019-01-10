@@ -1,6 +1,6 @@
 import FakeFileSystem from './fake-file-system'
 import UTCDate from './utc-date'
-const { Symlink, File, Directory } = FakeFileSystem
+const { Symlink, File, Directory, BlockDevice, CharacterDevice, FIFO, Socket } = FakeFileSystem
 
 export const fsPromiseDict = {
   'simple file': new File(
@@ -173,7 +173,39 @@ export const fsPromiseDict = {
       mtime: new UTCDate(1145, 10, 22)
     },
     'recursive symlink 0'
-  )
+  ),
+
+  'simple block device': new BlockDevice({
+    size: 5,
+    mode: 22,
+    atime: new UTCDate(2124, 3, 2),
+    ctime: new UTCDate(1242, 3, 4),
+    mtime: new UTCDate(5123, 6, 4)
+  }),
+
+  'simple character device': new CharacterDevice({
+    size: 78,
+    mode: 654,
+    atime: new UTCDate(2415, 3, 3),
+    ctime: new UTCDate(1224, 3, 3),
+    mtime: new UTCDate(5201, 6, 5)
+  }),
+
+  'simple fifo': new FIFO({
+    size: 56,
+    mode: 2,
+    atime: new UTCDate(2341, 3, 7),
+    ctime: new UTCDate(2651, 3, 8),
+    mtime: new UTCDate(3542, 6, 0)
+  }),
+
+  'simple socket': new Socket({
+    size: 54,
+    mode: 365,
+    atime: new UTCDate(2541, 4, 3),
+    ctime: new UTCDate(1520, 8, 15),
+    mtime: new UTCDate(5000, 9, 0)
+  })
 }
 
 export type DictKey = keyof typeof fsPromiseDict
