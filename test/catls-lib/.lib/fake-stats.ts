@@ -1,3 +1,4 @@
+import { SetComplement } from 'utility-types'
 import { Main, StatInfo, UnitType, UnknownStatTypeName } from 'catls-lib'
 
 const symType = Symbol()
@@ -46,7 +47,7 @@ namespace StatsInstance {
     readonly type: Type
   }
 
-  export type Type = UnitType | UnknownStatTypeName
+  export type Type = SetComplement<UnitType, UnitType.Unknown> | UnknownStatTypeName
   export const Type = { ...UnitType, ...UnknownStatTypeName }
 }
 
