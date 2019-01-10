@@ -1,0 +1,181 @@
+import FakeFileSystem from './fake-file-system'
+import UTCDate from './utc-date'
+const { Symlink, File, Directory } = FakeFileSystem
+
+export const fsPromiseDict = {
+  'simple file': new File(
+    {
+      mode: 12,
+      atime: new UTCDate(2019, 3, 5),
+      ctime: new UTCDate(2020, 7, 4),
+      mtime: new UTCDate(2070, 2, 3)
+    },
+    [
+      'This is simple file',
+      'Hello, World!!',
+      'Foo Bar'
+    ].join('\n')
+  ),
+
+  'simple directory': new Directory(
+    {
+      size: 0,
+      mode: 15,
+      atime: new UTCDate(1999, 10, 2),
+      ctime: new UTCDate(2140, 4, 15),
+      mtime: new UTCDate(3210, 3, 5)
+    },
+    [
+      'item 0',
+      'item 1',
+      'item 2'
+    ]
+  ),
+
+  'symlink to existing file 0': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(4545, 10, 5),
+      ctime: new UTCDate(2562, 9, 2),
+      mtime: new UTCDate(2102, 2, 22)
+    },
+    'symlink to existing file 1'
+  ),
+
+  'symlink to existing file 1': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1420, 10, 5),
+      ctime: new UTCDate(2232, 11, 22),
+      mtime: new UTCDate(2102, 8, 12)
+    },
+    'symlink to existing file 2'
+  ),
+
+  'symlink to existing file 2': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1420, 10, 5),
+      ctime: new UTCDate(2232, 11, 22),
+      mtime: new UTCDate(2102, 8, 12)
+    },
+    'simple file'
+  ),
+
+  'symlink to existing directory 0': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1212, 0, 6),
+      ctime: new UTCDate(2121, 1, 2),
+      mtime: new UTCDate(2152, 8, 2)
+    },
+    'symlink to existing directory 1'
+  ),
+
+  'symlink to existing directory 1': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1242, 6, 6),
+      ctime: new UTCDate(5253, 7, 2),
+      mtime: new UTCDate(2165, 4, 2)
+    },
+    'symlink to existing directory 2'
+  ),
+
+  'symlink to existing directory 2': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1212, 0, 6),
+      ctime: new UTCDate(2121, 1, 2),
+      mtime: new UTCDate(2152, 8, 2)
+    },
+    'simple directory'
+  ),
+
+  'symlink to non existing entity 0': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(2532, 9, 20),
+      ctime: new UTCDate(4512, 4, 15),
+      mtime: new UTCDate(2256, 8, 5)
+    },
+    'symlink to non existing entity 1'
+  ),
+
+  'symlink to non existing entity 1': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1234, 4, 2),
+      ctime: new UTCDate(2451, 6, 14),
+      mtime: new UTCDate(2210, 11, 3)
+    },
+    'symlink to non existing entity 2'
+  ),
+
+  'symlink to non existing entity 2': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(3621, 4, 1),
+      ctime: new UTCDate(1204, 10, 0),
+      mtime: new UTCDate(1005, 0, 1)
+    },
+    'entity that does not exist'
+  ),
+
+  'recursive symlink to itself': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1242, 0, 12),
+      ctime: new UTCDate(1020, 1, 22),
+      mtime: new UTCDate(7777, 4, 13)
+    },
+    'recursive symlink to itself'
+  ),
+
+  'recursive symlink 0': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(3621, 4, 1),
+      ctime: new UTCDate(1204, 10, 0),
+      mtime: new UTCDate(1005, 0, 1)
+    },
+    'recursive symlink 1'
+  ),
+
+  'recursive symlink 1': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1320, 1, 1),
+      ctime: new UTCDate(1274, 0, 0),
+      mtime: new UTCDate(1232, 2, 1)
+    },
+    'recursive symlink 2'
+  ),
+
+  'recursive symlink 2': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(3607, 5, 3),
+      ctime: new UTCDate(1654, 10, 14),
+      mtime: new UTCDate(1145, 10, 22)
+    },
+    'recursive symlink 0'
+  )
+}
+
+export const fsPromise = new FakeFileSystem(fsPromiseDict)
+export const getStats = (name: keyof typeof fsPromiseDict) => fsPromiseDict[name].statInfo
+export const getStatsPattern = (name: keyof typeof fsPromiseDict) => expect.objectContaining(getStats(name))
