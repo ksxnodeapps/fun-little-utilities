@@ -16,6 +16,30 @@ const init = (
   return { param, promise, resname, mkfn, ignore }
 }
 
+describe('with something that does not exist', () => {
+  const { param, mkfn, ignore } = init('not exist')
+
+  it('calls options.handleNonExist once', mkfn(() => {
+    expect(param.handleNonExist).toBeCalledTimes(1)
+  }))
+
+  it('calls options.handleNonExist with expected arguments', mkfn(() => {
+    expect(param.handleNonExist).toBeCalledWith({
+      type: UnitType.NonExist,
+      options: param
+    })
+  }))
+
+  it('returns expected value', mkfn(value => {
+    expect(value).toBe(HandlerReturn[HandlerReturn.NonExist])
+  }))
+
+  it('does not call handleSymlink', ignore('handleSymlink'))
+  it('does not call handleFile', ignore('handleFile'))
+  it('does not call handleDirectory', ignore('handleDirectory'))
+  it('does not call handleUnknown', ignore('handleUnknown'))
+})
+
 describe('with a file', () => {
   const { param, mkfn, ignore } = init('simple file')
 
