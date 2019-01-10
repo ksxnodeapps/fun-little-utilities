@@ -113,19 +113,20 @@ namespace FileSystemInstance {
     }
   }
 
-  const unknownItemClass = (): (
-    new (
-      type: UnknownStatTypeName,
-      statInfo: StatInfo.Stats
-    ) => ItemBase<UnknownStatTypeName>
-  ) => class Unknown extends ItemBase<UnknownStatTypeName> {}
+  const unknownItemClass =
+    <Type extends UnknownStatTypeName> (type: Type):
+      new (statInfo: StatInfo.Stats) => ItemBase<UnknownStatTypeName> =>
+        class Unknown extends itemClassWithoutContent(type) {}
 
   export type Item =
     NonExist |
     Symlink |
     File |
     Directory |
-    Unknown
+    BlockDevice |
+    CharacterDevice |
+    FIFO |
+    Socket
 
   export abstract class ItemBase<Type extends ItemType> {
     constructor (
@@ -138,7 +139,10 @@ namespace FileSystemInstance {
   export class Symlink extends itemClassWithContent(ItemType.Symlink)<string> {}
   export class File extends fileItemClass() {}
   export class Directory extends itemClassWithContent(ItemType.Directory)<ReadonlyArray<string>> {}
-  export class Unknown extends unknownItemClass() {}
+  export class BlockDevice extends unknownItemClass(ItemType.BlockDevice) {}
+  export class CharacterDevice extends unknownItemClass(ItemType.CharacterDevice) {}
+  export class FIFO extends unknownItemClass(ItemType.FIFO) {}
+  export class Socket extends unknownItemClass(ItemType.Socket) {}
 }
 
 export = FileSystemInstance
