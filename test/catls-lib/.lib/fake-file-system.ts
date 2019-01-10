@@ -1,5 +1,5 @@
 import { Omit } from 'utility-types'
-import { Main, UnitType, StatInfo } from 'catls-lib'
+import { Main, UnitType, StatInfo, UnknownStatTypeName } from 'catls-lib'
 import FakeStats from './fake-stats'
 
 const symDict = Symbol('symDict')
@@ -72,8 +72,8 @@ namespace FileSystemInstance {
     readonly [name: string]: Item
   }
 
-  export type ItemType = UnitType
-  export const ItemType = UnitType
+  export type ItemType = FakeStats.Type
+  export const ItemType = FakeStats.Type
 
   const itemClassWithoutContent =
     <Type extends ItemType> (type: Type): (
@@ -113,6 +113,13 @@ namespace FileSystemInstance {
     }
   }
 
+  const unknownItemClass = (): (
+    new (
+      type: UnknownStatTypeName,
+      statInfo: StatInfo.Stats
+    ) => ItemBase<UnknownStatTypeName>
+  ) => class Unknown extends ItemBase<UnknownStatTypeName> {}
+
   export type Item =
     NonExist |
     Symlink |
@@ -131,7 +138,7 @@ namespace FileSystemInstance {
   export class Symlink extends itemClassWithContent(ItemType.Symlink)<string> {}
   export class File extends fileItemClass() {}
   export class Directory extends itemClassWithContent(ItemType.Directory)<ReadonlyArray<string>> {}
-  export class Unknown extends itemClassWithoutContent(ItemType.Unknown) {}
+  export class Unknown extends unknownItemClass() {}
 }
 
 export = FileSystemInstance
