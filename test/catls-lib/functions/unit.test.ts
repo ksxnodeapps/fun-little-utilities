@@ -139,6 +139,50 @@ describe('with a symlink', () => {
         it('does not call handleDirectory', ignore('handleDirectory'))
         it('does not call handleUnknown', ignore('handleUnknown'))
       })
+
+      describe('when followSymlink is Infinity', () => {
+        const { param, mkfn, calledTimes, calledOnce, calledWith, returnsCode, ignore } = init(
+          'symlink to existing file 0',
+          SymlinkResolution.Relative,
+          Infinity
+        )
+        it('calls handleSymlink as many times as there are symlinks', calledTimes('handleSymlink', 3))
+        it('calls handleSymlink with expected arguments', mkfn(() => {
+          expect(param.handleSymlink.mock.calls).toEqual([
+            [{
+              type: UnitType.Symlink,
+              content: 'symlink to existing file 1',
+              target: 'symlink to existing file 1',
+              options: param,
+              stats: getStatsPattern('symlink to existing file 0')
+            }],
+            [{
+              type: UnitType.Symlink,
+              content: 'symlink to existing file 2',
+              target: 'symlink to existing file 2',
+              options: param,
+              stats: getStatsPattern('symlink to existing file 1')
+            }],
+            [{
+              type: UnitType.Symlink,
+              content: 'simple file',
+              target: 'simple file',
+              options: param,
+              stats: getStatsPattern('symlink to existing file 2')
+            }]
+          ])
+        }))
+        it('calls handleFile once', calledOnce('handleFile'))
+        it('calls handleFile with expected arguments', calledWith('handleFile', [{
+          type: UnitType.File,
+          options: param,
+          stats: getStatsPattern('simple file')
+        }]))
+        it('returns expected value', returnsCode(HandlerReturn.Symlink * 3 + HandlerReturn.File))
+        it('does not call handleNonExist', ignore('handleNonExist'))
+        it('does not call handleDirectory', ignore('handleDirectory'))
+        it('does not call handleUnknown', ignore('handleUnknown'))
+      })
     })
 
     describe('when resolution is "ultimate"', () => {
