@@ -6,11 +6,11 @@ import {
 } from 'catls-lib'
 
 export enum HandlerReturn {
-  NonExist = 3,
-  Symlink = 6,
-  File = 9,
-  Directory = 12,
-  Unknown = 15
+  NonExist = 2,
+  Symlink = 3,
+  File = 5,
+  Directory = 7,
+  Unknown = 11
 }
 
 export class UnitParamSharedProperties {
