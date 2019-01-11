@@ -49,7 +49,7 @@ async function unit (options: Unit.Options): Promise<number> {
       if (followSymlink && !visited.includes(target)) {
         return addStatusCode(
           status,
-          await loop(name, followSymlink - 1, [target, ...visited])
+          await loop(target, followSymlink - 1, [target, ...visited])
         )
       }
 
