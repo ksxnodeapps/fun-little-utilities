@@ -1,11 +1,11 @@
 import { unit, SymlinkResolution, UnitType } from 'catls-lib'
 import { UnitParam, HandlerReturn } from '../.lib/unit-param'
-import { fsPromise, getStatsPattern } from '../.lib/fake-file-system-sample'
+import { fsPromise, getStatsPattern, EntName } from '../.lib/fake-file-system-sample'
 
 const init = (
-  name: string,
-  followSymlink = 0,
-  symlinkResolution = SymlinkResolution.Agnostic
+  name: EntName,
+  symlinkResolution = SymlinkResolution.Agnostic,
+  followSymlink = 0
 ) => {
   type ResName = keyof typeof HandlerReturn
   type Key = keyof UnitParam
