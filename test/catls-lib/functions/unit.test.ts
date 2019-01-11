@@ -186,24 +186,78 @@ describe('with a symlink', () => {
     })
 
     describe('when resolution is "ultimate"', () => {
-      const { param, calledOnce, calledWith, returns, ignore } = init(
-        'symlink to existing file 0',
-        SymlinkResolution.Ultimate,
-        0
-      )
-      it('calls handleSymlink once', calledOnce('handleSymlink'))
-      it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
-        type: UnitType.Symlink,
-        content: 'simple file',
-        target: 'simple file',
-        options: param,
-        stats: getStatsPattern('symlink to existing file 0')
-      }]))
-      it('returns expected value', returns(HandlerReturn.Symlink))
-      it('does not call handleNonExist', ignore('handleNonExist'))
-      it('does not call handleFile', ignore('handleFile'))
-      it('does not call handleDirectory', ignore('handleDirectory'))
-      it('does not call handleUnknown', ignore('handleUnknown'))
+      describe('when followSymlink is 0', () => {
+        const { param, calledOnce, calledWith, returns, ignore } = init(
+          'symlink to existing file 0',
+          SymlinkResolution.Ultimate,
+          0
+        )
+        it('calls handleSymlink once', calledOnce('handleSymlink'))
+        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
+          type: UnitType.Symlink,
+          content: 'simple file',
+          target: 'simple file',
+          options: param,
+          stats: getStatsPattern('symlink to existing file 0')
+        }]))
+        it('returns expected value', returns(HandlerReturn.Symlink))
+        it('does not call handleNonExist', ignore('handleNonExist'))
+        it('does not call handleFile', ignore('handleFile'))
+        it('does not call handleDirectory', ignore('handleDirectory'))
+        it('does not call handleUnknown', ignore('handleUnknown'))
+      })
+
+      describe('when followSymlink is 1', () => {
+        const { param, calledOnce, calledWith, returnsCode, ignore } = init(
+          'symlink to existing file 0',
+          SymlinkResolution.Ultimate,
+          1
+        )
+        it('calls handleSymlink once', calledOnce('handleSymlink'))
+        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
+          type: UnitType.Symlink,
+          content: 'simple file',
+          target: 'simple file',
+          options: param,
+          stats: getStatsPattern('symlink to existing file 0')
+        }]))
+        it('calls handleFile once', calledOnce('handleFile'))
+        it('calls handleFile with expected arguments', calledWith('handleFile', [{
+          type: UnitType.File,
+          options: param,
+          stats: getStatsPattern('simple file')
+        }]))
+        it('returns expected value', returnsCode(HandlerReturn.Symlink + HandlerReturn.File))
+        it('does not call handleNonExist', ignore('handleNonExist'))
+        it('does not call handleDirectory', ignore('handleDirectory'))
+        it('does not call handleUnknown', ignore('handleUnknown'))
+      })
+
+      describe('when followSymlink is Infinity', () => {
+        const { param, calledOnce, calledWith, returnsCode, ignore } = init(
+          'symlink to existing file 0',
+          SymlinkResolution.Ultimate,
+          Infinity
+        )
+        it('calls handleSymlink once', calledOnce('handleSymlink'))
+        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
+          type: UnitType.Symlink,
+          content: 'simple file',
+          target: 'simple file',
+          options: param,
+          stats: getStatsPattern('symlink to existing file 0')
+        }]))
+        it('calls handleFile once', calledOnce('handleFile'))
+        it('calls handleFile with expected arguments', calledWith('handleFile', [{
+          type: UnitType.File,
+          options: param,
+          stats: getStatsPattern('simple file')
+        }]))
+        it('returns expected value', returnsCode(HandlerReturn.Symlink + HandlerReturn.File))
+        it('does not call handleNonExist', ignore('handleNonExist'))
+        it('does not call handleDirectory', ignore('handleDirectory'))
+        it('does not call handleUnknown', ignore('handleUnknown'))
+      })
     })
   })
 })
