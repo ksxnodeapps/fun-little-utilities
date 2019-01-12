@@ -261,3 +261,18 @@ describe('with a symlink', () => {
     })
   })
 })
+
+describe('with other kinds of entities', () => {
+  const { param, calledOnce, calledWith, returns, ignore } = init('simple character device')
+  it('calls options.handleUnknown once', calledOnce('handleUnknown'))
+  it('calls options.handleUnknown with expected arguments', calledWith('handleUnknown', [{
+    type: UnitType.Unknown,
+    options: param,
+    stats: getStatsPattern('simple character device')
+  }]))
+  it('returns expected value', returns(HandlerReturn.Unknown))
+  it('does not call NonExist', ignore('handleNonExist'))
+  it('does not call handleSymlink', ignore('handleSymlink'))
+  it('does not call handleFile', ignore('handleFile'))
+  it('does not call handleDirectory', ignore('handleDirectory'))
+})
