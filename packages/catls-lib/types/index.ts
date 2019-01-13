@@ -1,6 +1,6 @@
 import { MaybePromise } from 'typescript-miscellaneous'
 import { ChildProcess as ChildProcessBase } from 'split-shell-buffer'
-import { UnitType, EmptyArgumentHandlingMethod, SymlinkResolution } from '../enums'
+import { UnitType, EmptyArgumentHandlingMethod, ExitStatus, SymlinkResolution } from '../enums'
 
 export interface CommandLineOptions {
   readonly cat: string
@@ -163,6 +163,17 @@ export namespace ShowExecData {
     readonly execute: Executor
     readonly writable: Writable
   }
+}
+
+export namespace EmptyArguments {
+  export interface Param {
+    readonly method: EmptyArgumentHandlingMethod
+    readonly stream: Writable
+  }
+
+  export type Return =
+    ExitStatus.Success |
+    ExitStatus.InsufficientArguments
 }
 
 export namespace UnknownStatType {

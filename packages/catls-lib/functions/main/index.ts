@@ -1,5 +1,6 @@
 import { Main } from '../../types'
-import { ExitStatus, EmptyArgumentHandlingMethod } from '../../enums'
+import { ExitStatus } from '../../enums'
+import emptyArguments from '../empty-arguments'
 import unit from '../unit'
 import str2num from '../string-to-number'
 import symlinkRoutingFunctions from '../symlink-routing-functions'
@@ -29,16 +30,10 @@ async function main (param: Main.Param): Promise<number> {
   const { readlink } = fsPromise
 
   if (!list.length) {
-    switch (handleEmptyArguments) {
-      case EmptyArgumentHandlingMethod.Quiet:
-        return ExitStatus.Success
-      case EmptyArgumentHandlingMethod.Warn:
-        stderr.write('[WARN] Should provide at least 1 argument\n')
-        return ExitStatus.Success
-      case EmptyArgumentHandlingMethod.Error:
-        stderr.write('[ERROR] Must provided at least 1 argument\n')
-        return ExitStatus.InsufficientArguments
-    }
+    return emptyArguments({
+      method: handleEmptyArguments,
+      stream: stderr
+    })
   }
 
   const actualFollowSymlink = str2num(followSymlink)
