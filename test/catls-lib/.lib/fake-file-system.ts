@@ -102,7 +102,7 @@ namespace FileSystemInstance {
     new (
       statInfo: Omit<StatInfo.Stats, 'size'>,
       content: string
-    ) => ItemBase<UnitType.File>
+    ) => ItemBase<UnitType.File> & { readonly content: string }
   ) => class File extends itemClassWithContent(ItemType.File)<string> {
     constructor (
       statInfo: Omit<StatInfo.Stats, 'size'>,
