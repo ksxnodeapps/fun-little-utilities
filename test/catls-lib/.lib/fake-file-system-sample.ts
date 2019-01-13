@@ -210,6 +210,8 @@ export const fsPromiseDict = {
 
 export type DictKey = keyof typeof fsPromiseDict
 export type EntName = DictKey | 'not exist'
+export type DictVal = FakeFileSystem.ItemType
+export const DictVal = FakeFileSystem.ItemType
 export const allDictKeys: ReadonlyArray<DictKey> = Object.keys(fsPromiseDict) as any
 export const fsPromise = new FakeFileSystem(fsPromiseDict)
 export const getStats = (name: DictKey) => fsPromiseDict[name].statInfo
