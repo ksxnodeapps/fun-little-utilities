@@ -3,10 +3,10 @@ class UTCDate extends Date {
     year: number,
     month: number,
     date: number,
-    hours?: number,
-    minutes?: number,
-    seconds?: number,
-    milliseconds?: number
+    hours: number = 0,
+    minutes: number = 0,
+    seconds: number = 0,
+    milliseconds: number = 0
   ) {
     super(Date.UTC(
       year,
