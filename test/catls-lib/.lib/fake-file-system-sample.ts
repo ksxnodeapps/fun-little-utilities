@@ -98,39 +98,6 @@ export const fsPromiseDict = {
     'simple directory'
   ),
 
-  'symlink to non existing entity 0': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(2532, 9, 20),
-      ctime: new UTCDate(4512, 4, 15),
-      mtime: new UTCDate(2256, 8, 5)
-    },
-    'symlink to non existing entity 1'
-  ),
-
-  'symlink to non existing entity 1': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(1234, 4, 2),
-      ctime: new UTCDate(2451, 6, 14),
-      mtime: new UTCDate(2210, 11, 3)
-    },
-    'symlink to non existing entity 2'
-  ),
-
-  'symlink to non existing entity 2': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(3621, 4, 1),
-      ctime: new UTCDate(1204, 10, 0),
-      mtime: new UTCDate(1005, 0, 1)
-    },
-    'entity that does not exist'
-  ),
-
   'recursive symlink to itself': new Symlink(
     {
       size: 3,
