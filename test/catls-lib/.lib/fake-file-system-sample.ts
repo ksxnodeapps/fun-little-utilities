@@ -98,50 +98,6 @@ export const fsPromiseDict = {
     'simple directory'
   ),
 
-  'recursive symlink to itself': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(1242, 0, 12),
-      ctime: new UTCDate(1020, 1, 22),
-      mtime: new UTCDate(7777, 4, 13)
-    },
-    'recursive symlink to itself'
-  ),
-
-  'recursive symlink 0': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(3621, 4, 1),
-      ctime: new UTCDate(1204, 10, 0),
-      mtime: new UTCDate(1005, 0, 1)
-    },
-    'recursive symlink 1'
-  ),
-
-  'recursive symlink 1': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(1320, 1, 1),
-      ctime: new UTCDate(1274, 0, 0),
-      mtime: new UTCDate(1232, 2, 1)
-    },
-    'recursive symlink 2'
-  ),
-
-  'recursive symlink 2': new Symlink(
-    {
-      size: 3,
-      mode: 77,
-      atime: new UTCDate(3607, 5, 3),
-      ctime: new UTCDate(1654, 10, 14),
-      mtime: new UTCDate(1145, 10, 22)
-    },
-    'recursive symlink 0'
-  ),
-
   'simple block device': new BlockDevice({
     size: 5,
     mode: 22,
