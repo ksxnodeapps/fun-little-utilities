@@ -133,10 +133,10 @@ export const fsPromiseDict = {
 
 export type DictKey = keyof typeof fsPromiseDict
 export type EntName = DictKey | 'not exist'
-export type DictVal = typeof fsPromiseDict extends { [key in DictKey]: infer Val } ? Val : never
 export const DictVal = { ...FakeFileSystem }
-export type ItemType = FakeFileSystem.ItemType
+export type DictVal = typeof fsPromiseDict extends { [key in DictKey]: infer Val } ? Val : never
 export const ItemType = FakeFileSystem.ItemType
+export type ItemType = FakeFileSystem.ItemType
 export const allDictKeys: ReadonlyArray<DictKey> = Object.keys(fsPromiseDict) as any
 export const fsPromise = new FakeFileSystem(fsPromiseDict)
 export const getStats = (name: DictKey) => fsPromiseDict[name].statInfo
