@@ -4,6 +4,7 @@ import FakeStats from './fake-stats'
 
 const symDict = Symbol('symDict')
 const symMkStats = Symbol('symMkFakeStats')
+const symAssertExist = Symbol('symAssertExist')
 
 class FileSystemInstanceBase {
   protected readonly [symDict]: FileSystemInstance.Dict
@@ -22,6 +23,11 @@ class FileSystemInstanceBase {
       statInfo.mtime
     )
   }
+
+  protected [symAssertExist] (name: string, cmd: string): void {
+    if (name in this[symDict]) return
+    throw new Error(`ENOENT: No such file or directory: ${cmd} '${name}'`)
+  }
 }
 
 class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSystemFunctions {
@@ -33,10 +39,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
   }
 
   public readonly stat = (name: string): FakeStats => {
-    if (!this.existsSync(name)) {
-      throw new Error(`ENOENT: No such file or directory, stat '${name}'`)
-    }
-
+    this[symAssertExist](name, 'stat')
     const item = this[symDict][name]
 
     return item.type === UnitType.Symlink
@@ -45,11 +48,13 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
   }
 
   public readonly lstat = (name: string) => {
+    this[symAssertExist](name, 'lstat')
     const item = this[symDict][name]
     return this[symMkStats](item.type, item.statInfo)
   }
 
   public readonly readlink = (name: string) => {
+    this[symAssertExist](name, 'readlink')
     const item = this[symDict][name]
 
     if (item.type !== UnitType.Symlink) {
@@ -60,6 +65,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
   }
 
   public readonly realpath = (name: string): string => {
+    this[symAssertExist](name, 'realpath')
     const item = this[symDict][name]
     return item.type === UnitType.Symlink
       ? this.realpath(item.content)
