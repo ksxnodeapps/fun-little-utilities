@@ -1,9 +1,9 @@
 import { Omit } from 'utility-types'
 import ramda from 'ramda'
 import * as shQuote from 'shell-quote'
-import { Prepend } from 'typescript-tuple'
 import { StreamInstance, getString } from 'simple-fake-stream'
 import FakeChildProcess from '../.lib/fake-child-process'
+import initCartesianTest from '../.lib/cartesian-test-tree'
 
 import {
   main,
@@ -124,96 +124,6 @@ function init (param: InitParam) {
   return { stdout, stderr, status }
 }
 
-function start () {
-  type DescFunc<Factor> = (factor: Factor) => string
-
-  interface Layer<Factor, Base extends MaybeLayer<any, any>> {
-    readonly factorList: Factor[]
-    readonly getDescription: DescFunc<Factor>
-    readonly base: Base
-    readonly run: (fn: RunCallback<Base>) => void
-  }
-
-  type MaybeLayer<
-    Factor,
-    Base extends MaybeLayer<any, any>
-  > = Layer<Factor, Base> | undefined
-
-  type RunCallback<
-    Type extends MaybeLayer<any, any>,
-    Holder extends any[] = []
-  > = {
-    undefined:
-      (param: Holder) => void,
-    defined:
-      Type extends Layer<infer Factor, infer Base> ?
-      Base extends MaybeLayer<any, any> ?
-        RunCallback<Base, Prepend<Holder, Factor>>
-      : { ERROR: 'Base does not fit MaybeLayer<any, any>', Base: Base }
-      : { ERROR: 'Type does not fit Layer<any, any>', Type: Type }
-    invalidType:
-      { ERROR: 'Type does not fit MaybeLayer<any, any>', Type: Type, Holder: Holder }
-  }[
-    Type extends undefined ? 'undefined' :
-    Type extends Layer<any, any> ? 'defined' :
-    'invalidType'
-  ]
-
-  const add = <Factor, Base extends MaybeLayer<any, any>> (
-    factorList: Factor[],
-    getDescription: DescFunc<Factor>,
-    base: Base
-  ): Layer<Factor, Base> => ({
-    factorList,
-    getDescription,
-    base,
-    run: (() => {
-      const { makeParam, execute } = base
-        ? {
-          makeParam: (factor: Factor, baseParam: any[]) => [...baseParam, factor],
-          execute: base.run as (fn: RunCallback<Base>) => void
-        }
-        : {
-          makeParam: (factor: Factor) => [factor],
-          execute: (fn: RunCallback<Base>) => void fn([])
-        }
-
-      return (fn: RunCallback<Base>) => execute((baseParam: any[]) => {
-        for (const factor of factorList) {
-          const param = makeParam(factor, baseParam)
-          describe(getDescription(factor), () => fn(param))
-        }
-      })
-    })()
-  })
-
-  interface Result<Base extends MaybeLayer<any, any>> {
-    add<Factor> (
-      factorList: Factor[],
-      getDescription: DescFunc<Factor>
-    ): Result<Layer<Factor, Base>>
-
-    run (fn: RunCallback<Base>): void
-
-    base: Base
-  }
-
-  const mkres = <
-    Base extends MaybeLayer<any, any>
-  > (base: Base): Result<Base> => ({
-    add<Factor> (
-      factorList: Factor[],
-      getDescription: DescFunc<Factor>
-    ) {
-      return mkres(add(factorList, getDescription, base))
-    },
-    run: base ? base.run : () => undefined,
-    base
-  })
-
-  return mkres(undefined)
-}
-
 const allSymlinkRslns = [
   SymlinkResolution.Agnostic,
   SymlinkResolution.Relative,
@@ -235,7 +145,7 @@ const descEmpty: DescMaker<HasLength> = name => ({ length }) =>
 const descJSON: DescMaker = name => x =>
   desc(name, JSON.stringify(x))
 
-const suites = start()
+const suites = initCartesianTest()
   .add([[], allDictKeys], descEmpty('list'))
   .add(allSymlinkRslns, descJSON('symlinkResolution'))
   .add([false, true], descJSON('dontFakeInteractive'))
