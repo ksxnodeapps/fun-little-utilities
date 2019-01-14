@@ -1,7 +1,12 @@
 dependencies:
+  '@types/ramda': 0.25.46
+  '@types/shell-quote': 1.6.0
   catls-lib: 'link:../../packages/catls-lib'
   extra-jest: 0.0.24
+  ramda: 0.26.1
+  shell-quote: 1.6.1
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
+  typescript-tuple: 2.1.0
   utility-types: 3.2.1
 packages:
   /@types/fs-extra/5.0.4:
@@ -22,12 +27,32 @@ packages:
     dev: false
     resolution:
       integrity: sha512-J+xlbNyag7wgYRSuvRwu9zZY7t0vM4KMUVHxWLUMegqlz9+97v6jYo2JlvfsVC3qtulx7PKenFKzWCWsdVSCDw==
+  /@types/ramda/0.25.46:
+    dev: false
+    resolution:
+      integrity: sha512-UiyHmzWu0KftAWZXfiUvwToVTHGhaG2fnWVckGwaic4By6YyGqtOpq7m8R3HLrpEsYH0AnRQjtXhdL8igmCuDw==
+  /@types/shell-quote/1.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-BFonQx849sYB2YOJZBUEfbWdaJcqRb6+ASvgUBtcmg2JRTjBaV2Wgn0SD0gWNIZ+rd7KPysPCjLUOUXnBDUlBg==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
     dev: false
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
+  /array-filter/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-fajPLiZijtcygDWB/SH2fKzS7uw=
+  /array-map/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-iKK6tz0c97zVwbEYoAP2b2ZfpmI=
+  /array-reduce/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-FziZ0//Rx9k4PkR5Ul2+J4yrXys=
   /esprima/4.0.1:
     dev: false
     engines:
@@ -102,6 +127,10 @@ packages:
       graceful-fs: 4.1.15
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+  /jsonify/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
   /monorepo-shared-assets/0.0.17:
     dependencies:
       '@types/node': 10.12.18
@@ -118,6 +147,19 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+  /ramda/0.26.1:
+    dev: false
+    resolution:
+      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
+  /shell-quote/1.6.1:
+    dependencies:
+      array-filter: 0.0.1
+      array-map: 0.0.0
+      array-reduce: 0.0.0
+      jsonify: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha1-9HgZSczkAmlxJ0MOo7PFR29IF2c=
   /sprintf-js/1.0.3:
     dev: false
     resolution:
@@ -126,6 +168,24 @@ packages:
     dev: false
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+  /typescript-compare/0.0.2:
+    dependencies:
+      typescript-logic: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+  /typescript-logic/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
+  /typescript-tuple/2.1.0:
+    dependencies:
+      typescript-compare: 0.0.2
+    dev: false
+    engines:
+      typescript: ^3.0.0
+    resolution:
+      integrity: sha512-yoi2Bsa/OHzGh7PO5zpyFj6g+0dUbR5DbdQLPFkbEulOImQtCliShqzoDpAjcpsPCfibhr2Q92y5NqYzYkaK6Q==
   /unique-temp-path/0.1.1:
     dependencies:
       '@types/node': 10.12.18
@@ -152,7 +212,12 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  '@types/ramda': ^0.25.46
+  '@types/shell-quote': ^1.6.0
   catls-lib: 'file:../../packages/catls-lib'
   extra-jest: ^0.0.24
+  ramda: ^0.26.1
+  shell-quote: ^1.6.1
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
+  typescript-tuple: ^2.1.0
   utility-types: ^3.2.1
