@@ -19,6 +19,6 @@ main({
   status => process.exit(status),
   error => {
     console.error(error)
-    return process.exit(ExitStatus.UncaughtError)
+    return process.exit(ExitStatus.UncaughtException)
   }
 )
