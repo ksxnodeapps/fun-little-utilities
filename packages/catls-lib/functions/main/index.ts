@@ -52,8 +52,15 @@ async function main (param: Main.Param): Promise<number> {
       },
 
       handleException (param) {
-        stderr.write(`[ERROR] No such file or directory: ${param.options.name}`)
-        return ExitStatus.NoEnt
+        const { error, options } = param
+
+        if (error.code === 'ENOENT') {
+          stderr.write(`[ERROR] No such file or directory: ${options.name}`)
+          return ExitStatus.NoEnt
+        }
+
+        stderr.write(`[ERROR] UncaughtException: ${error}`)
+        return ExitStatus.UnknownError
       },
 
       async handleSymlink (param) {
