@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Object {
+  "-1": "Unknown",
+  "0": "Exception",
+  "1": "Symlink",
+  "2": "File",
+  "3": "Directory",
+  "Directory": 3,
+  "Exception": 0,
+  "File": 2,
+  "Symlink": 1,
+  "Unknown": -1,
+}
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Object {
+  "0": "Success",
+  "1": "UncaughtException",
+  "127": "UnknownError",
+  "2": "InsufficientArguments",
+  "3": "NoEnt",
+  "InsufficientArguments": 2,
+  "NoEnt": 3,
+  "Success": 0,
+  "UncaughtException": 1,
+  "UnknownError": 127,
+}
+`;
