@@ -1,7 +1,6 @@
-import { Stats } from 'fs-extra'
 import { MaybePromise } from 'typescript-miscellaneous'
 import { ChildProcess as ChildProcessBase } from 'split-shell-buffer'
-import { UnitType, EmptyArgumentHandlingMethod, SymlinkResolution } from '../enums'
+import { UnitType, EmptyArgumentHandlingMethod, ExitStatus, SymlinkResolution } from '../enums'
 
 export interface CommandLineOptions {
   readonly cat: string
@@ -26,12 +25,29 @@ export namespace Main {
     readonly stderr: Writable
     readonly addStatusCode: StatusCodeAdder
     readonly spawn: Executor
+    readonly fsPromise: FileSystemFunctions
   }
 
   export type StatusCodeAdder = (current: number, addend: number) => MaybePromise<number>
+
+  export interface FileSystemFunctions extends
+    SymlinkRoutingFunctions.FileSystemFunctions,
+    Unit.Options.FileSystemFunctions {}
+
+  export interface Stats extends
+    Unit.Stats,
+    StatInfo.Stats,
+    UnknownStatType.Stats {}
 }
 
 export namespace SymlinkRoutingFunctions {
+  export interface FileSystemFunctions {
+    readonly stat: StatGetter
+    readonly lstat: StatGetter
+    readonly readlink: LinkGetter
+    readonly realpath: LinkGetter
+  }
+
   export interface Return {
     readonly getStat: StatGetter
     readonly getLink: LinkGetter
@@ -57,6 +73,7 @@ export namespace Unit {
     readonly handleFile: Options.Handler.File
     readonly handleDirectory: Options.Handler.Directory
     readonly handleUnknown: Options.Handler.Unknown
+    readonly fsPromise: Options.FileSystemFunctions
   }
 
   export namespace Options {
@@ -94,7 +111,7 @@ export namespace Unit {
 
         export interface Exist extends Base {
           readonly type: UnitType.Exist
-          readonly stats: Stats
+          readonly stats: Main.Stats
         }
 
         export interface Symlink extends Exist {
@@ -116,6 +133,20 @@ export namespace Unit {
         }
       }
     }
+
+    export interface FileSystemFunctions {
+      readonly existsSync: (name: string) => boolean
+    }
+  }
+
+  export interface Stats extends StatInfo.Stats, UnknownStatType.Stats {
+    readonly isSymbolicLink: Stats.Method
+    readonly isFile: Stats.Method
+    readonly isDirectory: Stats.Method
+  }
+
+  export namespace Stats {
+    export type Method = () => boolean
   }
 
   export type LoopBody = (
@@ -134,8 +165,19 @@ export namespace ShowExecData {
   }
 }
 
-export namespace UnknownStatInfo {
-  export interface Stats extends StatInfo.Stats {
+export namespace EmptyArguments {
+  export interface Param {
+    readonly method: EmptyArgumentHandlingMethod
+    readonly stream: Writable
+  }
+
+  export type Return =
+    ExitStatus.Success |
+    ExitStatus.InsufficientArguments
+}
+
+export namespace UnknownStatType {
+  export interface Stats {
     isBlockDevice (): boolean
     isCharacterDevice (): boolean
     isFIFO (): boolean

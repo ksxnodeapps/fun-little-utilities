@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when method is "error" writes an error message to stream 1`] = `
+"
+- data: |
+    [ERROR] Must provided at least 1 argument
+  name: write
+
+"
+`;
+
+exports[`when method is "warn" writes a warning to stream 1`] = `
+"
+- data: |
+    [WARN] Should provide at least 1 argument
+  name: write
+
+"
+`;

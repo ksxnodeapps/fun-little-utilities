@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`writes data into ShowExecParam.Param::writable 1`] = `
+"
+chunks:
+  - !<tag:yaml.org,2002:binary> ICBhYmMK
+  - !<tag:yaml.org,2002:binary> ICBkZWYK
+  - !<tag:yaml.org,2002:binary> ICBnaGkK
+  - !<tag:yaml.org,2002:binary> ICBqa2wK
+methodCalls:
+  - data: !<tag:yaml.org,2002:binary> ICBhYmMK
+    name: write
+  - data: !<tag:yaml.org,2002:binary> ICBkZWYK
+    name: write
+  - data: !<tag:yaml.org,2002:binary> ICBnaGkK
+    name: write
+  - data: !<tag:yaml.org,2002:binary> ICBqa2wK
+    name: write
+text: |2
+    abc
+    def
+    ghi
+    jkl
+
+"
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Object {
+  "BlockDevice": "BlockDevice",
+  "CharacterDevice": "CharacterDevice",
+  "FIFO": "FIFO",
+  "Socket": "Socket",
+  "Unknown": "Unknown",
+}
+`;

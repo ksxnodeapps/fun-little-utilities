@@ -1,4 +1,3 @@
-import { existsSync } from 'fs-extra'
 import { Unit } from '../../types'
 import { UnitType } from '../../enums'
 import relativeLink from '../relative-link'
@@ -17,8 +16,11 @@ async function unit (options: Unit.Options): Promise<number> {
     getLink,
     getStat,
     getLoop,
-    addStatusCode
+    addStatusCode,
+    fsPromise
   } = options
+
+  const { existsSync } = fsPromise
 
   const main: Unit.LoopBody = async (name, followSymlink, visited) => {
     await heading({ name, options })
@@ -47,7 +49,7 @@ async function unit (options: Unit.Options): Promise<number> {
       if (followSymlink && !visited.includes(target)) {
         return addStatusCode(
           status,
-          await loop(name, followSymlink - 1, [target, ...visited])
+          await loop(target, followSymlink - 1, [target, ...visited])
         )
       }
 
