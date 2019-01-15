@@ -42,7 +42,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
   public readonly existsSync = (name: string) => {
     const item = this[symDict][name]
     if (!item) return false
-    if (item.type === UnitType.NonExist) return false
+    if (item.type === UnitType.Exception) return false
     return true
   }
 
@@ -133,7 +133,7 @@ namespace FileSystemInstance {
         class Unknown extends itemClassWithoutContent(type) {}
 
   export type Item =
-    NonExist |
+    Exception |
     Symlink |
     File |
     Directory |
@@ -149,7 +149,7 @@ namespace FileSystemInstance {
     ) {}
   }
 
-  export class NonExist extends itemClassWithoutContent(ItemType.NonExist) {}
+  export class Exception extends itemClassWithoutContent(ItemType.Exception) {}
   export class Symlink extends itemClassWithContent(ItemType.Symlink)<string> {}
   export class File extends fileItemClass() {}
   export class Directory extends itemClassWithContent(ItemType.Directory)<ReadonlyArray<string>> {}
