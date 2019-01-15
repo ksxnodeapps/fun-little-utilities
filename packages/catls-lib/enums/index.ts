@@ -2,9 +2,9 @@
 
 export enum ExitStatus {
   Success = 0,
-  InsufficientArguments = 1,
-  NoEnt = 2,
-  UncaughtException = 3
+  UncaughtException = 1,
+  InsufficientArguments = 2,
+  NoEnt = 3
 }
 
 export enum EmptyArgumentHandlingMethod {
