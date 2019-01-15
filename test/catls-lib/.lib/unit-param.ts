@@ -53,7 +53,5 @@ export namespace UnitParam {
     readonly followSymlink: number
   }
 
-  export type FileSystemFunctions =
-    Unit.Options.FileSystemFunctions &
-    SymlinkRoutingFunctions.FileSystemFunctions
+  export type FileSystemFunctions = SymlinkRoutingFunctions.FileSystemFunctions
 }
