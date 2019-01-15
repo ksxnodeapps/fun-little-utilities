@@ -6,6 +6,14 @@ const symDict = Symbol('symDict')
 const symMkStats = Symbol('symMkFakeStats')
 const symAssertExist = Symbol('symAssertExist')
 
+class ENOENT extends Error {
+  public readonly code = 'ENOENT'
+
+  constructor (cmd: string, name: string) {
+    super(`ENOENT: No such file or directory: ${cmd} '${name}'`)
+  }
+}
+
 class FileSystemInstanceBase {
   protected readonly [symDict]: FileSystemInstance.Dict
 
@@ -26,7 +34,7 @@ class FileSystemInstanceBase {
 
   protected [symAssertExist] (name: string, cmd: string): void {
     if (name in this[symDict]) return
-    throw new Error(`ENOENT: No such file or directory: ${cmd} '${name}'`)
+    throw new ENOENT(cmd, name)
   }
 }
 

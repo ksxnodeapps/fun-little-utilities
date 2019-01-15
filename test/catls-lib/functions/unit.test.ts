@@ -27,6 +27,7 @@ describe('with something that does not exist', () => {
   it('calls options.handleNonExist once', calledOnce('handleNonExist'))
   it('calls options.handleNonExist with expected arguments', calledWith('handleNonExist', [{
     type: UnitType.NonExist,
+    error: expect.objectContaining({ code: 'ENOENT' }),
     options: param
   }]))
   it('returns expected value', returns(HandlerReturn.NonExist))

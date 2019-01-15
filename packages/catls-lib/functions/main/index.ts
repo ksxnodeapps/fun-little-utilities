@@ -97,8 +97,7 @@ async function main (param: Main.Param): Promise<number> {
       getStat,
       getLoop,
       name,
-      addStatusCode,
-      fsPromise
+      addStatusCode
     })
 
     currentStatus = await addStatusCode(currentStatus, statusAddend)

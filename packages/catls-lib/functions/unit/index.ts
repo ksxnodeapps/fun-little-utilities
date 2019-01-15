@@ -3,6 +3,20 @@ import { UnitType } from '../../enums'
 import relativeLink from '../relative-link'
 const { NonExist, Symlink, File, Directory, Unknown } = UnitType
 
+type PromiseValue<Type> =
+  Type extends Promise<infer Value> ? Value : Type
+
+async function asyncCall<
+  Function extends (...args: any[]) => any
+> (
+  fn: Function,
+  ...args: Parameters<Function>
+): (
+  Promise<PromiseValue<ReturnType<Function>>>
+) {
+  return fn(...args)
+}
+
 async function unit (options: Unit.Options): Promise<number> {
   const {
     name,
@@ -16,23 +30,33 @@ async function unit (options: Unit.Options): Promise<number> {
     getLink,
     getStat,
     getLoop,
-    addStatusCode,
-    fsPromise
+    addStatusCode
   } = options
-
-  const { existsSync } = fsPromise
 
   const main: Unit.LoopBody = async (name, followSymlink, visited) => {
     await heading({ name, options })
 
-    if (!existsSync(name)) {
-      return handleNonExist({
-        type: NonExist,
-        options
-      })
+    const maybeStats = await asyncCall(getStat, name).then(
+      stats => ({ stats }),
+      error => ({ error })
+    )
+
+    if ('error' in maybeStats) {
+      const { error } = maybeStats
+
+      if (error.code === 'ENOENT') {
+        return handleNonExist({
+          type: NonExist,
+          error,
+          options
+        })
+      }
+
+      // TODO: make handleError
+      throw error
     }
 
-    const stats = await getStat(name)
+    const { stats } = maybeStats
 
     if (stats.isSymbolicLink()) {
       const content = await getLink(name)

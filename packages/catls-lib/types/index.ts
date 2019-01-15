@@ -31,8 +31,7 @@ export namespace Main {
   export type StatusCodeAdder = (current: number, addend: number) => MaybePromise<number>
 
   export interface FileSystemFunctions extends
-    SymlinkRoutingFunctions.FileSystemFunctions,
-    Unit.Options.FileSystemFunctions {}
+  SymlinkRoutingFunctions.FileSystemFunctions {}
 
   export interface Stats extends
     Unit.Stats,
@@ -73,7 +72,6 @@ export namespace Unit {
     readonly handleFile: Options.Handler.File
     readonly handleDirectory: Options.Handler.Directory
     readonly handleUnknown: Options.Handler.Unknown
-    readonly fsPromise: Options.FileSystemFunctions
   }
 
   export namespace Options {
@@ -107,6 +105,7 @@ export namespace Unit {
 
         export interface NonExist extends Base {
           readonly type: UnitType.NonExist
+          readonly error: any
         }
 
         export interface Exist extends Base {
@@ -132,10 +131,6 @@ export namespace Unit {
           readonly type: UnitType.Unknown
         }
       }
-    }
-
-    export interface FileSystemFunctions {
-      readonly existsSync: (name: string) => boolean
     }
   }
 
