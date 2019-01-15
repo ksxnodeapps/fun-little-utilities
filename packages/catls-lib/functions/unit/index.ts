@@ -1,7 +1,7 @@
 import { Unit } from '../../types'
 import { UnitType } from '../../enums'
 import relativeLink from '../relative-link'
-const { NonExist, Symlink, File, Directory, Unknown } = UnitType
+const { Exception, Symlink, File, Directory, Unknown } = UnitType
 
 type PromiseValue<Type> =
   Type extends Promise<infer Value> ? Value : Type
@@ -21,7 +21,7 @@ async function unit (options: Unit.Options): Promise<number> {
   const {
     name,
     heading,
-    handleNonExist,
+    handleException,
     handleSymlink,
     handleFile,
     handleDirectory,
@@ -42,18 +42,11 @@ async function unit (options: Unit.Options): Promise<number> {
     )
 
     if ('error' in maybeStats) {
-      const { error } = maybeStats
-
-      if (error.code === 'ENOENT') {
-        return handleNonExist({
-          type: NonExist,
-          error,
-          options
-        })
-      }
-
-      // TODO: make handleError
-      throw error
+      return handleException({
+        type: Exception,
+        error: maybeStats.error,
+        options
+      })
     }
 
     const { stats } = maybeStats

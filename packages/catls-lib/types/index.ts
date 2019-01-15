@@ -67,7 +67,7 @@ export namespace Unit {
     readonly getLoop: Options.LoopGetter
     readonly addStatusCode: Options.StatusCodeAdder
     readonly heading: Options.HeadingFunc
-    readonly handleNonExist: Options.Handler.NonExist
+    readonly handleException: Options.Handler.Exception
     readonly handleSymlink: Options.Handler.Symlink
     readonly handleFile: Options.Handler.File
     readonly handleDirectory: Options.Handler.Directory
@@ -89,7 +89,7 @@ export namespace Unit {
     }
 
     export namespace Handler {
-      export type NonExist = (param: Param.NonExist) => Return
+      export type Exception = (param: Param.Exception) => Return
       export type Symlink = (param: Param.Symlink) => Return
       export type File = (param: Param.File) => Return
       export type Directory = (param: Param.Directory) => Return
@@ -103,8 +103,8 @@ export namespace Unit {
           readonly options: Options
         }
 
-        export interface NonExist extends Base {
-          readonly type: UnitType.NonExist
+        export interface Exception extends Base {
+          readonly type: UnitType.Exception
           readonly error: any
         }
 

@@ -51,7 +51,7 @@ async function main (param: Main.Param): Promise<number> {
         stdout.write(`\n${rule}\n${heading}\n\n`)
       },
 
-      handleNonExist (param) {
+      handleException (param) {
         stderr.write(`[ERROR] No such file or directory: ${param.options.name}`)
         return ExitStatus.NoEnt
       },

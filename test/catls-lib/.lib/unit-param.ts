@@ -6,7 +6,7 @@ import {
 } from 'catls-lib'
 
 export enum HandlerReturn {
-  NonExist = 2,
+  Exception = 2,
   Symlink = 3,
   File = 5,
   Directory = 7,
@@ -16,7 +16,7 @@ export enum HandlerReturn {
 export class UnitParamSharedProperties {
   public readonly addStatusCode: Unit.Options.StatusCodeAdder = (a, b) => a + b
   public readonly heading = jest.fn(() => undefined)
-  public readonly handleNonExist = jest.fn(() => HandlerReturn.NonExist)
+  public readonly handleException = jest.fn(() => HandlerReturn.Exception)
   public readonly handleSymlink = jest.fn(() => HandlerReturn.Symlink)
   public readonly handleFile = jest.fn(() => HandlerReturn.File)
   public readonly handleDirectory = jest.fn(() => HandlerReturn.Directory)

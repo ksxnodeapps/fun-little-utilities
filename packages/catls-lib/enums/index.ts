@@ -14,7 +14,7 @@ export enum EmptyArgumentHandlingMethod {
 }
 
 export enum UnitType {
-  NonExist,
+  Exception,
   Symlink,
   File,
   Directory,
@@ -23,7 +23,7 @@ export enum UnitType {
 
 export namespace UnitType {
   export type Exist = UnitType.Symlink | UnitType.File | UnitType.Directory | UnitType.Unknown
-  export type Known = UnitType.NonExist | UnitType.Symlink | UnitType.File | UnitType.Directory
+  export type Known = UnitType.Exception | UnitType.Symlink | UnitType.File | UnitType.Directory
 }
 
 export enum SymlinkResolution {
