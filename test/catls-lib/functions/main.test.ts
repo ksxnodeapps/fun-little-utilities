@@ -158,7 +158,7 @@ const suites = initCartesianTest()
   .add([[], ['--sharedA', '--sharedB']], descEmptyLength('sharedArguments'))
 
 beforeAll(() => {
-  jest.setTimeout(12345)
+  jest.setTimeout(43210)
 })
 
 afterAll(() => {
