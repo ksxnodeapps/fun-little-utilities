@@ -21,7 +21,7 @@ import {
   ItemType
 } from '../.lib/fake-file-system-sample'
 
-type OptionalParamKey =
+type PredefinedParamKey =
   'stdout' |
   'stderr' |
   'cat' |
@@ -30,7 +30,7 @@ type OptionalParamKey =
   'spawn' |
   'fsPromise'
 
-type InitParam = Readonly<Omit<Main.Param, OptionalParamKey>>
+type InitParam = Readonly<Omit<Main.Param, PredefinedParamKey>>
 
 const cat = 'cat'
 const ls = 'ls'
