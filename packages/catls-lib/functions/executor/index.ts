@@ -5,11 +5,9 @@ function executor (options: Executor.Options): Executor {
 
   if (dontFakeInteractive) return spawn
 
-  const shEscMdl = import('shell-escape')
-
   return async (cmd, args) => {
-    const shEsc = await shEscMdl
-    const shCmd = shEsc.default([cmd, ...args])
+    const { quote } = await import('shell-quote')
+    const shCmd = quote([cmd, ...args])
     return spawn(
       'script',
       ['--quiet', '--append', '/dev/null', '--command', shCmd]
