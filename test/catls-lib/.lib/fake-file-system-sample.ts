@@ -142,6 +142,39 @@ export const fsPromiseDict = {
     'recursive symlink to itself'
   ),
 
+  'recursive symlink 0': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1242, 4, 7),
+      ctime: new UTCDate(5432, 3, 2),
+      mtime: new UTCDate(1741, 6, 4)
+    },
+    'recursive symlink 1'
+  ),
+
+  'recursive symlink 1': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(8541, 9, 4),
+      ctime: new UTCDate(1203, 4, 1),
+      mtime: new UTCDate(6741, 5, 0)
+    },
+    'recursive symlink 2'
+  ),
+
+  'recursive symlink 2': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(2102, 2, 4),
+      ctime: new UTCDate(3210, 4, 2),
+      mtime: new UTCDate(5418, 9, 3)
+    },
+    'recursive symlink 1'
+  ),
+
   'simple block device': new BlockDevice({
     size: 5,
     mode: 22,
