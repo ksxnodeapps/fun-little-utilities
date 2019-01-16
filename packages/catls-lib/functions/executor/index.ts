@@ -5,8 +5,10 @@ function executor (options: Executor.Options): Executor {
 
   if (dontFakeInteractive) return spawn
 
+  const shQtMdl = import('shell-quote')
+
   return async (cmd, args) => {
-    const { quote } = await import('shell-quote')
+    const { quote } = await shQtMdl
     const shCmd = quote([cmd, ...args])
     return spawn(
       'script',
