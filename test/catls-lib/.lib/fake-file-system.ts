@@ -5,7 +5,7 @@ import FakeStats from './fake-stats'
 const symDict = Symbol('symDict')
 const symMkStats = Symbol('symMkFakeStats')
 const symAssertExist = Symbol('symAssertExist')
-const symRealPath = Symbol('symRealPath')
+const symFollowSymlink = Symbol('symFollowSymlink')
 
 class ENOENT extends Error {
   public readonly code = 'ENOENT'
@@ -42,16 +42,35 @@ class FileSystemInstanceBase {
     throw new ENOENT(cmd, culprit)
   }
 
-  protected [symRealPath] (
-    name: string,
-    original = name,
-    visited: ReadonlyArray<string> = []
-  ): string {
-    this[symAssertExist](name, 'realpath', original)
-    const item = this[symDict][name]
-    return item.type === UnitType.Symlink
-      ? this[symRealPath](item.content, original, [...visited, name])
-      : name
+  protected [symFollowSymlink] <Return> (
+    cmd: string,
+    fn: (param: {
+      readonly name: string
+      readonly item: FileSystemInstance.Item
+    }) => Return
+  ): (
+    (name: string) => Return
+  ) {
+    const dict = this[symDict]
+
+    const main = (
+      name: string,
+      original = name,
+      visited: ReadonlyArray<string> = []
+    ): Return => {
+      this[symAssertExist](name, cmd, original)
+
+      if (visited.includes(name)) {
+        throw new ENOENT(cmd, original)
+      }
+
+      const item = dict[name]
+      return item.type === UnitType.Symlink
+        ? main(item.content, original, [...visited, name])
+        : fn({ name, item })
+    }
+
+    return name => main(name)
   }
 }
 
@@ -63,14 +82,10 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
     return true
   }
 
-  public readonly stat = (name: string): FakeStats => {
-    this[symAssertExist](name, 'stat')
-    const item = this[symDict][name]
-
-    return item.type === UnitType.Symlink
-      ? this.stat(item.content)
-      : this[symMkStats](item.type, item.statInfo)
-  }
+  public readonly stat = this[symFollowSymlink](
+    'stat',
+    ({ item }) => this[symMkStats](item.type, item.statInfo)
+  )
 
   public readonly lstat = (name: string) => {
     this[symAssertExist](name, 'lstat')
@@ -89,9 +104,10 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
     return item.content
   }
 
-  public readonly realpath = (name: string): string => {
-    return this[symRealPath](name)
-  }
+  public readonly realpath = this[symFollowSymlink](
+    'realpath',
+    param => param.name
+  )
 }
 
 namespace FileSystemInstance {
