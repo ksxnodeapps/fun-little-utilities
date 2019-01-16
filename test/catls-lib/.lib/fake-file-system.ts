@@ -75,13 +75,6 @@ class FileSystemInstanceBase {
 }
 
 class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSystemFunctions {
-  public readonly existsSync = (name: string) => {
-    const item = this[symDict][name]
-    if (!item) return false
-    if (item.type === UnitType.Exception) return false
-    return true
-  }
-
   public readonly stat = this[symFollowSymlink](
     'stat',
     ({ item }) => this[symMkStats](item.type, item.statInfo)
