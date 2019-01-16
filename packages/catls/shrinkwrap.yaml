@@ -52,7 +52,7 @@ shrinkwrapVersion: 3
 specifiers:
   '@types/fs-extra': ^5.0.4
   '@types/node': ^10.12.18
-  catls-lib: ^0.0.6
+  catls-lib: ^0.0.7
   fs-extra: ^7.0.1
   ts-yargs: ^0.0.1
   tslib: ^1.9.3
