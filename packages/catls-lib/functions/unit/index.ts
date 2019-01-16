@@ -52,7 +52,20 @@ async function unit (options: Unit.Options): Promise<number> {
     const { stats } = maybeStats
 
     if (stats.isSymbolicLink()) {
-      const content = await getLink(name)
+      const maybeContent = await asyncCall(getLink, name).then(
+        content => ({ content }),
+        error => ({ error })
+      )
+
+      if ('error' in maybeContent) {
+        return handleException({
+          type: Exception,
+          error: maybeContent.error,
+          options
+        })
+      }
+
+      const { content } = maybeContent
       const target = relativeLink(name, content)
 
       const status = await handleSymlink({
