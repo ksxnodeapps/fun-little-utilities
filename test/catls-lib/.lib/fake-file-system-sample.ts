@@ -131,6 +131,17 @@ export const fsPromiseDict = {
     'entity that does not exist'
   ),
 
+  'recursive symlink to itself': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(7744, 6, 7),
+      ctime: new UTCDate(5492, 2, 2),
+      mtime: new UTCDate(1578, 6, 4)
+    },
+    'recursive symlink to itself'
+  ),
+
   'simple block device': new BlockDevice({
     size: 5,
     mode: 22,
