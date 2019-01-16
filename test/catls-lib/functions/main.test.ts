@@ -140,7 +140,9 @@ type HasLength<Length = number> = { readonly length: Length }
 type DescMaker<X = any> = (name: string) => (x: X) => string
 const desc = (name: string, x: any) =>
   `when ${name} is ${x}`
-const descEmpty: DescMaker<HasLength> = name => ({ length }) =>
+const descEmpty: DescMaker<HasLength> = name => list =>
+  desc(name, list.length ? 'not empty' : 'empty')
+const descEmptyLength: DescMaker<HasLength> = name => ({ length }) =>
   desc(name, length ? `an array of ${length} elements` : 'empty')
 const descJSON: DescMaker = name => x =>
   desc(name, JSON.stringify(x))
@@ -151,9 +153,9 @@ const suites = initCartesianTest()
   .add([false, true], descJSON('dontFakeInteractive'))
   .add(['0', '1', '2', '∞'], descJSON('followSymlink'))
   .add(allEmptyArgsMtds, descJSON('handleEmptyArguments'))
-  .add([[], ['--catA', '--catB']], descEmpty('catArguments'))
-  .add([[], ['--lsA', '--lsB']], descEmpty('lsArguments'))
-  .add([[], ['--sharedA', '--sharedB']], descEmpty('sharedArguments'))
+  .add([[], ['--catA', '--catB']], descEmptyLength('catArguments'))
+  .add([[], ['--lsA', '--lsB']], descEmptyLength('lsArguments'))
+  .add([[], ['--sharedA', '--sharedB']], descEmptyLength('sharedArguments'))
 
 beforeAll(() => {
   jest.setTimeout(12345)
