@@ -5,6 +5,7 @@ import FakeStats from './fake-stats'
 const symDict = Symbol('symDict')
 const symMkStats = Symbol('symMkFakeStats')
 const symAssertExist = Symbol('symAssertExist')
+const symRealPath = Symbol('symRealPath')
 
 class ENOENT extends Error {
   public readonly code = 'ENOENT'
@@ -32,9 +33,25 @@ class FileSystemInstanceBase {
     )
   }
 
-  protected [symAssertExist] (name: string, cmd: string): void {
+  protected [symAssertExist] (
+    name: string,
+    cmd: string,
+    culprit = name
+  ): void {
     if (name in this[symDict]) return
-    throw new ENOENT(cmd, name)
+    throw new ENOENT(cmd, culprit)
+  }
+
+  protected [symRealPath] (
+    name: string,
+    original = name,
+    visited: ReadonlyArray<string> = []
+  ): string {
+    this[symAssertExist](name, 'realpath', original)
+    const item = this[symDict][name]
+    return item.type === UnitType.Symlink
+      ? this[symRealPath](item.content, original, [...visited, name])
+      : name
   }
 }
 
@@ -73,11 +90,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
   }
 
   public readonly realpath = (name: string): string => {
-    this[symAssertExist](name, 'realpath')
-    const item = this[symDict][name]
-    return item.type === UnitType.Symlink
-      ? this.realpath(item.content)
-      : name
+    return this[symRealPath](name)
   }
 }
 
