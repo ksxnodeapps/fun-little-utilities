@@ -98,6 +98,39 @@ export const fsPromiseDict = {
     'simple directory'
   ),
 
+  'symlink to non-existing entity 0': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1652, 7, 6),
+      ctime: new UTCDate(2401, 1, 4),
+      mtime: new UTCDate(4820, 6, 6)
+    },
+    'symlink to non-existing entity 1'
+  ),
+
+  'symlink to non-existing entity 1': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(1870, 4, 0),
+      ctime: new UTCDate(2410, 2, 0),
+      mtime: new UTCDate(3332, 0, 6)
+    },
+    'symlink to non-existing entity 2'
+  ),
+
+  'symlink to non-existing entity 2': new Symlink(
+    {
+      size: 3,
+      mode: 77,
+      atime: new UTCDate(4510, 7, 7),
+      ctime: new UTCDate(2987, 4, 1),
+      mtime: new UTCDate(8720, 3, 1)
+    },
+    'entity that does not exist'
+  ),
+
   'simple block device': new BlockDevice({
     size: 5,
     mode: 22,
