@@ -55,11 +55,11 @@ async function main (param: Main.Param): Promise<number> {
         const { error, options } = param
 
         if (error.code === 'ENOENT') {
-          stderr.write(`[ERROR] No such file or directory: ${options.name}`)
+          stderr.write(`[ERROR] No such file or directory: ${options.name}\n`)
           return ExitStatus.NoEnt
         }
 
-        stderr.write(`[ERROR] UncaughtException: ${error}`)
+        stderr.write(`[ERROR] UncaughtException: ${error}\n`)
         return ExitStatus.UnknownError
       },
 
