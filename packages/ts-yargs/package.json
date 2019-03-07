@@ -18,7 +18,7 @@
     "command-line-arguments"
   ],
   "dependencies": {
-    "yargs": "^12.0.5",
+    "yargs": "^13.0.0",
     "tslib": "^1.9.3",
     "@types/node": "^10.12.18"
   },
