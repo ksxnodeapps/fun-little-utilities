@@ -5,18 +5,22 @@ dependencies:
 packages:
   /@types/fs-extra/5.0.5:
     dependencies:
-      '@types/node': 11.10.4
+      '@types/node': 11.10.5
     dev: false
     resolution:
       integrity: sha512-w7iqhDH9mN8eLClQOYTkhdYUOSpp25eXxfc6VbFOGtzxW34JcvctH2bKjj4jD4++z4R5iO5D+pg48W2e03I65A==
-  /@types/node/10.12.29:
+  /@types/node/10.12.10:
     dev: false
     resolution:
-      integrity: sha512-J/tnbnj8HcsBgCe2apZbdUpQ7hs4d7oZNTYA5bekWdP0sr2NGsOpI/HRdDroEi209tEvTcTtxhD0FfED3DhEcw==
-  /@types/node/11.10.4:
+      integrity: sha512-8xZEYckCbUVgK8Eg7lf5Iy4COKJ5uXlnIOnePN0WUwSQggy9tolM+tDJf7wMOnT/JT/W9xDYIaYggt3mRV2O5w==
+  /@types/node/10.12.30:
     dev: false
     resolution:
-      integrity: sha512-wa09itaLE8L705aXd8F80jnFpxz3Y1/KRHfKsYL2bPc0XF+wEWu8sR9n5bmeu8Ba1N9z2GRNzm/YdHcghLkLKg==
+      integrity: sha512-nsqTN6zUcm9xtdJiM9OvOJ5EF0kOI8f1Zuug27O/rgtxCRJHGqncSWfCMZUP852dCKPsDsYXGvBhxfRjDBkF5Q==
+  /@types/node/11.10.5:
+    dev: false
+    resolution:
+      integrity: sha512-DuIRlQbX4K+d5I+GMnv+UfnGh+ist0RdlvOp+JZ7ePJ6KQONCFQv/gKYSU1ZzbVdFSUCKZOltjmpFAGGv5MdYA==
   /@types/ramda/0.25.51:
     dev: false
     resolution:
@@ -50,7 +54,7 @@ packages:
   /clean-typescript-build/0.1.0:
     dependencies:
       '@types/fs-extra': 5.0.5
-      '@types/node': 10.12.29
+      '@types/node': 10.12.30
       '@types/ramda': 0.26.0
       '@types/yargs': 12.0.9
       fs-extra: 7.0.1
@@ -104,7 +108,7 @@ packages:
       integrity: sha512-1MkrZNvWTKCaigbn+W15elq2BB/L22nqrSY5DKlo3X6+vclJm8Bb5djXJBmEX6fS3+zCh/F4VBK5Z2KxJt4s2Q==
   /exec-inline/0.0.2:
     dependencies:
-      '@types/node': 10.12.29
+      '@types/node': 10.12.10
       tslib: 1.9.3
     dev: false
     engines:
@@ -146,7 +150,7 @@ packages:
   /fs-tree-utils/0.1.6:
     dependencies:
       '@types/fs-extra': 5.0.5
-      '@types/node': 10.12.29
+      '@types/node': 10.12.30
       '@types/ramda': 0.25.51
       fs-extra: 7.0.1
       monorepo-shared-assets: 0.0.17
@@ -258,7 +262,7 @@ packages:
       integrity: sha512-jf84uxzwiuiIVKiOLpfYk7N46TSy8ubTonmneY9vrpHNAnp0QBt2BxWV9dO3/j+BoVAb+a5G6YDPW3M5HOdMWQ==
   /monorepo-shared-assets/0.0.17:
     dependencies:
-      '@types/node': 10.12.29
+      '@types/node': 10.12.30
       '@types/ramda': 0.25.51
       immutable: 3.8.2
       ramda: 0.25.0

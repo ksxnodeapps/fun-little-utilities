@@ -6,6 +6,7 @@ const runner = require('create-jest-runner')
 const depRange = require('parse-dependency-range')
 const { unwrap } = require('convenient-typescript-utilities').func
 const justTry = require('just-try')
+const pkgcfg = require('@tools/pkgcfg')
 const places = require('@tools/places')
 const globalManifestPath = path.resolve(places.project, 'package.json')
 const globalManifest = require(globalManifestPath)
@@ -26,6 +27,29 @@ function main ({ testPath }) {
   const mustNotHaveVersion = rule(() => 'version' in manifest, 'Field "version" is not necessary')
   const mustBePrivate = rule(() => !manifest.private, 'Must have field "private" set to true')
   const mustBePublic = rule(() => 'private' in manifest, 'Must not have field "private"')
+
+  const checkName = (dirname, pkgname) => {
+    const matches = /^@([a-z0-9.-]+)\/([a-z0-9.-]+)$/i.exec(pkgname)
+
+    if (matches) {
+      const [scope, branch] = matches.slice(1)
+
+      if (!pkgcfg.scopes.includes(scope)) {
+        reasons.push(`This monorepo does not allow "@${scope}/" scoped packages`)
+      }
+
+      if (dirname !== branch) {
+        const expected = `@${scope}/${dirname}`
+        reasons.push(`Expecting package's name to be "${expected}" but received "${pkgname}" instead`)
+      }
+    } else {
+      if (!pkgcfg.scopes.some(x => !x)) {
+        reasons.push(`This monorepo does not allow non-scoped packages`)
+      } else if (dirname !== pkgname) {
+        reasons.push(`Expecting package's name to be "${dirname}" but received "${pkgname}" instead`)
+      }
+    }
+  }
 
   const getDependencyPath = (name, ...args) =>
     path.resolve(container, 'node_modules', name, ...args)
@@ -222,14 +246,8 @@ function main ({ testPath }) {
   if (resolvedPath.startsWith(places.packages)) {
     mustHaveName()
     mustHaveVersion()
-
-    if (manifest.name !== containerBaseName) {
-      reasons.push(
-        `Expecting package's name to be "${containerBaseName}" but received "${manifest.name}" instead`
-      )
-    }
-
     mustBePublic()
+    checkName(containerBaseName, manifest.name)
 
     for (const key of matchingKeys) {
       if (!manifest[key]) {
@@ -238,7 +256,7 @@ function main ({ testPath }) {
       }
 
       if (!deepEqual(manifest[key], globalManifest[key])) {
-        reasons.push(`Field "${key}" does not match its global conterpart`)
+        reasons.push(`Field "${key}" does not match its global counterpart`)
       }
     }
 
