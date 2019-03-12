@@ -1,0 +1,15 @@
+dependencies:
+  '@tools/test-spawn': 'link:../../tools/test-spawn'
+  typescript: 3.3.3333
+lockfileVersion: 5
+packages:
+  /typescript/3.3.3333:
+    dev: false
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-JjSKsAfuHBE/fB2oZ8NxtRTk5iGcg6hkYXMnZ3Wc+b2RSqejEqTaem11mHASMnFilHrax3sLK0GDzcJrekZYLw==
+specifiers:
+  '@tools/test-spawn': 'file:../../tools/test-spawn'
+  typescript: ^3.3.3333

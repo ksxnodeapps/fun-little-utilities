@@ -1,0 +1,5 @@
+dependencies:
+  construct-iterator: 'link:../../packages/construct-iterator'
+lockfileVersion: 5
+specifiers:
+  construct-iterator: 'file:../../packages/construct-iterator'

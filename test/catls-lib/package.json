@@ -1,13 +1,13 @@
 {
   "private": true,
   "dependencies": {
-    "utility-types": "^3.2.1",
+    "utility-types": "^3.4.1",
     "ramda": "^0.26.1",
     "shell-quote": "^1.6.1",
-    "typescript-tuple": "^2.1.0",
+    "typescript-tuple": "^2.2.1",
     "extra-jest": "^0.0.24",
-    "@types/ramda": "^0.25.46",
-    "@types/shell-quote": "^1.6.0",
+    "@types/ramda": "^0.26.3",
+    "@types/shell-quote": "^1.6.1",
     "catls-lib": "file:../../packages/catls-lib",
     "simple-fake-stream": "file:../../packages/simple-fake-stream"
   }

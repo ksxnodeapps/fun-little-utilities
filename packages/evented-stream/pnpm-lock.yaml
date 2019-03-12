@@ -1,0 +1,22 @@
+dependencies:
+  '@types/node': 11.11.1
+  combine-evented-stream: 'link:../combine-evented-stream'
+  evented-stream-types: 'link:../evented-stream-types'
+  iterate-evented-stream: 'link:../iterate-evented-stream'
+  tslib: 1.9.3
+lockfileVersion: 5
+packages:
+  /@types/node/11.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-2azXFP9n4aA2QNLkKm/F9pzKxgYj1SMawZ5Eh9iC21RH3XNcFsivLVU2NhpMgQm7YobSByvIol4c42ZFusXFHQ==
+  /tslib/1.9.3:
+    dev: false
+    resolution:
+      integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+specifiers:
+  '@types/node': ^11.11.1
+  combine-evented-stream: ^0.0.0
+  evented-stream-types: ^0.0.0
+  iterate-evented-stream: ^0.0.2
+  tslib: ^1.9.3

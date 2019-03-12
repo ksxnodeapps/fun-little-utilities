@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "iter-tools": "^6.1.7",
+    "iter-tools": "^6.2.4",
     "extra-jest": "^0.0.24",
     "wide-text": "file:../../packages/wide-text",
     "wide-text-bin": "file:../../packages/wide-text-bin",

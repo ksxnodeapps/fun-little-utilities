@@ -23,8 +23,8 @@
     "tslib": "^1.9.3",
     "split-shell-buffer": "^1.0.0-rc.2",
     "ts-await-event": "^0.0.0",
-    "@types/shell-quote": "^1.6.0",
-    "@types/node": "^10.12.18"
+    "@types/shell-quote": "^1.6.1",
+    "@types/node": "^11.11.1"
   },
   "engines": {
     "node": ">= 8.9.0"

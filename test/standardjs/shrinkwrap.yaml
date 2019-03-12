@@ -1,9 +1,0 @@
-dependencies:
-  '@tools/standardjs': 'link:../../tools/standardjs'
-  '@tools/test-spawn': 'link:../../tools/test-spawn'
-registry: 'https://registry.npmjs.org/'
-shrinkwrapMinorVersion: 9
-shrinkwrapVersion: 3
-specifiers:
-  '@tools/standardjs': 'file:../../tools/standardjs'
-  '@tools/test-spawn': 'file:../../tools/test-spawn'

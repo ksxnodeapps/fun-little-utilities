@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "tslib": "^1.9.3",
-    "@types/node": "^10.12.18",
+    "@types/node": "^11.11.1",
     "sort-versions": "file:../../packages/sort-versions"
   }
 }
