@@ -4,11 +4,8 @@ const { config } = require('@tools/typescript')
 const { compilerOptions } = require(config)
 
 require('ts-node').register({
-  typeCheck: true,
-  ignoreDiagnostics: [
-    2554,
-    7031
-  ],
+  typeCheck: false,
+  transpileOnly: true,
   compilerOptions: {
     ...compilerOptions,
     noUnusedLocals: false,
