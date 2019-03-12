@@ -9,7 +9,7 @@ function initGetLoop (getLoop: SymlinkRoutingFunctions.LoopGetter) {
   const expectedReturn = Symbol('BodyReturn')
   const fn = (a: string, b: number, c: any) => b > 0 ? loop(a, b - 1, c) : expectedReturn
   const body = jest.fn(fn)
-  const loop = getLoop(body)
+  const loop = getLoop(body as any) // quick fix
   const receivedReturn = loop(name, followSymlink, visited)
   return { name, followSymlink, visited, body, loop, expectedReturn, receivedReturn }
 }

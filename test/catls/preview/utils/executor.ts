@@ -25,7 +25,7 @@ async function execute (args: string[], WDIR: string): Promise<void> {
 
   const closeEventPromise = event2promise<'close', number>(cp, 'close')
   const prefix = Buffer.from(chalk.dim('  | '))
-  const splitter = fromChildProcess(cp).withPrefix(prefix)
+  const splitter = fromChildProcess(cp as any).withPrefix(prefix) // quick fix
   await writeln(process.stdout, splitter)
 
   const status = await closeEventPromise

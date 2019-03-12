@@ -29,9 +29,9 @@ all.create({ data: [0, 1], prefix: [2, 3], suffix: [4, 5] })
 all.create({ data: [0, 1], prefix: () => [2, 3], suffix: () => [4, 5] })
 
 all.fromIterableStream(process.stdin)
-all.fromIterableStream(childProcess.spawn('').stdout)
-all.fromIterableStream(childProcess.spawn('').stderr)
+all.fromIterableStream(childProcess.spawn('').stdout as any) // quick fix
+all.fromIterableStream(childProcess.spawn('').stderr as any) // quick fix
 
 all.fromEventedStream(process.stdin)
-all.fromEventedStream(childProcess.spawn('').stdout)
-all.fromEventedStream(childProcess.spawn('').stderr)
+all.fromEventedStream(childProcess.spawn('').stdout as any) // quick fix
+all.fromEventedStream(childProcess.spawn('').stderr as any) // quick fix

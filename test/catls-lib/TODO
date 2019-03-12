@@ -1,0 +1,2 @@
+* Remove '... as any // quick fix'
+  - The real problem is @types/node definition of ChildProcess

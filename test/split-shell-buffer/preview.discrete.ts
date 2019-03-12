@@ -4,7 +4,7 @@ import { toString, SequenceFunc, fromChildProcess, writeln } from 'split-shell-b
 const executable = require.resolve('./.data/executable.discrete')
 
 function execute () {
-  return spawn('node', [executable])
+  return spawn('node', [executable]) as any // quick fix
 }
 
 async function main () {

@@ -13,7 +13,7 @@ main({
   list,
   stdout,
   stderr,
-  spawn,
+  spawn: spawn as any, // quick fix, temporary
   ...rest
 }).then(
   status => process.exit(status),

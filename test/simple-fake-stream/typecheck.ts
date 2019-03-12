@@ -8,10 +8,10 @@ assert<sfs.Stream<string | Buffer>>(process.stdout)
 assert<sfs.Stream<string | Buffer>>(process.stderr)
 
 const cp = spawn('_')
-assert<sfs.WritableStream<Buffer>>(cp.stdin)
-assert<sfs.WritableStream<string>>(cp.stdin)
-assert<sfs.ReadableStream<string | Buffer>>(cp.stdout)
-assert<sfs.ReadableStream<string | Buffer>>(cp.stderr)
+assert<sfs.WritableStream<Buffer>>(cp.stdin as any) // quick fix
+assert<sfs.WritableStream<string>>(cp.stdin as any) // quick fix
+assert<sfs.ReadableStream<string | Buffer>>(cp.stdout as any) // quick fix
+assert<sfs.ReadableStream<string | Buffer>>(cp.stderr as any) // quick fix
 
 type Chunk = 'Chunk'
 type Err = 'Err'

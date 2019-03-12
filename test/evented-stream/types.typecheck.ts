@@ -6,5 +6,5 @@ import { EventedStream } from 'evented-stream'
 const cp = spawn('')
 
 assert<EventedStream<string | Buffer>>(process.stdin)
-assert<EventedStream<Buffer>>(cp.stdout)
-assert<EventedStream<Buffer>>(cp.stderr)
+assert<EventedStream<Buffer>>(cp.stdout as any) // quick fix
+assert<EventedStream<Buffer>>(cp.stderr as any) // quick fix

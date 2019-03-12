@@ -5,7 +5,7 @@ import { styledText } from './.lib/data'
 const executable = require.resolve('./.data/executable')
 
 function execute () {
-  return spawn('node', [executable])
+  return spawn('node', [executable]) as any // quick fix
 }
 
 async function main () {

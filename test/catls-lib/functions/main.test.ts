@@ -40,7 +40,7 @@ const spawn = jest.fn(function localSpawn (cmd: string, argv: ReadonlyArray<stri
   if (cmd === 'script') {
     const argvLast = ramda.last(argv) as string
     const [nextCmd, ...nextArgv] = shQuote.parse(argvLast)
-    return localSpawn(nextCmd, [...nextArgv, interactive])
+    return localSpawn(nextCmd as any, [...nextArgv as any, interactive]) // quick fix
   }
 
   const str = JSON.stringify

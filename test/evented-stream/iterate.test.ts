@@ -5,7 +5,7 @@ import getAsyncArray = assets.asyncIter.fns.getArray
 const executable = require.resolve('./.data/executable')
 
 const spawnExecutable =
-  () => spawn(executable)
+  () => spawn(executable) as any // quick fix
 
 const getAsyncString =
   async (stream: EventedStream<Buffer>) =>
