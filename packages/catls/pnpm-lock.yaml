@@ -1,22 +1,22 @@
 dependencies:
-  '@types/fs-extra': 5.0.5
-  '@types/node': 11.11.1
+  '@types/fs-extra': 7.0.0
+  '@types/node': 11.13.11
   catls-lib: 'link:../catls-lib'
   fs-extra: 7.0.1
   ts-yargs: 'link:../ts-yargs'
   tslib: 1.9.3
 lockfileVersion: 5
 packages:
-  /@types/fs-extra/5.0.5:
+  /@types/fs-extra/7.0.0:
     dependencies:
-      '@types/node': 11.11.1
+      '@types/node': 11.13.11
     dev: false
     resolution:
-      integrity: sha512-w7iqhDH9mN8eLClQOYTkhdYUOSpp25eXxfc6VbFOGtzxW34JcvctH2bKjj4jD4++z4R5iO5D+pg48W2e03I65A==
-  /@types/node/11.11.1:
+      integrity: sha512-ndoMMbGyuToTy4qB6Lex/inR98nPiNHacsgMPvy+zqMLgSxbt8VtWpDArpGp69h1fEDQHn1KB+9DWD++wgbwYA==
+  /@types/node/11.13.11:
     dev: false
     resolution:
-      integrity: sha512-2azXFP9n4aA2QNLkKm/F9pzKxgYj1SMawZ5Eh9iC21RH3XNcFsivLVU2NhpMgQm7YobSByvIol4c42ZFusXFHQ==
+      integrity: sha512-blLeR+KIy26km1OU8yTLUlSyVCOvT6+wPq/77tIA+uSHHa4yYQosn+bbaJqPtWId0wjVClUtD7aXzDbZeKWqig==
   /fs-extra/7.0.1:
     dependencies:
       graceful-fs: 4.1.15
@@ -48,7 +48,7 @@ packages:
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
-  '@types/fs-extra': ^5.0.5
+  '@types/fs-extra': ^7.0.0
   '@types/node': ^11.11.1
   catls-lib: ^0.0.7
   fs-extra: ^7.0.1

@@ -22,7 +22,7 @@
     "ts-yargs": "^0.0.1",
     "tslib": "^1.9.3",
     "catls-lib": "^0.0.7",
-    "@types/fs-extra": "^5.0.5",
+    "@types/fs-extra": "^7.0.0",
     "@types/node": "^11.11.1"
   },
   "engines": {
