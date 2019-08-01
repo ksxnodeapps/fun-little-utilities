@@ -1,3 +1,2 @@
 scopes:
   - null # without scopes, e.g. 'hello-world'
-  - scope-name # with 'scope-name' scope, e.g. '@scope-name/hello-world'
