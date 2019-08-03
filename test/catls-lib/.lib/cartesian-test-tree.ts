@@ -87,6 +87,7 @@ namespace init {
     add<Factor> (
       factorList: Factor[],
       getDescription: DescFunc<Factor>
+    // @ts-ignore
     ): Result<Layer<Factor, Base>>
 
     run (fn: RunCallback<Base>): void
