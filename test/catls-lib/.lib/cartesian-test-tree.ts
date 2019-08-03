@@ -20,6 +20,7 @@ function init () {
           execute: (fn: init.RunCallback<Base>) => void fn([])
         }
 
+      // @ts-ignore
       return (fn: init.RunCallback<Base>) => execute((baseParam: any[]) => {
         for (const factor of factorList) {
           const param = makeParam(factor, baseParam)
