@@ -1,0 +1,29 @@
+dependencies:
+  '@types/node': 12.6.9
+  advanced-spawn-async: 0.0.1
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@types/node/10.14.14:
+    dev: false
+    resolution:
+      integrity: sha512-xXD08vZsvpv4xptQXj1+ky22f7ZoKu5ZNI/4l+/BXG3X+XaeZsmaFbbTKuhSE3NjjvRuZFxFf9sQBMXIcZNFMQ==
+  /@types/node/12.6.9:
+    dev: false
+    resolution:
+      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
+  /advanced-spawn-async/0.0.1:
+    dependencies:
+      '@types/node': 10.14.14
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-EsKb2UZs11vA8KtsnOb+XJMH3MaSt7Yh7DCp5Rd64xcqrwXyEbUOTY85w8YI/ek7/3rNEHpB/8z/DfUfNjy/mQ==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+specifiers:
+  '@types/node': ^12.6.9
+  advanced-spawn-async: ^0.0.1
+  tslib: ^1.10.0
