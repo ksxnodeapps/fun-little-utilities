@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "iter-tools": "^6.2.4",
+    "iter-tools": "^6.2.5",
     "static-type-assert": "^3.0.1",
     "event-target-proxy": "file:../../packages/event-target-proxy"
   }

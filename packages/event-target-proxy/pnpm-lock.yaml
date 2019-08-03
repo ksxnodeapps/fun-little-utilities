@@ -1,9 +1,9 @@
 dependencies:
-  '@types/node': 11.11.1
+  '@types/node': 12.6.9
   advanced-map-initialized: 0.0.2
   advanced-map-mutable-multi-key: 0.0.3
-  tslib: 1.9.3
-lockfileVersion: 5
+  tslib: 1.10.0
+lockfileVersion: 5.1
 packages:
   /@babel/runtime-corejs2/7.3.4:
     dependencies:
@@ -22,10 +22,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-nsqTN6zUcm9xtdJiM9OvOJ5EF0kOI8f1Zuug27O/rgtxCRJHGqncSWfCMZUP852dCKPsDsYXGvBhxfRjDBkF5Q==
-  /@types/node/11.11.1:
+  /@types/node/12.6.9:
     dev: false
     resolution:
-      integrity: sha512-2azXFP9n4aA2QNLkKm/F9pzKxgYj1SMawZ5Eh9iC21RH3XNcFsivLVU2NhpMgQm7YobSByvIol4c42ZFusXFHQ==
+      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
   /advanced-map-altered-equal/0.0.3:
     dependencies:
       '@types/node': 10.12.30
@@ -143,6 +143,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /tslib/1.9.3:
     dev: false
     resolution:
@@ -201,7 +205,7 @@ packages:
     resolution:
       integrity: sha512-GyH068kJf7c4vhfqj4aCM5X+TeV8jG2iPFLimpGpnQ7dvKfogZOHfiYxMww/nGEfMm/bEmnVbeZGO1see1OVKg==
 specifiers:
-  '@types/node': ^11.11.1
+  '@types/node': ^12.6.9
   advanced-map-initialized: ^0.0.2
   advanced-map-mutable-multi-key: ^0.0.3
-  tslib: ^1.9.3
+  tslib: ^1.10.0

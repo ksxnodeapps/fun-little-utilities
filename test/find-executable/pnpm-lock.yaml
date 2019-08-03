@@ -4,7 +4,7 @@ dependencies:
   find-executable: 'link:../../packages/find-executable'
   split-shell-buffer: 'link:../../packages/split-shell-buffer'
   ts-await-event: 'link:../../packages/ts-await-event'
-lockfileVersion: 5
+lockfileVersion: 5.1
 packages:
   /ansi-styles/3.2.1:
     dependencies:

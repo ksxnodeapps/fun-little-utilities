@@ -1,14 +1,14 @@
 dependencies:
-  '@types/node': 11.11.1
+  '@types/node': 12.6.9
   create-array-equal: 0.0.1
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
-  iter-tools: 6.2.4
+  iter-tools: 6.2.5
   iterate-evented-stream: 'link:../iterate-evented-stream'
   monorepo-shared-assets: 0.0.17
-  tslib: 1.9.3
+  tslib: 1.10.0
   typescript-char-code: 0.0.1
-lockfileVersion: 5
+lockfileVersion: 5.1
 packages:
   /@babel/runtime-corejs2/7.3.4:
     dependencies:
@@ -17,20 +17,33 @@ packages:
     dev: false
     resolution:
       integrity: sha512-QwPuQE65kNxjsNKk34Rfgen2R5fk0J2So99SD45uXBp34QOfyz11SqVgJ4xvyCpnCIieSQ0X0hSSc9z/ymlJJw==
+  /@babel/runtime-corejs2/7.5.5:
+    dependencies:
+      core-js: 2.6.9
+      regenerator-runtime: 0.13.3
+    dev: false
+    resolution:
+      integrity: sha512-FYATQVR00NSNi7mUfpPDp7E8RYMXDuO8gaix7u/w3GekfUinKgX1AcTxs7SoiEmoEW9mbpjrwqWSW6zCmw5h8A==
   /@babel/runtime/7.3.4:
     dependencies:
       regenerator-runtime: 0.12.1
     dev: false
     resolution:
       integrity: sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
+  /@babel/runtime/7.5.5:
+    dependencies:
+      regenerator-runtime: 0.13.3
+    dev: false
+    resolution:
+      integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
   /@types/node/10.12.30:
     dev: false
     resolution:
       integrity: sha512-nsqTN6zUcm9xtdJiM9OvOJ5EF0kOI8f1Zuug27O/rgtxCRJHGqncSWfCMZUP852dCKPsDsYXGvBhxfRjDBkF5Q==
-  /@types/node/11.11.1:
+  /@types/node/12.6.9:
     dev: false
     resolution:
-      integrity: sha512-2azXFP9n4aA2QNLkKm/F9pzKxgYj1SMawZ5Eh9iC21RH3XNcFsivLVU2NhpMgQm7YobSByvIol4c42ZFusXFHQ==
+      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
   /@types/ramda/0.25.51:
     dev: false
     resolution:
@@ -39,6 +52,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
+  /core-js/2.6.9:
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
   /create-array-equal/0.0.1:
     dependencies:
       '@types/node': 10.12.30
@@ -72,10 +90,26 @@ packages:
     dev: false
     resolution:
       integrity: sha512-CxQMjqjQVWFc2sFxFZOZ7o7mVLxWISWHS9Lt/PwwsvCzEDHQp0ksWaWgOA24Z6ziPd/0jTHBaIECdjgGUeZWcA==
+  /iter-tools/6.2.5:
+    dependencies:
+      '@babel/runtime': 7.5.5
+      '@babel/runtime-corejs2': 7.5.5
+      dequeue: 1.0.5
+      little-ds-toolkit: 1.1.1
+      typescript-tuple: 2.2.1
+      typescript-union: 0.1.2
+      utility-types: 3.7.0
+    dev: false
+    resolution:
+      integrity: sha512-63drajuMy4Ehx9EooIqBDjcFGOTY30W7SU7DrplPIa6ZdvQIBcK7QTW5TUrNoJRDEbNJG9yioUAU/Ezhys211w==
   /little-ds-toolkit/1.1.0:
     dev: false
     resolution:
       integrity: sha512-2ARbmay5TrhFxFqcyFxPigmRToDuo8yxvIMdvwsDYNd/oZKnvsFT5L3I7s8WLXR7/tThYeffN9ouDtFFk4wzsA==
+  /little-ds-toolkit/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-Zl5flhnd5W6nhRCyoL1bNlU8M5CWFp6SItMmK4pj39LKgzQD7LGg591OJ0jwDKat7mjHvJVkOyJT+BXOQH4iXw==
   /monorepo-shared-assets/0.0.17:
     dependencies:
       '@types/node': 10.12.30
@@ -96,6 +130,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+  /regenerator-runtime/0.13.3:
+    dev: false
+    resolution:
+      integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /tslib/1.9.3:
     dev: false
     resolution:
@@ -145,6 +187,13 @@ packages:
       typescript: ^3.0.0
     resolution:
       integrity: sha512-OwK3xxtSXKhiBRzOmIqtrjV26V5X0uSkp+qvDkqRukYIhC5VXqw5QO2v57Rzi6znbkJTTAHtgWkZikIgmYshEg==
+  /typescript-union/0.1.2:
+    dependencies:
+      typescript-tuple: 2.2.1
+      utility-types: 3.7.0
+    dev: false
+    resolution:
+      integrity: sha512-pzfdtUZ8teglF69/dllzgd6yV7ikoszPHVyOkl4WGICRhTJgCTwL3+ZnnF/hvII536VbsNMQfd9GmLBNhtsmgg==
   /utility-types/2.1.0:
     dev: false
     engines:
@@ -157,13 +206,19 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-GyH068kJf7c4vhfqj4aCM5X+TeV8jG2iPFLimpGpnQ7dvKfogZOHfiYxMww/nGEfMm/bEmnVbeZGO1see1OVKg==
+  /utility-types/3.7.0:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
 specifiers:
-  '@types/node': ^11.11.1
+  '@types/node': ^12.6.9
   create-array-equal: ^0.0.1
   event-target-proxy: ^0.0.0
   evented-stream-types: ^0.0.0
-  iter-tools: ^6.2.4
+  iter-tools: ^6.2.5
   iterate-evented-stream: ^0.0.2
   monorepo-shared-assets: ^0.0.17
-  tslib: ^1.9.3
+  tslib: ^1.10.0
   typescript-char-code: ^0.0.1

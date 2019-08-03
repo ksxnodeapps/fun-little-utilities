@@ -1,46 +1,46 @@
 dependencies:
-  '@types/fs-extra': 5.0.5
-  '@types/node': 11.11.1
+  '@types/fs-extra': 8.0.0
+  '@types/node': 12.6.9
   catls-lib: 'link:../catls-lib'
-  fs-extra: 7.0.1
+  fs-extra: 8.1.0
   ts-yargs: 'link:../ts-yargs'
-  tslib: 1.9.3
-lockfileVersion: 5
+  tslib: 1.10.0
+lockfileVersion: 5.1
 packages:
-  /@types/fs-extra/5.0.5:
+  /@types/fs-extra/8.0.0:
     dependencies:
-      '@types/node': 11.11.1
+      '@types/node': 12.6.9
     dev: false
     resolution:
-      integrity: sha512-w7iqhDH9mN8eLClQOYTkhdYUOSpp25eXxfc6VbFOGtzxW34JcvctH2bKjj4jD4++z4R5iO5D+pg48W2e03I65A==
-  /@types/node/11.11.1:
+      integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
+  /@types/node/12.6.9:
     dev: false
     resolution:
-      integrity: sha512-2azXFP9n4aA2QNLkKm/F9pzKxgYj1SMawZ5Eh9iC21RH3XNcFsivLVU2NhpMgQm7YobSByvIol4c42ZFusXFHQ==
-  /fs-extra/7.0.1:
+      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
+  /fs-extra/8.1.0:
     dependencies:
-      graceful-fs: 4.1.15
+      graceful-fs: 4.2.0
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: false
     engines:
       node: '>=6 <7 || >=8'
     resolution:
-      integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
-  /graceful-fs/4.1.15:
+      integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  /graceful-fs/4.2.0:
     dev: false
     resolution:
-      integrity: sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
+      integrity: sha512-jpSvDPV4Cq/bgtpndIWbI5hmYxhQGHPC4d4cqBPb4DLniCfhJokdXhwhaDuLBGLQdvvRum/UiX6ECVIPvDXqdg==
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
-      graceful-fs: 4.1.15
+      graceful-fs: 4.2.0
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
-  /tslib/1.9.3:
+  /tslib/1.10.0:
     dev: false
     resolution:
-      integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /universalify/0.1.2:
     dev: false
     engines:
@@ -48,9 +48,9 @@ packages:
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
-  '@types/fs-extra': ^5.0.5
-  '@types/node': ^11.11.1
+  '@types/fs-extra': ^8.0.0
+  '@types/node': ^12.6.9
   catls-lib: ^0.0.7
-  fs-extra: ^7.0.1
+  fs-extra: ^8.1.0
   ts-yargs: ^0.0.1
-  tslib: ^1.9.3
+  tslib: ^1.10.0

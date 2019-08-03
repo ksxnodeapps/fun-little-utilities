@@ -19,8 +19,8 @@
     "promise"
   ],
   "dependencies": {
-    "tslib": "^1.9.3",
-    "@types/node": "^11.11.1"
+    "tslib": "^1.10.0",
+    "@types/node": "^12.6.9"
   },
   "engines": {
     "node": ">= 8.9.0"
