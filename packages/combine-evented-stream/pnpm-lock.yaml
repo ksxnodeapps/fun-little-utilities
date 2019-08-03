@@ -15,6 +15,6 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@types/node': ^12.6.9
-  event-target-proxy: ^0.0.0
-  evented-stream-types: ^0.0.0
+  event-target-proxy: ^0.0.1
+  evented-stream-types: ^0.0.1
   tslib: ^1.10.0

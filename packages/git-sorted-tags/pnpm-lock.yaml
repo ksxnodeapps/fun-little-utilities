@@ -204,6 +204,6 @@ packages:
 specifiers:
   '@types/node': ^12.6.9
   '@types/yargs': ^13.0.2
-  sort-versions: ^0.0.1
+  sort-versions: ^0.0.2
   tslib: ^1.10.0
   yargs: ^13.3.0

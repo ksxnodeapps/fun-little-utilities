@@ -1,6 +1,6 @@
 {
   "name": "event-target-proxy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A helper for creating event target proxies",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

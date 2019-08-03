@@ -49,6 +49,6 @@ packages:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 specifiers:
   '@types/node': ^12.6.9
-  evented-stream-types: ^0.0.0
+  evented-stream-types: ^0.0.1
   monorepo-shared-assets: ^0.0.17
   tslib: ^1.10.0

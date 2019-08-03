@@ -1,6 +1,6 @@
 {
   "name": "evented-stream-types",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Collection of types used by evented-stream packages",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "catls-lib",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Core APIs used by catls",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -21,8 +21,8 @@
     "typescript-miscellaneous": "^0.1.1",
     "convenient-typescript-utilities": "^0.0.3",
     "tslib": "^1.10.0",
-    "split-shell-buffer": "^1.0.0-rc.2",
-    "ts-await-event": "^0.0.0",
+    "split-shell-buffer": "^1.0.0",
+    "ts-await-event": "^0.0.1",
     "@types/shell-quote": "^1.6.1",
     "@types/node": "^12.6.9"
   },

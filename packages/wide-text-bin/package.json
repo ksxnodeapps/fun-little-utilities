@@ -1,6 +1,6 @@
 {
   "name": "wide-text-bin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CLI program to create w i d e  t e x t from normal text",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -26,7 +26,7 @@
   "dependencies": {
     "yargs": "^13.3.0",
     "tslib": "^1.10.0",
-    "wide-text": "^0.0.1",
+    "wide-text": "^0.0.2",
     "@types/yargs": "^13.0.2",
     "@types/node": "^12.6.9"
   },
