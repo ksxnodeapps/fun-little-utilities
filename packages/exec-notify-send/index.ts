@@ -1,8 +1,9 @@
 import spawn from 'advanced-spawn-async'
 
-export async function notifySend (options: Options) {
+export async function notifySend (options: ExecOptions) {
+  const { command = 'notify-send', execute = spawn } = options
   const args = opts2args(options)
-  await spawn('notify-send', args).onclose
+  await execute(command, args).onclose
 }
 
 export function opts2args (options: Options) {
@@ -32,6 +33,19 @@ export function opts2args (options: Options) {
 
 export function hint2str (hint: Hint) {
   return hint.type + ':' + hint.name + ':' + hint.value
+}
+
+export interface ExecOptions extends Options {
+  readonly command?: string
+  readonly execute?: ExecFunc
+}
+
+export interface ExecFunc {
+  (command: string, args: ReadonlyArray<string>): ExecReturn
+}
+
+export interface ExecReturn {
+  readonly onclose?: Promise<void>
 }
 
 export interface Options {
