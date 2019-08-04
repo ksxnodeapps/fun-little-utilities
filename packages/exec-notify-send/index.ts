@@ -65,9 +65,21 @@ export const enum Urgency {
   Critical = 'critical'
 }
 
-export interface Hint {
+export type Hint = StringHint | NumberHint
+
+interface HintBase {
   readonly type: HintType
   readonly name: string
+  readonly value: number | string
+}
+
+interface StringHint extends HintBase {
+  readonly type: HintType.String
+  readonly value: string
+}
+
+interface NumberHint extends HintBase {
+  readonly type: HintType.Int | HintType.Double | HintType.Byte
   readonly value: number
 }
 
