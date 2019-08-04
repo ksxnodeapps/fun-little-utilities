@@ -1,6 +1,6 @@
 {
   "name": "exec-notify-send",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Send notification to desktop by executing notify-send",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
