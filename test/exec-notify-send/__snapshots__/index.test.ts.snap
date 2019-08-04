@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default execute function works 1`] = `"--app-name=app-name --icon=32x,16x,8x --expire-time=123 -- summary body"`;
+
+exports[`more options 1`] = `
+Array [
+  Array [
+    "notify-send",
+    Array [
+      "--app-name=Application Name",
+      "--icon=x64,x32,x16,x8",
+      "--urgency=critical",
+      "--expire-time=123",
+      "--category=test,category",
+      "--hint=int:hint:35",
+      "--",
+      "summary",
+      "body",
+    ],
+  ],
+]
+`;
+
+exports[`summary and body 1`] = `
+Array [
+  Array [
+    "notify-send",
+    Array [
+      "--",
+      "summary",
+      "body",
+    ],
+  ],
+]
+`;
+
+exports[`summary only 1`] = `
+Array [
+  Array [
+    "notify-send",
+    Array [
+      "--",
+      "summary",
+    ],
+  ],
+]
+`;

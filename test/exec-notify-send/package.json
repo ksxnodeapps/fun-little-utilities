@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "unique-temp-path": "^0.1.1",
+    "@types/fs-extra": "^8.0.0",
+    "exec-notify-send": "file:../../packages/exec-notify-send"
+  }
+}
