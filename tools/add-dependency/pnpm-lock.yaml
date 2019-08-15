@@ -305,4 +305,4 @@ specifiers:
   '@types/inquirer': ^6.5.0
   fs-extra: ^8.1.0
   inquirer: ^6.5.1
-  ts-yargs: ^0.0.2
+  ts-yargs: 'file:../../packages/ts-yargs'

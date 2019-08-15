@@ -6,9 +6,9 @@
   "dependencies": {
     "inquirer": "^6.5.1",
     "fs-extra": "^8.1.0",
-    "ts-yargs": "^0.0.2",
     "@types/inquirer": "^6.5.0",
     "@types/fs-extra": "^8.0.0",
+    "ts-yargs": "file:../../packages/ts-yargs",
     "@tools/preloaded-node": "file:../preloaded-node",
     "@tools/pkgcfg": "file:../pkgcfg",
     "@tools/places": "file:../places",
