@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 12.6.9
+  '@types/node': 12.7.1
   monorepo-shared-assets: 0.0.17
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -8,10 +8,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-nsqTN6zUcm9xtdJiM9OvOJ5EF0kOI8f1Zuug27O/rgtxCRJHGqncSWfCMZUP852dCKPsDsYXGvBhxfRjDBkF5Q==
-  /@types/node/12.6.9:
+  /@types/node/12.7.1:
     dev: false
     resolution:
-      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
+      integrity: sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
   /@types/ramda/0.25.51:
     dev: false
     resolution:
@@ -47,6 +47,6 @@ packages:
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 specifiers:
-  '@types/node': ^12.6.9
+  '@types/node': ^12.7.1
   monorepo-shared-assets: ^0.0.17
   tslib: ^1.10.0
