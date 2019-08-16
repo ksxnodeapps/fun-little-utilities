@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "exec-once": "file:../../packages/exec-once"
+  }
+}

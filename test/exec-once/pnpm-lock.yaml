@@ -1,0 +1,5 @@
+dependencies:
+  exec-once: 'link:../../packages/exec-once'
+lockfileVersion: 5.1
+specifiers:
+  exec-once: 'file:../../packages/exec-once'
