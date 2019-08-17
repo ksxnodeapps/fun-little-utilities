@@ -7,21 +7,21 @@ lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.0:
     dependencies:
-      '@types/node': 12.6.9
+      '@types/node': 12.7.2
     dev: false
     resolution:
       integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
-  /@types/node/10.14.14:
+  /@types/node/10.14.15:
     dev: false
     resolution:
-      integrity: sha512-xXD08vZsvpv4xptQXj1+ky22f7ZoKu5ZNI/4l+/BXG3X+XaeZsmaFbbTKuhSE3NjjvRuZFxFf9sQBMXIcZNFMQ==
-  /@types/node/12.6.9:
+      integrity: sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g==
+  /@types/node/12.7.2:
     dev: false
     resolution:
-      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
+      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
   /fs-extra/8.1.0:
     dependencies:
-      graceful-fs: 4.2.0
+      graceful-fs: 4.2.2
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: false
@@ -29,14 +29,14 @@ packages:
       node: '>=6 <7 || >=8'
     resolution:
       integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
-  /graceful-fs/4.2.0:
+  /graceful-fs/4.2.2:
     dev: false
     resolution:
-      integrity: sha512-jpSvDPV4Cq/bgtpndIWbI5hmYxhQGHPC4d4cqBPb4DLniCfhJokdXhwhaDuLBGLQdvvRum/UiX6ECVIPvDXqdg==
+      integrity: sha512-IItsdsea19BoLC7ELy13q1iJFNmd7ofZH5+X/pJr90/nRoPEX0DJo1dHDbgtYWOhJhcCgMDTOw84RZ72q6lB+Q==
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
-      graceful-fs: 4.2.0
+      graceful-fs: 4.2.2
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /tslib/1.10.0:
@@ -45,7 +45,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /unique-temp-path/0.1.1:
     dependencies:
-      '@types/node': 10.14.14
+      '@types/node': 10.14.15
       tslib: 1.10.0
     dev: false
     engines:

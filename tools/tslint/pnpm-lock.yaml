@@ -20,10 +20,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-UFMC4ZeFC48Tpvj7C8UgLvtkaUuovQX+5xNWrsIoMG8o2z+XFKjKaN9iVmS84dPwVN00W4wPmqvYoZF3EGAsfw==
-  /@types/node/12.7.1:
+  /@types/node/12.7.2:
     dev: false
     resolution:
-      integrity: sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
+      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -125,7 +125,7 @@ packages:
       integrity: sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
   /exec-inline/0.0.3:
     dependencies:
-      '@types/node': 12.7.1
+      '@types/node': 12.7.2
       tslib: 1.10.0
     dev: false
     engines:
@@ -219,11 +219,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-B/dOmuoAik5bKcD6s6nXDCjzUKnaDvdkRyAk6rsmsKLipWj4797iothd7jmmUhWTfinVMU+wc56rYKsit2Qy4w==
-  /semver/5.7.0:
+  /semver/5.7.1:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-Ya52jSX2u7QKghxeoFGpLwCtGlt7j0oY9DYb5apt9nPlJ42ID+ulTXESnt/qAQcoSERyZ5sl3LDIOw0nAn/5DA==
+      integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
@@ -278,7 +278,7 @@ packages:
       minimatch: 3.0.4
       mkdirp: 0.5.1
       resolve: 1.12.0
-      semver: 5.7.0
+      semver: 5.7.1
       tslib: 1.10.0
       tsutils: 2.29.0_typescript@3.5.3
       typescript: 3.5.3

@@ -98,8 +98,8 @@ packages:
 specifiers:
   '@types/fs-extra': ^8.0.0
   '@types/js-yaml': ^3.12.1
-  '@types/node': ^12.7.1
-  '@types/ramda': ^0.26.18
+  '@types/node': ^12.7.2
+  '@types/ramda': ^0.26.19
   fs-extra: ^8.1.0
   js-yaml: ^3.13.1
   ramda: ^0.26.1
