@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with iterable that has splitters matches snapshot 1`] = `
+Array [
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+]
+`;
+
+exports[`with iterable that has trailing splitters matches snapshot 1`] = `
+Array [
+  Array [],
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+  Array [],
+]
+`;
+
+exports[`with iterable that lacks splitter matches snapshot 1`] = `
+Array [
+  Array [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+  ],
+]
+`;

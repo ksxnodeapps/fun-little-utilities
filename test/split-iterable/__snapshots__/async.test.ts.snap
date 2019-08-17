@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with async iterator and async separator with iterable that has splitters matches snapshot 1`] = `
+Array [
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+]
+`;
+
+exports[`with async iterator and async separator with iterable that has trailing splitters matches snapshot 1`] = `
+Array [
+  Array [],
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+  Array [],
+]
+`;
+
+exports[`with async iterator and async separator with iterable that lacks splitter matches snapshot 1`] = `
+Array [
+  Array [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+  ],
+]
+`;
+
+exports[`with async iterator and sync separator with iterable that has splitters matches snapshot 1`] = `
+Array [
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+]
+`;
+
+exports[`with async iterator and sync separator with iterable that has trailing splitters matches snapshot 1`] = `
+Array [
+  Array [],
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+  Array [],
+]
+`;
+
+exports[`with async iterator and sync separator with iterable that lacks splitter matches snapshot 1`] = `
+Array [
+  Array [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+  ],
+]
+`;
+
+exports[`with sync iterator and async separator with iterable that has splitters matches snapshot 1`] = `
+Array [
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+]
+`;
+
+exports[`with sync iterator and async separator with iterable that has trailing splitters matches snapshot 1`] = `
+Array [
+  Array [],
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+  Array [],
+]
+`;
+
+exports[`with sync iterator and async separator with iterable that lacks splitter matches snapshot 1`] = `
+Array [
+  Array [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+  ],
+]
+`;
+
+exports[`with sync iterator and sync separator with iterable that has splitters matches snapshot 1`] = `
+Array [
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+]
+`;
+
+exports[`with sync iterator and sync separator with iterable that has trailing splitters matches snapshot 1`] = `
+Array [
+  Array [],
+  Array [
+    0,
+    1,
+    2,
+  ],
+  Array [
+    3,
+    4,
+  ],
+  Array [
+    5,
+  ],
+  Array [],
+]
+`;
+
+exports[`with sync iterator and sync separator with iterable that lacks splitter matches snapshot 1`] = `
+Array [
+  Array [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+  ],
+]
+`;

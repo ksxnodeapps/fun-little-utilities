@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "split-iterable": "file:../../packages/split-iterable"
+  }
+}
