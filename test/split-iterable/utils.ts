@@ -31,5 +31,5 @@ export function assertResemble<X> (
 }
 
 export function assertNoSplitter<X> (splitResult: ReadonlyArray<ReadonlyArray<X>>) {
-  expect(splitResult).not.toEqual(expect.arrayContaining([expect.arrayContaining([SPLITTER])]))
+  expect(splitResult).not.toContainEqual(expect.arrayContaining([SPLITTER]))
 }
