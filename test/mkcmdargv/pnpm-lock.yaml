@@ -1,0 +1,5 @@
+dependencies:
+  mkcmdargv: 'link:../../packages/mkcmdargv'
+lockfileVersion: 5.1
+specifiers:
+  mkcmdargv: 'file:../../packages/mkcmdargv'

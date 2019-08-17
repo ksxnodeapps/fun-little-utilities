@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "mkcmdargv": "file:../../packages/mkcmdargv"
+  }
+}

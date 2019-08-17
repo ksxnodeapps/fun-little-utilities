@@ -1,0 +1,30 @@
+{
+  "name": "mkcmdargv",
+  "version": "0.0.0",
+  "description": "Convert environment variables to command-line arguments",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "bin": {
+    "mkcmdargv": "./bin/executable",
+    "create-command-arguments": "./bin/executable"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "js-yaml": "^3.13.1",
+    "fs-extra": "^8.1.0",
+    "split-iterable": "^0.0.0",
+    "tslib": "^1.10.0",
+    "@types/ramda": "^0.26.18",
+    "@types/js-yaml": "^3.12.1",
+    "@types/fs-extra": "^8.0.0",
+    "@types/node": "^12.7.1"
+  }
+}

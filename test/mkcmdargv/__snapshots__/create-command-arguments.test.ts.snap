@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots after dash arguments 1`] = `
+Array [
+  "--",
+  "-abc",
+  "--def",
+]
+`;
+
+exports[`snapshots all together 1`] = `
+Array [
+  "abc",
+  "def",
+  "-pqr",
+  "-a",
+  "-c",
+  "foo",
+  "-d",
+  "123",
+  "--foo",
+  "--bar",
+  "--baz",
+  "--abc",
+  "--ghi=bar",
+  "--jkl=456",
+  "--",
+  "-ghi",
+  "--jkl",
+  "--",
+  "sss",
+  "--",
+]
+`;
+
+exports[`snapshots before dash arguments 1`] = `
+Array [
+  "abc",
+  "def",
+  "ghi",
+]
+`;
+
+exports[`snapshots before dash arguments and after dash arguments and double dashes 1`] = `
+Array [
+  "abc",
+  "def",
+  "--",
+  "-ghi",
+  "--jkl",
+  "--",
+  "sss",
+  "--",
+]
+`;
+
+exports[`snapshots double options 1`] = `
+Array [
+  "--abc",
+  "--ghi=bar",
+  "--jkl=456",
+]
+`;
+
+exports[`snapshots multiple double dashes 1`] = `
+Array [
+  "--",
+  "--",
+  "zzz",
+  "--",
+  "sss",
+  "--",
+]
+`;
+
+exports[`snapshots one double dash 1`] = `
+Array [
+  "--",
+  "--",
+]
+`;
+
+exports[`snapshots single flags 1`] = `
+Array [
+  "-pqr",
+]
+`;
+
+exports[`snapshots single flags and double flags 1`] = `
+Array [
+  "-pqr",
+  "--foo",
+  "--bar",
+  "--baz",
+]
+`;
+
+exports[`snapshots single options 1`] = `
+Array [
+  "-a",
+  "-c",
+  "foo",
+  "-d",
+  "123",
+]
+`;
+
+exports[`snapshots single options and double options 1`] = `
+Array [
+  "-a",
+  "-c",
+  "foo",
+  "-d",
+  "123",
+  "--abc",
+  "--ghi=bar",
+  "--jkl=456",
+]
+`;

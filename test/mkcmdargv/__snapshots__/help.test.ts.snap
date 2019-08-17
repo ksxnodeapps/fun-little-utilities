@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+"
+Usage:
+  mkcmdargv [--help]
+
+Options:
+  --help: Show this message
+
+Environment Variables:
+  MKCMDARGV_ARGS: YAML code of args array (e.g. '[123, 456, abc, def]')
+  MKCMDARGV_OPTIONS: YAML code of options object (e.g. '{ a: 0, foo: 123 }')
+  MKCMDARGV_SINGLE_FLAGS: String of single-character flags (e.g. 'sfx')
+  MKCMDARGV_DOUBLE_FLAGS: Whitespace separated list of multi-character flags: (e.g. 'quiet splash')
+"
+`;
