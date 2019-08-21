@@ -20,6 +20,7 @@ temp.*
 !jest.config.js
 /*/*/.npmignore
 *.pnpm-store
+*.tsbuildinfo
 .vscode
 
 # Lockfiles
