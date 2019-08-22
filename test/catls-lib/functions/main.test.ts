@@ -175,7 +175,7 @@ suites.run(param => {
     catArguments,
     lsArguments,
     sharedArguments
-  ] = param
+  ] = param as any // temporary
 
   const { status, stderr, stdout } = init({
     list,
