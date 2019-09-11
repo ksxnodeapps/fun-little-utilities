@@ -1,6 +1,6 @@
 {
   "name": "construct-iterator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities to create synchronous/asynchronous iterators from a next() -> { done, value }",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
