@@ -1,18 +1,18 @@
 dependencies:
-  '@types/node': 12.7.2
+  '@types/node': 12.7.5
   tslib: 1.10.0
   wide-text: 'link:../../packages/wide-text'
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.7.2:
+  /@types/node/12.7.5:
     dev: false
     resolution:
-      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
+      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@types/node': ^12.7.2
+  '@types/node': ^12.7.5
   tslib: ^1.10.0
   wide-text: 'file:../../packages/wide-text'

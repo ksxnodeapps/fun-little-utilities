@@ -21,7 +21,7 @@
     "shell"
   ],
   "dependencies": {
-    "iter-tools": "^6.2.5",
+    "iter-tools": "^6.2.6",
     "create-array-equal": "^0.0.1",
     "typescript-char-code": "^0.0.1",
     "monorepo-shared-assets": "^0.0.17",
@@ -29,7 +29,7 @@
     "event-target-proxy": "^0.0.1",
     "iterate-evented-stream": "^0.0.3",
     "evented-stream-types": "^0.0.1",
-    "@types/node": "^12.7.2"
+    "@types/node": "^12.7.5"
   },
   "engines": {
     "node": ">= 8.9.0"

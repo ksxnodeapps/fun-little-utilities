@@ -2,11 +2,11 @@
   "private": true,
   "dependencies": {
     "utility-types": "^3.7.0",
-    "ts-toolbelt": "^3.8.3",
+    "ts-toolbelt": "^3.8.91",
     "ramda": "^0.26.1",
-    "shell-quote": "^1.7.1",
+    "shell-quote": "^1.7.2",
     "extra-jest": "^0.0.25",
-    "@types/ramda": "^0.26.19",
+    "@types/ramda": "^0.26.21",
     "@types/shell-quote": "^1.6.1",
     "catls-lib": "file:../../packages/catls-lib",
     "simple-fake-stream": "file:../../packages/simple-fake-stream"

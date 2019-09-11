@@ -21,11 +21,11 @@
   ],
   "bin": "git-sorted-tags",
   "dependencies": {
-    "yargs": "^13.3.0",
+    "yargs": "^14.0.0",
     "tslib": "^1.10.0",
     "sort-versions": "^0.0.2",
     "@types/yargs": "^13.0.2",
-    "@types/node": "^12.7.2"
+    "@types/node": "^12.7.5"
   },
   "engines": {
     "node": ">= 8.9.0"

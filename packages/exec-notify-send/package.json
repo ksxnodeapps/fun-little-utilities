@@ -20,8 +20,8 @@
   ],
   "dependencies": {
     "tslib": "^1.10.0",
-    "advanced-spawn-async": "^0.0.1",
-    "@types/node": "^12.7.2"
+    "advanced-spawn-async": "^0.1.0",
+    "@types/node": "^12.7.5"
   },
   "engines": {
     "node": ">= 8.9.0"

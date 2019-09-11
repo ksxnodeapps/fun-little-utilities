@@ -1,24 +1,24 @@
 dependencies:
   '@tools/preloaded-node': 'link:../../tools/preloaded-node'
   extra-jest: 0.0.25
-  iter-tools: 6.2.5
+  iter-tools: 6.2.6
   wide-text: 'link:../../packages/wide-text'
   wide-text-bin: 'link:../../packages/wide-text-bin'
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.5.5:
+  /@babel/runtime-corejs2/7.6.0:
     dependencies:
       core-js: 2.6.9
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-FYATQVR00NSNi7mUfpPDp7E8RYMXDuO8gaix7u/w3GekfUinKgX1AcTxs7SoiEmoEW9mbpjrwqWSW6zCmw5h8A==
-  /@babel/runtime/7.5.5:
+      integrity: sha512-zbPQzlbyJab2xCYb6VaESn8Tk/XiVpQJU7WvIKiQCwlFyc2NSCzKjqtBXCvpZBbiTOHCx10s2656REVnySwb+A==
+  /@babel/runtime/7.6.0:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+      integrity: sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
   /@types/fs-extra/5.1.0:
     dependencies:
       '@types/node': 12.7.2
@@ -126,10 +126,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
-  /iter-tools/6.2.5:
+  /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.5.5
-      '@babel/runtime-corejs2': 7.5.5
+      '@babel/runtime': 7.6.0
+      '@babel/runtime-corejs2': 7.6.0
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
@@ -137,7 +137,7 @@ packages:
       utility-types: 3.7.0
     dev: false
     resolution:
-      integrity: sha512-63drajuMy4Ehx9EooIqBDjcFGOTY30W7SU7DrplPIa6ZdvQIBcK7QTW5TUrNoJRDEbNJG9yioUAU/Ezhys211w==
+      integrity: sha512-DlBSv7cIrM214wYFxyz4vg98BmEpxFTGx37ei/ktYT05shJHoDwz7wuaPx3XhaJi1uGEc5bM+vUBWhm3z6yNIg==
   /js-yaml/3.13.1:
     dependencies:
       argparse: 1.0.10
@@ -242,6 +242,6 @@ packages:
 specifiers:
   '@tools/preloaded-node': 'file:../../tools/preloaded-node'
   extra-jest: ^0.0.25
-  iter-tools: ^6.2.5
+  iter-tools: ^6.2.6
   wide-text: 'file:../../packages/wide-text'
   wide-text-bin: 'file:../../packages/wide-text-bin'
