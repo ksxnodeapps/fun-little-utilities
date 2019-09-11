@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "pretty-exec": "file:../../packages/pretty-exec"
+  }
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when resulting function is called once calls print with expected arguments 1`] = `
+Array [
+  Array [
+    "[2m$[22m",
+    "[32mcommand[39m",
+    "abc",
+    "[31m-o[39m",
+    "def",
+    "[31m--flag[39m",
+    "[31m--foo[39m=bar",
+    "[31m--[39m",
+    "ghi",
+    "--not-flag",
+  ],
+]
+`;

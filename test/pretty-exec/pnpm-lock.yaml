@@ -1,0 +1,5 @@
+dependencies:
+  pretty-exec: 'link:../../packages/pretty-exec'
+lockfileVersion: 5.1
+specifiers:
+  pretty-exec: 'file:../../packages/pretty-exec'

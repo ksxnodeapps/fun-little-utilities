@@ -1,0 +1,25 @@
+{
+  "name": "pretty-exec",
+  "version": "0.0.0",
+  "description": "Print a command and then execute it",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "bin": {
+    "pretty-exec": "bin/index",
+    "print-and-execute": "bin/index"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "split-string-once": "0.0.0",
+    "tslib": "^1.10.0",
+    "@types/node": "^12.7.5"
+  }
+}

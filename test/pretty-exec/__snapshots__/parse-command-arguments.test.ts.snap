@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseCommandArguments matches snapshot 1`] = `
+Array [
+  Object {
+    "text": "-o",
+    "type": "Flag",
+  },
+  Object {
+    "text": "output",
+    "type": "Argument",
+  },
+  Object {
+    "text": "--force",
+    "type": "Flag",
+  },
+  Object {
+    "key": "--foo",
+    "text": "--foo=bar",
+    "type": "Option",
+    "value": "bar",
+  },
+  Object {
+    "text": "--",
+    "type": "Flag",
+  },
+  Object {
+    "text": "abc",
+    "type": "Argument",
+  },
+  Object {
+    "text": "--not-flag",
+    "type": "Argument",
+  },
+]
+`;
