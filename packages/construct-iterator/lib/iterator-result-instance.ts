@@ -1,6 +1,6 @@
 import { IteratorResultLike } from './types'
 
-class IteratorResultInstance<Value> implements IteratorResult<Value> {
+class IteratorResultInstance<Value> {
   public readonly done: boolean
   public readonly value: Value
 
