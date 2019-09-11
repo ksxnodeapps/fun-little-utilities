@@ -22,7 +22,7 @@ export interface CliExecEnv<Status> {
 export function main<Status> (options: CliExecEnv<Status>) {
   const { process, error } = options
   const args = process.argv.slice(2)
-  if (args.length < 3) {
+  if (args.length < 1) {
     error('[ERROR] Command is missing')
     return -1
   }

@@ -90,3 +90,43 @@ describe('when argv is insufficient', () => {
     expect(result).toBe(-1)
   })
 })
+
+describe('when argv is just enough', () => {
+  const argv = ['node', 'script', 'command'] as const
+
+  it('calls spawn once', () => {
+    const { spawn } = setup(argv)
+    expect(spawn).toBeCalledTimes(1)
+  })
+
+  it('calls spawn with expected arguments', () => {
+    const { spawn } = setup(argv)
+    const [command, ...rest] = argv.slice(2)
+    expect(spawn).toBeCalledWith(command, rest, { stdio: 'inherit' })
+  })
+
+  it('calls print once', () => {
+    const { print } = setup(argv)
+    expect(print).toBeCalledTimes(1)
+  })
+
+  it('calls print with expected arguments', () => {
+    const { print } = setup(argv)
+    expect(print.mock.calls).toMatchSnapshot()
+  })
+
+  it('does not call error', () => {
+    const { error } = setup(argv)
+    expect(error).not.toBeCalled()
+  })
+
+  it('returns status code', () => {
+    const { status, result } = setup(argv)
+    expect(result).toBe(status)
+  })
+
+  it('calls print before spawn', () => {
+    const { history } = setup(argv)
+    expect(history).toEqual(['print', 'spawn'])
+  })
+})

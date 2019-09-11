@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`when argv is just enough calls print with expected arguments 1`] = `
+Array [
+  Array [
+    "[2m$[22m",
+    "[32mcommand[39m",
+  ],
+]
+`;
+
 exports[`when argv is sufficient calls print with expected arguments 1`] = `
 Array [
   Array [
