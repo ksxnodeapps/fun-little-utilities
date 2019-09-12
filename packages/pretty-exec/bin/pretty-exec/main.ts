@@ -1,6 +1,6 @@
 import { spawnSync } from 'child_process'
 import process from 'process'
-import { main } from '../index'
+import { main } from '../../index'
 
 const status = main({
   spawn: spawnSync,
