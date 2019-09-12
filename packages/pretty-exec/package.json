@@ -14,7 +14,9 @@
   },
   "bin": {
     "pretty-exec": "bin/pretty-exec/index",
-    "print-and-execute": "bin/pretty-exec/index"
+    "print-and-execute": "bin/pretty-exec/index",
+    "pretty-exec-print": "bin/pretty-exec-print/index",
+    "print-without-execute": "bin/pretty-exec-print/index"
   },
   "dependencies": {
     "chalk": "^2.4.2",
