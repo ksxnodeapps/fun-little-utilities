@@ -44,7 +44,7 @@ export function parseSingleCommandArgument (text: string): ParsingResult {
   return { type: ParsingResult.Type.Option, text, key, value }
 }
 
-export function parseCommandArguments (args: readonly string[]): ParsingResult[] {
+export function parseCommandArguments (args: Iterable<string>): ParsingResult[] {
   let result = Array<ParsingResult>()
   let afterDoubleDash = false
 
