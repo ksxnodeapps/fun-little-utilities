@@ -40,9 +40,10 @@ describe('when resulting function is not called', () => {
 describe('when resulting function is called once', () => {
   function setupAndCall () {
     const { prettyExec, ...rest } = setup()
-    const args = ['command', 'abc', '-o', 'def', '--flag', '--foo=bar', '--', 'ghi', '--not-flag'] as const
-    const result = prettyExec(...args)
-    return { args, result, prettyExec, ...rest }
+    const command = 'command' as const
+    const args = ['abc', '-o', 'def', '--flag', '--foo=bar', '--', 'ghi', '--not-flag'] as const
+    const result = prettyExec(command, args)
+    return { command, args, result, prettyExec, ...rest }
   }
 
   it('calls spawn once', () => {
@@ -51,8 +52,8 @@ describe('when resulting function is called once', () => {
   })
 
   it('calls spawn with expected arguments', () => {
-    const { spawn, args: [command, ...rest] } = setupAndCall()
-    expect(spawn).toBeCalledWith(command, rest, { stdio: 'inherit' })
+    const { spawn, command, args } = setupAndCall()
+    expect(spawn).toBeCalledWith(command, args, { stdio: 'inherit' })
   })
 
   it('calls print once', () => {

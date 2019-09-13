@@ -21,13 +21,13 @@ export interface CliExecEnv<Status> {
 
 export function main<Status> (options: CliExecEnv<Status>) {
   const { process, error } = options
-  const args = process.argv.slice(2)
-  if (args.length < 1) {
+  const [command, ...args] = process.argv.slice(2)
+  if (!command) {
     error('[ERROR] Command is missing')
     return -1
   }
   const prettyExec = createPrettyExec(options)
-  const { status } = prettyExec(...args as [string, ...string[]])
+  const { status } = prettyExec(command, args)
   return status
 }
 

@@ -34,7 +34,7 @@ export interface CreateOptions<SpawnReturn> {
 }
 
 export interface PrettyExec<Return> {
-  (command: string, ...args: string[]): Return
+  (command: string, args: Iterable<string>): Return
 }
 
 export const DEFAULT_PREFIX = ['$'] as const
@@ -64,11 +64,13 @@ export function createPrettyExec<Return> (options: CreateOptions<Return>): Prett
     optionValue = DEFAULT_OPTION_VALUE_STYLING_FUNC
   } = colorSchemes
 
-  return (cmd, ...args) => {
+  return (cmd, args) => {
+    const argsArray = Array.from(args)
+
     print(
       ...prefixText.map(text => prefix(text)),
       command(cmd),
-      ...parseCommandArguments(args).map(item => {
+      ...parseCommandArguments(argsArray).map(item => {
         switch (item.type) {
           case ParsingResult.Type.Argument:
             return argument(item.text)
@@ -80,7 +82,7 @@ export function createPrettyExec<Return> (options: CreateOptions<Return>): Prett
       })
     )
 
-    return spawn(cmd, args, SPAWN_OPTIONS)
+    return spawn(cmd, argsArray, SPAWN_OPTIONS)
   }
 }
 
