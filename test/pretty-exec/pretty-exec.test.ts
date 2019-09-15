@@ -76,3 +76,18 @@ describe('when resulting function is called once', () => {
     expect(history).toEqual(['print', 'spawn'])
   })
 })
+
+describe('when arguments contain special characters', () => {
+  function setupAndCall () {
+    const { prettyExec, ...rest } = setup()
+    const command = 'command with space and quotes (\'")' as const
+    const args = ['args with space', '"quoted"', "a'"] as const
+    const result = prettyExec(command, args)
+    return { command, args, result, prettyExec, ...rest }
+  }
+
+  it('calls print with escaped strings', () => {
+    const { print } = setupAndCall()
+    expect(print.mock.calls).toMatchSnapshot()
+  })
+})

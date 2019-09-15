@@ -1,4 +1,5 @@
 import chalk from 'chalk'
+import shEsc from 'shell-escape'
 import parseCommandArguments, { ParsingResult } from './parse-command-arguments'
 
 export interface SpawnOptions {
@@ -47,6 +48,10 @@ export const DEFAULT_OPTION_KEY_STYLING_FUNC: StylingFunc = chalk.red
 export const DEFAULT_OPTION_VALUE_STYLING_FUNC: StylingFunc = chalk
 export const SPAWN_OPTIONS: SpawnOptions = { stdio: 'inherit' }
 
+function escape (...args: string[]) {
+  return shEsc(args)
+}
+
 export function createPrettyExec<Return> (options: CreateOptions<Return>): PrettyExec<Return> {
   const {
     spawn,
@@ -69,15 +74,15 @@ export function createPrettyExec<Return> (options: CreateOptions<Return>): Prett
 
     print(
       ...prefixText.map(text => prefix(text)),
-      command(cmd),
+      command(escape(cmd)),
       ...parseCommandArguments(argsArray).map(item => {
         switch (item.type) {
           case ParsingResult.Type.Argument:
-            return argument(item.text)
+            return argument(escape(item.text))
           case ParsingResult.Type.Flag:
-            return flag(item.text)
+            return flag(escape(item.text))
           case ParsingResult.Type.Option:
-            return optionKey(item.key) + optionValue('=' + item.value)
+            return optionKey(escape(item.key)) + optionValue('=' + escape(item.value))
         }
       })
     )

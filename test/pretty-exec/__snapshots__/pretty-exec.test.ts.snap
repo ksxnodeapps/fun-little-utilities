@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`when arguments contain special characters calls print with escaped strings 1`] = `
+Array [
+  Array [
+    "[2m$[22m",
+    "[32m'command with space and quotes ('\\\\''\\")'[39m",
+    "'args with space'",
+    "'\\"quoted\\"'",
+    "'a'\\\\'",
+  ],
+]
+`;
+
 exports[`when resulting function is called once calls print with expected arguments 1`] = `
 Array [
   Array [
