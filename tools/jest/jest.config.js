@@ -2,12 +2,6 @@
 const path = require('path')
 
 const {
-  TEST_WITHOUT_COVERAGE = 'false'
-} = require('process').env
-
-const collectCoverage = TEST_WITHOUT_COVERAGE.toLowerCase() !== 'true'
-
-const {
   moduleFileExtensions,
   coveragePathIgnorePatterns
 } = require('./lib/constants')
@@ -27,11 +21,12 @@ const test = {
   },
   testRegex: '\\.(test|spec|check)\\.(jsx?|tsx?)$',
   moduleFileExtensions,
-  collectCoverage,
   coveragePathIgnorePatterns,
   globals: {
     'ts-jest': {
       diagnostics: false,
+      isolatedModules: true,
+      preserveConstEnums: true,
       tsConfig: path.resolve(__dirname, 'tsconfig.test.json')
     }
   }
