@@ -23,6 +23,9 @@ temp.*
 *.tsbuildinfo
 .vscode
 
+# To workaround standardjs linting *..mjs files
+*.mjs
+
 # Lockfiles
 #   * Yarn's and NPM's are ignored for I use PNPM
 yarn.lock
