@@ -68,7 +68,10 @@ abstract class Dict {
 
   public readonly build = new Command(
     'Build all products',
-    () => this.callCmd('buildTypescript')
+    () => {
+      this.callCmd('buildMJS')
+      this.callCmd('buildTypescript')
+    }
   )
 
   public readonly clean = new Command(
@@ -121,7 +124,7 @@ abstract class Dict {
 
   public readonly testAll = new Command(
     'Run all tests in production mode',
-    () => this.callCmd('test', '--ci')
+    () => this.callCmd('test', '--ci', '--no-cache')
   )
 
   public readonly testWithoutCoverage = new Command(
@@ -129,6 +132,14 @@ abstract class Dict {
     args => {
       this.callCmd('clean')
       this.callCmd('jest', ...args)
+    }
+  )
+
+  public readonly buildMJS = new Command(
+    'Compile TypeScript files into ESM JavaScript',
+    args => {
+      this.callCmd('buildTypescript', '--module', 'esnext')
+      this.callCmd('makeMJS', ...args)
     }
   )
 
@@ -144,6 +155,11 @@ abstract class Dict {
   public readonly cleanTypescriptBuild = new Command(
     'Clean TSC build products',
     this.mkspawn(commands.cleanTypescriptBuild)
+  )
+
+  public readonly makeMJS = new Command(
+    'Change extension of all output *.js files to *.mjs',
+    this.mkspawn(commands.makeMJS)
   )
 
   public readonly gitTagVersions = new Command(
