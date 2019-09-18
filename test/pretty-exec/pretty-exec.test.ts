@@ -2,7 +2,7 @@ import { createPrettyExec, chalkModule } from 'pretty-exec'
 
 const colorSupportLevel = chalkModule.default.supportsColor.level
 beforeEach(() => {
-  chalkModule.default.level = chalkModule.Level.Basic
+  chalkModule.default.level = 1 as any
 })
 afterEach(() => {
   chalkModule.default.level = colorSupportLevel
