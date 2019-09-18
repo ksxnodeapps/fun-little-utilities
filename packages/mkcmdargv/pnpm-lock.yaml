@@ -107,5 +107,5 @@ specifiers:
   fs-extra: ^8.1.0
   js-yaml: ^3.13.1
   ramda: ^0.26.1
-  split-iterable: ^0.0.0
+  split-iterable: ^0.1.0
   tslib: ^1.10.0

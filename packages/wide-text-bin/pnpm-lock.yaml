@@ -206,5 +206,5 @@ specifiers:
   '@types/node': ^12.7.5
   '@types/yargs': ^13.0.2
   tslib: ^1.10.0
-  wide-text: ^0.0.2
+  wide-text: ^0.1.0
   yargs: ^14.0.0

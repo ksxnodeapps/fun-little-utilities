@@ -172,10 +172,10 @@ packages:
 specifiers:
   '@types/node': ^12.7.5
   create-array-equal: ^0.0.1
-  event-target-proxy: ^0.0.1
-  evented-stream-types: ^0.0.1
+  event-target-proxy: ^0.1.0
+  evented-stream-types: ^0.1.0
   iter-tools: ^6.2.6
-  iterate-evented-stream: ^0.0.3
+  iterate-evented-stream: ^0.1.0
   monorepo-shared-assets: ^0.0.17
   tslib: ^1.10.0
   typescript-char-code: ^0.0.1
