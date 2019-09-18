@@ -1,0 +1,19 @@
+{
+  "name": "fast-traverse",
+  "version": "0.0.0",
+  "description": "Traverse a FileSystem tree as fast as possible",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0",
+    "@types/node": "^12.7.5"
+  }
+}
