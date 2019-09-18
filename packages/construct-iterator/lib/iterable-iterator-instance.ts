@@ -1,7 +1,7 @@
 import IteratorInstance from './iterator-instance'
 
-class IterableIteratorInstance<Element>
+export class IterableIteratorInstance<Element>
   extends IteratorInstance<Element>
   implements IterableIterator<Element> {}
 
-export = IterableIteratorInstance
+export default IterableIteratorInstance

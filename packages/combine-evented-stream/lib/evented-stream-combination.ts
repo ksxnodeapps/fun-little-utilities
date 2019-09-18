@@ -2,7 +2,7 @@ import { EventedStream } from 'evented-stream-types'
 import ChunkCarrier from './chunk-carrier'
 import ErrorCarrier from './error-carrier'
 
-abstract class EventedStreamCombination<
+export abstract class EventedStreamCombination<
   Stream extends EventedStream<StreamChunk, StreamError>,
   StreamChunk,
   StreamError,
@@ -15,4 +15,4 @@ abstract class EventedStreamCombination<
   public abstract readonly removeListener: EventedStream<Chunk, Error>['removeListener']
 }
 
-export = EventedStreamCombination
+export default EventedStreamCombination

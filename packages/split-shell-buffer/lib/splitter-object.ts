@@ -1,6 +1,6 @@
 import * as types from './types'
 
-class SplitterObject implements types.Splitter {
+export class SplitterObject implements types.Splitter {
   public readonly data: types.Data
   public readonly prefix: types.SequenceFunc
   public readonly suffix: types.SequenceFunc
@@ -28,4 +28,4 @@ class SplitterObject implements types.Splitter {
   }
 }
 
-export = SplitterObject
+export default SplitterObject

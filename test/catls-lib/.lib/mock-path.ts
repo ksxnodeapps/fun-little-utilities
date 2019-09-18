@@ -1,6 +1,6 @@
 import path from 'path'
 
-function mockPath () {
+export function mockPath () {
   const OLD_SEP = path.sep
   const SEP = '/'
 
@@ -43,4 +43,4 @@ function mockPath () {
   }
 }
 
-export = mockPath
+export default mockPath

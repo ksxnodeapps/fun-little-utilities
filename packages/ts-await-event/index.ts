@@ -1,4 +1,4 @@
-function awaitEvent<Event, Param> (
+export function awaitEvent<Event, Param> (
   target: awaitEvent.Target<Event, Param>,
   event: Event
 ): Promise<Param> {
@@ -8,7 +8,7 @@ function awaitEvent<Event, Param> (
   )
 }
 
-namespace awaitEvent {
+export namespace awaitEvent {
   export interface Target<Event, Param> {
     once (event: Event, listener: Listener<Param>): void
   }
@@ -18,4 +18,4 @@ namespace awaitEvent {
   }
 }
 
-export = awaitEvent
+export default awaitEvent

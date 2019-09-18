@@ -4,10 +4,10 @@ import lines from './lines'
 
 const { EndOfLine } = SpecialCharacter
 
-async function writeln (writable: types.Writable, splitter: types.Splitter): Promise<void> {
+export async function writeln (writable: types.Writable, splitter: types.Splitter): Promise<void> {
   for await (const line of lines(splitter)) {
     writable.write(Buffer.from([...line, EndOfLine]))
   }
 }
 
-export = writeln
+export default writeln

@@ -1,7 +1,7 @@
 import { ord } from 'typescript-char-code'
 
-enum Digit {
+export enum Digit {
   Zero = ord('0')
 }
 
-export = Digit
+export default Digit

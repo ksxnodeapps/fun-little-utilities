@@ -1,1 +1,1 @@
-export = () => undefined
+export default () => undefined

@@ -2,7 +2,7 @@ import * as types from './types'
 import fromIterable from './from-iterable'
 import SplitterObject from './splitter-object'
 
-function fromIterableStream (stream: types.IterableStream): SplitterObject {
+export function fromIterableStream (stream: types.IterableStream): SplitterObject {
   async function * iterate () {
     for await (const chunk of stream) {
       for (const char of Buffer.from(chunk as Buffer)) {
@@ -18,4 +18,4 @@ function fromIterableStream (stream: types.IterableStream): SplitterObject {
   return fromIterable(data)
 }
 
-export = fromIterableStream
+export default fromIterableStream

@@ -5,7 +5,7 @@ import { Options } from 'wide-text-types'
  * @param text Input text
  * @param options Options
  */
-function createWideText (text: string, options: Options = {}) {
+export function createWideText (text: string, options: Options = {}) {
   const {
     charSep = 1,
     wordSep = 2
@@ -20,4 +20,4 @@ function createWideText (text: string, options: Options = {}) {
     .join(actualWordSep)
 }
 
-export = createWideText
+export default createWideText

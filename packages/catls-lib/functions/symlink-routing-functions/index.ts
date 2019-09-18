@@ -38,7 +38,7 @@ class UltimateFunctions extends ReturnInstance {
   public readonly getLoop: LoopGetter = body => name => body(name, 0, [])
 }
 
-function symlinkRoutingFunctions (
+export function symlinkRoutingFunctions (
   resolution: SymlinkResolution,
   fsfn: FileSystemFunctions
 ): Return {
@@ -52,4 +52,4 @@ function symlinkRoutingFunctions (
   }
 }
 
-export = symlinkRoutingFunctions
+export default symlinkRoutingFunctions

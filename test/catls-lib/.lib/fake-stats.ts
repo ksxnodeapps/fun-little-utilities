@@ -32,7 +32,7 @@ class StatsInfoInstance extends Base implements StatInfo.Stats {
   }
 }
 
-class StatsInstance extends StatsInfoInstance implements Main.Stats {
+export class StatsInstance extends StatsInfoInstance implements Main.Stats {
   public readonly isSymbolicLink = this[symMkFn](Type.Symlink)
   public readonly isFile = this[symMkFn](Type.File)
   public readonly isDirectory = this[symMkFn](Type.Directory)
@@ -42,7 +42,7 @@ class StatsInstance extends StatsInfoInstance implements Main.Stats {
   public readonly isSocket = this[symMkFn](Type.Socket)
 }
 
-namespace StatsInstance {
+export namespace StatsInstance {
   export interface ConstructorOptions extends StatInfo.Stats {
     readonly type: Type
   }
@@ -53,4 +53,4 @@ namespace StatsInstance {
 
 const { Type } = StatsInstance
 
-export = StatsInstance
+export default StatsInstance

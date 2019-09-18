@@ -1,7 +1,7 @@
 import { EventedStream } from 'evented-stream-types'
 import Base from './error-base'
 
-class ErrorCarrier<
+export class ErrorCarrier<
   Stream extends EventedStream<Chunk, Error>,
   Error = any,
   Chunk = any
@@ -20,4 +20,4 @@ class ErrorCarrier<
   }
 }
 
-export = ErrorCarrier
+export default ErrorCarrier

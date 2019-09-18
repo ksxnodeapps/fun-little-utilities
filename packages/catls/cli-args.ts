@@ -87,4 +87,4 @@ function getCliArgs () {
   return argv
 }
 
-export = getCliArgs
+export default getCliArgs

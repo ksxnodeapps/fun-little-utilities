@@ -6,10 +6,10 @@ function styledArgument (text: string): string {
   return chalk.bold(text)
 }
 
-function commandTitle (script: string, args: ReadonlyArray<string>): string {
+export function commandTitle (script: string, args: ReadonlyArray<string>): string {
   const styledScript = chalk.bold.yellow(script)
   const styledArgs = args.map(styledArgument).join(' ')
   return `${dollar} ${styledScript} ${styledArgs}`
 }
 
-export = commandTitle
+export default commandTitle

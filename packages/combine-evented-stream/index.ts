@@ -5,7 +5,7 @@ import EventedStreamCombination from './lib/evented-stream-combination'
 import ChunkCarrier from './lib/chunk-carrier'
 import ErrorCarrier from './lib/error-carrier'
 
-function combineEventedStream<
+export function combineEventedStream<
   Stream extends EventedStream<StreamChunk, StreamError>,
   StreamChunk = any,
   StreamError = any
@@ -69,4 +69,4 @@ function combineEventedStream<
   return new EvtStrCmb()
 }
 
-export = combineEventedStream
+export default combineEventedStream

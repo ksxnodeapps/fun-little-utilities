@@ -1,7 +1,7 @@
 import { NextFuncLike, NextFunc } from './types'
 import createNextFunc from './create-next-func'
 
-class IteratorInstance<Element> implements Iterator<Element>, Iterable<Element> {
+export class IteratorInstance<Element> implements Iterator<Element>, Iterable<Element> {
   public readonly [Symbol.iterator]: () => this
   public readonly next: NextFunc<Element>
 
@@ -11,4 +11,4 @@ class IteratorInstance<Element> implements Iterator<Element>, Iterable<Element> 
   }
 }
 
-export = IteratorInstance
+export default IteratorInstance

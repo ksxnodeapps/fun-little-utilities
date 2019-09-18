@@ -1,6 +1,6 @@
 import { IteratorResultLike } from './types'
 
-class IteratorResultInstance<Value> {
+export class IteratorResultInstance<Value> {
   public readonly done: boolean
   public readonly value: Value
 
@@ -10,4 +10,4 @@ class IteratorResultInstance<Value> {
   }
 }
 
-export = IteratorResultInstance
+export default IteratorResultInstance

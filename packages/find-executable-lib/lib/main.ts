@@ -3,7 +3,7 @@ import { MainOptions } from './types'
 import find from './find'
 import display from './display'
 
-function main (options: MainOptions): number {
+export function main (options: MainOptions): number {
   const { cliOptions, logger } = options
   const { _: list, filter } = cliOptions
 
@@ -17,4 +17,4 @@ function main (options: MainOptions): number {
   return os.constants.errno.ENOENT
 }
 
-export = main
+export default main

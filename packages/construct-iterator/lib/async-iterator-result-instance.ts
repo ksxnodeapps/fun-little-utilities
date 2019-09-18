@@ -3,7 +3,7 @@ import { AsyncIteratorResultLike } from './types'
 import createIteratorResult from './create-iterator-result'
 import IteratorResultInstance from './iterator-result-instance'
 
-class AsyncIteratorResultInstance<Value> extends Promise<IteratorResultInstance<Value>> {
+export class AsyncIteratorResultInstance<Value> extends Promise<IteratorResultInstance<Value>> {
   constructor (param: AsyncIteratorResultInstance.ConstructorParam<Value>) {
     super(
       typeof param === 'function'
@@ -20,7 +20,7 @@ class AsyncIteratorResultInstance<Value> extends Promise<IteratorResultInstance<
   }
 }
 
-namespace AsyncIteratorResultInstance {
+export namespace AsyncIteratorResultInstance {
   export type ConstructorParam<Value> =
     AsyncIteratorResultLike<Value> |
     Executor<Value>
@@ -38,4 +38,4 @@ namespace AsyncIteratorResultInstance {
   }
 }
 
-export = AsyncIteratorResultInstance
+export default AsyncIteratorResultInstance

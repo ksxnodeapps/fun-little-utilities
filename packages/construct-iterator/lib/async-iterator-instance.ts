@@ -2,7 +2,7 @@ import 'monorepo-shared-assets/.polyfill'
 import { AsyncNextFuncLike, AsyncNextFunc } from './types'
 import createAsyncNextFunc from './create-async-next-func'
 
-class AsyncIteratorInstance<Element> implements AsyncIterator<Element>, AsyncIterable<Element> {
+export class AsyncIteratorInstance<Element> implements AsyncIterator<Element>, AsyncIterable<Element> {
   // @ts-ignore
   public readonly [Symbol.asyncIterator]: () => this
   // @ts-ignore
@@ -14,4 +14,4 @@ class AsyncIteratorInstance<Element> implements AsyncIterator<Element>, AsyncIte
   }
 }
 
-export = AsyncIteratorInstance
+export default AsyncIteratorInstance

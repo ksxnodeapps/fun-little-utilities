@@ -114,4 +114,4 @@ async function unit (options: Unit.Options): Promise<number> {
   return main(name, followSymlink, [])
 }
 
-export = unit
+export default unit

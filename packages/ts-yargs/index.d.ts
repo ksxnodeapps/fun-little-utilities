@@ -120,4 +120,4 @@ interface SharedDescProperties {
 }
 
 declare const yargs: Yargs<{}>
-export = yargs
+export default yargs

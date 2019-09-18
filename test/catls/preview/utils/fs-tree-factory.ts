@@ -5,7 +5,7 @@ import tempPath from 'unique-temp-path'
 const { Clone, Symlink } = fsTreeUtils.FileSystemRepresentation
 const existingDataPath = path.resolve(__dirname, '../data')
 
-async function create () {
+export async function create () {
   const targetPath = tempPath()
 
   const targetTree = {
@@ -43,4 +43,4 @@ async function create () {
   }
 }
 
-export = create
+export default create

@@ -34,4 +34,4 @@ async function execute (args: string[], WDIR: string): Promise<void> {
   console.info()
 }
 
-export = (wdir: string) => (...args: string[]) => execute(args, wdir)
+export default (wdir: string) => (...args: string[]) => execute(args, wdir)

@@ -18,7 +18,7 @@ const done: Done = { done: true }
 
 type State<Value> = Undone<Value> | Done
 
-function iterate<Chunk, Err = any> (
+export function iterate<Chunk, Err = any> (
   stream: EventedStream<Chunk, Err>
 ): AsyncIterableIterator<Chunk> {
   type Controller = ControlledPromise<State<Chunk>>
@@ -65,4 +65,4 @@ function iterate<Chunk, Err = any> (
   return iterate(0)
 }
 
-export = iterate
+export default iterate

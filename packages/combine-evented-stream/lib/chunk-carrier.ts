@@ -1,6 +1,6 @@
 import { EventedStream } from 'evented-stream-types'
 
-class ChunkCarrier<
+export class ChunkCarrier<
   Stream extends EventedStream<Chunk, Error>,
   Chunk = any,
   Error = any
@@ -18,4 +18,4 @@ class ChunkCarrier<
   }
 }
 
-export = ChunkCarrier
+export default ChunkCarrier

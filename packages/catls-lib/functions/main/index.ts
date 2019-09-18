@@ -9,7 +9,7 @@ import unknownStatType from '../unknown-stat-type'
 import executor from '../executor'
 import showExecData from '../show-exec-data'
 
-async function main (param: Main.Param): Promise<number> {
+export async function main (param: Main.Param): Promise<number> {
   const {
     list,
     stdout,
@@ -113,4 +113,4 @@ async function main (param: Main.Param): Promise<number> {
   return currentStatus
 }
 
-export = main
+export default main

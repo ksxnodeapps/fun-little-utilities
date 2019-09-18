@@ -1,7 +1,7 @@
 import { Tuple } from 'ts-toolbelt'
 import Prepend = Tuple.Prepend
 
-function init () {
+export function init () {
   const add = <Factor, Base extends init.MaybeLayer<any, any, any>> (
     factorList: Factor[],
     getDescription: init.DescFunc<Factor>,
@@ -46,7 +46,7 @@ function init () {
   return mkres(undefined)
 }
 
-namespace init {
+export namespace init {
   export interface DescFunc<Factor> {
     (factor: Factor): string
   }
@@ -95,4 +95,4 @@ namespace init {
   }
 }
 
-export = init
+export default init

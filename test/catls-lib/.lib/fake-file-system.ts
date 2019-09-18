@@ -74,7 +74,7 @@ class FileSystemInstanceBase {
   }
 }
 
-class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSystemFunctions {
+export class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSystemFunctions {
   public readonly stat = this[symFollowSymlink](
     'stat',
     ({ item }) => this[symMkStats](item.type, item.statInfo)
@@ -103,7 +103,7 @@ class FileSystemInstance extends FileSystemInstanceBase implements Main.FileSyst
   )
 }
 
-namespace FileSystemInstance {
+export namespace FileSystemInstance {
   export type Dict = {
     readonly [name: string]: Item
   }
@@ -181,4 +181,4 @@ namespace FileSystemInstance {
   export class Socket extends unknownItemClass(ItemType.Socket) {}
 }
 
-export = FileSystemInstance
+export default FileSystemInstance

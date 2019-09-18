@@ -1,6 +1,6 @@
 import { ord } from 'typescript-char-code'
 
-enum SpecialCharacter {
+export enum SpecialCharacter {
   Start = 0x1B,
   StartFollow = ord('['),
   End = ord('m'),
@@ -8,4 +8,4 @@ enum SpecialCharacter {
   EndOfLine = ord('\n')
 }
 
-export = SpecialCharacter
+export default SpecialCharacter

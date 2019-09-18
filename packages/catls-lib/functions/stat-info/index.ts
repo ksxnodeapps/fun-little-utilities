@@ -2,7 +2,7 @@ import * as utils from 'convenient-typescript-utilities'
 import { StatInfo } from '../../types'
 import tpl = utils.array.tuple
 
-function statInfo (
+export function statInfo (
   type: string,
   stats: StatInfo.Stats,
   body: ReadonlyArray<[string, string]> = []
@@ -26,4 +26,4 @@ function statInfo (
   return `[INFO]\n${main}\n\n`
 }
 
-export = statInfo
+export default statInfo

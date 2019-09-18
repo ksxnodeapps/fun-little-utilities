@@ -3,7 +3,7 @@ import * as types from '../lib/types'
 const symEncoding = Symbol('symEncoding')
 const symData = Symbol('symData')
 
-class StringWritable implements types.Writable {
+export class StringWritable implements types.Writable {
   private readonly [symEncoding]: StringWritable.Encoding
   private [symData] = ''
 
@@ -20,7 +20,7 @@ class StringWritable implements types.Writable {
   }
 }
 
-namespace StringWritable {
+export namespace StringWritable {
   export type Encoding = BufferEncoding
 
   export interface ConstructorOptions {
@@ -28,4 +28,4 @@ namespace StringWritable {
   }
 }
 
-export = StringWritable
+export default StringWritable

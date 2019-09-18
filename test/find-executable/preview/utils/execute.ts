@@ -6,7 +6,7 @@ import { writeln, fromChildProcess } from 'split-shell-buffer'
 import commandTitle from './command-title'
 const script = require.resolve('../executable')
 
-async function execute (...args: string[]): Promise<void> {
+export async function execute (...args: string[]): Promise<void> {
   console.info(commandTitle('catls', args))
 
   const cp = spawn('node', [script, ...args])
@@ -21,4 +21,4 @@ async function execute (...args: string[]): Promise<void> {
   console.info()
 }
 
-export = execute
+export default execute

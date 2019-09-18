@@ -11,7 +11,7 @@ const { Zero } = Digit
 const arrayEqual = createArrayEqual<types.Sequence>()
 const RESET = [Start, StartFollow, Zero, End]
 
-async function * iterateElements (splitter: types.Splitter): AsyncIterableIterator<types.Element> {
+export async function * iterateElements (splitter: types.Splitter): AsyncIterableIterator<types.Element> {
   const { data, prefix, suffix } = splitter
   let leadingCharacters = Array<types.Sequence>()
   let nextLeadingCharacters = Array<types.Sequence>()
@@ -88,4 +88,4 @@ async function * iterateElements (splitter: types.Splitter): AsyncIterableIterat
   yield createYieldValue()
 }
 
-export = iterateElements
+export default iterateElements

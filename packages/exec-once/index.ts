@@ -1,4 +1,4 @@
-function once<Return> (fn: () => Return): () => Return {
+export function once<Return> (fn: () => Return): () => Return {
   let main = () => {
     const value = fn()
     main = () => value
@@ -8,4 +8,4 @@ function once<Return> (fn: () => Return): () => Return {
   return () => main()
 }
 
-export = once
+export default once

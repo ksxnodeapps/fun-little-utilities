@@ -1,4 +1,4 @@
-class UTCDate extends Date {
+export class UTCDate extends Date {
   constructor (
     year: number,
     month: number,
@@ -20,4 +20,4 @@ class UTCDate extends Date {
   }
 }
 
-export = UTCDate
+export default UTCDate

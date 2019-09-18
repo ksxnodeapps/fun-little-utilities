@@ -1,6 +1,6 @@
 import { Executor } from '../../types'
 
-function executor (options: Executor.Options): Executor {
+export function executor (options: Executor.Options): Executor {
   const { dontFakeInteractive, spawn } = options
 
   if (dontFakeInteractive) return spawn
@@ -17,4 +17,4 @@ function executor (options: Executor.Options): Executor {
   }
 }
 
-export = executor
+export default executor

@@ -4,7 +4,7 @@ import { StdOutError, StdErrError } from './error-classes'
 import SplitterObject from './splitter-object'
 import fromEventedStream from './from-evented-stream'
 
-function fromChildProcess<Chunk extends string | Buffer> (cp: types.ChildProcess<Chunk>): SplitterObject {
+export function fromChildProcess<Chunk extends string | Buffer> (cp: types.ChildProcess<Chunk>): SplitterObject {
   const { stdout, stderr } = cp
 
   const proxifiedStdOut = proxify<'error' | 'data'>(
@@ -51,4 +51,4 @@ function fromChildProcess<Chunk extends string | Buffer> (cp: types.ChildProcess
   return fromEventedStream({ addListener, removeListener })
 }
 
-export = fromChildProcess
+export default fromChildProcess

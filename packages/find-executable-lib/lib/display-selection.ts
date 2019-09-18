@@ -1,7 +1,7 @@
-enum DisplaySelection {
+export enum DisplaySelection {
   Word = 'word',
   Path = 'path',
   Both = 'both'
 }
 
-export = DisplaySelection
+export default DisplaySelection
