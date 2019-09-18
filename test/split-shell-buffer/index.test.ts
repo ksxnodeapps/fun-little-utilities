@@ -11,7 +11,7 @@ import {
   fromChildProcess
 } from 'split-shell-buffer'
 
-it.only('correctly indents normal text', async () => {
+it('correctly indents normal text', async () => {
   const indentedNormalText = [
     '  abc def ghi',
     '  jkl mno pqrs'
