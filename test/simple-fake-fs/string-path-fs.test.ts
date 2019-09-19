@@ -676,3 +676,169 @@ describe('mkdirSync', () => {
     })
   })
 })
+
+describe('writeFileSync', () => {
+  describe('on name that has yet to be occupied', () => {
+    function init (name: string, content: string) {
+      const fs = create()
+      fs.writeFileSync(name, content)
+      return { name, content, fs }
+    }
+
+    describe('"abc/def/new"', () => {
+      const name = 'abc/def/new'
+      const content = 'hello world'
+
+      it('existsSync() returns true', () => {
+        expect(init(name, content).fs.existsSync(name)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(init(name, content).fs.statSync(name).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(init(name, content).fs.statSync(name).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(init(name, content).fs.readFileSync(name)).toBe(content)
+      })
+    })
+
+    describe('"new"', () => {
+      const name = 'new'
+      const content = 'hello world'
+
+      it('existsSync() returns true', () => {
+        expect(init(name, content).fs.existsSync(name)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(init(name, content).fs.statSync(name).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(init(name, content).fs.statSync(name).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(init(name, content).fs.readFileSync(name)).toBe(content)
+      })
+    })
+  })
+
+  describe('on name that is occupied by a file', () => {
+    function init (name: string, content: string) {
+      const fs = create()
+      fs.writeFileSync(name, content)
+      return { name, content, fs }
+    }
+
+    describe('"abc/def/ghi"', () => {
+      const name = 'abc/def/ghi'
+      const content = 'hello world'
+
+      it('existsSync() returns true', () => {
+        expect(init(name, content).fs.existsSync(name)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(init(name, content).fs.statSync(name).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(init(name, content).fs.statSync(name).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(init(name, content).fs.readFileSync(name)).toBe(content)
+      })
+    })
+
+    describe('"new"', () => {
+      const name = 'new'
+      const content = 'hello world'
+
+      it('existsSync() returns true', () => {
+        expect(init(name, content).fs.existsSync(name)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(init(name, content).fs.statSync(name).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(init(name, content).fs.statSync(name).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(init(name, content).fs.readFileSync(name)).toBe(content)
+      })
+    })
+  })
+
+  describe('on name that is occupied by a directory: throws an error', () => {
+    function init () {
+      const name = 'abc/def'
+      const content = 'hello world'
+      const fs = create()
+      const fn = () => fs.writeFileSync(name, content)
+      return { name, content, fs, fn }
+    }
+
+    it('matches snapshot', () => {
+      expect(getError(init().fn)).toMatchSnapshot()
+    })
+
+    it('has .errno = ErrorKind.EISDIR', () => {
+      expect(getError(init().fn)).toHaveProperty('errno', ErrorKind.EISDIR)
+    })
+
+    it('has .code = "EISDIR"', () => {
+      expect(getError(init().fn)).toHaveProperty('code', 'EISDIR')
+    })
+
+    it('has .syscall = "open"', () => {
+      expect(getError(init().fn)).toHaveProperty('syscall', 'open')
+    })
+
+    it('has .path', () => {
+      const { name, fn } = init()
+      expect(getError(fn)).toHaveProperty('path', name.split('/'))
+    })
+  })
+
+  describe('on thing that does not exist: throws an error', () => {
+    describe('"thing/that/does/not/exist"', () => {
+      function init () {
+        const name = 'thing/that/does/not/exist'
+        const content = 'hello world'
+        const fs = create()
+        const fn = () => fs.writeFileSync(name, content)
+        return { name, fs, fn }
+      }
+
+      it('matches snapshot', () => {
+        expect(getError(init().fn)).toMatchSnapshot()
+      })
+
+      it('has .errno = ErrorKind.ENOENT', () => {
+        expect(getError(init().fn)).toHaveProperty('errno', ErrorKind.ENOENT)
+      })
+
+      it('has .code = "ENOENT"', () => {
+        expect(getError(init().fn)).toHaveProperty('code', 'ENOENT')
+      })
+
+      it('has .syscall = "open"', () => {
+        expect(getError(init().fn)).toHaveProperty('syscall', 'open')
+      })
+
+      it('has .path', () => {
+        const { name, fn } = init()
+        expect(getError(fn)).toHaveProperty('path', name.split('/'))
+      })
+    })
+  })
+})

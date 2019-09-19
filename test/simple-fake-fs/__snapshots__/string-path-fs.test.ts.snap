@@ -191,3 +191,30 @@ ENOENT {
   "syscall": "stat",
 }
 `;
+
+exports[`writeFileSync on name that is occupied by a directory: throws an error matches snapshot 1`] = `
+EISDIR {
+  "code": "EISDIR",
+  "errno": -21,
+  "path": Array [
+    "abc",
+    "def",
+  ],
+  "syscall": "open",
+}
+`;
+
+exports[`writeFileSync on thing that does not exist: throws an error "thing/that/does/not/exist" matches snapshot 1`] = `
+ENOENT {
+  "code": "ENOENT",
+  "errno": -2,
+  "path": Array [
+    "thing",
+    "that",
+    "does",
+    "not",
+    "exist",
+  ],
+  "syscall": "open",
+}
+`;
