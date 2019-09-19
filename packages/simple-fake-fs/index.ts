@@ -254,18 +254,11 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public writeFileSync (filename: readonly PathElm[], fileContent: FileContent) {
-    const content = this.coreMap.getPath(filename, 'open', ENOTDIR, ENOTDIR)
-    switch (content.kind) {
-      case ContentKind.File:
-      case ContentKind.None:
-        const error = this.coreMap.setPath(filename, new FakeFileContent(fileContent), 'open', ENOENT, ENOTDIR)
-        if (error) throw error
-        break
-      case ContentKind.Directory:
-        throw new EISDIR('open', filename)
-      case ContentKind.Error:
-        throw content.value
+    if (this.coreMap.getPath(filename, 'open', EMPTY_CLASS, EMPTY_CLASS).kind === ContentKind.Directory) {
+      throw new EISDIR('open', filename)
     }
+    const error = this.coreMap.setPath(filename, new FakeFileContent(fileContent), 'open', ENOENT, ENOTDIR)
+    if (error) throw error
   }
 
   public ensureDirSync (dirname: readonly PathElm[]) {
