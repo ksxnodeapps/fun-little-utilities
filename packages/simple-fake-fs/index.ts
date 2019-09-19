@@ -79,40 +79,59 @@ export class FakeFileContent<Content> {
   constructor (public readonly content: Content) {}
 }
 
+interface FileSystemEntry<PathElm, FileContent> extends ReadonlyArray<any> {
+  readonly 0: PathElm
+  readonly 1: Content<PathElm, FileContent> | readonly FileSystemEntry<PathElm, FileContent>[]
+}
+
 export class FakeDirectoryContent<PathElm, FileContent> extends Map<
   PathElm,
   Content<PathElm, FileContent>
 > {
   public readonly kind = ContentKind.Directory
 
-  public hasPath (path: Iterable<PathElm>) {
+  constructor (entries: readonly FileSystemEntry<PathElm, FileContent>[] = []) {
+    super(entries.map(([key, value]) => {
+      if (value instanceof FakeFileContent || value instanceof FakeDirectoryContent) {
+        return [key, value]
+      }
+
+      const newValue = new FakeDirectoryContent(value)
+      return [key, newValue] as const
+    }))
+  }
+
+  public hasPath (path: readonly PathElm[]) {
     const { kind } = this.getPath(path)
     return kind === ContentKind.File || kind === ContentKind.Directory
   }
 
   public getPath (
-    path: Iterable<PathElm>,
+    path: readonly PathElm[],
     original = () => Array.from(path)
   ): MaybeContent<
     PathElm,
     FileContent,
     ENOTDIR<PathElm[]>
   > {
+    if (!path.length) return this
     const [first, ...rest] = path
-    const content = this.get(first)
-    if (!content) return NONE
-    if (content.kind === ContentKind.File) {
-      if (rest.length) return new ErrorCarrier(new ENOTDIR('scandir', original()))
-      return content
+    const next = this.get(first)
+    if (!next) {
+      return rest.length
+        ? new ErrorCarrier(new ENOTDIR('scandir', original()))
+        : NONE
     }
-    if (rest.length) {
-      return this.getPath(rest, original)
+    if (next.kind !== ContentKind.Directory) {
+      return rest.length
+        ? new ErrorCarrier(new ENOTDIR('scandir', original()))
+        : next
     }
-    return this
+    return next.getPath(rest, original)
   }
 
   public setPath (
-    path: Iterable<PathElm>,
+    path: readonly PathElm[],
     value: Content<PathElm, FileContent>,
     original = () => Array.from(path)
   ): ENOENT<PathElm[]> | ENOTDIR<PathElm[]> | null {
@@ -128,7 +147,7 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
   }
 
   public ensurePath (
-    path: Iterable<PathElm>,
+    path: readonly PathElm[],
     value: Content<PathElm, FileContent>,
     original = () => Array.from(path)
   ): ENOTDIR<PathElm[]> | null {
@@ -162,13 +181,17 @@ type MaybeContent<PathElm, FileContent, ErrorValue> =
   Content<PathElm, FileContent>
 
 export class ArrayPathFileSystem<PathElm, FileContent> {
-  private coreMap = new FakeDirectoryContent<PathElm, FileContent>()
+  private coreMap: FakeDirectoryContent<PathElm, FileContent>
 
-  public existsSync (path: Iterable<PathElm>) {
+  constructor (entries?: readonly FileSystemEntry<PathElm, FileContent>[]) {
+    this.coreMap = new FakeDirectoryContent(entries)
+  }
+
+  public existsSync (path: readonly PathElm[]) {
     return this.coreMap.hasPath(path)
   }
 
-  public statSync (path: Iterable<PathElm>) {
+  public statSync (path: readonly PathElm[]) {
     const content = this.coreMap.getPath(path)
     switch (content.kind) {
       case ContentKind.None:
@@ -179,7 +202,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     return new FakeStats(content)
   }
 
-  public readdirSync (dirname: Iterable<PathElm>) {
+  public readdirSync (dirname: readonly PathElm[]) {
     const content = this.coreMap.getPath(dirname)
     switch (content.kind) {
       case ContentKind.Directory:
@@ -193,7 +216,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     }
   }
 
-  public readFileSync (filename: Iterable<PathElm>) {
+  public readFileSync (filename: readonly PathElm[]) {
     const content = this.coreMap.getPath(filename)
     switch (content.kind) {
       case ContentKind.File:
@@ -207,7 +230,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     }
   }
 
-  public mkdirSync (dirname: Iterable<PathElm>) {
+  public mkdirSync (dirname: readonly PathElm[]) {
     if (this.coreMap.getPath(dirname).kind !== ContentKind.None) {
       throw new EEXIST('mkdir', dirname)
     }
@@ -215,7 +238,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     if (error) throw error
   }
 
-  public writeFileSync (filename: Iterable<PathElm>, fileContent: FileContent) {
+  public writeFileSync (filename: readonly PathElm[], fileContent: FileContent) {
     const content = this.coreMap.getPath(filename)
     switch (content.kind) {
       case ContentKind.File:
@@ -229,12 +252,36 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
         throw content.value
     }
   }
+
+  public ensureDirSync (dirname: readonly PathElm[]) {
+    const error = this.coreMap.ensurePath(dirname, new FakeDirectoryContent())
+    if (error) throw error
+  }
+}
+
+type StringPathFileSystemDict = {
+  readonly [_: string]: StringPathFileSystemDict | string
+}
+
+function dict2entries (dict: StringPathFileSystemDict): FileSystemEntry<string, string>[] {
+  return Object.entries(dict).map(([key, value]) => {
+    if (typeof value === 'string') {
+      return [key, new FakeFileContent(value)]
+    }
+
+    return [key, dict2entries(value)]
+  })
 }
 
 export class StringPathFileSystem {
-  private readonly core = new ArrayPathFileSystem<string, string>()
+  private readonly core: ArrayPathFileSystem<string, string>
 
-  constructor (private readonly sep: string) {}
+  constructor (
+    private readonly sep: string,
+    dict: StringPathFileSystemDict = {}
+  ) {
+    this.core = new ArrayPathFileSystem(dict2entries(dict))
+  }
 
   private normalize (item: string) {
     return item === '.' ? '' : item
@@ -269,5 +316,9 @@ export class StringPathFileSystem {
 
   public writeFileSync (path: string, fileContent: string) {
     this.core.writeFileSync(this.split(path), fileContent)
+  }
+
+  public ensureDirSync (path: string) {
+    this.core.ensureDirSync(this.split(path))
   }
 }
