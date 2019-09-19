@@ -12,7 +12,8 @@ export type SysCall =
   'scandir' |
   'open' |
   'read' |
-  'mkdir'
+  'mkdir' |
+  'exists'
 
 interface ErrorConstructor<Return, Path> {
   new (syscall: SysCall, path: Path): Return
@@ -108,12 +109,13 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
   }
 
   public hasPath (path: readonly PathElm[]) {
-    const { kind } = this.getPath(path, EMPTY_CLASS, EMPTY_CLASS)
+    const { kind } = this.getPath(path, 'exists', EMPTY_CLASS, EMPTY_CLASS)
     return kind === ContentKind.File || kind === ContentKind.Directory
   }
 
   public getPath<ERP, EFD> (
     path: readonly PathElm[],
+    syscall: SysCall,
     RedundantPath: ErrorConstructor<ERP, PathElm[]>,
     FileAsDir: ErrorConstructor<EFD, PathElm[]>,
     original = () => Array.from(path)
@@ -127,15 +129,15 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
     const next = this.get(first)
     if (!next) {
       return rest.length
-        ? new ErrorCarrier(new RedundantPath('scandir', original()))
+        ? new ErrorCarrier(new RedundantPath(syscall, original()))
         : NONE
     }
     if (next.kind !== ContentKind.Directory) {
       return rest.length
-        ? new ErrorCarrier(new FileAsDir('scandir', original()))
+        ? new ErrorCarrier(new FileAsDir(syscall, original()))
         : next
     }
-    return next.getPath(rest, RedundantPath, FileAsDir, original)
+    return next.getPath(rest, syscall, RedundantPath, FileAsDir, original)
   }
 
   public setPath (
@@ -200,7 +202,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public statSync (path: readonly PathElm[]) {
-    const content = this.coreMap.getPath(path, ENOENT, ENOTDIR)
+    const content = this.coreMap.getPath(path, 'stat', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.None:
         throw new ENOENT('stat', path)
@@ -211,7 +213,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public readdirSync (dirname: readonly PathElm[]) {
-    const content = this.coreMap.getPath(dirname, ENOENT, ENOTDIR)
+    const content = this.coreMap.getPath(dirname, 'scandir', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.Directory:
         return Array.from(content.keys())
@@ -225,7 +227,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public readFileSync (filename: readonly PathElm[]) {
-    const content = this.coreMap.getPath(filename, ENOENT, ENOTDIR)
+    const content = this.coreMap.getPath(filename, 'read', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.File:
         return content.content
@@ -239,7 +241,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public mkdirSync (dirname: readonly PathElm[]) {
-    if (this.coreMap.getPath(dirname, EMPTY_CLASS, EMPTY_CLASS).kind !== ContentKind.None) {
+    if (this.coreMap.getPath(dirname, 'mkdir', EMPTY_CLASS, EMPTY_CLASS).kind !== ContentKind.None) {
       throw new EEXIST('mkdir', dirname)
     }
     const error = this.coreMap.setPath(dirname, new FakeDirectoryContent())
@@ -247,7 +249,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public writeFileSync (filename: readonly PathElm[], fileContent: FileContent) {
-    const content = this.coreMap.getPath(filename, ENOTDIR, ENOTDIR)
+    const content = this.coreMap.getPath(filename, 'open', ENOTDIR, ENOTDIR)
     switch (content.kind) {
       case ContentKind.File:
       case ContentKind.None:
