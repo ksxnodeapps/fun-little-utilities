@@ -140,17 +140,20 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
     return next.getPath(rest, syscall, RedundantPath, FileAsDir, original)
   }
 
-  public setPath (
+  public setPath<ENE, EFD> (
     path: readonly PathElm[],
     value: Content<PathElm, FileContent>,
+    syscall: SysCall,
+    NotExist: ErrorConstructor<ENE, PathElm[]>,
+    FileAsDir: ErrorConstructor<EFD, PathElm[]>,
     original = () => Array.from(path)
-  ): ENOENT<PathElm[]> | ENOTDIR<PathElm[]> | null {
+  ): ENE | EFD | null {
     const [first, ...rest] = path
     if (rest.length) {
       const child = this.get(first)
-      if (!child) return new ENOENT('open', original())
-      if (child.kind !== ContentKind.Directory) return new ENOTDIR('open', original())
-      return child.setPath(rest, value)
+      if (!child) return new NotExist(syscall, original())
+      if (child.kind !== ContentKind.Directory) return new FileAsDir(syscall, original())
+      return child.setPath(rest, value, syscall, NotExist, FileAsDir, original)
     }
     this.set(first, value)
     return null
@@ -244,7 +247,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     const target = this.coreMap.getPath(dirname, 'mkdir', ENOENT, ENOTDIR)
     switch (target.kind) {
       case ContentKind.None:
-        const error = this.coreMap.setPath(dirname, new FakeDirectoryContent())
+        const error = this.coreMap.setPath(dirname, new FakeDirectoryContent(), 'mkdir', ENOENT, ENOTDIR)
         if (error) throw error
         return
       case ContentKind.File:
@@ -260,7 +263,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     switch (content.kind) {
       case ContentKind.File:
       case ContentKind.None:
-        const error = this.coreMap.setPath(filename, new FakeFileContent(fileContent))
+        const error = this.coreMap.setPath(filename, new FakeFileContent(fileContent), 'open', ENOENT, ENOTDIR)
         if (error) throw error
         break
       case ContentKind.Directory:
