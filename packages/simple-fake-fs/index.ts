@@ -69,7 +69,7 @@ class ErrorCarrier<Value> {
 }
 
 class FakeStats<FS extends Content<any, any>> {
-  constructor (public readonly fs: FS) {}
+  constructor (private readonly fs: FS) {}
   public readonly isFile = () => this.fs.kind === ContentKind.File
   public readonly isDirectory = () => this.fs.kind === ContentKind.Directory
 }
