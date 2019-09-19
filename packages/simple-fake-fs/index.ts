@@ -264,8 +264,11 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public ensureDirSync (dirname: readonly PathElm[]) {
-    if (this.coreMap.getPath(dirname, 'mkdir', ENOENT, ENOTDIR).kind === ContentKind.File) {
-      throw new ENOTDIR('mkdir', dirname)
+    switch (this.coreMap.getPath(dirname, 'mkdir', ENOENT, ENOTDIR).kind) {
+      case ContentKind.File:
+        throw new ENOTDIR('mkdir', dirname)
+      case ContentKind.Directory:
+        return
     }
     const error = this.coreMap.ensurePath(dirname, new FakeDirectoryContent(), 'mkdir', ENOTDIR)
     if (error) throw error
