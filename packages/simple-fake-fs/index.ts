@@ -234,7 +234,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
       case ContentKind.Directory:
         throw new EISDIR('read', filename)
       case ContentKind.None:
-        throw new ENOENT('open', filename)
+        throw new ENOENT('read', filename)
       case ContentKind.Error:
         throw content.value
     }
