@@ -267,6 +267,11 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     const error = this.coreMap.ensurePath(dirname, new FakeDirectoryContent(), 'mkdir', ENOTDIR)
     if (error) throw error
   }
+
+  public ensureFileSync (filename: readonly PathElm[], content: FileContent) {
+    const error = this.coreMap.ensurePath(filename, new FakeFileContent(content), 'open', ENOTDIR)
+    if (error) throw error
+  }
 }
 
 type StringPathFileSystemDict = {
@@ -330,5 +335,9 @@ export class StringPathFileSystem {
 
   public ensureDirSync (path: string) {
     this.core.ensureDirSync(this.split(path))
+  }
+
+  public ensureFileSync (path: string, fileContent: string) {
+    this.core.ensureFileSync(this.split(path), fileContent)
   }
 }
