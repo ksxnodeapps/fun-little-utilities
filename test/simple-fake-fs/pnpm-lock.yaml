@@ -1,0 +1,5 @@
+dependencies:
+  simple-fake-fs: 'link:../../packages/simple-fake-fs'
+lockfileVersion: 5.1
+specifiers:
+  simple-fake-fs: 'file:../../packages/simple-fake-fs'
