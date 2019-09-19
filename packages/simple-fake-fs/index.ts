@@ -264,11 +264,17 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public ensureDirSync (dirname: readonly PathElm[]) {
+    if (this.coreMap.getPath(dirname, 'mkdir', ENOENT, ENOTDIR).kind === ContentKind.File) {
+      throw new ENOTDIR('mkdir', dirname)
+    }
     const error = this.coreMap.ensurePath(dirname, new FakeDirectoryContent(), 'mkdir', ENOTDIR)
     if (error) throw error
   }
 
   public ensureFileSync (filename: readonly PathElm[], content: FileContent) {
+    if (this.coreMap.getPath(filename, 'open', ENOENT, ENOTDIR).kind === ContentKind.Directory) {
+      throw new EISDIR('open', filename)
+    }
     const error = this.coreMap.ensurePath(filename, new FakeFileContent(content), 'open', ENOTDIR)
     if (error) throw error
   }
