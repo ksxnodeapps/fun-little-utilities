@@ -159,25 +159,27 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
     return null
   }
 
-  public ensurePath (
+  public ensurePath<EFD> (
     path: readonly PathElm[],
     value: Content<PathElm, FileContent>,
+    syscall: SysCall,
+    FileAsDir: ErrorConstructor<EFD, PathElm[]>,
     original = () => Array.from(path)
-  ): ENOTDIR<PathElm[]> | null {
+  ): EFD | null {
     const [first, ...rest] = path
     if (rest.length) {
       const child = this.get(first)
       if (!child) {
         const next = new FakeDirectoryContent<PathElm, FileContent>()
-        const error = next.ensurePath(rest, value, original)
+        const error = next.ensurePath(rest, value, syscall, FileAsDir, original)
         if (error) return error
         this.set(first, next)
         return null
       }
       if (child.kind !== ContentKind.Directory) {
-        return new ENOTDIR('open', original())
+        return new FileAsDir(syscall, original())
       }
-      return child.ensurePath(rest, value)
+      return child.ensurePath(rest, value, syscall, FileAsDir, original)
     }
     this.set(first, value)
     return null
@@ -262,7 +264,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public ensureDirSync (dirname: readonly PathElm[]) {
-    const error = this.coreMap.ensurePath(dirname, new FakeDirectoryContent())
+    const error = this.coreMap.ensurePath(dirname, new FakeDirectoryContent(), 'mkdir', ENOTDIR)
     if (error) throw error
   }
 }
