@@ -241,11 +241,18 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
   }
 
   public mkdirSync (dirname: readonly PathElm[]) {
-    if (this.coreMap.getPath(dirname, 'mkdir', EMPTY_CLASS, EMPTY_CLASS).kind !== ContentKind.None) {
-      throw new EEXIST('mkdir', dirname)
+    const target = this.coreMap.getPath(dirname, 'mkdir', ENOENT, ENOTDIR)
+    switch (target.kind) {
+      case ContentKind.None:
+        const error = this.coreMap.setPath(dirname, new FakeDirectoryContent())
+        if (error) throw error
+        return
+      case ContentKind.File:
+      case ContentKind.Directory:
+        throw new EEXIST('mkdir', dirname)
+      case ContentKind.Error:
+        throw target.value
     }
-    const error = this.coreMap.setPath(dirname, new FakeDirectoryContent())
-    if (error) throw error
   }
 
   public writeFileSync (filename: readonly PathElm[], fileContent: FileContent) {
