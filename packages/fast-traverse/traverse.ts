@@ -5,9 +5,8 @@ export const DEFAULT_DEEP = () => true as const
 export async function * traverse<
   DirectoryList extends Iterable<BaseName>,
   Path = string,
-  DirName = Path,
   BaseName = Path
-> (options: Options<DirectoryList, Path, DirName, BaseName>): AsyncGenerator<DirectoryList> {
+> (options: Options<DirectoryList, Path, BaseName>): AsyncGenerator<DirectoryList> {
   const {
     dirname,
     readdir,
@@ -34,11 +33,11 @@ export async function * traverse<
     if (!deepReturn) continue
 
     yield * traverse({
-      dirname,
       readdir,
       stat,
       join,
       deep,
+      dirname: path,
       level: level + 1
     })
   }

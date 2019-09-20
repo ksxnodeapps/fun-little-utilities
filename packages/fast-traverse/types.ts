@@ -14,13 +14,12 @@ export interface DeepParam<Path, DirName, BaseName> {
 export interface Options<
   DirectoryList extends Iterable<BaseName>,
   Path = string,
-  DirName = Path,
   BaseName = Path
 > {
-  readonly dirname: DirName
-  readonly readdir: (dirname: DirName) => MaybePromise<DirectoryList>
+  readonly dirname: Path
+  readonly readdir: (dirname: Path) => MaybePromise<DirectoryList>
   readonly stat: (path: Path) => MaybePromise<StatReturn>
-  readonly join: (container: DirName, basename: BaseName) => Path
-  readonly deep?: (param: DeepParam<Path, DirName, BaseName>) => MaybePromise<boolean>
+  readonly join: (container: Path, basename: BaseName) => Path
+  readonly deep?: (param: DeepParam<Path, Path, BaseName>) => MaybePromise<boolean>
   readonly level?: number
 }
