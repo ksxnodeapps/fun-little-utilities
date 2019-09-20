@@ -219,7 +219,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     const content = this.coreMap.getPath(dirname, 'scandir', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.Directory:
-        return Array.from(content.keys()).map(path => [path] as const)
+        return Array.from(content.keys())
       case ContentKind.File:
         throw new ENOTDIR('scandir', dirname)
       case ContentKind.None:
@@ -307,11 +307,6 @@ export class StringPathFileSystem {
 
   private normalize = (item: string) => item === '.' ? '' : item
 
-  private join = (path: readonly string[]) => path
-    .map(this.normalize)
-    .filter(Boolean)
-    .join(this.sep)
-
   private split = (path: string) => path
     .split(this.sep)
     .map(this.normalize)
@@ -323,9 +318,7 @@ export class StringPathFileSystem {
   public statSync = (path: string) =>
     this.core.statSync(this.split(path))
 
-  public readdirSync = (path: string) => this.core
-    .readdirSync(this.split(path))
-    .map(this.join)
+  public readdirSync = (path: string) => this.core.readdirSync(this.split(path))
 
   public mkdirSync = (path: string) =>
     this.core.mkdirSync(this.split(path))
