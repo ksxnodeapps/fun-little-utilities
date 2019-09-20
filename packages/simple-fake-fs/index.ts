@@ -202,11 +202,9 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     this.coreMap = new FakeDirectoryContent(entries)
   }
 
-  public existsSync (path: readonly PathElm[]) {
-    return this.coreMap.hasPath(path)
-  }
+  public existsSync = (path: readonly PathElm[]) => this.coreMap.hasPath(path)
 
-  public statSync (path: readonly PathElm[]) {
+  public statSync = (path: readonly PathElm[]) => {
     const content = this.coreMap.getPath(path, 'stat', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.None:
@@ -217,7 +215,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     return new FakeStats(content)
   }
 
-  public readdirSync (dirname: readonly PathElm[]) {
+  public readdirSync = (dirname: readonly PathElm[]) => {
     const content = this.coreMap.getPath(dirname, 'scandir', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.Directory:
@@ -231,7 +229,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     }
   }
 
-  public readFileSync (filename: readonly PathElm[]) {
+  public readFileSync = (filename: readonly PathElm[]) => {
     const content = this.coreMap.getPath(filename, 'read', ENOENT, ENOTDIR)
     switch (content.kind) {
       case ContentKind.File:
@@ -245,7 +243,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     }
   }
 
-  public mkdirSync (dirname: readonly PathElm[]) {
+  public mkdirSync = (dirname: readonly PathElm[]) => {
     switch (this.coreMap.getPath(dirname, 'mkdir', EMPTY_CLASS, EMPTY_CLASS).kind) {
       case ContentKind.File:
       case ContentKind.Directory:
@@ -255,7 +253,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     if (error) throw error
   }
 
-  public writeFileSync (filename: readonly PathElm[], fileContent: FileContent) {
+  public writeFileSync = (filename: readonly PathElm[], fileContent: FileContent) => {
     if (this.coreMap.getPath(filename, 'open', EMPTY_CLASS, EMPTY_CLASS).kind === ContentKind.Directory) {
       throw new EISDIR('open', filename)
     }
@@ -263,7 +261,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     if (error) throw error
   }
 
-  public ensureDirSync (dirname: readonly PathElm[]) {
+  public ensureDirSync = (dirname: readonly PathElm[]) => {
     switch (this.coreMap.getPath(dirname, 'mkdir', ENOENT, ENOTDIR).kind) {
       case ContentKind.File:
         throw new ENOTDIR('mkdir', dirname)
@@ -274,7 +272,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     if (error) throw error
   }
 
-  public ensureFileSync (filename: readonly PathElm[], content: FileContent) {
+  public ensureFileSync = (filename: readonly PathElm[], content: FileContent) => {
     if (this.coreMap.getPath(filename, 'open', ENOENT, ENOTDIR).kind === ContentKind.Directory) {
       throw new EISDIR('open', filename)
     }
@@ -307,55 +305,40 @@ export class StringPathFileSystem {
     this.core = new ArrayPathFileSystem(dict2entries(dict))
   }
 
-  private normalize (item: string) {
-    return item === '.' ? '' : item
-  }
+  private normalize = (item: string) => item === '.' ? '' : item
 
-  private join (path: readonly string[]) {
-    return path
-      .map(this.normalize)
-      .filter(Boolean)
-      .join(this.sep)
-  }
+  private join = (path: readonly string[]) => path
+    .map(this.normalize)
+    .filter(Boolean)
+    .join(this.sep)
 
-  private split (path: string) {
-    return path
-      .split(this.sep)
-      .map(this.normalize)
-      .filter(Boolean)
-  }
+  private split = (path: string) => path
+    .split(this.sep)
+    .map(this.normalize)
+    .filter(Boolean)
 
-  public existsSync (path: string) {
-    return this.core.existsSync(this.split(path))
-  }
+  public existsSync = (path: string) =>
+    this.core.existsSync(this.split(path))
 
-  public statSync (path: string) {
-    return this.core.statSync(this.split(path))
-  }
+  public statSync = (path: string) =>
+    this.core.statSync(this.split(path))
 
-  public readdirSync (path: string) {
-    return this.core
-      .readdirSync(this.split(path))
-      .map(this.join.bind(this))
-  }
+  public readdirSync = (path: string) => this.core
+    .readdirSync(this.split(path))
+    .map(this.join)
 
-  public mkdirSync (path: string) {
+  public mkdirSync = (path: string) =>
     this.core.mkdirSync(this.split(path))
-  }
 
-  public readFileSync (path: string) {
-    return this.core.readFileSync(this.split(path))
-  }
+  public readFileSync = (path: string) =>
+    this.core.readFileSync(this.split(path))
 
-  public writeFileSync (path: string, fileContent: string) {
+  public writeFileSync = (path: string, fileContent: string) =>
     this.core.writeFileSync(this.split(path), fileContent)
-  }
 
-  public ensureDirSync (path: string) {
+  public ensureDirSync = (path: string) =>
     this.core.ensureDirSync(this.split(path))
-  }
 
-  public ensureFileSync (path: string, fileContent: string) {
+  public ensureFileSync = (path: string, fileContent: string) =>
     this.core.ensureFileSync(this.split(path), fileContent)
-  }
 }
