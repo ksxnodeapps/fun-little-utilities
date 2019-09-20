@@ -305,12 +305,16 @@ export class StringPathFileSystem {
     this.core = new ArrayPathFileSystem(dict2entries(dict))
   }
 
-  private normalize = (item: string) => item === '.' ? '' : item
+  private normalize (item: string) {
+    return item === '.' ? '' : item
+  }
 
-  private split = (path: string) => path
-    .split(this.sep)
-    .map(this.normalize)
-    .filter(Boolean)
+  private split (path: string) {
+    return path
+      .split(this.sep)
+      .map(this.normalize)
+      .filter(Boolean)
+  }
 
   public existsSync = (path: string) =>
     this.core.existsSync(this.split(path))
