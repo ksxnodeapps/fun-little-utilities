@@ -22,4 +22,5 @@ export interface Options<
   readonly join: (container: Path, basename: BaseName) => Path
   readonly deep?: (param: DeepParam<Path, Path, BaseName>) => MaybePromise<boolean>
   readonly level?: number
+  readonly basename?: BaseName
 }
