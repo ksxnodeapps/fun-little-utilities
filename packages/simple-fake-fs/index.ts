@@ -334,7 +334,9 @@ export class StringPathFileSystem {
   }
 
   public readdirSync (path: string) {
-    return this.core.readdirSync(this.split(path)).map(this.join.bind(this))
+    return this.core
+      .readdirSync(this.split(path))
+      .map(this.join.bind(this))
   }
 
   public mkdirSync (path: string) {
