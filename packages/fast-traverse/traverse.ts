@@ -1,19 +1,6 @@
-import { Options } from './types'
+import { Options, Item } from './types'
 
 export const DEFAULT_DEEP = () => true as const
-
-export class Item<
-  BaseName,
-  DirName,
-  DirectoryList
-> {
-  constructor (
-    public readonly basename: BaseName,
-    public readonly dirname: DirName,
-    public readonly list: DirectoryList,
-    public readonly level: number
-   ) {}
-}
 
 type Return<BaseName, DirName, DirectoryList> = AsyncGenerator<Item<BaseName, DirName, DirectoryList>>
 
@@ -32,10 +19,10 @@ export async function * traverse<
     level = 0
   } = options
 
-  const dirs = await readdir(dirname)
-  yield new Item(basename, dirname, dirs, level)
+  const list = await readdir(dirname)
+  yield { basename, dirname, list, level }
 
-  for (const basename of dirs) {
+  for (const basename of list) {
     const path = join(dirname, basename)
     const statReturn = await stat(path)
     if (!statReturn.isDirectory()) continue

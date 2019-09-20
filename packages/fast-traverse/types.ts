@@ -24,3 +24,10 @@ export interface Options<
   readonly level?: number
   readonly basename?: BaseName
 }
+
+export interface Item<BaseName, DirName, DirectoryList> {
+  readonly basename: BaseName
+  readonly dirname: DirName
+  readonly list: DirectoryList
+  readonly level: number
+}
