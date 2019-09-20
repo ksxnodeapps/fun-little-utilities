@@ -1,0 +1,673 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deep that always return true calls deep multiple times 1`] = `
+Array [
+  Array [
+    Object {
+      "basename": "a",
+      "container": Array [],
+      "level": 0,
+      "path": Array [
+        "a",
+      ],
+    },
+  ],
+  Array [
+    Object {
+      "basename": "c",
+      "container": Array [],
+      "level": 0,
+      "path": Array [
+        "c",
+      ],
+    },
+  ],
+  Array [
+    Object {
+      "basename": "e",
+      "container": Array [
+        "c",
+      ],
+      "level": 1,
+      "path": Array [
+        "c",
+        "e",
+      ],
+    },
+  ],
+  Array [
+    Object {
+      "basename": "g",
+      "container": Array [
+        "c",
+      ],
+      "level": 1,
+      "path": Array [
+        "c",
+        "g",
+      ],
+    },
+  ],
+  Array [
+    Object {
+      "basename": "h",
+      "container": Array [],
+      "level": 0,
+      "path": Array [
+        "h",
+      ],
+    },
+  ],
+  Array [
+    Object {
+      "basename": "j",
+      "container": Array [
+        "h",
+      ],
+      "level": 1,
+      "path": Array [
+        "h",
+        "j",
+      ],
+    },
+  ],
+]
+`;
+
+exports[`deep that always return true calls readdir multiple times 1`] = `
+Array [
+  Array [
+    Array [],
+  ],
+  Array [
+    Array [
+      "a",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "j",
+    ],
+  ],
+]
+`;
+
+exports[`deep that always return true calls stat multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "a",
+    ],
+  ],
+  Array [
+    Array [
+      "b",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "d",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+      "f",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "i",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "j",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "j",
+      "k",
+    ],
+  ],
+]
+`;
+
+exports[`deep that always return true yields results matching snapshot 1`] = `
+Array [
+  Object {
+    "basename": undefined,
+    "dirname": Array [],
+    "level": 0,
+    "list": Array [
+      "a",
+      "b",
+      "c",
+      "h",
+    ],
+  },
+  Object {
+    "basename": "a",
+    "dirname": Array [
+      "a",
+    ],
+    "level": 1,
+    "list": Array [],
+  },
+  Object {
+    "basename": "c",
+    "dirname": Array [
+      "c",
+    ],
+    "level": 1,
+    "list": Array [
+      "d",
+      "e",
+      "g",
+    ],
+  },
+  Object {
+    "basename": "e",
+    "dirname": Array [
+      "c",
+      "e",
+    ],
+    "level": 2,
+    "list": Array [
+      "f",
+    ],
+  },
+  Object {
+    "basename": "g",
+    "dirname": Array [
+      "c",
+      "g",
+    ],
+    "level": 2,
+    "list": Array [],
+  },
+  Object {
+    "basename": "h",
+    "dirname": Array [
+      "h",
+    ],
+    "level": 1,
+    "list": Array [
+      "i",
+      "j",
+    ],
+  },
+  Object {
+    "basename": "j",
+    "dirname": Array [
+      "h",
+      "j",
+    ],
+    "level": 2,
+    "list": Array [
+      "k",
+    ],
+  },
+]
+`;
+
+exports[`deep that returns false when path = ["c", "e"] yields results matching snapshot 1`] = `
+Array [
+  Object {
+    "basename": undefined,
+    "dirname": Array [],
+    "level": 0,
+    "list": Array [
+      "a",
+      "b",
+      "c",
+      "h",
+    ],
+  },
+  Object {
+    "basename": "a",
+    "dirname": Array [
+      "a",
+    ],
+    "level": 1,
+    "list": Array [],
+  },
+  Object {
+    "basename": "c",
+    "dirname": Array [
+      "c",
+    ],
+    "level": 1,
+    "list": Array [
+      "d",
+      "e",
+      "g",
+    ],
+  },
+  Object {
+    "basename": "g",
+    "dirname": Array [
+      "c",
+      "g",
+    ],
+    "level": 2,
+    "list": Array [],
+  },
+  Object {
+    "basename": "h",
+    "dirname": Array [
+      "h",
+    ],
+    "level": 1,
+    "list": Array [
+      "i",
+      "j",
+    ],
+  },
+  Object {
+    "basename": "j",
+    "dirname": Array [
+      "h",
+      "j",
+    ],
+    "level": 2,
+    "list": Array [
+      "k",
+    ],
+  },
+]
+`;
+
+exports[`default deep ["c", "e"] calls readdir multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+]
+`;
+
+exports[`default deep ["c", "e"] calls stat multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "c",
+      "e",
+      "f",
+    ],
+  ],
+]
+`;
+
+exports[`default deep ["c", "e"] yields results matching snapshot 1`] = `
+Array [
+  Object {
+    "basename": undefined,
+    "dirname": Array [
+      "c",
+      "e",
+    ],
+    "level": 0,
+    "list": Array [
+      "f",
+    ],
+  },
+]
+`;
+
+exports[`default deep ["c", "g"] calls readdir multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+]
+`;
+
+exports[`default deep ["c", "g"] calls stat multiple times 1`] = `Array []`;
+
+exports[`default deep ["c", "g"] yields results matching snapshot 1`] = `
+Array [
+  Object {
+    "basename": undefined,
+    "dirname": Array [
+      "c",
+      "g",
+    ],
+    "level": 0,
+    "list": Array [],
+  },
+]
+`;
+
+exports[`default deep ["c"] calls readdir multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "c",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+]
+`;
+
+exports[`default deep ["c"] calls stat multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "c",
+      "d",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+      "f",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+]
+`;
+
+exports[`default deep ["c"] yields results matching snapshot 1`] = `
+Array [
+  Object {
+    "basename": undefined,
+    "dirname": Array [
+      "c",
+    ],
+    "level": 0,
+    "list": Array [
+      "d",
+      "e",
+      "g",
+    ],
+  },
+  Object {
+    "basename": "e",
+    "dirname": Array [
+      "c",
+      "e",
+    ],
+    "level": 1,
+    "list": Array [
+      "f",
+    ],
+  },
+  Object {
+    "basename": "g",
+    "dirname": Array [
+      "c",
+      "g",
+    ],
+    "level": 1,
+    "list": Array [],
+  },
+]
+`;
+
+exports[`default deep [] calls readdir multiple times 1`] = `
+Array [
+  Array [
+    Array [],
+  ],
+  Array [
+    Array [
+      "a",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "j",
+    ],
+  ],
+]
+`;
+
+exports[`default deep [] calls stat multiple times 1`] = `
+Array [
+  Array [
+    Array [
+      "a",
+    ],
+  ],
+  Array [
+    Array [
+      "b",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "d",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "e",
+      "f",
+    ],
+  ],
+  Array [
+    Array [
+      "c",
+      "g",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "i",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "j",
+    ],
+  ],
+  Array [
+    Array [
+      "h",
+      "j",
+      "k",
+    ],
+  ],
+]
+`;
+
+exports[`default deep [] yields results matching snapshot 1`] = `
+Array [
+  Object {
+    "basename": undefined,
+    "dirname": Array [],
+    "level": 0,
+    "list": Array [
+      "a",
+      "b",
+      "c",
+      "h",
+    ],
+  },
+  Object {
+    "basename": "a",
+    "dirname": Array [
+      "a",
+    ],
+    "level": 1,
+    "list": Array [],
+  },
+  Object {
+    "basename": "c",
+    "dirname": Array [
+      "c",
+    ],
+    "level": 1,
+    "list": Array [
+      "d",
+      "e",
+      "g",
+    ],
+  },
+  Object {
+    "basename": "e",
+    "dirname": Array [
+      "c",
+      "e",
+    ],
+    "level": 2,
+    "list": Array [
+      "f",
+    ],
+  },
+  Object {
+    "basename": "g",
+    "dirname": Array [
+      "c",
+      "g",
+    ],
+    "level": 2,
+    "list": Array [],
+  },
+  Object {
+    "basename": "h",
+    "dirname": Array [
+      "h",
+    ],
+    "level": 1,
+    "list": Array [
+      "i",
+      "j",
+    ],
+  },
+  Object {
+    "basename": "j",
+    "dirname": Array [
+      "h",
+      "j",
+    ],
+    "level": 2,
+    "list": Array [
+      "k",
+    ],
+  },
+]
+`;

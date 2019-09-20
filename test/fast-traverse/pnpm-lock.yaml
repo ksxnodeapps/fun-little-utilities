@@ -1,0 +1,32 @@
+dependencies:
+  '@tsfun/object': 0.0.3
+  fast-traverse: 'link:../../packages/fast-traverse'
+  simple-fake-fs: 'link:../../packages/simple-fake-fs'
+lockfileVersion: 5.1
+packages:
+  /@tsfun/object/0.0.3:
+    dependencies:
+      '@types/node': 12.7.5
+      tslib: 1.10.0
+      utility-types: 3.7.0
+    dev: false
+    resolution:
+      integrity: sha512-QXEDhRljQZirwrN4VXPfWSIp3O5bEFQH8DzuYJTbyVZI0Dy87BMbNOzYYfa9S+abUO/NbJ1f9PjlOR3TDNPzKQ==
+  /@types/node/12.7.5:
+    dev: false
+    resolution:
+      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /utility-types/3.7.0:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
+specifiers:
+  '@tsfun/object': ^0.0.3
+  fast-traverse: 'file:../../packages/fast-traverse'
+  simple-fake-fs: 'file:../../packages/simple-fake-fs'

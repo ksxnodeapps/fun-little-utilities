@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "@tsfun/object": "^0.0.3",
+    "simple-fake-fs": "file:../../packages/simple-fake-fs",
+    "fast-traverse": "file:../../packages/fast-traverse"
+  }
+}
