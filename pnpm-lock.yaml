@@ -2,7 +2,7 @@ devDependencies:
   '@tools/scripts': 'link:tools/scripts'
   '@types/jest': 24.0.18
   '@types/node': 12.7.5
-  standard: 14.1.0
+  standard: 14.3.1
   toolcheck: 0.0.5
   tslib: 1.10.0
   tslint: 5.20.0_typescript@3.6.3
@@ -346,8 +346,8 @@ packages:
       is-regex: 1.0.4
       object-inspect: 1.6.0
       object-keys: 1.1.1
-      string.prototype.trimleft: 2.0.0
-      string.prototype.trimright: 2.0.0
+      string.prototype.trimleft: 2.1.0
+      string.prototype.trimright: 2.1.0
     dev: true
     engines:
       node: '>= 0.4'
@@ -369,23 +369,23 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-  /eslint-config-standard-jsx/8.1.0_853955c036dedd60914f6eae419a9a6d:
+  /eslint-config-standard-jsx/8.1.0_371e973016ac5651cadaf199af419474:
     dependencies:
-      eslint: 6.2.2
-      eslint-plugin-react: 7.14.3_eslint@6.2.2
+      eslint: 6.4.0
+      eslint-plugin-react: 7.14.3_eslint@6.4.0
     dev: true
     peerDependencies:
       eslint: '>=6.2.2'
       eslint-plugin-react: '>=7.14.2'
     resolution:
       integrity: sha512-ULVC8qH8qCqbU792ZOO6DaiaZyHNS/5CZt3hKqHkEhVlhPEPN3nfBqqxJCyp59XrjIBZPu1chMYe9T2DXZ7TMw==
-  /eslint-config-standard/14.1.0_92bf55ab6f24e8d45fbc564aee74288f:
+  /eslint-config-standard/14.1.0_908888e278e6cf5ed19a4a7e77831e63:
     dependencies:
-      eslint: 6.2.2
-      eslint-plugin-import: 2.18.2_eslint@6.2.2
-      eslint-plugin-node: 9.1.0_eslint@6.2.2
+      eslint: 6.4.0
+      eslint-plugin-import: 2.18.2_eslint@6.4.0
+      eslint-plugin-node: 10.0.0_eslint@6.4.0
       eslint-plugin-promise: 4.2.1
-      eslint-plugin-standard: 4.0.1_eslint@6.2.2
+      eslint-plugin-standard: 4.0.1_eslint@6.4.0
     dev: true
     peerDependencies:
       eslint: '>=6.2.2'
@@ -411,25 +411,25 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-H6DOj+ejw7Tesdgbfs4jeS4YMFrT8uI8xwd1gtQqXssaR0EQ26L+2O/w6wkYFy2MymON0fTwHmXBvvfLNZVZEw==
-  /eslint-plugin-es/1.4.1_eslint@6.2.2:
+  /eslint-plugin-es/2.0.0_eslint@6.4.0:
     dependencies:
-      eslint: 6.2.2
+      eslint: 6.4.0
       eslint-utils: 1.4.2
-      regexpp: 2.0.1
+      regexpp: 3.0.0
     dev: true
     engines:
-      node: '>=6.5.0'
+      node: '>=8.10.0'
     peerDependencies:
       eslint: '>=4.19.1'
     resolution:
-      integrity: sha512-5fa/gR2yR3NxQf+UXkeLeP8FBBl6tSgdrAz1+cF84v1FMM4twGwQoqTnn+QxFLcPOrF4pdKEJKDB/q9GoyJrCA==
-  /eslint-plugin-import/2.18.2_eslint@6.2.2:
+      integrity: sha512-f6fceVtg27BR02EYnBhgWLFQfK6bN4Ll0nQFrBHOlCsAyxeZkn0NHns5O0YZOPrV1B3ramd6cgFwaoFLcSkwEQ==
+  /eslint-plugin-import/2.18.2_eslint@6.4.0:
     dependencies:
       array-includes: 3.0.3
       contains-path: 0.1.0
       debug: 2.6.9
       doctrine: 1.5.0
-      eslint: 6.2.2
+      eslint: 6.4.0
       eslint-import-resolver-node: 0.3.2
       eslint-module-utils: 2.4.1
       has: 1.0.3
@@ -444,10 +444,10 @@ packages:
       eslint: 2.x - 6.x
     resolution:
       integrity: sha512-5ohpsHAiUBRNaBWAF08izwUGlbrJoJJ+W9/TBwsGoR1MnlgfwMIKrFeSjWbt6moabiXW9xNvtFz+97KHRfI4HQ==
-  /eslint-plugin-node/9.1.0_eslint@6.2.2:
+  /eslint-plugin-node/10.0.0_eslint@6.4.0:
     dependencies:
-      eslint: 6.2.2
-      eslint-plugin-es: 1.4.1_eslint@6.2.2
+      eslint: 6.4.0
+      eslint-plugin-es: 2.0.0_eslint@6.4.0
       eslint-utils: 1.4.2
       ignore: 5.1.4
       minimatch: 3.0.4
@@ -459,18 +459,18 @@ packages:
     peerDependencies:
       eslint: '>=5.16.0'
     resolution:
-      integrity: sha512-ZwQYGm6EoV2cfLpE1wxJWsfnKUIXfM/KM09/TlorkukgCAwmkgajEJnPCmyzoFPQQkmvo5DrW/nyKutNIw36Mw==
+      integrity: sha512-1CSyM/QCjs6PXaT18+zuAXsjXGIGo5Rw630rSKwokSs2jrYURQc4R5JZpoanNCqwNmepg+0eZ9L7YiRUJb8jiQ==
   /eslint-plugin-promise/4.2.1:
     dev: true
     engines:
       node: '>=6'
     resolution:
       integrity: sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
-  /eslint-plugin-react/7.14.3_eslint@6.2.2:
+  /eslint-plugin-react/7.14.3_eslint@6.4.0:
     dependencies:
       array-includes: 3.0.3
       doctrine: 2.1.0
-      eslint: 6.2.2
+      eslint: 6.4.0
       has: 1.0.3
       jsx-ast-utils: 2.2.1
       object.entries: 1.1.0
@@ -485,9 +485,9 @@ packages:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
     resolution:
       integrity: sha512-EzdyyBWC4Uz2hPYBiEJrKCUi2Fn+BJ9B/pJQcjw5X+x/H2Nm59S4MJIvL4O5NEE0+WbnQwEBxWY03oUk+Bc3FA==
-  /eslint-plugin-standard/4.0.1_eslint@6.2.2:
+  /eslint-plugin-standard/4.0.1_eslint@6.4.0:
     dependencies:
-      eslint: 6.2.2
+      eslint: 6.4.0
     dev: true
     peerDependencies:
       eslint: '>=5.0.0'
@@ -516,7 +516,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
-  /eslint/6.2.2:
+  /eslint/6.4.0:
     dependencies:
       '@babel/code-frame': 7.5.5
       ajv: 6.10.2
@@ -560,7 +560,7 @@ packages:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     hasBin: true
     resolution:
-      integrity: sha512-mf0elOkxHbdyGX1IJEUsNBzCDdyoUgljF3rRlgfyYh0pwGnreLc0jjD6ZuleOibjmnUWZLY2eXwSooeOgGJ2jw==
+      integrity: sha512-WTVEzK3lSFoXUovDHEbkJqCVPEPwbhCq4trDktNI6ygs7aO41d4cDT0JFAT5MivzZeVLWlg7vHL+bgrQv/t3vA==
   /espree/6.1.1:
     dependencies:
       acorn: 7.0.0
@@ -1340,6 +1340,12 @@ packages:
       node: '>=6.5.0'
     resolution:
       integrity: sha512-lv0M6+TkDVniA3aD1Eg0DVpfU/booSu7Eev3TDO/mZKHBfVjgCGTV4t4buppESEYDtkArYFOxTJWv6S5C+iaNw==
+  /regexpp/3.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-Z+hNr7RAVWxznLPuA7DIh8UNX1j9CDrUQxskw9IrBE1Dxue2lyXT+shqEIeLUjrokxIP8CMy1WkjgG3rTsd5/g==
   /resolve-from/3.0.0:
     dev: true
     engines:
@@ -1471,23 +1477,23 @@ packages:
     dev: true
     resolution:
       integrity: sha512-gJIIRb0LpL7AHyGbN9+hJ4UJns37lxmNTnMGRLC8CFrzQ+oB/K60IQjKNgPBCB2VP60Ypm6f8DFXvhVWdBOO+g==
-  /standard/14.1.0:
+  /standard/14.3.1:
     dependencies:
-      eslint: 6.2.2
-      eslint-config-standard: 14.1.0_92bf55ab6f24e8d45fbc564aee74288f
-      eslint-config-standard-jsx: 8.1.0_853955c036dedd60914f6eae419a9a6d
-      eslint-plugin-import: 2.18.2_eslint@6.2.2
-      eslint-plugin-node: 9.1.0_eslint@6.2.2
+      eslint: 6.4.0
+      eslint-config-standard: 14.1.0_908888e278e6cf5ed19a4a7e77831e63
+      eslint-config-standard-jsx: 8.1.0_371e973016ac5651cadaf199af419474
+      eslint-plugin-import: 2.18.2_eslint@6.4.0
+      eslint-plugin-node: 10.0.0_eslint@6.4.0
       eslint-plugin-promise: 4.2.1
-      eslint-plugin-react: 7.14.3_eslint@6.2.2
-      eslint-plugin-standard: 4.0.1_eslint@6.2.2
+      eslint-plugin-react: 7.14.3_eslint@6.4.0
+      eslint-plugin-standard: 4.0.1_eslint@6.4.0
       standard-engine: 12.0.0
     dev: true
     engines:
       node: '>=8'
     hasBin: true
     resolution:
-      integrity: sha512-jeRuTKtBJ9dI1kyYiC1RBbiVzSjGIbswIlO1OQMvnXizO94gEk2Yr80W5e/HmCWWbjzBqJBa+0JGazgL7JN2jQ==
+      integrity: sha512-TUQwU7znlZLfgKH1Zwn/D84FitWZkUTfbxSiz/vFx+4c9GV+clSfG/qLiLZOlcdyzhw3oF5/pZydNjbNDfHPEw==
   /string-width/2.1.1:
     dependencies:
       is-fullwidth-code-point: 2.0.0
@@ -1507,7 +1513,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==
-  /string.prototype.trimleft/2.0.0:
+  /string.prototype.trimleft/2.1.0:
     dependencies:
       define-properties: 1.1.3
       function-bind: 1.1.1
@@ -1515,8 +1521,8 @@ packages:
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-aLaqjhYsaoDnbjqKDC50cYbicf8=
-  /string.prototype.trimright/2.0.0:
+      integrity: sha512-FJ6b7EgdKxxbDxc79cOlok6Afd++TTs5szo+zJTUyow3ycrRfJVE2pq3vcN53XexvKZu/DJMDfeI/qMiZTrjTw==
+  /string.prototype.trimright/2.1.0:
     dependencies:
       define-properties: 1.1.3
       function-bind: 1.1.1
@@ -1524,7 +1530,7 @@ packages:
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha1-q0pW2AKgH75yk+EehPJNyBZGYd0=
+      integrity: sha512-fXZTSV55dNBwv16uw+hh5jkghxSnc5oHq+5K/gXgizHwAvMetdAJlHqqoFC1FSDVPYWLkAKl2cxpUT41sV7nSg==
   /strip-ansi/4.0.0:
     dependencies:
       ansi-regex: 3.0.0
@@ -1749,7 +1755,7 @@ specifiers:
   '@tools/scripts': 'file:./tools/scripts'
   '@types/jest': ^24.0.18
   '@types/node': ^12.7.5
-  standard: ^14.1.0
+  standard: ^14.3.1
   toolcheck: ^0.0.5
   tslib: ^1.10.0
   tslint: ^5.20.0
