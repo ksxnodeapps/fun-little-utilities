@@ -7,18 +7,21 @@ const { ExitStatusCode } = enums
 const { spawnSync } = functions
 const [cmd, ...argv] = process.argv.slice(2)
 
-class Command {
+type MaybePromise<X> = X | Promise<X>
+
+class Command<Return extends MaybePromise<void>> {
   constructor (
     public readonly describe: string,
-    public readonly act: (args: readonly string[]) => void
+    public readonly act: (args: readonly string[]) => Return
   ) {}
 }
 
-type CommandName = Exclude<keyof Dict, 'mkspawn' | 'callCmd'>
+type CommandName = Exclude<keyof Dict, 'mkspawn' | 'callCmd' | 'isCmd'>
 
 abstract class Dict {
   protected abstract mkspawn (script: string, ...args: string[]): () => void
-  protected abstract callCmd (command: CommandName, ...args: string[]): void
+  protected abstract callCmd (command: CommandName, ...args: string[]): MaybePromise<void>
+  protected abstract isCmd (command: string): command is CommandName
 
   public readonly help = new Command(
     'Print usage',
@@ -40,6 +43,29 @@ abstract class Dict {
       }
 
       console.info()
+    }
+  )
+
+  public readonly glob = new Command(
+    'Run command on files that match glob',
+    async ([cmd, ...args]): Promise<void> => {
+      const { default: glob2regex } = await import('glob-to-regexp')
+
+      if (!cmd) {
+        printError('Missing command')
+        return process.exit(ExitStatusCode.InsufficientArguments)
+      }
+
+      if (!this.isCmd(cmd)) {
+        printError(`Unknown Command: ${cmd}`)
+        return process.exit(ExitStatusCode.UnknownCommand)
+      }
+
+      const regexes = args
+        .map(glob => glob2regex(glob, { globstar: true, extended: true }))
+        .map(glob => glob.source)
+
+      this.callCmd(cmd, ...regexes)
     }
   )
 
@@ -213,16 +239,20 @@ function printError (message: string) {
   console.error(chalk.red('[ERROR]'), message, '\n')
 }
 
-function main (cmd?: string, argv: readonly string[] = []) {
+async function main (cmd?: string, argv: readonly string[] = []) {
   class PrvDict extends Dict {
     mkspawn (...args: [string, ...string[]]) {
       // @ts-ignore
       return () => spawnSync('node', ...args, ...argv).exit.onerror()
     }
 
-    callCmd (cmd: CommandName, ...args: string[]) {
+    async callCmd (cmd: CommandName, ...args: string[]) {
       console.info(chalk.italic.underline.dim('@call'), chalk.bold(cmd), ...args)
-      main(cmd, args)
+      await main(cmd, args)
+    }
+
+    isCmd (cmd: string): cmd is CommandName {
+      return Object.keys(this).includes(cmd)
     }
   }
 
@@ -234,8 +264,8 @@ function main (cmd?: string, argv: readonly string[] = []) {
     return process.exit(ExitStatusCode.InsufficientArguments)
   }
 
-  if (cmd in dict) {
-    const command = dict[cmd as keyof PrvDict]
+  if (dict.isCmd(cmd)) {
+    const command = dict[cmd]
     if (command instanceof Command) {
       return command.act(argv)
     }
@@ -245,4 +275,7 @@ function main (cmd?: string, argv: readonly string[] = []) {
   return process.exit(ExitStatusCode.UnknownCommand)
 }
 
-main(cmd, argv)
+void main(cmd, argv).catch(error => {
+  console.error(error)
+  return process.exit(ExitStatusCode.FatalError)
+})
