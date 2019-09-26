@@ -2,20 +2,25 @@ dependencies:
   '@tools/add-dependency': 'link:../add-dependency'
   '@tools/clean-typescript-build': 'link:../clean-typescript-build'
   '@tools/create-new-folder': 'link:../create-new-folder'
+  '@tools/docs': 'link:../docs'
+  '@tools/gh-pages': 'link:../gh-pages'
   '@tools/git-tag-versions': 'link:../git-tag-versions'
   '@tools/ignore-file': 'link:../ignore-file'
   '@tools/jest': 'link:../jest'
   '@tools/make-mjs': 'link:../make-mjs'
   '@tools/places': 'link:../places'
   '@tools/preloaded-node': 'link:../preloaded-node'
+  '@tools/publish-docs': 'link:../publish-docs'
   '@tools/publish-tag-push': 'link:../publish-tag-push'
   '@tools/standardjs': 'link:../standardjs'
   '@tools/tslint': 'link:../tslint'
   '@tools/typescript': 'link:../typescript'
   '@tools/workspace': 'link:../workspace'
+  '@types/fs-extra': 8.0.0
   '@types/glob-to-regexp': 0.4.0
   chalk: 2.4.2
   exec-inline: 0.0.3
+  fs-extra: 8.1.0
   glob-to-regexp: 0.4.1
   number-enum: 3.0.0
 lockfileVersion: 5.1
@@ -33,6 +38,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+  /@types/fs-extra/8.0.0:
+    dependencies:
+      '@types/node': 12.7.7
+    dev: false
+    resolution:
+      integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
   /@types/glob-to-regexp/0.4.0:
     dev: false
     resolution:
@@ -41,6 +52,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
+  /@types/node/12.7.7:
+    dev: false
+    resolution:
+      integrity: sha512-4jUncNe2tj1nmrO/34PsRpZqYVnRV1svbU78cKhuQKkMntKB/AmdLyGgswcZKjFHEHGpiY8pVD8CuVI55nP54w==
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -93,10 +108,24 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-r+QZ65SwH5tD25rUYktVrWMLaaouuGAc9Z0WohbTVW0YQ+F592kuqdb5782hbj92roxMJEDDPNwvqn+bXuGguw==
+  /fs-extra/8.1.0:
+    dependencies:
+      graceful-fs: 4.2.2
+      jsonfile: 4.0.0
+      universalify: 0.1.2
+    dev: false
+    engines:
+      node: '>=6 <7 || >=8'
+    resolution:
+      integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
   /glob-to-regexp/0.4.1:
     dev: false
     resolution:
       integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
+  /graceful-fs/4.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-IItsdsea19BoLC7ELy13q1iJFNmd7ofZH5+X/pJr90/nRoPEX0DJo1dHDbgtYWOhJhcCgMDTOw84RZ72q6lB+Q==
   /has-flag/3.0.0:
     dev: false
     engines:
@@ -115,6 +144,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-63drajuMy4Ehx9EooIqBDjcFGOTY30W7SU7DrplPIa6ZdvQIBcK7QTW5TUrNoJRDEbNJG9yioUAU/Ezhys211w==
+  /jsonfile/4.0.0:
+    dev: false
+    optionalDependencies:
+      graceful-fs: 4.2.2
+    resolution:
+      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /little-ds-toolkit/1.1.1:
     dev: false
     resolution:
@@ -166,6 +201,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-pzfdtUZ8teglF69/dllzgd6yV7ikoszPHVyOkl4WGICRhTJgCTwL3+ZnnF/hvII536VbsNMQfd9GmLBNhtsmgg==
+  /universalify/0.1.2:
+    dev: false
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
   /utility-types/3.7.0:
     dev: false
     engines:
@@ -176,19 +217,24 @@ specifiers:
   '@tools/add-dependency': 'file:../add-dependency'
   '@tools/clean-typescript-build': 'file:../clean-typescript-build'
   '@tools/create-new-folder': 'file:../create-new-folder'
+  '@tools/docs': 'file:../docs'
+  '@tools/gh-pages': 'file:../gh-pages'
   '@tools/git-tag-versions': 'file:../git-tag-versions'
   '@tools/ignore-file': 'file:../ignore-file'
   '@tools/jest': 'file:../jest'
   '@tools/make-mjs': 'file:../make-mjs'
   '@tools/places': 'file:../places'
   '@tools/preloaded-node': 'file:../preloaded-node'
+  '@tools/publish-docs': 'file:../publish-docs'
   '@tools/publish-tag-push': 'file:../publish-tag-push'
   '@tools/standardjs': 'file:../standardjs'
   '@tools/tslint': 'file:../tslint'
   '@tools/typescript': 'file:../typescript'
   '@tools/workspace': 'file:../workspace'
+  '@types/fs-extra': ^8.0.0
   '@types/glob-to-regexp': ^0.4.0
   chalk: ^2.4.2
   exec-inline: ^0.0.3
+  fs-extra: 8.1.0
   glob-to-regexp: 0.4.1
   number-enum: ^3.0.0
