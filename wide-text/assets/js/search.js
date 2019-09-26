@@ -1,3 +1,3 @@
 var typedoc = typedoc || {};
             typedoc.search = typedoc.search || {};
-            typedoc.search.data = {"kinds":{"1":"External module","64":"Function"},"rows":[{"id":0,"kind":1,"name":"\"wide-text/index\"","url":"modules/_wide_text_index_.html","classes":"tsd-kind-external-module"},{"id":1,"kind":64,"name":"createWideText","url":"modules/_wide_text_index_.html#createwidetext","classes":"tsd-kind-function tsd-parent-kind-external-module","parent":"\"wide-text/index\""}]};
+            typedoc.search.data = {"kinds":{"64":"Function"},"rows":[{"id":0,"kind":64,"name":"createWideText","url":"globals.html#createwidetext","classes":"tsd-kind-function"}]};

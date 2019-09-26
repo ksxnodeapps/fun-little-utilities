@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -68,16 +66,101 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>External modules</h3>
+							<h3>Modules</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-external-module"><a href="modules/_action_.html" class="tsd-kind-icon">"action"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_console_.html" class="tsd-kind-icon">"console"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_index_.html" class="tsd-kind-icon">"index"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_string_.html" class="tsd-kind-icon">"string"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_utils_.html" class="tsd-kind-icon">"utils"</a></li>
+								<li class="tsd-kind-module"><a href="modules/action.html" class="tsd-kind-icon">Action</a></li>
+								<li class="tsd-kind-module"><a href="modules/actioninstance.html" class="tsd-kind-icon">Action<wbr>Instance</a></li>
+								<li class="tsd-kind-module"><a href="modules/getstring.html" class="tsd-kind-icon">get<wbr>String</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum"><a href="enums/actiontype.html" class="tsd-kind-icon">Action<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class"><a href="classes/consoleinstance.html" class="tsd-kind-icon">Console<wbr>Instance</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/anyclass.html" class="tsd-kind-icon">Any<wbr>Class</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/console.html" class="tsd-kind-icon">Console</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/consoledatabase.html" class="tsd-kind-icon">Console<wbr>Database</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/fnwithdata.html" class="tsd-kind-icon">Fn<wbr>With<wbr>Data</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/fnwithoutdata.html" class="tsd-kind-icon">Fn<wbr>Without<wbr>Data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="globals.html#actiondata" class="tsd-kind-icon">Action<wbr>Data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#symactions" class="tsd-kind-icon">sym<wbr>Actions</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#symfnwithdata" class="tsd-kind-icon">sym<wbr>FnWith<wbr>Data</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#symfnwithoutdata" class="tsd-kind-icon">sym<wbr>FnWithout<wbr>Data</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="actiondata" class="tsd-anchor"></a>
+					<h3>Action<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">Action<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-console/action.ts#L36">action.ts:36</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Arguments passed to console methods</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="symactions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> sym<wbr>Actions</h3>
+					<div class="tsd-signature tsd-kind-icon">sym<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;symActions&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-console/console.ts#L39">console.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="symfnwithdata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> sym<wbr>FnWith<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">sym<wbr>FnWith<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;symFnWithData&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-console/console.ts#L40">console.ts:40</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="symfnwithoutdata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> sym<wbr>FnWithout<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">sym<wbr>FnWithout<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol(&#x27;symFnWithoutData&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-console/console.ts#L41">console.ts:41</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -87,25 +170,52 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_action_.html">"action"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/action.html">Action</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_console_.html">"console"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/actioninstance.html">Action<wbr>Instance</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_string_.html">"string"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_utils_.html">"utils"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/getstring.html">get<wbr>String</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/actiontype.html" class="tsd-kind-icon">Action<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/consoleinstance.html" class="tsd-kind-icon">Console<wbr>Instance</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/anyclass.html" class="tsd-kind-icon">Any<wbr>Class</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/console.html" class="tsd-kind-icon">Console</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/consoledatabase.html" class="tsd-kind-icon">Console<wbr>Database</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fnwithdata.html" class="tsd-kind-icon">Fn<wbr>With<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fnwithoutdata.html" class="tsd-kind-icon">Fn<wbr>Without<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#actiondata" class="tsd-kind-icon">Action<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#symactions" class="tsd-kind-icon">sym<wbr>Actions</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#symfnwithdata" class="tsd-kind-icon">sym<wbr>FnWith<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#symfnwithoutdata" class="tsd-kind-icon">sym<wbr>FnWithout<wbr>Data</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

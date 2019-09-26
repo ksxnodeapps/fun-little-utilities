@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -68,14 +66,125 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>External modules</h3>
+							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-external-module"><a href="modules/_index_.html" class="tsd-kind-icon">"index"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_traverse_.html" class="tsd-kind-icon">"traverse"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_types_.html" class="tsd-kind-icon">"types"</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/deepparam.html" class="tsd-kind-icon">Deep<wbr>Param</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/item.html" class="tsd-kind-icon">Item</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/options.html" class="tsd-kind-icon">Options</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/statreturn.html" class="tsd-kind-icon">Stat<wbr>Return</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#maybepromise" class="tsd-kind-icon">Maybe<wbr>Promise</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported"><a href="globals.html#return" class="tsd-kind-icon">Return</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#default_deep" class="tsd-kind-icon">DEFAULT_<wbr>DEEP</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#traverse" class="tsd-kind-icon">traverse</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="maybepromise" class="tsd-anchor"></a>
+					<h3>Maybe<wbr>Promise</h3>
+					<div class="tsd-signature tsd-kind-icon">Maybe<wbr>Promise&lt;Value&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Value</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Value</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/fast-traverse/types.ts#L1">types.ts:1</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>Value</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
+					<a name="return" class="tsd-anchor"></a>
+					<h3>Return</h3>
+					<div class="tsd-signature tsd-kind-icon">Return&lt;BaseName, DirName, DirectoryList&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/item.html" class="tsd-signature-type">Item</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BaseName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">DirName</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">DirectoryList</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/fast-traverse/traverse.ts#L5">traverse.ts:5</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>BaseName</h4>
+						</li>
+						<li>
+							<h4>DirName</h4>
+						</li>
+						<li>
+							<h4>DirectoryList</h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="default_deep" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> DEFAULT_<wbr>DEEP</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>DEEP<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">true</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/fast-traverse/traverse.ts#L3">traverse.ts:3</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">true</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="traverse" class="tsd-anchor"></a>
+					<h3>traverse</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">traverse&lt;DirectoryList, Path, BaseName&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="interfaces/options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DirectoryList</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Path</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">BaseName</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#return" class="tsd-signature-type">Return</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BaseName</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Path</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">DirectoryList</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/fast-traverse/traverse.ts#L7">traverse.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>DirectoryList<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BaseName</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+								<li>
+									<h4>Path</h4>
+								</li>
+								<li>
+									<h4>BaseName</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="interfaces/options.html" class="tsd-signature-type">Options</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">DirectoryList</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Path</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">BaseName</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="globals.html#return" class="tsd-signature-type">Return</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">BaseName</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Path</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">DirectoryList</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -85,19 +194,34 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_traverse_.html">"traverse"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_types_.html">"types"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/deepparam.html" class="tsd-kind-icon">Deep<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/item.html" class="tsd-kind-icon">Item</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/options.html" class="tsd-kind-icon">Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/statreturn.html" class="tsd-kind-icon">Stat<wbr>Return</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#maybepromise" class="tsd-kind-icon">Maybe<wbr>Promise</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
+						<a href="globals.html#return" class="tsd-kind-icon">Return</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#default_deep" class="tsd-kind-icon">DEFAULT_<wbr>DEEP</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#traverse" class="tsd-kind-icon">traverse</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -68,18 +66,59 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>External modules</h3>
+							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-external-module"><a href="modules/_combine_evented_stream_index_.html" class="tsd-kind-icon">"combine-<wbr>evented-<wbr>stream/index"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_combine_evented_stream_lib_chunk_carrier_.html" class="tsd-kind-icon">"combine-<wbr>evented-<wbr>stream/lib/chunk-<wbr>carrier"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_combine_evented_stream_lib_error_base_.html" class="tsd-kind-icon">"combine-<wbr>evented-<wbr>stream/lib/error-<wbr>base"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_combine_evented_stream_lib_error_carrier_.html" class="tsd-kind-icon">"combine-<wbr>evented-<wbr>stream/lib/error-<wbr>carrier"</a></li>
-								<li class="tsd-kind-external-module"><a href="modules/_combine_evented_stream_lib_evented_stream_combination_.html" class="tsd-kind-icon">"combine-<wbr>evented-<wbr>stream/lib/evented-<wbr>stream-<wbr>combination"</a></li>
-								<li class="tsd-kind-external-module tsd-is-external"><a href="modules/_event_target_proxy_index_.html" class="tsd-kind-icon">"event-<wbr>target-<wbr>proxy/index"</a></li>
-								<li class="tsd-kind-external-module tsd-is-external"><a href="modules/_evented_stream_types_index_.html" class="tsd-kind-icon">"evented-<wbr>stream-<wbr>types/index"</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/chunkcarrier.html" class="tsd-kind-icon">Chunk<wbr>Carrier</a></li>
+								<li class="tsd-kind-class"><a href="classes/errorbase.html" class="tsd-kind-icon">Error<wbr>Base</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/errorcarrier.html" class="tsd-kind-icon">Error<wbr>Carrier</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/eventedstreamcombination.html" class="tsd-kind-icon">Evented<wbr>Stream<wbr>Combination</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#combineeventedstream" class="tsd-kind-icon">combine<wbr>Evented<wbr>Stream</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="combineeventedstream" class="tsd-anchor"></a>
+					<h3>combine<wbr>Evented<wbr>Stream</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">combine<wbr>Evented<wbr>Stream&lt;Stream, StreamChunk, StreamError&gt;<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Stream</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="classes/eventedstreamcombination.html" class="tsd-signature-type">EventedStreamCombination</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Stream</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">StreamChunk</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">StreamError</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/combine-evented-stream/index.ts#L8">index.ts:8</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Stream<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventedStream</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">StreamChunk</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">StreamError</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+								<li>
+									<h4>StreamChunk</h4>
+								</li>
+								<li>
+									<h4>StreamError</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Stream</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="classes/eventedstreamcombination.html" class="tsd-signature-type">EventedStreamCombination</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Stream</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">StreamChunk</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">StreamError</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -89,37 +128,25 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_combine_evented_stream_index_.html">"combine-<wbr>evented-<wbr>stream/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_combine_evented_stream_lib_chunk_carrier_.html">"combine-<wbr>evented-<wbr>stream/lib/chunk-<wbr>carrier"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_combine_evented_stream_lib_error_base_.html">"combine-<wbr>evented-<wbr>stream/lib/error-<wbr>base"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_combine_evented_stream_lib_error_carrier_.html">"combine-<wbr>evented-<wbr>stream/lib/error-<wbr>carrier"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_combine_evented_stream_lib_evented_stream_combination_.html">"combine-<wbr>evented-<wbr>stream/lib/evented-<wbr>stream-<wbr>combination"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_event_target_proxy_index_.html">"event-<wbr>target-<wbr>proxy/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_evented_stream_types_index_.html">"evented-<wbr>stream-<wbr>types/index"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/chunkcarrier.html" class="tsd-kind-icon">Chunk<wbr>Carrier</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/errorbase.html" class="tsd-kind-icon">Error<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/errorcarrier.html" class="tsd-kind-icon">Error<wbr>Carrier</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/eventedstreamcombination.html" class="tsd-kind-icon">Evented<wbr>Stream<wbr>Combination</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#combineeventedstream" class="tsd-kind-icon">combine<wbr>Evented<wbr>Stream</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
