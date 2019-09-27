@@ -26,7 +26,7 @@
     "monorepo-shared-assets": "^0.0.17",
     "tslib": "^1.10.0",
     "evented-stream-types": "^0.1.0",
-    "@types/ramda": "^0.26.21",
+    "@types/ramda": "^0.26.25",
     "@types/node": "^12.7.8"
   },
   "engines": {

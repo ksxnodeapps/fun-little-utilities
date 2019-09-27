@@ -1,5 +1,5 @@
 dependencies:
-  '@types/ramda': 0.26.21
+  '@types/ramda': 0.26.25
   '@types/shell-quote': 1.6.1
   catls-lib: 'link:../../packages/catls-lib'
   extra-jest: 0.0.25
@@ -42,12 +42,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-lJuMZDXqZ8W2hl0Gz+wEPUhXcf/tZRuaO5vrxFD3Dv2XMqgTZVw+bvfS6iQAsio9XQV+uhkggtT4eLhDmUpI5g==
-  /@types/ramda/0.26.21:
+  /@types/ramda/0.26.25:
     dependencies:
-      ts-toolbelt: 3.8.91
+      ts-toolbelt: 4.5.2
     dev: false
     resolution:
-      integrity: sha512-zMYtIZMceA6BvH+or6LmewLBgojbXg5+FGCwjO8K+Z+d/ZWxILmhhASXkehW0PqJL+V0QbyDeeAHix0dvEKXfQ==
+      integrity: sha512-fx54Gx7Xrw+wMU7sEbUa5tjgL5Ec/vWzhKCqJHR0JVJUqwGzUtIYk8nqwyLbmX11wEx2xVdblYlNL9BzznDhvw==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:
@@ -172,6 +172,10 @@ packages:
       typescript: ^3.5.0
     resolution:
       integrity: sha512-HVY9kFtQCtAfuHPf8XK9BWzwUueGtviZ5i/x6hu9uMIy+PWqlwjD1eqRTBaCewOclR5w07j1bgaT7cWNWrJgZw==
+  /ts-toolbelt/4.5.2:
+    dev: false
+    resolution:
+      integrity: sha512-g7ZDTK17HhZi5qhFvHLaW/ZzaOlEB+O7GnDaW6ftCEaxhbenVEzPfmeGo2YhMgRjhlYO/dtOmUbv0yykQU5YMw==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -199,7 +203,7 @@ packages:
     resolution:
       integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
 specifiers:
-  '@types/ramda': ^0.26.21
+  '@types/ramda': ^0.26.25
   '@types/shell-quote': ^1.6.1
   catls-lib: 'file:../../packages/catls-lib'
   extra-jest: ^0.0.25

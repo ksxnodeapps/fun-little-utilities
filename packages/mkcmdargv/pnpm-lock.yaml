@@ -2,7 +2,7 @@ dependencies:
   '@types/fs-extra': 8.0.0
   '@types/js-yaml': 3.12.1
   '@types/node': 12.7.8
-  '@types/ramda': 0.26.21
+  '@types/ramda': 0.26.25
   fs-extra: 8.1.0
   js-yaml: 3.13.1
   ramda: 0.26.1
@@ -28,12 +28,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
-  /@types/ramda/0.26.21:
+  /@types/ramda/0.26.25:
     dependencies:
-      ts-toolbelt: 3.8.91
+      ts-toolbelt: 4.5.2
     dev: false
     resolution:
-      integrity: sha512-zMYtIZMceA6BvH+or6LmewLBgojbXg5+FGCwjO8K+Z+d/ZWxILmhhASXkehW0PqJL+V0QbyDeeAHix0dvEKXfQ==
+      integrity: sha512-fx54Gx7Xrw+wMU7sEbUa5tjgL5Ec/vWzhKCqJHR0JVJUqwGzUtIYk8nqwyLbmX11wEx2xVdblYlNL9BzznDhvw==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -83,12 +83,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /ts-toolbelt/3.8.91:
+  /ts-toolbelt/4.5.2:
     dev: false
-    peerDependencies:
-      typescript: ^3.5.0
     resolution:
-      integrity: sha512-HVY9kFtQCtAfuHPf8XK9BWzwUueGtviZ5i/x6hu9uMIy+PWqlwjD1eqRTBaCewOclR5w07j1bgaT7cWNWrJgZw==
+      integrity: sha512-g7ZDTK17HhZi5qhFvHLaW/ZzaOlEB+O7GnDaW6ftCEaxhbenVEzPfmeGo2YhMgRjhlYO/dtOmUbv0yykQU5YMw==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -103,7 +101,7 @@ specifiers:
   '@types/fs-extra': ^8.0.0
   '@types/js-yaml': ^3.12.1
   '@types/node': ^12.7.8
-  '@types/ramda': ^0.26.21
+  '@types/ramda': ^0.26.25
   fs-extra: ^8.1.0
   js-yaml: ^3.13.1
   ramda: ^0.26.1
