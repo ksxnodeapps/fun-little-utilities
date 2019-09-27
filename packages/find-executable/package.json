@@ -21,7 +21,7 @@
     "ts-yargs": "^0.1.0",
     "find-executable-lib": "^0.1.0",
     "tslib": "^1.10.0",
-    "@types/node": "^12.7.5"
+    "@types/node": "^12.7.8"
   },
   "engines": {
     "node": ">= 8.9.0"

@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 12.7.5
+  '@types/node': 12.7.8
   '@types/shell-quote': 1.6.1
   convenient-typescript-utilities: 0.0.3
   shell-quote: 1.7.2
@@ -13,10 +13,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g==
-  /@types/node/12.7.5:
+  /@types/node/12.7.8:
     dev: false
     resolution:
-      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
+      integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:
@@ -49,7 +49,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^12.7.5
+  '@types/node': ^12.7.8
   '@types/shell-quote': ^1.6.1
   convenient-typescript-utilities: ^0.0.3
   shell-quote: ^1.7.2

@@ -1,15 +1,15 @@
 dependencies:
-  '@types/node': 12.7.5
+  '@types/node': 12.7.8
   '@types/yargs': 13.0.2
   tslib: 1.10.0
   wide-text: 'link:../wide-text'
   yargs: 14.0.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.7.5:
+  /@types/node/12.7.8:
     dev: false
     resolution:
-      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
+      integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
   /@types/yargs-parser/13.0.0:
     dev: false
     resolution:
@@ -203,7 +203,7 @@ packages:
     resolution:
       integrity: sha512-ssa5JuRjMeZEUjg7bEL99AwpitxU/zWGAGpdj0di41pOEmJti8NR6kyUIJBkR78DTYNPZOU08luUo0GTHuB+ow==
 specifiers:
-  '@types/node': ^12.7.5
+  '@types/node': ^12.7.8
   '@types/yargs': ^13.0.2
   tslib: ^1.10.0
   wide-text: ^0.1.0
