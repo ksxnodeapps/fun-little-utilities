@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>split-shell-buffer — References</title>
+	<title>split-shell-buffer — Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">split-shell-buffer — References</a>
+					<a href="index.html" class="title">split-shell-buffer — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -54,7 +52,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> split-shell-buffer — References</h1>
+			<h1> split-shell-buffer — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,37 +60,51 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#split-shell-buffer" id="split-shell-buffer" style="color: inherit; text-decoration: none;">
-					<h1>Split Shell Buffer</h1>
+				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
+					<h1>Khải&#39;s Fun Little Utilities</h1>
 				</a>
-				<p>Splitting shell strings while preserving <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters">SGR escape sequences</a></p>
-				<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
-					<h2>Motivation</h2>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
 				</a>
-				<p>When I was creating <a href="https://npmjs.com/package/catls"><code>catls</code></a>, I needed to spawn a program and prints output (stdout and/or stderr) of said program to <code>process.stdout</code> with some prefix (e.g. indentation, bullets, numbers, etc.) whilst preserving some of UNIX control sequences (specifically, sequences that control colors).</p>
-				<a href="#preview" id="preview" style="color: inherit; text-decoration: none;">
-					<h2>Preview</h2>
+				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
+					<h3>System Requirements</h3>
 				</a>
-				<p>Run one of the commands below (in top-level folder of this repository):</p>
-				<pre><code>pnpx execute runPreloadedNode <a href='https://git.io/fpX7e'>test/split-shell-buffer/preview.ts</a></code></pre>
-				<pre><code>pnpx execute runPreloadedNode <a href='https://git.io/fpX7s'>test/split-shell-buffer/preview.discrete.ts</a></code></pre>
-				<a href="#usage-example" id="usage-example" style="color: inherit; text-decoration: none;">
-					<h2>Usage Example</h2>
+				<ul>
+					<li>Node.js ≥ 8.9.0</li>
+					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
+					<li>Git</li>
+				</ul>
+				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
+					<h3>Scripts</h3>
 				</a>
-				<p><strong>NOTE:</strong> Documentation is lacking (because I&#39;m lazy), pull requests are welcomed.</p>
-				<p><strong>NOTE:</strong> The following code snippets are executed in async context.</p>
-				<a href="#codefromchildprocesscode" id="codefromchildprocesscode" style="color: inherit; text-decoration: none;">
-					<h3><code>fromChildProcess</code></h3>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
 				</a>
-				<p>The code below spawns a program and prints output (stdout + stderr) of said program with indent.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { stdout } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'process'</span>)
-<span class="hljs-keyword">const</span> { spawn } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>)
-<span class="hljs-keyword">const</span> { fromChildProcess, writeln } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-shell-buffer'</span>)
-
-<span class="hljs-keyword">const</span> cp = spawn(<span class="hljs-string">'myprogram'</span>)
-<span class="hljs-keyword">const</span> splitter = fromChildProcess(cp).withIndent(<span class="hljs-number">4</span>)
-
-<span class="hljs-keyword">await</span> writeln(stdout, splitter)</code></pre>
+				<pre><code class="language-sh">pnpm run build</code></pre>
+				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
+					<h4>Clean</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run clean</code></pre>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
+					<h5>Test Everything</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
+				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
+					<h5>Test Changed Files Only</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
+				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
+					<h5>Update Jest Snapshot</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
+				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
+					<h4>Start Node.js REPL</h4>
+				</a>
+				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
+				<pre><code class="language-sh">pnpm run repl</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -177,39 +189,6 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#sequence" class="tsd-kind-icon">Sequence</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#end" class="tsd-kind-icon">End</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#endofline" class="tsd-kind-icon">End<wbr>OfLine</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#reset" class="tsd-kind-icon">RESET</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#seperator" class="tsd-kind-icon">Seperator</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#start" class="tsd-kind-icon">Start</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#startfollow" class="tsd-kind-icon">Start<wbr>Follow</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#zero_and_sep" class="tsd-kind-icon">ZERO_<wbr>AND_<wbr>SEP</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#zero" class="tsd-kind-icon">Zero</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#arrayequal" class="tsd-kind-icon">array<wbr>Equal</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#symdata" class="tsd-kind-icon">sym<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#symencoding" class="tsd-kind-icon">sym<wbr>Encoding</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#create" class="tsd-kind-icon">create</a>

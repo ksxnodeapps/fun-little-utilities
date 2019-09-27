@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>iterate-evented-stream — References</title>
+	<title>iterate-evented-stream — Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">iterate-evented-stream — References</a>
+					<a href="index.html" class="title">iterate-evented-stream — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -54,7 +52,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> iterate-evented-stream — References</h1>
+			<h1> iterate-evented-stream — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,81 +60,51 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#iterate-evented-stream" id="iterate-evented-stream" style="color: inherit; text-decoration: none;">
-					<h1>Iterate Evented Stream</h1>
+				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
+					<h1>Khải&#39;s Fun Little Utilities</h1>
 				</a>
-				<p>Create an <code>AsyncIterable</code> from an evented stream.</p>
-				<a href="#usage-examples" id="usage-examples" style="color: inherit; text-decoration: none;">
-					<h2>Usage Examples</h2>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
 				</a>
-				<p>All code snippets below work in an async context.</p>
-				<a href="#custom-codeeventemittercode" id="custom-codeeventemittercode" style="color: inherit; text-decoration: none;">
-					<h3>Custom <code>EventEmitter</code></h3>
+				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
+					<h3>System Requirements</h3>
 				</a>
-				<p>In order for an <code>EventEmitter</code> to be a valid <code>EventTarget</code>,</p>
 				<ul>
-					<li><p>It must listen to 3 required events:</p>
-						<ul>
-							<li><code>(&#39;data&#39;, string)</code></li>
-							<li><code>(&#39;error&#39;, Error)</code></li>
-							<li><code>(&#39;close&#39;)</code></li>
-						</ul>
-					</li>
-					<li><p>It must provide 2 required methods for each event:</p>
-						<ul>
-							<li><code>addListener</code></li>
-							<li><code>removeListener</code></li>
-						</ul>
-					</li>
-					<li><p>Iteration stops when the <code>EventEmitter</code> emits <code>&#39;close&#39;</code> or <code>&#39;error&#39;</code></p>
-						<ul>
-							<li>If it emits <code>&#39;close&#39;</code>, iteration is considered completed.</li>
-							<li>If it emits <code>&#39;error&#39;</code>, iteration throws the emitted error.</li>
-						</ul>
-					</li>
+					<li>Node.js ≥ 8.9.0</li>
+					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
+					<li>Git</li>
 				</ul>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> EventEmitter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'events'</span>)
-<span class="hljs-keyword">const</span> iterate = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iterate-evented-stream'</span>)
-<span class="hljs-keyword">const</span> emitter = <span class="hljs-keyword">new</span> EventEmitter()
-
-setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> emitter.emit(<span class="hljs-string">'data'</span>, <span class="hljs-string">'100 ms'</span>), <span class="hljs-number">100</span>)
-setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> emitter.emit(<span class="hljs-string">'data'</span>, <span class="hljs-string">'200 ms'</span>), <span class="hljs-number">200</span>)
-setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> emitter.emit(<span class="hljs-string">'data'</span>, <span class="hljs-string">'300 ms'</span>), <span class="hljs-number">300</span>)
-setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> emitter.emit(<span class="hljs-string">'data'</span>, <span class="hljs-string">'400 ms'</span>), <span class="hljs-number">400</span>)
-setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> emitter.emit(<span class="hljs-string">'close'</span>), <span class="hljs-number">500</span>)
-
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> chunk <span class="hljs-keyword">of</span> iterate(emitter)) {
-  <span class="hljs-built_in">console</span>.log(chunk)
-}</code></pre>
-				<p>Expected Result:</p>
-				<pre><code><span class="hljs-symbol">100 </span>ms
-<span class="hljs-symbol">200 </span>ms
-<span class="hljs-symbol">300 </span>ms
-<span class="hljs-symbol">400 </span>ms</code></pre>
-				<a href="#child-process" id="child-process" style="color: inherit; text-decoration: none;">
-					<h3>Child Process</h3>
+				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
+					<h3>Scripts</h3>
 				</a>
-				<p><strong>NOTE:</strong> Replace <code>foo</code>, <code>bar</code> and <code>baz</code> below with commands that exist.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { spawn } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>)
-<span class="hljs-keyword">const</span> combine = <span class="hljs-built_in">require</span>(<span class="hljs-string">'combine-evented-stream'</span>)
-<span class="hljs-keyword">const</span> iterate = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iterate-evented-stream'</span>)
-
-<span class="hljs-keyword">const</span> cps = [
-  <span class="hljs-string">'foo'</span>,
-  <span class="hljs-string">'bar'</span>,
-  <span class="hljs-string">'baz'</span>
-].map(<span class="hljs-function"><span class="hljs-params">program</span> =&gt;</span> spawn(program))
-
-<span class="hljs-keyword">const</span> stream = combine(cps)
-
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> { stream, chunk } <span class="hljs-keyword">of</span> iterate(stream)) {
-  <span class="hljs-built_in">console</span>.log({
-    <span class="hljs-attr">pid</span>: stream.pid,
-    <span class="hljs-attr">data</span>: chunk
-  })
-}
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'done.'</span>)</code></pre>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run build</code></pre>
+				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
+					<h4>Clean</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run clean</code></pre>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
+					<h5>Test Everything</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
+				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
+					<h5>Test Changed Files Only</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
+				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
+					<h5>Update Jest Snapshot</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
+				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
+					<h4>Start Node.js REPL</h4>
+				</a>
+				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
+				<pre><code class="language-sh">pnpm run repl</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -153,23 +121,8 @@ setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-is-not-exported">
-						<a href="interfaces/done.html" class="tsd-kind-icon">Done</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
-						<a href="interfaces/undone.html" class="tsd-kind-icon">Undone</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
-						<a href="globals.html#state" class="tsd-kind-icon">State</a>
-					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#iterate" class="tsd-kind-icon">iterate</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-not-exported">
-						<a href="globals.html#undone" class="tsd-kind-icon">undone</a>
-					</li>
-					<li class=" tsd-kind-object-literal tsd-is-not-exported">
-						<a href="globals.html#done" class="tsd-kind-icon">done</a>
 					</li>
 				</ul>
 			</nav>

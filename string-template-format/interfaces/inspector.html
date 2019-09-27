@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>event2mtdcall | simple-fake-stream — References</title>
+	<title>Inspector | string-template-format — Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">simple-fake-stream — References</a>
+					<a href="../index.html" class="title">string-template-format — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -54,66 +52,61 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="prvevtemt.html">prvEvtEmt</a>
-				</li>
-				<li>
-					<a href="prvevtemt.event2mtdcall.html">event2mtdcall</a>
+					<a href="inspector.html">Inspector</a>
 				</li>
 			</ul>
-			<h1>Module event2mtdcall</h1>
+			<h1>Interface Inspector</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="prvevtemt.event2mtdcall.html#close" class="tsd-kind-icon">close</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="prvevtemt.event2mtdcall.html#data" class="tsd-kind-icon">data</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="prvevtemt.event2mtdcall.html#error" class="tsd-kind-icon">error</a></li>
-							</ul>
-						</section>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Type of formatter that uses Node&#39;s <code>util.inspect</code></p>
 					</div>
-				</section>
+				</div>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
-					<a name="close" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> close</h3>
-					<div class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">:</span> <a href="../classes/methodcallinstance.eventmodifier.close.html" class="tsd-signature-type">Close</a><span class="tsd-signature-symbol"> =&nbsp;MethodCallInstance.EventModifier.Close</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-stream/stream.ts#L90">stream.ts:90</a></li>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Inspector</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-interface">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>raw<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/string-template-format/format-inspect.ts#L7">format-inspect.ts:7</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of formatter that uses Node&#39;s <code>util.inspect</code></p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>raw: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Value to format</p>
+								</div>
+							</li>
 						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
-					<a name="data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../classes/methodcallinstance.eventmodifier.data.html" class="tsd-signature-type">Data</a><span class="tsd-signature-symbol"> =&nbsp;MethodCallInstance.EventModifier.Data</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-stream/stream.ts#L88">stream.ts:88</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
-					<a name="error" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> error</h3>
-					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <a href="../classes/methodcallinstance.eventmodifier.error.html" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol"> =&nbsp;MethodCallInstance.EventModifier.Error</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-stream/stream.ts#L89">stream.ts:89</a></li>
-						</ul>
-					</aside>
-				</section>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						<p>Formatted text</p>
+					</li>
+				</ul>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -122,42 +115,70 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter">
-						<a href="methodcall.html">Method<wbr>Call</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="methodcall.eventmodifier.html">Method<wbr>Call.<wbr>Event<wbr>Modifier</a>
-					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter">
-						<a href="methodcallinstance.html">Method<wbr>Call<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="methodcallinstance.eventmodifier.html">Method<wbr>Call<wbr>Instance.<wbr>Event<wbr>Modifier</a>
-					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter">
-						<a href="streameventemitter.html">Stream<wbr>Event<wbr>Emitter</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-not-exported">
-						<a href="prvevtemt.html">prv<wbr>Evt<wbr>Emt</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-						<a href="prvevtemt.streaminstancebaseclass.html">prv<wbr>Evt<wbr>Emt.<wbr>Stream<wbr>Instance<wbr>Base<wbr>Class</a>
-					</li>
-					<li class="current tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-						<a href="prvevtemt.event2mtdcall.html">prv<wbr>Evt<wbr>Emt.event2mtdcall</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="prvevtemt.event2mtdcall.html#close" class="tsd-kind-icon">close</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="callableconstructor.html" class="tsd-kind-icon">Callable<wbr>Constructor</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="prvevtemt.event2mtdcall.html#data" class="tsd-kind-icon">data</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="compose.html" class="tsd-kind-icon">Compose</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="prvevtemt.event2mtdcall.html#error" class="tsd-kind-icon">error</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="constructor.html" class="tsd-kind-icon">Constructor</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="formatter.html" class="tsd-kind-icon">Formatter</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="inspector.html" class="tsd-kind-icon">Inspector</a>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="templatetag.html" class="tsd-kind-icon">Template<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="tostringobject.html" class="tsd-kind-icon">To<wbr>String<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#inspectformatter" class="tsd-kind-icon">Inspect<wbr>Formatter</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#tostringvalue" class="tsd-kind-icon">To<wbr>String<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#templatetag" class="tsd-kind-icon">Template<wbr>Tag</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#compose" class="tsd-kind-icon">compose</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#formatinspector" class="tsd-kind-icon">format<wbr>Inspector</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#formatjson" class="tsd-kind-icon">format<wbr>Json</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#formattostring" class="tsd-kind-icon">format<wbr>ToString</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#callableconstructor" class="tsd-kind-icon">Callable<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#inspectformatter" class="tsd-kind-icon">Inspect<wbr>Formatter</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#inspector" class="tsd-kind-icon">Inspector</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#construct" class="tsd-kind-icon">construct</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#tag" class="tsd-kind-icon">tag</a>
 					</li>
 				</ul>
 			</nav>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>simple-fake-console — References</title>
+	<title>simple-fake-console — Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">simple-fake-console — References</a>
+					<a href="index.html" class="title">simple-fake-console — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -54,7 +52,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> simple-fake-console — References</h1>
+			<h1> simple-fake-console — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,75 +60,51 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#simple-fake-console" id="simple-fake-console" style="color: inherit; text-decoration: none;">
-					<h1>Simple Fake Console</h1>
+				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
+					<h1>Khải&#39;s Fun Little Utilities</h1>
 				</a>
-				<p>Create fake consoles for testing purpose</p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
 				</a>
-				<a href="#use-it-directly" id="use-it-directly" style="color: inherit; text-decoration: none;">
-					<h3>Use it directly</h3>
+				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
+					<h3>System Requirements</h3>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { ConsoleInstance, ActionType, getString } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'simple-fake-console'</span>)
-<span class="hljs-keyword">const</span> <span class="hljs-built_in">console</span> = <span class="hljs-keyword">new</span> ConsoleInstance()
-
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>, <span class="hljs-string">'world'</span>)
-<span class="hljs-built_in">console</span>.info(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
-<span class="hljs-built_in">console</span>.error(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'foo'</span>))
-<span class="hljs-built_in">console</span>.warn(<span class="hljs-string">'Warning'</span>)
-<span class="hljs-built_in">console</span>.clear()
-
-<span class="hljs-comment">// Get all actions</span>
-<span class="hljs-comment">//</span>
-<span class="hljs-comment">// Result: Array&lt;</span>
-<span class="hljs-comment">//   {</span>
-<span class="hljs-comment">//     type: 'log' | 'info' | 'error' | 'warn',</span>
-<span class="hljs-comment">//     data: any[]</span>
-<span class="hljs-comment">//   } | {</span>
-<span class="hljs-comment">//     type: 'clear'</span>
-<span class="hljs-comment">//   }</span>
-<span class="hljs-comment">// &gt;</span>
-<span class="hljs-built_in">console</span>.getActions()
-
-<span class="hljs-comment">// Get string from selected types of actions</span>
-<span class="hljs-comment">//</span>
-<span class="hljs-comment">// Result: string</span>
-getString({
-  <span class="hljs-built_in">console</span>,
-  <span class="hljs-attr">types</span>: [ActionType.Log, ActionType.Info]
-})</code></pre>
-				<a href="#use-it-in-test-via-dependency-injection" id="use-it-in-test-via-dependency-injection" style="color: inherit; text-decoration: none;">
-					<h3>Use it in test via dependency injection</h3>
+				<ul>
+					<li>Node.js ≥ 8.9.0</li>
+					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
+					<li>Git</li>
+				</ul>
+				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
+					<h3>Scripts</h3>
 				</a>
-				<pre><code class="language-typescript"><span class="hljs-comment">// main.ts</span>
-
-<span class="hljs-keyword">import</span> { Console } <span class="hljs-keyword">from</span> <span class="hljs-string">'simple-fake-console'</span>
-
-<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span> (<span class="hljs-params"><span class="hljs-built_in">console</span>: Console</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>, <span class="hljs-string">'world'</span>)
-}</code></pre>
-				<pre><code class="language-typescript"><span class="hljs-comment">// test.ts</span>
-
-<span class="hljs-keyword">import</span> assert <span class="hljs-keyword">from</span> <span class="hljs-string">'assert'</span>
-<span class="hljs-keyword">import</span> { ConsoleInstance, ActionType, getString } <span class="hljs-keyword">from</span> <span class="hljs-string">'simple-fake-console'</span>
-<span class="hljs-keyword">import</span> { main } <span class="hljs-keyword">from</span> <span class="hljs-string">'./main'</span>
-
-<span class="hljs-keyword">const</span> fakeConsole = <span class="hljs-keyword">new</span> ConsoleInstance()
-main(fakeConsole)
-
-assert.deepStrictEqual(
-  fakeConsole.getActions(),
-  [{
-    <span class="hljs-keyword">type</span>: <span class="hljs-string">'log'</span>,
-    data: [<span class="hljs-string">'hello'</span>, <span class="hljs-string">'world'</span>]
-  }]
-)
-
-assert.strictEqual(
-  getString({ <span class="hljs-built_in">console</span>, types: [ActionType.Log] }),
-  <span class="hljs-string">'hello world'</span>
-)</code></pre>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run build</code></pre>
+				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
+					<h4>Clean</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run clean</code></pre>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
+					<h5>Test Everything</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
+				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
+					<h5>Test Changed Files Only</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
+				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
+					<h5>Update Jest Snapshot</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
+				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
+					<h4>Start Node.js REPL</h4>
+				</a>
+				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
+				<pre><code class="language-sh">pnpm run repl</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -179,15 +153,6 @@ assert.strictEqual(
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#actiondata" class="tsd-kind-icon">Action<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#symactions" class="tsd-kind-icon">sym<wbr>Actions</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#symfnwithdata" class="tsd-kind-icon">sym<wbr>FnWith<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#symfnwithoutdata" class="tsd-kind-icon">sym<wbr>FnWithout<wbr>Data</a>
 					</li>
 				</ul>
 			</nav>

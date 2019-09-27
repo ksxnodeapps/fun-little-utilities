@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ErrorCarrier | simple-fake-fs — References</title>
+	<title>ToStringObject | string-template-format — Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">simple-fake-fs — References</a>
+					<a href="../index.html" class="title">string-template-format — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -54,29 +52,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="errorcarrier.html">ErrorCarrier</a>
+					<a href="tostringobject.html">ToStringObject</a>
 				</li>
 			</ul>
-			<h1>Class ErrorCarrier&lt;Value&gt;</h1>
+			<h1>Interface ToStringObject</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>Value</h4>
-					</li>
-				</ul>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Type of objects that can be passed to <code>formatToString</code></p>
+					</div>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ErrorCarrier</span>
+						<span class="target">ToStringObject</span>
 					</li>
 				</ul>
 			</section>
@@ -84,69 +81,41 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported"><a href="errorcarrier.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="errorcarrier.html#kind" class="tsd-kind-icon">kind</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="errorcarrier.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="tostringobject.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Error<wbr>Carrier<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Value</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="errorcarrier.html" class="tsd-signature-type">ErrorCarrier</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-fs/index.ts#L74">index.ts:74</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Value</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="errorcarrier.html" class="tsd-signature-type">ErrorCarrier</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-					<a name="kind" class="tsd-anchor"></a>
-					<h3>kind</h3>
-					<div class="tsd-signature tsd-kind-icon">kind<span class="tsd-signature-symbol">:</span> <a href="../enums/contentkind.html#error" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol"> =&nbsp;ContentKind.Error</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<div class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-fs/index.ts#L74">index.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/string-template-format/format-to-string.ts#L7">format-to-string.ts:7</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-					<a name="value" class="tsd-anchor"></a>
-					<h3>value</h3>
-					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Value</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e0c00b3/packages/simple-fake-fs/index.ts#L75">index.ts:75</a></li>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
 						</ul>
-					</aside>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -160,89 +129,71 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="../enums/contentkind.html" class="tsd-kind-icon">Content<wbr>Kind</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="callableconstructor.html" class="tsd-kind-icon">Callable<wbr>Constructor</a>
 					</li>
-					<li class=" tsd-kind-enum">
-						<a href="../enums/errorkind.html" class="tsd-kind-icon">Error<wbr>Kind</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="compose.html" class="tsd-kind-icon">Compose</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="arraypathfilesystem.html" class="tsd-kind-icon">Array<wbr>Path<wbr>File<wbr>System</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="constructor.html" class="tsd-kind-icon">Constructor</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="eexist.html" class="tsd-kind-icon">EEXIST</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="formatter.html" class="tsd-kind-icon">Formatter</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="eisdir.html" class="tsd-kind-icon">EISDIR</a>
+					<li class=" tsd-kind-interface">
+						<a href="inspector.html" class="tsd-kind-icon">Inspector</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="enoent.html" class="tsd-kind-icon">ENOENT</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="enotdir.html" class="tsd-kind-icon">ENOTDIR</a>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="templatetag.html" class="tsd-kind-icon">Template<wbr>Tag</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-has-type-parameter tsd-is-not-exported">
-						<a href="errorcarrier.html" class="tsd-kind-icon">Error<wbr>Carrier</a>
+					<li class="current tsd-kind-interface">
+						<a href="tostringobject.html" class="tsd-kind-icon">To<wbr>String<wbr>Object</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
-								<a href="errorcarrier.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="errorcarrier.html#kind" class="tsd-kind-icon">kind</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
-								<a href="errorcarrier.html#value" class="tsd-kind-icon">value</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="tostringobject.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="fakedirectorycontent.html" class="tsd-kind-icon">Fake<wbr>Directory<wbr>Content</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="fakefilecontent.html" class="tsd-kind-icon">Fake<wbr>File<wbr>Content</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-not-exported">
-						<a href="fakestats.html" class="tsd-kind-icon">Fake<wbr>Stats</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-not-exported">
-						<a href="none.html" class="tsd-kind-icon">None</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="stringpathfilesystem.html" class="tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../interfaces/errorconstructor.html" class="tsd-kind-icon">Error<wbr>Constructor</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../interfaces/filesystementry.html" class="tsd-kind-icon">File<wbr>System<wbr>Entry</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
-						<a href="../globals.html#content" class="tsd-kind-icon">Content</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#inspectformatter" class="tsd-kind-icon">Inspect<wbr>Formatter</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#errorcode" class="tsd-kind-icon">Error<wbr>Code</a>
+						<a href="../globals.html#tostringvalue" class="tsd-kind-icon">To<wbr>String<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../globals.html#maybecontent" class="tsd-kind-icon">Maybe<wbr>Content</a>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#templatetag" class="tsd-kind-icon">Template<wbr>Tag</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-is-not-exported">
-						<a href="../globals.html#stringpathfilesystemdict" class="tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System<wbr>Dict</a>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#compose" class="tsd-kind-icon">compose</a>
 					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="../globals.html#syscall" class="tsd-kind-icon">Sys<wbr>Call</a>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#formatinspector" class="tsd-kind-icon">format<wbr>Inspector</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="../globals.html#empty_class" class="tsd-kind-icon">EMPTY_<wbr>CLASS</a>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#formatjson" class="tsd-kind-icon">format<wbr>Json</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="../globals.html#none" class="tsd-kind-icon">NONE</a>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#formattostring" class="tsd-kind-icon">format<wbr>ToString</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="../globals.html#dict2entries" class="tsd-kind-icon">dict2entries</a>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#callableconstructor" class="tsd-kind-icon">Callable<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#inspectformatter" class="tsd-kind-icon">Inspect<wbr>Formatter</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#inspector" class="tsd-kind-icon">Inspector</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#construct" class="tsd-kind-icon">construct</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#tag" class="tsd-kind-icon">tag</a>
 					</li>
 				</ul>
 			</nav>

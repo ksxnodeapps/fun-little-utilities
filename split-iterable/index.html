@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>split-iterable — References</title>
+	<title>split-iterable — Reference</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">split-iterable — References</a>
+					<a href="index.html" class="title">split-iterable — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -54,7 +52,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> split-iterable — References</h1>
+			<h1> split-iterable — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,53 +60,51 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#split-iterable" id="split-iterable" style="color: inherit; text-decoration: none;">
-					<h1>Split Iterable</h1>
+				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
+					<h1>Khải&#39;s Fun Little Utilities</h1>
 				</a>
-				<p>Split iterable into multiple chunks</p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
 				</a>
-				<a href="#codesplititerablecode" id="codesplititerablecode" style="color: inherit; text-decoration: none;">
-					<h3><code>splitIterable</code></h3>
+				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
+					<h3>System Requirements</h3>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { splitIterable } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-iterable'</span>)
-
-expect(<span class="hljs-built_in">Array</span>.from(
-  splitIterable([<span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])
-)).toEqual([
-  [<span class="hljs-number">0</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-])</code></pre>
-				<a href="#codesplitasynciterablecode" id="codesplitasynciterablecode" style="color: inherit; text-decoration: none;">
-					<h3><code>splitAsyncIterable</code></h3>
+				<ul>
+					<li>Node.js ≥ 8.9.0</li>
+					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
+					<li>Git</li>
+				</ul>
+				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
+					<h3>Scripts</h3>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { splitAsyncIterable } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-iterable'</span>)
-
-<span class="hljs-keyword">const</span> iterable = {
-  <span class="hljs-keyword">async</span> * [<span class="hljs-built_in">Symbol</span>.asyncIterator] () {
-    <span class="hljs-keyword">yield</span> * [<span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-  }
-}
-
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toArray</span> (<span class="hljs-params">iterable</span>) </span>{
-  <span class="hljs-keyword">let</span> array = []
-
-  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> iterable) {
-    array.push(item)
-  }
-
-  <span class="hljs-keyword">return</span> array
-}
-
-expect(<span class="hljs-keyword">await</span> toArray(
-  splitAsyncIterable(iterable)
-)).toEqual([
-  [<span class="hljs-number">0</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-])</code></pre>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run build</code></pre>
+				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
+					<h4>Clean</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run clean</code></pre>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
+					<h5>Test Everything</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
+				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
+					<h5>Test Changed Files Only</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
+				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
+					<h5>Update Jest Snapshot</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
+				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
+					<h4>Start Node.js REPL</h4>
+				</a>
+				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
+				<pre><code class="language-sh">pnpm run repl</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -125,15 +121,6 @@ expect(<span class="hljs-keyword">await</span> toArray(
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
-						<a href="interfaces/asyncsepfunc.html" class="tsd-kind-icon">Async<wbr>Sep<wbr>Func</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-not-exported">
-						<a href="interfaces/sepfunc.html" class="tsd-kind-icon">Sep<wbr>Func</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-not-exported">
-						<a href="globals.html#maybeasynciterable" class="tsd-kind-icon">Maybe<wbr>Async<wbr>Iterable</a>
-					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#splitasynciterable" class="tsd-kind-icon">split<wbr>Async<wbr>Iterable</a>
 					</li>
