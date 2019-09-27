@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`throws an error when number difference between strings and values is not 1 there are less strings than values 1`] = `"strings and values number difference is not 1 but -2"`;
+
+exports[`throws an error when number difference between strings and values is not 1 there are significantly more strings than values 1`] = `"strings and values number difference is not 1 but 2"`;

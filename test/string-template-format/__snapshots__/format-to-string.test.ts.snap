@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`converts values to strings 1`] = `
+"
+    number: 123 NaN Infinity
+    string: abc
+    object: [MyObject]
+    function: function Function() { [native code] }
+    class: class MyObject {
+    toString() {
+        return '[MyObject]';
+    }
+}
+    array: 0,1,2,3
+    boolean: true false
+    null: null
+  "
+`;

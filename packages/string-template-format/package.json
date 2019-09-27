@@ -1,0 +1,28 @@
+{
+  "name": "string-template-format",
+  "version": "0.0.0",
+  "description": "String template tag that accepts any value and returns a string",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/fun-little-utilities#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "strfmt",
+    "printf",
+    "format",
+    "template",
+    "string"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "@tsfun/function": "^0.0.1",
+    "tslib": "^1.10.0",
+    "@types/node": "^12.7.5"
+  }
+}

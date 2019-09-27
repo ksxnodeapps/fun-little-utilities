@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InspectFormatter with options 1`] = `
+"
+      number: 123
+      string: 'abc'
+      undefined: undefined
+      function: [Function] {
+  [length]: 0,
+  [name]: ''
+}
+      class: [Function: MyClass] {
+  [length]: 0,
+  [prototype]: MyClass {
+    [constructor]: [Circular]
+  },
+  [name]: 'MyClass'
+}
+      object: [Object: null prototype] {
+  abc: {
+    a: {
+      b: {
+        c: 'abc'
+      }
+    }
+  },
+  [hidden]: 'hidden',
+  circular: [Getter] [Circular]
+}
+      array: [
+  ... 5 more items,
+  [length]: 5
+]
+      symbol: Symbol(symbol)
+    "
+`;
+
+exports[`InspectFormatter without options 1`] = `
+"
+      number: 123
+      string: 'abc'
+      undefined: undefined
+      function: [Function: Function]
+      class: [Function: MyClass]
+      object: [Object: null prototype] {
+  abc: { a: { b: [Object] } },
+  circular: [Getter]
+}
+      array: [ 0, 1, 2, 3, 4 ]
+      symbol: Symbol(symbol)
+    "
+`;
+
+exports[`formatInspector works as template literal tag 1`] = `
+"
+      number: 123
+      string: 'abc'
+      undefined: undefined
+      function: [Function: Function]
+      class: [Function: MyClass]
+      object: [Object: null prototype] {
+  abc: { a: { b: [Object] } },
+  circular: [Getter]
+}
+      array: [ 0, 1, 2, 3, 4 ]
+      symbol: Symbol(symbol)
+    "
+`;
