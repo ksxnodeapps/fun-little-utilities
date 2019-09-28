@@ -18,7 +18,16 @@ describe('formatInspector', () => {
       object: ${object}
       array: ${[0, 1, 2, 3, 4]}
       symbol: ${Symbol('symbol')}
-    `).toMatchSnapshot()
+    `).toBe(`
+      number: ${inspect(123)}
+      string: ${inspect('abc')}
+      undefined: ${inspect(undefined)}
+      function: ${inspect(Function)}
+      class: ${inspect(class MyClass {})}
+      object: ${inspect(object)}
+      array: ${inspect([0, 1, 2, 3, 4])}
+      symbol: ${inspect(Symbol('symbol'))}
+    `)
   })
 })
 
@@ -33,7 +42,16 @@ describe('InspectFormatter', () => {
       object: ${object}
       array: ${[0, 1, 2, 3, 4]}
       symbol: ${Symbol('symbol')}
-    `).toMatchSnapshot()
+    `).toBe(`
+      number: ${inspect(123)}
+      string: ${inspect('abc')}
+      undefined: ${inspect(undefined)}
+      function: ${inspect(Function)}
+      class: ${inspect(class MyClass {})}
+      object: ${inspect(object)}
+      array: ${inspect([0, 1, 2, 3, 4])}
+      symbol: ${inspect(Symbol('symbol'))}
+    `)
   })
 
   it('with options', () => {
@@ -46,6 +64,8 @@ describe('InspectFormatter', () => {
       maxArrayLength: 0
     }
 
+    const format = (x: any) => inspect(x, options)
+
     expect(InspectFormatter(options)`
       number: ${123}
       string: ${'abc'}
@@ -55,7 +75,16 @@ describe('InspectFormatter', () => {
       object: ${object}
       array: ${[0, 1, 2, 3, 4]}
       symbol: ${Symbol('symbol')}
-    `).toMatchSnapshot()
+    `).toBe(`
+      number: ${format(123)}
+      string: ${format('abc')}
+      undefined: ${format(undefined)}
+      function: ${format(() => Function)}
+      class: ${format(class MyClass {})}
+      object: ${format(object)}
+      array: ${format([0, 1, 2, 3, 4])}
+      symbol: ${format(Symbol('symbol'))}
+    `)
   })
 })
 

@@ -1,3 +1,4 @@
+import { inspect } from 'util'
 import { construct, formatInspector } from 'string-template-format'
 
 it('Error', () => {
@@ -9,7 +10,15 @@ it('Error', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toMatchSnapshot()
+  `).toEqual(new Error(`
+    number: ${inspect(123)}
+    string: ${inspect('abc')}
+    undefined: ${inspect(undefined)}
+    function: ${inspect(() => undefined)}
+    class: ${inspect(class MyClass {})}
+    object: ${inspect({ abc: 123, def: 456 })}
+    array: ${inspect([0, 1, 2, 3, 4])}
+  `))
 })
 
 it('TypeError', () => {
@@ -21,7 +30,15 @@ it('TypeError', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toMatchSnapshot()
+  `).toEqual(new TypeError(`
+    number: ${inspect(123)}
+    string: ${inspect('abc')}
+    undefined: ${inspect(undefined)}
+    function: ${inspect(() => undefined)}
+    class: ${inspect(class MyClass {})}
+    object: ${inspect({ abc: 123, def: 456 })}
+    array: ${inspect([0, 1, 2, 3, 4])}
+  `))
 })
 
 it('RangeError', () => {
@@ -33,7 +50,15 @@ it('RangeError', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toMatchSnapshot()
+  `).toEqual(new Error(`
+    number: ${inspect(123)}
+    string: ${inspect('abc')}
+    undefined: ${inspect(undefined)}
+    function: ${inspect(() => undefined)}
+    class: ${inspect(class MyClass {})}
+    object: ${inspect({ abc: 123, def: 456 })}
+    array: ${inspect([0, 1, 2, 3, 4])}
+  `))
 })
 
 it('SyntaxError', () => {
@@ -45,5 +70,13 @@ it('SyntaxError', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toMatchSnapshot()
+  `).toEqual(new Error(`
+    number: ${inspect(123)}
+    string: ${inspect('abc')}
+    undefined: ${inspect(undefined)}
+    function: ${inspect(() => undefined)}
+    class: ${inspect(class MyClass {})}
+    object: ${inspect({ abc: 123, def: 456 })}
+    array: ${inspect([0, 1, 2, 3, 4])}
+  `))
 })
