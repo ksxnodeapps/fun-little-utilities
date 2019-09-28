@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -77,46 +79,46 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sequencefunc.param.html#currentline" class="tsd-kind-icon">current<wbr>Line</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sequencefunc.param.html#leadingcharacters" class="tsd-kind-icon">leading<wbr>Characters</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sequencefunc.param.html#splitter" class="tsd-kind-icon">splitter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="sequencefunc.param.html#currentline" class="tsd-kind-icon">current<wbr>Line</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="sequencefunc.param.html#leadingcharacters" class="tsd-kind-icon">leading<wbr>Characters</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="sequencefunc.param.html#splitter" class="tsd-kind-icon">splitter</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="currentline" class="tsd-anchor"></a>
 					<h3>current<wbr>Line</h3>
 					<div class="tsd-signature tsd-kind-icon">current<wbr>Line<span class="tsd-signature-symbol">:</span> <a href="../globals.html#sequence" class="tsd-signature-type">Sequence</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/split-shell-buffer/lib/types.ts#L17">lib/types.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L17">split-shell-buffer/lib/types.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="leadingcharacters" class="tsd-anchor"></a>
 					<h3>leading<wbr>Characters</h3>
 					<div class="tsd-signature tsd-kind-icon">leading<wbr>Characters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#sequence" class="tsd-signature-type">Sequence</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/split-shell-buffer/lib/types.ts#L18">lib/types.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L18">split-shell-buffer/lib/types.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 					<a name="splitter" class="tsd-anchor"></a>
 					<h3>splitter</h3>
 					<div class="tsd-signature tsd-kind-icon">splitter<span class="tsd-signature-symbol">:</span> <a href="splitter.html" class="tsd-signature-type">Splitter</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/split-shell-buffer/lib/types.ts#L16">lib/types.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L16">split-shell-buffer/lib/types.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -128,13 +130,25 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter">
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="../modules/childprocess.html">Child<wbr>Process</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/eventedstream.html">Evented<wbr>Stream</a>
+					</li>
+					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/listenertransformer.html">Listener<wbr>Transformer</a>
+					</li>
+					<li class="current tsd-kind-module tsd-is-external">
 						<a href="../modules/sequencefunc.html">Sequence<wbr>Func</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/create.html">create</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
 						<a href="../modules/tostring.html">to<wbr>String</a>
 					</li>
 				</ul>
@@ -143,16 +157,16 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-external">
 						<a href="sequencefunc.param.html" class="tsd-kind-icon">Param</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="sequencefunc.param.html#currentline" class="tsd-kind-icon">current<wbr>Line</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="sequencefunc.param.html#leadingcharacters" class="tsd-kind-icon">leading<wbr>Characters</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
 								<a href="sequencefunc.param.html#splitter" class="tsd-kind-icon">splitter</a>
 							</li>
 						</ul>

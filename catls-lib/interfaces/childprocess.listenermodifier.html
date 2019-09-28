@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -52,7 +54,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="childprocess.html">ChildProcess</a>
+					<a href="../modules/childprocess.html">ChildProcess</a>
 				</li>
 				<li>
 					<a href="childprocess.listenermodifier.html">ListenerModifier</a>
@@ -75,15 +77,17 @@
 			</section>
 			<section class="tsd-panel">
 				<h3 class="tsd-before-signature">Callable</h3>
-				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-interface">
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"close"</span>, listener<span class="tsd-signature-symbol">: </span><a href="childprocess.html#closeeventlistener" class="tsd-signature-type">CloseEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"error"</span>, listener<span class="tsd-signature-symbol">: </span><a href="childprocess.html#erroreventlistener" class="tsd-signature-type">ErrorEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module tsd-is-external">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"close"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/childprocess.html#closeeventlistener" class="tsd-signature-type">CloseEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"error"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/childprocess.html#erroreventlistener" class="tsd-signature-type">ErrorEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"close"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/childprocess.html#closeeventlistener" class="tsd-signature-type">CloseEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"error"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/childprocess.html#erroreventlistener" class="tsd-signature-type">ErrorEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/split-shell-buffer/lib/types.ts#L48">/home/khai/programming/fun-little-utilities/packages/split-shell-buffer/lib/types.ts:48</a></li>
+								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L48">split-shell-buffer/lib/types.ts:48</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -92,7 +96,7 @@
 								<h5>event: <span class="tsd-signature-type">"close"</span></h5>
 							</li>
 							<li>
-								<h5>listener: <a href="childprocess.html#closeeventlistener" class="tsd-signature-type">CloseEventListener</a></h5>
+								<h5>listener: <a href="../modules/childprocess.html#closeeventlistener" class="tsd-signature-type">CloseEventListener</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -100,7 +104,7 @@
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/691cc4a/packages/split-shell-buffer/lib/types.ts#L49">/home/khai/programming/fun-little-utilities/packages/split-shell-buffer/lib/types.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L49">split-shell-buffer/lib/types.ts:49</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -109,7 +113,41 @@
 								<h5>event: <span class="tsd-signature-type">"error"</span></h5>
 							</li>
 							<li>
-								<h5>listener: <a href="childprocess.html#erroreventlistener" class="tsd-signature-type">ErrorEventListener</a></h5>
+								<h5>listener: <a href="../modules/childprocess.html#erroreventlistener" class="tsd-signature-type">ErrorEventListener</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L48">split-shell-buffer/lib/types.ts:48</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>event: <span class="tsd-signature-type">"close"</span></h5>
+							</li>
+							<li>
+								<h5>listener: <a href="../modules/childprocess.html#closeeventlistener" class="tsd-signature-type">CloseEventListener</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/5f678a7/packages/split-shell-buffer/lib/types.ts#L49">split-shell-buffer/lib/types.ts:49</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>event: <span class="tsd-signature-type">"error"</span></h5>
+							</li>
+							<li>
+								<h5>listener: <a href="../modules/childprocess.html#erroreventlistener" class="tsd-signature-type">ErrorEventListener</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -123,87 +161,85 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class="current tsd-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/childprocess.html">Child<wbr>Process</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/commandlineoptions.html">Command<wbr>Line<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/emptyarguments.html">Empty<wbr>Arguments</a>
+					</li>
+					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/eventedstream.html">Evented<wbr>Stream</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/executor.html">Executor</a>
+					</li>
+					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/listenertransformer.html">Listener<wbr>Transformer</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/main.html">Main</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/sequencefunc.html">Sequence<wbr>Func</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/showexecdata.html">Show<wbr>Exec<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/statinfo.html">Stat<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/symlinkroutingfunctions.html">Symlink<wbr>Routing<wbr>Functions</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/unit.html">Unit</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/unknownstattype.html">Unknown<wbr>Stat<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
+						<a href="../modules/awaitevent.html">await<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/create.html">create</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-external">
+						<a href="../modules/tostring.html">to<wbr>String</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="../enums/emptyargumenthandlingmethod.html" class="tsd-kind-icon">Empty<wbr>Argument<wbr>Handling<wbr>Method</a>
-					</li>
-					<li class=" tsd-kind-enum">
-						<a href="../enums/exitstatus.html" class="tsd-kind-icon">Exit<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-enum">
-						<a href="../enums/symlinkresolution.html" class="tsd-kind-icon">Symlink<wbr>Resolution</a>
-					</li>
-					<li class=" tsd-kind-enum">
-						<a href="../enums/unittype.html" class="tsd-kind-icon">Unit<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-enum">
-						<a href="../enums/unknownstattypename.html" class="tsd-kind-icon">Unknown<wbr>Stat<wbr>Type<wbr>Name</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-has-type-parameter">
-						<a href="childprocess.html" class="tsd-kind-icon">Child<wbr>Process</a>
-						<ul>
-							<li class="current tsd-kind-interface tsd-parent-kind-interface">
-								<a href="childprocess.listenermodifier.html" class="tsd-kind-icon">Listener<wbr>Modifier</a>
-							</li>
-							<li class=" tsd-kind-type-alias tsd-parent-kind-interface">
-								<a href="childprocess.html#closeeventlistener" class="tsd-kind-icon">Close<wbr>Event<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-type-alias tsd-parent-kind-interface">
-								<a href="childprocess.html#erroreventlistener" class="tsd-kind-icon">Error<wbr>Event<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="childprocess.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="childprocess.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="childprocess.html#stderr" class="tsd-kind-icon">stderr</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="childprocess.html#stdout" class="tsd-kind-icon">stdout</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="childprocess.html#once" class="tsd-kind-icon">once</a>
-							</li>
-						</ul>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-external">
+						<a href="childprocess.listenermodifier.html" class="tsd-kind-icon">Listener<wbr>Modifier</a>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="writable.html" class="tsd-kind-icon">Writable</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/childprocess.html#closeeventlistener" class="tsd-kind-icon">Close<wbr>Event<wbr>Listener</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#emptyarguments" class="tsd-kind-icon">empty<wbr>Arguments</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/childprocess.html#erroreventlistener" class="tsd-kind-icon">Error<wbr>Event<wbr>Listener</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#executor" class="tsd-kind-icon">executor</a>
+					<li class=" tsd-kind-property tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/childprocess.html#addlistener" class="tsd-kind-icon">add<wbr>Listener</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#main" class="tsd-kind-icon">main</a>
+					<li class=" tsd-kind-property tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/childprocess.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#relativelink" class="tsd-kind-icon">relative<wbr>Link</a>
+					<li class=" tsd-kind-property tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/childprocess.html#stderr" class="tsd-kind-icon">stderr</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#showexecdata" class="tsd-kind-icon">show<wbr>Exec<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#statinfo" class="tsd-kind-icon">stat<wbr>Info</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#stringtonumber" class="tsd-kind-icon">string<wbr>ToNumber</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#symlinkroutingfunctions" class="tsd-kind-icon">symlink<wbr>Routing<wbr>Functions</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#unknownstattype" class="tsd-kind-icon">unknown<wbr>Stat<wbr>Type</a>
+					<li class=" tsd-kind-property tsd-parent-kind-module tsd-is-external">
+						<a href="../modules/childprocess.html#stdout" class="tsd-kind-icon">stdout</a>
 					</li>
 				</ul>
 			</nav>
