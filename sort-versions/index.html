@@ -62,51 +62,38 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
-					<h1>Khải&#39;s Fun Little Utilities</h1>
+				<a href="#sort-versions" id="sort-versions" style="color: inherit; text-decoration: none;">
+					<h1>Sort Versions</h1>
 				</a>
-				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
-					<h2>Development</h2>
+				<p>Sort semantic versions</p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
 				</a>
-				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
-					<h3>System Requirements</h3>
-				</a>
-				<ul>
-					<li>Node.js ≥ 8.9.0</li>
-					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
-					<li>Git</li>
-				</ul>
-				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
-					<h3>Scripts</h3>
-				</a>
-				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
-					<h4>Build</h4>
-				</a>
-				<pre><code class="language-sh">pnpm run build</code></pre>
-				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
-					<h4>Clean</h4>
-				</a>
-				<pre><code class="language-sh">pnpm run clean</code></pre>
-				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
-					<h4>Test</h4>
-				</a>
-				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
-					<h5>Test Everything</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
-				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
-					<h5>Test Changed Files Only</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
-				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
-					<h5>Update Jest Snapshot</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
-				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
-					<h4>Start Node.js REPL</h4>
-				</a>
-				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
-				<pre><code class="language-sh">pnpm run repl</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> sort = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sort-versions'</span>)
+
+<span class="hljs-comment">/*
+Expect:
+  Array [
+    "v0.0.0",
+    "0.1.2",
+    "v1.0.0",
+    "1.0.1",
+    "2.0.1",
+    "v3.0.2",
+    "3.1.0",
+  ]
+*/</span>
+<span class="hljs-built_in">console</span>.log(sort([
+  <span class="hljs-string">'3.1.0'</span>,
+  <span class="hljs-string">'v3.0.2'</span>,
+  <span class="hljs-string">'invalid 0'</span>,
+  <span class="hljs-string">'2.0.1'</span>,
+  <span class="hljs-string">'v1.0.0'</span>,
+  <span class="hljs-string">'invalid 1'</span>,
+  <span class="hljs-string">'1.0.1'</span>,
+  <span class="hljs-string">'0.1.2'</span>,
+  <span class="hljs-string">'v0.0.0'</span>
+]))</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>

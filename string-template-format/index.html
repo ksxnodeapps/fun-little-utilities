@@ -62,51 +62,35 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
-					<h1>Khải&#39;s Fun Little Utilities</h1>
+				<a href="#string-template-format" id="string-template-format" style="color: inherit; text-decoration: none;">
+					<h1>String Template Format</h1>
 				</a>
-				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
-					<h2>Development</h2>
+				<p>String template tag that accepts any value and returns a string</p>
+				<a href="#usage-examples" id="usage-examples" style="color: inherit; text-decoration: none;">
+					<h2>Usage Examples</h2>
 				</a>
-				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
-					<h3>System Requirements</h3>
+				<a href="#embed-objects-into-string-as-json" id="embed-objects-into-string-as-json" style="color: inherit; text-decoration: none;">
+					<h3>Embed objects into string as JSON</h3>
 				</a>
-				<ul>
-					<li>Node.js ≥ 8.9.0</li>
-					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
-					<li>Git</li>
-				</ul>
-				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
-					<h3>Scripts</h3>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { formatJson } <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format'</span>
+<span class="hljs-built_in">console</span>.log(formatJson<span class="hljs-string">`number <span class="hljs-subst">${<span class="hljs-number">123</span>}</span>; string: <span class="hljs-subst">${<span class="hljs-string">'abc'</span>}</span>; object: <span class="hljs-subst">${{ abc: <span class="hljs-number">123</span> }</span>}; array: <span class="hljs-subst">${[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]}</span>`</span>)</code></pre>
+				<p><em>should print:</em></p>
+				<pre><code>number: <span class="hljs-number">123</span>; <span class="hljs-built_in">string</span>: <span class="hljs-string">"abc"</span>; object: {<span class="hljs-string">"abc"</span>:<span class="hljs-number">123</span>}; <span class="hljs-built_in">array</span>: [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]</code></pre>
+				<a href="#format-objects-with-codeutilinspectcode" id="format-objects-with-codeutilinspectcode" style="color: inherit; text-decoration: none;">
+					<h3>Format objects with <code>util.inspect</code></h3>
 				</a>
-				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
-					<h4>Build</h4>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { formatInspect } <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format'</span>
+<span class="hljs-built_in">console</span>.log(formatInspect<span class="hljs-string">`number <span class="hljs-subst">${<span class="hljs-number">123</span>}</span>; string: <span class="hljs-subst">${<span class="hljs-string">'abc'</span>}</span>; object: <span class="hljs-subst">${{ abc: <span class="hljs-number">123</span> }</span>}; array: <span class="hljs-subst">${[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]}</span>`</span>)</code></pre>
+				<p><em>should print:</em></p>
+				<pre><code>number: <span class="hljs-number">123</span>; <span class="hljs-built_in">string</span>: <span class="hljs-string">'abc'</span>; object: { abc: <span class="hljs-number">123</span> }; <span class="hljs-built_in">array</span>: [ <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span> ]</code></pre>
+				<a href="#custom-tags" id="custom-tags" style="color: inherit; text-decoration: none;">
+					<h3>Custom tags</h3>
 				</a>
-				<pre><code class="language-sh">pnpm run build</code></pre>
-				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
-					<h4>Clean</h4>
-				</a>
-				<pre><code class="language-sh">pnpm run clean</code></pre>
-				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
-					<h4>Test</h4>
-				</a>
-				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
-					<h5>Test Everything</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
-				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
-					<h5>Test Changed Files Only</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
-				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
-					<h5>Update Jest Snapshot</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
-				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
-					<h4>Start Node.js REPL</h4>
-				</a>
-				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
-				<pre><code class="language-sh">pnpm run repl</code></pre>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { tag } <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format'</span>
+<span class="hljs-keyword">const</span> myTag = tag(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> <span class="hljs-string">`[<span class="hljs-subst">${<span class="hljs-keyword">typeof</span> value}</span> <span class="hljs-subst">${value}</span>]`</span>)
+<span class="hljs-built_in">console</span>.log(myTag<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-number">123</span>}</span>; <span class="hljs-subst">${<span class="hljs-string">'abc'</span>}</span>; <span class="hljs-subst">${{ abc: <span class="hljs-number">123</span> }</span>}; <span class="hljs-subst">${[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]}</span>`</span>)</code></pre>
+				<p><em>should print:</em></p>
+				<pre><code>[number <span class="hljs-number">123</span>]; [<span class="hljs-built_in">string</span> abc]; [object [Object object]]; [<span class="hljs-built_in">array</span> <span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
