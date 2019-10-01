@@ -1,5 +1,6 @@
 export * from './compose'
 export * from './construct'
+export * from './aliases'
 export * from './format-inspect'
 export * from './format-json'
 export * from './format-to-string'
