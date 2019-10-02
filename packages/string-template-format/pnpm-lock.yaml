@@ -1,6 +1,7 @@
 dependencies:
   '@tsfun/function': 0.0.1
   '@types/node': 12.7.8
+  just-json-type: 'link:../just-json-type'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -32,4 +33,5 @@ packages:
 specifiers:
   '@tsfun/function': ^0.0.1
   '@types/node': ^12.7.8
+  just-json-type: ^0.0.0
   tslib: ^1.10.0
