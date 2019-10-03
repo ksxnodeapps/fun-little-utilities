@@ -21,7 +21,7 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "@tsfun/function": "^0.0.2",
+    "@tsfun/function": "^0.0.1",
     "tslib": "^1.10.0",
     "just-json-type": "^0.0.0",
     "@types/node": "^12.7.8"
