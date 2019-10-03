@@ -1,6 +1,6 @@
 {
   "name": "string-template-format",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "String template tag that accepts any value and returns a string",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@tsfun/function": "^0.0.2",
     "tslib": "^1.10.0",
-    "just-json-type": "^0.0.0",
+    "just-json-type": "^0.1.0",
     "@types/node": "^12.7.8"
   }
 }
