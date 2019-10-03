@@ -1,25 +1,32 @@
 dependencies:
   '@tsfun/function': 0.0.1
-  '@types/node': 12.7.8
-  just-json-type: 'link:../just-json-type'
+  '@types/node': 12.7.9
+  just-json-type: 0.1.0
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
   /@tsfun/function/0.0.1:
     dependencies:
-      '@types/node': 12.7.8
+      '@types/node': 12.7.9
       ts-pipe-compose: 0.1.11
       tslib: 1.10.0
     dev: false
     resolution:
       integrity: sha512-5Kme9QtRJAnVme1gtsqEqLX3BTtXE+3Oaba9EnDT/okAcasK7QNFjti9CgRgSfuCRpNLkvp44742W2PzIKVdiQ==
-  /@types/node/12.7.8:
+  /@types/node/12.7.9:
     dev: false
     resolution:
-      integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
+      integrity: sha512-P57oKTJ/vYivL2BCfxCC5tQjlS8qW31pbOL6qt99Yrjm95YdHgNZwjrTTjMBh+C2/y6PXIX4oz253+jUzxKKfQ==
+  /just-json-type/0.1.0:
+    dependencies:
+      '@types/node': 12.7.9
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-M2xt7Uj0v5yZM1CdBhEzVETILXRxTnZ1rBJFh3JwpVd0FVY/olin76g8TmBD8PReh3srNa3e3G0zGBfOn73wDg==
   /ts-pipe-compose/0.1.11:
     dependencies:
-      '@types/node': 12.7.8
+      '@types/node': 12.7.9
       tslib: 1.10.0
     dev: false
     engines:
@@ -33,5 +40,5 @@ packages:
 specifiers:
   '@tsfun/function': ^0.0.1
   '@types/node': ^12.7.8
-  just-json-type: ^0.0.0
+  just-json-type: ^0.1.0
   tslib: ^1.10.0
