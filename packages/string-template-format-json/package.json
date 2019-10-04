@@ -25,6 +25,6 @@
     "tslib": "^1.10.0",
     "just-json-type": "^0.1.0",
     "string-template-format-base": "^0.1.0",
-    "@types/node": "^12.7.8"
+    "@types/node": "^12.7.11"
   }
 }

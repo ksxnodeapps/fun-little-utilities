@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 12.7.8
+  '@types/node': 12.7.11
   string-template-format-base: 'link:../string-template-format-base'
   string-template-format-compose: 'link:../string-template-format-compose'
   string-template-format-inspect: 'link:../string-template-format-inspect'
@@ -9,16 +9,16 @@ dependencies:
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.7.8:
+  /@types/node/12.7.11:
     dev: false
     resolution:
-      integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
+      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@types/node': ^12.7.8
+  '@types/node': ^12.7.11
   string-template-format-base: ^0.1.0
   string-template-format-compose: ^0.1.0
   string-template-format-inspect: ^0.1.0

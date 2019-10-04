@@ -20,7 +20,7 @@
   "dependencies": {
     "tslib": "^1.10.0",
     "wide-text-types": "^0.1.1",
-    "@types/node": "^12.7.8"
+    "@types/node": "^12.7.11"
   },
   "engines": {
     "node": ">= 8.9.0"

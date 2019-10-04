@@ -25,7 +25,7 @@
     "iterate-evented-stream": "^0.1.1",
     "combine-evented-stream": "^0.1.1",
     "evented-stream-types": "^0.1.1",
-    "@types/node": "^12.7.8"
+    "@types/node": "^12.7.11"
   },
   "engines": {
     "node": ">= 8.9.0"

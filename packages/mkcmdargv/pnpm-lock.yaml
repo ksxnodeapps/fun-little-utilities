@@ -1,7 +1,7 @@
 dependencies:
   '@types/fs-extra': 8.0.0
   '@types/js-yaml': 3.12.1
-  '@types/node': 12.7.8
+  '@types/node': 12.7.11
   '@types/ramda': 0.26.25
   fs-extra: 8.1.0
   js-yaml: 3.13.1
@@ -20,14 +20,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
+  /@types/node/12.7.11:
+    dev: false
+    resolution:
+      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
   /@types/node/12.7.2:
     dev: false
     resolution:
       integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
-  /@types/node/12.7.8:
-    dev: false
-    resolution:
-      integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
   /@types/ramda/0.26.25:
     dependencies:
       ts-toolbelt: 4.5.2
@@ -100,7 +100,7 @@ packages:
 specifiers:
   '@types/fs-extra': ^8.0.0
   '@types/js-yaml': ^3.12.1
-  '@types/node': ^12.7.8
+  '@types/node': ^12.7.11
   '@types/ramda': ^0.26.25
   fs-extra: ^8.1.0
   js-yaml: ^3.13.1
