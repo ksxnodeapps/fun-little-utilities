@@ -1,7 +1,7 @@
 {
-  "name": "string-template-format",
-  "version": "0.2.2",
-  "description": "String template tag that accepts any value and returns a string",
+  "name": "string-template-format-uri",
+  "version": "0.1.0",
+  "description": "String template literal tag that converts string into valid URI/URL components",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://ksxnodeapps.github.io/fun-little-utilities/",
@@ -13,21 +13,17 @@
     "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
   },
   "keywords": [
-    "strfmt",
-    "printf",
-    "format",
-    "template",
-    "string"
+    "url",
+    "uri",
+    "encode",
+    "string",
+    "literal",
+    "tag"
   ],
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.10.0",
     "string-template-format-base": "^0.1.0",
-    "string-template-format-compose": "^0.1.0",
-    "string-template-format-inspect": "^0.1.0",
-    "string-template-format-json": "^0.1.0",
-    "string-template-format-tostring": "^0.1.0",
-    "string-template-format-uri": "^0.1.0",
     "@types/node": "^12.7.8"
   }
 }

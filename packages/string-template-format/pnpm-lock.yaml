@@ -1,41 +1,28 @@
 dependencies:
-  '@tsfun/function': 0.0.2
   '@types/node': 12.7.8
-  just-json-type: 'link:../just-json-type'
+  string-template-format-base: 'link:../string-template-format-base'
+  string-template-format-compose: 'link:../string-template-format-compose'
+  string-template-format-inspect: 'link:../string-template-format-inspect'
+  string-template-format-json: 'link:../string-template-format-json'
+  string-template-format-tostring: 'link:../string-template-format-tostring'
+  string-template-format-uri: 'link:../string-template-format-uri'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/function/0.0.2:
-    dependencies:
-      '@types/node': 12.7.9
-      ts-pipe-compose: 0.1.11
-      tslib: 1.10.0
-    dev: false
-    resolution:
-      integrity: sha512-0avzjGJhnFMsNFgOZQx9JFqa4iIQjUEXsFE/z7YLGgL7CLQqtBcp4feg9DqhaFxVjF9Tw7Cdjhfgu//4L8Cx4A==
   /@types/node/12.7.8:
     dev: false
     resolution:
       integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
-  /@types/node/12.7.9:
-    dev: false
-    resolution:
-      integrity: sha512-P57oKTJ/vYivL2BCfxCC5tQjlS8qW31pbOL6qt99Yrjm95YdHgNZwjrTTjMBh+C2/y6PXIX4oz253+jUzxKKfQ==
-  /ts-pipe-compose/0.1.11:
-    dependencies:
-      '@types/node': 12.7.9
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-8cP8BumReKwqeYdzV/rMSqYqL2ZN/5yL1CBiMKYp0qri489g3VJ11vOPRTiUoTfqrSQIUWhHVIeZiPrYCD/6Ug==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@tsfun/function': ^0.0.2
   '@types/node': ^12.7.8
-  just-json-type: ^0.1.0
+  string-template-format-base: ^0.1.0
+  string-template-format-compose: ^0.1.0
+  string-template-format-inspect: ^0.1.0
+  string-template-format-json: ^0.1.0
+  string-template-format-tostring: ^0.1.0
+  string-template-format-uri: ^0.1.0
   tslib: ^1.10.0

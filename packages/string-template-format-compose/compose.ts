@@ -1,5 +1,5 @@
 import { composeXs } from '@tsfun/function'
-import Tag from './tag'
+import Tag from 'string-template-format-base'
 
 export interface Compose {
   /**

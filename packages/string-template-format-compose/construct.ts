@@ -1,5 +1,5 @@
 import compose from './compose'
-import Tag from './tag'
+import Tag from 'string-template-format-base'
 
 export interface Constructor<X, Y> {
   new (x: X): Y

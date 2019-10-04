@@ -1,5 +1,5 @@
 import { inspect, InspectOptions } from 'util'
-import Tag from './tag'
+import Tag from 'string-template-format-base'
 
 /**
  * Type of formatter that uses Node's `util.inspect`
@@ -29,6 +29,7 @@ export type InspectFormatter = Tag<any>
  * Format any value with Node's `util.inspect`
  */
 export const formatInspector: InspectFormatter = Tag(inspect)
+export { formatInspector as inspect, formatInspector as dbg }
 
 /**
  * Create a template literal tag that uses Node's `util.inspect`
