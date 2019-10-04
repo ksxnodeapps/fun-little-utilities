@@ -1,0 +1,3 @@
+var typedoc = typedoc || {};
+            typedoc.search = typedoc.search || {};
+            typedoc.search.data = {"kinds":{"32":"Variable","64":"Function","256":"Interface"},"rows":[{"id":0,"kind":256,"name":"Formatter","url":"interfaces/formatter.html","classes":"tsd-kind-interface tsd-has-type-parameter"},{"id":1,"kind":256,"name":"TemplateTag","url":"interfaces/templatetag.html","classes":"tsd-kind-interface tsd-has-type-parameter"},{"id":2,"kind":64,"name":"tag","url":"globals.html#tag","classes":"tsd-kind-function tsd-has-type-parameter"},{"id":3,"kind":32,"name":"TemplateTag","url":"globals.html#templatetag","classes":"tsd-kind-variable"}]};
