@@ -5,7 +5,7 @@ String template literal tag that uses Node's `util.inspect`
 ## Usage
 
 ```javascript
-import dbg from 'string-template-format-inspect'
+import { dbg } from 'string-template-format-inspect'
 console.log(dbg`number ${123}; string: ${'abc'}; object: ${{ abc: 123 }}; array: ${[0, 1, 2]}`)
 ```
 
