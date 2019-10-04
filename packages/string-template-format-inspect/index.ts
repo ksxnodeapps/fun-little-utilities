@@ -29,7 +29,7 @@ export type InspectFormatter = Tag<any>
  * Format any value with Node's `util.inspect`
  */
 export const formatInspector: InspectFormatter = Tag(inspect)
-export { formatInspector as inspect, formatInspector as dbg }
+export { formatInspector as inspect, formatInspector as debug, formatInspector as dbg }
 
 /**
  * Create a template literal tag that uses Node's `util.inspect`

@@ -17,5 +17,5 @@ export type ToStringValue = ToStringObject | undefined | null
  * (i.e. can be passed to `String`)
  */
 export const formatToString = Tag(String as (raw: ToStringValue) => string)
-export { formatToString as toString, formatToString as str }
+export { formatToString as toString, formatToString as string, formatToString as str }
 export default formatToString

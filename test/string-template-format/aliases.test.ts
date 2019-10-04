@@ -3,6 +3,11 @@ it('inspect = formatInspector', async () => {
   expect(inspect).toBe(formatInspector)
 })
 
+it('debug = formatInspector', async () => {
+  const { debug, formatInspector } = await import('string-template-format')
+  expect(debug).toBe(formatInspector)
+})
+
 it('dbg = formatInspector', async () => {
   const { dbg, formatInspector } = await import('string-template-format')
   expect(dbg).toBe(formatInspector)
@@ -16,6 +21,12 @@ it('json = formatJson', async () => {
 it('toString = formatToString', async () => {
   const { toString, formatToString } = await import('string-template-format')
   expect(toString).toBe(formatToString)
+})
+
+it('string = formatToString', async () => {
+  // tslint:disable-next-line:variable-name
+  const { string, formatToString } = await import('string-template-format')
+  expect(string).toBe(formatToString)
 })
 
 it('str = formatToString', async () => {
