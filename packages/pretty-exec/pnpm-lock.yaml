@@ -3,14 +3,10 @@ dependencies:
   '@types/shell-escape': 0.2.0
   chalk: 2.4.2
   shell-escape: 0.2.0
-  split-string-once: 0.0.0
+  split-string-once: 0.0.1
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/10.14.18:
-    dev: false
-    resolution:
-      integrity: sha512-ryO3Q3++yZC/+b8j8BdKd/dn9JlzlHBPdm80656xwYUdmPkpTGTjkAdt6BByiNupGPE8w0FhBgvYy/fX9hRNGQ==
   /@types/node/12.7.11:
     dev: false
     resolution:
@@ -63,15 +59,15 @@ packages:
     dev: false
     resolution:
       integrity: sha1-aP0CXrBJC09WegJ/C/IkgLX4QTM=
-  /split-string-once/0.0.0:
+  /split-string-once/0.0.1:
     dependencies:
-      '@types/node': 10.14.18
+      '@types/node': 12.7.11
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-FrmRtP56cdaHEPAGGjV6eebDJ7QUZ+sobv2SV69Fec5G6cJ2Jwm1d8o+IE1HyweCPYz6Mf7WVl/dpSkuN6tUbQ==
+      integrity: sha512-QeZm9SxDoXrAjfxf2RSFNgm3P91aSG3pFT0/k5QlsJCuZfAj94KGudROiE1cLKb6bjE4ivK55GMzaNC+8w/9ng==
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -89,5 +85,5 @@ specifiers:
   '@types/shell-escape': ^0.2.0
   chalk: ^2.4.2
   shell-escape: ^0.2.0
-  split-string-once: 0.0.0
+  split-string-once: ^0.0.1
   tslib: ^1.10.0

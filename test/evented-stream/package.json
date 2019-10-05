@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "monorepo-shared-assets": "^0.0.17",
+    "monorepo-shared-assets": "^0.0.18",
     "static-type-assert": "^3.0.1",
     "evented-stream": "file:../../packages/evented-stream"
   }

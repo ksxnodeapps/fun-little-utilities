@@ -21,12 +21,12 @@
     "iterable"
   ],
   "dependencies": {
-    "advanced-map-initialized": "^0.0.2",
-    "remote-controlled-promise": "^0.0.4",
-    "monorepo-shared-assets": "^0.0.17",
+    "advanced-map-initialized": "^0.0.3",
+    "remote-controlled-promise": "^0.0.5",
+    "monorepo-shared-assets": "^0.0.18",
     "tslib": "^1.10.0",
     "evented-stream-types": "^0.1.1",
-    "@types/ramda": "^0.26.25",
+    "@types/ramda": "^0.26.26",
     "@types/node": "^12.7.11"
   },
   "engines": {

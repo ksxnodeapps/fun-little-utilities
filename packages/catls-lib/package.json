@@ -19,7 +19,7 @@
   "dependencies": {
     "shell-quote": "^1.7.2",
     "typescript-miscellaneous": "^0.1.1",
-    "convenient-typescript-utilities": "^0.0.3",
+    "convenient-typescript-utilities": "^0.0.4",
     "tslib": "^1.10.0",
     "split-shell-buffer": "^2.0.1",
     "ts-await-event": "^0.1.1",

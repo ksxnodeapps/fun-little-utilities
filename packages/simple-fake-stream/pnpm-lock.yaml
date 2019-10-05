@@ -1,44 +1,44 @@
 dependencies:
   '@types/node': 12.7.11
   evented-stream-types: 'link:../evented-stream-types'
-  monorepo-shared-assets: 0.0.17
+  monorepo-shared-assets: 0.0.18
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/10.14.15:
-    dev: false
-    resolution:
-      integrity: sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g==
   /@types/node/12.7.11:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/ramda/0.25.51:
-    dev: false
-    resolution:
-      integrity: sha512-xcmtfHIgF9SYjhGdsZR1nQslxG4hu0cIpFfLQ4CWdw3KzHvl7ki1AzFLQUkbDTG42ZN3ZsQfdRzXRlkAvbIy5Q==
-  /immutable/3.8.2:
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
-  /monorepo-shared-assets/0.0.17:
+  /@types/ramda/0.26.26:
     dependencies:
-      '@types/node': 10.14.15
-      '@types/ramda': 0.25.51
-      immutable: 3.8.2
-      ramda: 0.25.0
+      ts-toolbelt: 4.7.24
+    dev: false
+    resolution:
+      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
+  /immutable/4.0.0-rc.12:
+    dev: false
+    resolution:
+      integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
+  /monorepo-shared-assets/0.0.18:
+    dependencies:
+      '@types/node': 12.7.11
+      '@types/ramda': 0.26.26
+      immutable: 4.0.0-rc.12
+      ramda: 0.26.1
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
-  /ramda/0.25.0:
+      integrity: sha512-xVSAGL8nrYGqutC0d958FlvmZ8Vwn9VR9kO3eS9o9vlLsqDfvYKLlb2FKLfHJiRGhs8xC9aIPqX3bhs8fE/Vvw==
+  /ramda/0.26.1:
     dev: false
     resolution:
-      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
+  /ts-toolbelt/4.7.24:
+    dev: false
+    resolution:
+      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -46,5 +46,5 @@ packages:
 specifiers:
   '@types/node': ^12.7.11
   evented-stream-types: ^0.1.1
-  monorepo-shared-assets: ^0.0.17
+  monorepo-shared-assets: ^0.0.18
   tslib: ^1.10.0

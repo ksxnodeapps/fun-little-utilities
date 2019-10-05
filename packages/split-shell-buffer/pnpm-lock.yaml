@@ -1,22 +1,15 @@
 dependencies:
   '@types/node': 12.7.11
-  create-array-equal: 0.0.1
+  create-array-equal: 0.0.2
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
   iter-tools: 6.2.6
   iterate-evented-stream: 'link:../iterate-evented-stream'
-  monorepo-shared-assets: 0.0.17
+  monorepo-shared-assets: 0.0.18
   tslib: 1.10.0
   typescript-char-code: 0.0.1
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.5.5:
-    dependencies:
-      core-js: 2.6.9
-      regenerator-runtime: 0.13.3
-    dev: false
-    resolution:
-      integrity: sha512-FYATQVR00NSNi7mUfpPDp7E8RYMXDuO8gaix7u/w3GekfUinKgX1AcTxs7SoiEmoEW9mbpjrwqWSW6zCmw5h8A==
   /@babel/runtime-corejs2/7.6.0:
     dependencies:
       core-js: 2.6.9
@@ -24,68 +17,50 @@ packages:
     dev: false
     resolution:
       integrity: sha512-zbPQzlbyJab2xCYb6VaESn8Tk/XiVpQJU7WvIKiQCwlFyc2NSCzKjqtBXCvpZBbiTOHCx10s2656REVnySwb+A==
-  /@babel/runtime/7.5.5:
-    dependencies:
-      regenerator-runtime: 0.13.3
-    dev: false
-    resolution:
-      integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
   /@babel/runtime/7.6.0:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
       integrity: sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
-  /@types/node/10.14.15:
+  /@types/node/10.14.20:
     dev: false
     resolution:
-      integrity: sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g==
+      integrity: sha512-An+MXSV8CGXz/BO9C1KKsoJ/8WDrvlNUaRMsm2h+IHZuSyQkM8U5bJJkb8ItLKA73VePG/nUK+t+EuW2IWuhsQ==
   /@types/node/12.7.11:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/ramda/0.25.51:
+  /@types/ramda/0.26.26:
+    dependencies:
+      ts-toolbelt: 4.7.24
     dev: false
     resolution:
-      integrity: sha512-xcmtfHIgF9SYjhGdsZR1nQslxG4hu0cIpFfLQ4CWdw3KzHvl7ki1AzFLQUkbDTG42ZN3ZsQfdRzXRlkAvbIy5Q==
+      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
   /core-js/2.6.9:
     dev: false
     requiresBuild: true
     resolution:
       integrity: sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
-  /create-array-equal/0.0.1:
+  /create-array-equal/0.0.2:
     dependencies:
-      '@types/node': 10.14.15
-      iter-tools: 6.2.5
+      '@types/node': 12.7.11
+      iter-tools: 6.2.6
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-QCpEgP2tYOfEK41zZzltXNWaB6HJYhZVVBEFc5o6+6FyHf4AUEVb0mBXJPYGNAPN/nT+TFFW4+ar8R3TQ1XxXg==
+      integrity: sha512-Rc+11fsqBlU/2Qg7pHdfQ+FIOw9Z2HvqRzi7TzNfPNs8b2Ob/3lRDbZuJ9iMffD6j/YSu4YUGCszvCiXO7A7dQ==
   /dequeue/1.0.5:
     dev: false
     resolution:
       integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
-  /immutable/3.8.2:
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
-  /iter-tools/6.2.5:
-    dependencies:
-      '@babel/runtime': 7.5.5
-      '@babel/runtime-corejs2': 7.5.5
-      dequeue: 1.0.5
-      little-ds-toolkit: 1.1.1
-      typescript-tuple: 2.2.1
-      typescript-union: 0.1.2
-      utility-types: 3.7.0
+  /immutable/4.0.0-rc.12:
     dev: false
     resolution:
-      integrity: sha512-63drajuMy4Ehx9EooIqBDjcFGOTY30W7SU7DrplPIa6ZdvQIBcK7QTW5TUrNoJRDEbNJG9yioUAU/Ezhys211w==
+      integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
   /iter-tools/6.2.6:
     dependencies:
       '@babel/runtime': 7.6.0
@@ -102,26 +77,30 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Zl5flhnd5W6nhRCyoL1bNlU8M5CWFp6SItMmK4pj39LKgzQD7LGg591OJ0jwDKat7mjHvJVkOyJT+BXOQH4iXw==
-  /monorepo-shared-assets/0.0.17:
+  /monorepo-shared-assets/0.0.18:
     dependencies:
-      '@types/node': 10.14.15
-      '@types/ramda': 0.25.51
-      immutable: 3.8.2
-      ramda: 0.25.0
+      '@types/node': 12.7.11
+      '@types/ramda': 0.26.26
+      immutable: 4.0.0-rc.12
+      ramda: 0.26.1
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-A0Y2mZ06vwBR0fyZdZZPn5MJcaIcxfs7BGGv9SU82c6e6k6UwnEQWmVx4LkiVvlnwgKI7+MVIFwMwTZhRGM+eQ==
-  /ramda/0.25.0:
+      integrity: sha512-xVSAGL8nrYGqutC0d958FlvmZ8Vwn9VR9kO3eS9o9vlLsqDfvYKLlb2FKLfHJiRGhs8xC9aIPqX3bhs8fE/Vvw==
+  /ramda/0.26.1:
     dev: false
     resolution:
-      integrity: sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
   /regenerator-runtime/0.13.3:
     dev: false
     resolution:
       integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
+  /ts-toolbelt/4.7.24:
+    dev: false
+    resolution:
+      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -142,7 +121,7 @@ packages:
       integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
   /typescript-miscellaneous/0.1.1:
     dependencies:
-      '@types/node': 10.14.15
+      '@types/node': 10.14.20
       tslib: 1.10.0
     dev: false
     engines:
@@ -171,11 +150,11 @@ packages:
       integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
 specifiers:
   '@types/node': ^12.7.11
-  create-array-equal: ^0.0.1
+  create-array-equal: ^0.0.2
   event-target-proxy: ^0.1.1
   evented-stream-types: ^0.1.1
   iter-tools: ^6.2.6
   iterate-evented-stream: ^0.1.1
-  monorepo-shared-assets: ^0.0.17
+  monorepo-shared-assets: ^0.0.18
   tslib: ^1.10.0
   typescript-char-code: ^0.0.1
