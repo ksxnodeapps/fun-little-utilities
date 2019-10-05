@@ -1,46 +1,269 @@
 dependencies:
   '@types/node': 12.7.11
   '@types/shell-quote': 1.6.1
-  convenient-typescript-utilities: 0.0.3
+  convenient-typescript-utilities: 0.0.4
   shell-quote: 1.7.2
-  split-shell-buffer: 'link:../split-shell-buffer'
+  split-shell-buffer: 2.0.2
   ts-await-event: 'link:../ts-await-event'
   tslib: 1.10.0
   typescript-miscellaneous: 0.1.1
 lockfileVersion: 5.1
 packages:
-  /@types/node/10.14.15:
+  /@babel/runtime-corejs2/7.6.2:
+    dependencies:
+      core-js: 2.6.9
+      regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g==
+      integrity: sha512-wdyVKnTv9Be4YlwF/7pByYNfcl23qC21aAQ0aIaZOo2ZOvhFEyJdBLJClYZ9i+Pmrz7sUQgg/MwbJa2RZTkygg==
+  /@babel/runtime/7.6.2:
+    dependencies:
+      regenerator-runtime: 0.13.3
+    dev: false
+    resolution:
+      integrity: sha512-EXxN64agfUqqIGeEjI5dL5z0Sw0ZwWo1mLTi4mQowCZ42O59b7DRpZAnTC6OqdF28wMBMFKNb/4uFGrVaigSpg==
+  /@types/node/10.14.20:
+    dev: false
+    resolution:
+      integrity: sha512-An+MXSV8CGXz/BO9C1KKsoJ/8WDrvlNUaRMsm2h+IHZuSyQkM8U5bJJkb8ItLKA73VePG/nUK+t+EuW2IWuhsQ==
   /@types/node/12.7.11:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+  /@types/ramda/0.26.26:
+    dependencies:
+      ts-toolbelt: 4.7.24
+    dev: false
+    resolution:
+      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:
       integrity: sha512-t0bxRLQ75MMF7EeICa1eYC//o1/6gPaUV7ELke4l4OkwpZ9apOzvv2oR5F2PmQJ3tM83Lo+MNKfAXn5gQRMcnA==
-  /convenient-typescript-utilities/0.0.3:
+  /advanced-map-altered-equal/0.0.4:
     dependencies:
-      '@types/node': 10.14.15
+      '@types/node': 12.7.11
+      advanced-map-base: 0.0.3
+      advanced-map-types: 0.0.3
+      convenient-typescript-utilities: 0.0.4
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-kHjMz9faySaKMx9ZRwv9oTogYRXCGaKPYq+xsLEswBo+0a5r8l5Xk/7Q+vqDLMYMrTm2oW7wEgtiDcXonr8Nkg==
+      integrity: sha512-dAyU/vvUW1T6ldD7MCmlSsC334mxmj0DK9ueQnmoYUgdWN4BSho1aVYsY7X5e6poAXFfnIi6BJhM47SBdGHFAQ==
+  /advanced-map-base/0.0.3:
+    dependencies:
+      '@types/node': 12.7.11
+      advanced-map-types: 0.0.3
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-2iVMbTr1ioSdvYiMWybCXc4jaTw9nsS9VV3XilQUVSt0nxRpb2bSw55/ItCG3GUP1UMb91tQOSSXAl7ronhPvg==
+  /advanced-map-initialized/0.0.3:
+    dependencies:
+      '@types/node': 12.7.11
+      advanced-map-base: 0.0.3
+      advanced-map-types: 0.0.3
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-mlPzbrojhQXOOwOP1RIZ0u4MLA2bGphMUGCgFUib1e46lM3hB9Xbm0qswDTX7E44uCVPaqMGQF4oMP/yTnVFhw==
+  /advanced-map-multi-key-base/0.0.4:
+    dependencies:
+      '@types/node': 12.7.11
+      advanced-map-altered-equal: 0.0.4
+      advanced-map-types: 0.0.3
+      create-array-equal: 0.0.2
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-gK9L9hbuQYz3GqIKMIqKcKwhIaE4a6P1O/Nl1xoGS3giCqO7beXBNoNbsPm+yHpbCQWQouHx7V/EXGjg611KnA==
+  /advanced-map-mutable-multi-key/0.0.4:
+    dependencies:
+      '@types/node': 12.7.11
+      advanced-map-multi-key-base: 0.0.4
+      advanced-map-types: 0.0.3
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-On7v9SNaPUhT7RSFtcPkwZq1nujxYOkdJCN9Q6itudZqA1k4UWPsNnWNsF0cAJBtN51BzRg8DWxv3wtgXpdLxQ==
+  /advanced-map-types/0.0.3:
+    dependencies:
+      '@types/node': 12.7.11
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-W/L5l30/AwWXR16W6ODU4vo7zfOaMJ44VgZMnkM2rgHrKJCD3w9heB18yoMrqy0AkEodIKiDs2FFjS57zMK9nQ==
+  /convenient-typescript-utilities/0.0.4:
+    dependencies:
+      '@types/node': 12.7.11
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-ymI2O6ijNuy/gw+j2DllCAsxQfK+TrENaCAd1uqFpYAhyi5+3HNYvnAaU5bQMRyYEa5HCy09zuTz0tsn3FYaIg==
+  /core-js/2.6.9:
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
+  /create-array-equal/0.0.2:
+    dependencies:
+      '@types/node': 12.7.11
+      iter-tools: 6.2.6
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-Rc+11fsqBlU/2Qg7pHdfQ+FIOw9Z2HvqRzi7TzNfPNs8b2Ob/3lRDbZuJ9iMffD6j/YSu4YUGCszvCiXO7A7dQ==
+  /dequeue/1.0.5:
+    dev: false
+    resolution:
+      integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
+  /event-target-proxy/0.1.2:
+    dependencies:
+      '@types/node': 12.7.11
+      advanced-map-initialized: 0.0.3
+      advanced-map-mutable-multi-key: 0.0.4
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-SbinPMK0VuszxWfEON2AbtF98LMGpmJSMDYfk820G9wbOw6IhLvnhuTj31bs4+iM2XrOtyifhqEkxUAcJF1LIQ==
+  /evented-stream-types/0.1.2:
+    dependencies:
+      '@types/node': 12.7.11
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-T3O8BMn8wJujtcoDZrrfQ/3ReE1NTlXBdti1sJ+JpYk1FNuNs+wr73Fq+aWo7ygh7ZUUc2YF2e28RAyhWF1vVg==
+  /immutable/4.0.0-rc.12:
+    dev: false
+    resolution:
+      integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
+  /iter-tools/6.2.6:
+    dependencies:
+      '@babel/runtime': 7.6.2
+      '@babel/runtime-corejs2': 7.6.2
+      dequeue: 1.0.5
+      little-ds-toolkit: 1.1.1
+      typescript-tuple: 2.2.1
+      typescript-union: 0.1.2
+      utility-types: 3.8.0
+    dev: false
+    resolution:
+      integrity: sha512-DlBSv7cIrM214wYFxyz4vg98BmEpxFTGx37ei/ktYT05shJHoDwz7wuaPx3XhaJi1uGEc5bM+vUBWhm3z6yNIg==
+  /iterate-evented-stream/0.1.2:
+    dependencies:
+      '@types/node': 12.7.11
+      '@types/ramda': 0.26.26
+      advanced-map-initialized: 0.0.3
+      evented-stream-types: 0.1.2
+      monorepo-shared-assets: 0.0.18
+      remote-controlled-promise: 0.0.5
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-bGfFThzQ+Csl7n915gK9l12GDKfHi8zfy1ds54+mRZwvFBEhKMw11Gc2JsASjgbKeAU+VTyBXpqIO8dSWfZY+g==
+  /little-ds-toolkit/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-Zl5flhnd5W6nhRCyoL1bNlU8M5CWFp6SItMmK4pj39LKgzQD7LGg591OJ0jwDKat7mjHvJVkOyJT+BXOQH4iXw==
+  /monorepo-shared-assets/0.0.18:
+    dependencies:
+      '@types/node': 12.7.11
+      '@types/ramda': 0.26.26
+      immutable: 4.0.0-rc.12
+      ramda: 0.26.1
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-xVSAGL8nrYGqutC0d958FlvmZ8Vwn9VR9kO3eS9o9vlLsqDfvYKLlb2FKLfHJiRGhs8xC9aIPqX3bhs8fE/Vvw==
+  /ramda/0.26.1:
+    dev: false
+    resolution:
+      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
+  /regenerator-runtime/0.13.3:
+    dev: false
+    resolution:
+      integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
+  /remote-controlled-promise/0.0.5:
+    dependencies:
+      '@types/node': 12.7.11
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-svkUAnx9NVLipKIwacdV3fiA/pV57eotr5ml5ndnlVjUFtc+kpLChBKNUoznMfeMM7qzU5w060Nt2zGR4aHtlw==
   /shell-quote/1.7.2:
     dev: false
     resolution:
       integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+  /split-shell-buffer/2.0.2:
+    dependencies:
+      '@types/node': 12.7.11
+      create-array-equal: 0.0.2
+      event-target-proxy: 0.1.2
+      evented-stream-types: 0.1.2
+      iter-tools: 6.2.6
+      iterate-evented-stream: 0.1.2
+      monorepo-shared-assets: 0.0.18
+      tslib: 1.10.0
+      typescript-char-code: 0.0.1
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-mcN+bQpe68s8rp72Fdx77hj3rZ6DjOb5AQtuQZOlFcCNneVDKTusZxGTZ9Jt/MlvvNTv4t1UhB3lb2oG/NzDOg==
+  /ts-toolbelt/4.7.24:
+    dev: false
+    resolution:
+      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /typescript-char-code/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-FQZzao2um2HVSIy7XTSMuttHhpKKEaRqIx1Le0WdMRotSBn+MwBKanl6gwpIyRS7545GeclToggLjEVGzrQmqg==
+  /typescript-compare/0.0.2:
+    dependencies:
+      typescript-logic: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+  /typescript-logic/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
   /typescript-miscellaneous/0.1.1:
     dependencies:
-      '@types/node': 10.14.15
+      '@types/node': 10.14.20
       tslib: 1.10.0
     dev: false
     engines:
@@ -48,10 +271,29 @@ packages:
       typescript: '>= 3.0.0'
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
+  /typescript-tuple/2.2.1:
+    dependencies:
+      typescript-compare: 0.0.2
+    dev: false
+    resolution:
+      integrity: sha512-Zcr0lbt8z5ZdEzERHAMAniTiIKerFCMgd7yjq1fPnDJ43et/k9twIFQMUYff9k5oXcsQ0WpvFcgzK2ZKASoW6Q==
+  /typescript-union/0.1.2:
+    dependencies:
+      typescript-tuple: 2.2.1
+      utility-types: 3.8.0
+    dev: false
+    resolution:
+      integrity: sha512-pzfdtUZ8teglF69/dllzgd6yV7ikoszPHVyOkl4WGICRhTJgCTwL3+ZnnF/hvII536VbsNMQfd9GmLBNhtsmgg==
+  /utility-types/3.8.0:
+    dev: false
+    engines:
+      node: '>= 4'
+    resolution:
+      integrity: sha512-UoKivAmVw5TL6AHuILieOJjIK9ajS0l5gyN5LbJglPuVwzfYBniDhe+3A5+ZBtS0TAHQs5qUxTwj9jXurINrcw==
 specifiers:
   '@types/node': ^12.7.11
   '@types/shell-quote': ^1.6.1
-  convenient-typescript-utilities: ^0.0.3
+  convenient-typescript-utilities: ^0.0.4
   shell-quote: ^1.7.2
   split-shell-buffer: ^2.0.1
   ts-await-event: ^0.1.1
