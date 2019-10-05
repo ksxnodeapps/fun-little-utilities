@@ -1,6 +1,6 @@
 {
   "name": "split-shell-buffer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Splitting shell strings while preserving SGR escape sequences",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -26,9 +26,9 @@
     "typescript-char-code": "^0.0.1",
     "monorepo-shared-assets": "^0.0.18",
     "tslib": "^1.10.0",
-    "event-target-proxy": "^0.1.1",
-    "iterate-evented-stream": "^0.1.1",
-    "evented-stream-types": "^0.1.1",
+    "event-target-proxy": "^0.1.2",
+    "iterate-evented-stream": "^0.1.2",
+    "evented-stream-types": "^0.1.2",
     "@types/node": "^12.7.11"
   },
   "engines": {

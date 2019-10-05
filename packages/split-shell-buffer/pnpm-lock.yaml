@@ -151,10 +151,10 @@ packages:
 specifiers:
   '@types/node': ^12.7.11
   create-array-equal: ^0.0.2
-  event-target-proxy: ^0.1.1
-  evented-stream-types: ^0.1.1
+  event-target-proxy: ^0.1.2
+  evented-stream-types: ^0.1.2
   iter-tools: ^6.2.6
-  iterate-evented-stream: ^0.1.1
+  iterate-evented-stream: ^0.1.2
   monorepo-shared-assets: ^0.0.18
   tslib: ^1.10.0
   typescript-char-code: ^0.0.1

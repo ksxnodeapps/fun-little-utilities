@@ -37,5 +37,5 @@ packages:
 specifiers:
   '@tsfun/function': ^0.0.2
   '@types/node': ^12.7.11
-  string-template-format-base: ^0.1.0
+  string-template-format-base: ^0.1.1
   tslib: ^1.10.0

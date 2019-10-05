@@ -105,7 +105,7 @@ specifiers:
   '@types/node': ^12.7.11
   '@types/ramda': ^0.26.26
   advanced-map-initialized: ^0.0.3
-  evented-stream-types: ^0.1.1
+  evented-stream-types: ^0.1.2
   monorepo-shared-assets: ^0.0.18
   remote-controlled-promise: ^0.0.5
   tslib: ^1.10.0

@@ -1,6 +1,6 @@
 {
   "name": "string-template-format-inspect",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "String template literal tag that uses Node's util.inspect",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.10.0",
-    "string-template-format-base": "^0.1.0",
+    "string-template-format-base": "^0.1.1",
     "@types/node": "^12.7.11"
   }
 }

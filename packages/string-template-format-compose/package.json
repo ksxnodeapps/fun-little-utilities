@@ -1,6 +1,6 @@
 {
   "name": "string-template-format-compose",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Compose string template tags",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@tsfun/function": "^0.0.2",
     "tslib": "^1.10.0",
-    "string-template-format-base": "^0.1.0",
+    "string-template-format-base": "^0.1.1",
     "@types/node": "^12.7.11"
   }
 }

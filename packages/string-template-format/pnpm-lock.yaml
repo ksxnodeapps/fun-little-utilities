@@ -19,10 +19,10 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@types/node': ^12.7.11
-  string-template-format-base: ^0.1.0
-  string-template-format-compose: ^0.1.0
-  string-template-format-inspect: ^0.1.1
-  string-template-format-json: ^0.1.0
-  string-template-format-tostring: ^0.1.0
-  string-template-format-uri: ^0.1.0
+  string-template-format-base: ^0.1.1
+  string-template-format-compose: ^0.1.1
+  string-template-format-inspect: ^0.1.2
+  string-template-format-json: ^0.1.1
+  string-template-format-tostring: ^0.1.1
+  string-template-format-uri: ^0.1.1
   tslib: ^1.10.0
