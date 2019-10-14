@@ -25,22 +25,22 @@ dependencies:
   number-enum: 3.0.0
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.5.5:
+  /@babel/runtime-corejs2/7.6.2:
     dependencies:
       core-js: 2.6.9
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-FYATQVR00NSNi7mUfpPDp7E8RYMXDuO8gaix7u/w3GekfUinKgX1AcTxs7SoiEmoEW9mbpjrwqWSW6zCmw5h8A==
-  /@babel/runtime/7.5.5:
+      integrity: sha512-wdyVKnTv9Be4YlwF/7pByYNfcl23qC21aAQ0aIaZOo2ZOvhFEyJdBLJClYZ9i+Pmrz7sUQgg/MwbJa2RZTkygg==
+  /@babel/runtime/7.6.2:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+      integrity: sha512-EXxN64agfUqqIGeEjI5dL5z0Sw0ZwWo1mLTi4mQowCZ42O59b7DRpZAnTC6OqdF28wMBMFKNb/4uFGrVaigSpg==
   /@types/fs-extra/8.0.0:
     dependencies:
-      '@types/node': 12.7.7
+      '@types/node': 12.7.11
     dev: false
     resolution:
       integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
@@ -52,10 +52,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/node/12.7.7:
-    dev: false
-    resolution:
-      integrity: sha512-4jUncNe2tj1nmrO/34PsRpZqYVnRV1svbU78cKhuQKkMntKB/AmdLyGgswcZKjFHEHGpiY8pVD8CuVI55nP54w==
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -132,18 +128,18 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
-  /iter-tools/6.2.5:
+  /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.5.5
-      '@babel/runtime-corejs2': 7.5.5
+      '@babel/runtime': 7.6.2
+      '@babel/runtime-corejs2': 7.6.2
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
       typescript-union: 0.1.2
-      utility-types: 3.7.0
+      utility-types: 3.8.0
     dev: false
     resolution:
-      integrity: sha512-63drajuMy4Ehx9EooIqBDjcFGOTY30W7SU7DrplPIa6ZdvQIBcK7QTW5TUrNoJRDEbNJG9yioUAU/Ezhys211w==
+      integrity: sha512-DlBSv7cIrM214wYFxyz4vg98BmEpxFTGx37ei/ktYT05shJHoDwz7wuaPx3XhaJi1uGEc5bM+vUBWhm3z6yNIg==
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
@@ -156,7 +152,7 @@ packages:
       integrity: sha512-Zl5flhnd5W6nhRCyoL1bNlU8M5CWFp6SItMmK4pj39LKgzQD7LGg591OJ0jwDKat7mjHvJVkOyJT+BXOQH4iXw==
   /number-enum/3.0.0:
     dependencies:
-      iter-tools: 6.2.5
+      iter-tools: 6.2.6
     dev: false
     engines:
       node: '>= 8.9.0'
@@ -197,7 +193,7 @@ packages:
   /typescript-union/0.1.2:
     dependencies:
       typescript-tuple: 2.2.1
-      utility-types: 3.7.0
+      utility-types: 3.8.0
     dev: false
     resolution:
       integrity: sha512-pzfdtUZ8teglF69/dllzgd6yV7ikoszPHVyOkl4WGICRhTJgCTwL3+ZnnF/hvII536VbsNMQfd9GmLBNhtsmgg==
@@ -207,12 +203,12 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
-  /utility-types/3.7.0:
+  /utility-types/3.8.0:
     dev: false
     engines:
       node: '>= 4'
     resolution:
-      integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
+      integrity: sha512-UoKivAmVw5TL6AHuILieOJjIK9ajS0l5gyN5LbJglPuVwzfYBniDhe+3A5+ZBtS0TAHQs5qUxTwj9jXurINrcw==
 specifiers:
   '@tools/add-dependency': 'file:../add-dependency'
   '@tools/clean-typescript-build': 'file:../clean-typescript-build'

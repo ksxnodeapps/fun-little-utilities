@@ -13,7 +13,7 @@ lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.0:
     dependencies:
-      '@types/node': 12.7.2
+      '@types/node': 12.7.11
     dev: false
     resolution:
       integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
@@ -29,13 +29,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/node/12.7.2:
-    dev: false
-    resolution:
-      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
   /@types/ramda/0.26.26:
     dependencies:
-      ts-toolbelt: 4.7.24
+      ts-toolbelt: 4.8.3
     dev: false
     resolution:
       integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
@@ -139,10 +135,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /ts-toolbelt/4.7.24:
+  /ts-toolbelt/4.8.3:
     dev: false
     resolution:
-      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
+      integrity: sha512-qSC/t6vfUPqVMkH7wQmRwYbShubAJufUoUynJj8e+AlSXK3+M6rC/OnQ+Mdw6Qd/WYTf46QZDM8nUhxYVJTIPw==
   /tslib/1.10.0:
     dev: false
     resolution:
