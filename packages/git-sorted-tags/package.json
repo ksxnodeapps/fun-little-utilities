@@ -21,7 +21,7 @@
   ],
   "bin": "git-sorted-tags",
   "dependencies": {
-    "yargs": "^14.0.0",
+    "yargs": "^15.0.0",
     "tslib": "^1.10.0",
     "sort-versions": "^0.1.2",
     "@types/yargs": "^13.0.3",
