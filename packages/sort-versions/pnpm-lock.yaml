@@ -1,23 +1,23 @@
 dependencies:
-  '@types/node': 12.7.11
-  '@types/semver': 6.0.2
-  semver: 6.3.0
+  '@types/node': 12.12.17
+  '@types/semver': 6.2.0
+  semver: 7.0.0
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.7.11:
+  /@types/node/12.12.17:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/semver/6.0.2:
+      integrity: sha512-Is+l3mcHvs47sKy+afn2O1rV4ldZFU7W8101cNlOd+MRbjM4Onida8jSZnJdTe/0Pcf25g9BNIUsuugmE6puHA==
+  /@types/semver/6.2.0:
     dev: false
     resolution:
-      integrity: sha512-G1Ggy7/9Nsa1Jt2yiBR2riEuyK2DFNnqow6R7cromXPMNynackRY1vqFTLz/gwnef1LHokbXThcPhqMRjUbkpQ==
-  /semver/6.3.0:
+      integrity: sha512-1OzrNb4RuAzIT7wHSsgZRlMBlNsJl+do6UblR7JMW4oB7bbR+uBEYtUh7gEc/jM84GGilh68lSOokyM/zNUlBA==
+  /semver/7.0.0:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+      integrity: sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -25,5 +25,5 @@ packages:
 specifiers:
   '@types/node': ^12.7.11
   '@types/semver': ^6.0.2
-  semver: ^6.3.0
+  semver: ^7.0.0
   tslib: ^1.10.0
