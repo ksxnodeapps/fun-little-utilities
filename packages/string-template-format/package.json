@@ -27,7 +27,7 @@
     "string-template-format-inspect": "^0.1.3",
     "string-template-format-json": "^0.1.2",
     "string-template-format-tostring": "^0.1.2",
-    "string-template-format-uri": "^0.1.2",
+    "string-template-format-uri": "^0.1.1",
     "@types/node": "^13.1.6"
   }
 }
