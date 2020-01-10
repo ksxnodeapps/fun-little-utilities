@@ -21,7 +21,7 @@
     "typescript-miscellaneous": "^0.1.1",
     "convenient-typescript-utilities": "^0.0.4",
     "tslib": "^1.10.0",
-    "split-shell-buffer": "^2.0.3",
+    "split-shell-buffer": "^2.0.2",
     "ts-await-event": "^0.1.3",
     "@types/shell-quote": "^1.6.1",
     "@types/node": "^13.1.6"
