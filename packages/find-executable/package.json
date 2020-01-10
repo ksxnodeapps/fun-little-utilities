@@ -19,7 +19,7 @@
   "bin": "find-executable",
   "dependencies": {
     "ts-yargs": "^0.1.3",
-    "find-executable-lib": "^0.1.4",
+    "find-executable-lib": "^0.1.3",
     "tslib": "^1.10.0",
     "@types/node": "^13.1.6"
   },
