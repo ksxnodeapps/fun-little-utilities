@@ -7,6 +7,7 @@ dependencies:
   '@types/inquirer': 6.5.0
   fs-extra: 8.1.0
   inquirer: 7.0.3
+  ts-yargs: 'link:../../packages/ts-yargs'
 lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.1:
@@ -320,3 +321,4 @@ specifiers:
   '@types/inquirer': ^6.5.0
   fs-extra: ^8.1.0
   inquirer: ^7.0.3
+  ts-yargs: ^0.1.2

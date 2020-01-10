@@ -39,7 +39,7 @@ const interactive = '--interactive'
 const spawn = jest.fn(function localSpawn (cmd: string, argv: ReadonlyArray<string>): FakeChildProcess {
   if (cmd === 'script') {
     const argvLast = ramda.last(argv)
-    const [nextCmd, ...nextArgv] = shQuote.parse(argvLast)
+    const [nextCmd, ...nextArgv] = shQuote.parse(argvLast!)
     return localSpawn(nextCmd as any, [...nextArgv as any, interactive]) // quick fix
   }
 
