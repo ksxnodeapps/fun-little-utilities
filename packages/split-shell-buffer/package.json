@@ -26,7 +26,7 @@
     "typescript-char-code": "^0.0.1",
     "monorepo-shared-assets": "^0.0.18",
     "tslib": "^1.10.0",
-    "event-target-proxy": "^0.1.3",
+    "event-target-proxy": "^0.1.2",
     "iterate-evented-stream": "^0.1.3",
     "evented-stream-types": "^0.1.3",
     "@types/node": "^13.1.6"
