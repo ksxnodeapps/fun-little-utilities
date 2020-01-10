@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "tslib": "^1.10.0",
-    "evented-stream-types": "^0.1.3",
+    "evented-stream-types": "^0.1.2",
     "event-target-proxy": "^0.1.3",
     "@types/node": "^13.1.6"
   },

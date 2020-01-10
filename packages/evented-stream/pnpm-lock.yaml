@@ -17,6 +17,6 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   combine-evented-stream: ^0.1.3
-  evented-stream-types: ^0.1.3
+  evented-stream-types: ^0.1.2
   iterate-evented-stream: ^0.1.3
   tslib: ^1.10.0

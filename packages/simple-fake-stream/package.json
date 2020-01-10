@@ -22,7 +22,7 @@
   "dependencies": {
     "monorepo-shared-assets": "^0.0.18",
     "tslib": "^1.10.0",
-    "evented-stream-types": "^0.1.3",
+    "evented-stream-types": "^0.1.2",
     "@types/node": "^13.1.6"
   },
   "engines": {
