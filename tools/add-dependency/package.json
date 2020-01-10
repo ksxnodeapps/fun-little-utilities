@@ -4,11 +4,10 @@
   "private": true,
   "bin": "bin.js",
   "dependencies": {
-    "inquirer": "^7.0.0",
+    "inquirer": "^7.0.3",
     "fs-extra": "^8.1.0",
     "@types/inquirer": "^6.5.0",
-    "@types/fs-extra": "^8.0.0",
-    "ts-yargs": "file:../../packages/ts-yargs",
+    "@types/fs-extra": "^8.0.1",
     "@tools/preloaded-node": "file:../preloaded-node",
     "@tools/places": "file:../places",
     "@tools/utils": "file:../utils"
