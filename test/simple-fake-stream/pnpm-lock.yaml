@@ -5,13 +5,13 @@ dependencies:
   static-type-assert: 3.0.1
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.7.11:
+  /@types/node/12.12.24:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
   /@types/ramda/0.26.26:
     dependencies:
-      ts-toolbelt: 4.7.24
+      ts-toolbelt: 4.14.6
     dev: false
     resolution:
       integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
@@ -21,7 +21,7 @@ packages:
       integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
   /monorepo-shared-assets/0.0.18:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.24
       '@types/ramda': 0.26.26
       immutable: 4.0.0-rc.12
       ramda: 0.26.1
@@ -43,10 +43,10 @@ packages:
       typescript: ^3.0.3
     resolution:
       integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
-  /ts-toolbelt/4.7.24:
+  /ts-toolbelt/4.14.6:
     dev: false
     resolution:
-      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
+      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
   /tslib/1.10.0:
     dev: false
     resolution:

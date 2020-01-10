@@ -8,7 +8,7 @@ packages:
     dependencies:
       '@types/node': 12.12.24
       tslib: 1.10.0
-      utility-types: 3.8.0
+      utility-types: 3.10.0
     dev: false
     resolution:
       integrity: sha512-VCZ1ON6ijErpGGlxUVywls/8YLnGVbG5HbugTb2T/mmFzE37RpIoi+s7vyDVwf4dOkFu87oUy5WX1acm3EN36g==
@@ -20,12 +20,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /utility-types/3.8.0:
+  /utility-types/3.10.0:
     dev: false
     engines:
       node: '>= 4'
     resolution:
-      integrity: sha512-UoKivAmVw5TL6AHuILieOJjIK9ajS0l5gyN5LbJglPuVwzfYBniDhe+3A5+ZBtS0TAHQs5qUxTwj9jXurINrcw==
+      integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
   '@tsfun/object': ^0.0.7
   fast-traverse: 'file:../../packages/fast-traverse'

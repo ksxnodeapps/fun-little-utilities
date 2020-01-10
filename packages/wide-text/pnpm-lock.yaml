@@ -15,4 +15,4 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   tslib: ^1.10.0
-  wide-text-types: ^0.1.2
+  wide-text-types: ^0.1.3

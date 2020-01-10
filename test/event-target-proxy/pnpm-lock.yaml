@@ -4,37 +4,38 @@ dependencies:
   static-type-assert: 3.0.1
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.6.0:
+  /@babel/runtime-corejs2/7.7.7:
     dependencies:
-      core-js: 2.6.9
+      core-js: 2.6.11
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-zbPQzlbyJab2xCYb6VaESn8Tk/XiVpQJU7WvIKiQCwlFyc2NSCzKjqtBXCvpZBbiTOHCx10s2656REVnySwb+A==
-  /@babel/runtime/7.6.0:
+      integrity: sha512-P91T3dFYQL7aj44PxOMIAbo66Ag3NbmXG9fseSYaXxapp3K9XTct5HU9IpTOm2D0AoktKusgqzN5YcSxZXEKBQ==
+  /@babel/runtime/7.7.7:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
-  /core-js/2.6.9:
+      integrity: sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
+  /core-js/2.6.11:
+    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
     requiresBuild: true
     resolution:
-      integrity: sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
+      integrity: sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
   /dequeue/1.0.5:
     dev: false
     resolution:
       integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
   /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.6.0
-      '@babel/runtime-corejs2': 7.6.0
+      '@babel/runtime': 7.7.7
+      '@babel/runtime-corejs2': 7.7.7
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
       typescript-union: 0.1.2
-      utility-types: 3.7.0
+      utility-types: 3.10.0
     dev: false
     resolution:
       integrity: sha512-DlBSv7cIrM214wYFxyz4vg98BmEpxFTGx37ei/ktYT05shJHoDwz7wuaPx3XhaJi1uGEc5bM+vUBWhm3z6yNIg==
@@ -73,16 +74,16 @@ packages:
   /typescript-union/0.1.2:
     dependencies:
       typescript-tuple: 2.2.1
-      utility-types: 3.7.0
+      utility-types: 3.10.0
     dev: false
     resolution:
       integrity: sha512-pzfdtUZ8teglF69/dllzgd6yV7ikoszPHVyOkl4WGICRhTJgCTwL3+ZnnF/hvII536VbsNMQfd9GmLBNhtsmgg==
-  /utility-types/3.7.0:
+  /utility-types/3.10.0:
     dev: false
     engines:
       node: '>= 4'
     resolution:
-      integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
+      integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
   event-target-proxy: 'file:../../packages/event-target-proxy'
   iter-tools: ^6.2.6

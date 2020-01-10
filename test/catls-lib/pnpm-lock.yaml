@@ -10,23 +10,23 @@ dependencies:
   utility-types: 3.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/fs-extra/8.0.0:
+  /@types/fs-extra/8.0.1:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.24
     dev: false
     resolution:
-      integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
+      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
   /@types/js-yaml/3.12.1:
     dev: false
     resolution:
       integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-  /@types/node/12.7.11:
+  /@types/node/12.12.24:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
   /@types/ramda/0.26.26:
     dependencies:
-      ts-toolbelt: 4.7.24
+      ts-toolbelt: 4.14.6
     dev: false
     resolution:
       integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
@@ -55,9 +55,9 @@ packages:
       integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
   /extra-jest/0.0.26:
     dependencies:
-      '@types/fs-extra': 8.0.0
+      '@types/fs-extra': 8.0.1
       '@types/js-yaml': 3.12.1
-      '@types/node': 12.7.11
+      '@types/node': 12.12.24
       '@types/ramda': 0.26.26
       fs-extra: 8.1.0
       fs-tree-utils: 0.1.7
@@ -74,7 +74,7 @@ packages:
       integrity: sha512-NQmw30N0+xTL1+SXOzeHVQRUen6jvC25sWq+50iCG8hBDSB+xEt2skQ804XWEJ3LI36ZQugfiJ/gobJMihkStA==
   /fs-extra/8.1.0:
     dependencies:
-      graceful-fs: 4.2.2
+      graceful-fs: 4.2.3
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: false
@@ -84,8 +84,8 @@ packages:
       integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
   /fs-tree-utils/0.1.7:
     dependencies:
-      '@types/fs-extra': 8.0.0
-      '@types/node': 12.7.11
+      '@types/fs-extra': 8.0.1
+      '@types/node': 12.12.24
       '@types/ramda': 0.26.26
       fs-extra: 8.1.0
       monorepo-shared-assets: 0.0.18
@@ -96,10 +96,10 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-UiJ5pnplv6hOAWp4k42LNjhyRm8T3++wnXHxHvo2AP3/eMQhKMl4dVe7Knj3dfFHt0EeE6IHsQucCyCW6KlARA==
-  /graceful-fs/4.2.2:
+  /graceful-fs/4.2.3:
     dev: false
     resolution:
-      integrity: sha512-IItsdsea19BoLC7ELy13q1iJFNmd7ofZH5+X/pJr90/nRoPEX0DJo1dHDbgtYWOhJhcCgMDTOw84RZ72q6lB+Q==
+      integrity: sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
   /immutable/4.0.0-rc.12:
     dev: false
     resolution:
@@ -115,12 +115,12 @@ packages:
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
-      graceful-fs: 4.2.2
+      graceful-fs: 4.2.3
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /monorepo-shared-assets/0.0.18:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.24
       '@types/ramda': 0.26.26
       immutable: 4.0.0-rc.12
       ramda: 0.26.1
@@ -146,10 +146,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
-  /ts-toolbelt/4.7.24:
-    dev: false
-    resolution:
-      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
   /ts-toolbelt/6.1.6:
     dev: false
     resolution:
@@ -160,7 +156,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /unique-temp-path/0.1.2:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.24
       tslib: 1.10.0
     dev: false
     engines:

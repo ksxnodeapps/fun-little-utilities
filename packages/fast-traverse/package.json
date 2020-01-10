@@ -1,6 +1,6 @@
 {
   "name": "fast-traverse",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Traverse a FileSystem tree as fast as possible",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

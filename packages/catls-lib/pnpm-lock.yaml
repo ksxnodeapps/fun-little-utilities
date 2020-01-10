@@ -9,14 +9,14 @@ dependencies:
   typescript-miscellaneous: 0.1.1
 lockfileVersion: 5.1
 packages:
-  /@types/node/10.14.15:
+  /@types/node/10.17.13:
     dev: false
     resolution:
-      integrity: sha512-CBR5avlLcu0YCILJiDIXeU2pTw7UK/NIxfC63m7d7CVamho1qDEzXKkOtEauQRPMy6MI8mLozth+JJkas7HY6g==
-  /@types/node/12.7.11:
+      integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
+  /@types/node/12.12.24:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
   /@types/node/13.1.6:
     dev: false
     resolution:
@@ -27,7 +27,7 @@ packages:
       integrity: sha512-t0bxRLQ75MMF7EeICa1eYC//o1/6gPaUV7ELke4l4OkwpZ9apOzvv2oR5F2PmQJ3tM83Lo+MNKfAXn5gQRMcnA==
   /convenient-typescript-utilities/0.0.4:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.24
       tslib: 1.10.0
     dev: false
     engines:
@@ -44,7 +44,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /typescript-miscellaneous/0.1.1:
     dependencies:
-      '@types/node': 10.14.15
+      '@types/node': 10.17.13
       tslib: 1.10.0
     dev: false
     engines:
@@ -57,7 +57,7 @@ specifiers:
   '@types/shell-quote': ^1.6.1
   convenient-typescript-utilities: ^0.0.4
   shell-quote: ^1.7.2
-  split-shell-buffer: ^2.0.2
-  ts-await-event: ^0.1.2
+  split-shell-buffer: ^2.0.3
+  ts-await-event: ^0.1.3
   tslib: ^1.10.0
   typescript-miscellaneous: ^0.1.1
