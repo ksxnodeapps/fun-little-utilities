@@ -16,5 +16,5 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   find-executable-lib: ^0.1.4
-  ts-yargs: ^0.1.3
+  ts-yargs: ^0.1.2
   tslib: ^1.10.0
