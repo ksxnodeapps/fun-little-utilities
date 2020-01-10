@@ -1,18 +1,18 @@
 dependencies:
-  '@types/node': 12.7.11
-  '@types/which': 1.3.1
+  '@types/node': 13.1.6
+  '@types/which': 1.3.2
   tslib: 1.10.0
-  which: 2.0.1
+  which: 2.0.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.7.11:
+  /@types/node/13.1.6:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/which/1.3.1:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+  /@types/which/1.3.2:
     dev: false
     resolution:
-      integrity: sha512-ZrJDWpvg75LTGX4XwuneY9s6bF3OeZcGTpoGh3zDV9ytzcHMFsRrMIaLBRJZQMBoGyKs6unBQfVdrLZiYfb1zQ==
+      integrity: sha512-8oDqyLC7eD4HM307boe2QWKyuzdzWBj56xI/imSl2cpL+U3tCMaTAkMJ4ee5JBZ/FsOJlvRGeIShiZDAl1qERA==
   /isexe/2.0.0:
     dev: false
     resolution:
@@ -21,7 +21,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /which/2.0.1:
+  /which/2.0.2:
     dependencies:
       isexe: 2.0.0
     dev: false
@@ -29,9 +29,9 @@ packages:
       node: '>= 8'
     hasBin: true
     resolution:
-      integrity: sha512-N7GBZOTswtB9lkQBZA4+zAXrjEIWAUOB93AvzUiudRzRxhUdLURQ7D/gAIMY1gatT/LTbmbcv8SiYazy3eYB7w==
+      integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
 specifiers:
-  '@types/node': ^12.7.11
-  '@types/which': ^1.3.1
+  '@types/node': ^13.1.6
+  '@types/which': ^1.3.2
   tslib: ^1.10.0
-  which: ^2.0.1
+  which: ^2.0.2

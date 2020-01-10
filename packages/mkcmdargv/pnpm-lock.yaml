@@ -1,8 +1,8 @@
 dependencies:
-  '@types/fs-extra': 8.0.0
+  '@types/fs-extra': 8.0.1
   '@types/js-yaml': 3.12.1
-  '@types/node': 12.7.11
-  '@types/ramda': 0.26.26
+  '@types/node': 13.1.6
+  '@types/ramda': 0.26.39
   fs-extra: 8.1.0
   js-yaml: 3.13.1
   ramda: 0.26.1
@@ -10,30 +10,26 @@ dependencies:
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/fs-extra/8.0.0:
+  /@types/fs-extra/8.0.1:
     dependencies:
-      '@types/node': 12.7.2
+      '@types/node': 13.1.6
     dev: false
     resolution:
-      integrity: sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
+      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
   /@types/js-yaml/3.12.1:
     dev: false
     resolution:
       integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-  /@types/node/12.7.11:
+  /@types/node/13.1.6:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/node/12.7.2:
-    dev: false
-    resolution:
-      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
-  /@types/ramda/0.26.26:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+  /@types/ramda/0.26.39:
     dependencies:
-      ts-toolbelt: 4.7.24
+      ts-toolbelt: 4.14.6
     dev: false
     resolution:
-      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
+      integrity: sha512-3bu32X02VpjJhsYPUWkdOQGoBXjb/UveZgGg4IYMm+SPAXio96BOYrRhVELfM4AoP00sxoi/f2tqrXdwtR4jjg==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -83,10 +79,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /ts-toolbelt/4.7.24:
+  /ts-toolbelt/4.14.6:
     dev: false
     resolution:
-      integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
+      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -98,10 +94,10 @@ packages:
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
-  '@types/fs-extra': ^8.0.0
+  '@types/fs-extra': ^8.0.1
   '@types/js-yaml': ^3.12.1
-  '@types/node': ^12.7.11
-  '@types/ramda': ^0.26.26
+  '@types/node': ^13.1.6
+  '@types/ramda': ^0.26.39
   fs-extra: ^8.1.0
   js-yaml: ^3.13.1
   ramda: ^0.26.1

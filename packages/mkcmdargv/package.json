@@ -22,9 +22,9 @@
     "fs-extra": "^8.1.0",
     "split-iterable": "^0.1.2",
     "tslib": "^1.10.0",
-    "@types/ramda": "^0.26.26",
+    "@types/ramda": "^0.26.39",
     "@types/js-yaml": "^3.12.1",
-    "@types/fs-extra": "^8.0.0",
-    "@types/node": "^12.7.11"
+    "@types/fs-extra": "^8.0.1",
+    "@types/node": "^13.1.6"
   }
 }

@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 12.7.11
+  '@types/node': 13.1.6
   create-array-equal: 0.0.2
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
@@ -31,6 +31,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+  /@types/node/13.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /@types/ramda/0.26.26:
     dependencies:
       ts-toolbelt: 4.7.24
@@ -149,7 +153,7 @@ packages:
     resolution:
       integrity: sha512-mqRJXN7dEArK/NZNJUubjr9kbFFVZcmF/JHDc9jt5O/aYXUVmopHYujDMhLmLil1Bxo2+khe6KAIVvDH9Yc4VA==
 specifiers:
-  '@types/node': ^12.7.11
+  '@types/node': ^13.1.6
   create-array-equal: ^0.0.2
   event-target-proxy: ^0.1.2
   evented-stream-types: ^0.1.2

@@ -1,13 +1,13 @@
 dependencies:
-  '@types/ramda': 0.26.26
+  '@types/ramda': 0.26.39
   '@types/shell-quote': 1.6.1
   catls-lib: 'link:../../packages/catls-lib'
   extra-jest: 0.0.26
   ramda: 0.26.1
   shell-quote: 1.7.2
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
-  ts-toolbelt: 4.7.24
-  utility-types: 3.8.0
+  ts-toolbelt: 6.1.6
+  utility-types: 3.10.0
 lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.0:
@@ -30,6 +30,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
+  /@types/ramda/0.26.39:
+    dependencies:
+      ts-toolbelt: 4.14.6
+    dev: false
+    resolution:
+      integrity: sha512-3bu32X02VpjJhsYPUWkdOQGoBXjb/UveZgGg4IYMm+SPAXio96BOYrRhVELfM4AoP00sxoi/f2tqrXdwtR4jjg==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:
@@ -136,10 +142,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+  /ts-toolbelt/4.14.6:
+    dev: false
+    resolution:
+      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
   /ts-toolbelt/4.7.24:
     dev: false
     resolution:
       integrity: sha512-jOnCkp4Yqa53CNonegmTCu7bhi9ame5iZNOZaby2wIvtgCGRKSxlr4j/7Qyabz02qY7ex4tviwj/t2irr305XQ==
+  /ts-toolbelt/6.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-zrLyrOg3LQlRi40hP8MHEXXlqkejYjBkX6U3ATY/NyBt0IRbYAJs8QG2meHV1HoRiTBMIgMav8ICu/IxOK4QCQ==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -160,19 +174,19 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
-  /utility-types/3.8.0:
+  /utility-types/3.10.0:
     dev: false
     engines:
       node: '>= 4'
     resolution:
-      integrity: sha512-UoKivAmVw5TL6AHuILieOJjIK9ajS0l5gyN5LbJglPuVwzfYBniDhe+3A5+ZBtS0TAHQs5qUxTwj9jXurINrcw==
+      integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@types/ramda': ^0.26.26
+  '@types/ramda': ^0.26.39
   '@types/shell-quote': ^1.6.1
   catls-lib: 'file:../../packages/catls-lib'
   extra-jest: ^0.0.26
   ramda: ^0.26.1
   shell-quote: ^1.7.2
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
-  ts-toolbelt: ^4.7.24
-  utility-types: ^3.8.0
+  ts-toolbelt: ^6.1.6
+  utility-types: ^3.10.0

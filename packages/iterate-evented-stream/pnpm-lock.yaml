@@ -1,6 +1,6 @@
 dependencies:
-  '@types/node': 12.7.11
-  '@types/ramda': 0.26.26
+  '@types/node': 13.1.6
+  '@types/ramda': 0.26.39
   advanced-map-initialized: 0.0.3
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.18
@@ -16,12 +16,22 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+  /@types/node/13.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /@types/ramda/0.26.26:
     dependencies:
       ts-toolbelt: 4.7.24
     dev: false
     resolution:
       integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
+  /@types/ramda/0.26.39:
+    dependencies:
+      ts-toolbelt: 4.14.6
+    dev: false
+    resolution:
+      integrity: sha512-3bu32X02VpjJhsYPUWkdOQGoBXjb/UveZgGg4IYMm+SPAXio96BOYrRhVELfM4AoP00sxoi/f2tqrXdwtR4jjg==
   /advanced-map-base/0.0.3:
     dependencies:
       '@types/node': 12.7.11
@@ -83,6 +93,10 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-svkUAnx9NVLipKIwacdV3fiA/pV57eotr5ml5ndnlVjUFtc+kpLChBKNUoznMfeMM7qzU5w060Nt2zGR4aHtlw==
+  /ts-toolbelt/4.14.6:
+    dev: false
+    resolution:
+      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
   /ts-toolbelt/4.7.24:
     dev: false
     resolution:
@@ -102,8 +116,8 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^12.7.11
-  '@types/ramda': ^0.26.26
+  '@types/node': ^13.1.6
+  '@types/ramda': ^0.26.39
   advanced-map-initialized: ^0.0.3
   evented-stream-types: ^0.1.2
   monorepo-shared-assets: ^0.0.18

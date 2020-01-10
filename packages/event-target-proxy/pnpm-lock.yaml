@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 12.7.11
+  '@types/node': 13.1.6
   advanced-map-initialized: 0.0.3
   advanced-map-mutable-multi-key: 0.0.4
   tslib: 1.10.0
@@ -26,6 +26,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+  /@types/node/13.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /advanced-map-altered-equal/0.0.4:
     dependencies:
       '@types/node': 12.7.11
@@ -186,7 +190,7 @@ packages:
     resolution:
       integrity: sha512-UoKivAmVw5TL6AHuILieOJjIK9ajS0l5gyN5LbJglPuVwzfYBniDhe+3A5+ZBtS0TAHQs5qUxTwj9jXurINrcw==
 specifiers:
-  '@types/node': ^12.7.11
+  '@types/node': ^13.1.6
   advanced-map-initialized: ^0.0.3
   advanced-map-mutable-multi-key: ^0.0.4
   tslib: ^1.10.0

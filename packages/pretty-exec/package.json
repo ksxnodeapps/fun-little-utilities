@@ -19,11 +19,11 @@
     "print-without-execute": "bin/pretty-exec-print/index"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "shell-escape": "^0.2.0",
     "split-string-once": "^0.0.1",
     "tslib": "^1.10.0",
     "@types/shell-escape": "^0.2.0",
-    "@types/node": "^12.7.11"
+    "@types/node": "^13.1.6"
   }
 }
