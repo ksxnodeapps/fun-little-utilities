@@ -21,7 +21,7 @@
   "dependencies": {
     "@tsfun/function": "^0.0.3",
     "tslib": "^1.10.0",
-    "string-template-format-base": "^0.1.2",
+    "string-template-format-base": "^0.1.1",
     "@types/node": "^13.1.6"
   }
 }

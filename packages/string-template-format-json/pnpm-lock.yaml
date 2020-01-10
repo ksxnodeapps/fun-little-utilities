@@ -16,5 +16,5 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   just-json-type: ^0.1.2
-  string-template-format-base: ^0.1.2
+  string-template-format-base: ^0.1.1
   tslib: ^1.10.0
