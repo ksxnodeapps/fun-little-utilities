@@ -4,7 +4,6 @@ const { yamlSpawnSync } = require('@tools/test-utils')
 const { createWideText } = require('wide-text')
 const bin = require('wide-text-bin').bin
 
-// it('--help', xjest.snapSpawn.snap(spawnSync, [bin, '--help']))
 it('--help', () => {
   expect(yamlSpawnSync(spawnSync, [bin, '--help'])).toMatchSnapshot()
 })
