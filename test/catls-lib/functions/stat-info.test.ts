@@ -1,4 +1,4 @@
-import * as xjest from 'extra-jest'
+import { snapYaml } from '@tools/test-utils'
 import { statInfo, StatInfo } from 'catls-lib'
 import UTCDate from '../.lib/utc-date'
 
@@ -18,7 +18,7 @@ describe('when body argument is not provided', () => {
   })
 })
 
-it('matches snapshot', xjest.snap.default(
+it('matches snapshot', () => snapYaml(
   statInfo(
     TYPE,
     STATS,

@@ -1,8 +1,8 @@
 {
   "private": true,
   "dependencies": {
-    "extra-jest": "^0.0.26",
     "static-type-assert": "^3.0.1",
-    "simple-fake-console": "file:../../packages/simple-fake-console"
+    "simple-fake-console": "file:../../packages/simple-fake-console",
+    "@tools/test-utils": "file:../../tools/test-utils"
   }
 }

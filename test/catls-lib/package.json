@@ -5,10 +5,10 @@
     "ts-toolbelt": "^6.1.6",
     "ramda": "^0.26.1",
     "shell-quote": "^1.7.2",
-    "extra-jest": "^0.0.26",
     "@types/ramda": "^0.26.39",
     "@types/shell-quote": "^1.6.1",
     "catls-lib": "file:../../packages/catls-lib",
-    "simple-fake-stream": "file:../../packages/simple-fake-stream"
+    "simple-fake-stream": "file:../../packages/simple-fake-stream",
+    "@tools/test-utils": "file:../../tools/test-utils"
   }
 }

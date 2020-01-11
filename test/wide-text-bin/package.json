@@ -2,9 +2,9 @@
   "private": true,
   "dependencies": {
     "iter-tools": "^6.2.6",
-    "extra-jest": "^0.0.26",
     "wide-text": "file:../../packages/wide-text",
     "wide-text-bin": "file:../../packages/wide-text-bin",
+    "@tools/test-utils": "file:../../tools/test-utils",
     "@tools/preloaded-node": "file:../../tools/preloaded-node"
   }
 }

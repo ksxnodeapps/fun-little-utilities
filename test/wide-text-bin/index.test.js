@@ -1,10 +1,13 @@
 const iter = require('iter-tools')
-const xjest = require('extra-jest')
 const { spawnSync } = require('@tools/preloaded-node')
+const { yamlSpawnSync } = require('@tools/test-utils')
 const { createWideText } = require('wide-text')
 const bin = require('wide-text-bin').bin
 
-it('--help', xjest.snapSpawn.snap(spawnSync, [bin, '--help']))
+// it('--help', xjest.snapSpawn.snap(spawnSync, [bin, '--help']))
+it('--help', () => {
+  expect(yamlSpawnSync(spawnSync, [bin, '--help'])).toMatchSnapshot()
+})
 
 describe('when call', () => {
   const inputs = [
@@ -49,5 +52,7 @@ describe('when call', () => {
     expect(received).toEqual(expected)
   })
 
-  it('with multiple inputs at once', xjest.snapSpawn.snap(spawnSync, [bin, ...inputs]))
+  it('with multiple inputs at once', () => {
+    expect(yamlSpawnSync(spawnSync, [bin, ...inputs])).toMatchSnapshot()
+  })
 })

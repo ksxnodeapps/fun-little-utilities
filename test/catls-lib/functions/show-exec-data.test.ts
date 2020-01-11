@@ -1,4 +1,4 @@
-import * as xjest from 'extra-jest'
+import { snapYaml } from '@tools/test-utils'
 import { showExecData } from 'catls-lib'
 import { StreamInstance } from 'simple-fake-stream'
 import FakeChildProcess from '../.lib/fake-child-process'
@@ -92,9 +92,9 @@ it('writes data into ShowExecParam.Param::writable', async () => {
   const chunks = writable.getChunks()
   const text = chunks.map(x => String(x)).join('')
 
-  xjest.snap.default({
+  snapYaml({
     methodCalls,
     chunks,
     text
-  })()
+  })
 })

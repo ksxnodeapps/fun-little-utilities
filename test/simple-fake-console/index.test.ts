@@ -1,4 +1,4 @@
-import * as xjest from 'extra-jest'
+import { snapYaml } from '@tools/test-utils'
 import * as sfc from 'simple-fake-console'
 
 abstract class InitBase {
@@ -30,7 +30,7 @@ describe('before executing console methods', () => {
   it('getString() matches snapshot', () => {
     const { console } = new Init()
 
-    xjest.snap.safe({
+    snapYaml({
       'log + info': sfc.getString({
         console,
         types: [sfc.ActionType.Log, sfc.ActionType.Info]
@@ -39,7 +39,7 @@ describe('before executing console methods', () => {
         console,
         types: [sfc.ActionType.Error, sfc.ActionType.Warn]
       })
-    })()
+    })
   })
 })
 
@@ -67,7 +67,7 @@ describe('after executing methods', () => {
   it('getString() matches snapshot', () => {
     const { console } = new Init()
 
-    xjest.snap.safe({
+    snapYaml({
       'log + info': sfc.getString({
         console,
         types: [sfc.ActionType.Log, sfc.ActionType.Info]
@@ -76,6 +76,6 @@ describe('after executing methods', () => {
         console,
         types: [sfc.ActionType.Error, sfc.ActionType.Warn]
       })
-    })()
+    })
   })
 })

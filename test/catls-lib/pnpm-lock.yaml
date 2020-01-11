@@ -1,8 +1,8 @@
 dependencies:
+  '@tools/test-utils': 'link:../../tools/test-utils'
   '@types/ramda': 0.26.39
   '@types/shell-quote': 1.6.1
   catls-lib: 'link:../../packages/catls-lib'
-  extra-jest: 0.0.26
   ramda: 0.26.1
   shell-quote: 1.7.2
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
@@ -10,26 +10,6 @@ dependencies:
   utility-types: 3.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/fs-extra/8.0.1:
-    dependencies:
-      '@types/node': 12.12.24
-    dev: false
-    resolution:
-      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  /@types/js-yaml/3.12.1:
-    dev: false
-    resolution:
-      integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-  /@types/node/12.12.24:
-    dev: false
-    resolution:
-      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
-  /@types/ramda/0.26.26:
-    dependencies:
-      ts-toolbelt: 4.14.6
-    dev: false
-    resolution:
-      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
   /@types/ramda/0.26.39:
     dependencies:
       ts-toolbelt: 4.14.6
@@ -40,96 +20,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-t0bxRLQ75MMF7EeICa1eYC//o1/6gPaUV7ELke4l4OkwpZ9apOzvv2oR5F2PmQJ3tM83Lo+MNKfAXn5gQRMcnA==
-  /argparse/1.0.10:
-    dependencies:
-      sprintf-js: 1.0.3
-    dev: false
-    resolution:
-      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  /esprima/4.0.1:
-    dev: false
-    engines:
-      node: '>=4'
-    hasBin: true
-    resolution:
-      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-  /extra-jest/0.0.26:
-    dependencies:
-      '@types/fs-extra': 8.0.1
-      '@types/js-yaml': 3.12.1
-      '@types/node': 12.12.24
-      '@types/ramda': 0.26.26
-      fs-extra: 8.1.0
-      fs-tree-utils: 0.1.7
-      js-yaml: 3.13.1
-      ramda: 0.26.1
-      tslib: 1.10.0
-      unique-temp-path: 0.1.2
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    peerDependencies:
-      jest: ^24.9.0
-    resolution:
-      integrity: sha512-NQmw30N0+xTL1+SXOzeHVQRUen6jvC25sWq+50iCG8hBDSB+xEt2skQ804XWEJ3LI36ZQugfiJ/gobJMihkStA==
-  /fs-extra/8.1.0:
-    dependencies:
-      graceful-fs: 4.2.3
-      jsonfile: 4.0.0
-      universalify: 0.1.2
-    dev: false
-    engines:
-      node: '>=6 <7 || >=8'
-    resolution:
-      integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
-  /fs-tree-utils/0.1.7:
-    dependencies:
-      '@types/fs-extra': 8.0.1
-      '@types/node': 12.12.24
-      '@types/ramda': 0.26.26
-      fs-extra: 8.1.0
-      monorepo-shared-assets: 0.0.18
-      ramda: 0.26.1
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-UiJ5pnplv6hOAWp4k42LNjhyRm8T3++wnXHxHvo2AP3/eMQhKMl4dVe7Knj3dfFHt0EeE6IHsQucCyCW6KlARA==
-  /graceful-fs/4.2.3:
-    dev: false
-    resolution:
-      integrity: sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
-  /immutable/4.0.0-rc.12:
-    dev: false
-    resolution:
-      integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
-  /js-yaml/3.13.1:
-    dependencies:
-      argparse: 1.0.10
-      esprima: 4.0.1
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
-  /jsonfile/4.0.0:
-    dev: false
-    optionalDependencies:
-      graceful-fs: 4.2.3
-    resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
-  /monorepo-shared-assets/0.0.18:
-    dependencies:
-      '@types/node': 12.12.24
-      '@types/ramda': 0.26.26
-      immutable: 4.0.0-rc.12
-      ramda: 0.26.1
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-xVSAGL8nrYGqutC0d958FlvmZ8Vwn9VR9kO3eS9o9vlLsqDfvYKLlb2FKLfHJiRGhs8xC9aIPqX3bhs8fE/Vvw==
   /ramda/0.26.1:
     dev: false
     resolution:
@@ -138,10 +28,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
-  /sprintf-js/1.0.3:
-    dev: false
-    resolution:
-      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /ts-toolbelt/4.14.6:
     dev: false
     resolution:
@@ -150,26 +36,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-zrLyrOg3LQlRi40hP8MHEXXlqkejYjBkX6U3ATY/NyBt0IRbYAJs8QG2meHV1HoRiTBMIgMav8ICu/IxOK4QCQ==
-  /tslib/1.10.0:
-    dev: false
-    resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /unique-temp-path/0.1.2:
-    dependencies:
-      '@types/node': 12.12.24
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-8rOx3jBDWTVy9x5BJnIo+9SSzc/3Vlvw4kX3sVpYHMA9FRr4ZziS4qnkp2FtkvbJAs7sH3+zS2MD8xwbav4Ieg==
-  /universalify/0.1.2:
-    dev: false
-    engines:
-      node: '>= 4.0.0'
-    resolution:
-      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -177,10 +43,10 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
+  '@tools/test-utils': 'file:../../tools/test-utils'
   '@types/ramda': ^0.26.39
   '@types/shell-quote': ^1.6.1
   catls-lib: 'file:../../packages/catls-lib'
-  extra-jest: ^0.0.26
   ramda: ^0.26.1
   shell-quote: ^1.7.2
   simple-fake-stream: 'file:../../packages/simple-fake-stream'

@@ -1,4 +1,4 @@
-import * as xjest from 'extra-jest'
+import { snapYaml } from '@tools/test-utils'
 import { emptyArguments, EmptyArgumentHandlingMethod, ExitStatus } from 'catls-lib'
 import { StreamInstance } from 'simple-fake-stream'
 const { Quiet, Warn, Error } = EmptyArgumentHandlingMethod
@@ -26,7 +26,7 @@ describe(`when method is ${JSON.stringify(Warn)}`, () => {
   const { stream, status } = init(Warn)
 
   it('writes a warning to stream', () => {
-    xjest.snap.default(stream.getMethodCalls())()
+    snapYaml(stream.getMethodCalls())
   })
 
   it('returns success status', () => {
@@ -38,7 +38,7 @@ describe(`when method is ${JSON.stringify(Error)}`, () => {
   const { stream, status } = init(Error)
 
   it('writes an error message to stream', () => {
-    xjest.snap.default(stream.getMethodCalls())()
+    snapYaml(stream.getMethodCalls())
   })
 
   it(`returns status of ${JSON.stringify(ExitStatus[InsufficientArguments])}`, () => {

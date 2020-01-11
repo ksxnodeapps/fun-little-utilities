@@ -6,8 +6,7 @@ error: null
 signal: null
 status: 0
 stderr: ((EMPTY))
-stdout: |+
-
+stdout: |
   wide-text <text> [options]
 
   Options:
@@ -16,7 +15,6 @@ stdout: |+
                                                              [number] [default: 1]
     --wordSep, -w  Number of spaces between words            [number] [default: 2]
     --help         Show help                                             [boolean]
-
 
 "
 `;
@@ -27,12 +25,10 @@ error: null
 signal: null
 status: 0
 stderr: ((EMPTY))
-stdout: |+
-
+stdout: |
   h e l l o  w o r l d
   f o o  b a r  b a z
   a b c  d e  f
-
 
 "
 `;
