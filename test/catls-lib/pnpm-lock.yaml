@@ -1,41 +1,41 @@
 dependencies:
   '@tools/test-utils': 'link:../../tools/test-utils'
-  '@types/ramda': 0.26.39
+  '@tsfun/array': 0.0.0
   '@types/shell-quote': 1.6.1
   catls-lib: 'link:../../packages/catls-lib'
-  ramda: 0.26.1
   shell-quote: 1.7.2
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
   ts-toolbelt: 6.1.6
   utility-types: 3.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/ramda/0.26.39:
+  /@tsfun/array/0.0.0:
     dependencies:
-      ts-toolbelt: 4.14.6
+      '@types/node': 13.1.6
+      tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-3bu32X02VpjJhsYPUWkdOQGoBXjb/UveZgGg4IYMm+SPAXio96BOYrRhVELfM4AoP00sxoi/f2tqrXdwtR4jjg==
+      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
+  /@types/node/13.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:
       integrity: sha512-t0bxRLQ75MMF7EeICa1eYC//o1/6gPaUV7ELke4l4OkwpZ9apOzvv2oR5F2PmQJ3tM83Lo+MNKfAXn5gQRMcnA==
-  /ramda/0.26.1:
-    dev: false
-    resolution:
-      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
   /shell-quote/1.7.2:
     dev: false
     resolution:
       integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
-  /ts-toolbelt/4.14.6:
-    dev: false
-    resolution:
-      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
   /ts-toolbelt/6.1.6:
     dev: false
     resolution:
       integrity: sha512-zrLyrOg3LQlRi40hP8MHEXXlqkejYjBkX6U3ATY/NyBt0IRbYAJs8QG2meHV1HoRiTBMIgMav8ICu/IxOK4QCQ==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -44,10 +44,9 @@ packages:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
   '@tools/test-utils': 'file:../../tools/test-utils'
-  '@types/ramda': ^0.26.39
+  '@tsfun/array': ^0.0.0
   '@types/shell-quote': ^1.6.1
   catls-lib: 'file:../../packages/catls-lib'
-  ramda: ^0.26.1
   shell-quote: ^1.7.2
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
   ts-toolbelt: ^6.1.6

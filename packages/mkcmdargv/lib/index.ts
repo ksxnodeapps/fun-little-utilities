@@ -1,4 +1,4 @@
-import { partition } from 'ramda'
+import { partition } from '@tsfun/array'
 import { splitIterable } from 'split-iterable'
 
 type Value = string | number | boolean
@@ -30,10 +30,10 @@ function parseDoubleDash ([key, value]: [string, Value]) {
 export function * iterateCommandArguments (param: Param) {
   const { args = [], options = {}, flags = [] } = param
   const [beforeDoubleDashes, ...afterDoubleDashes] = splitIterable(args, x => x === '--')
-  const [beforeDashes, afterDashes] = partition(x => x[0] !== '-', beforeDoubleDashes)
+  const [beforeDashes, afterDashes] = partition(beforeDoubleDashes, x => x[0] !== '-')
   const optionsPairs = Object.entries(options)
-  const [singleDashOptions, doubleDashOptions] = partition(([key]) => key.length === 1, optionsPairs)
-  const [singleDashFlags, doubleDashFlags] = partition(x => x.length === 1, flags)
+  const [singleDashOptions, doubleDashOptions] = partition(optionsPairs, ([key]) => key.length === 1)
+  const [singleDashFlags, doubleDashFlags] = partition(flags, x => x.length === 1)
 
   yield * beforeDashes
 

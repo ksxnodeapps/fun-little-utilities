@@ -3,9 +3,8 @@
   "dependencies": {
     "utility-types": "^3.10.0",
     "ts-toolbelt": "^6.1.6",
-    "ramda": "^0.26.1",
     "shell-quote": "^1.7.2",
-    "@types/ramda": "^0.26.39",
+    "@tsfun/array": "^0.0.0",
     "@types/shell-quote": "^1.6.1",
     "catls-lib": "file:../../packages/catls-lib",
     "simple-fake-stream": "file:../../packages/simple-fake-stream",

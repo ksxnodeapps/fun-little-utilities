@@ -1,6 +1,5 @@
 dependencies:
   '@types/node': 13.1.6
-  '@types/ramda': 0.26.39
   advanced-map-initialized: 0.0.3
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.18
@@ -26,12 +25,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
-  /@types/ramda/0.26.39:
-    dependencies:
-      ts-toolbelt: 4.14.6
-    dev: false
-    resolution:
-      integrity: sha512-3bu32X02VpjJhsYPUWkdOQGoBXjb/UveZgGg4IYMm+SPAXio96BOYrRhVELfM4AoP00sxoi/f2tqrXdwtR4jjg==
   /advanced-map-base/0.0.3:
     dependencies:
       '@types/node': 12.12.24
@@ -113,7 +106,6 @@ packages:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
   '@types/node': ^13.1.6
-  '@types/ramda': ^0.26.39
   advanced-map-initialized: ^0.0.3
   evented-stream-types: ^0.1.3
   monorepo-shared-assets: ^0.0.18

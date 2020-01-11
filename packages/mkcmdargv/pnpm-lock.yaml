@@ -1,15 +1,21 @@
 dependencies:
+  '@tsfun/array': 0.0.0
   '@types/fs-extra': 8.0.1
   '@types/js-yaml': 3.12.1
   '@types/node': 13.1.6
-  '@types/ramda': 0.26.39
   fs-extra: 8.1.0
   js-yaml: 3.13.1
-  ramda: 0.26.1
   split-iterable: 'link:../split-iterable'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
+  /@tsfun/array/0.0.0:
+    dependencies:
+      '@types/node': 13.1.6
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
   /@types/fs-extra/8.0.1:
     dependencies:
       '@types/node': 13.1.6
@@ -24,12 +30,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
-  /@types/ramda/0.26.39:
-    dependencies:
-      ts-toolbelt: 4.14.6
-    dev: false
-    resolution:
-      integrity: sha512-3bu32X02VpjJhsYPUWkdOQGoBXjb/UveZgGg4IYMm+SPAXio96BOYrRhVELfM4AoP00sxoi/f2tqrXdwtR4jjg==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -71,18 +71,10 @@ packages:
       graceful-fs: 4.2.3
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
-  /ramda/0.26.1:
-    dev: false
-    resolution:
-      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /ts-toolbelt/4.14.6:
-    dev: false
-    resolution:
-      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -94,12 +86,11 @@ packages:
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
+  '@tsfun/array': ^0.0.0
   '@types/fs-extra': ^8.0.1
   '@types/js-yaml': ^3.12.1
   '@types/node': ^13.1.6
-  '@types/ramda': ^0.26.39
   fs-extra: ^8.1.0
   js-yaml: ^3.13.1
-  ramda: ^0.26.1
   split-iterable: ^0.1.3
   tslib: ^1.10.0

@@ -1,6 +1,6 @@
 import { Omit } from 'utility-types'
-import ramda from 'ramda'
 import * as shQuote from 'shell-quote'
+import { lastOrUndefined, partition } from '@tsfun/array'
 import { StreamInstance, getString } from 'simple-fake-stream'
 import FakeChildProcess from '../.lib/fake-child-process'
 import initCartesianTest from '../.lib/cartesian-test-tree'
@@ -38,13 +38,13 @@ const interactive = '--interactive'
 
 const spawn = jest.fn(function localSpawn (cmd: string, argv: ReadonlyArray<string>): FakeChildProcess {
   if (cmd === 'script') {
-    const argvLast = ramda.last(argv)
+    const argvLast = lastOrUndefined(argv)
     const [nextCmd, ...nextArgv] = shQuote.parse(argvLast!)
     return localSpawn(nextCmd as any, [...nextArgv as any, interactive]) // quick fix
   }
 
   const str = JSON.stringify
-  const [flags, list] = ramda.partition(x => x[0] === '-', argv)
+  const [flags, list] = partition(argv, x => x[0] === '-')
   const cp = new FakeChildProcess()
   const { stdout, stderr } = cp
 
