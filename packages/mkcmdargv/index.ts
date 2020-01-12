@@ -1,2 +1,2 @@
-export * from './lib'
-export const bin = require.resolve('./bin/executable')
+export * from 'mkcmdargv-lib'
+export const bin = require.resolve('./bin')

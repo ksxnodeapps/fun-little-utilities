@@ -1,0 +1,51 @@
+dependencies:
+  '@types/js-yaml': 3.12.1
+  '@types/node': 13.1.6
+  js-yaml: 3.13.1
+  mkcmdargv-lib: 'link:../mkcmdargv-lib'
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@types/js-yaml/3.12.1:
+    dev: false
+    resolution:
+      integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
+  /@types/node/13.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+  /argparse/1.0.10:
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
+  /esprima/4.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
+  /js-yaml/3.13.1:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
+  /sprintf-js/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+specifiers:
+  '@types/js-yaml': ^3.12.1
+  '@types/node': ^13.1.6
+  js-yaml: ^3.13.1
+  mkcmdargv-lib: ^0.1.0
+  tslib: ^1.10.0

@@ -1,96 +1,20 @@
 dependencies:
-  '@tsfun/array': 0.0.0
-  '@types/fs-extra': 8.0.1
-  '@types/js-yaml': 3.12.1
   '@types/node': 13.1.6
-  fs-extra: 8.1.0
-  js-yaml: 3.13.1
-  split-iterable: 'link:../split-iterable'
+  mkcmdargv-cli: 'link:../mkcmdargv-cli'
+  mkcmdargv-lib: 'link:../mkcmdargv-lib'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/array/0.0.0:
-    dependencies:
-      '@types/node': 13.1.6
-      tslib: 1.10.0
-    dev: false
-    resolution:
-      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
-  /@types/fs-extra/8.0.1:
-    dependencies:
-      '@types/node': 13.1.6
-    dev: false
-    resolution:
-      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  /@types/js-yaml/3.12.1:
-    dev: false
-    resolution:
-      integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
   /@types/node/13.1.6:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
-  /argparse/1.0.10:
-    dependencies:
-      sprintf-js: 1.0.3
-    dev: false
-    resolution:
-      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  /esprima/4.0.1:
-    dev: false
-    engines:
-      node: '>=4'
-    hasBin: true
-    resolution:
-      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-  /fs-extra/8.1.0:
-    dependencies:
-      graceful-fs: 4.2.3
-      jsonfile: 4.0.0
-      universalify: 0.1.2
-    dev: false
-    engines:
-      node: '>=6 <7 || >=8'
-    resolution:
-      integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
-  /graceful-fs/4.2.3:
-    dev: false
-    resolution:
-      integrity: sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
-  /js-yaml/3.13.1:
-    dependencies:
-      argparse: 1.0.10
-      esprima: 4.0.1
-    dev: false
-    hasBin: true
-    resolution:
-      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
-  /jsonfile/4.0.0:
-    dev: false
-    optionalDependencies:
-      graceful-fs: 4.2.3
-    resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
-  /sprintf-js/1.0.3:
-    dev: false
-    resolution:
-      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /universalify/0.1.2:
-    dev: false
-    engines:
-      node: '>= 4.0.0'
-    resolution:
-      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
-  '@tsfun/array': ^0.0.0
-  '@types/fs-extra': ^8.0.1
-  '@types/js-yaml': ^3.12.1
   '@types/node': ^13.1.6
-  fs-extra: ^8.1.0
-  js-yaml: ^3.13.1
-  split-iterable: ^0.1.4
+  mkcmdargv-cli: ^0.1.0
+  mkcmdargv-lib: ^0.1.0
   tslib: ^1.10.0

@@ -68,7 +68,7 @@ export async function help () {
   const pathPromise = import('path')
   const fsxPromise = import('fs-extra')
   const path = await pathPromise
-  const helpFilePath = path.resolve(__dirname, '../data/help.txt')
+  const helpFilePath = path.resolve(__dirname, './data/help.txt')
   const { readFile } = await fsxPromise
   return readFile(helpFilePath, { encoding: 'utf8' })
 }

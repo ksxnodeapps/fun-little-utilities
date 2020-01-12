@@ -1,6 +1,6 @@
 import process from 'process'
 import { safeLoad } from 'js-yaml'
-import { Param, iterateCommandArguments, help } from '../index'
+import { Param, iterateCommandArguments, help } from 'mkcmdargv-lib'
 
 const argv = process.argv.slice(2)
 
