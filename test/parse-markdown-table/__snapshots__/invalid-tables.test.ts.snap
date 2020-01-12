@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty string matches snapshot 1`] = `
+Object {
+  "error": [SyntaxError: Text is empty],
+  "tag": false,
+}
+`;
+
+exports[`inconsistent left bound matches snapshot 1`] = `
+Object {
+  "error": [SyntaxError: Inconsistent left bound],
+  "tag": false,
+}
+`;
+
+exports[`inconsistent right bound matches snapshot 1`] = `
+Object {
+  "error": [SyntaxError: Inconsistent right bound],
+  "tag": false,
+}
+`;
+
+exports[`string with naught but whitespaces matches snapshot 1`] = `
+Object {
+  "error": [SyntaxError: Text is empty],
+  "tag": false,
+}
+`;

@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`full bound list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`full bound object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Array [
+      Array [
+        "1",
+        "John Doe",
+        "john-doe@gmail.com",
+      ],
+      Array [
+        "2",
+        "Peter Smith",
+        "petersmith22@outlook.com",
+      ],
+      Array [
+        "3",
+        "Julia Jones",
+        "jjones778@gmail.com",
+      ],
+    ],
+  },
+}
+`;
+
+exports[`left bound list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`left bound object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Array [
+      Array [
+        "1",
+        "John Doe",
+        "john-doe@gmail.com",
+      ],
+      Array [
+        "2",
+        "Peter Smith",
+        "petersmith22@outlook.com",
+      ],
+      Array [
+        "3",
+        "Julia Jones",
+        "jjones778@gmail.com",
+      ],
+    ],
+  },
+}
+`;
+
+exports[`no bound list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`no bound object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Array [
+      Array [
+        "1",
+        "John Doe",
+        "john-doe@gmail.com",
+      ],
+      Array [
+        "2",
+        "Peter Smith",
+        "petersmith22@outlook.com",
+      ],
+      Array [
+        "3",
+        "Julia Jones",
+        "jjones778@gmail.com",
+      ],
+    ],
+  },
+}
+`;
+
+exports[`right bound list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`right bound object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Array [
+      Array [
+        "1",
+        "John Doe",
+        "john-doe@gmail.com",
+      ],
+      Array [
+        "2",
+        "Peter Smith",
+        "petersmith22@outlook.com",
+      ],
+      Array [
+        "3",
+        "Julia Jones",
+        "jjones778@gmail.com",
+      ],
+    ],
+  },
+}
+`;
+
+exports[`unknown columns list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+    Symbol(Unknown Column #3): "123",
+    Symbol(Unknown Column #4): "male",
+    Symbol(Unknown Column #5): "true",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+    Symbol(Unknown Column #3): "12",
+    Symbol(Unknown Column #4): "female",
+  },
+]
+`;
+
+exports[`unknown columns object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Array [
+      Array [
+        "1",
+        "John Doe",
+        "john-doe@gmail.com",
+        "123",
+        "male",
+        "true",
+      ],
+      Array [
+        "2",
+        "Peter Smith",
+        "petersmith22@outlook.com",
+      ],
+      Array [
+        "3",
+        "Julia Jones",
+        "jjones778@gmail.com",
+        "12",
+        "female",
+      ],
+    ],
+  },
+}
+`;
