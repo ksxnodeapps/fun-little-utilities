@@ -1,5 +1,5 @@
 import process from 'process'
-import yargs from 'ts-yargs'
+import yargs from 'yargs'
 import { main, DisplaySelection } from 'find-executable-lib'
 const { Word, Path, Both } = DisplaySelection
 
