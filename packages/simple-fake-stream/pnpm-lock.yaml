@@ -1,48 +1,36 @@
 dependencies:
   '@types/node': 13.1.6
   evented-stream-types: 'link:../evented-stream-types'
-  monorepo-shared-assets: 0.0.18
+  monorepo-shared-assets: 0.0.19
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.12.24:
+  /@tsfun/array/0.0.0:
+    dependencies:
+      '@types/node': 13.1.6
+      tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
+      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
   /@types/node/13.1.6:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
-  /@types/ramda/0.26.26:
-    dependencies:
-      ts-toolbelt: 4.14.6
-    dev: false
-    resolution:
-      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
   /immutable/4.0.0-rc.12:
     dev: false
     resolution:
       integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
-  /monorepo-shared-assets/0.0.18:
+  /monorepo-shared-assets/0.0.19:
     dependencies:
-      '@types/node': 12.12.24
-      '@types/ramda': 0.26.26
+      '@tsfun/array': 0.0.0
+      '@types/node': 13.1.6
       immutable: 4.0.0-rc.12
-      ramda: 0.26.1
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-xVSAGL8nrYGqutC0d958FlvmZ8Vwn9VR9kO3eS9o9vlLsqDfvYKLlb2FKLfHJiRGhs8xC9aIPqX3bhs8fE/Vvw==
-  /ramda/0.26.1:
-    dev: false
-    resolution:
-      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
-  /ts-toolbelt/4.14.6:
-    dev: false
-    resolution:
-      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
+      integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -50,5 +38,5 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   evented-stream-types: ^0.1.3
-  monorepo-shared-assets: ^0.0.18
+  monorepo-shared-assets: ^0.0.19
   tslib: ^1.10.0

@@ -3,8 +3,8 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
-    "fs-tree-utils": "^0.1.7",
-    "unique-temp-path": "^0.1.2",
+    "fs-tree-utils": "^0.1.8",
+    "unique-temp-path": "^0.1.3",
     "@types/fs-extra": "^8.0.1",
     "catls": "file:../../packages/catls",
     "ts-await-event": "file:../../packages/ts-await-event",

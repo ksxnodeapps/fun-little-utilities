@@ -1,95 +1,83 @@
 dependencies:
   '@types/node': 13.1.6
-  advanced-map-initialized: 0.0.3
+  advanced-map-initialized: 0.0.4
   evented-stream-types: 'link:../evented-stream-types'
-  monorepo-shared-assets: 0.0.18
-  remote-controlled-promise: 0.0.5
+  monorepo-shared-assets: 0.0.19
+  remote-controlled-promise: 0.0.6
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
+  /@tsfun/array/0.0.0:
+    dependencies:
+      '@types/node': 13.1.6
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
   /@types/node/10.17.13:
     dev: false
     resolution:
       integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
-  /@types/node/12.12.24:
-    dev: false
-    resolution:
-      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
   /@types/node/13.1.6:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
-  /@types/ramda/0.26.26:
+  /advanced-map-base/0.0.4:
     dependencies:
-      ts-toolbelt: 4.14.6
-    dev: false
-    resolution:
-      integrity: sha512-jDx2Lp2WvziMTcDxOU21yzRr6jP/VTWvpg6SQxeM63VldSjugUY1N9p1Q8YY/wpGvqzpkstUFmg2oGJdBSp5gg==
-  /advanced-map-base/0.0.3:
-    dependencies:
-      '@types/node': 12.12.24
-      advanced-map-types: 0.0.3
+      '@types/node': 13.1.6
+      advanced-map-types: 0.0.4
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-2iVMbTr1ioSdvYiMWybCXc4jaTw9nsS9VV3XilQUVSt0nxRpb2bSw55/ItCG3GUP1UMb91tQOSSXAl7ronhPvg==
-  /advanced-map-initialized/0.0.3:
+      integrity: sha512-auTlMKEPMll9I6InsV7XNbDRfTra8u9kBd73/rSe0VuzYFFyAU5mb41wpV8Urs/1CYb+ysE+FetN6zRxfhC0EQ==
+  /advanced-map-initialized/0.0.4:
     dependencies:
-      '@types/node': 12.12.24
-      advanced-map-base: 0.0.3
-      advanced-map-types: 0.0.3
+      '@types/node': 13.1.6
+      advanced-map-base: 0.0.4
+      advanced-map-types: 0.0.4
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-mlPzbrojhQXOOwOP1RIZ0u4MLA2bGphMUGCgFUib1e46lM3hB9Xbm0qswDTX7E44uCVPaqMGQF4oMP/yTnVFhw==
-  /advanced-map-types/0.0.3:
+      integrity: sha512-mvPQ6Q1ZwUZ3Uwseh/8jog/PC2E6OmmpUYir5+eGkBw0eoMYAF880qYL1NTIS9k5jW1NExyV2ADoqVLzZ4pePA==
+  /advanced-map-types/0.0.4:
     dependencies:
-      '@types/node': 12.12.24
+      '@types/node': 13.1.6
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-W/L5l30/AwWXR16W6ODU4vo7zfOaMJ44VgZMnkM2rgHrKJCD3w9heB18yoMrqy0AkEodIKiDs2FFjS57zMK9nQ==
+      integrity: sha512-1z2ags9Y3SbsvRBsANA60J8HGfWeEOnrFwavN72EIQVCt/iFB6fujjvf8dwER7Xpo7tttPfxWxnLnvCiFHU7hA==
   /immutable/4.0.0-rc.12:
     dev: false
     resolution:
       integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
-  /monorepo-shared-assets/0.0.18:
+  /monorepo-shared-assets/0.0.19:
     dependencies:
-      '@types/node': 12.12.24
-      '@types/ramda': 0.26.26
+      '@tsfun/array': 0.0.0
+      '@types/node': 13.1.6
       immutable: 4.0.0-rc.12
-      ramda: 0.26.1
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-xVSAGL8nrYGqutC0d958FlvmZ8Vwn9VR9kO3eS9o9vlLsqDfvYKLlb2FKLfHJiRGhs8xC9aIPqX3bhs8fE/Vvw==
-  /ramda/0.26.1:
-    dev: false
-    resolution:
-      integrity: sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
-  /remote-controlled-promise/0.0.5:
+      integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
+  /remote-controlled-promise/0.0.6:
     dependencies:
-      '@types/node': 12.12.24
+      '@types/node': 13.1.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-svkUAnx9NVLipKIwacdV3fiA/pV57eotr5ml5ndnlVjUFtc+kpLChBKNUoznMfeMM7qzU5w060Nt2zGR4aHtlw==
-  /ts-toolbelt/4.14.6:
-    dev: false
-    resolution:
-      integrity: sha512-SONcnRd93+LuYGfn/CZg5A5qhCODohZslAVZKHHu5bnwUxoXLqd2k2VIdwRUXYfKnY+UCeNbI2pTPz+Dno6Mpg==
+      integrity: sha512-9PlWrJDC+1DnbBOvsEchPm1P1F/lHjuEMS/KmZjPfFibKmokIinf0NKfIOo5gQuJUYZltjNej3OIeICVDvnJLg==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -106,8 +94,8 @@ packages:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
   '@types/node': ^13.1.6
-  advanced-map-initialized: ^0.0.3
+  advanced-map-initialized: ^0.0.4
   evented-stream-types: ^0.1.3
-  monorepo-shared-assets: ^0.0.18
-  remote-controlled-promise: ^0.0.5
+  monorepo-shared-assets: ^0.0.19
+  remote-controlled-promise: ^0.0.6
   tslib: ^1.10.0

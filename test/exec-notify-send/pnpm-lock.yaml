@@ -2,7 +2,7 @@ dependencies:
   '@types/fs-extra': 8.0.1
   exec-notify-send: 'link:../../packages/exec-notify-send'
   fs-extra: 8.1.0
-  unique-temp-path: 0.1.2
+  unique-temp-path: 0.1.3
 lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.1:
@@ -11,10 +11,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  /@types/node/12.12.24:
-    dev: false
-    resolution:
-      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
   /@types/node/13.1.6:
     dev: false
     resolution:
@@ -43,16 +39,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /unique-temp-path/0.1.2:
+  /unique-temp-path/0.1.3:
     dependencies:
-      '@types/node': 12.12.24
+      '@types/node': 13.1.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-8rOx3jBDWTVy9x5BJnIo+9SSzc/3Vlvw4kX3sVpYHMA9FRr4ZziS4qnkp2FtkvbJAs7sH3+zS2MD8xwbav4Ieg==
+      integrity: sha512-yIXE0saUvfbEL2m6ezIwZ4D9TGkljaYPO2FFVWGjbbOQK2cv4jz7h1ItYstZQMLYJnLVFH7BFyyNCjoEp4W4Rg==
   /universalify/0.1.2:
     dev: false
     engines:
@@ -63,4 +59,4 @@ specifiers:
   '@types/fs-extra': ^8.0.1
   exec-notify-send: 'file:../../packages/exec-notify-send'
   fs-extra: ^8.1.0
-  unique-temp-path: ^0.1.2
+  unique-temp-path: ^0.1.3

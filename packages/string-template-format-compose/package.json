@@ -19,7 +19,7 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "@tsfun/function": "^0.0.3",
+    "@tsfun/function": "^0.0.4",
     "tslib": "^1.10.0",
     "string-template-format-base": "^0.1.2",
     "@types/node": "^13.1.6"

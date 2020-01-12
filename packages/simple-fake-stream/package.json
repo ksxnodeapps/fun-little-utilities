@@ -20,7 +20,7 @@
     "test"
   ],
   "dependencies": {
-    "monorepo-shared-assets": "^0.0.18",
+    "monorepo-shared-assets": "^0.0.19",
     "tslib": "^1.10.0",
     "evented-stream-types": "^0.1.3",
     "@types/node": "^13.1.6"
