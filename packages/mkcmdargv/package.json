@@ -1,6 +1,6 @@
 {
   "name": "mkcmdargv",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Convert environment variables to command-line arguments",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
