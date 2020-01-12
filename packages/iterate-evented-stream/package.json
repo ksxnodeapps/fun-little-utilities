@@ -1,6 +1,6 @@
 {
   "name": "iterate-evented-stream",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Create an AsyncIterable from an evented stream",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "remote-controlled-promise": "^0.0.6",
     "monorepo-shared-assets": "^0.0.19",
     "tslib": "^1.10.0",
-    "evented-stream-types": "^0.1.3",
+    "evented-stream-types": "^0.1.4",
     "@types/node": "^13.1.6"
   },
   "engines": {

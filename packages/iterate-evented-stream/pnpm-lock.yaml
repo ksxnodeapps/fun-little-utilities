@@ -95,7 +95,7 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   advanced-map-initialized: ^0.0.4
-  evented-stream-types: ^0.1.3
+  evented-stream-types: ^0.1.4
   monorepo-shared-assets: ^0.0.19
   remote-controlled-promise: ^0.0.6
   tslib: ^1.10.0

@@ -1,6 +1,6 @@
 {
   "name": "simple-fake-console",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Create fake consoles for testing purpose",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

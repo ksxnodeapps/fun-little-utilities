@@ -1,6 +1,6 @@
 {
   "name": "find-executable",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Search for a name that is executable",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -18,8 +18,8 @@
   ],
   "bin": "find-executable",
   "dependencies": {
-    "ts-yargs": "^0.1.3",
-    "find-executable-lib": "^0.1.4",
+    "ts-yargs": "^0.1.4",
+    "find-executable-lib": "^0.1.5",
     "tslib": "^1.10.0",
     "@types/node": "^13.1.6"
   },
