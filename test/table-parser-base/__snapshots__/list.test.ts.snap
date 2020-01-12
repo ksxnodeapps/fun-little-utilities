@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no unknown columns 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": 1,
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": 2,
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": 3,
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`with unknown columns 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": 1,
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": 2,
+    "name": "Peter Smith",
+    Symbol(Unknown Column #3): 83,
+    Symbol(Unknown Column #4): "male",
+    Symbol(Unknown Column #5): true,
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": 3,
+    "name": "Julia Jones",
+    Symbol(Unknown Column #3): 32,
+  },
+]
+`;

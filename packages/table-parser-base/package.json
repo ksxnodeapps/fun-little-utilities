@@ -1,0 +1,22 @@
+{
+  "name": "table-parser-base",
+  "version": "0.0.0",
+  "description": "Utilities for table parser packages",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://ksxnodeapps.github.io/fun-little-utilities/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "iter-tools": "^6.2.6",
+    "advanced-map-initialized": "^0.0.4",
+    "tslib": "^1.10.0",
+    "@types/node": "^13.1.6"
+  }
+}

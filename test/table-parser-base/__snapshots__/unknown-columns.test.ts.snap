@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+Array [
+  Symbol(Unknown Column #0),
+  Symbol(Unknown Column #1),
+  Symbol(Unknown Column #2),
+  Symbol(Unknown Column #3),
+  Symbol(Unknown Column #4),
+  Symbol(Unknown Column #5),
+]
+`;

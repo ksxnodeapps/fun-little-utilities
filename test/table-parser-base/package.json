@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "table-parser-base": "file:../../packages/table-parser-base"
+  }
+}
