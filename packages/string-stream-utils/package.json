@@ -1,7 +1,7 @@
 {
-  "name": "parse-markdown-table",
+  "name": "string-stream-utils",
   "version": "0.0.0",
-  "description": "Convert a markdown table from text to JavaScript objects",
+  "description": "Utilities to manipulate async iterable of chunks of strings",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://ksxnodeapps.github.io/fun-little-utilities/",
@@ -13,14 +13,14 @@
     "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
   },
   "keywords": [
-    "table",
-    "markdown"
+    "stream",
+    "async",
+    "iterable",
+    "chunk"
   ],
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.10.0",
-    "string-stream-utils": "^0.0.0",
-    "table-parser-base": "^0.0.0",
     "@types/node": "^13.1.6"
   }
 }

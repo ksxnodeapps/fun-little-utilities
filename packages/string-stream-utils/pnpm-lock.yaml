@@ -1,7 +1,5 @@
 dependencies:
   '@types/node': 13.1.6
-  string-stream-utils: 'link:../string-stream-utils'
-  table-parser-base: 'link:../table-parser-base'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -15,6 +13,4 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@types/node': ^13.1.6
-  string-stream-utils: ^0.0.0
-  table-parser-base: ^0.0.0
   tslib: ^1.10.0

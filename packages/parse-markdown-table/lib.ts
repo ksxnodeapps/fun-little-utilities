@@ -1,8 +1,8 @@
+import { Stream, iterateLines, trimmedChunks } from 'string-stream-utils'
 import { CellSet, List } from 'table-parser-base'
-import { Stream, iterateLines, trimmedChunks } from './utils'
 
-export * from 'table-parser-base'
 export { Stream }
+export * from 'table-parser-base'
 
 export interface TableIterationOptions {
   readonly leftBound: boolean
