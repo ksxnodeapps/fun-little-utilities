@@ -6,6 +6,7 @@ const emitter = require.resolve('./emitter.js')
 const executable = require.resolve('./parser.js')
 
 async function view (args: readonly string[], delay = 0) {
+  console.info('$ export SLEEP=' + delay)
   console.info('$ node emitter.js | parse-markdown-table', ...args, '\n')
 
   const emitterProcess = spawn('node', [emitter], {
