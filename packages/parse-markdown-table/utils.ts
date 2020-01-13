@@ -1,14 +1,7 @@
-import iterateEventedStream, { EventedStream } from 'iterate-evented-stream'
+export type MaybeAsyncIterable<Value> = Iterable<Value> | AsyncIterable<Value>
+export type Stream = MaybeAsyncIterable<string>
 
-export interface StringStream extends EventedStream<string> {}
-
-export async function * iterateStreamCharacters (stream: StringStream) {
-  for await (const chunk of iterateEventedStream(stream)) {
-    yield * chunk
-  }
-}
-
-export async function * splitCharacterIterable (iterable: AsyncIterable<string>, sepChar: string) {
+export async function * splitCharacterIterable (iterable: Stream, sepChar: string) {
   let acc = ''
 
   for await (const char of iterable) {
@@ -23,20 +16,11 @@ export async function * splitCharacterIterable (iterable: AsyncIterable<string>,
   yield acc
 }
 
-export function splitCharacterStream (stream: StringStream, sepChar: string) {
-  return splitCharacterIterable(
-    iterateStreamCharacters(stream),
-    sepChar
-  )
-}
+export const iterateLines = (stream: Stream) => splitCharacterIterable(stream, '\n')
 
-export async function * trimmedStringIterable (iterable: AsyncIterable<string>) {
-  for await (const str of iterable) {
-    const trimmed = str.trim()
+export async function * trimmedChunks (stream: Stream) {
+  for await (const chunk of stream) {
+    const trimmed = chunk.trim()
     if (trimmed) yield trimmed
   }
-}
-
-export function trimmedStreamLines (stream: StringStream) {
-  return trimmedStringIterable(splitCharacterStream(stream, '\n'))
 }

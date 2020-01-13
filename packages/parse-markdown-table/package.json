@@ -19,7 +19,6 @@
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.10.0",
-    "iterate-evented-stream": "^0.1.5",
     "table-parser-base": "^0.0.0",
     "@types/node": "^13.1.6"
   }

@@ -1,7 +1,8 @@
 import { CellSet, List } from 'table-parser-base'
-import { StringStream, trimmedStreamLines } from './utils'
+import { Stream, iterateLines, trimmedChunks } from './utils'
 
 export * from 'table-parser-base'
+export { Stream }
 
 export interface TableIterationOptions {
   readonly leftBound: boolean
@@ -10,7 +11,7 @@ export interface TableIterationOptions {
 
 const horizontalLineRegex = /^[|-]+$/
 
-export async function * iterateRows (lines: AsyncIterable<string>, options: TableIterationOptions) {
+export async function * iterateRows (lines: Stream, options: TableIterationOptions) {
   const { leftBound, rightBound } = options
 
   for await (const line of lines) {
@@ -40,8 +41,8 @@ export class MarkdownCellTable extends CellSet<string, string> {
   }
 }
 
-export async function createMarkdownCellTable (stream: StringStream) {
-  const lineIterator = trimmedStreamLines(stream)
+export async function createMarkdownCellTable (stream: Stream) {
+  const lineIterator = trimmedChunks(iterateLines(stream))
   const firstLineResult = await lineIterator.next()
 
   if (firstLineResult.done) {
@@ -65,6 +66,6 @@ export async function createMarkdownCellTable (stream: StringStream) {
 export class MarkdownObjectTable<Title extends string>
 extends List<Title, string> {}
 
-export async function createMarkdownObjectTable (stream: StringStream) {
+export async function createMarkdownObjectTable (stream: Stream) {
   return new MarkdownObjectTable(await createMarkdownCellTable(stream))
 }
