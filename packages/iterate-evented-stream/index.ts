@@ -2,6 +2,7 @@ import 'monorepo-shared-assets/.polyfill'
 import AdvancedMapInitialized from 'advanced-map-initialized'
 import createControlledPromise, { ControlledPromise } from 'remote-controlled-promise'
 import { EventedStream } from 'evented-stream-types'
+export * from 'evented-stream-types'
 
 interface Undone<Value> {
   readonly done: false
