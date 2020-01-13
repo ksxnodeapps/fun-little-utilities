@@ -18,7 +18,7 @@ export async function * iterateRows (lines: Stream, options: TableIterationOptio
     const trimmedLine = line.trim()
     if (horizontalLineRegex.test(trimmedLine)) continue
 
-    const row = trimmedLine.split('|')
+    const row = trimmedLine.split('|').map(x => x.trim())
 
     if (leftBound && row.shift() !== '') {
       throw new SyntaxError('Inconsistent left bound')
@@ -49,10 +49,7 @@ export async function createMarkdownCellTable (stream: Stream) {
     throw new SyntaxError('Text is empty')
   }
 
-  const headers = firstLineResult.value.split('|')
-    .map(x => x.trim())
-    .filter(Boolean)
-
+  const headers = firstLineResult.value.split('|').map(x => x.trim())
   const leftBound = headers[0] === ''
   const rightBound = headers[headers.length - 1] === ''
   if (leftBound) headers.shift()
