@@ -1,7 +1,8 @@
-import { MarkdownObjectTable } from 'parse-markdown-table'
+import { createMarkdownObjectTable } from 'parse-markdown-table'
+import { getAsyncArray } from './lib/async-array'
 
 describe('full bound', () => {
-  function setup () {
+  async function setup () {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|
@@ -10,22 +11,24 @@ describe('full bound', () => {
       |  3 | Julia Jones | jjones778@gmail.com      |
     `
 
-    const table = new MarkdownObjectTable(text)
-    const list = Array.from(table)
+    const table = await createMarkdownObjectTable(text)
+    const list = await getAsyncArray(table)
     return { text, table, list }
   }
 
-  it('object matches snapshot', () => {
-    expect(setup().table).toMatchSnapshot()
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
   })
 
-  it('list matches snapshot', () => {
-    expect(setup().list).toMatchSnapshot()
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
   })
 })
 
 describe('left bound', () => {
-  function setup () {
+  async function setup () {
     const text = `
       | id | name        | email
       |----|-------------|--------------------------
@@ -34,22 +37,24 @@ describe('left bound', () => {
       |  3 | Julia Jones | jjones778@gmail.com
     `
 
-    const table = new MarkdownObjectTable(text)
-    const list = Array.from(table)
+    const table = await createMarkdownObjectTable(text)
+    const list = await getAsyncArray(table)
     return { text, table, list }
   }
 
-  it('object matches snapshot', () => {
-    expect(setup().table).toMatchSnapshot()
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
   })
 
-  it('list matches snapshot', () => {
-    expect(setup().list).toMatchSnapshot()
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
   })
 })
 
 describe('right bound', () => {
-  function setup () {
+  async function setup () {
     const text = `
        id | name        | email                    |
       ----|-------------|--------------------------|
@@ -58,22 +63,24 @@ describe('right bound', () => {
         3 | Julia Jones | jjones778@gmail.com      |
     `
 
-    const table = new MarkdownObjectTable(text)
-    const list = Array.from(table)
+    const table = await createMarkdownObjectTable(text)
+    const list = await getAsyncArray(table)
     return { text, table, list }
   }
 
-  it('object matches snapshot', () => {
-    expect(setup().table).toMatchSnapshot()
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
   })
 
-  it('list matches snapshot', () => {
-    expect(setup().list).toMatchSnapshot()
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
   })
 })
 
 describe('no bound', () => {
-  function setup () {
+  async function setup () {
     const text = `
        id | name        | email
       ----|-------------|--------------------------
@@ -82,22 +89,24 @@ describe('no bound', () => {
         3 | Julia Jones | jjones778@gmail.com
     `
 
-    const table = new MarkdownObjectTable(text)
-    const list = Array.from(table)
+    const table = await createMarkdownObjectTable(text)
+    const list = await getAsyncArray(table)
     return { text, table, list }
   }
 
-  it('object matches snapshot', () => {
-    expect(setup().table).toMatchSnapshot()
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
   })
 
-  it('list matches snapshot', () => {
-    expect(setup().list).toMatchSnapshot()
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
   })
 })
 
 describe('unknown columns', () => {
-  function setup () {
+  async function setup () {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|
@@ -106,16 +115,18 @@ describe('unknown columns', () => {
       |  3 | Julia Jones | jjones778@gmail.com      |  12  | female |
     `
 
-    const table = new MarkdownObjectTable(text)
-    const list = Array.from(table)
+    const table = await createMarkdownObjectTable(text)
+    const list = await getAsyncArray(table)
     return { text, table, list }
   }
 
-  it('object matches snapshot', () => {
-    expect(setup().table).toMatchSnapshot()
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
   })
 
-  it('list matches snapshot', () => {
-    expect(setup().list).toMatchSnapshot()
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
   })
 })
