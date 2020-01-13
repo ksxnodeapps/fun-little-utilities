@@ -1,7 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "@tsfun/result": "^0.0.12",
     "parse-markdown-table": "file:../../packages/parse-markdown-table"
   }
 }

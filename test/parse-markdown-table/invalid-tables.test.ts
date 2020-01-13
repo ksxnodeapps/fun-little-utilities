@@ -1,29 +1,30 @@
-import { err, tryExec } from '@tsfun/result'
-import { MarkdownObjectTable } from 'parse-markdown-table'
+import { createMarkdownObjectTable } from 'parse-markdown-table'
+import { getAsyncArray } from './lib/async-array'
 
-const setup = (text: string) => tryExec(() => new MarkdownObjectTable(text))
+const setup = async (text: string) =>
+  getAsyncArray(await createMarkdownObjectTable(text))
 
 describe('empty string', () => {
   const text = ''
 
-  it('throws a SyntaxError', () => {
-    expect(setup(text)).toEqual(err(expect.any(SyntaxError)))
+  it('rejects with a SyntaxError', async () => {
+    await expect(setup(text)).rejects.toBeInstanceOf(SyntaxError)
   })
 
-  it('matches snapshot', () => {
-    expect(setup(text)).toMatchSnapshot()
+  it('matches snapshot', async () => {
+    await expect(setup(text)).rejects.toMatchSnapshot()
   })
 })
 
 describe('string with naught but whitespaces', () => {
   const text = '  \n  \t '
 
-  it('throws a SyntaxError', () => {
-    expect(setup(text)).toEqual(err(expect.any(SyntaxError)))
+  it('rejects with a SyntaxError', async () => {
+    await expect(setup(text)).rejects.toBeInstanceOf(SyntaxError)
   })
 
-  it('matches snapshot', () => {
-    expect(setup(text)).toMatchSnapshot()
+  it('matches snapshot', async () => {
+    await expect(setup(text)).rejects.toMatchSnapshot()
   })
 })
 
@@ -36,12 +37,12 @@ describe('inconsistent right bound', () => {
     |  3 | Julia Jones | jjones778@gmail.com
   `
 
-  it('throws a SyntaxError', () => {
-    expect(setup(text)).toEqual(err(expect.any(SyntaxError)))
+  it('rejects with a SyntaxError', async () => {
+    await expect(setup(text)).rejects.toBeInstanceOf(SyntaxError)
   })
 
-  it('matches snapshot', () => {
-    expect(setup(text)).toMatchSnapshot()
+  it('matches snapshot', async () => {
+    await expect(setup(text)).rejects.toMatchSnapshot()
   })
 })
 
@@ -54,11 +55,11 @@ describe('inconsistent left bound', () => {
     |  3 | Julia Jones | jjones778@gmail.com      |
   `
 
-  it('throws a SyntaxError', () => {
-    expect(setup(text)).toEqual(err(expect.any(SyntaxError)))
+  it('rejects with a SyntaxError', async () => {
+    await expect(setup(text)).rejects.toBeInstanceOf(SyntaxError)
   })
 
-  it('matches snapshot', () => {
-    expect(setup(text)).toMatchSnapshot()
+  it('matches snapshot', async () => {
+    await expect(setup(text)).rejects.toMatchSnapshot()
   })
 })
