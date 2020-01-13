@@ -1,4 +1,4 @@
-import { MarkdownCellTable, MarkdownObjectTable } from 'parse-markdown-table'
+import { MarkdownCellTable, MarkdownObjectTable, ListItem } from 'parse-markdown-table'
 import { Console } from 'simple-fake-console'
 
 export interface StdinReader {
@@ -49,7 +49,9 @@ export function getIndentArgument (type: IndentType, size: number): '\t' | numbe
   }
 }
 
-export function getOutputObject (text: string, type: Format) {
+type OutputObject = ListItem<string, string>[] | MarkdownCellTable
+
+export function getOutputObject (text: string, type: Format): OutputObject {
   switch (type) {
     case Format.Dict:
       return Array.from(new MarkdownObjectTable(text))

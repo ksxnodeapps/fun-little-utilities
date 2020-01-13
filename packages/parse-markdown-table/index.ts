@@ -1,5 +1,5 @@
 import { CellSet, List } from 'table-parser-base'
-export { unknownColumn } from 'table-parser-base'
+export * from 'table-parser-base'
 
 const getCells = (x: string) => x.split('|').map(x => x.trim())
 const horizontalLineRegex = /^[|-]+$/
