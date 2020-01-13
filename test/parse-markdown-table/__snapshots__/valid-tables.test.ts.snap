@@ -28,23 +28,7 @@ MarkdownObjectTable {
       "name",
       "email",
     ],
-    "rows": Array [
-      Array [
-        "1",
-        "John Doe",
-        "john-doe@gmail.com",
-      ],
-      Array [
-        "2",
-        "Peter Smith",
-        "petersmith22@outlook.com",
-      ],
-      Array [
-        "3",
-        "Julia Jones",
-        "jjones778@gmail.com",
-      ],
-    ],
+    "rows": Object {},
   },
 }
 `;
@@ -77,23 +61,7 @@ MarkdownObjectTable {
       "name",
       "email",
     ],
-    "rows": Array [
-      Array [
-        "1",
-        "John Doe",
-        "john-doe@gmail.com",
-      ],
-      Array [
-        "2",
-        "Peter Smith",
-        "petersmith22@outlook.com",
-      ],
-      Array [
-        "3",
-        "Julia Jones",
-        "jjones778@gmail.com",
-      ],
-    ],
+    "rows": Object {},
   },
 }
 `;
@@ -126,23 +94,7 @@ MarkdownObjectTable {
       "name",
       "email",
     ],
-    "rows": Array [
-      Array [
-        "1",
-        "John Doe",
-        "john-doe@gmail.com",
-      ],
-      Array [
-        "2",
-        "Peter Smith",
-        "petersmith22@outlook.com",
-      ],
-      Array [
-        "3",
-        "Julia Jones",
-        "jjones778@gmail.com",
-      ],
-    ],
+    "rows": Object {},
   },
 }
 `;
@@ -175,23 +127,7 @@ MarkdownObjectTable {
       "name",
       "email",
     ],
-    "rows": Array [
-      Array [
-        "1",
-        "John Doe",
-        "john-doe@gmail.com",
-      ],
-      Array [
-        "2",
-        "Peter Smith",
-        "petersmith22@outlook.com",
-      ],
-      Array [
-        "3",
-        "Julia Jones",
-        "jjones778@gmail.com",
-      ],
-    ],
+    "rows": Object {},
   },
 }
 `;
@@ -229,28 +165,7 @@ MarkdownObjectTable {
       "name",
       "email",
     ],
-    "rows": Array [
-      Array [
-        "1",
-        "John Doe",
-        "john-doe@gmail.com",
-        "123",
-        "male",
-        "true",
-      ],
-      Array [
-        "2",
-        "Peter Smith",
-        "petersmith22@outlook.com",
-      ],
-      Array [
-        "3",
-        "Julia Jones",
-        "jjones778@gmail.com",
-        "12",
-        "female",
-      ],
-    ],
+    "rows": Object {},
   },
 }
 `;
