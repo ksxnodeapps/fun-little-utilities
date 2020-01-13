@@ -1,13 +1,18 @@
 import console from 'console'
 import process from 'process'
 import { spawn } from 'child_process'
+import chalk from 'chalk'
 
 const emitter = require.resolve('./emitter.js')
 const executable = require.resolve('./parser.js')
 
+function printCmd (...args: string[]) {
+  console.info(...args.map(x => chalk.dim(x)))
+}
+
 async function view (args: readonly string[], delay = 0) {
-  console.info('$ export SLEEP=' + delay)
-  console.info('$ node emitter.js | parse-markdown-table', ...args, '\n')
+  printCmd('$ export SLEEP=' + delay)
+  printCmd('$ node emitter.js | parse-markdown-table', ...args)
 
   const emitterProcess = spawn('node', [emitter], {
     env: {
