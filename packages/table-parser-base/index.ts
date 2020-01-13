@@ -1,10 +1,12 @@
 import { zipAll } from 'iter-tools'
 import AdvMapInit from 'advanced-map-initialized'
 
+type MaybeAsyncIterable<X> = Iterable<X> | AsyncIterable<X>
+
 export class CellSet<Title extends string, Value> {
   constructor (
     public readonly headers: readonly Title[],
-    public readonly rows: Iterable<readonly Value[]>
+    public readonly rows: MaybeAsyncIterable<readonly Value[]>
   ) {}
 }
 
@@ -21,15 +23,15 @@ class UnknownColumns extends AdvMapInit<number, symbol> {
 const UNKNOWN_COLUMNS = new UnknownColumns()
 export const unknownColumn = (index: number) => UNKNOWN_COLUMNS.get(index)
 
-export class List<Title extends string, Value> implements Iterable<ListItem<Title, Value>> {
+export class List<Title extends string, Value> implements AsyncIterable<ListItem<Title, Value>> {
   constructor (
     private readonly cells: CellSet<Title, Value>
   ) {}
 
-  public * [Symbol.iterator] () {
+  public async * [Symbol.asyncIterator] () {
     const { headers, rows } = this.cells
 
-    for (const row of rows) {
+    for await (const row of rows) {
       const item: ListItem<Title, Value> = {} as any
       let index = 0
 
