@@ -27,7 +27,7 @@ async function view (...args: string[]) {
 }
 
 async function main () {
-  await view('--format jsonl')
+  await view('--format', 'jsonl')
   await view()
 }
 
