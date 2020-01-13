@@ -1,7 +1,17 @@
 import { List, CellSet } from 'table-parser-base'
+import { getAsyncArray } from './lib/async-array'
 
-it('no unknown columns', () => {
-  const cells = new CellSet(
+class Cells extends CellSet<string, any> {
+  constructor (
+    public readonly headers: string[],
+    public readonly rows: any[][]
+  ) {
+    super()
+  }
+}
+
+it('no unknown columns', async () => {
+  const cells = new Cells(
     ['id', 'name', 'email'],
     [
       [1, 'John Doe', 'john-doe@gmail.com'],
@@ -12,11 +22,11 @@ it('no unknown columns', () => {
 
   const list = new List(cells)
 
-  expect(Array.from(list)).toMatchSnapshot()
+  expect(await getAsyncArray(list)).toMatchSnapshot()
 })
 
-it('with unknown columns', () => {
-  const cells = new CellSet(
+it('with unknown columns', async () => {
+  const cells = new Cells(
     ['id', 'name', 'email'],
     [
       [1, 'John Doe', 'john-doe@gmail.com'],
@@ -27,5 +37,5 @@ it('with unknown columns', () => {
 
   const list = new List(cells)
 
-  expect(Array.from(list)).toMatchSnapshot()
+  expect(await getAsyncArray(list)).toMatchSnapshot()
 })
