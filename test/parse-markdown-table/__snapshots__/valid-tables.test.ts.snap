@@ -33,6 +33,72 @@ MarkdownObjectTable {
 }
 `;
 
+exports[`iterate by chunks list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`iterate by chunks object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Object {},
+  },
+}
+`;
+
+exports[`iterate by lines list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
+exports[`iterate by lines object matches snapshot 1`] = `
+MarkdownObjectTable {
+  "cells": MarkdownCellTable {
+    "headers": Array [
+      "id",
+      "name",
+      "email",
+    ],
+    "rows": Object {},
+  },
+}
+`;
+
 exports[`left bound list matches snapshot 1`] = `
 Array [
   Object {

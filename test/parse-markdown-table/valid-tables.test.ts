@@ -130,3 +130,61 @@ describe('unknown columns', () => {
     expect(list).toMatchSnapshot()
   })
 })
+
+async function * getChunks (text: string, splitter: string) {
+  const [first, ...rest] = text.split(splitter)
+  yield first
+  yield * rest.map(chunk => splitter + chunk)
+}
+
+describe('iterate by lines', () => {
+  async function setup () {
+    const text = `
+      | id | name        | email                    |
+      |----|-------------|--------------------------|
+      |  1 | John Doe    | john-doe@gmail.com       |
+      |  2 | Peter Smith | petersmith22@outlook.com |
+      |  3 | Julia Jones | jjones778@gmail.com      |
+    `
+
+    const table = await createMarkdownObjectTable(getChunks(text, '\n'))
+    const list = await getAsyncArray(table)
+    return { text, table, list }
+  }
+
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
+  })
+
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
+  })
+})
+
+describe('iterate by chunks', () => {
+  async function setup () {
+    const text = `
+      | id | name        | email                    |
+      |----|-------------|--------------------------|
+      |  1 | John Doe    | john-doe@gmail.com       |
+      |  2 | Peter Smith | petersmith22@outlook.com |
+      |  3 | Julia Jones | jjones778@gmail.com      |
+    `
+
+    const table = await createMarkdownObjectTable(getChunks(text, '|'))
+    const list = await getAsyncArray(table)
+    return { text, table, list }
+  }
+
+  it('object matches snapshot', async () => {
+    const { table } = await setup()
+    expect(table).toMatchSnapshot()
+  })
+
+  it('list matches snapshot', async () => {
+    const { list } = await setup()
+    expect(list).toMatchSnapshot()
+  })
+})
