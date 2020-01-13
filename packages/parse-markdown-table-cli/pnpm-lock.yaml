@@ -1,7 +1,6 @@
 dependencies:
   '@types/node': 13.1.6
   '@types/yargs': 15.0.0
-  get-stdin: 7.0.0
   parse-markdown-table: 'link:../parse-markdown-table'
   simple-fake-console: 'link:../simple-fake-console'
   tslib: 1.10.0
@@ -92,12 +91,6 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
-  /get-stdin/7.0.0:
-    dev: false
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-zRKcywvrXlXsA0v0i9Io4KDRaAw7+a1ZpjRwl9Wox8PFlVCCHra7E9c4kqXCoCM9nR5tBkaTTZRBoCm60bFqTQ==
   /is-fullwidth-code-point/3.0.0:
     dev: false
     engines:
@@ -222,7 +215,6 @@ packages:
 specifiers:
   '@types/node': ^13.1.6
   '@types/yargs': ^15.0.0
-  get-stdin: ^7.0.0
   parse-markdown-table: ^0.0.0
   simple-fake-console: ^0.1.4
   tslib: ^1.10.0

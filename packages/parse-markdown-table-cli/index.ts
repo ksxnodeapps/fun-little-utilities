@@ -1,13 +1,13 @@
-import { MarkdownCellTable, MarkdownObjectTable, ListItem } from 'parse-markdown-table'
+import { createMarkdownCellTable, createMarkdownObjectTable } from 'parse-markdown-table'
 import { Console } from 'simple-fake-console'
 
-export interface StdinReader {
-  (): Promise<string>
-}
+export interface ReadableStream
+extends AsyncIterable<Buffer | string> {}
 
 export const enum Format {
   List = 'list',
-  Dict = 'dict'
+  Dict = 'dict',
+  JsonLines = 'jsonl'
 }
 
 export const enum IndentType {
@@ -18,7 +18,7 @@ export const enum IndentType {
 
 export interface MainParam {
   readonly console: Console
-  readonly getStdIn: StdinReader
+  readonly stdin: ReadableStream
   readonly format: Format
   readonly indentType: IndentType
   readonly indentSize: number
@@ -31,14 +31,17 @@ export const enum Status {
 
 export async function main (options: MainParam): Promise<Status> {
   const indent = getIndentArgument(options.indentType, options.indentSize)
-  const text = await options.getStdIn()
-  const object = getOutputObject(text, options.format)
-  const json = JSON.stringify(object, undefined, indent)
-  options.console.info(json)
+  const chunks = readStream(options.stdin)
+
+  for await (const object of output(chunks, options.format)) {
+    const json = JSON.stringify(object, undefined, indent)
+    options.console.info(json)
+  }
+
   return Status.Success
 }
 
-export function getIndentArgument (type: IndentType, size: number): '\t' | number | undefined {
+function getIndentArgument (type: IndentType, size: number): '\t' | number | undefined {
   switch (type) {
     case IndentType.Tab:
       return '\t'
@@ -49,13 +52,35 @@ export function getIndentArgument (type: IndentType, size: number): '\t' | numbe
   }
 }
 
-type OutputObject = ListItem<string, string>[] | MarkdownCellTable
-
-export function getOutputObject (text: string, type: Format): OutputObject {
-  switch (type) {
-    case Format.Dict:
-      return Array.from(new MarkdownObjectTable(text))
-    case Format.List:
-      return new MarkdownCellTable(text)
+async function * readStream (stream: ReadableStream) {
+  for await (const chunk of stream) {
+    yield String(chunk)
   }
+}
+
+async function * output (chunks: AsyncIterable<string>, format: Format) {
+  switch (format) {
+    case Format.Dict:
+      yield getAsyncArray(await createMarkdownObjectTable(chunks))
+      break
+    case Format.List:
+      const { headers, rows } = await createMarkdownCellTable(chunks)
+      yield {
+        headers,
+        rows: await getAsyncArray(rows)
+      }
+      break
+    case Format.JsonLines:
+      yield * await createMarkdownObjectTable(chunks)
+  }
+}
+
+async function getAsyncArray<Item> (iterable: AsyncIterable<Item>) {
+  let array = []
+
+  for await (const item of iterable) {
+    array.push(item)
+  }
+
+  return array
 }

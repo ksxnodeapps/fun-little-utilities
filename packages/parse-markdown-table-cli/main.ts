@@ -1,6 +1,6 @@
+import console from 'console'
 import process from 'process'
 import yargs from 'yargs'
-import getStdIn from 'get-stdin'
 import { Format, IndentType, Status, main } from './'
 
 process.argv[0] = 'parse-markdown-table'
@@ -8,7 +8,7 @@ process.argv[0] = 'parse-markdown-table'
 const { argv } = yargs
   .option('format', {
     describe: 'Structure of output',
-    choices: [Format.List, Format.Dict],
+    choices: [Format.List, Format.Dict, Format.JsonLines],
     default: Format.Dict
   })
   .option('indentType', {
@@ -28,7 +28,7 @@ const { argv } = yargs
 
 main({
   console,
-  getStdIn,
+  stdin: process.stdin,
   ...argv
 })
   .then(status => process.exit(status))
