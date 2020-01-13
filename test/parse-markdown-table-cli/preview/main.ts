@@ -32,9 +32,9 @@ async function view (args: readonly string[], delay = 0) {
 }
 
 async function main () {
-  await view(['--format', 'jsonl'], 512)
   await view([], 3)
   await view(['--format', 'list'])
+  await view(['--format', 'jsonl'], 512)
 }
 
 main().catch(error => {
