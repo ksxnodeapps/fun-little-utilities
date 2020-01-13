@@ -4,6 +4,7 @@ import proxify, { EventTarget } from 'event-target-proxy'
 import EventedStreamCombination from './lib/evented-stream-combination'
 import ChunkCarrier from './lib/chunk-carrier'
 import ErrorCarrier from './lib/error-carrier'
+export * from 'evented-stream-types'
 
 export function combineEventedStream<
   Stream extends EventedStream<StreamChunk, StreamError>,
