@@ -30,7 +30,7 @@ export const enum Status {
 }
 
 export async function main (options: MainParam): Promise<Status> {
-  const indent = getIndentArgument(options.indentType, options.indentSize)
+  const indent = getIndentArgument(options.indentType, options.indentSize, options.format)
   const chunks = readStream(options.stdin)
 
   for await (const object of output(chunks, options.format)) {
@@ -41,7 +41,9 @@ export async function main (options: MainParam): Promise<Status> {
   return Status.Success
 }
 
-function getIndentArgument (type: IndentType, size: number): '\t' | number | undefined {
+function getIndentArgument (type: IndentType, size: number, format: Format): '\t' | number | undefined {
+  if (format === Format.JsonLines) return undefined
+
   switch (type) {
     case IndentType.Tab:
       return '\t'
