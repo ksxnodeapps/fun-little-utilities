@@ -1,0 +1,7 @@
+dependencies:
+  parse-markdown-table-cli: 'link:../../packages/parse-markdown-table-cli'
+  simple-fake-console: 'link:../../packages/simple-fake-console'
+lockfileVersion: 5.1
+specifiers:
+  parse-markdown-table-cli: 'file:../../packages/parse-markdown-table-cli'
+  simple-fake-console: 'file:../../packages/simple-fake-console'
