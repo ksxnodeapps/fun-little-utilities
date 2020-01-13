@@ -1,4 +1,4 @@
-import { createMarkdownObjectTable } from 'parse-markdown-table'
+import { createMarkdownObjectTable, createMarkdownCellTable } from 'parse-markdown-table'
 import { getAsyncArray } from './lib/async-array'
 
 describe('full bound', () => {
@@ -186,5 +186,32 @@ describe('iterate by chunks', () => {
   it('list matches snapshot', async () => {
     const { list } = await setup()
     expect(list).toMatchSnapshot()
+  })
+})
+
+describe('createMarkdownCellTable', () => {
+  async function setup () {
+    const text = `
+      | id | name        | email                    |
+      |----|-------------|--------------------------|
+      |  1 | John Doe    | john-doe@gmail.com       |
+      |  2 | Peter Smith | petersmith22@outlook.com |
+      |  3 | Julia Jones | jjones778@gmail.com      |
+    `
+
+    const table = await createMarkdownCellTable(text)
+    const headers = table.headers
+    const rows = await getAsyncArray(table.rows)
+    return { text, table, headers, rows }
+  }
+
+  it('headers matches snapshot', async () => {
+    const { headers } = await setup()
+    expect(headers).toMatchSnapshot()
+  })
+
+  it('headers matches snapshot', async () => {
+    const { rows } = await setup()
+    expect(rows).toMatchSnapshot()
   })
 })

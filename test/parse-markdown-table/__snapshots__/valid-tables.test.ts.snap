@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`createMarkdownCellTable headers matches snapshot 1`] = `
+Array [
+  "id",
+  "name",
+  "email",
+]
+`;
+
+exports[`createMarkdownCellTable headers matches snapshot 2`] = `
+Array [
+  Array [
+    "1",
+    "John Doe",
+    "john-doe@gmail.com",
+  ],
+  Array [
+    "2",
+    "Peter Smith",
+    "petersmith22@outlook.com",
+  ],
+  Array [
+    "3",
+    "Julia Jones",
+    "jjones778@gmail.com",
+  ],
+]
+`;
+
 exports[`full bound list matches snapshot 1`] = `
 Array [
   Object {
