@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "string-stream-utils": "file:../../packages/string-stream-utils"
+  }
+}

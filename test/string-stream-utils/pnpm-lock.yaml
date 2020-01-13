@@ -1,0 +1,5 @@
+dependencies:
+  string-stream-utils: 'link:../../packages/string-stream-utils'
+lockfileVersion: 5.1
+specifiers:
+  string-stream-utils: 'file:../../packages/string-stream-utils'
