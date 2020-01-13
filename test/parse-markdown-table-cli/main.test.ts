@@ -1,5 +1,5 @@
 import { ConsoleInstance, ActionType, getString } from 'simple-fake-console'
-import { MainParam, Format, IndentType, main } from 'parse-markdown-table-cli'
+import { MainParam, Format, IndentType, Status, main } from 'parse-markdown-table-cli'
 
 const STDIN_TEXT = `
   | id | name        | email                    |
@@ -79,6 +79,11 @@ describe('--format=dict --indentType=space --indentSize=2', () => {
       types: [ActionType.Info]
     })).toBe(JSON.stringify(DICT_OUTPUT, undefined, 2))
   })
+
+  it('returns 0', async () => {
+    const { status } = await setup(Param)
+    expect(status).toBe(Status.Success)
+  })
 })
 
 describe('--format=dict --indentType=tab', () => {
@@ -109,6 +114,11 @@ describe('--format=dict --indentType=tab', () => {
       console: param.console,
       types: [ActionType.Info]
     })).toBe(JSON.stringify(DICT_OUTPUT, undefined, '\t'))
+  })
+
+  it('returns 0', async () => {
+    const { status } = await setup(Param)
+    expect(status).toBe(Status.Success)
   })
 })
 
@@ -141,6 +151,11 @@ describe('--format=dict --indentType=none', () => {
       types: [ActionType.Info]
     })).toBe(JSON.stringify(DICT_OUTPUT))
   })
+
+  it('returns 0', async () => {
+    const { status } = await setup(Param)
+    expect(status).toBe(Status.Success)
+  })
 })
 
 describe('--format=list --indentType=space --indentSize=2', () => {
@@ -171,5 +186,10 @@ describe('--format=list --indentType=space --indentSize=2', () => {
       console: param.console,
       types: [ActionType.Info]
     })).toBe(JSON.stringify(LIST_OUTPUT, undefined, 2))
+  })
+
+  it('returns 0', async () => {
+    const { status } = await setup(Param)
+    expect(status).toBe(Status.Success)
   })
 })
