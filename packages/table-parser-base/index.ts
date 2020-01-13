@@ -3,11 +3,9 @@ import AdvMapInit from 'advanced-map-initialized'
 
 type MaybeAsyncIterable<X> = Iterable<X> | AsyncIterable<X>
 
-export class CellSet<Title extends string, Value> {
-  constructor (
-    public readonly headers: readonly Title[],
-    public readonly rows: MaybeAsyncIterable<readonly Value[]>
-  ) {}
+export abstract class CellSet<Title extends string, Value> {
+  public abstract readonly headers: readonly Title[]
+  public abstract readonly rows: MaybeAsyncIterable<readonly Value[]>
 }
 
 export type ListItem<Key extends string, Value> = {
