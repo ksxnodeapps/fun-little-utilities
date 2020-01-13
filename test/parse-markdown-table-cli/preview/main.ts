@@ -5,9 +5,14 @@ import { spawn } from 'child_process'
 const emitter = require.resolve('./emitter.js')
 const executable = require.resolve('./parser.js')
 
-async function view (...args: string[]) {
-  console.info('$ node emitter.js | parse-markdown-table', ...args)
-  const emitterProcess = spawn('node', [emitter])
+async function view (args: readonly string[], delay = 0) {
+  console.info('$ node emitter.js | parse-markdown-table', ...args, '\n')
+
+  const emitterProcess = spawn('node', [emitter], {
+    env: {
+      SLEEP: String(delay)
+    }
+  })
 
   const mainProcess = spawn(executable, args, {
     stdio: [emitterProcess.stdout, 'inherit', 'inherit']
@@ -23,12 +28,13 @@ async function view (...args: string[]) {
     )
   )
 
-  console.info('done', executionResult, '\n')
+  console.info('\n→', executionResult.status, executionResult.signal || '', '\n\n')
 }
 
 async function main () {
-  await view('--format', 'jsonl')
-  await view()
+  await view(['--format', 'jsonl'], 512)
+  await view([], 3)
+  await view(['--format', 'list'])
 }
 
 main().catch(error => {

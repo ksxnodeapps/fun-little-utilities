@@ -2,6 +2,8 @@
 const console = require('console')
 const process = require('process')
 
+const SLEEP = Number(process.env.SLEEP) || 0
+
 const text = `
   | id | name        | email                    |
   |----|-------------|--------------------------|
@@ -20,7 +22,7 @@ const sleep = ms => new Promise(resolve => setTimeout(() => resolve(), ms))
 async function main () {
   for (const line of text.split('\n')) {
     console.info(line)
-    await sleep(1024)
+    await sleep(SLEEP)
   }
 }
 
