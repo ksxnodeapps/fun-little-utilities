@@ -1,15 +1,15 @@
 import process from 'process'
 import yargs from 'yargs'
 import getStdIn from 'get-stdin'
-import { RowType, IndentType, Status, main } from './'
+import { Format, IndentType, Status, main } from './'
 
 process.argv[0] = 'parse-markdown-table'
 
 const { argv } = yargs
-  .option('rowType', {
-    describe: 'Structure of rows',
-    choices: [RowType.List, RowType.Dict],
-    default: RowType.Dict
+  .option('format', {
+    describe: 'Structure of output',
+    choices: [Format.List, Format.Dict],
+    default: Format.Dict
   })
   .option('indentType', {
     describe: 'Type of indentation',

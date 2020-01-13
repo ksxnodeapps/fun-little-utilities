@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`--rowType=dict --indentType=none calls console.info 1`] = `
+exports[`--format=dict --indentType=none calls console.info 1`] = `
 Array [
   ActionInstance {
     "data": Array [
@@ -11,7 +11,7 @@ Array [
 ]
 `;
 
-exports[`--rowType=dict --indentType=space --indentSize=2 calls console.info 1`] = `
+exports[`--format=dict --indentType=space --indentSize=2 calls console.info 1`] = `
 Array [
   ActionInstance {
     "data": Array [
@@ -38,7 +38,7 @@ Array [
 ]
 `;
 
-exports[`--rowType=dict --indentType=tab calls console.info 1`] = `
+exports[`--format=dict --indentType=tab calls console.info 1`] = `
 Array [
   ActionInstance {
     "data": Array [
@@ -65,7 +65,7 @@ Array [
 ]
 `;
 
-exports[`--rowType=list --indentType=space --indentSize=2 calls console.info 1`] = `
+exports[`--format=list --indentType=space --indentSize=2 calls console.info 1`] = `
 Array [
   ActionInstance {
     "data": Array [

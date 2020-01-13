@@ -1,5 +1,5 @@
 import { ConsoleInstance, ActionType, getString } from 'simple-fake-console'
-import { MainParam, RowType, IndentType, main } from 'parse-markdown-table-cli'
+import { MainParam, Format, IndentType, main } from 'parse-markdown-table-cli'
 
 const STDIN_TEXT = `
   | id | name        | email                    |
@@ -39,7 +39,7 @@ const LIST_OUTPUT = {
 abstract class MockedParam implements MainParam {
   public readonly console = new ConsoleInstance()
   public readonly getStdIn = jest.fn(async () => STDIN_TEXT)
-  public abstract readonly rowType: RowType
+  public abstract readonly format: Format
   public abstract readonly indentType: IndentType
   public abstract readonly indentSize: number
 }
@@ -50,9 +50,9 @@ async function setup (Param: new () => MockedParam) {
   return { param, status }
 }
 
-describe('--rowType=dict --indentType=space --indentSize=2', () => {
+describe('--format=dict --indentType=space --indentSize=2', () => {
   class Param extends MockedParam {
-    public readonly rowType = RowType.Dict
+    public readonly format = Format.Dict
     public readonly indentType = IndentType.Space
     public readonly indentSize = 2
   }
@@ -81,9 +81,9 @@ describe('--rowType=dict --indentType=space --indentSize=2', () => {
   })
 })
 
-describe('--rowType=dict --indentType=tab', () => {
+describe('--format=dict --indentType=tab', () => {
   class Param extends MockedParam {
-    public readonly rowType = RowType.Dict
+    public readonly format = Format.Dict
     public readonly indentType = IndentType.Tab
     public readonly indentSize = NaN
   }
@@ -112,9 +112,9 @@ describe('--rowType=dict --indentType=tab', () => {
   })
 })
 
-describe('--rowType=dict --indentType=none', () => {
+describe('--format=dict --indentType=none', () => {
   class Param extends MockedParam {
-    public readonly rowType = RowType.Dict
+    public readonly format = Format.Dict
     public readonly indentType = IndentType.None
     public readonly indentSize = NaN
   }
@@ -143,9 +143,9 @@ describe('--rowType=dict --indentType=none', () => {
   })
 })
 
-describe('--rowType=list --indentType=space --indentSize=2', () => {
+describe('--format=list --indentType=space --indentSize=2', () => {
   class Param extends MockedParam {
-    public readonly rowType = RowType.List
+    public readonly format = Format.List
     public readonly indentType = IndentType.Space
     public readonly indentSize = 2
   }

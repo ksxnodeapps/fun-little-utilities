@@ -5,7 +5,7 @@ export interface StdinReader {
   (): Promise<string>
 }
 
-export const enum RowType {
+export const enum Format {
   List = 'list',
   Dict = 'dict'
 }
@@ -19,7 +19,7 @@ export const enum IndentType {
 export interface MainParam {
   readonly console: Console
   readonly getStdIn: StdinReader
-  readonly rowType: RowType
+  readonly format: Format
   readonly indentType: IndentType
   readonly indentSize: number
 }
@@ -32,7 +32,7 @@ export const enum Status {
 export async function main (options: MainParam): Promise<Status> {
   const indent = getIndentArgument(options.indentType, options.indentSize)
   const text = await options.getStdIn()
-  const object = getOutputObject(text, options.rowType)
+  const object = getOutputObject(text, options.format)
   const json = JSON.stringify(object, undefined, indent)
   options.console.info(json)
   return Status.Success
@@ -49,11 +49,11 @@ export function getIndentArgument (type: IndentType, size: number): '\t' | numbe
   }
 }
 
-export function getOutputObject (text: string, type: RowType) {
+export function getOutputObject (text: string, type: Format) {
   switch (type) {
-    case RowType.Dict:
+    case Format.Dict:
       return Array.from(new MarkdownObjectTable(text))
-    case RowType.List:
+    case Format.List:
       return new MarkdownCellTable(text)
   }
 }
