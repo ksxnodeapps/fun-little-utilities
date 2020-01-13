@@ -2,6 +2,7 @@
   "private": true,
   "dependencies": {
     "simple-fake-console": "file:../../packages/simple-fake-console",
-    "parse-markdown-table-cli": "file:../../packages/parse-markdown-table-cli"
+    "parse-markdown-table-cli": "file:../../packages/parse-markdown-table-cli",
+    "@tools/preloaded-node": "file:../../tools/preloaded-node"
   }
 }
