@@ -23,7 +23,7 @@ async function view (...args: string[]) {
     )
   )
 
-  console.info('done', executionResult)
+  console.info('done', executionResult, '\n')
 }
 
 async function main () {
