@@ -3,6 +3,8 @@ import process from 'process'
 import yargs from 'yargs'
 import { Type, IndentType, Status, main } from './index'
 
+process.argv[0] = 'table-parser-cli'
+
 const { argv } = yargs
   .option('type', {
     alias: 't',
