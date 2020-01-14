@@ -1,7 +1,8 @@
 import { Stream, iterateLines, trimmedChunks } from 'string-stream-utils'
-import { ArrayTable, ObjectTable } from 'table-parser-base'
+import { ArrayTable, ObjectTable, createObjectTable } from 'table-parser-base'
 
 export { Stream }
+export { ArrayTable, ObjectTable }
 export * from 'table-parser-base'
 
 export interface TableIterationOptions {
@@ -60,9 +61,6 @@ export async function createMarkdownArrayTable (stream: Stream) {
   return new MarkdownCellTable(headers, rows)
 }
 
-export class MarkdownObjectTable<Title extends string>
-extends ObjectTable<Title, string> {}
-
 export async function createMarkdownObjectTable (stream: Stream) {
-  return new MarkdownObjectTable(await createMarkdownArrayTable(stream))
+  return createObjectTable(await createMarkdownArrayTable(stream))
 }

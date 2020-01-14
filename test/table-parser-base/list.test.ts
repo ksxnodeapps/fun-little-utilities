@@ -1,4 +1,4 @@
-import { ObjectTable, ArrayTable } from 'table-parser-base'
+import { ArrayTable, createObjectTable } from 'table-parser-base'
 import { getAsyncArray } from './lib/async-array'
 
 class Cells extends ArrayTable<string, any> {
@@ -20,7 +20,7 @@ it('no unknown columns', async () => {
     ]
   )
 
-  const list = new ObjectTable(cells)
+  const list = createObjectTable(cells)
 
   expect(await getAsyncArray(list)).toMatchSnapshot()
 })
@@ -35,7 +35,7 @@ it('with unknown columns', async () => {
     ]
   )
 
-  const list = new ObjectTable(cells)
+  const list = createObjectTable(cells)
 
   expect(await getAsyncArray(list)).toMatchSnapshot()
 })

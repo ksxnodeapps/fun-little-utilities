@@ -18,27 +18,61 @@ class UnknownColumns extends AdvMapInit<number, symbol> {
   }
 }
 
+export abstract class ObjectTable<Title extends string, Value> implements AsyncIterable<ListItem<Title, Value>> {
+  public abstract [Symbol.asyncIterator] (): AsyncGenerator<ListItem<Title, Value>>
+}
+
+async function getArrayList<Title extends string, Value> (table: ObjectTable<Title, Value>) {
+  const headers = Array<Title>()
+  const rows = Array<Value[]>()
+
+  // tslint:disable-next-line:await-promise
+  for await (const item of table) {
+    const currentRow = Array<Value>()
+
+    for (const [key, value] of Object.entries(item) as [Title, Value][]) {
+      const index = headers.includes(key)
+        ? headers.indexOf(key)
+        : (headers.push(key) - 1)
+
+      currentRow[index] = value
+    }
+
+    rows.push(currentRow)
+  }
+
+  return { headers, rows }
+}
+
+async function * getObjectList<Title extends string, Value> (table: ArrayTable<Title, Value>) {
+  const { headers, rows } = table
+
+  for await (const row of rows) {
+    const item: ListItem<Title, Value> = {} as any
+    let index = 0
+
+    for (const [key, value] of zipAll<any>(headers, row)) {
+      (item as any)[key ? key : unknownColumn(index)] = value
+      index += 1
+    }
+
+    yield item
+  }
+}
+
+export async function createArrayTable<Title extends string, Value> (objectTable: ObjectTable<Title, Value>): Promise<ArrayTable<Title, Value>> {
+  const { headers, rows } = await getArrayList(objectTable)
+  return new class extends ArrayTable<Title, Value> {
+    public readonly headers = headers
+    public readonly rows = rows
+  }()
+}
+
 const UNKNOWN_COLUMNS = new UnknownColumns()
 export const unknownColumn = (index: number) => UNKNOWN_COLUMNS.get(index)
 
-export class ObjectTable<Title extends string, Value> implements AsyncIterable<ListItem<Title, Value>> {
-  constructor (
-    private readonly cells: ArrayTable<Title, Value>
-  ) {}
-
-  public async * [Symbol.asyncIterator] () {
-    const { headers, rows } = this.cells
-
-    for await (const row of rows) {
-      const item: ListItem<Title, Value> = {} as any
-      let index = 0
-
-      for (const [key, value] of zipAll<any>(headers, row)) {
-        (item as any)[key ? key : unknownColumn(index)] = value
-        index += 1
-      }
-
-      yield item
-    }
-  }
+export function createObjectTable<Title extends string, Value> (arrayTable: ArrayTable<Title, Value>): ObjectTable<Title, Value> {
+  return new class extends ObjectTable<Title, Value> {
+    public readonly [Symbol.asyncIterator] = () => getObjectList(arrayTable)
+  }()
 }
