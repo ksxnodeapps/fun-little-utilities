@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no holes 1`] = `
+Object {
+  "headers": Array [
+    "id",
+    "name",
+    "email",
+  ],
+  "rows": Array [
+    Array [
+      1,
+      "John Doe",
+      "john-doe@gmail.com",
+    ],
+    Array [
+      2,
+      "Peter Smith",
+      "petersmith22@outlook.com",
+    ],
+    Array [
+      3,
+      "Julia Jones",
+      "jjones778@gmail.com",
+    ],
+  ],
+}
+`;
+
+exports[`with holes 1`] = `
+Object {
+  "headers": Array [
+    "id",
+    "name",
+    "age",
+    "sex",
+    "alive",
+    "email",
+  ],
+  "rows": Array [
+    Array [
+      1,
+      "John Doe",
+      32,
+    ],
+    Array [
+      2,
+      "Peter Smith",
+      undefined,
+      "male",
+      true,
+    ],
+    Array [
+      3,
+      "Julia Jones",
+      undefined,
+      undefined,
+      undefined,
+      "jjones778@gmail.com",
+    ],
+  ],
+}
+`;
