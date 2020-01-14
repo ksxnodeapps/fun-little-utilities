@@ -1,7 +1,7 @@
-import { List, CellSet } from 'table-parser-base'
+import { ObjectTable, ArrayTable } from 'table-parser-base'
 import { getAsyncArray } from './lib/async-array'
 
-class Cells extends CellSet<string, any> {
+class Cells extends ArrayTable<string, any> {
   constructor (
     public readonly headers: string[],
     public readonly rows: any[][]
@@ -20,7 +20,7 @@ it('no unknown columns', async () => {
     ]
   )
 
-  const list = new List(cells)
+  const list = new ObjectTable(cells)
 
   expect(await getAsyncArray(list)).toMatchSnapshot()
 })
@@ -35,7 +35,7 @@ it('with unknown columns', async () => {
     ]
   )
 
-  const list = new List(cells)
+  const list = new ObjectTable(cells)
 
   expect(await getAsyncArray(list)).toMatchSnapshot()
 })

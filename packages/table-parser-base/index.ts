@@ -3,7 +3,7 @@ import AdvMapInit from 'advanced-map-initialized'
 
 type MaybeAsyncIterable<X> = Iterable<X> | AsyncIterable<X>
 
-export abstract class CellSet<Title extends string, Value> {
+export abstract class ArrayTable<Title extends string, Value> {
   public abstract readonly headers: readonly Title[]
   public abstract readonly rows: MaybeAsyncIterable<readonly Value[]>
 }
@@ -21,9 +21,9 @@ class UnknownColumns extends AdvMapInit<number, symbol> {
 const UNKNOWN_COLUMNS = new UnknownColumns()
 export const unknownColumn = (index: number) => UNKNOWN_COLUMNS.get(index)
 
-export class List<Title extends string, Value> implements AsyncIterable<ListItem<Title, Value>> {
+export class ObjectTable<Title extends string, Value> implements AsyncIterable<ListItem<Title, Value>> {
   constructor (
-    private readonly cells: CellSet<Title, Value>
+    private readonly cells: ArrayTable<Title, Value>
   ) {}
 
   public async * [Symbol.asyncIterator] () {

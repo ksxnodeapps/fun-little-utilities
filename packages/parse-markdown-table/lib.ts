@@ -1,5 +1,5 @@
 import { Stream, iterateLines, trimmedChunks } from 'string-stream-utils'
-import { CellSet, List } from 'table-parser-base'
+import { ArrayTable, ObjectTable } from 'table-parser-base'
 
 export { Stream }
 export * from 'table-parser-base'
@@ -32,7 +32,7 @@ export async function * iterateRows (lines: Stream, options: TableIterationOptio
   }
 }
 
-export class MarkdownCellTable extends CellSet<string, string> {
+export class MarkdownCellTable extends ArrayTable<string, string> {
   constructor (
     public readonly headers: readonly string[],
     public readonly rows: AsyncIterableIterator<readonly string[]>
@@ -41,7 +41,7 @@ export class MarkdownCellTable extends CellSet<string, string> {
   }
 }
 
-export async function createMarkdownCellTable (stream: Stream) {
+export async function createMarkdownArrayTable (stream: Stream) {
   const lineIterator = trimmedChunks(iterateLines(stream))
   const firstLineResult = await lineIterator.next()
 
@@ -61,8 +61,8 @@ export async function createMarkdownCellTable (stream: Stream) {
 }
 
 export class MarkdownObjectTable<Title extends string>
-extends List<Title, string> {}
+extends ObjectTable<Title, string> {}
 
 export async function createMarkdownObjectTable (stream: Stream) {
-  return new MarkdownObjectTable(await createMarkdownCellTable(stream))
+  return new MarkdownObjectTable(await createMarkdownArrayTable(stream))
 }

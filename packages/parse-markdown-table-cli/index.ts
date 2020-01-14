@@ -1,4 +1,4 @@
-import { createMarkdownCellTable, createMarkdownObjectTable } from 'parse-markdown-table'
+import { createMarkdownArrayTable, createMarkdownObjectTable } from 'parse-markdown-table'
 import { Console } from 'simple-fake-console'
 
 export interface ReadableStream
@@ -66,7 +66,7 @@ async function * output (chunks: AsyncIterable<string>, format: Format) {
       yield getAsyncArray(await createMarkdownObjectTable(chunks))
       break
     case Format.List:
-      const { headers, rows } = await createMarkdownCellTable(chunks)
+      const { headers, rows } = await createMarkdownArrayTable(chunks)
       yield {
         headers,
         rows: await getAsyncArray(rows)

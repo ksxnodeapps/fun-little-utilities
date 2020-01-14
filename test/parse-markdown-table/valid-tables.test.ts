@@ -1,4 +1,4 @@
-import { createMarkdownObjectTable, createMarkdownCellTable } from 'parse-markdown-table'
+import { createMarkdownObjectTable, createMarkdownArrayTable } from 'parse-markdown-table'
 import { getAsyncArray } from './lib/async-array'
 
 describe('full bound', () => {
@@ -189,7 +189,7 @@ describe('iterate by chunks', () => {
   })
 })
 
-describe('createMarkdownCellTable', () => {
+describe('createMarkdownArrayTable', () => {
   async function setup () {
     const text = `
       | id | name        | email                    |
@@ -199,7 +199,7 @@ describe('createMarkdownCellTable', () => {
       |  3 | Julia Jones | jjones778@gmail.com      |
     `
 
-    const table = await createMarkdownCellTable(text)
+    const table = await createMarkdownArrayTable(text)
     const headers = table.headers
     const rows = await getAsyncArray(table.rows)
     return { text, table, headers, rows }

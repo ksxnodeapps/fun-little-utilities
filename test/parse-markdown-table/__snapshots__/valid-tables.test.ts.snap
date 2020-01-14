@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createMarkdownCellTable headers matches snapshot 1`] = `
+exports[`createMarkdownArrayTable headers matches snapshot 1`] = `
 Array [
   "id",
   "name",
@@ -8,7 +8,7 @@ Array [
 ]
 `;
 
-exports[`createMarkdownCellTable headers matches snapshot 2`] = `
+exports[`createMarkdownArrayTable headers matches snapshot 2`] = `
 Array [
   Array [
     "1",
