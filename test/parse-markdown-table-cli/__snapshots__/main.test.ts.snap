@@ -65,6 +65,29 @@ Array [
 ]
 `;
 
+exports[`--format=jsonl calls console.info 1`] = `
+Array [
+  ActionInstance {
+    "data": Array [
+      "{\\"id\\":\\"1\\",\\"name\\":\\"John Doe\\",\\"email\\":\\"john-doe@gmail.com\\"}",
+    ],
+    "type": "info",
+  },
+  ActionInstance {
+    "data": Array [
+      "{\\"id\\":\\"2\\",\\"name\\":\\"Peter Smith\\",\\"email\\":\\"petersmith22@outlook.com\\"}",
+    ],
+    "type": "info",
+  },
+  ActionInstance {
+    "data": Array [
+      "{\\"id\\":\\"3\\",\\"name\\":\\"Julia Jones\\",\\"email\\":\\"jjones778@gmail.com\\"}",
+    ],
+    "type": "info",
+  },
+]
+`;
+
 exports[`--format=list --indentType=space --indentSize=2 calls console.info 1`] = `
 Array [
   ActionInstance {

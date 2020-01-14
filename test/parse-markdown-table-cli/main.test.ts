@@ -225,3 +225,46 @@ describe('--format=list --indentType=space --indentSize=2', () => {
     expect(status).toBe(Status.Success)
   })
 })
+
+describe('--format=jsonl', () => {
+  class Param extends MockedParam {
+    public readonly format = Format.JsonLines
+    public readonly indentType = undefined!
+    public readonly indentSize = undefined!
+  }
+
+  it('calls console.info', async () => {
+    const { param } = await setup(Param)
+    expect(param.console.getActions()).toMatchSnapshot()
+  })
+
+  it('prints expected JSON text', async () => {
+    const { param } = await setup(Param)
+    const text = getString({
+      console: param.console,
+      types: [ActionType.Info]
+    })
+    const object = text
+      .split('\n')
+      .filter(Boolean)
+      .map(x => JSON.parse(x))
+    expect(object).toEqual(DICT_OUTPUT)
+  })
+
+  it('prints formatted JSON text', async () => {
+    const { param } = await setup(Param)
+    expect(getString({
+      console: param.console,
+      types: [ActionType.Info]
+    })).toBe(
+      DICT_OUTPUT
+        .map(x => JSON.stringify(x))
+        .join('\n')
+    )
+  })
+
+  it('returns 0', async () => {
+    const { status } = await setup(Param)
+    expect(status).toBe(Status.Success)
+  })
+})
