@@ -1,11 +1,9 @@
 import { ObjectTable, ListItem, createArrayTable } from 'table-parser-base'
 
-class Items<Item extends ListItem<string, any>> extends ObjectTable<string, any> {
+class Items<Item extends ListItem<string, any>> implements ObjectTable<string, any> {
   constructor (
     public readonly items: readonly Item[]
-  ) {
-    super()
-  }
+  ) {}
 
   public async * [Symbol.asyncIterator] () {
     yield * this.items

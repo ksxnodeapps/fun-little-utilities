@@ -3,9 +3,9 @@ import AdvMapInit from 'advanced-map-initialized'
 
 type MaybeAsyncIterable<X> = Iterable<X> | AsyncIterable<X>
 
-export abstract class ArrayTable<Title extends string, Value> {
-  public abstract readonly headers: readonly Title[]
-  public abstract readonly rows: MaybeAsyncIterable<readonly Value[]>
+export interface ArrayTable<Title extends string, Value> {
+  readonly headers: readonly Title[]
+  readonly rows: MaybeAsyncIterable<readonly Value[]>
 }
 
 export type ListItem<Key extends string, Value> = {
@@ -18,9 +18,8 @@ class UnknownColumns extends AdvMapInit<number, symbol> {
   }
 }
 
-export abstract class ObjectTable<Title extends string, Value> implements AsyncIterable<ListItem<Title, Value>> {
-  public abstract [Symbol.asyncIterator] (): AsyncGenerator<ListItem<Title, Value>>
-}
+export interface ObjectTable<Title extends string, Value>
+extends AsyncIterable<ListItem<Title, Value>> {}
 
 async function getArrayList<Title extends string, Value> (table: ObjectTable<Title, Value>) {
   const headers = Array<Title>()
@@ -62,7 +61,7 @@ async function * getObjectList<Title extends string, Value> (table: ArrayTable<T
 
 export async function createArrayTable<Title extends string, Value> (objectTable: ObjectTable<Title, Value>): Promise<ArrayTable<Title, Value>> {
   const { headers, rows } = await getArrayList(objectTable)
-  return new class extends ArrayTable<Title, Value> {
+  return new class implements ArrayTable<Title, Value> {
     public readonly headers = headers
     public readonly rows = rows
   }()
@@ -72,7 +71,7 @@ const UNKNOWN_COLUMNS = new UnknownColumns()
 export const unknownColumn = (index: number) => UNKNOWN_COLUMNS.get(index)
 
 export function createObjectTable<Title extends string, Value> (arrayTable: ArrayTable<Title, Value>): ObjectTable<Title, Value> {
-  return new class extends ObjectTable<Title, Value> {
+  return new class implements ObjectTable<Title, Value> {
     public readonly [Symbol.asyncIterator] = () => getObjectList(arrayTable)
   }()
 }

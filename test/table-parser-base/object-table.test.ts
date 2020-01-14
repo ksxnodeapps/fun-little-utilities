@@ -1,13 +1,11 @@
 import { ArrayTable, createObjectTable } from 'table-parser-base'
 import { getAsyncArray } from './lib/async-array'
 
-class Cells extends ArrayTable<string, any> {
+class Cells implements ArrayTable<string, any> {
   constructor (
     public readonly headers: string[],
     public readonly rows: any[][]
-  ) {
-    super()
-  }
+  ) {}
 }
 
 it('no unknown columns', async () => {

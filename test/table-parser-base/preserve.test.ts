@@ -2,13 +2,11 @@ import { ArrayTable, ObjectTable, ListItem, createArrayTable, createObjectTable 
 import { getAsyncArray } from './lib/async-array'
 
 it('ArrayTable → ObjectTable → ArrayTable', async () => {
-  class Cells extends ArrayTable<string, any> {
+  class Cells implements ArrayTable<string, any> {
     constructor (
       public readonly headers: string[],
       public readonly rows: any[][]
-    ) {
-      super()
-    }
+    ) {}
   }
 
   const x = new Cells(
@@ -28,12 +26,10 @@ it('ArrayTable → ObjectTable → ArrayTable', async () => {
 })
 
 it('ObjectTable → ArrayTable → ObjectTable', async () => {
-  class Items<Item extends ListItem<string, any>> extends ObjectTable<string, any> {
+  class Items<Item extends ListItem<string, any>> implements ObjectTable<string, any> {
     constructor (
       public readonly items: readonly Item[]
-    ) {
-      super()
-    }
+    ) {}
 
     public async * [Symbol.asyncIterator] () {
       yield * this.items

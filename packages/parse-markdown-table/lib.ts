@@ -33,13 +33,11 @@ export async function * iterateRows (lines: Stream, options: TableIterationOptio
   }
 }
 
-export class MarkdownCellTable extends ArrayTable<string, string> {
+export class MarkdownCellTable implements ArrayTable<string, string> {
   constructor (
     public readonly headers: readonly string[],
     public readonly rows: AsyncIterableIterator<readonly string[]>
-  ) {
-    super()
-  }
+  ) {}
 }
 
 export async function createMarkdownArrayTable (stream: Stream) {
