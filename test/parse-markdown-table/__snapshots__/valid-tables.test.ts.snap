@@ -48,19 +48,6 @@ Array [
 ]
 `;
 
-exports[`full bound object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
-`;
-
 exports[`iterate by chunks list matches snapshot 1`] = `
 Array [
   Object {
@@ -79,19 +66,6 @@ Array [
     "name": "Julia Jones",
   },
 ]
-`;
-
-exports[`iterate by chunks object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
 `;
 
 exports[`iterate by lines list matches snapshot 1`] = `
@@ -114,19 +88,6 @@ Array [
 ]
 `;
 
-exports[`iterate by lines object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
-`;
-
 exports[`left bound list matches snapshot 1`] = `
 Array [
   Object {
@@ -145,19 +106,6 @@ Array [
     "name": "Julia Jones",
   },
 ]
-`;
-
-exports[`left bound object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
 `;
 
 exports[`no bound list matches snapshot 1`] = `
@@ -180,19 +128,6 @@ Array [
 ]
 `;
 
-exports[`no bound object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
-`;
-
 exports[`right bound list matches snapshot 1`] = `
 Array [
   Object {
@@ -211,19 +146,6 @@ Array [
     "name": "Julia Jones",
   },
 ]
-`;
-
-exports[`right bound object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
 `;
 
 exports[`unknown columns list matches snapshot 1`] = `
@@ -249,17 +171,4 @@ Array [
     Symbol(Unknown Column #4): "female",
   },
 ]
-`;
-
-exports[`unknown columns object matches snapshot 1`] = `
-MarkdownObjectTable {
-  "cells": MarkdownCellTable {
-    "headers": Array [
-      "id",
-      "name",
-      "email",
-    ],
-    "rows": Object {},
-  },
-}
 `;

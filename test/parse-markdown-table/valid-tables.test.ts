@@ -16,11 +16,6 @@ describe('full bound', () => {
     return { text, table, list }
   }
 
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
-
   it('list matches snapshot', async () => {
     const { list } = await setup()
     expect(list).toMatchSnapshot()
@@ -41,11 +36,6 @@ describe('left bound', () => {
     const list = await getAsyncArray(table)
     return { text, table, list }
   }
-
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
 
   it('list matches snapshot', async () => {
     const { list } = await setup()
@@ -68,11 +58,6 @@ describe('right bound', () => {
     return { text, table, list }
   }
 
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
-
   it('list matches snapshot', async () => {
     const { list } = await setup()
     expect(list).toMatchSnapshot()
@@ -94,11 +79,6 @@ describe('no bound', () => {
     return { text, table, list }
   }
 
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
-
   it('list matches snapshot', async () => {
     const { list } = await setup()
     expect(list).toMatchSnapshot()
@@ -119,11 +99,6 @@ describe('unknown columns', () => {
     const list = await getAsyncArray(table)
     return { text, table, list }
   }
-
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
 
   it('list matches snapshot', async () => {
     const { list } = await setup()
@@ -152,11 +127,6 @@ describe('iterate by lines', () => {
     return { text, table, list }
   }
 
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
-
   it('list matches snapshot', async () => {
     const { list } = await setup()
     expect(list).toMatchSnapshot()
@@ -177,11 +147,6 @@ describe('iterate by chunks', () => {
     const list = await getAsyncArray(table)
     return { text, table, list }
   }
-
-  it('object matches snapshot', async () => {
-    const { table } = await setup()
-    expect(table).toMatchSnapshot()
-  })
 
   it('list matches snapshot', async () => {
     const { list } = await setup()
