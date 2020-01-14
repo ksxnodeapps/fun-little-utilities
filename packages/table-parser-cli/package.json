@@ -13,6 +13,11 @@
     "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
   },
   "sideEffects": false,
+  "bin": {
+    "convert-array-and-object-table": "bin",
+    "cvtarrobjtbl": "bin",
+    "table-parser-cli": "bin"
+  },
   "dependencies": {
     "yargs": "^15.1.0",
     "tslib": "^1.10.0",
