@@ -1,5 +1,6 @@
 import { ConsoleInstance, ActionType, getString } from 'simple-fake-console'
 import { MainParam, Format, IndentType, Status, main } from 'parse-markdown-table-cli'
+import { getAsyncArray } from './lib/async-array'
 
 const STDIN_TEXT = `
   | id | name        | email                    |
@@ -8,6 +9,26 @@ const STDIN_TEXT = `
   |  2 | Peter Smith | petersmith22@outlook.com |
   |  3 | Julia Jones | jjones778@gmail.com      |
 `
+
+class InputStream implements AsyncIterable<string> {
+  async * [Symbol.asyncIterator] () {
+    let length = 0
+    let count = length
+    let chunk = ''
+    for (const char of STDIN_TEXT) {
+      if (!count) {
+        yield chunk
+        chunk = ''
+        count = length
+        length += 1
+      } else {
+        count -= 1
+      }
+      chunk += char
+    }
+    yield chunk
+  }
+}
 
 const DICT_OUTPUT = [
   {
@@ -38,7 +59,7 @@ const LIST_OUTPUT = {
 
 abstract class MockedParam implements MainParam {
   public readonly console = new ConsoleInstance()
-  public readonly getStdIn = jest.fn(async () => STDIN_TEXT)
+  public readonly stdin = new InputStream()
   public abstract readonly format: Format
   public abstract readonly indentType: IndentType
   public abstract readonly indentSize: number
@@ -49,6 +70,17 @@ async function setup (Param: new () => MockedParam) {
   const status = await main(param)
   return { param, status }
 }
+
+describe('assertions', () => {
+  it('InputParam yields multiple chunks', async () => {
+    expect(await getAsyncArray(new InputStream())).toMatchSnapshot()
+  })
+
+  it('InputStream when combine is STDIN_TEXT', async () => {
+    const array = await getAsyncArray(new InputStream())
+    expect(array.join('')).toBe(STDIN_TEXT)
+  })
+})
 
 describe('--format=dict --indentType=space --indentSize=2', () => {
   class Param extends MockedParam {

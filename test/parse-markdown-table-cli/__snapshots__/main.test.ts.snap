@@ -98,3 +98,37 @@ Array [
   },
 ]
 `;
+
+exports[`assertions InputParam yields multiple chunks 1`] = `
+Array [
+  "",
+  "
+",
+  "  ",
+  "| i",
+  "d | ",
+  "name ",
+  "      ",
+  " | emai",
+  "l       ",
+  "         ",
+  "    |
+  |-",
+  "---|-------",
+  "------|-----",
+  "-------------",
+  "--------|
+  | ",
+  " 1 | John Doe  ",
+  "  | john-doe@gma",
+  "il.com       |
+  ",
+  "|  2 | Peter Smith",
+  " | petersmith22@out",
+  "look.com |
+  |  3 | ",
+  "Julia Jones | jjones7",
+  "78@gmail.com      |
+",
+]
+`;
