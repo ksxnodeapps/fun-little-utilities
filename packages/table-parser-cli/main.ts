@@ -3,9 +3,8 @@ import process from 'process'
 import yargs from 'yargs'
 import { Type, IndentType, Status, main } from './index'
 
-process.argv[0] = 'table-parser-cli'
-
 const { argv } = yargs
+  .usage('table-parser-cli --type <type> [options]')
   .option('type', {
     alias: 't',
     describe: 'Convert from what to what',
@@ -24,7 +23,24 @@ const { argv } = yargs
     type: 'number',
     default: 2
   })
+  .example(
+    'table-parser-cli -t obj2arr < object-table.json',
+    'Parse object-table.json as an ObjectTable, convert it to ArrayTable, and print result to stdout'
+  )
+  .example(
+    'table-parser-cli -t arr2obj < array-table.json',
+    'Parse object-table.json as an ArrayTable, convert it to ObjectTable, and print result to stdout'
+  )
+  .example(
+    'table-parser-cli -t obj2arr < object-table.json > array-table.json',
+    'Parse object-table.json as an ObjectTable, convert it to ArrayTable, and save result to array-table.json'
+  )
+  .example(
+    'table-parser-cli -t arr2obj < array-table.json > object-table.json',
+    'Parse object-table.json as an ArrayTable, convert it to ObjectTable, and save result to object-table.json'
+  )
   .env('TABLE_PARSER')
+  .wrap(null)
   .help()
 
 main({
