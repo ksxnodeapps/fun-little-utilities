@@ -1,0 +1,24 @@
+{
+  "name": "table-parser-cli",
+  "version": "0.0.0",
+  "description": "Convert array table to object table and back",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://ksxnodeapps.github.io/fun-little-utilities/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "yargs": "^15.1.0",
+    "tslib": "^1.10.0",
+    "table-parser-base": "^0.0.0",
+    "simple-fake-console": "^0.1.4",
+    "@types/yargs": "^15.0.0",
+    "@types/node": "^13.1.6"
+  }
+}
