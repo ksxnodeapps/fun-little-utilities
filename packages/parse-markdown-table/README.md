@@ -1,5 +1,7 @@
 # Parse Markdown Table
 
+Convert a markdown table from text to JavaScript objects
+
 ## Usage
 
 ### `ArrayTable`
