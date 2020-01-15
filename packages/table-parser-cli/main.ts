@@ -40,7 +40,7 @@ const { argv } = yargs
     'Parse object-table.json as an ArrayTable, convert it to ObjectTable, and save result to object-table.json'
   )
   .env('TABLE_PARSER')
-  .wrap(null)
+  .wrap(process.stdout.columns)
   .help()
 
 main({

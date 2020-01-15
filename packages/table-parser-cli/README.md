@@ -8,17 +8,19 @@
 table-parser-cli --type <type> [options]
 
 Options:
-  --version         Show version number  [boolean]
-  --type, -t        Convert from what to what  [required] [choices: "arr2obj", "obj2arr"]
-  --indentType, -i  Indent character of JSON output  [choices: "space", "tab", "none"] [default: "space"]
-  --indentSize, -s  Indent size of JSON output (only apply when --indentType=space)  [number] [default: 2]
-  --help            Show help  [boolean]
+  --version         Show version number                                                                                                                          [boolean]
+  --type, -t        Convert from what to what                                                                                   [required] [choices: "arr2obj", "obj2arr"]
+  --indentType, -i  Indent character of JSON output                                                                   [choices: "space", "tab", "none"] [default: "space"]
+  --indentSize, -s  Indent size of JSON output (only apply when --indentType=space)                                                                  [number] [default: 2]
+  --help            Show help                                                                                                                                    [boolean]
 
 Examples:
   table-parser-cli -t obj2arr < object-table.json                     Parse object-table.json as an ObjectTable, convert it to ArrayTable, and print result to stdout
   table-parser-cli -t arr2obj < array-table.json                      Parse object-table.json as an ArrayTable, convert it to ObjectTable, and print result to stdout
-  table-parser-cli -t obj2arr < object-table.json > array-table.json  Parse object-table.json as an ObjectTable, convert it to ArrayTable, and save result to array-table.json
-  table-parser-cli -t arr2obj < array-table.json > object-table.json  Parse object-table.json as an ArrayTable, convert it to ObjectTable, and save result to object-table.json
+  table-parser-cli -t obj2arr < object-table.json > array-table.json  Parse object-table.json as an ObjectTable, convert it to ArrayTable, and save result to
+                                                                      array-table.json
+  table-parser-cli -t arr2obj < array-table.json > object-table.json  Parse object-table.json as an ArrayTable, convert it to ObjectTable, and save result to
+                                                                      object-table.json
 ```
 
 ### Examples
