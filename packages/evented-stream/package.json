@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "tslib": "^1.10.0",
-    "iterate-evented-stream": "^0.1.5",
+    "iterate-evented-stream": "^0.1.4",
     "combine-evented-stream": "^0.1.4",
     "evented-stream-types": "^0.1.4",
     "@types/node": "^13.1.6"
