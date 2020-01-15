@@ -47,5 +47,5 @@ specifiers:
   '@types/js-yaml': ^3.12.1
   '@types/node': ^13.1.6
   js-yaml: ^3.13.1
-  mkcmdargv-lib: ^0.1.0
+  mkcmdargv-lib: ^0.1.1
   tslib: ^1.10.0
