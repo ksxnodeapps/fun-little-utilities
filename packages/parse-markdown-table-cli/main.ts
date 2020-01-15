@@ -17,13 +17,14 @@ const { argv } = yargs
     default: IndentType.Space
   })
   .option('indentSize', {
-    describe: `Size of indentation (only matter if --indentType=${IndentType.Space}`,
+    describe: `Size of indentation\n(only apply if --indentType=${IndentType.Space})`,
     type: 'number',
     default: 2
   })
   .example('$0 < table.md', 'Print JSON representation of table inside table.md')
   .example('$0', 'Read a markdown table from stdin and parse it')
   .env('PARSE_MARKDOWN_TABLE')
+  .wrap(process.stdout.columns * 4 / 7)
   .help()
 
 main({
