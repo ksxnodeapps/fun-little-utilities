@@ -3,9 +3,8 @@ import process from 'process'
 import yargs from 'yargs'
 import { Format, IndentType, Status, main } from './'
 
-process.argv[0] = 'parse-markdown-table'
-
 const { argv } = yargs
+  .usage('input-stream | parse-markdown-table [options]')
   .option('format', {
     describe: 'Structure of output',
     choices: [Format.List, Format.Dict, Format.JsonLines],
@@ -21,8 +20,8 @@ const { argv } = yargs
     type: 'number',
     default: 2
   })
-  .example('$0 < table.md', 'Print JSON representation of table inside table.md')
-  .example('$0', 'Read a markdown table from stdin and parse it')
+  .example('parse-markdown-table < table.md', 'Print JSON representation of table inside table.md')
+  .example('parse-markdown-table', 'Read a markdown table from stdin and parse it')
   .env('PARSE_MARKDOWN_TABLE')
   .wrap(process.stdout.columns * 4 / 7)
   .help()
