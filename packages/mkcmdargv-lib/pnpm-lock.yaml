@@ -1,5 +1,5 @@
 dependencies:
-  '@tsfun/array': 0.0.0
+  '@tsfun/array': 0.0.1
   '@types/fs-extra': 8.0.1
   '@types/node': 13.1.7
   fs-extra: 8.1.0
@@ -7,13 +7,13 @@ dependencies:
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/array/0.0.0:
+  /@tsfun/array/0.0.1:
     dependencies:
       '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
+      integrity: sha512-82WeMtIC8TzWAJpIjLm+N44BSnYADWZmhBNeT0PdY+mTqB61bLSsDKonHlLE36twC26fBFMYV2/sYj8uJei5uA==
   /@types/fs-extra/8.0.1:
     dependencies:
       '@types/node': 13.1.7
@@ -55,7 +55,7 @@ packages:
     resolution:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
-  '@tsfun/array': ^0.0.0
+  '@tsfun/array': ^0.0.1
   '@types/fs-extra': ^8.0.1
   '@types/node': ^13.1.7
   fs-extra: ^8.1.0
