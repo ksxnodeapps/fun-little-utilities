@@ -1,7 +1,7 @@
 dependencies:
   '@tsfun/array': 0.0.0
   '@types/fs-extra': 8.0.1
-  '@types/node': 13.1.6
+  '@types/node': 13.1.7
   fs-extra: 8.1.0
   split-iterable: 'link:../split-iterable'
   tslib: 1.10.0
@@ -24,6 +24,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+  /@types/node/13.1.7:
+    dev: false
+    resolution:
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /fs-extra/8.1.0:
     dependencies:
       graceful-fs: 4.2.3
@@ -57,7 +61,7 @@ packages:
 specifiers:
   '@tsfun/array': ^0.0.0
   '@types/fs-extra': ^8.0.1
-  '@types/node': ^13.1.6
+  '@types/node': ^13.1.7
   fs-extra: ^8.1.0
   split-iterable: ^0.1.4
   tslib: ^1.10.0

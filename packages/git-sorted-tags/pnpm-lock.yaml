@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 13.1.6
+  '@types/node': 13.1.7
   '@types/yargs': 15.0.0
   sort-versions: 'link:../sort-versions'
   tslib: 1.10.0
@@ -10,10 +10,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/node/13.1.6:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /@types/yargs-parser/13.1.0:
     dev: false
     resolution:
@@ -212,7 +212,7 @@ packages:
     resolution:
       integrity: sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==
 specifiers:
-  '@types/node': ^13.1.6
+  '@types/node': ^13.1.7
   '@types/yargs': ^15.0.0
   sort-versions: ^0.1.4
   tslib: ^1.10.0

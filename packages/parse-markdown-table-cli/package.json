@@ -28,6 +28,6 @@
     "parse-markdown-table": "^0.0.0",
     "simple-fake-console": "^0.1.4",
     "@types/yargs": "^15.0.0",
-    "@types/node": "^13.1.6"
+    "@types/node": "^13.1.7"
   }
 }
