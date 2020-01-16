@@ -1,6 +1,6 @@
 {
   "name": "find-executable-lib",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Core APIs used by find-executable",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

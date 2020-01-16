@@ -50,7 +50,7 @@ packages:
 specifiers:
   '@types/fs-extra': ^8.0.1
   '@types/node': ^13.1.7
-  catls-lib: ^0.1.5
+  catls-lib: ^0.1.6
   fs-extra: ^8.1.0
-  ts-yargs: ^0.1.4
+  ts-yargs: ^0.1.5
   tslib: ^1.10.0
