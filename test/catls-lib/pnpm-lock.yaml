@@ -11,15 +11,15 @@ lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
       integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
-  /@types/node/13.1.6:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:

@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 13.1.6
+  '@types/node': 13.1.7
   create-array-equal: 0.0.3
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
@@ -10,22 +10,22 @@ dependencies:
   typescript-char-code: 0.0.1
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.7.7:
+  /@babel/runtime-corejs2/7.8.3:
     dependencies:
       core-js: 2.6.11
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-P91T3dFYQL7aj44PxOMIAbo66Ag3NbmXG9fseSYaXxapp3K9XTct5HU9IpTOm2D0AoktKusgqzN5YcSxZXEKBQ==
-  /@babel/runtime/7.7.7:
+      integrity: sha512-yxJXBKdIogkfF+wgeJrvU7Afp5ugBi92NzSgNPWWKVoQAlixH3gwMP6yYYr7SV1Dbc0HmNw7WUJkV5ksvtQuHg==
+  /@babel/runtime/7.8.3:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
+      integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
@@ -34,10 +34,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
-  /@types/node/13.1.6:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
@@ -46,7 +46,7 @@ packages:
       integrity: sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
   /create-array-equal/0.0.3:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       iter-tools: 6.2.6
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
@@ -65,8 +65,8 @@ packages:
       integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
   /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.7.7
-      '@babel/runtime-corejs2': 7.7.7
+      '@babel/runtime': 7.8.3
+      '@babel/runtime-corejs2': 7.8.3
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
@@ -82,7 +82,7 @@ packages:
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       immutable: 4.0.0-rc.12
       tslib: 1.10.0
     dev: false
@@ -142,7 +142,7 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@types/node': ^13.1.6
+  '@types/node': ^13.1.7
   create-array-equal: ^0.0.3
   event-target-proxy: ^0.1.4
   evented-stream-types: ^0.1.4

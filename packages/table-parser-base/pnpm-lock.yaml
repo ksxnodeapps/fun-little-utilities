@@ -1,34 +1,34 @@
 dependencies:
-  '@types/node': 13.1.6
+  '@types/node': 13.1.7
   advanced-map-initialized: 0.0.4
   iter-tools: 6.2.6
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.8.0:
+  /@babel/runtime-corejs2/7.8.3:
     dependencies:
       core-js: 2.6.11
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-GsSb5MFUX2Q+zVUa7d4/8EXz7KPDuw0uNzY1sdBV7kvzdHzotxqi0HQlqesDRcffpvqcr+ZX8N+mMnb7/osExw==
-  /@babel/runtime/7.8.0:
+      integrity: sha512-yxJXBKdIogkfF+wgeJrvU7Afp5ugBi92NzSgNPWWKVoQAlixH3gwMP6yYYr7SV1Dbc0HmNw7WUJkV5ksvtQuHg==
+  /@babel/runtime/7.8.3:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-Z7ti+HB0puCcLmFE3x90kzaVgbx6TRrYIReaygW6EkBEnJh1ajS4/inhF7CypzWeDV3NFl1AfWj0eMtdihojxw==
+      integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
   /@types/node/10.17.13:
     dev: false
     resolution:
       integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
-  /@types/node/13.1.6:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /advanced-map-base/0.0.4:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       advanced-map-types: 0.0.4
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
@@ -39,7 +39,7 @@ packages:
       integrity: sha512-auTlMKEPMll9I6InsV7XNbDRfTra8u9kBd73/rSe0VuzYFFyAU5mb41wpV8Urs/1CYb+ysE+FetN6zRxfhC0EQ==
   /advanced-map-initialized/0.0.4:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       advanced-map-base: 0.0.4
       advanced-map-types: 0.0.4
       tslib: 1.10.0
@@ -50,7 +50,7 @@ packages:
       integrity: sha512-mvPQ6Q1ZwUZ3Uwseh/8jog/PC2E6OmmpUYir5+eGkBw0eoMYAF880qYL1NTIS9k5jW1NExyV2ADoqVLzZ4pePA==
   /advanced-map-types/0.0.4:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
@@ -70,8 +70,8 @@ packages:
       integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
   /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.8.0
-      '@babel/runtime-corejs2': 7.8.0
+      '@babel/runtime': 7.8.3
+      '@babel/runtime-corejs2': 7.8.3
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
@@ -132,7 +132,7 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@types/node': ^13.1.6
+  '@types/node': ^13.1.7
   advanced-map-initialized: ^0.0.4
   iter-tools: ^6.2.6
   tslib: ^1.10.0

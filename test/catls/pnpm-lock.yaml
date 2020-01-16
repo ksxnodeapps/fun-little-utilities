@@ -12,7 +12,7 @@ lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
@@ -23,14 +23,14 @@ packages:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
   /@types/fs-extra/8.0.1:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
     dev: false
     resolution:
       integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  /@types/node/13.1.6:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /ansi-styles/4.2.1:
     dependencies:
       '@types/color-name': 1.1.1
@@ -75,7 +75,7 @@ packages:
     dependencies:
       '@tsfun/array': 0.0.0
       '@types/fs-extra': 8.0.1
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       fs-extra: 8.1.0
       monorepo-shared-assets: 0.0.19
       tslib: 1.10.0
@@ -107,7 +107,7 @@ packages:
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       immutable: 4.0.0-rc.12
       tslib: 1.10.0
     dev: false
@@ -129,7 +129,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /unique-temp-path/0.1.3:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:

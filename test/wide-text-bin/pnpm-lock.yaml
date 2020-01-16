@@ -6,19 +6,19 @@ dependencies:
   wide-text-bin: 'link:../../packages/wide-text-bin'
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.7.7:
+  /@babel/runtime-corejs2/7.8.3:
     dependencies:
       core-js: 2.6.11
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-P91T3dFYQL7aj44PxOMIAbo66Ag3NbmXG9fseSYaXxapp3K9XTct5HU9IpTOm2D0AoktKusgqzN5YcSxZXEKBQ==
-  /@babel/runtime/7.7.7:
+      integrity: sha512-yxJXBKdIogkfF+wgeJrvU7Afp5ugBi92NzSgNPWWKVoQAlixH3gwMP6yYYr7SV1Dbc0HmNw7WUJkV5ksvtQuHg==
+  /@babel/runtime/7.8.3:
     dependencies:
       regenerator-runtime: 0.13.3
     dev: false
     resolution:
-      integrity: sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
+      integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
@@ -31,8 +31,8 @@ packages:
       integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
   /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.7.7
-      '@babel/runtime-corejs2': 7.7.7
+      '@babel/runtime': 7.8.3
+      '@babel/runtime-corejs2': 7.8.3
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1

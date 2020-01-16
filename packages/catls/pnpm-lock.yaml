@@ -9,14 +9,10 @@ lockfileVersion: 5.1
 packages:
   /@types/fs-extra/8.0.1:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
     dev: false
     resolution:
       integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  /@types/node/13.1.6:
-    dev: false
-    resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /@types/node/13.1.7:
     dev: false
     resolution:

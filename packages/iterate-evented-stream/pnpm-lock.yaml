@@ -9,7 +9,7 @@ lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
@@ -18,17 +18,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
-  /@types/node/13.1.6:
-    dev: false
-    resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /@types/node/13.1.7:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /advanced-map-base/0.0.4:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       advanced-map-types: 0.0.4
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
@@ -39,7 +35,7 @@ packages:
       integrity: sha512-auTlMKEPMll9I6InsV7XNbDRfTra8u9kBd73/rSe0VuzYFFyAU5mb41wpV8Urs/1CYb+ysE+FetN6zRxfhC0EQ==
   /advanced-map-initialized/0.0.4:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       advanced-map-base: 0.0.4
       advanced-map-types: 0.0.4
       tslib: 1.10.0
@@ -50,7 +46,7 @@ packages:
       integrity: sha512-mvPQ6Q1ZwUZ3Uwseh/8jog/PC2E6OmmpUYir5+eGkBw0eoMYAF880qYL1NTIS9k5jW1NExyV2ADoqVLzZ4pePA==
   /advanced-map-types/0.0.4:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
@@ -65,7 +61,7 @@ packages:
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       immutable: 4.0.0-rc.12
       tslib: 1.10.0
     dev: false
@@ -75,7 +71,7 @@ packages:
       integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
   /remote-controlled-promise/0.0.6:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:

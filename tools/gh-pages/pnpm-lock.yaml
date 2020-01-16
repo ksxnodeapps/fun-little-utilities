@@ -47,10 +47,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
-  /email-addresses/3.0.3:
+  /email-addresses/3.1.0:
     dev: false
     resolution:
-      integrity: sha512-kUlSC06PVvvjlMRpNIl3kR1NRXLEe86VQ7N0bQeaCZb2g+InShCeHQp/JvyYNTugMnRN2NvJhHlc3q12MWbbpg==
+      integrity: sha512-k0/r7GrWVL32kZlGwfPNgB2Y/mMXVTq/decgLczm/j34whdaspNrZO8CnXPf1laaHxI6ptUlsnAxN+UAPw+fzg==
   /escape-string-regexp/1.0.5:
     dev: false
     engines:
@@ -100,7 +100,7 @@ packages:
     dependencies:
       async: 2.6.3
       commander: 2.20.3
-      email-addresses: 3.0.3
+      email-addresses: 3.1.0
       filenamify-url: 1.0.0
       fs-extra: 8.1.0
       globby: 6.1.0

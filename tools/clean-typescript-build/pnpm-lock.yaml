@@ -6,7 +6,7 @@ lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
@@ -17,21 +17,21 @@ packages:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
   /@types/fs-extra/8.0.1:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
     dev: false
     resolution:
       integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
-  /@types/node/13.1.6:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
-  /@types/yargs-parser/13.1.0:
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+  /@types/yargs-parser/15.0.0:
     dev: false
     resolution:
-      integrity: sha512-gCubfBUZ6KxzoibJ+SCUc/57Ms1jz5NjHe4+dI2krNmU5zCPAphyLJYyTOg06ueIyfj+SaCUqmzun7ImlxDcKg==
+      integrity: sha512-FA/BWv8t8ZWJ+gEOnLLd8ygxH/2UFbAvgEonyfN6yWGLKc7zVjbpl2Y4CTjid9h2RfgPP6SEt6uHwEOply00yw==
   /@types/yargs/15.0.0:
     dependencies:
-      '@types/yargs-parser': 13.1.0
+      '@types/yargs-parser': 15.0.0
     dev: false
     resolution:
       integrity: sha512-TITCsNxRSDVmq3kPGuUdKZTPTfHeswsUGIjxSe8SB4EBKTPA0DO0y4yWI95kZ2hfqJAYxmu+gxzjOwdumB5S0g==
@@ -60,7 +60,7 @@ packages:
     dependencies:
       '@tsfun/array': 0.0.0
       '@types/fs-extra': 8.0.1
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       '@types/yargs': 15.0.0
       fs-extra: 8.1.0
       fs-tree-utils: 0.1.8
@@ -104,7 +104,7 @@ packages:
       integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
   /exec-inline/0.0.5:
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:
@@ -134,7 +134,7 @@ packages:
     dependencies:
       '@tsfun/array': 0.0.0
       '@types/fs-extra': 8.0.1
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       fs-extra: 8.1.0
       monorepo-shared-assets: 0.0.19
       tslib: 1.10.0
@@ -180,7 +180,7 @@ packages:
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       immutable: 4.0.0-rc.12
       tslib: 1.10.0
     dev: false
