@@ -24,6 +24,7 @@ export function * generateUnit<
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
   const { tjs, instruction, basePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
+  if (!instruction.input) return
   const program = getProgramFromFiles(
     ensureArray(instruction.input),
     instruction.compilerOptions,
