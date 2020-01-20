@@ -1,8 +1,9 @@
+import { objectExtends } from '@tsfun/object'
 import ensureArray from './utils/ensure-array'
 import getIndent from './utils/get-indent'
-import { OutputFileConflict, FileWritingFailure, Success } from './status'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
+import { ConfigLoader, ConfigParseError } from './load-config'
 import { TJS, FSX } from './modules'
 
 import {
@@ -12,6 +13,15 @@ import {
   SymbolInstruction,
   OutputDescriptor
 } from './types'
+
+import {
+  OutputFileConflict,
+  FileWritingFailure,
+  FileReadingFailure,
+  FileParsingFailure,
+  CircularReference,
+  Success
+} from './status'
 
 export interface FileWritingInstruction<Definition> {
   readonly schema: Definition
@@ -93,5 +103,35 @@ export namespace writeSchemaFile {
   export type Return =
     OutputFileConflict |
     FileWritingFailure |
+    Success<void>
+}
+
+export class SchemaWriter<Prog = Program, Def = Definition> {
+  constructor (
+    private readonly param: SchemaWriter.ConstructorParam<Prog, Def>
+  ) {}
+
+  private readonly loader = new ConfigLoader(this.param)
+
+  public async generateSingleConfig (configPath: string): Promise<SchemaWriter.GenerateReturn> {
+    const config = await this.loader.loadConfig(configPath)
+    if (config.code) return config
+
+    const iterator = generateUnit(objectExtends(this.param, {
+      instruction: config.value.instruction,
+      basePath: undefined! // TODO: remove basePath
+    }))
+  }
+}
+
+export namespace SchemaWriter {
+  export interface ConstructorParam<Program, Definition> extends ConfigLoader.ConstructorParam {
+    readonly tjs: TJS.Mod<Program, Definition>
+  }
+
+  export type GenerateReturn =
+    FileReadingFailure |
+    FileParsingFailure<ConfigParseError[]> |
+    CircularReference<string[]> |
     Success<void>
 }
