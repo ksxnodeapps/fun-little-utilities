@@ -1,5 +1,5 @@
 dependencies:
-  '@tsfun/object': 0.0.13
+  '@tsfun/object': 0.0.14
   '@tsfun/result': 0.0.15
   '@types/js-yaml': 3.12.1
   '@types/node': 13.1.7
@@ -9,14 +9,14 @@ dependencies:
   typescript-json-schema: 0.42.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/object/0.0.13:
+  /@tsfun/object/0.0.14:
     dependencies:
       '@types/node': 13.1.7
       tslib: 1.10.0
       utility-types: 3.10.0
     dev: false
     resolution:
-      integrity: sha512-OTIWKfWJRDDqRCKbD7q2fFl8toJF4r6uifacd/dq4bgyo5TJ8LFmSyRPydMg/jVfybtXgEXSu63N57vQ6AHKKA==
+      integrity: sha512-MqH27rg1J+4CBYC0n4WTaULUNjnRj1y9vzV6ndXwnM/finXy7fdCA1kKBxgs7vIyMFTkBHkqMOt8Fq90MCyskA==
   /@tsfun/prv-option-result-common/0.0.10:
     dependencies:
       '@types/node': 13.1.7
@@ -376,7 +376,7 @@ packages:
     resolution:
       integrity: sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
 specifiers:
-  '@tsfun/object': ^0.0.13
+  '@tsfun/object': ^0.0.14
   '@tsfun/result': ^0.0.15
   '@types/js-yaml': ^3.12.1
   '@types/node': ^13.1.7
