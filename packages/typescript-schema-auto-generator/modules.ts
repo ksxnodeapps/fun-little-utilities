@@ -23,7 +23,7 @@ export namespace FSX {
 /** Interfaces of path */
 export namespace Path {
   export interface Mod {
-    relative (from: string, to: string): string
-    join (...paths: string[]): string
+    dirname (path: string): string
+    resolve (base: string, ...paths: string[]): string
   }
 }

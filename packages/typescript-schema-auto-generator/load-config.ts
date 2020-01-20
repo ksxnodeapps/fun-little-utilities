@@ -3,7 +3,7 @@ import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '
 import ensureArray from './utils/ensure-array'
 import { Config } from './types'
 import { FSX, Path } from './modules'
-import { FileReadingFailure, FileParsingFailure, Success } from './status'
+import { FileReadingFailure, FileParsingFailure, CircularReference, Success } from './status'
 
 export interface ConfigLoader {
   /**
@@ -71,14 +71,6 @@ const MERGE_OMITTED_KEYS = ['input', 'list', 'output', 'symbol'] as const
 const MERGE_CONFLICT_RESOLVER = ([value]: [unknown, unknown]) =>
   value === undefined ? PropertyPreference.Right : PropertyPreference.Left
 
-export async function loadConfig (param: loadConfig.Param): Promise<loadConfig.Return> {
-  const lcfRet = await loadConfigFile(param)
-  if (lcfRet.code) return lcfRet
-
-  const config = lcfRet.value
-
-}
-
 export namespace loadConfig {
   export interface Param extends loadConfigFile.Param {
     readonly path: Path.Mod
@@ -87,4 +79,58 @@ export namespace loadConfig {
   export type Return =
     FileReadingFailure |
     FileParsingFailure<ConfigParseError[]>
+}
+
+export class ConfigLoader {
+  constructor (private readonly param: ConfigLoader.ConstructorParam) {}
+  private readonly simpleCache = new Map<string, Config>()
+
+  private async prvLoadConfig (
+    filename: string,
+    circularGuard: string[]
+  ): Promise<ConfigLoader.LoaderReturn> {
+    const { simpleCache, param } = this
+    const { dirname, resolve } = param.path
+
+    if (circularGuard.includes(filename)) {
+      return new CircularReference(circularGuard)
+    }
+
+    if (simpleCache.has(filename)) {
+      return new Success(simpleCache.get(filename)!)
+    }
+
+    const lcfRet = await loadConfigFile(addProperty(param, 'filename', resolve(filename)))
+    if (lcfRet.code) return lcfRet
+
+    let config = lcfRet.value
+    simpleCache.set(filename, config)
+
+    if (!config.extends) return new Success(config)
+    for (const path of ensureArray(config.extends)) {
+      const absPath = resolve(dirname(filename), path)
+      const res = await this.prvLoadConfig(absPath, circularGuard.concat(filename))
+      if (res.code) return res
+      config = mergeConfig(config, res.value)
+    }
+    return new Success(config)
+  }
+
+  public loadConfig (filename: string) {
+    return this.prvLoadConfig(filename, [])
+  }
+}
+
+export namespace ConfigLoader {
+  export interface ConstructorParam {
+    readonly fsx: FSX.Mod
+    readonly path: Path.Mod
+    readonly loaders: readonly ConfigLoader[]
+  }
+
+  export type LoaderReturn =
+    FileReadingFailure |
+    FileParsingFailure<ConfigParseError[]> |
+    CircularReference<string[]> |
+    Success<Config>
 }
