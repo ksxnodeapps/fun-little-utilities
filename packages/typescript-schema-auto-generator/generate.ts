@@ -32,13 +32,12 @@ export function * generateUnit<
   Prog = Program,
   Def = Definition
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
-  const { tjs, instruction, basePath } = param
+  const { tjs, instruction } = param
   const { buildGenerator, getProgramFromFiles } = tjs
   if (!instruction.input) return
   const program = getProgramFromFiles(
     ensureArray(instruction.input),
-    instruction.compilerOptions,
-    basePath
+    instruction.compilerOptions
   )
   const generator = buildGenerator(program, instruction.schemaSettings)
 
@@ -52,7 +51,6 @@ export namespace generateUnit {
   export interface Param<Program, Definition> {
     readonly tjs: TJS.Mod<Program, Definition>
     readonly instruction: Instruction
-    readonly basePath: string
   }
 
   export interface Return<Definition>
@@ -120,8 +118,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     if (config.code) return config
 
     const iterator = generateUnit(objectExtends(this.param, {
-      instruction: config.value.instruction,
-      basePath: undefined! // TODO: remove basePath
+      instruction: config.value.instruction
     }))
   }
 }
