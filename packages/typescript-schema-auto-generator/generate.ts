@@ -62,25 +62,27 @@ export namespace generateUnit {
 export const serialize = (schema: any, { indent }: OutputDescriptor) =>
   JSON.stringify(schema, undefined, getIndent(indent))
 
-export async function writeSchemaFile (param: writeSchemaFile.Param): Promise<writeSchemaFile.Return> {
+export async function writeSchemaFiles (param: writeSchemaFile.Param): Promise<writeSchemaFile.Return> {
   const { fsx, instruction } = param
-  const { schema, instruction: { output } } = instruction
-  const descriptors = ensureOutputDescriptorArray(output)
   const duplicationCheckingArray: OutputDescriptor[] = []
   const duplicationMap = new Map<string, OutputDescriptor[]>()
   const writeFuncs: Array<() => Promise<void>> = []
 
-  for (const desc of descriptors) {
-    const { filename } = desc
+  for (const { schema, instruction: { output } } of instruction) {
+    const descriptors = ensureOutputDescriptorArray(output)
 
-    const duplicatedFiles = descriptors.filter(x => x.filename === filename)
-    if (duplicatedFiles.length > 1) {
-      duplicationMap.set(filename, duplicatedFiles)
-      continue
+    for (const desc of descriptors) {
+      const { filename } = desc
+
+      const duplicatedFiles = descriptors.filter(x => x.filename === filename)
+      if (duplicatedFiles.length > 1) {
+        duplicationMap.set(filename, duplicatedFiles)
+        continue
+      }
+
+      duplicationCheckingArray.push(desc)
+      writeFuncs.push(() => fsx.writeFile(filename, serialize(schema, desc)))
     }
-
-    duplicationCheckingArray.push(desc)
-    writeFuncs.push(() => fsx.writeFile(filename, serialize(schema, desc)))
   }
 
   if (duplicationMap.size) return new OutputFileConflict(duplicationMap)
@@ -97,7 +99,7 @@ export async function writeSchemaFile (param: writeSchemaFile.Param): Promise<wr
 export namespace writeSchemaFile {
   export interface Param {
     readonly fsx: FSX.Mod
-    readonly instruction: FileWritingInstruction<any>
+    readonly instruction: Iterable<FileWritingInstruction<any>>
   }
 
   export type Return =
