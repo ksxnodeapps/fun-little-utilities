@@ -115,7 +115,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
 
   private readonly loader = new ConfigLoader(this.param)
 
-  private static joinCfgRes<Def> (list: Iterable<SchemaWriter.GenerateReturn<Def>>) {
+  private static joinCfgRes<Def> (list: Iterable<SchemaWriter.SingleConfigReturn<Def>>) {
     const errors = []
     let instruction: Iterable<FileWritingInstruction<Def>> = []
 
@@ -130,7 +130,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     return { errors, instruction }
   }
 
-  public async singleConfig (configPath: string): Promise<SchemaWriter.GenerateReturn<Def>> {
+  public async singleConfig (configPath: string): Promise<SchemaWriter.SingleConfigReturn<Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
     const writeInstruction = generateUnit(
@@ -157,7 +157,7 @@ export namespace SchemaWriter {
     readonly tjs: TJS.Mod<Program, Definition>
   }
 
-  export type GenerateReturn<Definition> =
+  export type SingleConfigReturn<Definition> =
     FileReadingFailure |
     FileWritingFailure |
     FileParsingFailure<ConfigParseError[]> |
