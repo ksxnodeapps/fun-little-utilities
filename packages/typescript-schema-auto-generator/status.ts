@@ -6,6 +6,7 @@ export enum Status {
   FileReadingFailure = 5,
   FileWritingFailure = 4,
   OutputFileConflict = 3,
+  MultipleFailures = 2,
   FatalError = 1,
   Success = 0
 }
@@ -37,6 +38,10 @@ export abstract class Failure<Error> extends ResultBase {
   constructor (public readonly error: Error) {
     super()
   }
+}
+
+export class MultipleFailures<Error extends Failure<any>> extends Failure<Error> {
+  public readonly code = Status.MultipleFailures
 }
 
 export class OutputFileConflict extends Failure<OutputFileConflict.Error> {
