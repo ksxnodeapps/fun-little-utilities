@@ -113,7 +113,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
 
   private readonly loader = new ConfigLoader(this.param)
 
-  public async generateSingleConfig (configPath: string): Promise<SchemaWriter.GenerateReturn> {
+  public async singleConfig (configPath: string): Promise<SchemaWriter.GenerateReturn<Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
 
@@ -121,10 +121,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
       instruction: config.value.instruction
     }))
 
-    return writeSchemaFiles({
-      fsx: this.param.fsx,
-      instruction: writeInstruction
-    })
+    return new Success(writeInstruction)
   }
 }
 
@@ -133,11 +130,11 @@ export namespace SchemaWriter {
     readonly tjs: TJS.Mod<Program, Definition>
   }
 
-  export type GenerateReturn =
+  export type GenerateReturn<Definition> =
     FileReadingFailure |
     FileWritingFailure |
     FileParsingFailure<ConfigParseError[]> |
     CircularReference<string[]> |
     OutputFileConflict |
-    Success<void>
+    Success<Generator<FileWritingInstruction<Definition>, void>>
 }
