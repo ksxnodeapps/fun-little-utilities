@@ -5,7 +5,7 @@ import { Config } from './types'
 import { FSX, Path } from './modules'
 import { FileReadingFailure, FileParsingFailure, CircularReference, Success } from './status'
 
-export interface ConfigLoader {
+export interface FileFormatDescriptor {
   /**
    * Should the loader accept the file?
    * @param filename Path to the file
@@ -21,7 +21,7 @@ export interface ConfigLoader {
 }
 
 export interface ConfigParseError {
-  loader: ConfigLoader
+  loader: FileFormatDescriptor
   error: unknown
 }
 
@@ -47,7 +47,7 @@ export namespace loadConfigFile {
   export interface Param {
     readonly fsx: FSX.Mod
     readonly filename: string
-    readonly loaders: Iterable<ConfigLoader>
+    readonly loaders: Iterable<FileFormatDescriptor>
   }
 
   export type Return =
@@ -125,7 +125,7 @@ export namespace ConfigLoader {
   export interface ConstructorParam {
     readonly fsx: FSX.Mod
     readonly path: Path.Mod
-    readonly loaders: readonly ConfigLoader[]
+    readonly loaders: readonly FileFormatDescriptor[]
   }
 
   export type LoaderReturn =

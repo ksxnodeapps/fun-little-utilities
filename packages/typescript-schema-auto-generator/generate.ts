@@ -4,7 +4,7 @@ import concat from './utils/concat-iterable'
 import getIndent from './utils/get-indent'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
-import { ConfigLoader, ConfigParseError } from './load-config'
+import { ConfigParseError, ConfigLoader } from './load-config'
 import { TJS, FSX } from './modules'
 
 import {
