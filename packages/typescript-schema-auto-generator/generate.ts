@@ -139,7 +139,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     return new Success(writeInstruction)
   }
 
-  public async writeSchemas (configPaths: readonly string[]) {
+  public async writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
     const { errors, instruction } = SchemaWriter.joinCfgRes(
       await Promise.all(configPaths.map(x => this.singleConfig(x)))
     )
@@ -164,4 +164,12 @@ export namespace SchemaWriter {
     CircularReference<string[]> |
     OutputFileConflict |
     Success<Generator<FileWritingInstruction<Definition>, void>>
+
+  type MultiFailType = Exclude<SingleConfigReturn<never>, Success<any>>
+
+  export type WriteSchemaReturn =
+    MultipleFailures<MultiFailType[]> |
+    OutputFileConflict |
+    FileWritingFailure |
+    Success<void>
 }
