@@ -1,4 +1,4 @@
-import { objectExtends } from '@tsfun/object'
+import { addProperty } from '@tsfun/object'
 import ensureArray from './utils/ensure-array'
 import concat from './utils/concat-iterable'
 import getIndent from './utils/get-indent'
@@ -133,11 +133,9 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
   public async singleConfig (configPath: string): Promise<SchemaWriter.GenerateReturn<Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
-
-    const writeInstruction = generateUnit(objectExtends(this.param, {
-      instruction: config.value.instruction
-    }))
-
+    const writeInstruction = generateUnit(
+      addProperty(this.param, 'instruction', config.value.instruction)
+    )
     return new Success(writeInstruction)
   }
 
