@@ -165,10 +165,9 @@ export namespace SchemaWriter {
     OutputFileConflict |
     Success<Generator<FileWritingInstruction<Definition>, void>>
 
-  type MultiFailType = Exclude<SingleConfigReturn<never>, Success<any>>
-
+  type SingleConfigFailure = Exclude<SingleConfigReturn<never>, Success<any>>
   export type WriteSchemaReturn =
-    MultipleFailures<MultiFailType[]> |
+    MultipleFailures<SingleConfigFailure[]> |
     OutputFileConflict |
     FileWritingFailure |
     Success<void>
