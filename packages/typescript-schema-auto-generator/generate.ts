@@ -117,9 +117,14 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
 
-    const iterator = generateUnit(objectExtends(this.param, {
+    const writeInstruction = generateUnit(objectExtends(this.param, {
       instruction: config.value.instruction
     }))
+
+    return writeSchemaFiles({
+      fsx: this.param.fsx,
+      instruction: writeInstruction
+    })
   }
 }
 
@@ -130,7 +135,9 @@ export namespace SchemaWriter {
 
   export type GenerateReturn =
     FileReadingFailure |
+    FileWritingFailure |
     FileParsingFailure<ConfigParseError[]> |
     CircularReference<string[]> |
+    OutputFileConflict |
     Success<void>
 }
