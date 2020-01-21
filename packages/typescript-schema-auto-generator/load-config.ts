@@ -1,24 +1,10 @@
-import { Result, ok, err } from '@tsfun/result'
+import { ok, err } from '@tsfun/result'
 import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '@tsfun/object'
 import ensureArray from './utils/ensure-array'
 import { Config } from './types'
 import { FSX, Path } from './modules'
 import { FileReadingFailure, FileParsingFailure, CircularReference, Success } from './status'
-
-export interface FileFormatDescriptor {
-  /**
-   * Should the loader accept the file?
-   * @param filename Path to the file
-   */
-  readonly testFileName: (filename: string) => boolean
-
-  /**
-   * Parse the file
-   * @param text Content of the file in text
-   * @param filename Path to the file
-   */
-  readonly parseConfigText: (text: string, filename: string) => Result<Config, unknown>
-}
+import { FileFormatDescriptor } from './file-format-descriptor'
 
 export interface ConfigParseError {
   loader: FileFormatDescriptor

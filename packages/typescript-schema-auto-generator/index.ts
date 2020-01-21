@@ -1,3 +1,4 @@
+export * from './file-format-descriptor'
 export * from './generate'
 export * from './instruction'
 export * from './modules'
