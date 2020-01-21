@@ -60,7 +60,7 @@ export namespace generateUnit {
 export const serialize = (schema: any, { indent }: OutputDescriptor) =>
   JSON.stringify(schema, undefined, getIndent(indent))
 
-export async function writeSchemaFiles (param: writeSchemaFile.Param): Promise<writeSchemaFile.Return> {
+export async function writeSchemaFiles (param: writeSchemaFiles.Param): Promise<writeSchemaFiles.Return> {
   const { fsx, instruction } = param
   const duplicationCheckingArray: OutputDescriptor[] = []
   const duplicationMap = new Map<string, OutputDescriptor[]>()
@@ -94,7 +94,7 @@ export async function writeSchemaFiles (param: writeSchemaFile.Param): Promise<w
   return new Success(undefined)
 }
 
-export namespace writeSchemaFile {
+export namespace writeSchemaFiles {
   export interface Param {
     readonly fsx: FSX.Mod
     readonly instruction: Iterable<FileWritingInstruction<any>>
