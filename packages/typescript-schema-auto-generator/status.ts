@@ -40,7 +40,7 @@ export abstract class Failure<Error> extends ResultBase {
   }
 }
 
-export class MultipleFailures<Error extends Failure<any>> extends Failure<Error> {
+export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Failure<Error> {
   public readonly code = Status.MultipleFailures
 }
 
