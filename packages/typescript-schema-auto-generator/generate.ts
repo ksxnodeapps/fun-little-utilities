@@ -1,5 +1,6 @@
 import { objectExtends } from '@tsfun/object'
 import ensureArray from './utils/ensure-array'
+import concat from './utils/concat-iterable'
 import getIndent from './utils/get-indent'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
@@ -15,6 +16,7 @@ import {
 } from './types'
 
 import {
+  MultipleFailures,
   OutputFileConflict,
   FileWritingFailure,
   FileReadingFailure,
@@ -113,6 +115,21 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
 
   private readonly loader = new ConfigLoader(this.param)
 
+  private static joinCfgRes<Def> (list: Iterable<SchemaWriter.GenerateReturn<Def>>) {
+    const errors = []
+    let instruction: Iterable<FileWritingInstruction<Def>> = []
+
+    for (const item of list) {
+      if (item.code) {
+        errors.push(item)
+      } else {
+        instruction = concat(instruction, item.value)
+      }
+    }
+
+    return { errors, instruction }
+  }
+
   public async singleConfig (configPath: string): Promise<SchemaWriter.GenerateReturn<Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
@@ -122,6 +139,18 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     }))
 
     return new Success(writeInstruction)
+  }
+
+  public async writeSchemas (configPaths: readonly string[]) {
+    const { errors, instruction } = SchemaWriter.joinCfgRes(
+      await Promise.all(configPaths.map(x => this.singleConfig(x)))
+    )
+    if (errors.length) return new MultipleFailures(errors)
+
+    return writeSchemaFiles({
+      fsx: this.param.fsx,
+      instruction
+    })
   }
 }
 
