@@ -1,11 +1,11 @@
 import { OutputDescriptor } from './types'
 
 export enum Status {
-  CircularReference = 6,
-  FileParsingFailure = 5,
-  FileReadingFailure = 4,
-  FileWritingFailure = 3,
-  OutputFileConflict = 2,
+  CircularReference = 7,
+  FileParsingFailure = 6,
+  FileReadingFailure = 5,
+  FileWritingFailure = 4,
+  OutputFileConflict = 3,
   FatalError = 1,
   Success = 0
 }
