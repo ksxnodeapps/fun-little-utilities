@@ -17,7 +17,7 @@ export namespace FSX {
   export interface Mod {
     readFile (filename: string): Promise<string>
     writeFile (filename: string, content: string): Promise<void>
-    unlink (filename: string): Promise<void>
+    remove (filename: string): Promise<void>
   }
 }
 
