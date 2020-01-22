@@ -1,8 +1,8 @@
 import { OutputDescriptor } from './types'
 
 export enum Status {
-  FileRemovalFailure = 8,
-  CircularReference = 7,
+  CircularReference = 8,
+  FileRemovalFailure = 7,
   FileParsingFailure = 6,
   FileReadingFailure = 5,
   FileWritingFailure = 4,
@@ -65,10 +65,10 @@ export class FileParsingFailure<Error> extends Failure<Error> {
   public readonly code = Status.FileParsingFailure
 }
 
-export class CircularReference<Error> extends Failure<Error> {
-  public readonly code = Status.CircularReference
-}
-
 export class FileRemovalFailure<Error> extends Failure<Error> {
   public readonly code = Status.FileRemovalFailure
+}
+
+export class CircularReference<Error> extends Failure<Error> {
+  public readonly code = Status.CircularReference
 }
