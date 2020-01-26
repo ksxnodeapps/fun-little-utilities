@@ -75,7 +75,7 @@ class ErrorCarrier<Value> {
   constructor (public readonly value: Value) {}
 }
 
-class FakeStats<FS extends Content<any, any>> {
+export class FakeStats<FS extends Content<any, any>> {
   constructor (private readonly fs: FS) {}
   public readonly isFile = () => this.fs.kind === ContentKind.File
   public readonly isDirectory = () => this.fs.kind === ContentKind.Directory
