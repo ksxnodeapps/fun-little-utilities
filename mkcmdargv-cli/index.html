@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> mkcmdargv-cli — Reference</h1>
+			<h1>mkcmdargv-cli — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,53 +62,18 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#split-iterable" id="split-iterable" style="color: inherit; text-decoration: none;">
-					<h1>Split Iterable</h1>
+				<a href="#create-command-arguments-cli" id="create-command-arguments-cli" style="color: inherit; text-decoration: none;">
+					<h1>Create Command Arguments (CLI)</h1>
 				</a>
-				<p>Split iterable into multiple chunks</p>
+				<p>Convert environment variables to command-line arguments</p>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<a href="#codesplititerablecode" id="codesplititerablecode" style="color: inherit; text-decoration: none;">
-					<h3><code>splitIterable</code></h3>
-				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { splitIterable } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-iterable'</span>)
-
-expect(<span class="hljs-built_in">Array</span>.from(
-  splitIterable([<span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])
-)).toEqual([
-  [<span class="hljs-number">0</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-])</code></pre>
-				<a href="#codesplitasynciterablecode" id="codesplitasynciterablecode" style="color: inherit; text-decoration: none;">
-					<h3><code>splitAsyncIterable</code></h3>
-				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { splitAsyncIterable } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-iterable'</span>)
-
-<span class="hljs-keyword">const</span> iterable = {
-  <span class="hljs-keyword">async</span> * [<span class="hljs-built_in">Symbol</span>.asyncIterator] () {
-    <span class="hljs-keyword">yield</span> * [<span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-  }
-}
-
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toArray</span> (<span class="hljs-params">iterable</span>) </span>{
-  <span class="hljs-keyword">let</span> array = []
-
-  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> iterable) {
-    array.push(item)
-  }
-
-  <span class="hljs-keyword">return</span> array
-}
-
-expect(<span class="hljs-keyword">await</span> toArray(
-  splitAsyncIterable(iterable)
-)).toEqual([
-  [<span class="hljs-number">0</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-])</code></pre>
+				<pre><code class="language-sh"><span class="hljs-built_in">export</span> MKCMDARGV_ARGS=<span class="hljs-string">'[abc def]'</span>
+<span class="hljs-built_in">export</span> MKCMDARGV_OPTIONS=<span class="hljs-string">'{ a: 0, foo: 123 }'</span>
+<span class="hljs-built_in">export</span> MKCMDARGV_SINGLE_FLAGS=<span class="hljs-string">'sfx'</span>
+<span class="hljs-built_in">export</span> MKCMDARGV_DOUBLE_FLAGS=<span class="hljs-string">'quiet splash'</span>
+<span class="hljs-built_in">echo</span> $(mkcmdargv)</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -125,23 +90,29 @@ expect(<span class="hljs-keyword">await</span> toArray(
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/param.html" class="tsd-kind-icon">Param</a>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/box.html" class="tsd-kind-icon">Box</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#createcommandarguments" class="tsd-kind-icon">create<wbr>Command<wbr>Arguments</a>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mkcmdargv_args" class="tsd-kind-icon">MKCMDARGV_<wbr>ARGS</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#help" class="tsd-kind-icon">help</a>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mkcmdargv_double_flags" class="tsd-kind-icon">MKCMDARGV_<wbr>DOUBLE_<wbr>FLAGS</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#iteratecommandarguments" class="tsd-kind-icon">iterate<wbr>Command<wbr>Arguments</a>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mkcmdargv_options" class="tsd-kind-icon">MKCMDARGV_<wbr>OPTIONS</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#splitasynciterable" class="tsd-kind-icon">split<wbr>Async<wbr>Iterable</a>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#mkcmdargv_single_flags" class="tsd-kind-icon">MKCMDARGV_<wbr>SINGLE_<wbr>FLAGS</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#splititerable" class="tsd-kind-icon">split<wbr>Iterable</a>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#argv" class="tsd-kind-icon">argv</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#main" class="tsd-kind-icon">main</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#tryparse" class="tsd-kind-icon">try<wbr>Parse</a>
 					</li>
 				</ul>
 			</nav>

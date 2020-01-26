@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> parse-markdown-table-cli — Reference</h1>
+			<h1>parse-markdown-table-cli — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,51 +62,108 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#khải39s-fun-little-utilities" id="khải39s-fun-little-utilities" style="color: inherit; text-decoration: none;">
-					<h1>Khải&#39;s Fun Little Utilities</h1>
+				<a href="#parse-markdown-table-cli" id="parse-markdown-table-cli" style="color: inherit; text-decoration: none;">
+					<h1>Parse Markdown Table CLI</h1>
 				</a>
-				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
-					<h2>Development</h2>
+				<p>Convert a markdown table from text to JSON objects</p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
 				</a>
-				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
-					<h3>System Requirements</h3>
+				<a href="#code--helpcode" id="code--helpcode" style="color: inherit; text-decoration: none;">
+					<h3><code>--help</code></h3>
 				</a>
-				<ul>
-					<li>Node.js ≥ 8.9.0</li>
-					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
-					<li>Git</li>
-				</ul>
-				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
-					<h3>Scripts</h3>
+				<pre><code><span class="hljs-keyword">input</span>-stream | <span class="hljs-keyword">parse</span>-markdown-<span class="hljs-keyword">table</span> [options]
+
+Options:
+  --<span class="hljs-keyword">version</span>     Show <span class="hljs-keyword">version</span> number                                                     [boolean]
+  --<span class="hljs-keyword">format</span>      Structure of output          [choices: <span class="hljs-string">"list"</span>, <span class="hljs-string">"dict"</span>, <span class="hljs-string">"jsonl"</span>] [default: <span class="hljs-string">"dict"</span>]
+  --indentType  <span class="hljs-keyword">Type</span> of indentation          [choices: <span class="hljs-string">"tab"</span>, <span class="hljs-string">"space"</span>, <span class="hljs-string">"none"</span>] [default: <span class="hljs-string">"space"</span>]
+  --indentSize  Size of indentation
+                (only apply <span class="hljs-keyword">if</span> --indentType=space)                          [number] [default: 2]
+  --<span class="hljs-keyword">help</span>        Show <span class="hljs-keyword">help</span>                                                               [boolean]
+
+Examples:
+  <span class="hljs-keyword">parse</span>-markdown-<span class="hljs-keyword">table</span> &lt; <span class="hljs-keyword">table</span>.md  <span class="hljs-keyword">Print</span> JSON representation of <span class="hljs-keyword">table</span> inside <span class="hljs-keyword">table</span>.md
+  <span class="hljs-keyword">parse</span>-markdown-<span class="hljs-keyword">table</span>             <span class="hljs-keyword">Read</span> a markdown <span class="hljs-keyword">table</span> from stdin and <span class="hljs-keyword">parse</span> it</code></pre>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h3>Examples</h3>
 				</a>
-				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
-					<h4>Build</h4>
+				<a href="#code--format-dictcode" id="code--format-dictcode" style="color: inherit; text-decoration: none;">
+					<h4><code>--format dict</code></h4>
 				</a>
-				<pre><code class="language-sh">pnpm run build</code></pre>
-				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
-					<h4>Clean</h4>
+				<pre><code class="language-sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">'
+  | id | name        | email                    |
+  |----|-------------|--------------------------|
+  |  1 | John Doe    | john-doe@gmail.com       |
+  |  2 | Peter Smith | petersmith22@outlook.com |
+  |  3 | Julia Jones | jjones778@gmail.com      |
+'</span> | parse-markdown-table --format dict</code></pre>
+				<p><strong>Output:</strong></p>
+				<pre><code class="language-json">[
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John Doe"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"john-doe@gmail.com"</span>
+  },
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"2"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Peter Smith"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"petersmith22@outlook.com"</span>
+  },
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"3"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Julia Jones"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"jjones778@gmail.com"</span>
+  }
+]</code></pre>
+				<a href="#code--format-listcode" id="code--format-listcode" style="color: inherit; text-decoration: none;">
+					<h4><code>--format list</code></h4>
 				</a>
-				<pre><code class="language-sh">pnpm run clean</code></pre>
-				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
-					<h4>Test</h4>
+				<pre><code class="language-sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">'
+  | id | name        | email                    |
+  |----|-------------|--------------------------|
+  |  1 | John Doe    | john-doe@gmail.com       |
+  |  2 | Peter Smith | petersmith22@outlook.com |
+  |  3 | Julia Jones | jjones778@gmail.com      |
+'</span> | parse-markdown-table --format list</code></pre>
+				<p><strong>Output:</strong></p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"headers"</span>: [
+    <span class="hljs-string">"id"</span>,
+    <span class="hljs-string">"name"</span>,
+    <span class="hljs-string">"email"</span>
+  ],
+  <span class="hljs-attr">"rows"</span>: [
+    [
+      <span class="hljs-string">"1"</span>,
+      <span class="hljs-string">"John Doe"</span>,
+      <span class="hljs-string">"john-doe@gmail.com"</span>
+    ],
+    [
+      <span class="hljs-string">"2"</span>,
+      <span class="hljs-string">"Peter Smith"</span>,
+      <span class="hljs-string">"petersmith22@outlook.com"</span>
+    ],
+    [
+      <span class="hljs-string">"3"</span>,
+      <span class="hljs-string">"Julia Jones"</span>,
+      <span class="hljs-string">"jjones778@gmail.com"</span>
+    ]
+  ]
+}</code></pre>
+				<a href="#code--format-jsonlcode" id="code--format-jsonlcode" style="color: inherit; text-decoration: none;">
+					<h4><code>--format jsonl</code></h4>
 				</a>
-				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
-					<h5>Test Everything</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
-				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
-					<h5>Test Changed Files Only</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
-				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
-					<h5>Update Jest Snapshot</h5>
-				</a>
-				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
-				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
-					<h4>Start Node.js REPL</h4>
-				</a>
-				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
-				<pre><code class="language-sh">pnpm run repl</code></pre>
+				<pre><code class="language-sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">'
+  | id | name        | email                    |
+  |----|-------------|--------------------------|
+  |  1 | John Doe    | john-doe@gmail.com       |
+  |  2 | Peter Smith | petersmith22@outlook.com |
+  |  3 | Julia Jones | jjones778@gmail.com      |
+'</span> | parse-markdown-table --format jsonl</code></pre>
+				<pre><code class="language-json">{<span class="hljs-attr">"id"</span>:<span class="hljs-string">"1"</span>,<span class="hljs-attr">"name"</span>:<span class="hljs-string">"John Doe"</span>,<span class="hljs-attr">"email"</span>:<span class="hljs-string">"john-doe@gmail.com"</span>}
+{<span class="hljs-attr">"id"</span>:<span class="hljs-string">"2"</span>,<span class="hljs-attr">"name"</span>:<span class="hljs-string">"Peter Smith"</span>,<span class="hljs-attr">"email"</span>:<span class="hljs-string">"petersmith22@outlook.com"</span>}
+{<span class="hljs-attr">"id"</span>:<span class="hljs-string">"3"</span>,<span class="hljs-attr">"name"</span>:<span class="hljs-string">"Julia Jones"</span>,<span class="hljs-attr">"email"</span>:<span class="hljs-string">"jjones778@gmail.com"</span>}</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -119,25 +176,10 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/action.html">Action</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/actioninstance.html">Action<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/getstring.html">get<wbr>String</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="enums/actiontype.html" class="tsd-kind-icon">Action<wbr>Type</a>
-					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/format.html" class="tsd-kind-icon">Format</a>
 					</li>
@@ -147,89 +189,26 @@
 					<li class=" tsd-kind-enum">
 						<a href="enums/status.html" class="tsd-kind-icon">Status</a>
 					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/consoleinstance.html" class="tsd-kind-icon">Console<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/markdowncelltable.html" class="tsd-kind-icon">Markdown<wbr>Cell<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/anyclass.html" class="tsd-kind-icon">Any<wbr>Class</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/arraytable.html" class="tsd-kind-icon">Array<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/console.html" class="tsd-kind-icon">Console</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/consoledatabase.html" class="tsd-kind-icon">Console<wbr>Database</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/fnwithdata.html" class="tsd-kind-icon">Fn<wbr>With<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/fnwithoutdata.html" class="tsd-kind-icon">Fn<wbr>Without<wbr>Data</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mainparam.html" class="tsd-kind-icon">Main<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/objecttable.html" class="tsd-kind-icon">Object<wbr>Table</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/readablestream.html" class="tsd-kind-icon">Readable<wbr>Stream</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/tableiterationoptions.html" class="tsd-kind-icon">Table<wbr>Iteration<wbr>Options</a>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#getasyncarray" class="tsd-kind-icon">get<wbr>Async<wbr>Array</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#actiondata" class="tsd-kind-icon">Action<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#listitem" class="tsd-kind-icon">List<wbr>Item</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#maybeasynciterable" class="tsd-kind-icon">Maybe<wbr>Async<wbr>Iterable</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#stream" class="tsd-kind-icon">Stream</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#createarraytable" class="tsd-kind-icon">create<wbr>Array<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#createmarkdownarraytable" class="tsd-kind-icon">create<wbr>Markdown<wbr>Array<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#createmarkdownobjecttable" class="tsd-kind-icon">create<wbr>Markdown<wbr>Object<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#createobjecttable" class="tsd-kind-icon">create<wbr>Object<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#iteratecharacters" class="tsd-kind-icon">iterate<wbr>Characters</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#iteratelines" class="tsd-kind-icon">iterate<wbr>Lines</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#iteraterows" class="tsd-kind-icon">iterate<wbr>Rows</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getindentargument" class="tsd-kind-icon">get<wbr>Indent<wbr>Argument</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#main" class="tsd-kind-icon">main</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#splitcharacteriterable" class="tsd-kind-icon">split<wbr>Character<wbr>Iterable</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#output" class="tsd-kind-icon">output</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#splitstream" class="tsd-kind-icon">split<wbr>Stream</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#trimmedchunks" class="tsd-kind-icon">trimmed<wbr>Chunks</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#unknowncolumn" class="tsd-kind-icon">unknown<wbr>Column</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#readstream" class="tsd-kind-icon">read<wbr>Stream</a>
 					</li>
 				</ul>
 			</nav>

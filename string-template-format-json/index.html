@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> string-template-format-json — Reference</h1>
+			<h1>string-template-format-json — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,18 +62,17 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#just-json-type" id="just-json-type" style="color: inherit; text-decoration: none;">
-					<h1>Just JSON Type</h1>
+				<a href="#string-template-format-json" id="string-template-format-json" style="color: inherit; text-decoration: none;">
+					<h1>String Template Format: JSON</h1>
 				</a>
-				<p><code>JSON.parse</code> and <code>JSON.stringify</code> but with strict TypeScript definitions</p>
+				<p>String template literal tag that converts values to JSON text</p>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<p>This packages export two aliases:</p>
-				<ul>
-					<li><code>load</code> is <code>JSON.parse</code> with strict type definition</li>
-					<li><code>dump</code> is <code>JSON.stringify</code> with strict type definition</li>
-				</ul>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> json <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format-json'</span>
+<span class="hljs-built_in">console</span>.log(json<span class="hljs-string">`number <span class="hljs-subst">${<span class="hljs-number">123</span>}</span>; string: <span class="hljs-subst">${<span class="hljs-string">'abc'</span>}</span>; object: <span class="hljs-subst">${{ abc: <span class="hljs-number">123</span> }</span>}; array: <span class="hljs-subst">${[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]}</span>`</span>)</code></pre>
+				<p><em>should print:</em></p>
+				<pre><code>number: <span class="hljs-number">123</span>; <span class="hljs-built_in">string</span>: <span class="hljs-string">"abc"</span>; object: {<span class="hljs-string">"abc"</span>:<span class="hljs-number">123</span>}; <span class="hljs-built_in">array</span>: [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -90,62 +89,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/dumper.html" class="tsd-kind-icon">Dumper</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/formatter.html" class="tsd-kind-icon">Formatter</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/loader.html" class="tsd-kind-icon">Loader</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/readonlyjsonarray.html" class="tsd-kind-icon">Readonly<wbr>Json<wbr>Array</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/readonlyjsonobject.html" class="tsd-kind-icon">Readonly<wbr>Json<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/replacer.html" class="tsd-kind-icon">Replacer</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/reviver.html" class="tsd-kind-icon">Reviver</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/templatetag.html" class="tsd-kind-icon">Template<wbr>Tag</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/writablejsonarray.html" class="tsd-kind-icon">Writable<wbr>Json<wbr>Array</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/writablejsonobject.html" class="tsd-kind-icon">Writable<wbr>Json<wbr>Object</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#jsonscalar" class="tsd-kind-icon">Json<wbr>Scalar</a>
-					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#jsonvalue" class="tsd-kind-icon">Json<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#readonlyjsonvalue" class="tsd-kind-icon">Readonly<wbr>Json<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#writablejsonvalue" class="tsd-kind-icon">Writable<wbr>Json<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#templatetag" class="tsd-kind-icon">Template<wbr>Tag</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#dump" class="tsd-kind-icon">dump</a>
-					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#formatjson" class="tsd-kind-icon">format<wbr>Json</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#load" class="tsd-kind-icon">load</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#tag" class="tsd-kind-icon">tag</a>
 					</li>
 				</ul>
 			</nav>

@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> simple-fake-fs — Reference</h1>
+			<h1>simple-fake-fs — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -80,9 +80,19 @@
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/eisdir.html" class="tsd-kind-icon">EISDIR</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/enoent.html" class="tsd-kind-icon">ENOENT</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/enotdir.html" class="tsd-kind-icon">ENOTDIR</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/errorcarrier.html" class="tsd-kind-icon">Error<wbr>Carrier</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/fakedirectorycontent.html" class="tsd-kind-icon">Fake<wbr>Directory<wbr>Content</a></li>
 								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/fakefilecontent.html" class="tsd-kind-icon">Fake<wbr>File<wbr>Content</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/fakestats.html" class="tsd-kind-icon">Fake<wbr>Stats</a></li>
+								<li class="tsd-kind-class"><a href="classes/none.html" class="tsd-kind-icon">None</a></li>
 								<li class="tsd-kind-class"><a href="classes/stringpathfilesystem.html" class="tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/errorconstructor.html" class="tsd-kind-icon">Error<wbr>Constructor</a></li>
+								<li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/filesystementry.html" class="tsd-kind-icon">File<wbr>System<wbr>Entry</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -90,7 +100,22 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#content" class="tsd-kind-icon">Content</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#errorcode" class="tsd-kind-icon">Error<wbr>Code</a></li>
+								<li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="globals.html#maybecontent" class="tsd-kind-icon">Maybe<wbr>Content</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#stringpathfilesystemdict" class="tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System<wbr>Dict</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#syscall" class="tsd-kind-icon">Sys<wbr>Call</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable"><a href="globals.html#empty_class" class="tsd-kind-icon">EMPTY_<wbr>CLASS</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#none" class="tsd-kind-icon">NONE</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#dict2entries" class="tsd-kind-icon">dict2entries</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,7 +129,7 @@
 					<div class="tsd-signature tsd-kind-icon">Content&lt;PathElm, FileContent&gt;<span class="tsd-signature-symbol">:</span> <a href="classes/fakefilecontent.html" class="tsd-signature-type">FakeFileContent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">FileContent</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="classes/fakedirectorycontent.html" class="tsd-signature-type">FakeDirectoryContent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PathElm</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">FileContent</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/ff583090/packages/simple-fake-fs/index.ts#L189">packages/simple-fake-fs/index.ts:189</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L189">packages/simple-fake-fs/index.ts:189</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -120,12 +145,52 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="errorcode" class="tsd-anchor"></a>
 					<h3>Error<wbr>Code</h3>
-					<div class="tsd-signature tsd-kind-icon">Error<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">keyof ErrorKind</span></div>
+					<div class="tsd-signature tsd-kind-icon">Error<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">keyof </span><a href="enums/errorkind.html" class="tsd-signature-type">ErrorKind</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/ff583090/packages/simple-fake-fs/index.ts#L8">packages/simple-fake-fs/index.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L8">packages/simple-fake-fs/index.ts:8</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-has-type-parameter">
+					<a name="maybecontent" class="tsd-anchor"></a>
+					<h3>Maybe<wbr>Content</h3>
+					<div class="tsd-signature tsd-kind-icon">Maybe<wbr>Content&lt;PathElm, FileContent, ErrorValue&gt;<span class="tsd-signature-symbol">:</span> <a href="classes/none.html" class="tsd-signature-type">None</a><span class="tsd-signature-symbol"> | </span><a href="classes/errorcarrier.html" class="tsd-signature-type">ErrorCarrier</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ErrorValue</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="" class="tsd-signature-type">Content</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PathElm</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">FileContent</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L193">packages/simple-fake-fs/index.ts:193</a></li>
+						</ul>
+					</aside>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<h4>PathElm</h4>
+						</li>
+						<li>
+							<h4>FileContent</h4>
+						</li>
+						<li>
+							<h4>ErrorValue</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="stringpathfilesystemdict" class="tsd-anchor"></a>
+					<h3>String<wbr>Path<wbr>File<wbr>System<wbr>Dict</h3>
+					<div class="tsd-signature tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System<wbr>Dict<span class="tsd-signature-symbol">:</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L284">packages/simple-fake-fs/index.ts:284</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>_: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="globals.html#stringpathfilesystemdict" class="tsd-signature-type">StringPathFileSystemDict</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="syscall" class="tsd-anchor"></a>
@@ -133,9 +198,58 @@
 					<div class="tsd-signature tsd-kind-icon">Sys<wbr>Call<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"stat"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"scandir"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"open"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"read"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"mkdir"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"exists"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/ff583090/packages/simple-fake-fs/index.ts#L10">packages/simple-fake-fs/index.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L10">packages/simple-fake-fs/index.ts:10</a></li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="empty_class" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> EMPTY_<wbr>CLASS</h3>
+					<div class="tsd-signature tsd-kind-icon">EMPTY_<wbr>CLASS<span class="tsd-signature-symbol">:</span> <a href="globals.html#empty_class" class="tsd-signature-type">EMPTY_CLASS</a><span class="tsd-signature-symbol"> = class {}</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L65">packages/simple-fake-fs/index.ts:65</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="none" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> NONE</h3>
+					<div class="tsd-signature tsd-kind-icon">NONE<span class="tsd-signature-symbol">:</span> <a href="classes/none.html" class="tsd-signature-type">None</a><span class="tsd-signature-symbol"> = new None()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L71">packages/simple-fake-fs/index.ts:71</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="dict2entries" class="tsd-anchor"></a>
+					<h3>dict2entries</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">dict2entries<span class="tsd-signature-symbol">(</span>dict<span class="tsd-signature-symbol">: </span><a href="globals.html#stringpathfilesystemdict" class="tsd-signature-type">StringPathFileSystemDict</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/filesystementry.html" class="tsd-signature-type">FileSystemEntry</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/82ad46d7/packages/simple-fake-fs/index.ts#L288">packages/simple-fake-fs/index.ts:288</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dict: <a href="globals.html#stringpathfilesystemdict" class="tsd-signature-type">StringPathFileSystemDict</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/filesystementry.html" class="tsd-signature-type">FileSystemEntry</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -171,13 +285,28 @@
 						<a href="classes/enotdir.html" class="tsd-kind-icon">ENOTDIR</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/errorcarrier.html" class="tsd-kind-icon">Error<wbr>Carrier</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/fakedirectorycontent.html" class="tsd-kind-icon">Fake<wbr>Directory<wbr>Content</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/fakefilecontent.html" class="tsd-kind-icon">Fake<wbr>File<wbr>Content</a>
 					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/fakestats.html" class="tsd-kind-icon">Fake<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/none.html" class="tsd-kind-icon">None</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/stringpathfilesystem.html" class="tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/errorconstructor.html" class="tsd-kind-icon">Error<wbr>Constructor</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/filesystementry.html" class="tsd-kind-icon">File<wbr>System<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#content" class="tsd-kind-icon">Content</a>
@@ -185,8 +314,23 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#errorcode" class="tsd-kind-icon">Error<wbr>Code</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#maybecontent" class="tsd-kind-icon">Maybe<wbr>Content</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#stringpathfilesystemdict" class="tsd-kind-icon">String<wbr>Path<wbr>File<wbr>System<wbr>Dict</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#syscall" class="tsd-kind-icon">Sys<wbr>Call</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#empty_class" class="tsd-kind-icon">EMPTY_<wbr>CLASS</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#none" class="tsd-kind-icon">NONE</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#dict2entries" class="tsd-kind-icon">dict2entries</a>
 					</li>
 				</ul>
 			</nav>

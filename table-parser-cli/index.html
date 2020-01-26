@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> table-parser-cli — Reference</h1>
+			<h1>table-parser-cli — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,55 +62,94 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#table-parser-base" id="table-parser-base" style="color: inherit; text-decoration: none;">
-					<h1>Table Parser Base</h1>
+				<a href="#table-parser-cli" id="table-parser-cli" style="color: inherit; text-decoration: none;">
+					<h1>Table Parser CLI</h1>
 				</a>
-				<p>Utilities for table parser packages</p>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
+				<a href="#code--helpcode" id="code--helpcode" style="color: inherit; text-decoration: none;">
+					<h3><code>--help</code></h3>
+				</a>
+				<pre><code><span class="hljs-keyword">table</span>-parser-<span class="hljs-keyword">cli</span> --<span class="hljs-keyword">type</span> &lt;<span class="hljs-keyword">type</span>&gt; [options]
+
+Options:
+  --<span class="hljs-keyword">version</span>         Show <span class="hljs-keyword">version</span> number                                                                                                                          [boolean]
+  --<span class="hljs-keyword">type</span>, -t        Convert from what to what                                                                                   [required] [choices: <span class="hljs-string">"arr2obj"</span>, <span class="hljs-string">"obj2arr"</span>]
+  --indentType, -i  Indent character of JSON output                                                                   [choices: <span class="hljs-string">"space"</span>, <span class="hljs-string">"tab"</span>, <span class="hljs-string">"none"</span>] [default: <span class="hljs-string">"space"</span>]
+  --indentSize, -s  Indent size of JSON output (only apply when --indentType=space)                                                                  [number] [default: 2]
+  --<span class="hljs-keyword">help</span>            Show <span class="hljs-keyword">help</span>                                                                                                                                    [boolean]
+
+Examples:
+  <span class="hljs-keyword">table</span>-parser-<span class="hljs-keyword">cli</span> -t obj2arr &lt; object-<span class="hljs-keyword">table</span>.json                     <span class="hljs-keyword">Parse</span> object-<span class="hljs-keyword">table</span>.json <span class="hljs-keyword">as</span> <span class="hljs-keyword">an</span> ObjectTable, convert it to ArrayTable, and <span class="hljs-keyword">print</span> result to stdout
+  <span class="hljs-keyword">table</span>-parser-<span class="hljs-keyword">cli</span> -t arr2obj &lt; array-<span class="hljs-keyword">table</span>.json                      <span class="hljs-keyword">Parse</span> object-<span class="hljs-keyword">table</span>.json <span class="hljs-keyword">as</span> <span class="hljs-keyword">an</span> ArrayTable, convert it to ObjectTable, and <span class="hljs-keyword">print</span> result to stdout
+  <span class="hljs-keyword">table</span>-parser-<span class="hljs-keyword">cli</span> -t obj2arr &lt; object-<span class="hljs-keyword">table</span>.json &gt; array-<span class="hljs-keyword">table</span>.json  <span class="hljs-keyword">Parse</span> object-<span class="hljs-keyword">table</span>.json <span class="hljs-keyword">as</span> <span class="hljs-keyword">an</span> ObjectTable, convert it to ArrayTable, and <span class="hljs-keyword">save</span> result to
+                                                                      array-<span class="hljs-keyword">table</span>.json
+  <span class="hljs-keyword">table</span>-parser-<span class="hljs-keyword">cli</span> -t arr2obj &lt; array-<span class="hljs-keyword">table</span>.json &gt; object-<span class="hljs-keyword">table</span>.json  <span class="hljs-keyword">Parse</span> object-<span class="hljs-keyword">table</span>.json <span class="hljs-keyword">as</span> <span class="hljs-keyword">an</span> ArrayTable, convert it to ObjectTable, and <span class="hljs-keyword">save</span> result to
+                                                                      object-<span class="hljs-keyword">table</span>.json</code></pre>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h3>Examples</h3>
+				</a>
 				<a href="#convert-an-codearraytablecode-to-an-codeobjecttablecode" id="convert-an-codearraytablecode-to-an-codeobjecttablecode" style="color: inherit; text-decoration: none;">
-					<h3>Convert an <code>ArrayTable</code> to an <code>ObjectTable</code></h3>
+					<h4>Convert an <code>ArrayTable</code> to an <code>ObjectTable</code></h4>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { createObjectTable } = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'table-parser-base'</span>)
-
-<span class="hljs-keyword">const</span> arrayTable = {
-  <span class="hljs-attr">headers</span>: [<span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>],
-  <span class="hljs-attr">rows</span>: [
-    [<span class="hljs-number">1</span>, <span class="hljs-string">'John Doe'</span>, <span class="hljs-string">'john-doe@gmail.com'</span>],
-    [<span class="hljs-number">2</span>, <span class="hljs-string">'Peter Smith'</span>, <span class="hljs-string">'petersmith22@outlook.com'</span>],
-    [<span class="hljs-number">3</span>, <span class="hljs-string">'Julia Jones'</span>, <span class="hljs-string">'jjones778@gmail.com'</span>]
+				<pre><code class="language-sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">'{
+  "headers": ["id", "name", "email"],
+  "rows": [
+    ["1", "John Doe", "john-doe@gmail.com"],
+    ["2", "Peter Smith", "petersmith22@outlook.com"],
+    ["3", "Julia Jones", "jjones778@gmail.com"]
   ]
-}
-
-<span class="hljs-keyword">const</span> objectTable = createObjectTable(arrayTable)
-<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> objectTable) {
-  <span class="hljs-built_in">console</span>.log(item)
-}</code></pre>
+}'</span> | table-parser-cli -t arr2obj</code></pre>
 				<p><strong>Output:</strong></p>
-				<pre><code class="language-javascript">{ <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'john-doe@gmail.com'</span> }
-{ <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Peter Smith'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'petersmith22@outlook.com'</span> }
-{ <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Julia Jones'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'jjones778@gmail.com'</span> }</code></pre>
+				<pre><code class="language-json">[
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John Doe"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"john-doe@gmail.com"</span>
+  },
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"2"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Peter Smith"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"petersmith22@outlook.com"</span>
+  },
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"3"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Julia Jones"</span>,
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"jjones778@gmail.com"</span>
+  }
+]</code></pre>
 				<a href="#convert-an-codeobjecttablecode-to-an-codearraytablecode" id="convert-an-codeobjecttablecode-to-an-codearraytablecode" style="color: inherit; text-decoration: none;">
-					<h3>Convert an <code>ObjectTable</code> to an <code>ArrayTable</code></h3>
+					<h4>Convert an <code>ObjectTable</code> to an <code>ArrayTable</code></h4>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { createArrayTable } = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'table-parser-base'</span>)
-
-<span class="hljs-keyword">const</span> objectTable = [
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'john-doe@gmail.com'</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Peter Smith'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'petersmith22@outlook.com'</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Julia Jones'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'jjones778@gmail.com'</span> }
-]
-
-<span class="hljs-keyword">const</span> arrayTable = <span class="hljs-keyword">await</span> createArrayTable(objectTable)
-<span class="hljs-built_in">console</span>.log(arrayTable)</code></pre>
+				<pre><code class="language-sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">'[
+  { "id": "1", "name": "John Doe", "email": "john-doe@gmail.com" },
+  { "id": "2", "name": "Peter Smith", "email": "petersmith22@outlook.com" },
+  { "id": "3", "name": "Julia Jones", "email": "jjones778@gmail.com" }
+]'</span> | table-parser-cli -t obj2arr</code></pre>
 				<p><strong>Output:</strong></p>
-				<pre><code class="language-javascript">{
-  <span class="hljs-attr">headers</span>: [ <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span> ],
-  <span class="hljs-attr">rows</span>: [
-    [ <span class="hljs-number">1</span>, <span class="hljs-string">'John Doe'</span>, <span class="hljs-string">'john-doe@gmail.com'</span> ],
-    [ <span class="hljs-number">2</span>, <span class="hljs-string">'Peter Smith'</span>, <span class="hljs-string">'petersmith22@outlook.com'</span> ],
-    [ <span class="hljs-number">3</span>, <span class="hljs-string">'Julia Jones'</span>, <span class="hljs-string">'jjones778@gmail.com'</span> ]
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"headers"</span>: [
+    <span class="hljs-string">"id"</span>,
+    <span class="hljs-string">"name"</span>,
+    <span class="hljs-string">"email"</span>
+  ],
+  <span class="hljs-attr">"rows"</span>: [
+    [
+      <span class="hljs-string">"1"</span>,
+      <span class="hljs-string">"John Doe"</span>,
+      <span class="hljs-string">"john-doe@gmail.com"</span>
+    ],
+    [
+      <span class="hljs-string">"2"</span>,
+      <span class="hljs-string">"Peter Smith"</span>,
+      <span class="hljs-string">"petersmith22@outlook.com"</span>
+    ],
+    [
+      <span class="hljs-string">"3"</span>,
+      <span class="hljs-string">"Julia Jones"</span>,
+      <span class="hljs-string">"jjones778@gmail.com"</span>
+    ]
   ]
 }</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
@@ -125,25 +164,10 @@
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/action.html">Action</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/actioninstance.html">Action<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/getstring.html">get<wbr>String</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="enums/actiontype.html" class="tsd-kind-icon">Action<wbr>Type</a>
-					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/indenttype.html" class="tsd-kind-icon">Indent<wbr>Type</a>
 					</li>
@@ -153,56 +177,26 @@
 					<li class=" tsd-kind-enum">
 						<a href="enums/type.html" class="tsd-kind-icon">Type</a>
 					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/consoleinstance.html" class="tsd-kind-icon">Console<wbr>Instance</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/anyclass.html" class="tsd-kind-icon">Any<wbr>Class</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/arraytable.html" class="tsd-kind-icon">Array<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/console.html" class="tsd-kind-icon">Console</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/consoledatabase.html" class="tsd-kind-icon">Console<wbr>Database</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/fnwithdata.html" class="tsd-kind-icon">Fn<wbr>With<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/fnwithoutdata.html" class="tsd-kind-icon">Fn<wbr>Without<wbr>Data</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/mainparam.html" class="tsd-kind-icon">Main<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/objecttable.html" class="tsd-kind-icon">Object<wbr>Table</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/process.html" class="tsd-kind-icon">Process</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#actiondata" class="tsd-kind-icon">Action<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#listitem" class="tsd-kind-icon">List<wbr>Item</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#createarraytable" class="tsd-kind-icon">create<wbr>Array<wbr>Table</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#createobjecttable" class="tsd-kind-icon">create<wbr>Object<wbr>Table</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#convert" class="tsd-kind-icon">convert</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#getasyncarray" class="tsd-kind-icon">get<wbr>Async<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#getindent" class="tsd-kind-icon">get<wbr>Indent</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#main" class="tsd-kind-icon">main</a>
 					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#unknowncolumn" class="tsd-kind-icon">unknown<wbr>Column</a>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#readstdin" class="tsd-kind-icon">read<wbr>Std<wbr>In</a>
 					</li>
 				</ul>
 			</nav>

@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> wide-text — Reference</h1>
+			<h1>wide-text — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,10 +62,16 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#wide-text-types" id="wide-text-types" style="color: inherit; text-decoration: none;">
-					<h1>wide-text-types</h1>
+				<a href="#w-i-d-et-e-x-t" id="w-i-d-et-e-x-t" style="color: inherit; text-decoration: none;">
+					<h1>W i d e T e x t</h1>
 				</a>
-				<p>TypeScript types used by wide-text package</p>
+				<p>Create w i d e t e x t from normal text</p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> createWideText = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wide-text'</span>)
+createWideText(<span class="hljs-string">'abc def ghi'</span>) <span class="hljs-comment">// expect: 'a b c  d e f  g h i'</span>
+createWideText(<span class="hljs-string">'abc def ghi'</span>, { <span class="hljs-attr">charSep</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">wordSep</span>: <span class="hljs-number">3</span> }) <span class="hljs-comment">// expect: 'abc   def   ghi'</span></code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -82,9 +88,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/options.html" class="tsd-kind-icon">Options</a>
-					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createwidetext" class="tsd-kind-icon">create<wbr>Wide<wbr>Text</a>
 					</li>

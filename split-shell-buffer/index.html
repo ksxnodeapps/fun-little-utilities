@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> split-shell-buffer — Reference</h1>
+			<h1>split-shell-buffer — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,10 +62,37 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#evented-stream-types" id="evented-stream-types" style="color: inherit; text-decoration: none;">
-					<h1>Evented Stream Types</h1>
+				<a href="#split-shell-buffer" id="split-shell-buffer" style="color: inherit; text-decoration: none;">
+					<h1>Split Shell Buffer</h1>
 				</a>
-				<p>Collection of types used by evented-stream packages</p>
+				<p>Splitting shell strings while preserving <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters">SGR escape sequences</a></p>
+				<a href="#motivation" id="motivation" style="color: inherit; text-decoration: none;">
+					<h2>Motivation</h2>
+				</a>
+				<p>When I was creating <a href="https://npmjs.com/package/catls"><code>catls</code></a>, I needed to spawn a program and prints output (stdout and/or stderr) of said program to <code>process.stdout</code> with some prefix (e.g. indentation, bullets, numbers, etc.) whilst preserving some of UNIX control sequences (specifically, sequences that control colors).</p>
+				<a href="#preview" id="preview" style="color: inherit; text-decoration: none;">
+					<h2>Preview</h2>
+				</a>
+				<p>Run one of the commands below (in top-level folder of this repository):</p>
+				<pre><code>pnpx execute runPreloadedNode <a href='https://git.io/fpX7e'>test/split-shell-buffer/preview.ts</a></code></pre>
+				<pre><code>pnpx execute runPreloadedNode <a href='https://git.io/fpX7s'>test/split-shell-buffer/preview.discrete.ts</a></code></pre>
+				<a href="#usage-example" id="usage-example" style="color: inherit; text-decoration: none;">
+					<h2>Usage Example</h2>
+				</a>
+				<p><strong>NOTE:</strong> Documentation is lacking (because I&#39;m lazy), pull requests are welcomed.</p>
+				<p><strong>NOTE:</strong> The following code snippets are executed in async context.</p>
+				<a href="#codefromchildprocesscode" id="codefromchildprocesscode" style="color: inherit; text-decoration: none;">
+					<h3><code>fromChildProcess</code></h3>
+				</a>
+				<p>The code below spawns a program and prints output (stdout + stderr) of said program with indent.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { stdout } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'process'</span>)
+<span class="hljs-keyword">const</span> { spawn } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>)
+<span class="hljs-keyword">const</span> { fromChildProcess, writeln } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-shell-buffer'</span>)
+
+<span class="hljs-keyword">const</span> cp = spawn(<span class="hljs-string">'myprogram'</span>)
+<span class="hljs-keyword">const</span> splitter = fromChildProcess(cp).withIndent(<span class="hljs-number">4</span>)
+
+<span class="hljs-keyword">await</span> writeln(stdout, splitter)</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -84,17 +111,8 @@
 					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
 						<a href="modules/childprocess.html">Child<wbr>Process</a>
 					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
-						<a href="modules/eventedstream.html">Evented<wbr>Stream</a>
-					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
-						<a href="modules/listenertransformer.html">Listener<wbr>Transformer</a>
-					</li>
 					<li class=" tsd-kind-module tsd-is-external">
 						<a href="modules/sequencefunc.html">Sequence<wbr>Func</a>
-					</li>
-					<li class=" tsd-kind-module tsd-is-external">
-						<a href="modules/create.html">create</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-external">
 						<a href="modules/tostring.html">to<wbr>String</a>
@@ -108,9 +126,6 @@
 					</li>
 					<li class=" tsd-kind-enum tsd-is-external">
 						<a href="enums/specialcharacter.html" class="tsd-kind-icon">Special<wbr>Character</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-external">
-						<a href="classes/eventtargetproxy.html" class="tsd-kind-icon">Event<wbr>Target<wbr>Proxy</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-external">
 						<a href="classes/internalstreamerror.html" class="tsd-kind-icon">Internal<wbr>Stream<wbr>Error</a>
@@ -139,12 +154,6 @@
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/element.html" class="tsd-kind-icon">Element</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/eventtarget.html" class="tsd-kind-icon">Event<wbr>Target</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/listenermodifier.html" class="tsd-kind-icon">Listener<wbr>Modifier</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/splitter.html" class="tsd-kind-icon">Splitter</a>
 					</li>
@@ -172,6 +181,42 @@
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#sequence" class="tsd-kind-icon">Sequence</a>
 					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#end" class="tsd-kind-icon">End</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#endofline" class="tsd-kind-icon">End<wbr>OfLine</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#reset" class="tsd-kind-icon">RESET</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#seperator" class="tsd-kind-icon">Seperator</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#start" class="tsd-kind-icon">Start</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#startfollow" class="tsd-kind-icon">Start<wbr>Follow</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#zero_and_sep" class="tsd-kind-icon">ZERO_<wbr>AND_<wbr>SEP</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#zero" class="tsd-kind-icon">Zero</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#arrayequal" class="tsd-kind-icon">array<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#symdata" class="tsd-kind-icon">sym<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#symencoding" class="tsd-kind-icon">sym<wbr>Encoding</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#create" class="tsd-kind-icon">create</a>
+					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#fromchildprocess" class="tsd-kind-icon">from<wbr>Child<wbr>Process</a>
 					</li>
@@ -189,9 +234,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#isresetsequence" class="tsd-kind-icon">is<wbr>Reset<wbr>Sequence</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#iterate" class="tsd-kind-icon">iterate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#iterateelements" class="tsd-kind-icon">iterate<wbr>Elements</a>

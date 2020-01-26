@@ -1,3 +1,3 @@
 var typedoc = typedoc || {};
             typedoc.search = typedoc.search || {};
-            typedoc.search.data = {"kinds":{},"rows":[]};
+            typedoc.search.data = {"kinds":{"32":"Variable"},"rows":[{"id":0,"kind":32,"name":"Word","url":"globals.html#word","classes":"tsd-kind-variable"},{"id":1,"kind":32,"name":"Path","url":"globals.html#path","classes":"tsd-kind-variable"},{"id":2,"kind":32,"name":"Both","url":"globals.html#both","classes":"tsd-kind-variable"},{"id":3,"kind":32,"name":"argv","url":"globals.html#argv","classes":"tsd-kind-variable"},{"id":4,"kind":32,"name":"status","url":"globals.html#status","classes":"tsd-kind-variable"}]};

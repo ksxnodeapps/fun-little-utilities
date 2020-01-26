@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> mkcmdargv — Reference</h1>
+			<h1>mkcmdargv — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,53 +62,43 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#split-iterable" id="split-iterable" style="color: inherit; text-decoration: none;">
-					<h1>Split Iterable</h1>
+				<a href="#create-command-arguments" id="create-command-arguments" style="color: inherit; text-decoration: none;">
+					<h1>Create Command Arguments</h1>
 				</a>
-				<p>Split iterable into multiple chunks</p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
+				<p>Convert environment variables to command-line arguments</p>
+				<a href="#executable-usage" id="executable-usage" style="color: inherit; text-decoration: none;">
+					<h2>Executable Usage</h2>
 				</a>
-				<a href="#codesplititerablecode" id="codesplititerablecode" style="color: inherit; text-decoration: none;">
-					<h3><code>splitIterable</code></h3>
+				<pre><code class="language-sh"><span class="hljs-built_in">export</span> MKCMDARGV_ARGS=<span class="hljs-string">'[abc def]'</span>
+<span class="hljs-built_in">export</span> MKCMDARGV_OPTIONS=<span class="hljs-string">'{ a: 0, foo: 123 }'</span>
+<span class="hljs-built_in">export</span> MKCMDARGV_SINGLE_FLAGS=<span class="hljs-string">'sfx'</span>
+<span class="hljs-built_in">export</span> MKCMDARGV_DOUBLE_FLAGS=<span class="hljs-string">'quiet splash'</span>
+<span class="hljs-built_in">echo</span> $(mkcmdargv)</code></pre>
+				<a href="#api-usage" id="api-usage" style="color: inherit; text-decoration: none;">
+					<h2>API Usage</h2>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { splitIterable } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-iterable'</span>)
-
-expect(<span class="hljs-built_in">Array</span>.from(
-  splitIterable([<span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])
-)).toEqual([
-  [<span class="hljs-number">0</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-])</code></pre>
-				<a href="#codesplitasynciterablecode" id="codesplitasynciterablecode" style="color: inherit; text-decoration: none;">
-					<h3><code>splitAsyncIterable</code></h3>
+				<a href="#codeiteratecommandargumentscode" id="codeiteratecommandargumentscode" style="color: inherit; text-decoration: none;">
+					<h3><code>iterateCommandArguments</code></h3>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { splitAsyncIterable } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'split-iterable'</span>)
+				<p>Creates an iterator of command arguments</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { iterateCommandArguments } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mkcmdargv'</span>)
 
-<span class="hljs-keyword">const</span> iterable = {
-  <span class="hljs-keyword">async</span> * [<span class="hljs-built_in">Symbol</span>.asyncIterator] () {
-    <span class="hljs-keyword">yield</span> * [<span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'x'</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-  }
-}
+<span class="hljs-built_in">console</span>.log(...iterateCommandArguments({
+  <span class="hljs-attr">args</span>: [<span class="hljs-string">'abc'</span>, <span class="hljs-string">'def'</span>],
+  <span class="hljs-attr">options</span>: { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">foo</span>: <span class="hljs-number">123</span> },
+  <span class="hljs-attr">flags</span>: [<span class="hljs-string">'s'</span>, <span class="hljs-string">'f'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'quiet'</span>, <span class="hljs-string">'splash'</span>]
+}))</code></pre>
+				<a href="#codecreatecommandargumentscode" id="codecreatecommandargumentscode" style="color: inherit; text-decoration: none;">
+					<h3><code>createCommandArguments</code></h3>
+				</a>
+				<p>Creates an array of command arguments</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { createCommandArguments } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mkcmdargv'</span>)
 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toArray</span> (<span class="hljs-params">iterable</span>) </span>{
-  <span class="hljs-keyword">let</span> array = []
-
-  <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> iterable) {
-    array.push(item)
-  }
-
-  <span class="hljs-keyword">return</span> array
-}
-
-expect(<span class="hljs-keyword">await</span> toArray(
-  splitAsyncIterable(iterable)
-)).toEqual([
-  [<span class="hljs-number">0</span>],
-  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
-  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
-])</code></pre>
+createCommandArguments({
+  <span class="hljs-attr">args</span>: [<span class="hljs-string">'abc'</span>, <span class="hljs-string">'def'</span>],
+  <span class="hljs-attr">options</span>: { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">foo</span>: <span class="hljs-number">123</span> },
+  <span class="hljs-attr">flags</span>: [<span class="hljs-string">'s'</span>, <span class="hljs-string">'f'</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'quiet'</span>, <span class="hljs-string">'splash'</span>]
+}).forEach(<span class="hljs-function"><span class="hljs-params">arg</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(arg))</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -125,26 +115,8 @@ expect(<span class="hljs-keyword">await</span> toArray(
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/param.html" class="tsd-kind-icon">Param</a>
-					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#bin" class="tsd-kind-icon">bin</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#createcommandarguments" class="tsd-kind-icon">create<wbr>Command<wbr>Arguments</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#help" class="tsd-kind-icon">help</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#iteratecommandarguments" class="tsd-kind-icon">iterate<wbr>Command<wbr>Arguments</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#splitasynciterable" class="tsd-kind-icon">split<wbr>Async<wbr>Iterable</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#splititerable" class="tsd-kind-icon">split<wbr>Iterable</a>
 					</li>
 				</ul>
 			</nav>

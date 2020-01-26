@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> combine-evented-stream — Reference</h1>
+			<h1>combine-evented-stream — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,10 +62,60 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#evented-stream-types" id="evented-stream-types" style="color: inherit; text-decoration: none;">
-					<h1>Evented Stream Types</h1>
+				<a href="#combine-evented-stream" id="combine-evented-stream" style="color: inherit; text-decoration: none;">
+					<h1>Combine Evented Stream</h1>
 				</a>
-				<p>Collection of types used by evented-stream packages</p>
+				<p>Combine multiple evented streams into one</p>
+				<a href="#usage-examples" id="usage-examples" style="color: inherit; text-decoration: none;">
+					<h2>Usage Examples</h2>
+				</a>
+				<a href="#log-output-of-multiple-child-processes" id="log-output-of-multiple-child-processes" style="color: inherit; text-decoration: none;">
+					<h3>Log output of multiple child processes</h3>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { spawn } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>)
+<span class="hljs-keyword">const</span> combine = <span class="hljs-built_in">require</span>(<span class="hljs-string">'combine-evented-stream'</span>)
+
+<span class="hljs-keyword">const</span> cps = [
+  <span class="hljs-string">'foo'</span>,
+  <span class="hljs-string">'bar'</span>,
+  <span class="hljs-string">'baz'</span>
+].map(<span class="hljs-function"><span class="hljs-params">program</span> =&gt;</span> spawn(program))
+
+<span class="hljs-keyword">const</span> stream = combine(cps)
+
+stream.addListener(<span class="hljs-string">'data'</span>, ({ stream, chunk }) =&gt; {
+  <span class="hljs-built_in">console</span>.log({
+    <span class="hljs-attr">pid</span>: stream.pid,
+    <span class="hljs-attr">data</span>: chunk
+  })
+})
+
+stream.addListener(<span class="hljs-string">'close'</span>, () =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'done.'</span>)
+  <span class="hljs-keyword">return</span> process.exit(<span class="hljs-number">0</span>)
+})</code></pre>
+				<p><strong>Utilize <a href="https://npmjs.com/package/iterate-evented-stream"><code>iterate-evented-stream</code></a>:</strong></p>
+				<p>Assuming the context of execution below is async.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { spawn } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>)
+<span class="hljs-keyword">const</span> combine = <span class="hljs-built_in">require</span>(<span class="hljs-string">'combine-evented-stream'</span>)
+<span class="hljs-keyword">const</span> iterate = <span class="hljs-built_in">require</span>(<span class="hljs-string">'iterate-evented-stream'</span>)
+
+<span class="hljs-keyword">const</span> cps = [
+  <span class="hljs-string">'foo'</span>,
+  <span class="hljs-string">'bar'</span>,
+  <span class="hljs-string">'baz'</span>
+].map(<span class="hljs-function"><span class="hljs-params">program</span> =&gt;</span> spawn(program))
+
+<span class="hljs-keyword">const</span> stream = combine(cps)
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> { stream, chunk } <span class="hljs-keyword">of</span> iterate(stream)) {
+  <span class="hljs-built_in">console</span>.log({
+    <span class="hljs-attr">pid</span>: stream.pid,
+    <span class="hljs-attr">data</span>: chunk
+  })
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'done.'</span>)</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -77,18 +127,6 @@
 				<ul>
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
-						<a href="modules/eventedstream.html">Evented<wbr>Stream</a>
-					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
-						<a href="modules/listenertransformer.html">Listener<wbr>Transformer</a>
-					</li>
-					<li class=" tsd-kind-module tsd-has-type-parameter tsd-is-external">
-						<a href="modules/create.html">create</a>
 					</li>
 				</ul>
 			</nav>
@@ -104,16 +142,7 @@
 						<a href="classes/errorcarrier.html" class="tsd-kind-icon">Error<wbr>Carrier</a>
 					</li>
 					<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-external">
-						<a href="classes/eventtargetproxy.html" class="tsd-kind-icon">Event<wbr>Target<wbr>Proxy</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter tsd-is-external">
 						<a href="classes/eventedstreamcombination.html" class="tsd-kind-icon">Evented<wbr>Stream<wbr>Combination</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/eventtarget.html" class="tsd-kind-icon">Event<wbr>Target</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/listenermodifier.html" class="tsd-kind-icon">Listener<wbr>Modifier</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#combineeventedstream" class="tsd-kind-icon">combine<wbr>Evented<wbr>Stream</a>

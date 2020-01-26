@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> string-template-format-inspect — Reference</h1>
+			<h1>string-template-format-inspect — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,18 +62,29 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#string-template-format-base" id="string-template-format-base" style="color: inherit; text-decoration: none;">
-					<h1>String Template Format: Base</h1>
+				<a href="#string-template-format-inspect" id="string-template-format-inspect" style="color: inherit; text-decoration: none;">
+					<h1>String Template Format: Inspect</h1>
 				</a>
-				<p>Create string template tag that transform values into strings</p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
+				<p>String template literal tag that uses Node&#39;s <code>util.inspect</code></p>
+				<a href="#usage-examples" id="usage-examples" style="color: inherit; text-decoration: none;">
+					<h2>Usage Examples</h2>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> tag <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format-base'</span>
-<span class="hljs-keyword">const</span> myTag = tag(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> <span class="hljs-string">`[<span class="hljs-subst">${<span class="hljs-keyword">typeof</span> value}</span> <span class="hljs-subst">${value}</span>]`</span>)
-<span class="hljs-built_in">console</span>.log(myTag<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-number">123</span>}</span>; <span class="hljs-subst">${<span class="hljs-string">'abc'</span>}</span>; <span class="hljs-subst">${{ abc: <span class="hljs-number">123</span> }</span>}; <span class="hljs-subst">${[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]}</span>`</span>)</code></pre>
+				<a href="#without-options" id="without-options" style="color: inherit; text-decoration: none;">
+					<h3>Without Options</h3>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { dbg } <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format-inspect'</span>
+<span class="hljs-built_in">console</span>.log(dbg<span class="hljs-string">`number <span class="hljs-subst">${<span class="hljs-number">123</span>}</span>; string: <span class="hljs-subst">${<span class="hljs-string">'abc'</span>}</span>; object: <span class="hljs-subst">${{ abc: <span class="hljs-number">123</span> }</span>}; array: <span class="hljs-subst">${[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>]}</span>`</span>)</code></pre>
 				<p><em>should print:</em></p>
-				<pre><code>[number <span class="hljs-number">123</span>]; [<span class="hljs-built_in">string</span> abc]; [object [Object object]]; [<span class="hljs-built_in">array</span> <span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]</code></pre>
+				<pre><code><span class="hljs-attr">number:</span> <span class="hljs-number">123</span><span class="hljs-string">;</span> <span class="hljs-attr">string:</span> <span class="hljs-string">'abc'</span><span class="hljs-string">;</span> <span class="hljs-attr">object:</span> <span class="hljs-string">{</span> <span class="hljs-attr">abc:</span> <span class="hljs-number">123</span> <span class="hljs-string">};</span> <span class="hljs-attr">array:</span> <span class="hljs-string">[</span> <span class="hljs-number">0</span><span class="hljs-string">,</span> <span class="hljs-number">1</span><span class="hljs-string">,</span> <span class="hljs-number">2</span> <span class="hljs-string">]</span></code></pre>
+				<a href="#with-options" id="with-options" style="color: inherit; text-decoration: none;">
+					<h3>With Options</h3>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { InspectFormatter } <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format-inspect'</span>
+<span class="hljs-keyword">const</span> dbg = InspectFormatter({ <span class="hljs-attr">getters</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">maxArrayLength</span>: <span class="hljs-number">0</span> })
+<span class="hljs-keyword">const</span> myObject = { <span class="hljs-keyword">get</span> abc () { <span class="hljs-keyword">return</span> <span class="hljs-number">123</span> }, <span class="hljs-attr">def</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>] }
+<span class="hljs-built_in">console</span>.log(dbg<span class="hljs-string">`my object is <span class="hljs-subst">${myObject}</span>`</span>)</code></pre>
+				<p><em>should print:</em></p>
+				<pre><code><span class="hljs-selector-tag">my</span> <span class="hljs-selector-tag">object</span> <span class="hljs-selector-tag">is</span> { <span class="hljs-attribute">abc</span>: [Getter: <span class="hljs-number">123</span>], def: [ ... <span class="hljs-number">3</span> more items ] }</code></pre>
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
@@ -90,20 +101,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/formatter.html" class="tsd-kind-icon">Formatter</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/inspector.html" class="tsd-kind-icon">Inspector</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter tsd-is-external">
-						<a href="interfaces/templatetag.html" class="tsd-kind-icon">Template<wbr>Tag</a>
-					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#inspectformatter" class="tsd-kind-icon">Inspect<wbr>Formatter</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#templatetag" class="tsd-kind-icon">Template<wbr>Tag</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#formatinspector" class="tsd-kind-icon">format<wbr>Inspector</a>
@@ -113,9 +115,6 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#inspector" class="tsd-kind-icon">Inspector</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#tag" class="tsd-kind-icon">tag</a>
 					</li>
 				</ul>
 			</nav>
