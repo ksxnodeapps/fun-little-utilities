@@ -987,16 +987,16 @@ describe('ensureDirSync', () => {
   })
 })
 
-describe('ensureFileSync', () => {
+describe('outputFileSync', () => {
   function initSuccess (path: string, content: string) {
     const fs = create()
-    fs.ensureFileSync(path, content)
+    fs.outputFileSync(path, content)
     return { path, content, fs }
   }
 
   function initFailure (path: string, content: string) {
     const fs = create()
-    const fn = () => fs.ensureFileSync(path, content)
+    const fn = () => fs.outputFileSync(path, content)
     return { path, content, fs, fn }
   }
 

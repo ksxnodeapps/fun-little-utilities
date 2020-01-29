@@ -272,7 +272,7 @@ export class ArrayPathFileSystem<PathElm, FileContent> {
     if (error) throw error
   }
 
-  public ensureFileSync = (filename: readonly PathElm[], content: FileContent) => {
+  public outputFileSync = (filename: readonly PathElm[], content: FileContent) => {
     if (this.coreMap.getPath(filename, 'open', ENOENT, ENOTDIR).kind === ContentKind.Directory) {
       throw new EISDIR('open', filename)
     }
@@ -336,6 +336,6 @@ export class StringPathFileSystem {
   public ensureDirSync = (path: string) =>
     this.core.ensureDirSync(this.split(path))
 
-  public ensureFileSync = (path: string, fileContent: string) =>
-    this.core.ensureFileSync(this.split(path), fileContent)
+  public outputFileSync = (path: string, fileContent: string) =>
+    this.core.outputFileSync(this.split(path), fileContent)
 }
