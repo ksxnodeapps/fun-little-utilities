@@ -1136,3 +1136,147 @@ describe('outputFileSync', () => {
     })
   })
 })
+
+describe('ensureFileSync', () => {
+  function initSuccess (path: string) {
+    const fs = create()
+    fs.ensureFileSync(path)
+    return { path, fs }
+  }
+
+  function initFailure (path: string) {
+    const fs = create()
+    const fn = () => fs.ensureFileSync(path)
+    return { path, fs, fn }
+  }
+
+  describe('on path that has yet to be occupied', () => {
+    describe('"abc/def/new"', () => {
+      const path = 'abc/def/new'
+
+      it('existsSync() returns true', () => {
+        expect(initSuccess(path).fs.existsSync(path)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(initSuccess(path).fs.statSync(path).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(initSuccess(path).fs.statSync(path).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(initSuccess(path).fs.readFileSync(path)).toBe('')
+      })
+    })
+
+    describe('"new"', () => {
+      const path = 'new'
+
+      it('existsSync() returns true', () => {
+        expect(initSuccess(path).fs.existsSync(path)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(initSuccess(path).fs.statSync(path).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(initSuccess(path).fs.statSync(path).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(initSuccess(path).fs.readFileSync(path)).toBe('')
+      })
+    })
+
+    describe('"z/x/c/v/b/n/m"', () => {
+      const path = 'z/x/c/v/b/n/m'
+
+      it('existsSync() returns true', () => {
+        expect(initSuccess(path).fs.existsSync(path)).toBe(true)
+      })
+
+      it('statSync().isFile() returns true', () => {
+        expect(initSuccess(path).fs.statSync(path).isFile()).toBe(true)
+      })
+
+      it('statSync().isDirectory() returns false', () => {
+        expect(initSuccess(path).fs.statSync(path).isDirectory()).toBe(false)
+      })
+
+      it('readFileSync() returns written content', () => {
+        expect(initSuccess(path).fs.readFileSync(path)).toBe('')
+      })
+    })
+  })
+
+  describe('on path that is occupied by a file', () => {
+    const path = 'abc/def/ghi'
+
+    it('existsSync() returns true', () => {
+      expect(initSuccess(path).fs.existsSync(path)).toBe(true)
+    })
+
+    it('statSync().isFile() returns true', () => {
+      expect(initSuccess(path).fs.statSync(path).isFile()).toBe(true)
+    })
+
+    it('statSync().isDirectory() returns false', () => {
+      expect(initSuccess(path).fs.statSync(path).isDirectory()).toBe(false)
+    })
+
+    it('readFileSync() returns written content', () => {
+      expect(initSuccess(path).fs.readFileSync(path)).toBe('')
+    })
+  })
+
+  describe('on path that is occupied by a directory: throws an error', () => {
+    const path = 'abc/def'
+
+    it('matches snapshot', () => {
+      expect(getError(initFailure(path).fn)).toMatchSnapshot()
+    })
+
+    it('has .errno = ErrorKind.EISDIR', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('errno', ErrorKind.EISDIR)
+    })
+
+    it('has .code = "EISDIR"', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('code', 'EISDIR')
+    })
+
+    it('has .syscall = "open"', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('syscall', 'open')
+    })
+
+    it('has .path', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('path', path.split('/'))
+    })
+  })
+
+  describe('on child of a file: throws an error', () => {
+    const path = 'abc/def/ghi/new'
+
+    it('matches snapshot', () => {
+      expect(getError(initFailure(path).fn)).toMatchSnapshot()
+    })
+
+    it('has .errno = ErrorKind.ENOTDIR', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('errno', ErrorKind.ENOTDIR)
+    })
+
+    it('has .code = "ENOTDIR"', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('code', 'ENOTDIR')
+    })
+
+    it('has .syscall = "open"', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('syscall', 'open')
+    })
+
+    it('has .path', () => {
+      expect(getError(initFailure(path).fn)).toHaveProperty('path', path.split('/'))
+    })
+  })
+})

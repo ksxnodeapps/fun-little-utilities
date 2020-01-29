@@ -338,4 +338,7 @@ export class StringPathFileSystem {
 
   public outputFileSync = (path: string, fileContent: string) =>
     this.core.outputFileSync(this.split(path), fileContent)
+
+  public ensureFileSync = (path: string) =>
+    this.outputFileSync(path, '')
 }

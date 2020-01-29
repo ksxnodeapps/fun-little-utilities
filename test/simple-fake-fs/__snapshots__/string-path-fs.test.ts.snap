@@ -46,6 +46,7 @@ StringPathFileSystem {
     "writeFileSync": [Function],
   },
   "ensureDirSync": [Function],
+  "ensureFileSync": [Function],
   "existsSync": [Function],
   "mkdirSync": [Function],
   "outputFileSync": [Function],
@@ -71,6 +72,7 @@ StringPathFileSystem {
     "writeFileSync": [Function],
   },
   "ensureDirSync": [Function],
+  "ensureFileSync": [Function],
   "existsSync": [Function],
   "mkdirSync": [Function],
   "outputFileSync": [Function],
@@ -106,6 +108,32 @@ ENOTDIR {
     "ghi",
   ],
   "syscall": "mkdir",
+}
+`;
+
+exports[`ensureFileSync on child of a file: throws an error matches snapshot 1`] = `
+ENOTDIR {
+  "code": "ENOTDIR",
+  "errno": -20,
+  "path": Array [
+    "abc",
+    "def",
+    "ghi",
+    "new",
+  ],
+  "syscall": "open",
+}
+`;
+
+exports[`ensureFileSync on path that is occupied by a directory: throws an error matches snapshot 1`] = `
+EISDIR {
+  "code": "EISDIR",
+  "errno": -21,
+  "path": Array [
+    "abc",
+    "def",
+  ],
+  "syscall": "open",
 }
 `;
 
