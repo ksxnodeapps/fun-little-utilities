@@ -1,6 +1,12 @@
 export const symCwd = Symbol('cwd')
 export const symRoot = Symbol('root')
 
+type StringKey<Object> = {
+  [key in string & keyof Object]: Object[key]
+}
+
+export type Path = StringKey<FakePath>
+
 export abstract class FakePath {
   public abstract readonly [symCwd]: string
   public abstract readonly [symRoot]: readonly string[]
