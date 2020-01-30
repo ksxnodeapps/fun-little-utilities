@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import { normalText, styledText } from './.lib/data'
 
 import {

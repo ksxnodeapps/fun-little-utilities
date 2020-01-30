@@ -1,4 +1,4 @@
-import RealEventEmitter from 'events'
+import { EventEmitter as RealEventEmitter } from 'events'
 import { combinations, repeat } from 'iter-tools'
 
 import defaultImport, {

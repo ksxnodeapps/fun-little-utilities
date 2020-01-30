@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import create, { EventTarget, EventTargetProxy } from 'event-target-proxy'
 import assert from 'static-type-assert'
 

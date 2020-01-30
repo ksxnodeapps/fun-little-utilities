@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import awaitEvent from 'ts-await-event'
 
 type Event = typeof event

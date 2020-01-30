@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import * as assets from 'monorepo-shared-assets'
 import { iterateEventedStream, combineEventedStream, EventedStream } from 'evented-stream'
 import getAsyncArray = assets.asyncIter.fns.getArray

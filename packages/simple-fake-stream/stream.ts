@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import 'monorepo-shared-assets/.polyfill'
 import { EventedStream } from 'evented-stream-types'
 import { MethodName, MethodCall, MethodCallInstance } from './method-call'

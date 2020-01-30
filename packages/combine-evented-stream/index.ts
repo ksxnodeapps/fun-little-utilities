@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import { EventEmitter } from 'events'
 import { EventedStream } from 'evented-stream-types'
 import proxify, { EventTarget } from 'event-target-proxy'
 import EventedStreamCombination from './lib/evented-stream-combination'
