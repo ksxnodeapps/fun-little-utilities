@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 13.1.7
+  '@types/node': 13.5.2
   '@types/shell-escape': 0.2.0
   chalk: 3.0.0
   shell-escape: 0.2.0
@@ -15,6 +15,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+  /@types/node/13.5.2:
+    dev: false
+    resolution:
+      integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
   /@types/shell-escape/0.2.0:
     dev: false
     resolution:
@@ -81,7 +85,7 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@types/node': ^13.1.7
+  '@types/node': ^13.5.2
   '@types/shell-escape': ^0.2.0
   chalk: ^3.0.0
   shell-escape: ^0.2.0

@@ -17,6 +17,6 @@
     "iter-tools": "^6.2.6",
     "advanced-map-initialized": "^0.0.4",
     "tslib": "^1.10.0",
-    "@types/node": "^13.1.7"
+    "@types/node": "^13.5.2"
   }
 }

@@ -1,18 +1,20 @@
 dependencies:
-  '@types/node': 13.1.7
-  '@types/semver': 6.2.0
+  '@types/node': 13.5.2
+  '@types/semver': 7.1.0
   semver: 7.1.1
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.1.7:
+  /@types/node/13.5.2:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/semver/6.2.0:
+      integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
+  /@types/semver/7.1.0:
+    dependencies:
+      '@types/node': 13.5.2
     dev: false
     resolution:
-      integrity: sha512-1OzrNb4RuAzIT7wHSsgZRlMBlNsJl+do6UblR7JMW4oB7bbR+uBEYtUh7gEc/jM84GGilh68lSOokyM/zNUlBA==
+      integrity: sha512-pOKLaubrAEMUItGNpgwl0HMFPrSAFic8oSVIvfu1UwcgGNmNyK9gyhBHKmBnUTwwVvpZfkzUC0GaMgnL6P86uA==
   /semver/7.1.1:
     dev: false
     engines:
@@ -25,7 +27,7 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@types/node': ^13.1.7
-  '@types/semver': ^6.2.0
+  '@types/node': ^13.5.2
+  '@types/semver': ^7.1.0
   semver: ^7.1.1
   tslib: ^1.10.0

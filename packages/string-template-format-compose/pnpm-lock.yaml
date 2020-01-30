@@ -1,26 +1,26 @@
 dependencies:
-  '@tsfun/function': 0.0.4
-  '@types/node': 13.1.7
+  '@tsfun/function': 0.0.5
+  '@types/node': 13.5.2
   string-template-format-base: 'link:../string-template-format-base'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/function/0.0.4:
+  /@tsfun/function/0.0.5:
     dependencies:
-      '@types/node': 13.1.7
+      '@types/node': 13.5.2
       ts-pipe-compose: 0.1.11
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-MiMTplZdtzQcjN6/gr5btKvWPsf/UJ9B1Etggqd9YXzTN8fq+uVt/eXdZOyfnipFWNA0NKaF5+p5l2CpuZVPWg==
+      integrity: sha512-x+akqcWUToH4Cqt1sNF6sD8RpIvB6tZsSigzcBEfQwhwHbsoWauraXVYRE1lUIv2ESwbnnX4/HP01Es9h2wQKA==
   /@types/node/12.12.24:
     dev: false
     resolution:
       integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
-  /@types/node/13.1.7:
+  /@types/node/13.5.2:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+      integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
   /ts-pipe-compose/0.1.11:
     dependencies:
       '@types/node': 12.12.24
@@ -35,7 +35,7 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@tsfun/function': ^0.0.4
-  '@types/node': ^13.1.7
+  '@tsfun/function': ^0.0.5
+  '@types/node': ^13.5.2
   string-template-format-base: ^0.1.3
   tslib: ^1.10.0

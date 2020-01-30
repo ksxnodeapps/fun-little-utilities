@@ -23,7 +23,7 @@
     "tslib": "^1.10.0",
     "evented-stream-types": "^0.1.4",
     "event-target-proxy": "^0.1.4",
-    "@types/node": "^13.1.7"
+    "@types/node": "^13.5.2"
   },
   "engines": {
     "node": ">= 8.9.0"

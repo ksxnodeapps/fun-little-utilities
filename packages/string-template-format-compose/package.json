@@ -19,9 +19,9 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "@tsfun/function": "^0.0.4",
+    "@tsfun/function": "^0.0.5",
     "tslib": "^1.10.0",
     "string-template-format-base": "^0.1.3",
-    "@types/node": "^13.1.7"
+    "@types/node": "^13.5.2"
   }
 }

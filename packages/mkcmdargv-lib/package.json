@@ -16,9 +16,9 @@
   "dependencies": {
     "fs-extra": "^8.1.0",
     "split-iterable": "^0.1.4",
-    "@tsfun/array": "^0.0.0",
+    "@tsfun/array": "^0.0.1",
     "tslib": "^1.10.0",
     "@types/fs-extra": "^8.0.1",
-    "@types/node": "^13.1.7"
+    "@types/node": "^13.5.2"
   }
 }

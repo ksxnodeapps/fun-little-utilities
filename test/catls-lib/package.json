@@ -4,7 +4,7 @@
     "utility-types": "^3.10.0",
     "ts-toolbelt": "^6.1.6",
     "shell-quote": "^1.7.2",
-    "@tsfun/array": "^0.0.0",
+    "@tsfun/array": "^0.0.1",
     "@types/shell-quote": "^1.6.1",
     "catls-lib": "file:../../packages/catls-lib",
     "simple-fake-stream": "file:../../packages/simple-fake-stream",

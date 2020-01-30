@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 13.1.7
+  '@types/node': 13.5.2
   tslib: 1.10.0
   yargs: 15.1.0
 lockfileVersion: 5.1
@@ -8,10 +8,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/node/13.1.7:
+  /@types/node/13.5.2:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+      integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
   /ansi-regex/5.0.0:
     dev: false
     engines:
@@ -200,6 +200,6 @@ packages:
     resolution:
       integrity: sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==
 specifiers:
-  '@types/node': ^13.1.7
+  '@types/node': ^13.5.2
   tslib: ^1.10.0
   yargs: ^15.1.0

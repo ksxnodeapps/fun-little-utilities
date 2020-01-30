@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "@tsfun/object": "^0.0.9",
+    "@tsfun/object": "^0.0.14",
     "simple-fake-fs": "file:../../packages/simple-fake-fs",
     "fast-traverse": "file:../../packages/fast-traverse"
   }
