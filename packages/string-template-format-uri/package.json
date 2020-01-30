@@ -1,6 +1,6 @@
 {
   "name": "string-template-format-uri",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "String template literal tag that converts string into valid URI/URL components",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.10.0",
-    "string-template-format-base": "^0.1.3",
+    "string-template-format-base": "^0.1.4",
     "@types/node": "^13.5.2"
   }
 }

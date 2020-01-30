@@ -1,6 +1,6 @@
 {
   "name": "table-parser-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Convert array table to object table and back",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -21,8 +21,8 @@
   "dependencies": {
     "yargs": "^15.1.0",
     "tslib": "^1.10.0",
-    "table-parser-base": "^0.0.0",
-    "simple-fake-console": "^0.1.4",
+    "table-parser-base": "^0.0.1",
+    "simple-fake-console": "^0.1.5",
     "@types/yargs": "^15.0.2",
     "@types/node": "^13.5.2"
   }

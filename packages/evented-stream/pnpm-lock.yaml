@@ -16,7 +16,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@types/node': ^13.5.2
-  combine-evented-stream: ^0.1.4
-  evented-stream-types: ^0.1.4
-  iterate-evented-stream: ^0.1.5
+  combine-evented-stream: ^0.1.5
+  evented-stream-types: ^0.1.5
+  iterate-evented-stream: ^0.1.6
   tslib: ^1.10.0
