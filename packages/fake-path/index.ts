@@ -5,7 +5,6 @@ export abstract class FakePath {
   public abstract readonly [symCwd]: string
   public abstract readonly [symRoot]: readonly string[]
   public abstract readonly sep: string
-  public readonly cwd = (): string => this[symCwd]
 
   public readonly isAbsolute = (path: string): boolean =>
     this[symRoot].some(root => path.startsWith(root))
