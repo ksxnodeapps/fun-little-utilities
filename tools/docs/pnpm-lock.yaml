@@ -2,7 +2,7 @@ dependencies:
   '@tools/places': 'link:../places'
   '@tools/preloaded-node': 'link:../preloaded-node'
   '@tools/utils': 'link:../utils'
-  '@tsfun/array': 0.0.0
+  '@tsfun/array': 0.0.1
   '@types/fs-extra': 8.0.1
   '@types/minimatch': 3.0.3
   '@types/pretty': 2.0.0
@@ -10,17 +10,17 @@ dependencies:
   fs-extra: 8.1.0
   minimatch: 3.0.4
   pretty: 2.0.0
-  typedoc: 0.16.6
-  typescript: 3.7.4
+  typedoc: 0.16.9
+  typescript: 3.7.5
 lockfileVersion: 5.1
 packages:
-  /@tsfun/array/0.0.0:
+  /@tsfun/array/0.0.1:
     dependencies:
       '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
+      integrity: sha512-82WeMtIC8TzWAJpIjLm+N44BSnYADWZmhBNeT0PdY+mTqB61bLSsDKonHlLE36twC26fBFMYV2/sYj8uJei5uA==
   /@types/color-name/1.1.1:
     dev: false
     resolution:
@@ -430,7 +430,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /typedoc-default-themes/0.7.1:
+  /typedoc-default-themes/0.7.2:
     dependencies:
       backbone: 1.4.0
       jquery: 3.4.1
@@ -440,8 +440,8 @@ packages:
     engines:
       node: '>= 8'
     resolution:
-      integrity: sha512-s3jeUHc4EY8snIta6lNkUu9+36WMDUnkKm0UQ59w5iPo/4Y2d4+M9CDIKoenYKT5hkg/UnTc3oX48VZZytv8Xw==
-  /typedoc/0.16.6:
+      integrity: sha512-fiFKlFO6VTqjcno8w6WpTsbCgXmfPHVjnLfYkmByZE7moaz+E2DSpAT+oHtDHv7E0BM5kAhPrHJELP2J2Y2T9A==
+  /typedoc/0.16.9:
     dependencies:
       '@types/minimatch': 3.0.3
       fs-extra: 8.1.0
@@ -452,21 +452,21 @@ packages:
       minimatch: 3.0.4
       progress: 2.0.3
       shelljs: 0.8.3
-      typedoc-default-themes: 0.7.1
-      typescript: 3.7.4
+      typedoc-default-themes: 0.7.2
+      typescript: 3.7.5
     dev: false
     engines:
       node: '>= 6.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-1k4HXW5o6/rk5U3NEXEM+UVMPWaM0xW1/WJo1wlptb0gzsqtahymLDFSBX8Nqi7cToKOuiJPUr8j8UU368UNoA==
-  /typescript/3.7.4:
+      integrity: sha512-UvOGoy76yqwCXwxPgatwgXWfsQ3FczyZ6ZNLjhCPK+TsDir6LiU3YB6N9XZmPv36E+7LA860mnc8a0v6YADKFw==
+  /typescript/3.7.5:
     dev: false
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-A25xv5XCtarLwXpcDNZzCGvW2D1S3/bACratYBx2sax8PefsFhlYmkQicKHvpYflFS8if4zne5zT5kpJ7pzuvw==
+      integrity: sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
   /uglify-js/3.7.4:
     dependencies:
       commander: 2.20.3
@@ -506,7 +506,7 @@ specifiers:
   '@tools/places': 'file:../places'
   '@tools/preloaded-node': 'file:../preloaded-node'
   '@tools/utils': 'file:../utils'
-  '@tsfun/array': ^0.0.0
+  '@tsfun/array': ^0.0.1
   '@types/fs-extra': ^8.0.1
   '@types/minimatch': ^3.0.3
   '@types/pretty': ^2.0.0
@@ -514,5 +514,5 @@ specifiers:
   fs-extra: ^8.1.0
   minimatch: ^3.0.4
   pretty: ^2.0.0
-  typedoc: ^0.16.6
-  typescript: 3.7.4
+  typedoc: ^0.16.9
+  typescript: ^3.7.5
