@@ -19,7 +19,7 @@
   "main": "index.js",
   "dependencies": {
     "tslib": "^1.10.0",
-    "wide-text-types": "^0.1.5",
+    "wide-text-types": "^0.1.4",
     "@types/node": "^13.5.2"
   },
   "engines": {
