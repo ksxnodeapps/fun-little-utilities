@@ -44,3 +44,5 @@ export abstract class FakePath {
     return segments[segments.length - 1]
   }
 }
+
+export default FakePath
