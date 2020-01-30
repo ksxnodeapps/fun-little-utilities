@@ -53,7 +53,20 @@ export abstract class FakePath {
   }
 
   public readonly normalize = (path: string): string => {
-    const result = path.split(this.sep).filter(x => !isEmpty(x)).join(this.sep)
+    if (isEmpty(path)) return '.'
+    const segments = path
+      .split(this.sep)
+      .filter(x => !isEmpty(x))
+    // tslint:disable-next-line:one-variable-per-declaration
+    for (let i = 1, { length } = segments; i !== length; ++i) {
+      const left = segments[i - 1]
+      const right = segments[i]
+      if (right === '..') {
+        segments[i - 1] = this.dirname(left)
+        segments[i] = this.dirname(right)
+      }
+    }
+    const result = segments.filter(x => !isEmpty(x)).join(this.sep)
     return isEmpty(result) ? '.' : result
   }
 }
