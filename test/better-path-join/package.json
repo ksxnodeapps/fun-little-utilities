@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "static-type-assert": "^3.0.1",
+    "string-template-format-inspect": "file:../../packages/string-template-format-inspect",
+    "better-path-join": "file:../../packages/better-path-join"
+  }
+}
