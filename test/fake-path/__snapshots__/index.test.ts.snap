@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`isAbsolute 1`] = `
+Object {
+  "absolute": Array [
+    "/",
+    "C:\\\\",
+    "/a/b/c",
+    "C:\\\\a\\\\b",
+  ],
+  "relative": Array [
+    ".",
+    "..",
+    "a/b/c",
+    "./a/b",
+    "../a/b",
+  ],
+}
+`;

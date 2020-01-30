@@ -37,7 +37,7 @@ export abstract class FakePath {
     const [head, ...rest] = paths
     const tail = this.resolve(...rest)
     if (this.isAbsolute(tail)) return tail
-    return this.normalize(this.join(this[symCwd], head, tail))
+    return this.join(this[symCwd], head, tail)
   }
 
   public readonly dirname = (path: string): string => {
