@@ -7,6 +7,8 @@ type StringKey<Object> = {
 
 export type Path = StringKey<FakePath>
 
+const isEmpty = (path: string) => path === '.' || path === ''
+
 export abstract class FakePath {
   public abstract readonly [symCwd]: string
   public abstract readonly [symRoot]: readonly string[]
@@ -19,14 +21,15 @@ export abstract class FakePath {
     if (!paths.length) return '.'
     const [head, ...rest] = paths
     const tail = this.join(...rest)
-    if (head === '.') return tail
-    if (tail === '.') return head
+    if (isEmpty(head)) return tail
+    if (isEmpty(tail)) return head
+    if (tail === '..') return this.dirname(head)
     if (tail.startsWith('..' + this.sep)) {
       return this.join(this.dirname(head), tail.slice(('..' + this.sep).length))
     }
     const left = head.endsWith(this.sep) ? head.slice(0, -1) : head
     const right = tail.startsWith(this.sep) ? tail.slice(1) : tail
-    return left + this.sep + right
+    return this.normalize(left + this.sep + right)
   }
 
   public readonly resolve = (...paths: string[]): string => {
@@ -34,19 +37,24 @@ export abstract class FakePath {
     const [head, ...rest] = paths
     const tail = this.resolve(...rest)
     if (this.isAbsolute(tail)) return tail
-    return this.join(this[symCwd], head, tail)
+    return this.normalize(this.join(this[symCwd], head, tail))
   }
 
   public readonly dirname = (path: string): string => {
     if (path === '' || path === '.' || path === this.sep) return path
     const segments = path.split(this.sep).slice(0, -1)
     if (!segments.length) return '.'
-    return this.join(...segments)
+    return this.normalize(this.join(...segments))
   }
 
   public readonly basename = (path: string): string => {
     const segments = path.split(this.sep)
-    return segments[segments.length - 1]
+    return this.normalize(segments[segments.length - 1])
+  }
+
+  public readonly normalize = (path: string): string => {
+    const result = path.split(this.sep).filter(x => !isEmpty(x)).join(this.sep)
+    return isEmpty(result) ? '.' : result
   }
 }
 
