@@ -60,6 +60,21 @@ describe('join', () => {
     expect(join('../a/b', 'c')).toBe('../a/b/c')
   })
 
+  it('first argument ends with "/"', () => {
+    const { join } = new Path()
+    expect(join('a/b/', 'c')).toBe('a/b/c')
+  })
+
+  it('first argument ends with "//"', () => {
+    const { join } = new Path()
+    expect(join('a/b//', 'c')).toBe('a/b/c')
+  })
+
+  it('first argument ends with "///"', () => {
+    const { join } = new Path()
+    expect(join('a/b///', 'c')).toBe('a/b/c')
+  })
+
   it('second argument is ""', () => {
     const { join } = new Path()
     expect(join('a/b/c', '')).toBe('a/b/c')
@@ -93,6 +108,21 @@ describe('join', () => {
   it('second argument ends with "/.."', () => {
     const { join } = new Path()
     expect(join('a/b', 'c/..')).toBe('a/b')
+  })
+
+  it('last argument starts with "/"', () => {
+    const { join } = new Path()
+    expect(join('a/b', 'c', '/d/e')).toBe('a/b/c/d/e')
+  })
+
+  it('last argument starts with "//"', () => {
+    const { join } = new Path()
+    expect(join('a/b', 'c', '//d/e')).toBe('a/b/c/d/e')
+  })
+
+  it('last argument starts with "///"', () => {
+    const { join } = new Path()
+    expect(join('a/b', 'c', '///d/e')).toBe('a/b/c/d/e')
   })
 })
 
