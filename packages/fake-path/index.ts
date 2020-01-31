@@ -68,7 +68,7 @@ export abstract class FakePath {
     const { sep } = this
     if (path.startsWith(sep)) {
       const tail = this.normalize(path.slice(this.sep.length))
-      return isEmpty(tail) ? sep : sep + tail
+      return isEmpty(tail) || tail === '/' ? sep : sep + tail
     }
     function normalize (normal: readonly string[], weird: readonly string[]): string {
       if (!weird.length) return normal.join(sep)
