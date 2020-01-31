@@ -1,4 +1,4 @@
-# Fake Path
+# Simple Fake Path
 
 Mockable fake path module
 
@@ -7,7 +7,7 @@ Mockable fake path module
 ```typescript
 // Example in TypeScript
 
-import { FakePath, symCwd, symRoot } from 'fake-path' // FakePath is an abstract class
+import { FakePath, symCwd, symRoot } from 'simple-fake-path' // FakePath is an abstract class
 class Path extends FakePath {
   public readonly [symCwd] = '/working/directory'
   public readonly [symRoot] = ['/']
