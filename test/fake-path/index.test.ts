@@ -271,7 +271,7 @@ describe('normalize', () => {
   it('edge cases: empty', async () => {
     const { inspect } = await import('util')
     const { normalize } = new Path()
-    const result = [
+    const snapshot = [
       '',
       './.',
       './/.',
@@ -285,13 +285,13 @@ describe('normalize', () => {
       }))
       .map(item => `${item.weird} => ${item.normal}`)
       .join('\n')
-    expect('\n' + result + '\n').toMatchSnapshot()
+    expect('\n' + snapshot + '\n').toMatchSnapshot()
   })
 
   it('edge cases: root', async () => {
     const { inspect } = await import('util')
     const { normalize } = new Path()
-    const result = [
+    const snapshot = [
       '/',
       '//',
       '///',
@@ -308,13 +308,13 @@ describe('normalize', () => {
       }))
       .map(item => `${item.weird} => ${item.normal}`)
       .join('\n')
-    expect('\n' + result + '\n').toMatchSnapshot()
+    expect('\n' + snapshot + '\n').toMatchSnapshot()
   })
 
   it('edge cases: absolute', async () => {
     const { inspect } = await import('util')
     const { normalize } = new Path()
-    const result = [
+    const snapshot = [
       '/a/b/c',
       '//a//b//c',
       '///a//b/c',
@@ -331,6 +331,6 @@ describe('normalize', () => {
       }))
       .map(item => `${item.weird} => ${item.normal}`)
       .join('\n')
-    expect('\n' + result + '\n').toMatchSnapshot()
+    expect('\n' + snapshot + '\n').toMatchSnapshot()
   })
 })
