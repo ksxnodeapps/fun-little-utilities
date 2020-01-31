@@ -101,4 +101,9 @@ describe('resolve', () => {
     const { resolve } = new Path()
     expect(resolve('a', 'b/c', 'd/e/f')).toBe('/working/directory/a/b/c/d/e/f')
   })
+
+  it('with one absolute path', () => {
+    const { resolve } = new Path()
+    expect(resolve('a/b', 'c', '/d/e/f')).toBe('/d/e/f')
+  })
 })
