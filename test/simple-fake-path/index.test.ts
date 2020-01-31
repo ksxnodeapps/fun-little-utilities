@@ -1,5 +1,5 @@
 import { partition } from '@tsfun/array'
-import { FakePath, symCwd, symRoot } from 'fake-path'
+import { FakePath, symCwd, symRoot } from 'simple-fake-path'
 
 class Path extends FakePath {
   public readonly [symCwd] = '/working/directory'

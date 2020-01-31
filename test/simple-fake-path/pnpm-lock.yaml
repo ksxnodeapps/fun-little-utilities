@@ -1,6 +1,6 @@
 dependencies:
   '@tsfun/array': 0.0.1
-  fake-path: 'link:../../packages/fake-path'
+  simple-fake-path: 'link:../../packages/simple-fake-path'
   static-type-assert: 3.0.1
 lockfileVersion: 5.1
 packages:
@@ -39,5 +39,5 @@ packages:
       integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
 specifiers:
   '@tsfun/array': ^0.0.1
-  fake-path: 'file:../../packages/fake-path'
+  simple-fake-path: 'file:../../packages/simple-fake-path'
   static-type-assert: ^3.0.1

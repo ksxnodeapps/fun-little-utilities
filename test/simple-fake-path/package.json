@@ -3,6 +3,6 @@
   "dependencies": {
     "static-type-assert": "^3.0.1",
     "@tsfun/array": "^0.0.1",
-    "fake-path": "file:../../packages/fake-path"
+    "simple-fake-path": "file:../../packages/simple-fake-path"
   }
 }
