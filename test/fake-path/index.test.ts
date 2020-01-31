@@ -221,3 +221,93 @@ describe('basename', () => {
     expect(basename('/abc/')).toBe('abc')
   })
 })
+
+describe('normalize', () => {
+  it('weird path', () => {
+    const { normalize } = new Path()
+    expect(normalize('a/b/c/../d/e/f/g/../../i/./j//k')).toBe('a/b/d/e/i/j/k')
+  })
+
+  it('normal path', () => {
+    const { normalize } = new Path()
+    expect(normalize('a/b/c/d/e/f')).toBe('a/b/c/d/e/f')
+  })
+
+  it('path ends with trailing separator', () => {
+    const { normalize } = new Path()
+    expect(normalize('a/b/c/d/e/f/')).toBe('a/b/c/d/e/f')
+  })
+
+  it('path starts with trailing separator', () => {
+    const { normalize } = new Path()
+    expect(normalize('/a/b/c/d/e/f')).toBe('/a/b/c/d/e/f')
+  })
+
+  it('path starts and ends with trailing separators', () => {
+    const { normalize } = new Path()
+    expect(normalize('/a/b/c/d/e/f/')).toBe('/a/b/c/d/e/f')
+  })
+
+  it('path with empty segments', () => {
+    const { normalize } = new Path()
+    expect(normalize('a/b//c/./d///e/././f')).toBe('a/b/c/d/e/f')
+  })
+
+  it('empty string', () => {
+    const { normalize } = new Path()
+    expect(normalize('')).toBe('.')
+  })
+
+  it('just a dot', () => {
+    const { normalize } = new Path()
+    expect(normalize('.')).toBe('.')
+  })
+
+  it('root', () => {
+    const { normalize } = new Path()
+    expect(normalize('/')).toBe('/')
+  })
+
+  it('edge cases: empty', async () => {
+    const { inspect } = await import('util')
+    const { normalize } = new Path()
+    const result = [
+      '',
+      './.',
+      './/.',
+      '././.',
+      './',
+      './/'
+    ]
+      .map(weird => ({
+        weird: inspect(weird).padStart(10),
+        normal: inspect(normalize(weird))
+      }))
+      .map(item => `${item.weird} => ${item.normal}`)
+      .join('\n')
+    expect('\n' + result + '\n').toMatchSnapshot()
+  })
+
+  it('edge cases: root', async () => {
+    const { inspect } = await import('util')
+    const { normalize } = new Path()
+    const result = [
+      '/',
+      '//',
+      '///',
+      '/.',
+      '/./.',
+      '/.//.',
+      '/././.',
+      '//./',
+      '/.//'
+    ]
+      .map(weird => ({
+        weird: inspect(weird).padStart(10),
+        normal: inspect(normalize(weird))
+      }))
+      .map(item => `${item.weird} => ${item.normal}`)
+      .join('\n')
+    expect('\n' + result + '\n').toMatchSnapshot()
+  })
+})

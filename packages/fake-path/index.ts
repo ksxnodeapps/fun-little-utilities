@@ -65,21 +65,23 @@ export abstract class FakePath {
 
   public readonly normalize = (path: string): string => {
     if (isEmpty(path)) return '.'
-    if (path.startsWith(this.sep)) {
+    const { sep } = this
+    if (path.startsWith(sep)) {
       const tail = this.normalize(path.slice(this.sep.length))
-      return this.sep + tail
+      return isEmpty(tail) ? sep : sep + tail
     }
-    const segments = path
-      .split(this.sep)
-      .filter(x => !isEmpty(x))
-    // tslint:disable-next-line:one-variable-per-declaration
-    for (let i = 0, j = 1; j < segments.length; ++i, ++j) {
-      if (segments[j] === '..') {
-        segments[i] = segments[j] = ''
+    function normalize (normal: readonly string[], weird: readonly string[]): string {
+      if (!weird.length) return normal.join(sep)
+      const [head, ...tail] = weird
+      if (head === '..') {
+        return normal.length
+          ? normalize(normal.slice(0, -1), tail)
+          : '..' + sep + normalize(normal, tail)
       }
+      if (isEmpty(head)) return normalize(normal, tail)
+      return normalize([...normal, head], tail)
     }
-    const result = segments.filter(Boolean).join(this.sep)
-    return normalizeEmptyPath(result)
+    return normalizeEmptyPath(normalize([], path.split(sep)))
   }
 }
 
