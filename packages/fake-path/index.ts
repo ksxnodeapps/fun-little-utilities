@@ -34,12 +34,13 @@ export abstract class FakePath {
   }
 
   public readonly resolve = (...paths: string[]): string => {
+    const { isAbsolute, join } = this
     const resolve = (paths: readonly string[]): string => {
       if (!paths.length) return '.'
       const [head, ...rest] = paths
       const tail = resolve(rest)
-      if (this.isAbsolute(tail)) return tail
-      return this.join(head, tail)
+      if (isAbsolute(tail)) return tail
+      return join(head, tail)
     }
     return resolve([this[symCwd], ...paths])
   }
