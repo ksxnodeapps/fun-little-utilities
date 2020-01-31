@@ -8,7 +8,7 @@ type StringKey<Object> = {
 export type Path = StringKey<FakePath>
 
 const isEmpty = (path: string) => path === '.' || path === ''
-const normalizeEmptyPath = (path: string) => isEmpty(path) ? '.' : path
+const normalizeEmptyPath = (path: string, def = '.') => isEmpty(path) ? def : path
 
 export abstract class FakePath {
   public abstract readonly [symCwd]: string
@@ -47,7 +47,11 @@ export abstract class FakePath {
 
   public readonly dirname = (path: string): string => {
     if (path === '' || path === '.' || path === this.sep) return path
-    const segments = path.split(this.sep).slice(0, -1)
+    if (path.startsWith(this.sep)) {
+      const tail = this.dirname(path.slice(this.sep.length))
+      return this.sep + normalizeEmptyPath(tail, '')
+    }
+    const segments = this.normalize(path).split(this.sep).slice(0, -1)
     if (!segments.length) return '.'
     return this.normalize(this.join(...segments))
   }

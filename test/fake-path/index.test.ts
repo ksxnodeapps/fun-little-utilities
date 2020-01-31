@@ -107,3 +107,60 @@ describe('resolve', () => {
     expect(resolve('a/b', 'c', '/d/e/f')).toBe('/d/e/f')
   })
 })
+
+describe('dirname', () => {
+  it('no trailing separators: "a/b/c"', () => {
+    const { dirname } = new Path()
+    expect(dirname('a/b/c')).toBe('a/b')
+  })
+
+  it('starts with trailing separator: "/a/b/c"', () => {
+    const { dirname } = new Path()
+    expect(dirname('/a/b/c')).toBe('/a/b')
+  })
+
+  it('ends with trailing separator: "a/b/c/"', () => {
+    const { dirname } = new Path()
+    expect(dirname('a/b/c/')).toBe('a/b')
+  })
+
+  it('starts and ends with trailing separators: "/a/b/c/"', () => {
+    const { dirname } = new Path()
+    expect(dirname('/a/b/c/')).toBe('/a/b')
+  })
+
+  it('empty string: ""', () => {
+    const { dirname } = new Path()
+    expect(dirname('')).toBe('')
+  })
+
+  it('just a dot: "."', () => {
+    const { dirname } = new Path()
+    expect(dirname('.')).toBe('.')
+  })
+
+  it('root: "/"', () => {
+    const { dirname } = new Path()
+    expect(dirname('/')).toBe('/')
+  })
+
+  it('only one segment without trailing separators: "abc"', () => {
+    const { dirname } = new Path()
+    expect(dirname('abc')).toBe('.')
+  })
+
+  it('only one segment and trailing separator suffix: "abc/"', () => {
+    const { dirname } = new Path()
+    expect(dirname('abc/')).toBe('.')
+  })
+
+  it('only one segment and trailing separator prefix: "/abc"', () => {
+    const { dirname } = new Path()
+    expect(dirname('/abc')).toBe('/')
+  })
+
+  it('only one segment and trailing separator suffix and prefix: "/abc/"', () => {
+    const { dirname } = new Path()
+    expect(dirname('/abc/')).toBe('/')
+  })
+})
