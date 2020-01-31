@@ -57,6 +57,8 @@ export abstract class FakePath {
   }
 
   public readonly basename = (path: string): string => {
+    if (this[symRoot].includes(path)) return ''
+    if (path.endsWith(this.sep)) return this.basename(path.slice(0, -this.sep.length))
     const segments = path.split(this.sep)
     return this.normalize(segments[segments.length - 1])
   }
