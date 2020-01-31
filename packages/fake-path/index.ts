@@ -66,9 +66,15 @@ export abstract class FakePath {
   public readonly normalize = (path: string): string => {
     if (isEmpty(path)) return '.'
     const { sep } = this
-    if (path.startsWith(sep)) {
-      const tail = this.normalize(path.slice(this.sep.length))
-      return isEmpty(tail) || tail === '/' ? sep : sep + tail
+    function splitLeadSep (path: string): [number, string] {
+      if (!path.startsWith(sep)) return [0, path]
+      const [count, tail] = splitLeadSep(path.slice(sep.length))
+      return [count + 1, tail]
+    }
+    const [leadingSep, tail] = splitLeadSep(path)
+    if (leadingSep) {
+      const nTail = this.normalize(tail)
+      return isEmpty(nTail) ? sep : sep + nTail
     }
     function normalize (normal: readonly string[], weird: readonly string[]): string {
       if (!weird.length) return normal.join(sep)

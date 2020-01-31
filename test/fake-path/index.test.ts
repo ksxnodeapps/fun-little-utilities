@@ -310,4 +310,27 @@ describe('normalize', () => {
       .join('\n')
     expect('\n' + result + '\n').toMatchSnapshot()
   })
+
+  it('edge cases: absolute', async () => {
+    const { inspect } = await import('util')
+    const { normalize } = new Path()
+    const result = [
+      '/a/b/c',
+      '//a//b//c',
+      '///a//b/c',
+      '/./a/b/c',
+      '/././a/./b/c/.',
+      '/.//./a/./b/c/',
+      '/./././a/./b/c/',
+      '//.//a/./b/c/',
+      '/.//a/./b/c//'
+    ]
+      .map(weird => ({
+        weird: inspect(weird).padStart(20),
+        normal: inspect(normalize(weird))
+      }))
+      .map(item => `${item.weird} => ${item.normal}`)
+      .join('\n')
+    expect('\n' + result + '\n').toMatchSnapshot()
+  })
 })

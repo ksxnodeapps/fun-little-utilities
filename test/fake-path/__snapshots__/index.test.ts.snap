@@ -18,6 +18,20 @@ Object {
 }
 `;
 
+exports[`normalize edge cases: absolute 1`] = `
+"
+            '/a/b/c' => '/a/b/c'
+         '//a//b//c' => '/a/b/c'
+         '///a//b/c' => '/a/b/c'
+          '/./a/b/c' => '/a/b/c'
+    '/././a/./b/c/.' => '/a/b/c'
+    '/.//./a/./b/c/' => '/a/b/c'
+   '/./././a/./b/c/' => '/a/b/c'
+     '//.//a/./b/c/' => '/a/b/c'
+     '/.//a/./b/c//' => '/a/b/c'
+"
+`;
+
 exports[`normalize edge cases: empty 1`] = `
 "
         '' => '.'
