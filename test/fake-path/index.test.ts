@@ -124,6 +124,11 @@ describe('join', () => {
     const { join } = new Path()
     expect(join('a/b', 'c', '///d/e')).toBe('a/b/c/d/e')
   })
+
+  it('normalizes weird path', () => {
+    const { join } = new Path()
+    expect(join('a//b', 'c///d/./e', '././.')).toBe('a/b/c/d/e')
+  })
 })
 
 describe('resolve', () => {
