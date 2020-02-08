@@ -350,7 +350,7 @@ describe('names are supplied via cli arguments', () => {
   })
 })
 
-describe('names are supplied via stdin, all', () => {
+describe('names are supplied via stdin', () => {
   const args = [] as const
 
   describe('combine all status except InvalidName', () => {

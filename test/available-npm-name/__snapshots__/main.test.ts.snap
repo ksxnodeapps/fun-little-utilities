@@ -419,7 +419,7 @@ exports[`names are supplied via cli arguments all status combined messages 1`] =
 "
 `;
 
-exports[`names are supplied via stdin, all combine all status except InvalidName calls console.info 1`] = `
+exports[`names are supplied via stdin combine all status except InvalidName calls console.info 1`] = `
 Array [
   Array [
     "✅ abc is available",
@@ -448,7 +448,7 @@ Array [
 ]
 `;
 
-exports[`names are supplied via stdin, all combine all status except InvalidName calls console.info 2`] = `
+exports[`names are supplied via stdin combine all status except InvalidName calls console.info 2`] = `
 Array [
   Array [
     "✅ abc is available",
@@ -477,7 +477,7 @@ Array [
 ]
 `;
 
-exports[`names are supplied via stdin, all combine all status except InvalidName calls fetch 1`] = `
+exports[`names are supplied via stdin combine all status except InvalidName calls fetch 1`] = `
 Array [
   Array [
     "https://registry.npmjs.org/abc",
@@ -506,7 +506,7 @@ Array [
 ]
 `;
 
-exports[`names are supplied via stdin, all combine all status except InvalidName messages 1`] = `
+exports[`names are supplied via stdin combine all status except InvalidName messages 1`] = `
 "
 ✅ abc is available
 ✅ def is available
@@ -519,7 +519,7 @@ exports[`names are supplied via stdin, all combine all status except InvalidName
 "
 `;
 
-exports[`names are supplied via stdin, all combine all status except InvalidName read from stdin 1`] = `
+exports[`names are supplied via stdin combine all status except InvalidName read from stdin 1`] = `
 Array [
   Array [],
 ]
