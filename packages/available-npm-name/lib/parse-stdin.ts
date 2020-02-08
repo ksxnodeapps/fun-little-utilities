@@ -1,3 +1,4 @@
+import { trimmedChunks, iterateLines } from 'string-stream-utils'
 import { Process } from './types'
 
 /** Filter package names from stdin */
@@ -7,11 +8,7 @@ export async function * parseStdIn (stream: Process.Stream) {
       yield String(chunk)
     }
   }
-
-  for await (const line of stringChunks()) {
-    const trimmed = line.trim()
-    if (trimmed) yield trimmed
-  }
+  yield * trimmedChunks(iterateLines(stringChunks()))
 }
 
 export default parseStdIn
