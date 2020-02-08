@@ -2,7 +2,7 @@ import yargs from 'yargs'
 import fetch from 'node-fetch'
 import console from 'console'
 import process from 'process'
-import { main } from '../index'
+import { NPM_REGISTRY, main } from '../index'
 
 const { argv } = yargs
   .usage('$0 [names]')
@@ -10,7 +10,7 @@ const { argv } = yargs
     alias: 'r',
     describe: 'Configure registry',
     type: 'string',
-    default: 'https://registry.npmjs.org'
+    default: NPM_REGISTRY
   })
   .example('$0 foo bar', 'Supply package names via CLI arguments')
   .example('$0 < packages.txt', 'Supply package names via a text file where each line is a package name')
