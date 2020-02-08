@@ -2,6 +2,7 @@ dependencies:
   '@types/node': 13.7.0
   '@types/node-fetch': 2.5.4
   '@types/yargs': 15.0.3
+  iterate-evented-stream: 'link:../iterate-evented-stream'
   node-fetch: 2.6.0
   string-stream-utils: 'link:../string-stream-utils'
   tslib: 1.10.0
@@ -229,6 +230,7 @@ specifiers:
   '@types/node': ^13.7.0
   '@types/node-fetch': ^2.5.4
   '@types/yargs': ^15.0.3
+  iterate-evented-stream: ^0.1.6
   node-fetch: ^2.6.0
   string-stream-utils: ^0.0.1
   tslib: ^1.10.0
