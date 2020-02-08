@@ -23,3 +23,5 @@ export namespace sequence {
     readonly status: Status
   }
 }
+
+export default sequence
