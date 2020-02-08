@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 13.5.2
+  '@types/node': 13.7.0
   advanced-map-initialized: 0.0.4
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.19
@@ -22,10 +22,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.5.2:
+  /@types/node/13.7.0:
     dev: false
     resolution:
-      integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
+      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.1.7
@@ -97,7 +97,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^13.5.2
+  '@types/node': ^13.7.0
   advanced-map-initialized: ^0.0.4
   evented-stream-types: ^0.1.5
   monorepo-shared-assets: ^0.0.19

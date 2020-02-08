@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "tslib": "^1.10.0",
-    "@types/node": "^13.5.2",
+    "@types/node": "^13.7.0",
     "wide-text": "file:../../packages/wide-text"
   }
 }

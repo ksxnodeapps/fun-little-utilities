@@ -24,6 +24,6 @@
   "dependencies": {
     "tslib": "^1.10.0",
     "string-template-format-base": "^0.1.4",
-    "@types/node": "^13.5.2"
+    "@types/node": "^13.7.0"
   }
 }

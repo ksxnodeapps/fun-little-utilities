@@ -24,6 +24,6 @@
     "split-string-once": "^0.0.2",
     "tslib": "^1.10.0",
     "@types/shell-escape": "^0.2.0",
-    "@types/node": "^13.5.2"
+    "@types/node": "^13.7.0"
   }
 }
