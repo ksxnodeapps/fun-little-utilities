@@ -2,6 +2,7 @@ dependencies:
   '@types/node': 13.7.0
   '@types/node-fetch': 2.5.4
   node-fetch: 2.6.0
+  string-stream-utils: 'link:../string-stream-utils'
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -29,4 +30,5 @@ specifiers:
   '@types/node': ^13.7.0
   '@types/node-fetch': ^2.5.4
   node-fetch: ^2.6.0
+  string-stream-utils: ^0.0.1
   tslib: ^1.10.0
