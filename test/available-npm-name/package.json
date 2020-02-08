@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "simple-delay": "file:../../packages/simple-delay",
+    "simple-fake-console": "file:../../packages/simple-fake-console",
+    "available-npm-name": "file:../../packages/available-npm-name"
+  }
+}

@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`names are supplied via cli arguments all names are available calls console.info 1`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are available calls console.info 2`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are available calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/abc",
+  ],
+  Array [
+    "https://registry.npmjs.org/def",
+  ],
+  Array [
+    "https://registry.npmjs.org/%40abc%2Fdef",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are available messages 1`] = `
+"
+✅ abc is available
+✅ def is available
+✅ @abc/def is available
+"
+`;
+
+exports[`names are supplied via cli arguments all names are causing errors calls console.info 1`] = `
+Array [
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are causing errors calls console.info 2`] = `
+Array [
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are causing errors calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/mno",
+  ],
+  Array [
+    "https://registry.npmjs.org/foo",
+  ],
+  Array [
+    "https://registry.npmjs.org/bar",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are causing errors messages 1`] = `
+"
+❓ mno ran into a network error
+❓ foo ran into a network error
+❓ bar ran into a network error
+"
+`;
+
+exports[`names are supplied via cli arguments all names are invalid calls console.info 1`] = `
+Array [
+  Array [
+    "👎 !!foo is an invalid name",
+  ],
+  Array [
+    "👎 bar baz is an invalid name",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are invalid calls console.info 2`] = `
+Array [
+  Array [
+    "👎 !!foo is an invalid name",
+  ],
+  Array [
+    "👎 bar baz is an invalid name",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are invalid calls fetch 1`] = `Array []`;
+
+exports[`names are supplied via cli arguments all names are invalid messages 1`] = `
+"
+👎 !!foo is an invalid name
+👎 bar baz is an invalid name
+"
+`;
+
+exports[`names are supplied via cli arguments all names are occupied calls console.info 1`] = `
+Array [
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are occupied calls console.info 2`] = `
+Array [
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are occupied calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/ghi",
+  ],
+  Array [
+    "https://registry.npmjs.org/jkl",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names are occupied messages 1`] = `
+"
+❌ ghi is occupied
+❌ jkl is occupied
+"
+`;
+
+exports[`names are supplied via cli arguments all names either available or invalid calls console.info 1`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+  Array [
+    "👎 !!foo is an invalid name",
+  ],
+  Array [
+    "👎 bar baz is an invalid name",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names either available or invalid calls console.info 2`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+  Array [
+    "👎 !!foo is an invalid name",
+  ],
+  Array [
+    "👎 bar baz is an invalid name",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names either available or invalid calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/abc",
+  ],
+  Array [
+    "https://registry.npmjs.org/def",
+  ],
+  Array [
+    "https://registry.npmjs.org/%40abc%2Fdef",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names either available or invalid messages 1`] = `
+"
+✅ abc is available
+✅ def is available
+✅ @abc/def is available
+👎 !!foo is an invalid name
+👎 bar baz is an invalid name
+"
+`;
+
+exports[`names are supplied via cli arguments all names either occupied or causing errors calls console.info 1`] = `
+Array [
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names either occupied or causing errors calls console.info 2`] = `
+Array [
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names either occupied or causing errors calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/ghi",
+  ],
+  Array [
+    "https://registry.npmjs.org/jkl",
+  ],
+  Array [
+    "https://registry.npmjs.org/mno",
+  ],
+  Array [
+    "https://registry.npmjs.org/foo",
+  ],
+  Array [
+    "https://registry.npmjs.org/bar",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all names either occupied or causing errors messages 1`] = `
+"
+❌ ghi is occupied
+❌ jkl is occupied
+❓ mno ran into a network error
+❓ foo ran into a network error
+❓ bar ran into a network error
+"
+`;
+
+exports[`names are supplied via cli arguments all status combined calls console.info 1`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+  Array [
+    "👎 !!foo is an invalid name",
+  ],
+  Array [
+    "👎 bar baz is an invalid name",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all status combined calls console.info 2`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+  Array [
+    "👎 !!foo is an invalid name",
+  ],
+  Array [
+    "👎 bar baz is an invalid name",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all status combined calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/abc",
+  ],
+  Array [
+    "https://registry.npmjs.org/def",
+  ],
+  Array [
+    "https://registry.npmjs.org/%40abc%2Fdef",
+  ],
+  Array [
+    "https://registry.npmjs.org/ghi",
+  ],
+  Array [
+    "https://registry.npmjs.org/jkl",
+  ],
+  Array [
+    "https://registry.npmjs.org/mno",
+  ],
+  Array [
+    "https://registry.npmjs.org/foo",
+  ],
+  Array [
+    "https://registry.npmjs.org/bar",
+  ],
+]
+`;
+
+exports[`names are supplied via cli arguments all status combined messages 1`] = `
+"
+✅ abc is available
+✅ def is available
+✅ @abc/def is available
+❌ ghi is occupied
+❌ jkl is occupied
+❓ mno ran into a network error
+❓ foo ran into a network error
+❓ bar ran into a network error
+👎 !!foo is an invalid name
+👎 bar baz is an invalid name
+"
+`;
+
+exports[`names are supplied via stdin, all combine all status except InvalidName calls console.info 1`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+]
+`;
+
+exports[`names are supplied via stdin, all combine all status except InvalidName calls console.info 2`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+  Array [
+    "❌ ghi is occupied",
+  ],
+  Array [
+    "❌ jkl is occupied",
+  ],
+  Array [
+    "✅ @abc/def is available",
+  ],
+  Array [
+    "❓ mno ran into a network error",
+  ],
+  Array [
+    "❓ foo ran into a network error",
+  ],
+  Array [
+    "❓ bar ran into a network error",
+  ],
+]
+`;
+
+exports[`names are supplied via stdin, all combine all status except InvalidName calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/abc",
+  ],
+  Array [
+    "https://registry.npmjs.org/def",
+  ],
+  Array [
+    "https://registry.npmjs.org/ghi",
+  ],
+  Array [
+    "https://registry.npmjs.org/jkl",
+  ],
+  Array [
+    "https://registry.npmjs.org/%40abc%2Fdef",
+  ],
+  Array [
+    "https://registry.npmjs.org/mno",
+  ],
+  Array [
+    "https://registry.npmjs.org/foo",
+  ],
+  Array [
+    "https://registry.npmjs.org/bar",
+  ],
+]
+`;
+
+exports[`names are supplied via stdin, all combine all status except InvalidName messages 1`] = `
+"
+✅ abc is available
+✅ def is available
+❌ ghi is occupied
+❌ jkl is occupied
+✅ @abc/def is available
+❓ mno ran into a network error
+❓ foo ran into a network error
+❓ bar ran into a network error
+"
+`;
+
+exports[`names are supplied via stdin, all combine all status except InvalidName read from stdin 1`] = `
+Array [
+  Array [],
+]
+`;

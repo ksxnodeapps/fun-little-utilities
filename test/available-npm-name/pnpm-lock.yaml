@@ -1,0 +1,9 @@
+dependencies:
+  available-npm-name: 'link:../../packages/available-npm-name'
+  simple-delay: 'link:../../packages/simple-delay'
+  simple-fake-console: 'link:../../packages/simple-fake-console'
+lockfileVersion: 5.1
+specifiers:
+  available-npm-name: 'file:../../packages/available-npm-name'
+  simple-delay: 'file:../../packages/simple-delay'
+  simple-fake-console: 'file:../../packages/simple-fake-console'
