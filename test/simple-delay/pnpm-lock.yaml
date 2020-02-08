@@ -1,0 +1,5 @@
+dependencies:
+  simple-delay: 'link:../../packages/simple-delay'
+lockfileVersion: 5.1
+specifiers:
+  simple-delay: 'file:../../packages/simple-delay'

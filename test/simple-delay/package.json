@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "simple-delay": "file:../../packages/simple-delay"
+  }
+}

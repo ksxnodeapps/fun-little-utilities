@@ -1,0 +1,25 @@
+{
+  "name": "simple-delay",
+  "version": "0.0.0",
+  "description": "Create a promise that resolves after a certain amount of time",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://ksxnodeapps.github.io/fun-little-utilities/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "wait",
+    "setTimeout",
+    "async"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.10.0",
+    "@types/node": "^13.7.0"
+  }
+}
