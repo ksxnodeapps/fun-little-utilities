@@ -1,6 +1,6 @@
 {
   "name": "available-npm-name",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Check if any package name is taken",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
