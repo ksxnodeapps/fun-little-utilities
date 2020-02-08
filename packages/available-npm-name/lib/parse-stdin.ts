@@ -1,9 +1,14 @@
-import { iterateLines } from 'string-stream-utils'
-import { MaybeAsyncIterable } from './utils'
+import { Process } from './types'
 
 /** Filter package names from stdin */
-export async function * parseStdIn (stream: MaybeAsyncIterable<string>) {
-  for await (const line of iterateLines(stream)) {
+export async function * parseStdIn (stream: Process.Stream) {
+  async function * stringChunks () {
+    for await (const chunk of stream) {
+      yield String(chunk)
+    }
+  }
+
+  for await (const line of stringChunks()) {
     const trimmed = line.trim()
     if (trimmed) yield trimmed
   }

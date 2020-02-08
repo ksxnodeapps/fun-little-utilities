@@ -32,6 +32,13 @@ export namespace Console {
 
 export namespace Process {
   export interface Mod {
-    readonly stdin: AsyncIterable<string>
+    readonly stdin: Stream
+  }
+
+  export interface Stream
+  extends AsyncIterable<Chunk> {}
+
+  export interface Chunk {
+    toString (): string
   }
 }
