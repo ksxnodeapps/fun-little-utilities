@@ -35,10 +35,20 @@ export namespace Process {
     readonly stdin: Stream
   }
 
-  export interface Stream
-  extends AsyncIterable<Chunk> {}
+  export type Stream = Event.Target<'data', Chunk> & Event.Target<'close', void>
 
   export interface Chunk {
     toString (): string
+  }
+}
+
+export namespace Event {
+  export interface Target<Type, Info> {
+    addListener (type: Type, listener: Listener<Info>): void
+    removeListener (type: Type, listener: any): void
+  }
+
+  export interface Listener<Info> {
+    (info: Info): void
   }
 }

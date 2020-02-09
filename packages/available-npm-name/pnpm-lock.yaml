@@ -2,9 +2,9 @@ dependencies:
   '@types/node': 13.7.0
   '@types/node-fetch': 2.5.4
   '@types/yargs': 15.0.3
-  iterate-evented-stream: 'link:../iterate-evented-stream'
   node-fetch: 2.6.0
-  string-stream-utils: 'link:../string-stream-utils'
+  remote-controlled-promise: 0.0.6
+  rxjs: 6.5.4
   tslib: 1.10.0
   yargs: 15.1.0
 lockfileVersion: 5.1
@@ -147,6 +147,15 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==
+  /remote-controlled-promise/0.0.6:
+    dependencies:
+      '@types/node': 13.7.0
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-9PlWrJDC+1DnbBOvsEchPm1P1F/lHjuEMS/KmZjPfFibKmokIinf0NKfIOo5gQuJUYZltjNej3OIeICVDvnJLg==
   /require-directory/2.1.1:
     dev: false
     engines:
@@ -157,6 +166,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
+  /rxjs/6.5.4:
+    dependencies:
+      tslib: 1.10.0
+    dev: false
+    engines:
+      npm: '>=2.0.0'
+    resolution:
+      integrity: sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==
   /set-blocking/2.0.0:
     dev: false
     resolution:
@@ -230,8 +247,8 @@ specifiers:
   '@types/node': ^13.7.0
   '@types/node-fetch': ^2.5.4
   '@types/yargs': ^15.0.3
-  iterate-evented-stream: ^0.1.6
   node-fetch: ^2.6.0
-  string-stream-utils: ^0.0.1
+  remote-controlled-promise: ^0.0.6
+  rxjs: ^6.5.4
   tslib: ^1.10.0
   yargs: ^15.1.0

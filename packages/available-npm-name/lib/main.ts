@@ -1,24 +1,36 @@
+import { share } from 'rxjs/operators'
+import createLock from 'remote-controlled-promise'
 import { CliArguments, Fetch, Console, Process } from './types'
 import fmt from './fmt'
-import parseStdIn from './parse-stdin'
+import { parseInput } from './parse-input'
 import sequence from './sequence'
 
-export async function main (param: main.Param): Promise<number> {
+export function main (param: main.Param): Promise<number> {
   const { argv, fetch, console, process } = param
-  const packageNames = argv._.length
-    ? argv._
-    : parseStdIn(process.stdin)
-  const iterator = sequence({
-    packageNames,
+
+  const $packageName = parseInput({
+    args: argv._,
+    stdin: process.stdin
+  })
+
+  const $primary = sequence({
     fetch,
+    $packageName,
     registryUrl: argv.registry
   })
+    .pipe(share())
+
   let totalStatus = 0
-  for await (const { packageName, status } of iterator) {
-    totalStatus |= status
-    console.info(fmt(packageName, status))
-  }
-  return totalStatus
+  const ctrl = createLock<number>()
+  $primary.subscribe({
+    next ({ packageName, status }) {
+      totalStatus |= status
+      console.info(fmt(packageName, status))
+    },
+    complete: () => ctrl.resolve(totalStatus),
+    error: error => ctrl.reject(error)
+  })
+  return ctrl.promise
 }
 
 export namespace main {
