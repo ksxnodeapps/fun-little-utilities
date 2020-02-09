@@ -3,6 +3,7 @@ import { share, take, takeUntil, map, filter, mergeMap, bufferWhen } from 'rxjs/
 import { Process } from './types'
 import fromEvent from './from-event'
 
+/** Create an observable of input from either cli arguments or stdin stream */
 export function parseInput (param: parseInput.Param): Observable<string> {
   const { args, stdin } = param
   if (args.length) return from(args)

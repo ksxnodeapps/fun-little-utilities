@@ -6,6 +6,7 @@ import fmt from './fmt'
 import { parseInput } from './parse-input'
 import unit from './unit'
 
+/** Main program */
 export function main (param: main.Param): Promise<number> {
   const { argv, fetch, console, process } = param
   const registryUrl = argv.registry
