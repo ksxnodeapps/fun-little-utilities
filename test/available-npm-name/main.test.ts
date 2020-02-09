@@ -22,8 +22,8 @@ class FakeChunk implements Process.Chunk {
 }
 
 class FakeStream extends EventEmitter implements Process.Stream {
-  protected async * prvIterate () {
-    yield * [
+  public async emitAllData () {
+    const chunks = [
       '  abc', '\n',
       'de', 'f \n',
       'ghi\n',
@@ -34,16 +34,12 @@ class FakeStream extends EventEmitter implements Process.Stream {
       '    \n  ',
       'foo\n',
       'b', 'a', 'r'
-    ].map(async (text, index) => {
-      await delay(index * 10)
-      return new FakeChunk(text)
-    })
-  }
-
-  public async emitAllData () {
-    for await (const chunk of this.prvIterate()) {
-      this.emit('data', chunk)
+    ]
+    for (const chunk of chunks) {
+      await delay(10)
+      this.emit('data', new FakeChunk(chunk))
     }
+    await delay(10)
     this.emit('close')
   }
 }
