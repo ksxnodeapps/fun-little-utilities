@@ -518,9 +518,3 @@ exports[`names are supplied via stdin combine all status except InvalidName mess
 ❓ bar ran into a network error
 "
 `;
-
-exports[`names are supplied via stdin combine all status except InvalidName read from stdin 1`] = `
-Array [
-  Array [],
-]
-`;
