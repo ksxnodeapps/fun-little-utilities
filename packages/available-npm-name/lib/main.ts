@@ -1,23 +1,24 @@
-import { share } from 'rxjs/operators'
+import { from } from 'rxjs'
+import { share, map, mergeMap } from 'rxjs/operators'
 import createLock from 'remote-controlled-promise'
 import { CliArguments, Fetch, Console, Process } from './types'
 import fmt from './fmt'
 import { parseInput } from './parse-input'
-import sequence from './sequence'
+import unit from './unit'
 
 export function main (param: main.Param): Promise<number> {
   const { argv, fetch, console, process } = param
+  const registryUrl = argv.registry
 
-  const $packageName = parseInput({
+  const $primary = parseInput({
     args: argv._,
     stdin: process.stdin
   })
-
-  const $primary = sequence({
-    fetch,
-    $packageName,
-    registryUrl: argv.registry
-  })
+    .pipe(map(async packageName => ({
+      packageName,
+      status: await unit({ packageName, registryUrl, fetch })
+    })))
+    .pipe(mergeMap(promise => from(promise)))
     .pipe(share())
 
   let totalStatus = 0
