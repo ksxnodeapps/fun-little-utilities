@@ -11,7 +11,7 @@ export function main (param: main.Param): Promise<number> {
   const { argv, fetch, console, process } = param
   const registryUrl = argv.registry
 
-  const $primary = parseInput({
+  const $input = parseInput({
     args: argv._,
     stdin: process.stdin
   })
@@ -24,7 +24,7 @@ export function main (param: main.Param): Promise<number> {
 
   let totalStatus = 0
   const ctrl = createLock<number>()
-  $primary.subscribe({
+  $input.subscribe({
     next ({ packageName, status }) {
       totalStatus |= status
       console.info(fmt(packageName, status))
