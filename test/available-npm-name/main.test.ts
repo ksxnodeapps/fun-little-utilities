@@ -1,3 +1,4 @@
+import { EventEmitter } from 'events'
 import { resolve } from 'url'
 import { ConsoleInstance, ActionType, getString } from 'simple-fake-console'
 import delay from 'simple-delay'
@@ -20,8 +21,8 @@ class FakeChunk implements Process.Chunk {
   }
 }
 
-class FakeStream implements Process.Stream {
-  private async * prvIterate () {
+class FakeStream extends EventEmitter implements Process.Stream {
+  protected async * prvIterate () {
     yield * [
       '  abc', '\n',
       'de', 'f \n',
@@ -39,7 +40,12 @@ class FakeStream implements Process.Stream {
     })
   }
 
-  public readonly [Symbol.asyncIterator] = jest.fn(() => this.prvIterate())
+  public async emitAllData () {
+    for await (const chunk of this.prvIterate()) {
+      this.emit('data', chunk)
+    }
+    this.emit('close')
+  }
 }
 
 class FakeConsole implements Console.Mod {
@@ -96,6 +102,7 @@ async function setup (args: readonly string[]) {
   const console = new FakeConsole()
   const fetch = jest.fn(fetchImpl)
   const stdin = new FakeStream()
+  void stdin.emitAllData()
   const result = await main({
     argv: {
       _: args,
@@ -122,11 +129,6 @@ describe('names are supplied via cli arguments', () => {
     it('returns Status.Available', async () => {
       const { result } = await setup(args)
       expect(result).toBe(Status.Available)
-    })
-
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
     })
 
     it('calls fetch', async () => {
@@ -158,11 +160,6 @@ describe('names are supplied via cli arguments', () => {
       expect(result).toBe(Status.Occupied)
     })
 
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
-    })
-
     it('calls fetch', async () => {
       const { fetch } = await setup(args)
       expect(fetch.mock.calls).toMatchSnapshot()
@@ -190,11 +187,6 @@ describe('names are supplied via cli arguments', () => {
     it('returns Status.NetworkError', async () => {
       const { result } = await setup(args)
       expect(result).toBe(Status.NetworkError)
-    })
-
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
     })
 
     it('calls fetch', async () => {
@@ -226,11 +218,6 @@ describe('names are supplied via cli arguments', () => {
       expect(result).toBe(Status.InvalidName)
     })
 
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
-    })
-
     it('calls fetch', async () => {
       const { fetch } = await setup(args)
       expect(fetch.mock.calls).toMatchSnapshot()
@@ -258,11 +245,6 @@ describe('names are supplied via cli arguments', () => {
     it('returns Status.Available | Status.InvalidName', async () => {
       const { result } = await setup(args)
       expect(result).toBe(Status.Available | Status.InvalidName)
-    })
-
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
     })
 
     it('calls fetch', async () => {
@@ -294,11 +276,6 @@ describe('names are supplied via cli arguments', () => {
       expect(result).toBe(Status.Occupied | Status.NetworkError)
     })
 
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
-    })
-
     it('calls fetch', async () => {
       const { fetch } = await setup(args)
       expect(fetch.mock.calls).toMatchSnapshot()
@@ -326,11 +303,6 @@ describe('names are supplied via cli arguments', () => {
     it('returns Status.Available | Status.Occupied | Status.NetworkError | Status.InvalidName', async () => {
       const { result } = await setup(args)
       expect(result).toBe(Status.Available | Status.Occupied | Status.NetworkError | Status.InvalidName)
-    })
-
-    it('does not read stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator]).not.toBeCalled()
     })
 
     it('calls fetch', async () => {
@@ -362,11 +334,6 @@ describe('names are supplied via stdin', () => {
     it('returns Status.Available | Status.Occupied | Status.NetworkError', async () => {
       const { result } = await setup(args)
       expect(result).toBe(Status.Available | Status.Occupied | Status.NetworkError)
-    })
-
-    it('read from stdin', async () => {
-      const { stdin } = await setup(args)
-      expect(stdin[Symbol.asyncIterator].mock.calls).toMatchSnapshot()
     })
 
     it('calls fetch', async () => {
