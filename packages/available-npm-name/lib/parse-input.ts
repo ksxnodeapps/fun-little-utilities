@@ -1,5 +1,5 @@
-import { Observable, from, merge } from 'rxjs'
-import { share, take, takeUntil, map, filter, mergeMap, buffer } from 'rxjs/operators'
+import { Observable, from } from 'rxjs'
+import { share, take, takeUntil, map, filter, mergeMap, bufferWhen } from 'rxjs/operators'
 import { Process } from './types'
 import fromEvent from './from-event'
 
@@ -17,7 +17,7 @@ export function parseInput (param: parseInput.Param): Observable<string> {
     .pipe(filter(x => x === '\n'))
     .pipe(share())
   const $result = $data
-    .pipe(buffer(merge($buffer, $close)))
+    .pipe(bufferWhen(() => $buffer))
     .pipe(map(chunk => chunk.join('').trim()))
     .pipe(filter(x => Boolean(x)))
     .pipe(share())
