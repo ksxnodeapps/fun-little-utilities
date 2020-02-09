@@ -1,5 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`fetch causes some errors calls console.info 1`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+]
+`;
+
+exports[`fetch causes some errors calls console.info 2`] = `
+Array [
+  Array [
+    "✅ abc is available",
+  ],
+  Array [
+    "✅ def is available",
+  ],
+]
+`;
+
+exports[`fetch causes some errors calls fetch 1`] = `
+Array [
+  Array [
+    "https://registry.npmjs.org/abc",
+  ],
+  Array [
+    "https://registry.npmjs.org/def",
+  ],
+  Array [
+    "https://registry.npmjs.org/ERROR1",
+  ],
+  Array [
+    "https://registry.npmjs.org/ghi",
+  ],
+  Array [
+    "https://registry.npmjs.org/ERROR2",
+  ],
+  Array [
+    "https://registry.npmjs.org/jkl",
+  ],
+]
+`;
+
+exports[`fetch causes some errors messages 1`] = `
+"
+✅ abc is available
+✅ def is available
+"
+`;
+
 exports[`names are supplied via cli arguments all names are available calls console.info 1`] = `
 Array [
   Array [

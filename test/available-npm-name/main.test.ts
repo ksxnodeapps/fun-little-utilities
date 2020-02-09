@@ -348,3 +348,55 @@ describe('names are supplied via stdin', () => {
     })
   })
 })
+
+describe('fetch causes some errors', () => {
+  async function setup () {
+    const expectedError = Symbol('expectedError')
+    const fetchImpl: Fetch.Fn = async url => {
+      await delay(10)
+      if (url.includes('ERROR')) throw expectedError
+      return { status: 404 }
+    }
+    const fetch = jest.fn(fetchImpl)
+    const stdin = new FakeStream()
+    const console = new FakeConsole()
+    const promise = main({
+      argv: {
+        _: ['abc', 'def', 'ERROR1', 'ghi', 'ERROR2', 'jkl'],
+        registry: NPM_REGISTRY
+      },
+      process: {
+        stdin
+      },
+      console,
+      fetch
+    })
+    const receivedError = await promise.catch(error => error)
+    return { expectedError, fetch, stdin, console, promise, receivedError }
+  }
+
+  it('rejects', async () => {
+    const { expectedError, promise } = await setup()
+    await expect(promise).rejects.toBe(expectedError)
+  })
+
+  it('messages', async () => {
+    const { console } = await setup()
+    expect(console.getString()).toMatchSnapshot()
+  })
+
+  it('calls fetch', async () => {
+    const { fetch } = await setup()
+    expect(fetch.mock.calls).toMatchSnapshot()
+  })
+
+  it('calls console.info', async () => {
+    const { console } = await setup()
+    expect(console.info.mock.calls).toMatchSnapshot()
+  })
+
+  it('calls console.info', async () => {
+    const { console } = await setup()
+    expect(console.info.mock.calls).toMatchSnapshot()
+  })
+})
