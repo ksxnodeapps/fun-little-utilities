@@ -1,5 +1,5 @@
 import { from, fromEventPattern } from 'rxjs'
-import { mergeMap, filter, bufferWhen, share, map, takeUntil } from 'rxjs/operators'
+import { mergeMap, filter, bufferWhen, share, map, take, takeUntil } from 'rxjs/operators'
 
 import {
   Observable as Obs,
@@ -28,8 +28,10 @@ export const fromEvent = <Type, Info> (
   listener => target.addListener(type, listener),
   listener => target.removeListener(type, listener)
 )
+export const getCloseFromStream = (stream: Stream): Obs<void> =>
+  fromEvent<'close', void>(stream, 'close').pipe(take(1))
 export const getLinesFromStream = (stream: Stream): Obs<string> =>
   fromEvent<'data', Chunk>(stream, 'data')
-    .pipe(takeUntil(fromEvent<'close', void>(stream, 'close')))
+    .pipe(takeUntil(share()(getCloseFromStream(stream))))
     .pipe(lines())
 export default getLinesFromStream
