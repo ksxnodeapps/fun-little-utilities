@@ -10,7 +10,7 @@ We have the following script:
 // script.js
 const { getLinesFromStream } = require('line-observable-rxjs')
 getLinesFromStream(process.stdin).subscribe({
-  next: line => console.log('line>', line),
+  next: line => console.log('line>', line.trim()),
   complete: () => console.log('done.')
 })
 ```
