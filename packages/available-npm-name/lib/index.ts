@@ -1,6 +1,5 @@
 export * from './constants'
 export * from './fmt'
-export * from './from-event'
 export * from './main'
 export * from './parse-input'
 export * from './types'
