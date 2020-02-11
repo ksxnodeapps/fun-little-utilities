@@ -4,7 +4,6 @@ dependencies:
   '@types/yargs': 15.0.3
   line-observable-rxjs: 'link:../line-observable-rxjs'
   node-fetch: 2.6.0
-  remote-controlled-promise: 0.0.6
   rxjs: 6.5.4
   tslib: 1.10.0
   yargs: 15.1.0
@@ -148,15 +147,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==
-  /remote-controlled-promise/0.0.6:
-    dependencies:
-      '@types/node': 13.7.0
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-9PlWrJDC+1DnbBOvsEchPm1P1F/lHjuEMS/KmZjPfFibKmokIinf0NKfIOo5gQuJUYZltjNej3OIeICVDvnJLg==
   /require-directory/2.1.1:
     dev: false
     engines:
@@ -250,7 +240,6 @@ specifiers:
   '@types/yargs': ^15.0.3
   line-observable-rxjs: ^0.0.0
   node-fetch: ^2.6.0
-  remote-controlled-promise: ^0.0.6
   rxjs: ^6.5.4
   tslib: ^1.10.0
   yargs: ^15.1.0

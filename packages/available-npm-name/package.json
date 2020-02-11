@@ -23,7 +23,6 @@
     "rxjs": "^6.5.4",
     "yargs": "^15.1.0",
     "tslib": "^1.10.0",
-    "remote-controlled-promise": "^0.0.6",
     "line-observable-rxjs": "^0.0.0",
     "@types/node-fetch": "^2.5.4",
     "@types/yargs": "^15.0.3",

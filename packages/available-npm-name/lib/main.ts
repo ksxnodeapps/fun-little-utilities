@@ -1,6 +1,5 @@
 import { from } from 'rxjs'
 import { share, map, mergeMap } from 'rxjs/operators'
-import createLock from 'remote-controlled-promise'
 import { CliArguments, Fetch, Console, Process } from './types'
 import fmt from './fmt'
 import { parseInput } from './parse-input'
@@ -22,17 +21,17 @@ export function main (param: main.Param): Promise<number> {
     .pipe(mergeMap(promise => from(promise)))
     .pipe(share())
 
-  let totalStatus = 0
-  const ctrl = createLock<number>()
-  $input.subscribe({
-    next ({ packageName, status }) {
-      totalStatus |= status
-      console.info(fmt(packageName, status))
-    },
-    complete: () => ctrl.resolve(totalStatus),
-    error: error => ctrl.reject(error)
+  return new Promise<number>((resolve, reject) => {
+    let totalStatus = 0
+    $input.subscribe({
+      next ({ packageName, status }) {
+        totalStatus |= status
+        console.info(fmt(packageName, status))
+      },
+      complete: () => resolve(totalStatus),
+      error: error => reject(error)
+    })
   })
-  return ctrl.promise
 }
 
 export namespace main {
