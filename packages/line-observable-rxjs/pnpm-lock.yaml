@@ -1,0 +1,26 @@
+dependencies:
+  '@types/node': 13.7.0
+  rxjs: 6.5.4
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@types/node/13.7.0:
+    dev: false
+    resolution:
+      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+  /rxjs/6.5.4:
+    dependencies:
+      tslib: 1.10.0
+    dev: false
+    engines:
+      npm: '>=2.0.0'
+    resolution:
+      integrity: sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+specifiers:
+  '@types/node': ^13.7.0
+  rxjs: ^6.5.4
+  tslib: ^1.10.0

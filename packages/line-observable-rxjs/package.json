@@ -1,0 +1,26 @@
+{
+  "name": "line-observable-rxjs",
+  "version": "0.0.0",
+  "description": "Haskell-like lines for RxJs",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://ksxnodeapps.github.io/fun-little-utilities/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/fun-little-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
+  },
+  "keywords": [
+    "lines",
+    "newlines",
+    "characters"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "rxjs": "^6.5.4",
+    "tslib": "^1.10.0",
+    "@types/node": "^13.7.0"
+  }
+}
