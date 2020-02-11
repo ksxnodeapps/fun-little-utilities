@@ -2,6 +2,7 @@ dependencies:
   '@types/node': 13.7.0
   '@types/node-fetch': 2.5.4
   '@types/yargs': 15.0.3
+  line-observable-rxjs: 'link:../line-observable-rxjs'
   node-fetch: 2.6.0
   remote-controlled-promise: 0.0.6
   rxjs: 6.5.4
@@ -247,6 +248,7 @@ specifiers:
   '@types/node': ^13.7.0
   '@types/node-fetch': ^2.5.4
   '@types/yargs': ^15.0.3
+  line-observable-rxjs: ^0.0.0
   node-fetch: ^2.6.0
   remote-controlled-promise: ^0.0.6
   rxjs: ^6.5.4
