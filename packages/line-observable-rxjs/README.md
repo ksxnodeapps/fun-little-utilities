@@ -1,6 +1,6 @@
 # Line Observable RxJs
 
-Haskell-like lines for RxJs
+Convert an input stream to observable of lines
 
 ## Usage Example
 
