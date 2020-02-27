@@ -18,6 +18,9 @@
     "semver"
   ],
   "main": "index.js",
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
   "dependencies": {
     "semver": "^7.1.2",
     "tslib": "^1.10.0",

@@ -21,6 +21,10 @@
     "tag"
   ],
   "sideEffects": false,
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "tslib": "^1.10.0",
     "string-template-format-base": "^0.1.4",

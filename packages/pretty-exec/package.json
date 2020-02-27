@@ -18,6 +18,10 @@
     "pretty-exec-print": "bin/pretty-exec-print/index",
     "print-without-execute": "bin/pretty-exec-print/index"
   },
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "chalk": "^3.0.0",
     "shell-escape": "^0.2.0",

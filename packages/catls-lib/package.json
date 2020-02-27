@@ -16,6 +16,10 @@
     "cat",
     "ls"
   ],
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "shell-quote": "^1.7.2",
     "typescript-miscellaneous": "^0.1.1",

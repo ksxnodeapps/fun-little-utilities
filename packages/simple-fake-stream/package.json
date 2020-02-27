@@ -19,6 +19,10 @@
     "fake",
     "test"
   ],
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "monorepo-shared-assets": "^0.0.19",
     "tslib": "^1.10.0",

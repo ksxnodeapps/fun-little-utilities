@@ -12,6 +12,10 @@
   "bugs": {
     "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
   },
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "tslib": "^1.10.0",
     "@types/node": "^13.7.0"

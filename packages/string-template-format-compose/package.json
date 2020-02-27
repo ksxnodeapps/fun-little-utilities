@@ -18,6 +18,10 @@
     "construct"
   ],
   "sideEffects": false,
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@tsfun/function": "^0.0.5",
     "tslib": "^1.10.0",

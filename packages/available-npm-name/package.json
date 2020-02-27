@@ -18,6 +18,10 @@
   ],
   "bin": "cli/available-npm-name",
   "sideEffects": false,
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "node-fetch": "^2.6.0",
     "rxjs": "^6.5.4",

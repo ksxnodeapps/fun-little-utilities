@@ -13,6 +13,10 @@
     "url": "https://github.com/ksxnodeapps/fun-little-utilities/issues"
   },
   "sideEffects": false,
+  "browser": "index.mjs",
+  "module": "index.mjs",
+  "main": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "fs-extra": "^8.1.0",
     "split-iterable": "^0.1.5",
