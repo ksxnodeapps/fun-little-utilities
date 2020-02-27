@@ -1,6 +1,6 @@
 {
   "name": "table-parser-base",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities for table parser packages",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

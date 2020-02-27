@@ -1,6 +1,6 @@
 {
   "name": "git-sorted-tags",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Like git tag but with sorted versions",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -27,7 +27,7 @@
   "dependencies": {
     "yargs": "^15.1.0",
     "tslib": "^1.10.0",
-    "sort-versions": "^0.1.5",
+    "sort-versions": "^0.1.6",
     "@types/yargs": "^15.0.3",
     "@types/node": "^13.7.0"
   },

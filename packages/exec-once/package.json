@@ -1,6 +1,6 @@
 {
   "name": "exec-once",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Creates a function that executes once",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

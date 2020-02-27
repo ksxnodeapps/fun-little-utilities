@@ -1,6 +1,6 @@
 {
   "name": "mkcmdargv",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Convert environment variables to command-line arguments",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -22,8 +22,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "tslib": "^1.10.0",
-    "mkcmdargv-cli": "^0.1.2",
-    "mkcmdargv-lib": "^0.1.2",
+    "mkcmdargv-cli": "^0.1.3",
+    "mkcmdargv-lib": "^0.1.3",
     "@types/node": "^13.7.0"
   }
 }

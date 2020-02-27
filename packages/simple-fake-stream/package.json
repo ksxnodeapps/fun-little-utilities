@@ -1,6 +1,6 @@
 {
   "name": "simple-fake-stream",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Create fake streams for testing purpose",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -26,7 +26,7 @@
   "dependencies": {
     "monorepo-shared-assets": "^0.0.19",
     "tslib": "^1.10.0",
-    "evented-stream-types": "^0.1.5",
+    "evented-stream-types": "^0.1.6",
     "@types/node": "^13.7.0"
   },
   "engines": {

@@ -1,6 +1,6 @@
 {
   "name": "ts-await-event",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Turn an EventTarget into a Promise",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

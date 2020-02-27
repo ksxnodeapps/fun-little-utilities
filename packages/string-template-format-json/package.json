@@ -1,6 +1,6 @@
 {
   "name": "string-template-format-json",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "String template literal tag that converts values to JSON text",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -27,8 +27,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "tslib": "^1.10.0",
-    "just-json-type": "^0.1.4",
-    "string-template-format-base": "^0.1.4",
+    "just-json-type": "^0.1.5",
+    "string-template-format-base": "^0.1.5",
     "@types/node": "^13.7.0"
   }
 }

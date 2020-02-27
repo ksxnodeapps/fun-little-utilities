@@ -14,5 +14,5 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@types/node': ^13.7.0
-  string-template-format-base: ^0.1.4
+  string-template-format-base: ^0.1.5
   tslib: ^1.10.0
