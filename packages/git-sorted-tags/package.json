@@ -23,7 +23,6 @@
   "browser": "index.mjs",
   "module": "index.mjs",
   "main": "index.js",
-  "types": "index.d.ts",
   "dependencies": {
     "yargs": "^15.1.0",
     "tslib": "^1.10.0",

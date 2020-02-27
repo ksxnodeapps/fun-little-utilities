@@ -21,7 +21,6 @@
   "browser": "index.mjs",
   "module": "index.mjs",
   "main": "index.js",
-  "types": "index.d.ts",
   "dependencies": {
     "rxjs": "^6.5.4",
     "tslib": "^1.10.0",

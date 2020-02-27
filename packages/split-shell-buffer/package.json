@@ -23,7 +23,6 @@
   "browser": "index.mjs",
   "module": "index.mjs",
   "main": "index.js",
-  "types": "index.d.ts",
   "dependencies": {
     "iter-tools": "^6.2.6",
     "create-array-equal": "^0.0.3",
