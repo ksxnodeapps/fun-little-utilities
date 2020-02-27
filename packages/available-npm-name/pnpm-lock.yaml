@@ -2,7 +2,7 @@ dependencies:
   '@types/node': 13.7.0
   '@types/node-fetch': 2.5.4
   '@types/yargs': 15.0.3
-  line-observable-rxjs: 'link:../line-observable-rxjs'
+  line-observable-rxjs: 0.0.1
   node-fetch: 2.6.0
   rxjs: 6.5.4
   tslib: 1.10.0
@@ -23,6 +23,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+  /@types/node/13.7.6:
+    dev: false
+    resolution:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /@types/yargs-parser/15.0.0:
     dev: false
     resolution:
@@ -105,6 +109,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
+  /line-observable-rxjs/0.0.1:
+    dependencies:
+      '@types/node': 13.7.6
+      rxjs: 6.5.4
+      tslib: 1.11.0
+    dev: false
+    resolution:
+      integrity: sha512-RN1SJhhgNTgZZ0CmZVFrI9bNNqYJm2OgGKqWu/p+OiNXbLvaDbFV27vqCU14qFc7OXl2AZuDeX+ZlhLdx2xqjQ==
   /locate-path/5.0.0:
     dependencies:
       p-locate: 4.1.0
@@ -191,6 +203,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.0:
+    dev: false
+    resolution:
+      integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
   /which-module/2.0.0:
     dev: false
     resolution:
@@ -238,7 +254,7 @@ specifiers:
   '@types/node': ^13.7.0
   '@types/node-fetch': ^2.5.4
   '@types/yargs': ^15.0.3
-  line-observable-rxjs: ^0.0.0
+  line-observable-rxjs: ^0.0.1
   node-fetch: ^2.6.0
   rxjs: ^6.5.4
   tslib: ^1.10.0
