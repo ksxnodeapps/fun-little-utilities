@@ -1,4 +1,6 @@
 # Khải's Fun Little Utilities
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fksxnodeapps%2Ffun-little-utilities.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fksxnodeapps%2Ffun-little-utilities?ref=badge_shield)
+
 
 ## Development
 
@@ -53,3 +55,6 @@ pnpm run repl
 ## License
 
 [MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://github.com/KSXGitHub)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fksxnodeapps%2Ffun-little-utilities.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fksxnodeapps%2Ffun-little-utilities?ref=badge_large)
