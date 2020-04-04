@@ -105,10 +105,6 @@ namespace prvEvtEmt {
     db.push(instance)
   }
 
-  const symEvents = Symbol('symEvents')
-  const symMethodCalls = Symbol('symMethodCalls')
-  const symDataEventTimeout = Symbol('symDataEventTimeout')
-
   /**
    * `StreamInstance` is a subclass of `StreamInstanceBase`
    * which in turn is a wrapper of `EventEmitter`
@@ -116,57 +112,57 @@ namespace prvEvtEmt {
   export const StreamInstanceBase: StreamInstanceBaseClass =
   class <Chunk extends string | Buffer, Err = any>
   implements Stream<Chunk, Err>, StreamEventEmitter<Chunk, Err>, StreamDatabase<Chunk, Err> {
-    private readonly [symEvents] = new EventEmitter()
-    private readonly [symMethodCalls] = Array<MethodCall<Chunk, Err>>()
-    private readonly [symDataEventTimeout]: number
+    readonly #symEvents = new EventEmitter()
+    readonly #symMethodCalls = Array<MethodCall<Chunk, Err>>()
+    readonly #symDataEventTimeout: number
 
     constructor (options: StreamInstance.ConstructorOptions = {}) {
       const { dataEventTimeout = 0 } = options
-      this[symDataEventTimeout] = dataEventTimeout
+      this.#symDataEventTimeout = dataEventTimeout
     }
 
     public addListener (event: any, listener: any): void {
-      this[symEvents].addListener(event, listener)
-      recordListenerModifier(this[symMethodCalls], MethodName.addListener, event, listener)
+      this.#symEvents.addListener(event, listener)
+      recordListenerModifier(this.#symMethodCalls, MethodName.addListener, event, listener)
     }
 
     public removeListener (event: any, listener: any): void {
-      this[symEvents].removeListener(event, listener)
-      recordListenerModifier(this[symMethodCalls], MethodName.removeListener, event, listener)
+      this.#symEvents.removeListener(event, listener)
+      recordListenerModifier(this.#symMethodCalls, MethodName.removeListener, event, listener)
     }
 
     public on (event: any, listener: any): void {
-      this[symEvents].on(event, listener)
-      recordListenerModifier(this[symMethodCalls], MethodName.on, event, listener)
+      this.#symEvents.on(event, listener)
+      recordListenerModifier(this.#symMethodCalls, MethodName.on, event, listener)
     }
 
     public once (event: any, listener: any): void {
-      this[symEvents].once(event, listener)
-      recordListenerModifier(this[symMethodCalls], MethodName.once, event, listener)
+      this.#symEvents.once(event, listener)
+      recordListenerModifier(this.#symMethodCalls, MethodName.once, event, listener)
     }
 
     public write (chunk: Chunk): void {
-      this[symMethodCalls].push(new MethodCallInstance.Write(chunk))
+      this.#symMethodCalls.push(new MethodCallInstance.Write(chunk))
       void this.asyncEmit('data', chunk)
     }
 
     public emit (...args: [any, ...any[]]): void {
-      this[symEvents].emit(...args)
+      this.#symEvents.emit(...args)
     }
 
     public asyncEmit (...args: [any, ...any[]]): Promise<void> {
       return new Promise(resolve => setTimeout(() => {
         this.emit(...args)
         resolve()
-      }, this[symDataEventTimeout]))
+      }, this.#symDataEventTimeout))
     }
 
     public getMethodCalls () {
-      return this[symMethodCalls]
+      return this.#symMethodCalls
     }
 
     public getChunks () {
-      return this[symMethodCalls]
+      return this.#symMethodCalls
         .filter((x): x is MethodCall.Write<Chunk> => x.name === MethodName.write)
         .map(x => x.data)
     }
