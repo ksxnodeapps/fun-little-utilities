@@ -283,7 +283,7 @@ specifiers:
   '@types/node': ^13.11.0
   '@types/node-fetch': ^2.5.5
   '@types/yargs': ^15.0.4
-  line-observable-rxjs: ^0.0.1
+  line-observable-rxjs: ^0.0.2
   node-fetch: ^2.6.0
   rxjs: ^6.5.5
   tslib: ^1.11.1

@@ -1,6 +1,6 @@
 {
   "name": "string-template-format-tostring",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "String template literal tag that converts any value that has .toString() method to strings",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "main": "index.js",
   "dependencies": {
     "tslib": "^1.11.1",
-    "string-template-format-base": "^0.1.5",
+    "string-template-format-base": "^0.1.6",
     "@types/node": "^13.11.0"
   }
 }

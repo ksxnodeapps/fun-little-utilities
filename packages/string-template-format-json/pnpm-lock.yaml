@@ -15,6 +15,6 @@ packages:
       integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 specifiers:
   '@types/node': ^13.11.0
-  just-json-type: ^0.1.5
-  string-template-format-base: ^0.1.5
+  just-json-type: ^0.1.6
+  string-template-format-base: ^0.1.6
   tslib: ^1.11.1

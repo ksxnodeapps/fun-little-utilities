@@ -15,6 +15,6 @@ packages:
       integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 specifiers:
   '@types/node': ^13.11.0
-  mkcmdargv-cli: ^0.1.3
-  mkcmdargv-lib: ^0.1.3
+  mkcmdargv-cli: ^0.1.4
+  mkcmdargv-lib: ^0.1.4
   tslib: ^1.11.1

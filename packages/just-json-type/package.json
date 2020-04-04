@@ -1,6 +1,6 @@
 {
   "name": "just-json-type",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "JSON.parse and JSON.stringify but with strict TypeScript definitions",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

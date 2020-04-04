@@ -217,7 +217,7 @@ packages:
 specifiers:
   '@types/node': ^13.11.0
   '@types/yargs': ^15.0.4
-  parse-markdown-table: ^0.0.2
-  simple-fake-console: ^0.1.6
+  parse-markdown-table: ^0.0.3
+  simple-fake-console: ^0.1.7
   tslib: ^1.11.1
   yargs: ^15.3.1

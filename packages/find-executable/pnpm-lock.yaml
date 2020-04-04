@@ -216,6 +216,6 @@ packages:
 specifiers:
   '@types/node': ^13.11.0
   '@types/yargs': ^15.0.4
-  find-executable-lib: ^0.1.7
+  find-executable-lib: ^0.1.8
   tslib: ^1.11.1
   yargs: ^15.3.1

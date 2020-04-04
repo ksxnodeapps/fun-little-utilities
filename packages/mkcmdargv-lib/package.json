@@ -1,6 +1,6 @@
 {
   "name": "mkcmdargv-lib",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Functions to convert environment variables to command-line arguments",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -18,7 +18,7 @@
   "main": "index.js",
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "split-iterable": "^0.1.6",
+    "split-iterable": "^0.1.7",
     "@tsfun/array": "^0.0.5",
     "tslib": "^1.11.1",
     "@types/fs-extra": "^8.1.0",

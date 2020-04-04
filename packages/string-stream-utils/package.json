@@ -1,6 +1,6 @@
 {
   "name": "string-stream-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utilities to manipulate async iterable of chunks of strings",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

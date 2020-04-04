@@ -1,6 +1,6 @@
 {
   "name": "pretty-exec",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "Print a command and then execute it",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "split-iterable",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Split iterable into multiple chunks",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "better-path-join",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Like path.join but takes absolute path into account",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

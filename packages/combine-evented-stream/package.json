@@ -1,6 +1,6 @@
 {
   "name": "combine-evented-stream",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Combine multiple evented streams into one",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -24,8 +24,8 @@
   "main": "index.js",
   "dependencies": {
     "tslib": "^1.11.1",
-    "evented-stream-types": "^0.1.6",
-    "event-target-proxy": "^0.1.6",
+    "evented-stream-types": "^0.1.7",
+    "event-target-proxy": "^0.1.7",
     "@types/node": "^13.11.0"
   },
   "engines": {

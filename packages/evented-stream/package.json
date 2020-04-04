@@ -1,6 +1,6 @@
 {
   "name": "evented-stream",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Collection of evented-stream packages",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -25,9 +25,9 @@
   "main": "index.js",
   "dependencies": {
     "tslib": "^1.11.1",
-    "iterate-evented-stream": "^0.1.7",
-    "combine-evented-stream": "^0.1.6",
-    "evented-stream-types": "^0.1.6",
+    "iterate-evented-stream": "^0.1.8",
+    "combine-evented-stream": "^0.1.7",
+    "evented-stream-types": "^0.1.7",
     "@types/node": "^13.11.0"
   },
   "engines": {
