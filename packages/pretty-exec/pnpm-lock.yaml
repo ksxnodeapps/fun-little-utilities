@@ -1,10 +1,10 @@
 dependencies:
-  '@types/node': 13.7.0
+  '@types/node': 13.11.0
   '@types/shell-escape': 0.2.0
-  chalk: 3.0.0
+  chalk: 4.0.0
   shell-escape: 0.2.0
   split-string-once: 0.0.2
-  tslib: 1.10.0
+  tslib: 1.11.1
 lockfileVersion: 5.1
 packages:
   /@types/color-name/1.1.1:
@@ -15,10 +15,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.7.0:
+  /@types/node/13.11.0:
     dev: false
     resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
   /@types/shell-escape/0.2.0:
     dev: false
     resolution:
@@ -32,15 +32,15 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
-  /chalk/3.0.0:
+  /chalk/4.0.0:
     dependencies:
       ansi-styles: 4.2.1
       supports-color: 7.1.0
     dev: false
     engines:
-      node: '>=8'
+      node: '>=10'
     resolution:
-      integrity: sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
+      integrity: sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
   /color-convert/2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -84,10 +84,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 specifiers:
-  '@types/node': ^13.7.0
+  '@types/node': ^13.11.0
   '@types/shell-escape': ^0.2.0
-  chalk: ^3.0.0
+  chalk: ^4.0.0
   shell-escape: ^0.2.0
   split-string-once: ^0.0.2
-  tslib: ^1.10.0
+  tslib: ^1.11.1

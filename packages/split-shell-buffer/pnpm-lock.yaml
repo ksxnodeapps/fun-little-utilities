@@ -1,12 +1,12 @@
 dependencies:
-  '@types/node': 13.7.0
+  '@types/node': 13.11.0
   create-array-equal: 0.0.3
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
   iter-tools: 6.2.6
   iterate-evented-stream: 'link:../iterate-evented-stream'
   monorepo-shared-assets: 0.0.19
-  tslib: 1.10.0
+  tslib: 1.11.1
   typescript-char-code: 0.0.1
 lockfileVersion: 5.1
 packages:
@@ -38,10 +38,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.7.0:
+  /@types/node/13.11.0:
     dev: false
     resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
@@ -102,6 +102,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /typescript-char-code/0.0.1:
     dev: false
     resolution:
@@ -146,12 +150,12 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@types/node': ^13.7.0
+  '@types/node': ^13.11.0
   create-array-equal: ^0.0.3
   event-target-proxy: ^0.1.6
   evented-stream-types: ^0.1.6
   iter-tools: ^6.2.6
   iterate-evented-stream: ^0.1.7
   monorepo-shared-assets: ^0.0.19
-  tslib: ^1.10.0
+  tslib: ^1.11.1
   typescript-char-code: ^0.0.1

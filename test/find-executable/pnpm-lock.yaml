@@ -1,6 +1,6 @@
 dependencies:
   '@tools/preloaded-node': 'link:../../tools/preloaded-node'
-  chalk: 3.0.0
+  chalk: 4.0.0
   find-executable: 'link:../../packages/find-executable'
   split-shell-buffer: 'link:../../packages/split-shell-buffer'
   ts-await-event: 'link:../../packages/ts-await-event'
@@ -19,15 +19,15 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
-  /chalk/3.0.0:
+  /chalk/4.0.0:
     dependencies:
       ansi-styles: 4.2.1
       supports-color: 7.1.0
     dev: false
     engines:
-      node: '>=8'
+      node: '>=10'
     resolution:
-      integrity: sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
+      integrity: sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
   /color-convert/2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -56,7 +56,7 @@ packages:
       integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
 specifiers:
   '@tools/preloaded-node': 'file:../../tools/preloaded-node'
-  chalk: ^3.0.0
+  chalk: ^4.0.0
   find-executable: 'file:../../packages/find-executable'
   split-shell-buffer: 'file:../../packages/split-shell-buffer'
   ts-await-event: 'file:../../packages/ts-await-event'

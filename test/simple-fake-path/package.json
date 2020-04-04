@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "static-type-assert": "^3.0.1",
-    "@tsfun/array": "^0.0.1",
+    "@tsfun/array": "^0.0.5",
     "simple-fake-path": "file:../../packages/simple-fake-path"
   }
 }

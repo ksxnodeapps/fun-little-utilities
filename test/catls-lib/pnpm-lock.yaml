@@ -1,25 +1,25 @@
 dependencies:
   '@tools/test-utils': 'link:../../tools/test-utils'
-  '@tsfun/array': 0.0.1
+  '@tsfun/array': 0.0.5
   '@types/shell-quote': 1.6.1
   catls-lib: 'link:../../packages/catls-lib'
   shell-quote: 1.7.2
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
-  ts-toolbelt: 6.1.13
+  ts-toolbelt: 6.3.11
   utility-types: 3.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/array/0.0.1:
+  /@tsfun/array/0.0.5:
     dependencies:
-      '@types/node': 13.1.7
-      tslib: 1.10.0
+      '@types/node': 13.11.0
+      tslib: 1.11.1
     dev: false
     resolution:
-      integrity: sha512-82WeMtIC8TzWAJpIjLm+N44BSnYADWZmhBNeT0PdY+mTqB61bLSsDKonHlLE36twC26fBFMYV2/sYj8uJei5uA==
-  /@types/node/13.1.7:
+      integrity: sha512-f6IaTr16nR3oPKo2bvGd1HV2OyB7ONGZgN9uHiIsr7R0B/iaoYqMmI3CowvMo78GAUIXwM7Akx4Z/finDh/aUA==
+  /@types/node/13.11.0:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
   /@types/shell-quote/1.6.1:
     dev: false
     resolution:
@@ -28,14 +28,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
-  /ts-toolbelt/6.1.13:
+  /ts-toolbelt/6.3.11:
     dev: false
     resolution:
-      integrity: sha512-xfhXvHNMg9i0+L9aALC5kU+/H1eaLl5yydMe6m+2Danmfw/sIX+ixF7JTP4XSQRaG+Xd1idoTmcCVI0QmqZllQ==
-  /tslib/1.10.0:
+      integrity: sha512-J9Cz5wLPay4OEkiDR6BEy4hh112Jhq2AMCbmtHqw9Ch1Y+Go5bwl+CTCmF7xUN4a/67ikd0gNW70u4hEOgacsA==
+  /tslib/1.11.1:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -44,10 +44,10 @@ packages:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
   '@tools/test-utils': 'file:../../tools/test-utils'
-  '@tsfun/array': ^0.0.1
+  '@tsfun/array': ^0.0.5
   '@types/shell-quote': ^1.6.1
   catls-lib: 'file:../../packages/catls-lib'
   shell-quote: ^1.7.2
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
-  ts-toolbelt: ^6.1.13
+  ts-toolbelt: ^6.3.11
   utility-types: ^3.10.0

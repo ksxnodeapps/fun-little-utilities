@@ -18,12 +18,12 @@
   ],
   "bin": "catls",
   "dependencies": {
-    "fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
     "ts-yargs": "^0.1.6",
-    "tslib": "^1.10.0",
+    "tslib": "^1.11.1",
     "catls-lib": "^0.1.7",
-    "@types/fs-extra": "^8.0.1",
-    "@types/node": "^13.7.0"
+    "@types/fs-extra": "^8.1.0",
+    "@types/node": "^13.11.0"
   },
   "engines": {
     "node": ">= 8.9.0"

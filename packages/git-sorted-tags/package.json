@@ -24,11 +24,11 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "yargs": "^15.1.0",
-    "tslib": "^1.10.0",
+    "yargs": "^15.3.1",
+    "tslib": "^1.11.1",
     "sort-versions": "^0.1.6",
-    "@types/yargs": "^15.0.3",
-    "@types/node": "^13.7.0"
+    "@types/yargs": "^15.0.4",
+    "@types/node": "^13.11.0"
   },
   "engines": {
     "node": ">= 8.9.0"

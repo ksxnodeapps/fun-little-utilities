@@ -142,7 +142,7 @@ packages:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
   '@types/fs-extra': ^8.1.0
-  fast-traverse: ^0.1.5
+  fast-traverse: 'file:../../packages/fast-traverse'
   fs-extra: ^9.0.0
   iter-tools: ^6.2.6
   ts-pipe-compose: ^0.1.11

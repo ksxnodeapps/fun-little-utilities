@@ -1,10 +1,10 @@
 dependencies:
-  '@types/node': 13.7.0
+  '@types/node': 13.11.0
   advanced-map-initialized: 0.0.4
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.19
   remote-controlled-promise: 0.0.6
-  tslib: 1.10.0
+  tslib: 1.11.1
 lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
@@ -22,10 +22,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.7.0:
+  /@types/node/13.11.0:
     dev: false
     resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.1.7
@@ -86,6 +86,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /typescript-miscellaneous/0.1.1:
     dependencies:
       '@types/node': 10.17.13
@@ -97,9 +101,9 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^13.7.0
+  '@types/node': ^13.11.0
   advanced-map-initialized: ^0.0.4
   evented-stream-types: ^0.1.6
   monorepo-shared-assets: ^0.0.19
   remote-controlled-promise: ^0.0.6
-  tslib: ^1.10.0
+  tslib: ^1.11.1

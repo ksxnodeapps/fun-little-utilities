@@ -24,13 +24,13 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "tslib": "^1.10.0",
+    "tslib": "^1.11.1",
     "string-template-format-base": "^0.1.5",
     "string-template-format-compose": "^0.1.5",
     "string-template-format-inspect": "^0.1.6",
     "string-template-format-json": "^0.1.5",
     "string-template-format-tostring": "^0.1.5",
     "string-template-format-uri": "^0.1.5",
-    "@types/node": "^13.7.0"
+    "@types/node": "^13.11.0"
   }
 }

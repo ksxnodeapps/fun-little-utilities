@@ -22,11 +22,11 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "shell-escape": "^0.2.0",
     "split-string-once": "^0.0.2",
-    "tslib": "^1.10.0",
+    "tslib": "^1.11.1",
     "@types/shell-escape": "^0.2.0",
-    "@types/node": "^13.7.0"
+    "@types/node": "^13.11.0"
   }
 }

@@ -21,10 +21,10 @@
   "browser": "index.mjs",
   "module": "index.mjs",
   "dependencies": {
-    "semver": "^7.1.2",
-    "tslib": "^1.10.0",
+    "semver": "^7.1.3",
+    "tslib": "^1.11.1",
     "@types/semver": "^7.1.0",
-    "@types/node": "^13.7.0"
+    "@types/node": "^13.11.0"
   },
   "engines": {
     "node": ">= 8.9.0"

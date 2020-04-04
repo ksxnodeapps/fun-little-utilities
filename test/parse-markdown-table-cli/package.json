@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "simple-fake-console": "file:../../packages/simple-fake-console",
     "parse-markdown-table-cli": "file:../../packages/parse-markdown-table-cli",
     "@tools/preloaded-node": "file:../../tools/preloaded-node"
