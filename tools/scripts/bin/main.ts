@@ -187,7 +187,11 @@ abstract class Dict {
   public readonly tripleSlashDirectives = new Command(
     'Add references to TypeScript definitions for JavaScript files',
     async () => {
+<<<<<<< HEAD
       const { main } = await import('@tools/triple-slash-directive')
+=======
+      const { main } = await import('@tools/triple-slash-directives')
+>>>>>>> 34e37b2c59500929798f9b20ca8b48a16aa0cf3d
       await main()
     }
   )
