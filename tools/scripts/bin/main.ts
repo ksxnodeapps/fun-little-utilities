@@ -170,7 +170,7 @@ abstract class Dict {
   public readonly buildMJS = new Command(
     'Compile TypeScript files into ESM JavaScript',
     args => {
-      this.callCmd('buildTypescript', '--module', 'ES2015')
+      this.callCmd('buildTypescript', '--module', 'ES2020')
       this.callCmd('makeMJS', ...args)
     }
   )
