@@ -1,8 +1,7 @@
 import path from 'path'
 import process from 'process'
 import { ensureFile, writeFile, pathExists } from 'fs-extra'
-import { Application } from 'typedoc'
-import { ScriptTarget, ModuleKind } from 'typescript'
+import { Application, TypeScript } from 'typedoc'
 import { partition } from '@tsfun/array'
 import places from '@tools/places'
 import { loadPackageList, loadRepoUrl } from '@tools/utils'
@@ -66,8 +65,8 @@ export async function main () {
     const { hasErrors } = app.bootstrap({
       tsconfig: path.join(places.packages, 'tsconfig.json'),
       ignoreCompilerErrors: true,
-      target: ScriptTarget.ESNext,
-      module: ModuleKind.ESNext,
+      target: TypeScript.ScriptTarget.ESNext,
+      module: TypeScript.ModuleKind.ESNext,
       mode: 'file',
       excludeExternals: false,
       excludeNotExported: true,

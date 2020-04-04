@@ -1,13 +1,13 @@
 devDependencies:
   '@tools/scripts': 'link:tools/scripts'
-  '@types/jest': 25.1.2
-  '@types/node': 13.7.0
+  '@types/jest': 25.1.4
+  '@types/node': 13.9.8
   standard: 14.3.1
-  toolcheck: 0.1.3
-  tslib: 1.10.0
-  tslint: 6.0.0_typescript@3.7.5
-  tslint-config-standard: 9.0.0_tslint@6.0.0+typescript@3.7.5
-  typescript: 3.7.5
+  toolcheck: 0.1.4
+  tslib: 1.11.1
+  tslint: 6.0.0_typescript@3.8.3
+  tslint-config-standard: 9.0.0_tslint@6.0.0+typescript@3.8.3
+  typescript: 3.8.3
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.8.3:
@@ -47,7 +47,7 @@ packages:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
   /@types/cosmiconfig/5.0.3:
     dependencies:
-      '@types/node': 13.1.7
+      '@types/node': 13.7.0
     dev: true
     resolution:
       integrity: sha512-HgTGG7X5y9pLl3pixeo2XtDEFD8rq2EuH+S4mK6teCnAwWMucQl6v1D43hI4Uw1VJh6nu59lxLkqXHRl4uwThA==
@@ -68,33 +68,29 @@ packages:
     dev: true
     resolution:
       integrity: sha512-UpYjBi8xefVChsCoBpKShdxTllC9pwISirfoZsUa2AAdQg/Jd2KQGtSbw+ya7GPo7x/wAPlH6JBhKhAsXUEZNA==
-  /@types/jest/25.1.2:
+  /@types/jest/25.1.4:
     dependencies:
       jest-diff: 25.1.0
       pretty-format: 25.1.0
     dev: true
     resolution:
-      integrity: sha512-EsPIgEsonlXmYV7GzUqcvORsSS9Gqxw/OvkGwHfAdpjduNRxMlhsav0O5Kb0zijc/eXSO/uW6SJt9nwull8AUQ==
+      integrity: sha512-QDDY2uNAhCV7TMCITrxz+MRk1EizcsevzfeS6LykIlq2V1E5oO4wXG8V2ZEd9w7Snxeeagk46YbMgZ8ESHx3sw==
   /@types/node/12.12.24:
     dev: true
     resolution:
       integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
-  /@types/node/13.1.7:
-    dev: true
-    resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /@types/node/13.7.0:
     dev: true
     resolution:
       integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+  /@types/node/13.9.8:
+    dev: true
+    resolution:
+      integrity: sha512-1WgO8hsyHynlx7nhP1kr0OFzsgKz5XDQL+Lfc3b1Q3qIln/n8cKD4m09NJ0+P1Rq7Zgnc7N0+SsMnoD1rEb0kA==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
       integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
-  /@types/which/1.3.2:
-    dev: true
-    resolution:
-      integrity: sha512-8oDqyLC7eD4HM307boe2QWKyuzdzWBj56xI/imSl2cpL+U3tCMaTAkMJ4ee5JBZ/FsOJlvRGeIShiZDAl1qERA==
   /@types/yargs-parser/15.0.0:
     dev: true
     resolution:
@@ -1081,6 +1077,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  /lookpath/1.0.5:
+    dev: true
+    engines:
+      npm: =>6.13.4
+    hasBin: true
+    resolution:
+      integrity: sha512-gWS+39rcQ7xbxT9frBbfb/pg1LoDEF+w32lAmGGwQpIb7ul+ZNDNOcdLC6lRKaRn4H//ecIhTRXoP/AE0aBs/Q==
   /loose-envify/1.4.0:
     dependencies:
       js-tokens: 4.0.0
@@ -1718,49 +1721,52 @@ packages:
       node: '>=0.6.0'
     resolution:
       integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==
-  /toolcheck/0.1.3:
+  /toolcheck/0.1.4:
     dependencies:
       '@types/cosmiconfig': 5.0.3
       '@types/node': 12.12.24
-      '@types/which': 1.3.2
       cosmiconfig: 6.0.0
-      which: 2.0.2
+      lookpath: 1.0.5
     dev: true
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-Q6CUojNjqOuXTG+ZGAh2YL2/ThMCbG6UmY/NmSVAVSMDCRdSqG/yhgLRGhUWNHiMPbJhDecu3/QjUKGyHhYNYA==
+      integrity: sha512-MAZ8TOCRkz2KIWB1UKVj+eETc/emDV/8eXK1P5/UHA5L7LjLhdmEwy2RM0S2P2OzILLfF1exeOzy0eaLmxVJBA==
   /tslib/1.10.0:
     dev: true
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.1:
+    dev: true
+    resolution:
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /tslib/1.9.0:
     dev: true
     resolution:
       integrity: sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==
-  /tslint-config-standard/9.0.0_tslint@6.0.0+typescript@3.7.5:
+  /tslint-config-standard/9.0.0_tslint@6.0.0+typescript@3.8.3:
     dependencies:
-      tslint-eslint-rules: 5.4.0_tslint@6.0.0+typescript@3.7.5
+      tslint-eslint-rules: 5.4.0_tslint@6.0.0+typescript@3.8.3
     dev: true
     peerDependencies:
       tslint: '*'
       typescript: '*'
     resolution:
       integrity: sha512-CAw9J743RnPMemQV/XQ4YyNreC+A1NItACfkm+cBedrOkz6CQfwlnbKn8anUXBfoa4Zo4tjAhblRbsMNcSLfSw==
-  /tslint-eslint-rules/5.4.0_tslint@6.0.0+typescript@3.7.5:
+  /tslint-eslint-rules/5.4.0_tslint@6.0.0+typescript@3.8.3:
     dependencies:
       doctrine: 0.7.2
       tslib: 1.9.0
-      tslint: 6.0.0_typescript@3.7.5
-      tsutils: 3.17.1_typescript@3.7.5
-      typescript: 3.7.5
+      tslint: 6.0.0_typescript@3.8.3
+      tsutils: 3.17.1_typescript@3.8.3
+      typescript: 3.8.3
     dev: true
     peerDependencies:
       tslint: ^5.0.0
       typescript: ^2.2.0 || ^3.0.0
     resolution:
       integrity: sha512-WlSXE+J2vY/VPgIcqQuijMQiel+UtmXS+4nvK4ZzlDiqBfXse8FAvkNnTcYhnQyOTW5KFM+uRRGXxYhFpuBc6w==
-  /tslint/6.0.0_typescript@3.7.5:
+  /tslint/6.0.0_typescript@3.8.3:
     dependencies:
       '@babel/code-frame': 7.8.3
       builtin-modules: 1.1.1
@@ -1774,8 +1780,8 @@ packages:
       resolve: 1.14.2
       semver: 5.7.1
       tslib: 1.10.0
-      tsutils: 2.29.0_typescript@3.7.5
-      typescript: 3.7.5
+      tsutils: 2.29.0_typescript@3.8.3
+      typescript: 3.8.3
     deprecated: 'TSLint has been deprecated in favor of ESLint. Please see https://github.com/palantir/tslint/issues/4534 for more information.'
     dev: true
     engines:
@@ -1785,19 +1791,19 @@ packages:
       typescript: '>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev'
     resolution:
       integrity: sha512-9nLya8GBtlFmmFMW7oXXwoXS1NkrccqTqAtwXzdPV9e2mqSEvCki6iHL/Fbzi5oqbugshzgGPk7KBb2qNP1DSA==
-  /tsutils/2.29.0_typescript@3.7.5:
+  /tsutils/2.29.0_typescript@3.8.3:
     dependencies:
       tslib: 1.10.0
-      typescript: 3.7.5
+      typescript: 3.8.3
     dev: true
     peerDependencies:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
     resolution:
       integrity: sha512-g5JVHCIJwzfISaXpXE1qvNalca5Jwob6FjI4AoPlqMusJ6ftFE7IkkFoMhVLRgK+4Kx3gkzb8UZK5t5yTTvEmA==
-  /tsutils/3.17.1_typescript@3.7.5:
+  /tsutils/3.17.1_typescript@3.8.3:
     dependencies:
       tslib: 1.10.0
-      typescript: 3.7.5
+      typescript: 3.8.3
     dev: true
     engines:
       node: '>= 6'
@@ -1819,13 +1825,13 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
-  /typescript/3.7.5:
+  /typescript/3.8.3:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
+      integrity: sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
   /uniq/1.0.1:
     dev: true
     resolution:
@@ -1854,15 +1860,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
-  /which/2.0.2:
-    dependencies:
-      isexe: 2.0.0
-    dev: true
-    engines:
-      node: '>= 8'
-    hasBin: true
-    resolution:
-      integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==
   /word-wrap/1.2.3:
     dev: true
     engines:
@@ -1897,11 +1894,11 @@ packages:
       integrity: sha512-qXROVp90sb83XtAoqE8bP9RwAkTTZbugRUTm5YeFCBfNRPEp2YzTeqWiz7m5OORHzEvrA/qcGS8hp/E+MMROYw==
 specifiers:
   '@tools/scripts': 'file:./tools/scripts'
-  '@types/jest': ^25.1.2
-  '@types/node': ^13.7.0
+  '@types/jest': ^25.1.3
+  '@types/node': ^13.7.7
   standard: ^14.3.1
-  toolcheck: ^0.1.3
-  tslib: ^1.10.0
+  toolcheck: ^0.1.4
+  tslib: ^1.11.1
   tslint: ^6.0.0
   tslint-config-standard: ^9.0.0
-  typescript: ^3.7.5
+  typescript: ^3.8.3

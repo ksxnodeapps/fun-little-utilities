@@ -13,10 +13,11 @@ dependencies:
   '@tools/publish-docs': 'link:../publish-docs'
   '@tools/publish-tag-push': 'link:../publish-tag-push'
   '@tools/standardjs': 'link:../standardjs'
+  '@tools/triple-slash-directive': 'link:../triple-slash-directives'
   '@tools/tslint': 'link:../tslint'
   '@tools/typescript': 'link:../typescript'
   '@tools/workspace': 'link:../workspace'
-  '@types/fs-extra': 8.0.1
+  '@types/fs-extra': 8.1.0
   '@types/glob-to-regexp': 0.4.0
   chalk: 3.0.0
   exec-inline: 0.0.5
@@ -42,12 +43,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/fs-extra/8.0.1:
+  /@types/fs-extra/8.1.0:
     dependencies:
       '@types/node': 13.1.7
     dev: false
     resolution:
-      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
+      integrity: sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
   /@types/glob-to-regexp/0.4.0:
     dev: false
     resolution:
@@ -225,13 +226,14 @@ specifiers:
   '@tools/publish-docs': 'file:../publish-docs'
   '@tools/publish-tag-push': 'file:../publish-tag-push'
   '@tools/standardjs': 'file:../standardjs'
+  '@tools/triple-slash-directive': 'file:../triple-slash-directives'
   '@tools/tslint': 'file:../tslint'
   '@tools/typescript': 'file:../typescript'
   '@tools/workspace': 'file:../workspace'
-  '@types/fs-extra': ^8.0.1
+  '@types/fs-extra': ^8.1.0
   '@types/glob-to-regexp': ^0.4.0
   chalk: ^3.0.0
   exec-inline: ^0.0.5
-  fs-extra: 8.1.0
+  fs-extra: ^8.1.0
   glob-to-regexp: 0.4.1
   number-enum: ^3.0.0

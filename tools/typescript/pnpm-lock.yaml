@@ -1,15 +1,15 @@
 dependencies:
   '@tools/places': 'link:../places'
-  typescript: 3.7.5
+  typescript: 3.8.3
 lockfileVersion: 5.1
 packages:
-  /typescript/3.7.5:
+  /typescript/3.8.3:
     dev: false
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
+      integrity: sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 specifiers:
   '@tools/places': 'file:../places'
-  typescript: ^3.7.5
+  typescript: ^3.8.3

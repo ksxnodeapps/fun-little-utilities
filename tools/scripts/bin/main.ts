@@ -98,6 +98,7 @@ abstract class Dict {
       await this.callCmd('buildDocs')
       await this.callCmd('buildMJS')
       await this.callCmd('buildTypescript')
+      await this.callCmd('tripleSlashDirectives')
     }
   )
 
@@ -169,7 +170,7 @@ abstract class Dict {
   public readonly buildMJS = new Command(
     'Compile TypeScript files into ESM JavaScript',
     args => {
-      this.callCmd('buildTypescript', '--module', 'esnext')
+      this.callCmd('buildTypescript', '--module', 'ES2015')
       this.callCmd('makeMJS', ...args)
     }
   )
@@ -179,8 +180,16 @@ abstract class Dict {
     this.mkspawn(
       commands.typescript,
       '--project',
-      path.resolve(places.packages, 'tsconfig.json')
+      path.resolve(places.packages, 'tsconfig.prod.json')
     )
+  )
+
+  public readonly tripleSlashDirectives = new Command(
+    'Add references to TypeScript definitions for JavaScript files',
+    async () => {
+      const { main } = await import('@tools/triple-slash-directive')
+      await main()
+    }
   )
 
   public readonly buildDocs = new Command(
