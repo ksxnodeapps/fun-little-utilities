@@ -1,6 +1,6 @@
 dependencies:
   '@types/fs-extra': 8.1.0
-  '@types/node': 13.11.0
+  '@types/node': 13.11.1
   catls-lib: 'link:../catls-lib'
   fs-extra: 9.0.0
   ts-yargs: 'link:../ts-yargs'
@@ -17,6 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+  /@types/node/13.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
   /at-least-node/1.0.0:
     dev: false
     engines:
@@ -58,7 +62,7 @@ packages:
       integrity: sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 specifiers:
   '@types/fs-extra': ^8.1.0
-  '@types/node': ^13.11.0
+  '@types/node': ^13.11.1
   catls-lib: ^0.1.8
   fs-extra: ^9.0.0
   ts-yargs: ^0.1.7

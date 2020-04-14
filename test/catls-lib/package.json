@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "utility-types": "^3.10.0",
-    "ts-toolbelt": "^6.3.11",
+    "ts-toolbelt": "^6.4.2",
     "shell-quote": "^1.7.2",
     "@tsfun/array": "^0.0.5",
     "@types/shell-quote": "^1.6.1",

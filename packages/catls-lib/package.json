@@ -27,7 +27,7 @@
     "split-shell-buffer": "^2.0.8",
     "ts-await-event": "^0.1.7",
     "@types/shell-quote": "^1.6.1",
-    "@types/node": "^13.11.0"
+    "@types/node": "^13.11.1"
   },
   "engines": {
     "node": ">= 8.9.0"

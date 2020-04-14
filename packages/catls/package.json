@@ -23,7 +23,7 @@
     "tslib": "^1.11.1",
     "catls-lib": "^0.1.8",
     "@types/fs-extra": "^8.1.0",
-    "@types/node": "^13.11.0"
+    "@types/node": "^13.11.1"
   },
   "engines": {
     "node": ">= 8.9.0"

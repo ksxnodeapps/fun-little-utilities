@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 13.11.0
+  '@types/node': 13.11.1
   advanced-map-initialized: 0.0.4
   iter-tools: 6.2.6
   tslib: 1.11.1
@@ -26,10 +26,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.11.0:
+  /@types/node/13.11.1:
     dev: false
     resolution:
-      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.1.7
@@ -140,7 +140,7 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@types/node': ^13.11.0
+  '@types/node': ^13.11.1
   advanced-map-initialized: ^0.0.4
   iter-tools: ^6.2.6
   tslib: ^1.11.1

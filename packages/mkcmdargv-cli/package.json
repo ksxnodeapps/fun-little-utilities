@@ -19,6 +19,6 @@
     "tslib": "^1.11.1",
     "mkcmdargv-lib": "^0.1.4",
     "@types/js-yaml": "^3.12.3",
-    "@types/node": "^13.11.0"
+    "@types/node": "^13.11.1"
   }
 }

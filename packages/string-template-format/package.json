@@ -31,6 +31,6 @@
     "string-template-format-json": "^0.1.6",
     "string-template-format-tostring": "^0.1.6",
     "string-template-format-uri": "^0.1.6",
-    "@types/node": "^13.11.0"
+    "@types/node": "^13.11.1"
   }
 }

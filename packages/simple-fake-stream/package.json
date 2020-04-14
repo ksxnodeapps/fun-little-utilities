@@ -26,7 +26,7 @@
     "monorepo-shared-assets": "^0.0.19",
     "tslib": "^1.11.1",
     "evented-stream-types": "^0.1.7",
-    "@types/node": "^13.11.0"
+    "@types/node": "^13.11.1"
   },
   "engines": {
     "node": ">= 8.9.0"

@@ -5,7 +5,7 @@ dependencies:
   catls-lib: 'link:../../packages/catls-lib'
   shell-quote: 1.7.2
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
-  ts-toolbelt: 6.3.11
+  ts-toolbelt: 6.4.2
   utility-types: 3.10.0
 lockfileVersion: 5.1
 packages:
@@ -28,10 +28,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
-  /ts-toolbelt/6.3.11:
+  /ts-toolbelt/6.4.2:
     dev: false
     resolution:
-      integrity: sha512-J9Cz5wLPay4OEkiDR6BEy4hh112Jhq2AMCbmtHqw9Ch1Y+Go5bwl+CTCmF7xUN4a/67ikd0gNW70u4hEOgacsA==
+      integrity: sha512-B27axztBC+3K4D1cuaRO3ygMcyR54LRpQxlt1zNIS9RnqDwrlDoVlIIazDqWxLuRaFzGWNvDLkjDgs3eeLEVig==
   /tslib/1.11.1:
     dev: false
     resolution:
@@ -49,5 +49,5 @@ specifiers:
   catls-lib: 'file:../../packages/catls-lib'
   shell-quote: ^1.7.2
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
-  ts-toolbelt: ^6.3.11
+  ts-toolbelt: ^6.4.2
   utility-types: ^3.10.0
