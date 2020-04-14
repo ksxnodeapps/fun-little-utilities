@@ -3,7 +3,7 @@ dependencies:
   fast-traverse: 'link:../../packages/fast-traverse'
   fs-extra: 9.0.0
   iter-tools: 6.2.6
-  ts-pipe-compose: 0.1.11
+  ts-pipe-compose: 0.2.0
 lockfileVersion: 5.1
 packages:
   /@babel/runtime-corejs2/7.8.4:
@@ -92,7 +92,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
-  /ts-pipe-compose/0.1.11:
+  /ts-pipe-compose/0.2.0:
     dependencies:
       '@types/node': 12.12.29
       tslib: 1.11.1
@@ -100,7 +100,7 @@ packages:
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-8cP8BumReKwqeYdzV/rMSqYqL2ZN/5yL1CBiMKYp0qri489g3VJ11vOPRTiUoTfqrSQIUWhHVIeZiPrYCD/6Ug==
+      integrity: sha512-FMFVRL3Ct4+S1OHUBapg3HKOU1OY8EfF+LpWKyKz0S9P/Yrdl9krvNxuW/4RlMw42TsgkH6jF3o6Vtk5l8izLg==
   /tslib/1.11.1:
     dev: false
     resolution:
@@ -145,4 +145,4 @@ specifiers:
   fast-traverse: 'file:../../packages/fast-traverse'
   fs-extra: ^9.0.0
   iter-tools: ^6.2.6
-  ts-pipe-compose: ^0.1.11
+  ts-pipe-compose: ^0.2.0
