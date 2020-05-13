@@ -2,7 +2,7 @@ dependencies:
   '@types/node': 13.11.1
   '@types/semver': 7.1.0
   semver: 7.3.0
-  tslib: 1.11.1
+  tslib: 2.0.0
 lockfileVersion: 5.1
 packages:
   /@types/node/13.11.1:
@@ -26,12 +26,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-uyvgU/igkrMgNHwLgXvlpD9jEADbJhB0+JXSywoO47JgJ6c16iau9F9cjtc/E5o0PoqRYTiTIAPRKaYe84z6eQ==
-  /tslib/1.11.1:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 specifiers:
   '@types/node': ^13.11.1
   '@types/semver': ^7.1.0
   semver: ^7.3.0
-  tslib: ^1.11.1
+  tslib: ^2.0.0

@@ -4,7 +4,7 @@ dependencies:
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.19
   remote-controlled-promise: 0.0.6
-  tslib: 1.11.1
+  tslib: 2.0.0
 lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
@@ -86,10 +86,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /tslib/1.11.1:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /typescript-miscellaneous/0.1.1:
     dependencies:
       '@types/node': 10.17.13
@@ -106,4 +106,4 @@ specifiers:
   evented-stream-types: ^0.1.7
   monorepo-shared-assets: ^0.0.19
   remote-controlled-promise: ^0.0.6
-  tslib: ^1.11.1
+  tslib: ^2.0.0

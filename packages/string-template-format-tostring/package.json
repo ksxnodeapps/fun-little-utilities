@@ -22,7 +22,7 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "string-template-format-base": "^0.1.6",
     "@types/node": "^13.11.1"
   }

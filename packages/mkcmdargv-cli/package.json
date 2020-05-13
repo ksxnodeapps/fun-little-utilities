@@ -16,7 +16,7 @@
   "bin": "bin",
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "mkcmdargv-lib": "^0.1.4",
     "@types/js-yaml": "^3.12.3",
     "@types/node": "^13.11.1"

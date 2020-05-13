@@ -25,7 +25,7 @@
     "node-fetch": "^2.6.0",
     "rxjs": "^6.5.5",
     "yargs": "^15.3.1",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "line-observable-rxjs": "^0.0.2",
     "@types/node-fetch": "^2.5.6",
     "@types/yargs": "^15.0.4",

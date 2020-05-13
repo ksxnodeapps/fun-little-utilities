@@ -24,7 +24,7 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "iterate-evented-stream": "^0.1.8",
     "combine-evented-stream": "^0.1.7",
     "evented-stream-types": "^0.1.7",

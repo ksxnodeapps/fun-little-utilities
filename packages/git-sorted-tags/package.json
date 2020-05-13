@@ -25,7 +25,7 @@
   "main": "index.js",
   "dependencies": {
     "yargs": "^15.3.1",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "sort-versions": "^0.1.7",
     "@types/yargs": "^15.0.4",
     "@types/node": "^13.11.1"

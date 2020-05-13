@@ -22,7 +22,7 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "advanced-map-initialized": "^0.0.4",
     "advanced-map-mutable-multi-key": "^0.0.5",
     "@types/node": "^13.11.1"
