@@ -21,7 +21,7 @@
     "split-iterable": "^0.1.7",
     "@tsfun/array": "^0.0.5",
     "tslib": "^1.11.1",
-    "@types/fs-extra": "^8.1.0",
+    "@types/fs-extra": "^9.0.0",
     "@types/node": "^13.11.1"
   }
 }

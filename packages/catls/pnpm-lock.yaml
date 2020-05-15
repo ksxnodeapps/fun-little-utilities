@@ -1,5 +1,5 @@
 dependencies:
-  '@types/fs-extra': 8.1.0
+  '@types/fs-extra': 9.0.0
   '@types/node': 13.11.1
   catls-lib: 'link:../catls-lib'
   fs-extra: 9.0.0
@@ -7,20 +7,20 @@ dependencies:
   tslib: 1.11.1
 lockfileVersion: 5.1
 packages:
-  /@types/fs-extra/8.1.0:
+  /@types/fs-extra/9.0.0:
     dependencies:
-      '@types/node': 13.11.0
+      '@types/node': 13.13.6
     dev: false
     resolution:
-      integrity: sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
-  /@types/node/13.11.0:
-    dev: false
-    resolution:
-      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+      integrity: sha512-xCbDUSZArlmMjiJdczt8AFNH2MwcMb/pj/HKja1hx3u1qzOUINcJktQMGoGVlgFnzxnuCahxKFlcRBkSAcm33g==
   /@types/node/13.11.1:
     dev: false
     resolution:
       integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
+  /@types/node/13.13.6:
+    dev: false
+    resolution:
+      integrity: sha512-zqRj8ugfROCjXCNbmPBe2mmQ0fJWP9lQaN519hwunOgpHgVykme4G6FW95++dyNFDvJUk4rtExkVkL0eciu5NA==
   /at-least-node/1.0.0:
     dev: false
     engines:
@@ -61,7 +61,7 @@ packages:
     resolution:
       integrity: sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 specifiers:
-  '@types/fs-extra': ^8.1.0
+  '@types/fs-extra': ^9.0.0
   '@types/node': ^13.11.1
   catls-lib: ^0.1.8
   fs-extra: ^9.0.0
