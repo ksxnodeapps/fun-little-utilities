@@ -1,18 +1,18 @@
 dependencies:
-  '@types/node': 13.11.1
+  '@types/node': 13.13.9
   just-json-type: 'link:../just-json-type'
   string-template-format-base: 'link:../string-template-format-base'
-  tslib: 1.11.1
+  tslib: 1.13.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.11.1:
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
-  /tslib/1.11.1:
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 specifiers:
   '@types/node': ^13.11.1
   just-json-type: ^0.1.6

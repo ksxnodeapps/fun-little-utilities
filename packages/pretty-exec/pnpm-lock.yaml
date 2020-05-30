@@ -1,24 +1,20 @@
 dependencies:
-  '@types/node': 13.11.1
+  '@types/node': 13.13.9
   '@types/shell-escape': 0.2.0
   chalk: 4.0.0
   shell-escape: 0.2.0
   split-string-once: 0.0.2
-  tslib: 1.11.1
+  tslib: 1.13.0
 lockfileVersion: 5.1
 packages:
   /@types/color-name/1.1.1:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/node/13.1.7:
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
   /@types/shell-escape/0.2.0:
     dev: false
     resolution:
@@ -65,8 +61,8 @@ packages:
       integrity: sha1-aP0CXrBJC09WegJ/C/IkgLX4QTM=
   /split-string-once/0.0.2:
     dependencies:
-      '@types/node': 13.1.7
-      tslib: 1.10.0
+      '@types/node': 13.13.9
+      tslib: 1.13.0
     dev: false
     engines:
       node: '>= 8.9.0'
@@ -80,14 +76,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
-  /tslib/1.10.0:
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /tslib/1.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 specifiers:
   '@types/node': ^13.11.1
   '@types/shell-escape': ^0.2.0

@@ -1,25 +1,21 @@
 dependencies:
-  '@types/node': 13.11.1
+  '@types/node': 13.13.9
   evented-stream-types: 'link:../evented-stream-types'
   monorepo-shared-assets: 0.0.19
-  tslib: 1.11.1
+  tslib: 1.13.0
 lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.7
-      tslib: 1.10.0
+      '@types/node': 13.13.9
+      tslib: 1.13.0
     dev: false
     resolution:
       integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
-  /@types/node/13.1.7:
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
   /immutable/4.0.0-rc.12:
     dev: false
     resolution:
@@ -27,22 +23,18 @@ packages:
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
-      '@types/node': 13.1.7
+      '@types/node': 13.13.9
       immutable: 4.0.0-rc.12
-      tslib: 1.10.0
+      tslib: 1.13.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
-  /tslib/1.10.0:
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /tslib/1.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 specifiers:
   '@types/node': ^13.11.1
   evented-stream-types: ^0.1.7

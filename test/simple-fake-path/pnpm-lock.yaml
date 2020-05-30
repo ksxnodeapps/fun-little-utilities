@@ -6,15 +6,15 @@ lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.5:
     dependencies:
-      '@types/node': 13.11.0
-      tslib: 1.11.1
+      '@types/node': 13.13.9
+      tslib: 1.13.0
     dev: false
     resolution:
       integrity: sha512-f6IaTr16nR3oPKo2bvGd1HV2OyB7ONGZgN9uHiIsr7R0B/iaoYqMmI3CowvMo78GAUIXwM7Akx4Z/finDh/aUA==
-  /@types/node/13.11.0:
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
   /static-type-assert/3.0.1:
     dependencies:
       typescript-compare: 0.0.2
@@ -23,10 +23,10 @@ packages:
       typescript: ^3.0.3
     resolution:
       integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
-  /tslib/1.11.1:
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0

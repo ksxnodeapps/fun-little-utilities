@@ -1,47 +1,43 @@
 dependencies:
-  '@types/node': 13.11.1
+  '@types/node': 13.13.9
   create-array-equal: 0.0.3
   event-target-proxy: 'link:../event-target-proxy'
   evented-stream-types: 'link:../evented-stream-types'
   iter-tools: 6.2.6
   iterate-evented-stream: 'link:../iterate-evented-stream'
   monorepo-shared-assets: 0.0.19
-  tslib: 1.11.1
+  tslib: 1.13.0
   typescript-char-code: 0.0.1
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.8.3:
+  /@babel/runtime-corejs2/7.10.1:
     dependencies:
       core-js: 2.6.11
-      regenerator-runtime: 0.13.3
+      regenerator-runtime: 0.13.5
     dev: false
     resolution:
-      integrity: sha512-yxJXBKdIogkfF+wgeJrvU7Afp5ugBi92NzSgNPWWKVoQAlixH3gwMP6yYYr7SV1Dbc0HmNw7WUJkV5ksvtQuHg==
-  /@babel/runtime/7.8.3:
+      integrity: sha512-94v+EvClppy9BhjnLvTqfLmcHIFdrfwvfgQ1EvfkA/604JbuLaRLOhlfzhmgKjjbaIu49sJXH9fvYtZQ9pssQg==
+  /@babel/runtime/7.10.1:
     dependencies:
-      regenerator-runtime: 0.13.3
+      regenerator-runtime: 0.13.5
     dev: false
     resolution:
-      integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
+      integrity: sha512-nQbbCbQc9u/rpg1XCxoMYQTbSMVZjCDxErQ1ClCn9Pvcmv1lGads19ep0a2VsEiIJeHqjZley6EQGEC3Yo1xMA==
   /@tsfun/array/0.0.0:
     dependencies:
-      '@types/node': 13.1.7
-      tslib: 1.10.0
+      '@types/node': 13.13.9
+      tslib: 1.13.0
     dev: false
     resolution:
       integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
-  /@types/node/10.17.13:
+  /@types/node/10.17.24:
     dev: false
     resolution:
-      integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
-  /@types/node/13.1.7:
+      integrity: sha512-5SCfvCxV74kzR3uWgTYiGxrd69TbT1I6+cMx1A5kEly/IVveJBimtAMlXiEyVFn5DvUFewQWxOOiJhlxeQwxgA==
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
@@ -50,9 +46,9 @@ packages:
       integrity: sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
   /create-array-equal/0.0.3:
     dependencies:
-      '@types/node': 13.1.7
+      '@types/node': 13.13.9
       iter-tools: 6.2.6
-      tslib: 1.10.0
+      tslib: 1.13.0
       typescript-miscellaneous: 0.1.1
     dev: false
     engines:
@@ -69,8 +65,8 @@ packages:
       integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
   /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.8.3
-      '@babel/runtime-corejs2': 7.8.3
+      '@babel/runtime': 7.10.1
+      '@babel/runtime-corejs2': 7.10.1
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
@@ -86,26 +82,22 @@ packages:
   /monorepo-shared-assets/0.0.19:
     dependencies:
       '@tsfun/array': 0.0.0
-      '@types/node': 13.1.7
+      '@types/node': 13.13.9
       immutable: 4.0.0-rc.12
-      tslib: 1.10.0
+      tslib: 1.13.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
-  /regenerator-runtime/0.13.3:
+  /regenerator-runtime/0.13.5:
     dev: false
     resolution:
-      integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
-  /tslib/1.10.0:
+      integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /tslib/1.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
   /typescript-char-code/0.0.1:
     dev: false
     resolution:
@@ -122,8 +114,8 @@ packages:
       integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
   /typescript-miscellaneous/0.1.1:
     dependencies:
-      '@types/node': 10.17.13
-      tslib: 1.10.0
+      '@types/node': 10.17.24
+      tslib: 1.13.0
     dev: false
     engines:
       node: '>= 8.9.0'

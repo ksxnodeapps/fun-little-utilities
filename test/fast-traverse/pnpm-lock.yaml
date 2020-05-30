@@ -6,20 +6,20 @@ lockfileVersion: 5.1
 packages:
   /@tsfun/object/0.0.20:
     dependencies:
-      '@types/node': 13.11.0
-      tslib: 1.11.1
+      '@types/node': 13.13.9
+      tslib: 1.13.0
       utility-types: 3.10.0
     dev: false
     resolution:
       integrity: sha512-niGBzZEa3M22bBPy7N+c2y1eqVZ7L/61Ix4zKMr++FNdnzTErf/CX6VqbU88liNRsYxs8n1E60G802OpqQIZ6Q==
-  /@types/node/13.11.0:
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-uM4mnmsIIPK/yeO+42F2RQhGUIs39K2RFmugcJANppXe6J1nvH87PvzPZYpza7Xhhs8Yn9yIAVdLZ84z61+0xQ==
-  /tslib/1.11.1:
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
   /utility-types/3.10.0:
     dev: false
     engines:

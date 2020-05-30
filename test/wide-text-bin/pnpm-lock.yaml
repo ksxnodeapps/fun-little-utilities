@@ -6,19 +6,19 @@ dependencies:
   wide-text-bin: 'link:../../packages/wide-text-bin'
 lockfileVersion: 5.1
 packages:
-  /@babel/runtime-corejs2/7.8.3:
+  /@babel/runtime-corejs2/7.10.1:
     dependencies:
       core-js: 2.6.11
-      regenerator-runtime: 0.13.3
+      regenerator-runtime: 0.13.5
     dev: false
     resolution:
-      integrity: sha512-yxJXBKdIogkfF+wgeJrvU7Afp5ugBi92NzSgNPWWKVoQAlixH3gwMP6yYYr7SV1Dbc0HmNw7WUJkV5ksvtQuHg==
-  /@babel/runtime/7.8.3:
+      integrity: sha512-94v+EvClppy9BhjnLvTqfLmcHIFdrfwvfgQ1EvfkA/604JbuLaRLOhlfzhmgKjjbaIu49sJXH9fvYtZQ9pssQg==
+  /@babel/runtime/7.10.1:
     dependencies:
-      regenerator-runtime: 0.13.3
+      regenerator-runtime: 0.13.5
     dev: false
     resolution:
-      integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
+      integrity: sha512-nQbbCbQc9u/rpg1XCxoMYQTbSMVZjCDxErQ1ClCn9Pvcmv1lGads19ep0a2VsEiIJeHqjZley6EQGEC3Yo1xMA==
   /core-js/2.6.11:
     deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
@@ -31,8 +31,8 @@ packages:
       integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=
   /iter-tools/6.2.6:
     dependencies:
-      '@babel/runtime': 7.8.3
-      '@babel/runtime-corejs2': 7.8.3
+      '@babel/runtime': 7.10.1
+      '@babel/runtime-corejs2': 7.10.1
       dequeue: 1.0.5
       little-ds-toolkit: 1.1.1
       typescript-tuple: 2.2.1
@@ -45,10 +45,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Zl5flhnd5W6nhRCyoL1bNlU8M5CWFp6SItMmK4pj39LKgzQD7LGg591OJ0jwDKat7mjHvJVkOyJT+BXOQH4iXw==
-  /regenerator-runtime/0.13.3:
+  /regenerator-runtime/0.13.5:
     dev: false
     resolution:
-      integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
+      integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0

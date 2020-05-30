@@ -1,32 +1,32 @@
 dependencies:
-  '@types/node': 13.11.1
-  advanced-spawn-async: 0.1.1
-  tslib: 1.11.1
+  '@types/node': 13.13.9
+  advanced-spawn-async: 0.1.3
+  tslib: 1.13.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.12.24:
+  /@types/node/13.13.9:
     dev: false
     resolution:
-      integrity: sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
-  /@types/node/13.11.1:
+      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
+  /@types/node/14.0.6:
     dev: false
     resolution:
-      integrity: sha512-eWQGP3qtxwL8FGneRrC5DwrJLGN4/dH1clNTuLfN81HCrxVtxRjygDTUoZJ5ASlDEeo0ppYFQjQIlXhtXpOn6g==
-  /advanced-spawn-async/0.1.1:
+      integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==
+  /advanced-spawn-async/0.1.3:
     dependencies:
-      '@types/node': 12.12.24
-      tslib: 1.10.0
+      '@types/node': 14.0.6
+      tslib: 2.0.0
     dev: false
     resolution:
-      integrity: sha512-dLx3b6reKiCnBNCyJEE3HQg5FsDEh2w86zXDb68g9WFgC6rU1XjT7rJwIL8O6D+WQX4Yg6pumiPlcwiPNJA9Fg==
-  /tslib/1.10.0:
+      integrity: sha512-ixm/qUCBQe08t2bWeXLIhrKiUFpBhZ25npthn+E+6GlszgjiITWbNAf07H3Q+oqoNLiteSldxetabufQDXiPAw==
+  /tslib/1.13.0:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /tslib/1.11.1:
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 specifiers:
   '@types/node': ^13.11.1
   advanced-spawn-async: ^0.1.1
