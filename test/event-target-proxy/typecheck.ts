@@ -1,11 +1,11 @@
 import { EventEmitter } from 'events'
 import create, { EventTarget, EventTargetProxy } from 'event-target-proxy'
-import assert from 'static-type-assert'
+import { assert, compare } from 'static-type-assert'
 
-assert.compare<EventTarget, EventEmitter>('broaderLeft')
-assert.compare<EventTarget<any, any>, EventEmitter>('broaderLeft')
-assert.compare<EventTarget<string, (...args: any[]) => any>, EventEmitter>('broaderLeft')
-assert.compare<EventTarget<symbol, (...args: any[]) => any>, EventEmitter>('broaderLeft')
+compare<EventTarget, EventEmitter>('broaderLeft')
+compare<EventTarget<any, any>, EventEmitter>('broaderLeft')
+compare<EventTarget<string, (...args: any[]) => any>, EventEmitter>('broaderLeft')
+compare<EventTarget<symbol, (...args: any[]) => any>, EventEmitter>('broaderLeft')
 
 type Event = 'Event'
 type ProvidedParam = 'ProvidedParam'

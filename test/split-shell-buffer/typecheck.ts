@@ -3,18 +3,18 @@
 
 import process from 'process'
 import childProcess from 'child_process'
-import assert from 'static-type-assert'
+import { assert, compare } from 'static-type-assert'
 import * as all from 'split-shell-buffer'
 
-assert.compare<all.Data, Buffer>('broaderLeft')
-assert.compare<all.Data, ReadonlyArray<all.Code>>('broaderLeft')
-assert.compare<all.Data, all.Code[]>('broaderLeft')
-assert.compare<all.Sequence, Buffer>('broaderLeft')
-assert.compare<all.Sequence, ReadonlyArray<all.Code>>('broaderLeft')
-assert.compare<all.Sequence, all.Code[]>('broaderLeft')
-assert.compare<all.Writable, typeof process.stdout>('broaderLeft')
-assert.compare<all.Writable, typeof process.stderr>('broaderLeft')
-assert.compare<all.Splitter, all.SplitterObject>('broaderLeft')
+compare<all.Data, Buffer>('broaderLeft')
+compare<all.Data, ReadonlyArray<all.Code>>('broaderLeft')
+compare<all.Data, all.Code[]>('broaderLeft')
+compare<all.Sequence, Buffer>('broaderLeft')
+compare<all.Sequence, ReadonlyArray<all.Code>>('broaderLeft')
+compare<all.Sequence, all.Code[]>('broaderLeft')
+compare<all.Writable, typeof process.stdout>('broaderLeft')
+compare<all.Writable, typeof process.stderr>('broaderLeft')
+compare<all.Splitter, all.SplitterObject>('broaderLeft')
 
 const splitter = all.create({ data: [] })
 assert<all.SplitterObject>(splitter)
