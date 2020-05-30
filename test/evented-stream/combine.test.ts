@@ -74,8 +74,8 @@ expect.addSnapshotSerializer({
     return value instanceof MockedEmitter
   },
 
-  print (value: MockedEmitter<any>): string {
-    return `${value.constructor.name} {}`
+  print (value: unknown): string {
+    return `${(value as MockedEmitter<any>).constructor.name} {}`
   }
 })
 
