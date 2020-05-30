@@ -33,5 +33,5 @@ packages:
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 specifiers:
-  '@types/js-yaml': ^3.12.3
-  js-yaml: ^3.13.1
+  '@types/js-yaml': ^3.12.4
+  js-yaml: ^3.14.0

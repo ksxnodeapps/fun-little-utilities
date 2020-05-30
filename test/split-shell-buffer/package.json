@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "chalk": "^4.0.0",
-    "static-type-assert": "^3.0.1",
+    "static-type-assert": "^4.0.0",
     "split-shell-buffer": "file:../../packages/split-shell-buffer"
   }
 }

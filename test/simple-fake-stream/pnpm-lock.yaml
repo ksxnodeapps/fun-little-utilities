@@ -2,7 +2,7 @@ dependencies:
   evented-stream: 'link:../../packages/evented-stream'
   monorepo-shared-assets: 0.0.19
   simple-fake-stream: 'link:../../packages/simple-fake-stream'
-  static-type-assert: 3.0.1
+  static-type-assert: 4.0.0
 lockfileVersion: 5.1
 packages:
   /@tsfun/array/0.0.0:
@@ -31,14 +31,14 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
-  /static-type-assert/3.0.1:
+  /static-type-assert/4.0.0:
     dependencies:
       typescript-compare: 0.0.2
     dev: false
     peerDependencies:
       typescript: ^3.0.3
     resolution:
-      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
   /tslib/1.13.0:
     dev: false
     resolution:
@@ -57,4 +57,4 @@ specifiers:
   evented-stream: 'file:../../packages/evented-stream'
   monorepo-shared-assets: ^0.0.19
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
-  static-type-assert: ^3.0.1
+  static-type-assert: ^4.0.0

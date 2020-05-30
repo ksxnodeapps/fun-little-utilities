@@ -45,9 +45,9 @@ packages:
 specifiers:
   '@tools/test-utils': 'file:../../tools/test-utils'
   '@tsfun/array': ^0.0.5
-  '@types/shell-quote': ^1.6.1
+  '@types/shell-quote': ^1.6.2
   catls-lib: 'file:../../packages/catls-lib'
   shell-quote: ^1.7.2
   simple-fake-stream: 'file:../../packages/simple-fake-stream'
-  ts-toolbelt: ^6.4.2
+  ts-toolbelt: ^6.9.4
   utility-types: ^3.10.0

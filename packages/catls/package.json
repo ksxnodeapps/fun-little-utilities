@@ -20,10 +20,10 @@
   "dependencies": {
     "fs-extra": "^9.0.0",
     "ts-yargs": "^0.1.7",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "catls-lib": "^0.1.8",
-    "@types/fs-extra": "^8.1.0",
-    "@types/node": "^13.11.1"
+    "@types/fs-extra": "^9.0.1",
+    "@types/node": "^14.0.6"
   },
   "engines": {
     "node": ">= 8.9.0"

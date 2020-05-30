@@ -1,7 +1,7 @@
 dependencies:
   chalk: 4.0.0
   split-shell-buffer: 'link:../../packages/split-shell-buffer'
-  static-type-assert: 3.0.1
+  static-type-assert: 4.0.0
 lockfileVersion: 5.1
 packages:
   /@types/color-name/1.1.1:
@@ -44,14 +44,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
-  /static-type-assert/3.0.1:
+  /static-type-assert/4.0.0:
     dependencies:
       typescript-compare: 0.0.2
     dev: false
     peerDependencies:
       typescript: ^3.0.3
     resolution:
-      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
   /supports-color/7.1.0:
     dependencies:
       has-flag: 4.0.0
@@ -73,4 +73,4 @@ packages:
 specifiers:
   chalk: ^4.0.0
   split-shell-buffer: 'file:../../packages/split-shell-buffer'
-  static-type-assert: ^3.0.1
+  static-type-assert: ^4.0.0

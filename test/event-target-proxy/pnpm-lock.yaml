@@ -1,7 +1,7 @@
 dependencies:
   event-target-proxy: 'link:../../packages/event-target-proxy'
   iter-tools: 6.2.6
-  static-type-assert: 3.0.1
+  static-type-assert: 4.0.0
 lockfileVersion: 5.1
 packages:
   /@babel/runtime-corejs2/7.10.1:
@@ -47,14 +47,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
-  /static-type-assert/3.0.1:
+  /static-type-assert/4.0.0:
     dependencies:
       typescript-compare: 0.0.2
     dev: false
     peerDependencies:
       typescript: ^3.0.3
     resolution:
-      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0
@@ -87,4 +87,4 @@ packages:
 specifiers:
   event-target-proxy: 'file:../../packages/event-target-proxy'
   iter-tools: ^6.2.6
-  static-type-assert: ^3.0.1
+  static-type-assert: ^4.0.0

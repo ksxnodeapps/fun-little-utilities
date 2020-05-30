@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "static-type-assert": "3.0.1",
+    "static-type-assert": "^4.0.0",
     "just-json-type": "file:../../packages/just-json-type"
   }
 }

@@ -1,17 +1,17 @@
 dependencies:
   better-path-join: 'link:../../packages/better-path-join'
-  static-type-assert: 3.0.1
+  static-type-assert: 4.0.0
   string-template-format-inspect: 'link:../../packages/string-template-format-inspect'
 lockfileVersion: 5.1
 packages:
-  /static-type-assert/3.0.1:
+  /static-type-assert/4.0.0:
     dependencies:
       typescript-compare: 0.0.2
     dev: false
     peerDependencies:
       typescript: ^3.0.3
     resolution:
-      integrity: sha512-zMKAbDEqRbysJdAmO6fcylkbTa1GQ285xZZvTxbjxNficxF+zVdkwsozJqbVntKds0oZ40kLFkPYTi2JO3zOBA==
+      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0
@@ -24,5 +24,5 @@ packages:
       integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
 specifiers:
   better-path-join: 'file:../../packages/better-path-join'
-  static-type-assert: ^3.0.1
+  static-type-assert: ^4.0.0
   string-template-format-inspect: 'file:../../packages/string-template-format-inspect'

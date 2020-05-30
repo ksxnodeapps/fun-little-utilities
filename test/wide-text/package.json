@@ -1,8 +1,8 @@
 {
   "private": true,
   "dependencies": {
-    "tslib": "^1.11.1",
-    "@types/node": "^13.11.1",
+    "tslib": "^2.0.0",
+    "@types/node": "^14.0.6",
     "wide-text": "file:../../packages/wide-text"
   }
 }

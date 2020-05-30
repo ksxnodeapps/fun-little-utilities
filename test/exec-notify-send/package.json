@@ -3,7 +3,7 @@
   "dependencies": {
     "fs-extra": "^9.0.0",
     "unique-temp-path": "^0.1.3",
-    "@types/fs-extra": "^8.1.0",
+    "@types/fs-extra": "^9.0.1",
     "exec-notify-send": "file:../../packages/exec-notify-send"
   }
 }

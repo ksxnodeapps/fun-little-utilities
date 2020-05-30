@@ -1,19 +1,19 @@
 dependencies:
   '@types/js-yaml': 3.12.4
-  '@types/node': 13.13.9
+  '@types/node': 14.0.6
   js-yaml: 3.14.0
   mkcmdargv-lib: 'link:../mkcmdargv-lib'
-  tslib: 1.13.0
+  tslib: 2.0.0
 lockfileVersion: 5.1
 packages:
   /@types/js-yaml/3.12.4:
     dev: false
     resolution:
       integrity: sha512-fYMgzN+9e28R81weVN49inn/u798ruU91En1ZnGvSZzCRc5jXx9B2EDhlRaWmcO1RIxFHL8AajRXzxDuJu93+A==
-  /@types/node/13.13.9:
+  /@types/node/14.0.6:
     dev: false
     resolution:
-      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
+      integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -39,13 +39,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /tslib/1.13.0:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 specifiers:
-  '@types/js-yaml': ^3.12.3
-  '@types/node': ^13.11.1
-  js-yaml: ^3.13.1
+  '@types/js-yaml': ^3.12.4
+  '@types/node': ^14.0.6
+  js-yaml: ^3.14.0
   mkcmdargv-lib: ^0.1.4
-  tslib: ^1.11.1
+  tslib: ^2.0.0

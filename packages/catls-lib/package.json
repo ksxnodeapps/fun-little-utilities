@@ -23,11 +23,11 @@
     "shell-quote": "^1.7.2",
     "typescript-miscellaneous": "^0.1.1",
     "convenient-typescript-utilities": "^0.0.5",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "split-shell-buffer": "^2.0.8",
     "ts-await-event": "^0.1.7",
-    "@types/shell-quote": "^1.6.1",
-    "@types/node": "^13.11.1"
+    "@types/shell-quote": "^1.6.2",
+    "@types/node": "^14.0.6"
   },
   "engines": {
     "node": ">= 8.9.0"

@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "monorepo-shared-assets": "^0.0.19",
-    "static-type-assert": "^3.0.1",
+    "static-type-assert": "^4.0.0",
     "simple-fake-stream": "file:../../packages/simple-fake-stream",
     "evented-stream": "file:../../packages/evented-stream"
   }
