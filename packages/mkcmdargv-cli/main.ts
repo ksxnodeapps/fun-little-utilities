@@ -25,7 +25,7 @@ class Box<Content> {
 
 function tryParse(text: string, name: string) {
   try {
-    return new Box(safeLoad(text))
+    return new Box(safeLoad(text) as any)
   } catch (error) {
     console.error(`Failed to parse $${name}`)
     console.error(String(error))
