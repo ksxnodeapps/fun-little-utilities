@@ -91,10 +91,7 @@ interface FileSystemEntry<PathElm, FileContent> extends ReadonlyArray<any> {
   readonly 1: Content<PathElm, FileContent> | readonly FileSystemEntry<PathElm, FileContent>[]
 }
 
-export class FakeDirectoryContent<PathElm, FileContent> extends Map<
-  PathElm,
-  Content<PathElm, FileContent>,
-> {
+export class FakeDirectoryContent<PathElm, FileContent> extends Map<PathElm, Content<PathElm, FileContent>> {
   public readonly kind = ContentKind.Directory
 
   constructor(entries: readonly FileSystemEntry<PathElm, FileContent>[] = []) {
