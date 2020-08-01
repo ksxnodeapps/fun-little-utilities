@@ -5,7 +5,7 @@ import {
   create,
   EventTargetProxy,
   ListenerTransformer,
-  EventTarget
+  EventTarget,
 } from 'event-target-proxy'
 
 type AnyEvent = string | symbol
@@ -17,13 +17,14 @@ class Init<Target extends EventTarget<any, any>> {
   public readonly proxy: EventTargetProxy<AnyEvent, AnyListener>
   public readonly getPromise: (event: AnyEvent) => Promise<void>
 
-  constructor (target: Target, transformer: AnyTransformer) {
+  constructor(target: Target, transformer: AnyTransformer) {
     this.target = target
     this.proxy = create(target, transformer)
 
-    this.getPromise = event => new Promise(
-      resolve => target.addListener(event, () => resolve())
-    )
+    this.getPromise = event =>
+      new Promise(
+        resolve => target.addListener(event, () => resolve()),
+      )
   }
 }
 
@@ -31,7 +32,7 @@ class InitEventEmitter extends Init<EventEmitter> {
   public readonly confirmEmittingStopped: () => void
   public readonly whenEmittingStopped: Promise<void>
 
-  constructor (transformer: AnyTransformer) {
+  constructor(transformer: AnyTransformer) {
     super(new EventEmitter(), transformer)
     const stopEvent = Symbol()
     this.whenEmittingStopped = this.getPromise(stopEvent)
@@ -40,13 +41,13 @@ class InitEventEmitter extends Init<EventEmitter> {
 }
 
 class InitAsIs extends InitEventEmitter {
-  constructor () {
+  constructor() {
     super(x => x.listener)
   }
 }
 
 describe('create()', () => {
-  async function handleInit (init: InitEventEmitter, listener: AnyListener) {
+  async function handleInit(init: InitEventEmitter, listener: AnyListener) {
     const { proxy, target, confirmEmittingStopped, whenEmittingStopped } = init
 
     proxy.addListener('a', listener)
@@ -71,7 +72,7 @@ describe('create()', () => {
       const { order } = await handleInit(init, listener)
 
       expect(record).toEqual(
-        Array.from(enumerate(order))
+        Array.from(enumerate(order)),
       )
     })
 
@@ -107,7 +108,7 @@ describe('create()', () => {
       const { order } = await handleInit(init, listener)
 
       expect(record).toEqual(
-        Array.from(enumerate(order))
+        Array.from(enumerate(order)),
       )
     })
   })
@@ -133,11 +134,11 @@ describe('create()', () => {
       expect({
         recordProvided,
         recordReplacement,
-        recordTransformation
+        recordTransformation,
       }).toEqual({
         recordProvided: [],
         recordReplacement: Array.from(enumerate(order)),
-        recordTransformation: Array.from('abc').map(event => ({ event, listener: provided }))
+        recordTransformation: Array.from('abc').map(event => ({ event, listener: provided })),
       })
     })
   })
@@ -145,7 +146,7 @@ describe('create()', () => {
   describe('with a transformer that transform parameters', () => {
     it('calls provided provided listener with the transformed parameters', async () => {
       const { target, proxy, confirmEmittingStopped, whenEmittingStopped } = new InitEventEmitter(
-        ({ event, listener }) => (value: any) => listener({ event, listener, value })
+        ({ event, listener }) => (value: any) => listener({ event, listener, value }),
       )
 
       const record = Array<any>()
@@ -162,7 +163,7 @@ describe('create()', () => {
       await whenEmittingStopped
 
       expect(record).toEqual(
-        order.map((event, value) => ({ event, value, listener }))
+        order.map((event, value) => ({ event, value, listener })),
       )
     })
   })

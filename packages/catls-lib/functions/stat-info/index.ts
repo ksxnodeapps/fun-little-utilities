@@ -2,13 +2,13 @@ import * as utils from 'convenient-typescript-utilities'
 import { StatInfo } from '../../types'
 import tpl = utils.array.tuple
 
-export function statInfo (
+export function statInfo(
   type: string,
   stats: StatInfo.Stats,
-  body: ReadonlyArray<[string, string]> = []
+  body: ReadonlyArray<[string, string]> = [],
 ): string {
   const head = [
-    tpl('Type', type)
+    tpl('Type', type),
   ]
 
   const tail = [
@@ -16,7 +16,7 @@ export function statInfo (
     tpl('Mode', stats.mode),
     tpl('Modified', stats.mtime.toISOString()),
     tpl('Accessed', stats.atime.toISOString()),
-    tpl('Changed', stats.ctime.toISOString())
+    tpl('Changed', stats.ctime.toISOString()),
   ]
 
   const main = [...head, ...body, ...tail]

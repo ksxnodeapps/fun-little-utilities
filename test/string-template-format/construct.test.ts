@@ -10,7 +10,8 @@ it('Error', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toEqual(new Error(`
+  `).toEqual(
+    new Error(`
     number: ${inspect(123)}
     string: ${inspect('abc')}
     undefined: ${inspect(undefined)}
@@ -18,7 +19,8 @@ it('Error', () => {
     class: ${inspect(class MyClass {})}
     object: ${inspect({ abc: 123, def: 456 })}
     array: ${inspect([0, 1, 2, 3, 4])}
-  `))
+  `),
+  )
 })
 
 it('TypeError', () => {
@@ -30,7 +32,8 @@ it('TypeError', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toEqual(new TypeError(`
+  `).toEqual(
+    new TypeError(`
     number: ${inspect(123)}
     string: ${inspect('abc')}
     undefined: ${inspect(undefined)}
@@ -38,7 +41,8 @@ it('TypeError', () => {
     class: ${inspect(class MyClass {})}
     object: ${inspect({ abc: 123, def: 456 })}
     array: ${inspect([0, 1, 2, 3, 4])}
-  `))
+  `),
+  )
 })
 
 it('RangeError', () => {
@@ -50,7 +54,8 @@ it('RangeError', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toEqual(new Error(`
+  `).toEqual(
+    new Error(`
     number: ${inspect(123)}
     string: ${inspect('abc')}
     undefined: ${inspect(undefined)}
@@ -58,7 +63,8 @@ it('RangeError', () => {
     class: ${inspect(class MyClass {})}
     object: ${inspect({ abc: 123, def: 456 })}
     array: ${inspect([0, 1, 2, 3, 4])}
-  `))
+  `),
+  )
 })
 
 it('SyntaxError', () => {
@@ -70,7 +76,8 @@ it('SyntaxError', () => {
     class: ${class MyClass {}}
     object: ${{ abc: 123, def: 456 }}
     array: ${[0, 1, 2, 3, 4]}
-  `).toEqual(new Error(`
+  `).toEqual(
+    new Error(`
     number: ${inspect(123)}
     string: ${inspect('abc')}
     undefined: ${inspect(undefined)}
@@ -78,5 +85,6 @@ it('SyntaxError', () => {
     class: ${inspect(class MyClass {})}
     object: ${inspect({ abc: 123, def: 456 })}
     array: ${inspect([0, 1, 2, 3, 4])}
-  `))
+  `),
+  )
 })

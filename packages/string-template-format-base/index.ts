@@ -26,21 +26,22 @@ export interface TemplateTag<Raw, Return = string> {
  * @param fmt Formatter to use
  * @returns Template literal tag
  */
-export const tag = <Raw> (fmt: Formatter<Raw>): TemplateTag<Raw> => (strings, ...raws) => {
-  const diff = strings.length - raws.length
-  if (diff !== 1) {
-    throw new RangeError(`strings and values number difference is not 1 but ${diff}`)
+export const tag = <Raw>(fmt: Formatter<Raw>): TemplateTag<Raw> =>
+  (strings, ...raws) => {
+    const diff = strings.length - raws.length
+    if (diff !== 1) {
+      throw new RangeError(`strings and values number difference is not 1 but ${diff}`)
+    }
+
+    let result = strings[raws.length]
+
+    while (raws.length) {
+      const formatted = fmt(raws.pop()!)
+      result = strings[raws.length] + formatted + result
+    }
+
+    return result
   }
-
-  let result = strings[raws.length]
-
-  while (raws.length) {
-    const formatted = fmt(raws.pop()!)
-    result = strings[raws.length] + formatted + result
-  }
-
-  return result
-}
 
 export const TemplateTag = tag
 export default TemplateTag

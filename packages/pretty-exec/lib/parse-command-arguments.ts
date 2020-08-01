@@ -1,15 +1,15 @@
 import splitOnce from 'split-string-once'
 
 export type ParsingResult =
-  ParsingResult.Argument |
-  ParsingResult.Flag |
-  ParsingResult.Option
+  | ParsingResult.Argument
+  | ParsingResult.Flag
+  | ParsingResult.Option
 
 export namespace ParsingResult {
   export const enum Type {
     Argument = 'Argument',
     Flag = 'Flag',
-    Option = 'Option'
+    Option = 'Option',
   }
 
   export interface Argument {
@@ -30,7 +30,7 @@ export namespace ParsingResult {
   }
 }
 
-export function parseSingleCommandArgument (text: string): ParsingResult {
+export function parseSingleCommandArgument(text: string): ParsingResult {
   if (!text.startsWith('-')) {
     return { type: ParsingResult.Type.Argument, text }
   }
@@ -44,8 +44,8 @@ export function parseSingleCommandArgument (text: string): ParsingResult {
   return { type: ParsingResult.Type.Option, text, key, value }
 }
 
-export function parseCommandArguments (args: Iterable<string>): ParsingResult[] {
-  let result = Array<ParsingResult>()
+export function parseCommandArguments(args: Iterable<string>): ParsingResult[] {
+  const result = Array<ParsingResult>()
   let afterDoubleDash = false
 
   for (const text of args) {

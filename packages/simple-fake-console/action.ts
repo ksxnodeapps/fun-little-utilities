@@ -10,7 +10,7 @@ export enum ActionType {
   Info = 'info',
   Error = 'error',
   Warn = 'warn',
-  Clear = 'clear'
+  Clear = 'clear',
 }
 
 export namespace ActionType {
@@ -18,16 +18,15 @@ export namespace ActionType {
    * Corresponding method takes arguments and adds them to database along with the type
    */
   export type WithData =
-    ActionType.Log |
-    ActionType.Info |
-    ActionType.Error |
-    ActionType.Warn
+    | ActionType.Log
+    | ActionType.Info
+    | ActionType.Error
+    | ActionType.Warn
 
   /**
    * Corresponding method takes no arguments
    */
-  export type WithoutData =
-    ActionType.Clear
+  export type WithoutData = ActionType.Clear
 }
 
 /**
@@ -39,8 +38,8 @@ export type ActionData = ReadonlyArray<any>
  * Each call in fake console add an `Action` to database
  */
 export type Action =
-  Action.WithData |
-  Action.WithoutData
+  | Action.WithData
+  | Action.WithoutData
 
 export namespace Action {
   export interface Base {
@@ -77,11 +76,11 @@ export namespace Action {
  * Instance of type `Action`
  */
 export type ActionInstance =
-  ActionInstance.WithData |
-  ActionInstance.WithoutData
+  | ActionInstance.WithData
+  | ActionInstance.WithoutData
 
 export namespace ActionInstance {
-  function rename<Class extends AnyClass> (Base: Class): Class {
+  function rename<Class extends AnyClass>(Base: Class): Class {
     return class ActionInstance extends Base {}
   }
 
@@ -95,16 +94,15 @@ export namespace ActionInstance {
    */
   @rename
   export class WithData extends Base implements Action.WithData {
-    constructor (
+    constructor(
       /**
        * Type of action
        */
       public readonly type: ActionType.WithData,
-
       /**
        * Arguments passed to console methods
        */
-      public readonly data: ActionData
+      public readonly data: ActionData,
     ) {
       super()
     }
@@ -115,11 +113,11 @@ export namespace ActionInstance {
    */
   @rename
   export class WithoutData extends Base implements Action.WithoutData {
-    constructor (
+    constructor(
       /**
        * Type of action
        */
-      public readonly type: ActionType.WithoutData
+      public readonly type: ActionType.WithoutData,
     ) {
       super()
     }

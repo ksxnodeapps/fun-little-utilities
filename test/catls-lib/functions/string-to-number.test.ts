@@ -9,17 +9,17 @@ it(`returns Infinity for any of ${DESC_SFFX}`, () => {
 
 it('returns natural numbers for strings of natural numbers', () => {
   expect(
-    ['0', '7', '2', '33', '98'].map(stringToNumber)
+    ['0', '7', '2', '33', '98'].map(stringToNumber),
   ).toEqual(
-    [0, 7, 2, 33, 98]
+    [0, 7, 2, 33, 98],
   )
 })
 
 it('returns zeros for strings of negative numbers', () => {
   expect(
-    ['-1', '-7', '-8', '-2'].map(stringToNumber)
+    ['-1', '-7', '-8', '-2'].map(stringToNumber),
   ).toEqual(
-    [0, 0, 0, 0]
+    [0, 0, 0, 0],
   )
 })
 

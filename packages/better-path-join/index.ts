@@ -17,7 +17,7 @@ interface JoinFunction<Path> {
  * Create a function that joins two paths
  * @param pathModule An object that has `join` and `isAbsolute` function
  */
-export function createJoinFunction<Path> (pathModule: PathModule<Path>): JoinFunction<Path> {
+export function createJoinFunction<Path>(pathModule: PathModule<Path>): JoinFunction<Path> {
   const { isAbsolute, join } = pathModule
   return (left, right) => isAbsolute(right) ? right : join(left, right)
 }

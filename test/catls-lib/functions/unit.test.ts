@@ -5,7 +5,7 @@ import { fsPromise, getStatsPattern, EntName } from '../.lib/fake-file-system-sa
 const init = (
   name: EntName,
   symlinkResolution = SymlinkResolution.Agnostic,
-  followSymlink = 0
+  followSymlink = 0,
 ) => {
   type ResName = keyof typeof HandlerReturn
   type Key = keyof UnitParam
@@ -25,11 +25,14 @@ const init = (
 describe('with something that does not exist', () => {
   const { param, calledOnce, calledWith, returns, ignore } = init('not exist')
   it('calls options.handleException once', calledOnce('handleException'))
-  it('calls options.handleException with expected arguments', calledWith('handleException', [{
-    type: UnitType.Exception,
-    error: expect.anything(),
-    options: param
-  }]))
+  it(
+    'calls options.handleException with expected arguments',
+    calledWith('handleException', [{
+      type: UnitType.Exception,
+      error: expect.anything(),
+      options: param,
+    }]),
+  )
   it('returns expected value', returns(HandlerReturn.Exception))
   it('does not call handleSymlink', ignore('handleSymlink'))
   it('does not call handleFile', ignore('handleFile'))
@@ -40,11 +43,14 @@ describe('with something that does not exist', () => {
 describe('with a file', () => {
   const { param, calledOnce, calledWith, returns, ignore } = init('simple file')
   it('calls handleFile once', calledOnce('handleFile'))
-  it('calls handleFile with expected arguments', calledWith('handleFile', [{
-    type: UnitType.File,
-    options: param,
-    stats: getStatsPattern('simple file')
-  }]))
+  it(
+    'calls handleFile with expected arguments',
+    calledWith('handleFile', [{
+      type: UnitType.File,
+      options: param,
+      stats: getStatsPattern('simple file'),
+    }]),
+  )
   it('returns expected value', returns(HandlerReturn.File))
   it('does not call handleException', ignore('handleException'))
   it('does not call handleSymlink', ignore('handleSymlink'))
@@ -55,11 +61,14 @@ describe('with a file', () => {
 describe('with a directory', () => {
   const { param, calledOnce, calledWith, returns, ignore } = init('simple directory')
   it('calls handleDirectory once', calledOnce('handleDirectory'))
-  it('calls handleDirectory with expected arguments', calledWith('handleDirectory', [{
-    type: UnitType.Directory,
-    options: param,
-    stats: getStatsPattern('simple directory')
-  }]))
+  it(
+    'calls handleDirectory with expected arguments',
+    calledWith('handleDirectory', [{
+      type: UnitType.Directory,
+      options: param,
+      stats: getStatsPattern('simple directory'),
+    }]),
+  )
   it('returns expected value', returns(HandlerReturn.Directory))
   it('does not call handleException', ignore('handleException'))
   it('does not call handleSymlink', ignore('handleSymlink'))
@@ -72,14 +81,17 @@ describe('with a symlink', () => {
     describe('when resolution is "agnostic"', () => {
       const { param, calledOnce, calledWith, returns, ignore } = init(
         'symlink to existing file 0',
-        SymlinkResolution.Agnostic
+        SymlinkResolution.Agnostic,
       )
       it('calls handleFile once', calledOnce('handleFile'))
-      it('calls handleFile with expected arguments', calledWith('handleFile', [{
-        type: UnitType.File,
-        options: param,
-        stats: getStatsPattern('simple file')
-      }]))
+      it(
+        'calls handleFile with expected arguments',
+        calledWith('handleFile', [{
+          type: UnitType.File,
+          options: param,
+          stats: getStatsPattern('simple file'),
+        }]),
+      )
       it('returns expected value', returns(HandlerReturn.File))
       it('does not call handleException', ignore('handleException'))
       it('does not call handleSymlink', ignore('handleSymlink'))
@@ -92,16 +104,19 @@ describe('with a symlink', () => {
         const { param, calledOnce, calledWith, returns, ignore } = init(
           'symlink to existing file 0',
           SymlinkResolution.Relative,
-          0
+          0,
         )
         it('calls handleSymlink once', calledOnce('handleSymlink'))
-        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
-          type: UnitType.Symlink,
-          content: 'symlink to existing file 1',
-          target: 'symlink to existing file 1',
-          options: param,
-          stats: getStatsPattern('symlink to existing file 0')
-        }]))
+        it(
+          'calls handleSymlink with expected arguments',
+          calledWith('handleSymlink', [{
+            type: UnitType.Symlink,
+            content: 'symlink to existing file 1',
+            target: 'symlink to existing file 1',
+            options: param,
+            stats: getStatsPattern('symlink to existing file 0'),
+          }]),
+        )
         it('returns expected value', returns(HandlerReturn.Symlink))
         it('does not call handleException', ignore('handleException'))
         it('does not call handleFile', ignore('handleFile'))
@@ -113,27 +128,30 @@ describe('with a symlink', () => {
         const { param, mkfn, calledTimes, returnsCode, ignore } = init(
           'symlink to existing file 0',
           SymlinkResolution.Relative,
-          1
+          1,
         )
         it('calls handleSymlink twice', calledTimes('handleSymlink', 2))
-        it('calls handleSymlink with expected arguments', mkfn(() => {
-          expect(param.handleSymlink.mock.calls).toEqual([
-            [{
-              type: UnitType.Symlink,
-              content: 'symlink to existing file 1',
-              target: 'symlink to existing file 1',
-              options: param,
-              stats: getStatsPattern('symlink to existing file 0')
-            }],
-            [{
-              type: UnitType.Symlink,
-              content: 'symlink to existing file 2',
-              target: 'symlink to existing file 2',
-              options: param,
-              stats: getStatsPattern('symlink to existing file 1')
-            }]
-          ])
-        }))
+        it(
+          'calls handleSymlink with expected arguments',
+          mkfn(() => {
+            expect(param.handleSymlink.mock.calls).toEqual([
+              [{
+                type: UnitType.Symlink,
+                content: 'symlink to existing file 1',
+                target: 'symlink to existing file 1',
+                options: param,
+                stats: getStatsPattern('symlink to existing file 0'),
+              }],
+              [{
+                type: UnitType.Symlink,
+                content: 'symlink to existing file 2',
+                target: 'symlink to existing file 2',
+                options: param,
+                stats: getStatsPattern('symlink to existing file 1'),
+              }],
+            ])
+          }),
+        )
         it('returns expected value', returnsCode(HandlerReturn.Symlink * 2))
         it('does not call handleException', ignore('handleException'))
         it('does not call handleFile', ignore('handleFile'))
@@ -145,40 +163,46 @@ describe('with a symlink', () => {
         const { param, mkfn, calledTimes, calledOnce, calledWith, returnsCode, ignore } = init(
           'symlink to existing file 0',
           SymlinkResolution.Relative,
-          Infinity
+          Infinity,
         )
         it('calls handleSymlink as many times as there are symlinks', calledTimes('handleSymlink', 3))
-        it('calls handleSymlink with expected arguments', mkfn(() => {
-          expect(param.handleSymlink.mock.calls).toEqual([
-            [{
-              type: UnitType.Symlink,
-              content: 'symlink to existing file 1',
-              target: 'symlink to existing file 1',
-              options: param,
-              stats: getStatsPattern('symlink to existing file 0')
-            }],
-            [{
-              type: UnitType.Symlink,
-              content: 'symlink to existing file 2',
-              target: 'symlink to existing file 2',
-              options: param,
-              stats: getStatsPattern('symlink to existing file 1')
-            }],
-            [{
-              type: UnitType.Symlink,
-              content: 'simple file',
-              target: 'simple file',
-              options: param,
-              stats: getStatsPattern('symlink to existing file 2')
-            }]
-          ])
-        }))
+        it(
+          'calls handleSymlink with expected arguments',
+          mkfn(() => {
+            expect(param.handleSymlink.mock.calls).toEqual([
+              [{
+                type: UnitType.Symlink,
+                content: 'symlink to existing file 1',
+                target: 'symlink to existing file 1',
+                options: param,
+                stats: getStatsPattern('symlink to existing file 0'),
+              }],
+              [{
+                type: UnitType.Symlink,
+                content: 'symlink to existing file 2',
+                target: 'symlink to existing file 2',
+                options: param,
+                stats: getStatsPattern('symlink to existing file 1'),
+              }],
+              [{
+                type: UnitType.Symlink,
+                content: 'simple file',
+                target: 'simple file',
+                options: param,
+                stats: getStatsPattern('symlink to existing file 2'),
+              }],
+            ])
+          }),
+        )
         it('calls handleFile once', calledOnce('handleFile'))
-        it('calls handleFile with expected arguments', calledWith('handleFile', [{
-          type: UnitType.File,
-          options: param,
-          stats: getStatsPattern('simple file')
-        }]))
+        it(
+          'calls handleFile with expected arguments',
+          calledWith('handleFile', [{
+            type: UnitType.File,
+            options: param,
+            stats: getStatsPattern('simple file'),
+          }]),
+        )
         it('returns expected value', returnsCode(HandlerReturn.Symlink * 3 + HandlerReturn.File))
         it('does not call handleException', ignore('handleException'))
         it('does not call handleDirectory', ignore('handleDirectory'))
@@ -191,16 +215,19 @@ describe('with a symlink', () => {
         const { param, calledOnce, calledWith, returns, ignore } = init(
           'symlink to existing file 0',
           SymlinkResolution.Ultimate,
-          0
+          0,
         )
         it('calls handleSymlink once', calledOnce('handleSymlink'))
-        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
-          type: UnitType.Symlink,
-          content: 'simple file',
-          target: 'simple file',
-          options: param,
-          stats: getStatsPattern('symlink to existing file 0')
-        }]))
+        it(
+          'calls handleSymlink with expected arguments',
+          calledWith('handleSymlink', [{
+            type: UnitType.Symlink,
+            content: 'simple file',
+            target: 'simple file',
+            options: param,
+            stats: getStatsPattern('symlink to existing file 0'),
+          }]),
+        )
         it('returns expected value', returns(HandlerReturn.Symlink))
         it('does not call handleException', ignore('handleException'))
         it('does not call handleFile', ignore('handleFile'))
@@ -212,22 +239,28 @@ describe('with a symlink', () => {
         const { param, calledOnce, calledWith, returnsCode, ignore } = init(
           'symlink to existing file 0',
           SymlinkResolution.Ultimate,
-          1
+          1,
         )
         it('calls handleSymlink once', calledOnce('handleSymlink'))
-        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
-          type: UnitType.Symlink,
-          content: 'simple file',
-          target: 'simple file',
-          options: param,
-          stats: getStatsPattern('symlink to existing file 0')
-        }]))
+        it(
+          'calls handleSymlink with expected arguments',
+          calledWith('handleSymlink', [{
+            type: UnitType.Symlink,
+            content: 'simple file',
+            target: 'simple file',
+            options: param,
+            stats: getStatsPattern('symlink to existing file 0'),
+          }]),
+        )
         it('calls handleFile once', calledOnce('handleFile'))
-        it('calls handleFile with expected arguments', calledWith('handleFile', [{
-          type: UnitType.File,
-          options: param,
-          stats: getStatsPattern('simple file')
-        }]))
+        it(
+          'calls handleFile with expected arguments',
+          calledWith('handleFile', [{
+            type: UnitType.File,
+            options: param,
+            stats: getStatsPattern('simple file'),
+          }]),
+        )
         it('returns expected value', returnsCode(HandlerReturn.Symlink + HandlerReturn.File))
         it('does not call handleException', ignore('handleException'))
         it('does not call handleDirectory', ignore('handleDirectory'))
@@ -238,22 +271,28 @@ describe('with a symlink', () => {
         const { param, calledOnce, calledWith, returnsCode, ignore } = init(
           'symlink to existing file 0',
           SymlinkResolution.Ultimate,
-          Infinity
+          Infinity,
         )
         it('calls handleSymlink once', calledOnce('handleSymlink'))
-        it('calls handleSymlink with expected arguments', calledWith('handleSymlink', [{
-          type: UnitType.Symlink,
-          content: 'simple file',
-          target: 'simple file',
-          options: param,
-          stats: getStatsPattern('symlink to existing file 0')
-        }]))
+        it(
+          'calls handleSymlink with expected arguments',
+          calledWith('handleSymlink', [{
+            type: UnitType.Symlink,
+            content: 'simple file',
+            target: 'simple file',
+            options: param,
+            stats: getStatsPattern('symlink to existing file 0'),
+          }]),
+        )
         it('calls handleFile once', calledOnce('handleFile'))
-        it('calls handleFile with expected arguments', calledWith('handleFile', [{
-          type: UnitType.File,
-          options: param,
-          stats: getStatsPattern('simple file')
-        }]))
+        it(
+          'calls handleFile with expected arguments',
+          calledWith('handleFile', [{
+            type: UnitType.File,
+            options: param,
+            stats: getStatsPattern('simple file'),
+          }]),
+        )
         it('returns expected value', returnsCode(HandlerReturn.Symlink + HandlerReturn.File))
         it('does not call handleException', ignore('handleException'))
         it('does not call handleDirectory', ignore('handleDirectory'))
@@ -266,11 +305,14 @@ describe('with a symlink', () => {
 describe('with other kinds of entities', () => {
   const { param, calledOnce, calledWith, returns, ignore } = init('simple character device')
   it('calls options.handleUnknown once', calledOnce('handleUnknown'))
-  it('calls options.handleUnknown with expected arguments', calledWith('handleUnknown', [{
-    type: UnitType.Unknown,
-    options: param,
-    stats: getStatsPattern('simple character device')
-  }]))
+  it(
+    'calls options.handleUnknown with expected arguments',
+    calledWith('handleUnknown', [{
+      type: UnitType.Unknown,
+      options: param,
+      stats: getStatsPattern('simple character device'),
+    }]),
+  )
   it('returns expected value', returns(HandlerReturn.Unknown))
   it('does not call NonExist', ignore('handleException'))
   it('does not call handleSymlink', ignore('handleSymlink'))

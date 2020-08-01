@@ -1,6 +1,6 @@
 import { Executor } from '../../types'
 
-export function executor (options: Executor.Options): Executor {
+export function executor(options: Executor.Options): Executor {
   const { dontFakeInteractive, spawn } = options
 
   if (dontFakeInteractive) return spawn
@@ -12,7 +12,7 @@ export function executor (options: Executor.Options): Executor {
     const shCmd = quote([cmd, ...args])
     return spawn(
       'script',
-      ['--quiet', '--append', '/dev/null', '--command', shCmd]
+      ['--quiet', '--append', '/dev/null', '--command', shCmd],
     )
   }
 }

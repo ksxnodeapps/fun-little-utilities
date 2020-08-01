@@ -17,8 +17,7 @@ export interface Inspector {
  * @param options Options to pass to Node's `util.inspect`
  * @returns Formatter that uses Node's `util.inspect`
  */
-export const Inspector = (options?: InspectOptions): Inspector =>
-  options ? (raw => inspect(raw, options)) : inspect
+export const Inspector = (options?: InspectOptions): Inspector => options ? (raw => inspect(raw, options)) : inspect
 
 /**
  * Type of template literal tag that uses Node's `util.inspect`

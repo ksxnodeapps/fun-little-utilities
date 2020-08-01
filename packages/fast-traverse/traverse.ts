@@ -4,11 +4,11 @@ export const DEFAULT_DEEP = () => true as const
 
 type Return<BaseName, DirName, DirectoryList> = AsyncGenerator<Item<BaseName, DirName, DirectoryList>>
 
-export async function * traverse<
+export async function* traverse<
   DirectoryList extends Iterable<BaseName>,
   Path = string,
-  BaseName = Path
-> (options: Options<DirectoryList, Path, BaseName>): Return<BaseName | undefined, Path, DirectoryList> {
+  BaseName = Path,
+>(options: Options<DirectoryList, Path, BaseName>): Return<BaseName | undefined, Path, DirectoryList> {
   const {
     dirname,
     basename,
@@ -16,7 +16,7 @@ export async function * traverse<
     stat,
     join,
     deep = DEFAULT_DEEP,
-    level = 0
+    level = 0,
   } = options
 
   const list = await readdir(dirname)
@@ -31,18 +31,18 @@ export async function * traverse<
       basename,
       path,
       level,
-      container: dirname
+      container: dirname,
     })
     if (!deepReturn) continue
 
-    yield * traverse({
+    yield* traverse({
       readdir,
       stat,
       join,
       deep,
       basename,
       dirname: path,
-      level: level + 1
+      level: level + 1,
     })
   }
 }

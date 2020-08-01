@@ -6,7 +6,7 @@ const status = main({
   spawn: spawnSync,
   print: console.info,
   error: console.error,
-  process
+  process,
 })
 
 if (status === null) {

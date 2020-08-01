@@ -8,7 +8,7 @@ afterEach(() => {
   chalkModule.default.level = colorSupportLevel
 })
 
-function setup () {
+function setup() {
   const value = Symbol('value')
   const history = Array<any>()
   const spawn = jest.fn(() => {
@@ -20,7 +20,7 @@ function setup () {
   })
   const prettyExec = createPrettyExec({
     spawn,
-    print
+    print,
   })
   return { value, history, spawn, print, prettyExec }
 }
@@ -38,7 +38,7 @@ describe('when resulting function is not called', () => {
 })
 
 describe('when resulting function is called once', () => {
-  function setupAndCall () {
+  function setupAndCall() {
     const { prettyExec, ...rest } = setup()
     const command = 'command' as const
     const args = ['abc', '-o', 'def', '--flag', '--foo=bar', '--', 'ghi', '--not-flag'] as const
@@ -78,7 +78,7 @@ describe('when resulting function is called once', () => {
 })
 
 describe('when arguments contain special characters', () => {
-  function setupAndCall () {
+  function setupAndCall() {
     const { prettyExec, ...rest } = setup()
     const command = 'command with space and quotes (\'")' as const
     const args = ['args with space', '"quoted"', "a'"] as const

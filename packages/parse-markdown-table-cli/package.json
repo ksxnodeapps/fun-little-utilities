@@ -26,11 +26,11 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "yargs": "^15.3.1",
+    "yargs": "^15.4.1",
     "tslib": "^2.0.0",
     "parse-markdown-table": "^0.0.3",
     "simple-fake-console": "^0.1.7",
     "@types/yargs": "^15.0.5",
-    "@types/node": "^14.0.6"
+    "@types/node": "^14.0.27"
   }
 }

@@ -14,7 +14,7 @@ export interface DeepParam<Path, DirName, BaseName> {
 export interface Options<
   DirectoryList extends Iterable<BaseName>,
   Path = string,
-  BaseName = Path
+  BaseName = Path,
 > {
   readonly dirname: Path
   readonly readdir: (dirname: Path) => MaybePromise<DirectoryList>

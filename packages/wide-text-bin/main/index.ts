@@ -7,20 +7,20 @@ const { argv } = yargs
     alias: 'c',
     describe: 'Number of spaces between characters in a word',
     type: 'number',
-    default: 1
+    default: 1,
   })
   .option('wordSep', {
     alias: 'w',
     describe: 'Number of spaces between words',
     type: 'number',
-    default: 2
+    default: 2,
   })
   .help()
 
 const {
   _: inputs,
   charSep,
-  wordSep
+  wordSep,
 } = argv as {
   readonly charSep: number
   readonly wordSep: number

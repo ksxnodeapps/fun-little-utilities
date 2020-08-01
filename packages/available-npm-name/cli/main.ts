@@ -10,7 +10,7 @@ const { argv } = yargs
     alias: 'r',
     describe: 'Configure registry',
     type: 'string',
-    default: NPM_REGISTRY
+    default: NPM_REGISTRY,
   })
   .example('$0 foo bar', 'Supply package names via CLI arguments')
   .example('$0 < packages.txt', 'Supply package names via a text file where each line is a package name')
@@ -22,7 +22,7 @@ main({
   argv,
   fetch,
   console,
-  process
+  process,
 })
   .then(status => process.exit(status))
   .catch(error => {

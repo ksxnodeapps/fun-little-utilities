@@ -5,13 +5,13 @@ import {
   WritableJsonObject,
   ReadonlyJsonValue,
   load,
-  dump
+  dump,
 } from 'just-json-type'
 
 const ANY: any = null
 const symbol = Symbol('symbol')
 
-export function testLoad () {
+export function testLoad() {
   // simplest use case
   assert<WritableJsonValue<never>>(load('{}'))
 
@@ -40,7 +40,7 @@ export function testLoad () {
   }))
 }
 
-export function testDump () {
+export function testDump() {
   // simple use case
   assert<string>(dump(ANY as ReadonlyJsonValue<never>))
   assert<string>(dump('abc'))
@@ -59,7 +59,7 @@ export function testDump () {
     true: true,
     false: false,
     object: { a: 0, b: 1, c: 2 },
-    array: [0, 1, 2, 'a', 'b', 'c']
+    array: [0, 1, 2, 'a', 'b', 'c'],
   } as const
   assert<string>(dump(object, function (key, value) {
     assert<WritableJsonObject<WritableJsonValue<never>>>(this)

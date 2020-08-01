@@ -2,7 +2,7 @@ import { iterateLines } from 'string-stream-utils'
 import { getAsyncArray } from './lib/async-array'
 
 it('works', async () => {
-  async function * getStream () {
+  async function* getStream() {
     yield 'abc\nde'
     yield 'f\nghi\n'
     yield 'jkl\nmn'
@@ -21,6 +21,6 @@ it('works', async () => {
     'mno',
     'pqrs',
     'tuv',
-    'wxyz'
+    'wxyz',
   ])
 })

@@ -9,7 +9,7 @@ import unknownStatType from '../unknown-stat-type'
 import executor from '../executor'
 import showExecData from '../show-exec-data'
 
-export async function main (param: Main.Param): Promise<number> {
+export async function main(param: Main.Param): Promise<number> {
   const {
     list,
     stdout,
@@ -24,7 +24,7 @@ export async function main (param: Main.Param): Promise<number> {
     symlinkResolution,
     addStatusCode,
     spawn,
-    fsPromise
+    fsPromise,
   } = param
 
   const { readlink } = fsPromise
@@ -32,7 +32,7 @@ export async function main (param: Main.Param): Promise<number> {
   if (!list.length) {
     return emptyArguments({
       method: handleEmptyArguments,
-      stream: stderr
+      stream: stderr,
     })
   }
 
@@ -45,13 +45,13 @@ export async function main (param: Main.Param): Promise<number> {
   //   They all write data to process.{stdout,stderr}
   for (const name of list) {
     const statusAddend = await unit({
-      heading (param) {
+      heading(param) {
         const heading = `📁 Item: ${param.name}`
         const rule = '—'.repeat(heading.length)
         stdout.write(`\n${rule}\n${heading}\n\n`)
       },
 
-      handleException (param) {
+      handleException(param) {
         const { error, options } = param
 
         if (error.code === 'ENOENT') {
@@ -63,38 +63,38 @@ export async function main (param: Main.Param): Promise<number> {
         return ExitStatus.UnknownError
       },
 
-      async handleSymlink (param) {
+      async handleSymlink(param) {
         stdout.write(statInfo('Symbolic Link', param.stats, [
           ['Target', param.target],
-          ['Data', await readlink(param.options.name)] // don't use param.content for this
+          ['Data', await readlink(param.options.name)], // don't use param.content for this
         ]))
 
         return 0
       },
 
-      handleFile (param) {
+      handleFile(param) {
         stdout.write(statInfo('File', param.stats))
         stdout.write('[DATA]\n')
         return showExecData({
           cmd: cat,
           args: [...catArguments, param.options.name],
           writable: stdout,
-          execute
+          execute,
         })
       },
 
-      handleDirectory (param) {
+      handleDirectory(param) {
         stdout.write(statInfo('Directory', param.stats))
         stdout.write('[CONTENT]\n')
         return showExecData({
           cmd: ls,
           args: [...lsArguments, param.options.name],
           writable: stdout,
-          execute
+          execute,
         })
       },
 
-      handleUnknown ({ stats }) {
+      handleUnknown({ stats }) {
         stdout.write(statInfo(unknownStatType(stats), stats))
         return 0
       },
@@ -104,7 +104,7 @@ export async function main (param: Main.Param): Promise<number> {
       getStat,
       getLoop,
       name,
-      addStatusCode
+      addStatusCode,
     })
 
     currentStatus = await addStatusCode(currentStatus, statusAddend)

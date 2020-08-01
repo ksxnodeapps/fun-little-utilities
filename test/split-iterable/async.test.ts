@@ -8,13 +8,11 @@ import {
   getArrayFromAsyncIterable,
   asyncIterate,
   assertResemble,
-  assertNoSplitter
+  assertNoSplitter,
 } from './utils'
 
 describe('with sync iterator and sync separator', () => {
-  const get =
-    <X> (iter: Iterable<X>, sep: (x: X) => boolean) =>
-      getArrayFromAsyncIterable(splitAsyncIterable(iter, sep))
+  const get = <X>(iter: Iterable<X>, sep: (x: X) => boolean) => getArrayFromAsyncIterable(splitAsyncIterable(iter, sep))
 
   it('with empty array', async () => {
     expect(await get([], sep)).toEqual([[]])
@@ -88,9 +86,8 @@ describe('with sync iterator and sync separator', () => {
 })
 
 describe('with async iterator and sync separator', () => {
-  const get =
-    <X> (iter: Iterable<X>, sep: (x: X) => boolean) =>
-      getArrayFromAsyncIterable(splitAsyncIterable(asyncIterate(iter), sep))
+  const get = <X>(iter: Iterable<X>, sep: (x: X) => boolean) =>
+    getArrayFromAsyncIterable(splitAsyncIterable(asyncIterate(iter), sep))
 
   it('with empty array', async () => {
     expect(await get([], sep)).toEqual([[]])
@@ -164,9 +161,8 @@ describe('with async iterator and sync separator', () => {
 })
 
 describe('with sync iterator and async separator', () => {
-  const get =
-    <X> (iter: Iterable<X>, asyncSep: (x: X) => Promise<boolean>) =>
-      getArrayFromAsyncIterable(splitAsyncIterable(iter, asyncSep))
+  const get = <X>(iter: Iterable<X>, asyncSep: (x: X) => Promise<boolean>) =>
+    getArrayFromAsyncIterable(splitAsyncIterable(iter, asyncSep))
 
   it('with empty array', async () => {
     expect(await get([], asyncSep)).toEqual([[]])
@@ -240,9 +236,8 @@ describe('with sync iterator and async separator', () => {
 })
 
 describe('with async iterator and async separator', () => {
-  const get =
-    <X> (iter: Iterable<X>, asyncSep: (x: X) => Promise<boolean>) =>
-      getArrayFromAsyncIterable(splitAsyncIterable(asyncIterate(iter), asyncSep))
+  const get = <X>(iter: Iterable<X>, asyncSep: (x: X) => Promise<boolean>) =>
+    getArrayFromAsyncIterable(splitAsyncIterable(asyncIterate(iter), asyncSep))
 
   it('with empty array', async () => {
     expect(await get([], asyncSep)).toEqual([[]])

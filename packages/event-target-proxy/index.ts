@@ -38,10 +38,10 @@ export abstract class EventTargetProxy<Event, Listener> implements EventTarget<E
 export function create<
   Event = AnyEvent,
   ProvidedListener = AnyListener,
-  TransformedListener = ProvidedListener
-> (
+  TransformedListener = ProvidedListener,
+>(
   target: EventTarget<Event, TransformedListener>,
-  transform: ListenerTransformer<Event, ProvidedListener, TransformedListener>
+  transform: ListenerTransformer<Event, ProvidedListener, TransformedListener>,
 ): create.EvtTrgPrx<Event, ProvidedListener> {
   type Mod = ListenerModifier<Event, ProvidedListener>
 
@@ -50,11 +50,8 @@ export function create<
    *
    * It is in this class that key pairs are compared
    */
-  class LocalMultiKeyMap extends MultiKeyMap<
-    [Event, ProvidedListener],
-    TransformedListener
-  > {
-    constructor () {
+  class LocalMultiKeyMap extends MultiKeyMap<[Event, ProvidedListener], TransformedListener> {
+    constructor() {
       super(Map)
     }
   }
@@ -64,15 +61,11 @@ export function create<
    *
    * It is in this class that `TransformedListener`s are created
    */
-  class LocalInitMap extends InitMap<
-    [Event, ProvidedListener],
-    TransformedListener,
-    LocalMultiKeyMap
-  > {
-    constructor () {
+  class LocalInitMap extends InitMap<[Event, ProvidedListener], TransformedListener, LocalMultiKeyMap> {
+    constructor() {
       super(
         LocalMultiKeyMap,
-        ([event, listener]) => transform({ event, listener })
+        ([event, listener]) => transform({ event, listener }),
       )
     }
   }

@@ -17,11 +17,11 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^9.0.1",
     "split-iterable": "^0.1.7",
     "@tsfun/array": "^0.0.5",
     "tslib": "^2.0.0",
     "@types/fs-extra": "^9.0.1",
-    "@types/node": "^14.0.6"
+    "@types/node": "^14.0.27"
   }
 }

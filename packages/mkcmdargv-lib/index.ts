@@ -13,21 +13,21 @@ export interface Param {
   readonly flags?: readonly string[]
 }
 
-function parseSingleDash ([key, value]: [string, Value]) {
+function parseSingleDash([key, value]: [string, Value]) {
   const optName = '-' + key
   if (value === true) return [optName]
   if (value === false) return []
   return [optName, String(value)]
 }
 
-function parseDoubleDash ([key, value]: [string, Value]) {
+function parseDoubleDash([key, value]: [string, Value]) {
   const optName = '--' + key
   if (value === true) return [optName]
   if (value === false) return []
   return [`${optName}=${value}`]
 }
 
-export function * iterateCommandArguments (param: Param) {
+export function* iterateCommandArguments(param: Param) {
   const { args = [], options = {}, flags = [] } = param
   const [beforeDoubleDashes, ...afterDoubleDashes] = splitIterable(args, x => x === '--')
   const [beforeDashes, afterDashes] = partition(beforeDoubleDashes, x => x[0] !== '-')
@@ -35,36 +35,36 @@ export function * iterateCommandArguments (param: Param) {
   const [singleDashOptions, doubleDashOptions] = partition(optionsPairs, ([key]) => key.length === 1)
   const [singleDashFlags, doubleDashFlags] = partition(flags, x => x.length === 1)
 
-  yield * beforeDashes
+  yield* beforeDashes
 
   if (singleDashFlags.length) yield '-' + singleDashFlags.join('')
 
   for (const entry of singleDashOptions) {
-    yield * parseSingleDash(entry)
+    yield* parseSingleDash(entry)
   }
 
-  yield * doubleDashFlags.map(x => '--' + x)
+  yield* doubleDashFlags.map(x => '--' + x)
 
   for (const entry of doubleDashOptions) {
-    yield * parseDoubleDash(entry)
+    yield* parseDoubleDash(entry)
   }
 
   if (!afterDashes.length && !afterDoubleDashes.length) return
 
   yield '--'
-  yield * afterDashes
+  yield* afterDashes
 
   for (const chunk of afterDoubleDashes) {
     yield '--'
-    yield * chunk
+    yield* chunk
   }
 }
 
-export function createCommandArguments (param: Param) {
+export function createCommandArguments(param: Param) {
   return Array.from(iterateCommandArguments(param))
 }
 
-export async function help () {
+export async function help() {
   const pathPromise = import('path')
   const fsxPromise = import('fs-extra')
   const path = await pathPromise

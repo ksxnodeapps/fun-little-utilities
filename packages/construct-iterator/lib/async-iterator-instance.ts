@@ -6,7 +6,7 @@ export class AsyncIteratorInstance<Element> {
   public readonly [Symbol.asyncIterator]: () => this
   public readonly next: AsyncNextFunc<Element>
 
-  constructor (next: AsyncNextFuncLike<Element>) {
+  constructor(next: AsyncNextFuncLike<Element>) {
     this[Symbol.asyncIterator] = () => this
     this.next = createAsyncNextFunc(next)
   }

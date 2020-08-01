@@ -19,5 +19,5 @@ export {
   statInfo,
   symlinkRoutingFunctions,
   unit,
-  unknownStatType
+  unknownStatType,
 }

@@ -1,7 +1,7 @@
 export enum DisplaySelection {
   Word = 'word',
   Path = 'path',
-  Both = 'both'
+  Both = 'both',
 }
 
 export default DisplaySelection

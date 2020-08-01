@@ -5,13 +5,13 @@ export enum ExitStatus {
   UncaughtException = 1,
   InsufficientArguments = 2,
   NoEnt = 3,
-  UnknownError = 127
+  UnknownError = 127,
 }
 
 export enum EmptyArgumentHandlingMethod {
   Quiet = 'quiet',
   Warn = 'warn',
-  Error = 'error'
+  Error = 'error',
 }
 
 export enum UnitType {
@@ -19,7 +19,7 @@ export enum UnitType {
   Symlink,
   File,
   Directory,
-  Unknown = -1
+  Unknown = -1,
 }
 
 export namespace UnitType {
@@ -30,7 +30,7 @@ export namespace UnitType {
 export enum SymlinkResolution {
   Agnostic = 'agnostic',
   Relative = 'relative',
-  Ultimate = 'ultimate'
+  Ultimate = 'ultimate',
 }
 
 export enum UnknownStatTypeName {
@@ -38,5 +38,5 @@ export enum UnknownStatTypeName {
   CharacterDevice = 'CharacterDevice',
   FIFO = 'FIFO',
   Socket = 'Socket',
-  Unknown = 'Unknown'
+  Unknown = 'Unknown',
 }

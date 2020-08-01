@@ -48,16 +48,16 @@ export const DEFAULT_OPTION_KEY_STYLING_FUNC: StylingFunc = chalk.red
 export const DEFAULT_OPTION_VALUE_STYLING_FUNC: StylingFunc = chalk
 export const SPAWN_OPTIONS: SpawnOptions = { stdio: 'inherit' }
 
-function escape (...args: string[]) {
+function escape(...args: string[]) {
   return shEsc(args)
 }
 
-export function createPrettyExec<Return> (options: CreateOptions<Return>): PrettyExec<Return> {
+export function createPrettyExec<Return>(options: CreateOptions<Return>): PrettyExec<Return> {
   const {
     spawn,
     print,
     prefix: prefixText = DEFAULT_PREFIX,
-    colorSchemes = DEFAULT_COLOR_SCHEMES
+    colorSchemes = DEFAULT_COLOR_SCHEMES,
   } = options
 
   const {
@@ -66,7 +66,7 @@ export function createPrettyExec<Return> (options: CreateOptions<Return>): Prett
     argument = DEFAULT_ARGUMENT_STYLING_FUNC,
     flag = DEFAULT_FLAG_STYLING_FUNC,
     optionKey = DEFAULT_OPTION_KEY_STYLING_FUNC,
-    optionValue = DEFAULT_OPTION_VALUE_STYLING_FUNC
+    optionValue = DEFAULT_OPTION_VALUE_STYLING_FUNC,
   } = colorSchemes
 
   return (cmd, args) => {
@@ -84,7 +84,7 @@ export function createPrettyExec<Return> (options: CreateOptions<Return>): Prett
           case ParsingResult.Type.Option:
             return optionKey(escape(item.key)) + optionValue('=' + escape(item.value))
         }
-      })
+      }),
     )
 
     return spawn(cmd, argsArray, SPAWN_OPTIONS)

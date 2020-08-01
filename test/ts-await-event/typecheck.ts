@@ -7,9 +7,9 @@ type Event = 'Event'
 type Param = 'Param'
 
 const target = {
-  once (event: Event, listener: (param: Param) => void): void {
+  once(event: Event, listener: (param: Param) => void): void {
     console.log({ event, listener })
-  }
+  },
 }
 
 assert<

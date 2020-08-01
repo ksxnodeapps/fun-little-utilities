@@ -1,12 +1,12 @@
 import spawn from 'advanced-spawn-async'
 
-export async function notifySend (options: ExecOptions) {
+export async function notifySend(options: ExecOptions) {
   const { command = 'notify-send', execute = spawn } = options
   const args = opts2args(options)
   await execute(command, args).onclose
 }
 
-export function opts2args (options: Options) {
+export function opts2args(options: Options) {
   const {
     summary,
     body,
@@ -15,10 +15,10 @@ export function opts2args (options: Options) {
     urgency,
     expireTime,
     category,
-    hint
+    hint,
   } = options
 
-  let args = Array<string>()
+  const args = Array<string>()
   if (appName) args.push(`--app-name=${appName}`)
   if (icon) args.push(`--icon=${icon.join(',')}`)
   if (urgency) args.push(`--urgency=${urgency}`)
@@ -31,7 +31,7 @@ export function opts2args (options: Options) {
   return args
 }
 
-export function hint2str (hint: Hint) {
+export function hint2str(hint: Hint) {
   return hint.type + ':' + hint.name + ':' + hint.value
 }
 
@@ -62,7 +62,7 @@ export interface Options {
 export const enum Urgency {
   Low = 'low',
   Normal = 'normal',
-  Critical = 'critical'
+  Critical = 'critical',
 }
 
 export type Hint = StringHint | NumberHint
@@ -87,7 +87,7 @@ export const enum HintType {
   Int = 'int',
   Double = 'double',
   String = 'string',
-  Byte = 'byte'
+  Byte = 'byte',
 }
 
 export default notifySend

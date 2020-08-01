@@ -6,7 +6,7 @@ abstract class PathModuleBase {
   public readonly join = jest.fn((left: string, right: string) => dbg`path.join(${left}, ${right})`)
 }
 
-function setup<Mod extends PathModuleBase> (PathModule: new () => Mod) {
+function setup<Mod extends PathModuleBase>(PathModule: new () => Mod) {
   const pathModule = new PathModule()
   const fn = create(pathModule)
   const left = 'Left'

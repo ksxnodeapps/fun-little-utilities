@@ -3,12 +3,11 @@ import { UnitType } from '../../enums'
 import relativeLink from '../relative-link'
 const { Exception, Symlink, File, Directory, Unknown } = UnitType
 
-type PromiseValue<Type> =
-  Type extends Promise<infer Value> ? Value : Type
+type PromiseValue<Type> = Type extends Promise<infer Value> ? Value : Type
 
 async function asyncCall<
-  Function extends (...args: any[]) => any
-> (
+  Function extends (...args: any[]) => any,
+>(
   fn: Function,
   ...args: Parameters<Function>
 ): (
@@ -17,7 +16,7 @@ async function asyncCall<
   return fn(...args)
 }
 
-async function unit (options: Unit.Options): Promise<number> {
+async function unit(options: Unit.Options): Promise<number> {
   const {
     name,
     heading,
@@ -30,7 +29,7 @@ async function unit (options: Unit.Options): Promise<number> {
     getLink,
     getStat,
     getLoop,
-    addStatusCode
+    addStatusCode,
   } = options
 
   const main: Unit.LoopBody = async (name, followSymlink, visited) => {
@@ -38,14 +37,14 @@ async function unit (options: Unit.Options): Promise<number> {
 
     const maybeStats = await asyncCall(getStat, name).then(
       stats => ({ stats }),
-      error => ({ error })
+      error => ({ error }),
     )
 
     if ('error' in maybeStats) {
       return handleException({
         type: Exception,
         error: maybeStats.error,
-        options
+        options,
       })
     }
 
@@ -54,14 +53,14 @@ async function unit (options: Unit.Options): Promise<number> {
     if (stats.isSymbolicLink()) {
       const maybeContent = await asyncCall(getLink, name).then(
         content => ({ content }),
-        error => ({ error })
+        error => ({ error }),
       )
 
       if ('error' in maybeContent) {
         return handleException({
           type: Exception,
           error: maybeContent.error,
-          options
+          options,
         })
       }
 
@@ -73,13 +72,13 @@ async function unit (options: Unit.Options): Promise<number> {
         content,
         target,
         options,
-        stats
+        stats,
       })
 
       if (followSymlink && !visited.includes(target)) {
         return addStatusCode(
           status,
-          await loop(target, followSymlink - 1, [target, ...visited])
+          await loop(target, followSymlink - 1, [target, ...visited]),
         )
       }
 
@@ -90,7 +89,7 @@ async function unit (options: Unit.Options): Promise<number> {
       return handleFile({
         type: File,
         options,
-        stats
+        stats,
       })
     }
 
@@ -98,14 +97,14 @@ async function unit (options: Unit.Options): Promise<number> {
       return handleDirectory({
         type: Directory,
         options,
-        stats
+        stats,
       })
     }
 
     return handleUnknown({
       type: Unknown,
       options,
-      stats
+      stats,
     })
   }
 

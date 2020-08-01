@@ -2,7 +2,7 @@ import chalk from 'chalk'
 
 export const normalText = [
   'abc def ghi',
-  'jkl mno pqrs'
+  'jkl mno pqrs',
 ].join('\n')
 
 export const styledText = [
@@ -16,5 +16,5 @@ export const styledText = [
   ' -- ' + chalk.inverse('inverse[0] -- \n -- inverse[1]') + ' -- ',
   ' -- ' + chalk.underline.inverse('underline.inverse[0] -- \n -- underline.inverse[1]') + ' -- ',
   'foo',
-  'bar'
+  'bar',
 ].join('\n')

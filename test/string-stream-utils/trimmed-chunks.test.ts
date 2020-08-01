@@ -1,7 +1,7 @@
 import { trimmedChunks } from 'string-stream-utils'
 import { getAsyncArray } from './lib/async-array'
 
-async function * getStream () {
+async function* getStream() {
   yield 'abc'
   yield ''
   yield ' def '

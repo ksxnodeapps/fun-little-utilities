@@ -14,11 +14,11 @@ main({
   stdout,
   stderr,
   spawn: spawn as any, // quick fix, temporary
-  ...rest
+  ...rest,
 }).then(
   status => process.exit(status),
   error => {
     console.error(error)
     return process.exit(ExitStatus.UncaughtException)
-  }
+  },
 )

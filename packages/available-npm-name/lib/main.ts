@@ -6,17 +6,17 @@ import { parseInput } from './parse-input'
 import unit from './unit'
 
 /** Main program */
-export function main (param: main.Param): Promise<number> {
+export function main(param: main.Param): Promise<number> {
   const { argv, fetch, console, process } = param
   const registryUrl = argv.registry
 
   const $input = parseInput({
     args: argv._,
-    stdin: process.stdin
+    stdin: process.stdin,
   })
     .pipe(map(async packageName => ({
       packageName,
-      status: await unit({ packageName, registryUrl, fetch })
+      status: await unit({ packageName, registryUrl, fetch }),
     })))
     .pipe(mergeMap(promise => from(promise)))
     .pipe(share())
@@ -24,12 +24,12 @@ export function main (param: main.Param): Promise<number> {
   return new Promise<number>((resolve, reject) => {
     let totalStatus = 0
     $input.subscribe({
-      next ({ packageName, status }) {
+      next({ packageName, status }) {
         totalStatus |= status
         console.info(fmt(packageName, status))
       },
       complete: () => resolve(totalStatus),
-      error: error => reject(error)
+      error: error => reject(error),
     })
   })
 }

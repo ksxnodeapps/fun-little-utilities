@@ -2,18 +2,18 @@ export enum ErrorKind {
   ENOENT = -2,
   EEXIST = -17,
   ENOTDIR = -20,
-  EISDIR = -21
+  EISDIR = -21,
 }
 
 export type ErrorCode = string & keyof typeof ErrorKind
 
 export type SysCall =
-  'stat' |
-  'scandir' |
-  'open' |
-  'read' |
-  'mkdir' |
-  'exists'
+  | 'stat'
+  | 'scandir'
+  | 'open'
+  | 'read'
+  | 'mkdir'
+  | 'exists'
 
 interface ErrorConstructor<Return, Path> {
   new (syscall: SysCall, path: Path): Return
@@ -22,36 +22,36 @@ interface ErrorConstructor<Return, Path> {
 export class ENOENT<Path> {
   public readonly errno = ErrorKind.ENOENT
   public readonly code = ErrorKind[ErrorKind.ENOENT]
-  constructor (
+  constructor(
     public readonly syscall: SysCall,
-    public readonly path: Path
+    public readonly path: Path,
   ) {}
 }
 
 export class EEXIST<Path> {
   public readonly errno = ErrorKind.EEXIST
   public readonly code = ErrorKind[ErrorKind.EEXIST]
-  constructor (
+  constructor(
     public readonly syscall: SysCall,
-    public readonly path: Path
+    public readonly path: Path,
   ) {}
 }
 
 export class ENOTDIR<Path> {
   public readonly errno = ErrorKind.ENOTDIR
   public readonly code = ErrorKind[ErrorKind.ENOTDIR]
-  constructor (
+  constructor(
     public readonly syscall: SysCall,
-    public readonly path: Path
+    public readonly path: Path,
   ) {}
 }
 
 export class EISDIR<Path> {
   public readonly errno = ErrorKind.EISDIR
   public readonly code = ErrorKind[ErrorKind.EISDIR]
-  constructor (
+  constructor(
     public readonly syscall: SysCall,
-    public readonly path: Path
+    public readonly path: Path,
   ) {}
 }
 
@@ -59,7 +59,7 @@ export enum ContentKind {
   File = 'File',
   Directory = 'Directory',
   None = 'None',
-  Error = 'Error'
+  Error = 'Error',
 }
 
 const EMPTY_CLASS = class {}
@@ -72,18 +72,18 @@ const NONE = new None()
 
 class ErrorCarrier<Value> {
   public readonly kind = ContentKind.Error
-  constructor (public readonly value: Value) {}
+  constructor(public readonly value: Value) {}
 }
 
 export class FakeStats<FS extends Content<any, any>> {
-  constructor (private readonly fs: FS) {}
+  constructor(private readonly fs: FS) {}
   public readonly isFile = () => this.fs.kind === ContentKind.File
   public readonly isDirectory = () => this.fs.kind === ContentKind.Directory
 }
 
 export class FakeFileContent<Content> {
   public readonly kind = ContentKind.File
-  constructor (public readonly content: Content) {}
+  constructor(public readonly content: Content) {}
 }
 
 interface FileSystemEntry<PathElm, FileContent> extends ReadonlyArray<any> {
@@ -91,13 +91,10 @@ interface FileSystemEntry<PathElm, FileContent> extends ReadonlyArray<any> {
   readonly 1: Content<PathElm, FileContent> | readonly FileSystemEntry<PathElm, FileContent>[]
 }
 
-export class FakeDirectoryContent<PathElm, FileContent> extends Map<
-  PathElm,
-  Content<PathElm, FileContent>
-> {
+export class FakeDirectoryContent<PathElm, FileContent> extends Map<PathElm, Content<PathElm, FileContent>> {
   public readonly kind = ContentKind.Directory
 
-  constructor (entries: readonly FileSystemEntry<PathElm, FileContent>[] = []) {
+  constructor(entries: readonly FileSystemEntry<PathElm, FileContent>[] = []) {
     super(entries.map(([key, value]) => {
       if (value instanceof FakeFileContent || value instanceof FakeDirectoryContent) {
         return [key, value]
@@ -108,17 +105,17 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
     }))
   }
 
-  public hasPath (path: readonly PathElm[]) {
+  public hasPath(path: readonly PathElm[]) {
     const { kind } = this.getPath(path, 'exists', EMPTY_CLASS, EMPTY_CLASS)
     return kind === ContentKind.File || kind === ContentKind.Directory
   }
 
-  public getPath<ERP, EFD> (
+  public getPath<ERP, EFD>(
     path: readonly PathElm[],
     syscall: SysCall,
     RedundantPath: ErrorConstructor<ERP, PathElm[]>,
     FileAsDir: ErrorConstructor<EFD, PathElm[]>,
-    original = () => Array.from(path)
+    original = () => Array.from(path),
   ): MaybeContent<
     PathElm,
     FileContent,
@@ -128,25 +125,21 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
     const [first, ...rest] = path
     const next = this.get(first)
     if (!next) {
-      return rest.length
-        ? new ErrorCarrier(new RedundantPath(syscall, original()))
-        : NONE
+      return rest.length ? new ErrorCarrier(new RedundantPath(syscall, original())) : NONE
     }
     if (next.kind !== ContentKind.Directory) {
-      return rest.length
-        ? new ErrorCarrier(new FileAsDir(syscall, original()))
-        : next
+      return rest.length ? new ErrorCarrier(new FileAsDir(syscall, original())) : next
     }
     return next.getPath(rest, syscall, RedundantPath, FileAsDir, original)
   }
 
-  public setPath<ENE, EFD> (
+  public setPath<ENE, EFD>(
     path: readonly PathElm[],
     value: Content<PathElm, FileContent>,
     syscall: SysCall,
     NotExist: ErrorConstructor<ENE, PathElm[]>,
     FileAsDir: ErrorConstructor<EFD, PathElm[]>,
-    original = () => Array.from(path)
+    original = () => Array.from(path),
   ): ENE | EFD | null {
     const [first, ...rest] = path
     if (rest.length) {
@@ -159,12 +152,12 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
     return null
   }
 
-  public ensurePath<EFD> (
+  public ensurePath<EFD>(
     path: readonly PathElm[],
     value: Content<PathElm, FileContent>,
     syscall: SysCall,
     FileAsDir: ErrorConstructor<EFD, PathElm[]>,
-    original = () => Array.from(path)
+    original = () => Array.from(path),
   ): EFD | null {
     const [first, ...rest] = path
     if (rest.length) {
@@ -187,18 +180,18 @@ export class FakeDirectoryContent<PathElm, FileContent> extends Map<
 }
 
 export type Content<PathElm, FileContent> =
-  FakeFileContent<FileContent> |
-  FakeDirectoryContent<PathElm, FileContent>
+  | FakeFileContent<FileContent>
+  | FakeDirectoryContent<PathElm, FileContent>
 
 type MaybeContent<PathElm, FileContent, ErrorValue> =
-  None |
-  ErrorCarrier<ErrorValue> |
-  Content<PathElm, FileContent>
+  | None
+  | ErrorCarrier<ErrorValue>
+  | Content<PathElm, FileContent>
 
 export class ArrayPathFileSystem<PathElm, FileContent> {
   private coreMap: FakeDirectoryContent<PathElm, FileContent>
 
-  constructor (entries?: readonly FileSystemEntry<PathElm, FileContent>[]) {
+  constructor(entries?: readonly FileSystemEntry<PathElm, FileContent>[]) {
     this.coreMap = new FakeDirectoryContent(entries)
   }
 
@@ -285,7 +278,7 @@ type StringPathFileSystemDict = {
   readonly [_: string]: StringPathFileSystemDict | string
 }
 
-function dict2entries (dict: StringPathFileSystemDict): FileSystemEntry<string, string>[] {
+function dict2entries(dict: StringPathFileSystemDict): FileSystemEntry<string, string>[] {
   return Object.entries(dict).map(([key, value]) => {
     if (typeof value === 'string') {
       return [key, new FakeFileContent(value)]
@@ -298,47 +291,39 @@ function dict2entries (dict: StringPathFileSystemDict): FileSystemEntry<string, 
 export class StringPathFileSystem {
   private readonly core: ArrayPathFileSystem<string, string>
 
-  constructor (
+  constructor(
     private readonly sep: string,
-    dict: StringPathFileSystemDict = {}
+    dict: StringPathFileSystemDict = {},
   ) {
     this.core = new ArrayPathFileSystem(dict2entries(dict))
   }
 
-  private normalize (item: string) {
+  private normalize(item: string) {
     return item === '.' ? '' : item
   }
 
-  private split (path: string) {
+  private split(path: string) {
     return path
       .split(this.sep)
       .map(this.normalize)
       .filter(Boolean)
   }
 
-  public existsSync = (path: string) =>
-    this.core.existsSync(this.split(path))
+  public existsSync = (path: string) => this.core.existsSync(this.split(path))
 
-  public statSync = (path: string) =>
-    this.core.statSync(this.split(path))
+  public statSync = (path: string) => this.core.statSync(this.split(path))
 
   public readdirSync = (path: string) => this.core.readdirSync(this.split(path))
 
-  public mkdirSync = (path: string) =>
-    this.core.mkdirSync(this.split(path))
+  public mkdirSync = (path: string) => this.core.mkdirSync(this.split(path))
 
-  public readFileSync = (path: string) =>
-    this.core.readFileSync(this.split(path))
+  public readFileSync = (path: string) => this.core.readFileSync(this.split(path))
 
-  public writeFileSync = (path: string, fileContent: string) =>
-    this.core.writeFileSync(this.split(path), fileContent)
+  public writeFileSync = (path: string, fileContent: string) => this.core.writeFileSync(this.split(path), fileContent)
 
-  public ensureDirSync = (path: string) =>
-    this.core.ensureDirSync(this.split(path))
+  public ensureDirSync = (path: string) => this.core.ensureDirSync(this.split(path))
 
-  public outputFileSync = (path: string, fileContent: string) =>
-    this.core.outputFileSync(this.split(path), fileContent)
+  public outputFileSync = (path: string, fileContent: string) => this.core.outputFileSync(this.split(path), fileContent)
 
-  public ensureFileSync = (path: string) =>
-    this.outputFileSync(path, '')
+  public ensureFileSync = (path: string) => this.outputFileSync(path, '')
 }

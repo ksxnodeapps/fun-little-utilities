@@ -4,26 +4,26 @@ describe('specs', () => {
   describe('args', () => {
     it('args without leading dash should stay as-is', () => {
       expect(createCommandArguments({
-        args: ['abc', 'def', 'ghi']
+        args: ['abc', 'def', 'ghi'],
       })).toEqual(['abc', 'def', 'ghi'])
     })
 
     it('args that have leading dash should be placed after double dash', () => {
       expect(createCommandArguments({
-        args: ['abc', '-def', '--ghi', 'jkl']
+        args: ['abc', '-def', '--ghi', 'jkl'],
       })).toEqual(['abc', 'jkl', '--', '-def', '--ghi'])
     })
 
     describe('all non-leading-dash args after double dash arg should be placed after two double dashes', () => {
       it('without other leading dash args', () => {
         expect(createCommandArguments({
-          args: ['abc', 'def', '--', 'ghi', 'jkl', '--', 'mno']
+          args: ['abc', 'def', '--', 'ghi', 'jkl', '--', 'mno'],
         })).toEqual(['abc', 'def', '--', '--', 'ghi', 'jkl', '--', 'mno'])
       })
 
       it('all args after double dash args should be placed after leading-dash args after double dash', () => {
         expect(createCommandArguments({
-          args: ['abc', '-def', '--', 'ghi']
+          args: ['abc', '-def', '--', 'ghi'],
         })).toEqual(['abc', '--', '-def', '--', 'ghi'])
       })
     })
@@ -32,13 +32,13 @@ describe('specs', () => {
   describe('flags', () => {
     it('all short flags should be joined together', () => {
       expect(createCommandArguments({
-        flags: ['a', 'b', 'c']
+        flags: ['a', 'b', 'c'],
       })).toEqual(['-abc'])
     })
 
     it('all long flags should not be joined together', () => {
       expect(createCommandArguments({
-        flags: ['abc', 'def', 'ghi']
+        flags: ['abc', 'def', 'ghi'],
       })).toEqual(['--abc', '--def', '--ghi'])
     })
   })
@@ -57,8 +57,8 @@ describe('specs', () => {
         0: 0,
         zero: 0,
         n: 12,
-        nonZero: 12
-      }
+        nonZero: 12,
+      },
     }
 
     const get = () => createCommandArguments(param)
@@ -75,13 +75,13 @@ describe('specs', () => {
 
     it('string should appear regardless of its value', () => {
       expect(get()).toEqual(
-        expect.arrayContaining(['-e', '', '--empty=', '-s', 'abc', '--nonEmpty=abc'])
+        expect.arrayContaining(['-e', '', '--empty=', '-s', 'abc', '--nonEmpty=abc']),
       )
     })
 
     it('number should appear regardless of its value', () => {
       expect(get()).toEqual(
-        expect.arrayContaining(['-0', '0', '--zero=0', '-n', '12', '--nonZero=12'])
+        expect.arrayContaining(['-0', '0', '--zero=0', '-n', '12', '--nonZero=12']),
       )
     })
   })
@@ -94,67 +94,67 @@ describe('snapshots', () => {
 
   it('before dash arguments', () => {
     expect(createCommandArguments({
-      args: ['abc', 'def', 'ghi']
+      args: ['abc', 'def', 'ghi'],
     })).toMatchSnapshot()
   })
 
   it('after dash arguments', () => {
     expect(createCommandArguments({
-      args: ['-abc', '--def']
+      args: ['-abc', '--def'],
     })).toMatchSnapshot()
   })
 
   it('one double dash', () => {
     expect(createCommandArguments({
-      args: ['--']
+      args: ['--'],
     })).toMatchSnapshot()
   })
 
   it('multiple double dashes', () => {
     expect(createCommandArguments({
-      args: ['--', 'zzz', '--', 'sss', '--']
+      args: ['--', 'zzz', '--', 'sss', '--'],
     })).toMatchSnapshot()
   })
 
   it('before dash arguments and after dash arguments and double dashes', () => {
     expect(createCommandArguments({
-      args: ['abc', 'def', '-ghi', '--jkl', '--', 'sss', '--']
+      args: ['abc', 'def', '-ghi', '--jkl', '--', 'sss', '--'],
     })).toMatchSnapshot()
   })
 
   it('single flags', () => {
     expect(createCommandArguments({
-      flags: ['p', 'q', 'r']
+      flags: ['p', 'q', 'r'],
     })).toMatchSnapshot()
   })
 
   it('double flags', () => {
     expect(createCommandArguments({
-      flags: ['foo', 'bar', 'baz']
+      flags: ['foo', 'bar', 'baz'],
     })).toEqual(['--foo', '--bar', '--baz'])
   })
 
   it('single flags and double flags', () => {
     expect(createCommandArguments({
-      flags: ['p', 'foo', 'q', 'bar', 'r', 'baz']
+      flags: ['p', 'foo', 'q', 'bar', 'r', 'baz'],
     })).toMatchSnapshot()
   })
 
   it('single options', () => {
     expect(createCommandArguments({
-      options: { a: true, b: false, c: 'foo', d: 123 }
+      options: { a: true, b: false, c: 'foo', d: 123 },
     })).toMatchSnapshot()
   })
 
   it('double options', () => {
     expect(createCommandArguments({
-      options: { abc: true, def: false, ghi: 'bar', jkl: 456 }
+      options: { abc: true, def: false, ghi: 'bar', jkl: 456 },
     })).toMatchSnapshot()
   })
 
   it('single options and double options', () => {
     expect(createCommandArguments({
-      options: { a: true, abc: true, b: false, def: false, c: 'foo', ghi: 'bar', d: 123, jkl: 456 }
+      options: { a: true, abc: true, b: false, def: false, c: 'foo', ghi: 'bar', d: 123, jkl: 456 },
     })).toMatchSnapshot()
   })
 
@@ -162,7 +162,7 @@ describe('snapshots', () => {
     expect(createCommandArguments({
       args: ['abc', 'def', '-ghi', '--jkl', '--', 'sss', '--'],
       flags: ['p', 'foo', 'q', 'bar', 'r', 'baz'],
-      options: { a: true, abc: true, b: false, def: false, c: 'foo', ghi: 'bar', d: 123, jkl: 456 }
+      options: { a: true, abc: true, b: false, def: false, c: 'foo', ghi: 'bar', d: 123, jkl: 456 },
     })).toMatchSnapshot()
   })
 })

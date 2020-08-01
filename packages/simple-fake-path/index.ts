@@ -15,8 +15,7 @@ export abstract class FakePath {
   public abstract readonly [symRoot]: readonly string[]
   public abstract readonly sep: string
 
-  public readonly isAbsolute = (path: string): boolean =>
-    this[symRoot].some(root => path.startsWith(root))
+  public readonly isAbsolute = (path: string): boolean => this[symRoot].some(root => path.startsWith(root))
 
   public readonly join = (...paths: string[]): string => {
     if (!paths.length) return '.'
@@ -35,7 +34,7 @@ export abstract class FakePath {
 
   public readonly resolve = (...paths: string[]): string => {
     const { isAbsolute, join } = this
-    function resolve (paths: readonly string[]): string {
+    function resolve(paths: readonly string[]): string {
       if (!paths.length) return '.'
       const [head, ...rest] = paths
       const tail = resolve(rest)
@@ -66,7 +65,7 @@ export abstract class FakePath {
   public readonly normalize = (path: string): string => {
     if (isEmpty(path)) return '.'
     const { sep } = this
-    function splitLeadSep (path: string): [number, string] {
+    function splitLeadSep(path: string): [number, string] {
       if (!path.startsWith(sep)) return [0, path]
       const [count, tail] = splitLeadSep(path.slice(sep.length))
       return [count + 1, tail]
@@ -76,13 +75,11 @@ export abstract class FakePath {
       const nTail = this.normalize(tail)
       return isEmpty(nTail) ? sep : sep + nTail
     }
-    function normalize (normal: readonly string[], weird: readonly string[]): string {
+    function normalize(normal: readonly string[], weird: readonly string[]): string {
       if (!weird.length) return normal.join(sep)
       const [head, ...tail] = weird
       if (head === '..') {
-        return normal.length
-          ? normalize(normal.slice(0, -1), tail)
-          : '..' + sep + normalize(normal, tail)
+        return normal.length ? normalize(normal.slice(0, -1), tail) : '..' + sep + normalize(normal, tail)
       }
       if (isEmpty(head)) return normalize(normal, tail)
       return normalize([...normal, head], tail)

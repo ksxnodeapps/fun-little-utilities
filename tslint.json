@@ -1,6 +1,14 @@
 {
-  "extends": "tslint-config-standard",
+  "extends": "tslint:recommended",
   "rules": {
+    "no-bitwise": false,
+    "ban-types": false,
+    "no-console": false,
+    "no-empty-interface": false,
+    "no-namespace": false,
+    "no-shadowed-variable": false,
+    "max-classes-per-file": false,
+    "callable-types": false,
     "no-implicit-dependencies": true
   },
   "linterOptions": {

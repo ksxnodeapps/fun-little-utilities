@@ -8,24 +8,24 @@ const {
   MKCMDARGV_ARGS = '[]',
   MKCMDARGV_OPTIONS = '{}',
   MKCMDARGV_SINGLE_FLAGS = '',
-  MKCMDARGV_DOUBLE_FLAGS = ''
+  MKCMDARGV_DOUBLE_FLAGS = '',
 } = process.env
 
 class Box<Content> {
-  constructor (public readonly content: Content) {}
+  constructor(public readonly content: Content) {}
 
-  public validate<Sub extends Content> (
+  public validate<Sub extends Content>(
     fn: (content: Content) => content is Sub,
-    error: (content: Content) => Error
+    error: (content: Content) => Error,
   ): Box<Sub> {
     if (fn(this.content)) return new Box(this.content)
     throw error(this.content)
   }
 }
 
-function tryParse (text: string, name: string) {
+function tryParse(text: string, name: string) {
   try {
-    return new Box(safeLoad(text))
+    return new Box(safeLoad(text) as any)
   } catch (error) {
     console.error(`Failed to parse $${name}`)
     console.error(String(error))
@@ -33,7 +33,7 @@ function tryParse (text: string, name: string) {
   }
 }
 
-async function main (): Promise<number> {
+async function main(): Promise<number> {
   if (argv.includes('help') || argv.includes('--help')) {
     console.info(await help())
     return 0
@@ -46,17 +46,17 @@ async function main (): Promise<number> {
     options: tryParse(MKCMDARGV_OPTIONS, 'MKCMDARGV_OPTIONS')
       .validate(
         (object): object is {} | null => typeof object === 'object',
-        () => new Error('Expecting an object')
+        () => new Error('Expecting an object'),
       )
       .validate(
         Boolean as any as ((x: any) => x is {}),
-        () => new Error('Object must not be null')
+        () => new Error('Object must not be null'),
       )
       .content,
     flags: [
       ...MKCMDARGV_SINGLE_FLAGS,
-      ...MKCMDARGV_DOUBLE_FLAGS.split(/\s+/)
-    ]
+      ...MKCMDARGV_DOUBLE_FLAGS.split(/\s+/),
+    ],
   }
 
   for (const item of iterateCommandArguments(param)) {
@@ -71,5 +71,5 @@ main().then(
   error => {
     console.error(error)
     process.exit(-1)
-  }
+  },
 )

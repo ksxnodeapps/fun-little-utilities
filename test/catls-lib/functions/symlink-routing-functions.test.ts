@@ -2,7 +2,7 @@ import { symlinkRoutingFunctions, SymlinkResolution, SymlinkRoutingFunctions } f
 import FileSystemFunctions = SymlinkRoutingFunctions.FileSystemFunctions
 const { Agnostic, Relative, Ultimate } = SymlinkResolution
 
-function initGetLoop (getLoop: SymlinkRoutingFunctions.LoopGetter) {
+function initGetLoop(getLoop: SymlinkRoutingFunctions.LoopGetter) {
   const name = 'name'
   const followSymlink = 4
   const visited: ReadonlyArray<string> = []

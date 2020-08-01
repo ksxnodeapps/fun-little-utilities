@@ -10,7 +10,7 @@ import {
   Main,
   SymlinkResolution,
   EmptyArgumentHandlingMethod,
-  ExitStatus
+  ExitStatus,
 } from 'catls-lib'
 
 import {
@@ -18,17 +18,17 @@ import {
   fsPromiseDict,
   allDictKeys,
   DictKey,
-  ItemType
+  ItemType,
 } from '../.lib/fake-file-system-sample'
 
 type PredefinedParamKey =
-  'stdout' |
-  'stderr' |
-  'cat' |
-  'ls' |
-  'addStatusCode' |
-  'spawn' |
-  'fsPromise'
+  | 'stdout'
+  | 'stderr'
+  | 'cat'
+  | 'ls'
+  | 'addStatusCode'
+  | 'spawn'
+  | 'fsPromise'
 
 type InitParam = Readonly<Omit<Main.Param, PredefinedParamKey>>
 
@@ -36,7 +36,7 @@ const cat = 'cat'
 const ls = 'ls'
 const interactive = '--interactive'
 
-const spawn = jest.fn(function localSpawn (cmd: string, argv: ReadonlyArray<string>): FakeChildProcess {
+const spawn = jest.fn(function localSpawn(cmd: string, argv: ReadonlyArray<string>): FakeChildProcess {
   if (cmd === 'script') {
     const argvLast = lastOrUndefined(argv)
     const [nextCmd, ...nextArgv] = shQuote.parse(argvLast!)
@@ -72,7 +72,7 @@ const spawn = jest.fn(function localSpawn (cmd: string, argv: ReadonlyArray<stri
       out('\n')()
     }
 
-    function read (name: string): void {
+    function read(name: string): void {
       if (name in fsPromiseDict) {
         const key: DictKey = name as any
         const value = fsPromiseDict[key]
@@ -108,7 +108,7 @@ const spawn = jest.fn(function localSpawn (cmd: string, argv: ReadonlyArray<stri
   return cp
 })
 
-function init (param: InitParam) {
+function init(param: InitParam) {
   const stdout = new StreamInstance()
   const stderr = new StreamInstance()
   const status = main({
@@ -119,7 +119,7 @@ function init (param: InitParam) {
     ls,
     spawn,
     fsPromise,
-    ...param
+    ...param,
   })
   return { stdout, stderr, status }
 }
@@ -127,25 +127,22 @@ function init (param: InitParam) {
 const allSymlinkRslns = [
   SymlinkResolution.Agnostic,
   SymlinkResolution.Relative,
-  SymlinkResolution.Ultimate
+  SymlinkResolution.Ultimate,
 ]
 
 const allEmptyArgsMtds = [
   EmptyArgumentHandlingMethod.Error,
   EmptyArgumentHandlingMethod.Quiet,
-  EmptyArgumentHandlingMethod.Warn
+  EmptyArgumentHandlingMethod.Warn,
 ]
 
 type HasLength<Length = number> = { readonly length: Length }
 type DescMaker<X = any> = (name: string) => (x: X) => string
-const desc = (name: string, x: any) =>
-  `when ${name} is ${x}`
-const descEmpty: DescMaker<HasLength> = name => list =>
-  desc(name, list.length ? 'not empty' : 'empty')
-const descEmptyLength: DescMaker<HasLength> = name => ({ length }) =>
-  desc(name, length ? `an array of ${length} elements` : 'empty')
-const descJSON: DescMaker = name => x =>
-  desc(name, JSON.stringify(x))
+const desc = (name: string, x: any) => `when ${name} is ${x}`
+const descEmpty: DescMaker<HasLength> = name => list => desc(name, list.length ? 'not empty' : 'empty')
+const descEmptyLength: DescMaker<HasLength> = name =>
+  ({ length }) => desc(name, length ? `an array of ${length} elements` : 'empty')
+const descJSON: DescMaker = name => x => desc(name, JSON.stringify(x))
 
 const suites = initCartesianTest()
   .add([[], allDictKeys], descEmpty('list'))
@@ -174,7 +171,7 @@ suites.run(param => {
     handleEmptyArguments,
     catArguments,
     lsArguments,
-    sharedArguments
+    sharedArguments,
   ] = param as any // temporary
 
   const { status, stderr, stdout } = init({
@@ -185,25 +182,25 @@ suites.run(param => {
     handleEmptyArguments,
     catArguments,
     lsArguments,
-    sharedArguments
+    sharedArguments,
   })
 
   const mkfn = (fn: (status: number) => void) => () => status.then(fn)
 
-  const prependByLines = (text: string, prefix: string) => text.trim()
-    .split('\n')
-    .map(line => line.trim() ? prefix + line : '')
-    .join('\n')
+  const prependByLines = (text: string, prefix: string) =>
+    text.trim()
+      .split('\n')
+      .map(line => line.trim() ? prefix + line : '')
+      .join('\n')
 
   const indent = ' '.repeat(2)
 
-  const formatString = (text: string) => text
-    ? '\n\n' + prependByLines(text, indent) + '\n'
-    : '<empty string>'
+  const formatString = (text: string) => text ? '\n\n' + prependByLines(text, indent) + '\n' : '<empty string>'
 
-  const mkSnFn = (fn: () => string) => mkfn(() => {
-    expect(formatString(fn())).toMatchSnapshot()
-  })
+  const mkSnFn = (fn: () => string) =>
+    mkfn(() => {
+      expect(formatString(fn())).toMatchSnapshot()
+    })
 
   it('status matches snapshot', mkfn(status => expect(status).toMatchSnapshot()))
   it('stdout matches snapshot', mkSnFn(() => getString(stdout)))

@@ -2,7 +2,7 @@ import {
   createAsyncIterableIterator,
   createAsyncIteratorResult,
   IteratorResultLike,
-  IteratorResultInstance
+  IteratorResultInstance,
 } from 'construct-iterator'
 
 describe('deals with async next()', () => {

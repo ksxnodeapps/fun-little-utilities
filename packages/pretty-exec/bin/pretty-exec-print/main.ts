@@ -5,7 +5,7 @@ const status = main({
   spawn: () => ({ status: 0 }),
   print: console.info,
   error: console.error,
-  process
+  process,
 })
 
 throw process.exit(status)

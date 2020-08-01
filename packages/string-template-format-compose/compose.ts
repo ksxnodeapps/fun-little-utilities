@@ -8,9 +8,9 @@ export interface Compose {
    * @param f Inner template literal tag
    * @returns Template literal tag
    */
-  <Fx, Gy, FyGx> (
+  <Fx, Gy, FyGx>(
     g: (x: FyGx) => Gy,
-    f: Tag<Fx, FyGx>
+    f: Tag<Fx, FyGx>,
   ): Tag<Fx, Gy>
 }
 

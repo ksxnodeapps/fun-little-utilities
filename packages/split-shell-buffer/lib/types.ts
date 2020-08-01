@@ -34,7 +34,7 @@ export interface Element {
 }
 
 export interface Writable {
-  write (buffer: Buffer): void
+  write(buffer: Buffer): void
 }
 
 export interface ChildProcess<Chunk, Err = Error> {

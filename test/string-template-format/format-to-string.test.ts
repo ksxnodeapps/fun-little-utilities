@@ -1,7 +1,7 @@
 import { formatToString } from 'string-template-format'
 
 class MyObject {
-  toString () {
+  toString() {
     return '[MyObject]' as const
   }
 }

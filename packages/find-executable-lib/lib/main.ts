@@ -3,7 +3,7 @@ import { MainOptions } from './types'
 import find from './find'
 import display from './display'
 
-export function main (options: MainOptions): number {
+export function main(options: MainOptions): number {
   const { cliOptions, logger } = options
   const { _: list, filter } = cliOptions
 

@@ -5,7 +5,7 @@ export class IteratorInstance<Element> implements Iterator<Element>, Iterable<El
   public readonly [Symbol.iterator]: () => this
   public readonly next: NextFunc<Element>
 
-  constructor (next: NextFuncLike<Element>) {
+  constructor(next: NextFuncLike<Element>) {
     this[Symbol.iterator] = () => this
     this.next = createNextFunc(next)
   }

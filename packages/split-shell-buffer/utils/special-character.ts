@@ -5,7 +5,7 @@ export enum SpecialCharacter {
   StartFollow = ord('['),
   End = ord('m'),
   Seperator = ord(';'),
-  EndOfLine = ord('\n')
+  EndOfLine = ord('\n'),
 }
 
 export default SpecialCharacter

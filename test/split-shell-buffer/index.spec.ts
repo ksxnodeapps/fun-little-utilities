@@ -16,12 +16,13 @@ import {
   SplitterObject,
   SequenceFunc,
   EventedStream,
-  ChildProcess
+  ChildProcess,
 } from 'split-shell-buffer'
 
-const mkemit = (emitter: EventEmitter) => (timeout: number, event: string, ...args: any[]) => {
-  setTimeout(() => emitter.emit(event, ...args), timeout)
-}
+const mkemit = (emitter: EventEmitter) =>
+  (timeout: number, event: string, ...args: any[]) => {
+    setTimeout(() => emitter.emit(event, ...args), timeout)
+  }
 
 class EventedStreamObject extends EventEmitter implements EventedStream<string | Buffer, any> {}
 
@@ -34,7 +35,7 @@ describe('create()', () => {
   describe('constructs an object', () => {
     describe('without providing optional properties', () => {
       const splitter = create({
-        data: Buffer.from(normalText)
+        data: Buffer.from(normalText),
       })
 
       it('which is an instance of SplitterObject', () => {
@@ -45,7 +46,7 @@ describe('create()', () => {
         expect(splitter).toMatchObject({
           prefix: [],
           suffix: [],
-          data: Buffer.from(normalText)
+          data: Buffer.from(normalText),
         })
       })
     })
@@ -71,10 +72,11 @@ describe('create()', () => {
     type SeqParam = SequenceFunc.Param
     const data = Buffer.from(normalText)
 
-    const createTracker = (collection: SeqParam[], data: Buffer) => (param: SeqParam) => {
-      collection.push(param)
-      return data
-    }
+    const createTracker = (collection: SeqParam[], data: Buffer) =>
+      (param: SeqParam) => {
+        collection.push(param)
+        return data
+      }
 
     const prefixParamCollection = Array<SeqParam>()
     const prefix = createTracker(prefixParamCollection, Buffer.from('<prefix>'))
@@ -101,7 +103,7 @@ describe('create()', () => {
     it('produces desired string', async () => {
       expect(await stringPromise).toBe([
         '<prefix>abc def ghi<suffix>',
-        '<prefix>jkl mno pqrs<suffix>'
+        '<prefix>jkl mno pqrs<suffix>',
       ].join('\n'))
     })
   })
@@ -110,11 +112,11 @@ describe('create()', () => {
 describe('fromIterable()', () => {
   it('constructs correct object', () => {
     expect(
-      fromIterable(Buffer.from(normalText))
+      fromIterable(Buffer.from(normalText)),
     ).toEqual(
       create({
-        data: Buffer.from(normalText)
-      })
+        data: Buffer.from(normalText),
+      }),
     )
   })
 })
@@ -183,34 +185,34 @@ describe('fromEventedStream()', () => {
 
 describe('fromIterableStream()', () => {
   it('when provided stream yields instances of Buffer', async () => {
-    async function * iterate () {
+    async function* iterate() {
       for (const chunk of normalText.split('\n')) {
         yield Buffer.from(chunk + '\n')
       }
     }
 
     const stream = {
-      [Symbol.asyncIterator]: iterate
+      [Symbol.asyncIterator]: iterate,
     }
 
     expect(
-      await toString(fromIterableStream(stream))
+      await toString(fromIterableStream(stream)),
     ).toBe(normalText + '\n')
   })
 
   it('when provided stream yields strings', async () => {
-    async function * iterate () {
+    async function* iterate() {
       for (const chunk of normalText.split('\n')) {
         yield chunk + '\n'
       }
     }
 
     const stream = {
-      [Symbol.asyncIterator]: iterate
+      [Symbol.asyncIterator]: iterate,
     }
 
     expect(
-      await toString(fromIterableStream(stream))
+      await toString(fromIterableStream(stream)),
     ).toBe(normalText + '\n')
   })
 })
@@ -261,7 +263,7 @@ describe('fromChildProcess()', () => {
       'out 2',
       'err 1',
       'err 2',
-      ''
+      '',
     ].join('\n'))
   })
 
@@ -275,14 +277,13 @@ describe('fromChildProcess()', () => {
       () => {
         throw new Error('Expecting a rejection but it resolves')
       },
-
       (error: StdOutError<string | Buffer>) => {
         expect(error).toBeInstanceOf(StdOutError)
         expect(error.error).toBe(expectedError)
         expect(error.stream).toBe(process.stdout)
         expect(error.name).toBe('StdOutError')
         expect(error.message).toBe(String(error.error))
-      }
+      },
     )
   })
 
@@ -296,14 +297,13 @@ describe('fromChildProcess()', () => {
       () => {
         throw new Error('Expecting a rejection but it resolves')
       },
-
       (error: StdErrError<string | Buffer>) => {
         expect(error).toBeInstanceOf(StdErrError)
         expect(error.error).toBe(expectedError)
         expect(error.stream).toBe(process.stderr)
         expect(error.name).toBe('StdErrError')
         expect(error.message).toBe(String(error.error))
-      }
+      },
     )
   })
 
@@ -321,11 +321,11 @@ describe('fromChildProcess()', () => {
 describe('fromString()', () => {
   it('constructs correct object', () => {
     expect(
-      fromString(normalText)
+      fromString(normalText),
     ).toEqual(
       create({
-        data: Buffer.from(normalText)
-      })
+        data: Buffer.from(normalText),
+      }),
     )
   })
 })
@@ -334,18 +334,18 @@ describe('toString()', () => {
   describe('with default options', () => {
     it('with normal text', async () => {
       expect(
-        await toString(fromString(normalText))
+        await toString(fromString(normalText)),
       ).toEqual(
         await toString(
           fromString(normalText),
-          { finalNewLine: false, encoding: 'utf8' }
-        )
+          { finalNewLine: false, encoding: 'utf8' },
+        ),
       )
     })
 
     it('with styled text', async () => {
       expect(
-        await toString(fromString(styledText))
+        await toString(fromString(styledText)),
       ).toMatchSnapshot()
     })
   })
@@ -353,7 +353,7 @@ describe('toString()', () => {
   describe('preserves normal text', () => {
     it('without options', async () => {
       expect(
-        await toString(fromString(normalText))
+        await toString(fromString(normalText)),
       ).toEqual(normalText)
     })
 
@@ -361,8 +361,8 @@ describe('toString()', () => {
       expect(
         await toString(
           fromString(normalText),
-          { finalNewLine: true }
-        )
+          { finalNewLine: true },
+        ),
       ).toEqual(normalText + '\n')
     })
 
@@ -370,10 +370,10 @@ describe('toString()', () => {
       expect(
         await toString(
           fromString(normalText),
-          { encoding: 'hex' }
-        )
+          { encoding: 'hex' },
+        ),
       ).toEqual(
-        Buffer.from(normalText).toString('hex')
+        Buffer.from(normalText).toString('hex'),
       )
     })
   })
@@ -385,9 +385,9 @@ describe('write()', () => {
 
     it('passes instances of Buffer to writable.write', async () => {
       await write({
-        write (instance) {
+        write(instance) {
           expect(instance).toBeInstanceOf(Buffer)
-        }
+        },
       }, splitter)
     })
 
@@ -395,9 +395,9 @@ describe('write()', () => {
       let count = 0
 
       await write({
-        write () {
+        write() {
           count += 1
-        }
+        },
       }, splitter)
 
       expect(count).toBe(normalText.split('\n').length)
@@ -407,9 +407,9 @@ describe('write()', () => {
       let text = ''
 
       await write({
-        write (buffer) {
+        write(buffer) {
           text += buffer.toString()
-        }
+        },
       }, splitter)
 
       expect(text).toBe(normalText)
@@ -421,9 +421,9 @@ describe('write()', () => {
 
     it('passes instances of Buffer to writable.write', async () => {
       await write({
-        write (instance) {
+        write(instance) {
           expect(instance).toBeInstanceOf(Buffer)
-        }
+        },
       }, splitter)
     })
 
@@ -431,9 +431,9 @@ describe('write()', () => {
       let count = 0
 
       await write({
-        write () {
+        write() {
           count += 1
-        }
+        },
       }, splitter)
 
       expect(count).toBe(styledText.split('\n').length)
@@ -443,9 +443,9 @@ describe('write()', () => {
       let text = ''
 
       await write({
-        write (buffer) {
+        write(buffer) {
           text += buffer.toString()
-        }
+        },
       }, splitter)
 
       expect(text).toBe(await toString(splitter))
@@ -459,9 +459,9 @@ describe('writeln()', () => {
 
     it('passes instances of Buffer to writable.write', async () => {
       await writeln({
-        write (instance) {
+        write(instance) {
           expect(instance).toBeInstanceOf(Buffer)
-        }
+        },
       }, splitter)
     })
 
@@ -469,9 +469,9 @@ describe('writeln()', () => {
       let count = 0
 
       await writeln({
-        write () {
+        write() {
           count += 1
-        }
+        },
       }, splitter)
 
       expect(count).toBe(normalText.split('\n').length)
@@ -481,9 +481,9 @@ describe('writeln()', () => {
       let text = ''
 
       await writeln({
-        write (buffer) {
+        write(buffer) {
           text += buffer.toString()
-        }
+        },
       }, splitter)
 
       expect(text).toBe(normalText + '\n')
@@ -495,9 +495,9 @@ describe('writeln()', () => {
 
     it('passes instances of Buffer to writable.write', async () => {
       await writeln({
-        write (instance) {
+        write(instance) {
           expect(instance).toBeInstanceOf(Buffer)
-        }
+        },
       }, splitter)
     })
 
@@ -505,9 +505,9 @@ describe('writeln()', () => {
       let count = 0
 
       await writeln({
-        write () {
+        write() {
           count += 1
-        }
+        },
       }, splitter)
 
       expect(count).toBe(styledText.split('\n').length)
@@ -517,9 +517,9 @@ describe('writeln()', () => {
       let text = ''
 
       await writeln({
-        write (buffer) {
+        write(buffer) {
           text += buffer.toString()
-        }
+        },
       }, splitter)
 
       expect(text).toBe(await toString(splitter) + '\n')
@@ -539,9 +539,9 @@ describe('SplitterObject::withPrefix()', () => {
 
     expect(
       fromIterable([])
-        .withPrefix(prefix)
+        .withPrefix(prefix),
     ).toEqual(
-      create({ data: [], prefix })
+      create({ data: [], prefix }),
     )
   })
 })
@@ -558,9 +558,9 @@ describe('SplitterObject::withSuffix()', () => {
 
     expect(
       fromIterable([])
-        .withSuffix(suffix)
+        .withSuffix(suffix),
     ).toEqual(
-      create({ data: [], suffix })
+      create({ data: [], suffix }),
     )
   })
 })
@@ -569,10 +569,10 @@ describe('SplitterObject::withIndent()', () => {
   it('calls withPrefix()', () => {
     expect(
       fromIterable([])
-        .withIndent(4)
+        .withIndent(4),
     ).toEqual(
       fromIterable([])
-        .withPrefix(Buffer.from(' '.repeat(4)))
+        .withPrefix(Buffer.from(' '.repeat(4))),
     )
   })
 })

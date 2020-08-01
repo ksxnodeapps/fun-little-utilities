@@ -2,7 +2,7 @@ import {
   createIterableIterator,
   createIteratorResult,
   IteratorResultLike,
-  IteratorResultInstance
+  IteratorResultInstance,
 } from 'construct-iterator'
 
 const mknext = (max: number) => {

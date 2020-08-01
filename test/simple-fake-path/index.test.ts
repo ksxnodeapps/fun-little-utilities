@@ -18,7 +18,7 @@ it('isAbsolute', () => {
     '..',
     'a/b/c',
     './a/b',
-    '../a/b'
+    '../a/b',
   ], isAbsolute)
   expect({ absolute, relative }).toMatchSnapshot()
 })
@@ -312,11 +312,11 @@ describe('normalize', () => {
       './/.',
       '././.',
       './',
-      './/'
+      './/',
     ]
       .map(weird => ({
         weird: inspect(weird).padStart(10),
-        normal: inspect(normalize(weird))
+        normal: inspect(normalize(weird)),
       }))
       .map(item => `${item.weird} => ${item.normal}`)
       .join('\n')
@@ -335,11 +335,11 @@ describe('normalize', () => {
       '/.//.',
       '/././.',
       '//./',
-      '/.//'
+      '/.//',
     ]
       .map(weird => ({
         weird: inspect(weird).padStart(10),
-        normal: inspect(normalize(weird))
+        normal: inspect(normalize(weird)),
       }))
       .map(item => `${item.weird} => ${item.normal}`)
       .join('\n')
@@ -358,11 +358,11 @@ describe('normalize', () => {
       '/.//./a/./b/c/',
       '/./././a/./b/c/',
       '//.//a/./b/c/',
-      '/.//a/./b/c//'
+      '/.//a/./b/c//',
     ]
       .map(weird => ({
         weird: inspect(weird).padStart(20),
-        normal: inspect(normalize(weird))
+        normal: inspect(normalize(weird)),
       }))
       .map(item => `${item.weird} => ${item.normal}`)
       .join('\n')

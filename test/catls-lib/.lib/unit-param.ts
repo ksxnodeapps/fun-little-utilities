@@ -2,7 +2,7 @@ import {
   symlinkRoutingFunctions,
   Unit,
   SymlinkResolution,
-  SymlinkRoutingFunctions
+  SymlinkRoutingFunctions,
 } from 'catls-lib'
 
 export enum HandlerReturn {
@@ -10,7 +10,7 @@ export enum HandlerReturn {
   Symlink = 3,
   File = 5,
   Directory = 7,
-  Unknown = 11
+  Unknown = 11,
 }
 
 export class UnitParamSharedProperties {
@@ -31,7 +31,7 @@ export class UnitParam extends UnitParamSharedProperties implements Unit.Options
   public readonly getStat: jest.Mock<any>
   public readonly getLoop: jest.Mock<any>
 
-  constructor (options: UnitParam.ConstructorOptions) {
+  constructor(options: UnitParam.ConstructorOptions) {
     super()
 
     this.fsPromise = options.fsPromise

@@ -1,27 +1,28 @@
 import { ArrayPathFileSystem, FakeFileContent } from 'simple-fake-fs'
 import { DeepParam, traverse } from 'fast-traverse'
 
-const create = () => new ArrayPathFileSystem([
-  ['a', []],
-  ['b', new FakeFileContent('B')],
-  ['c', [
-    ['d', new FakeFileContent('A')],
-    ['e', [
-      ['f', new FakeFileContent('CEF')]
+const create = () =>
+  new ArrayPathFileSystem([
+    ['a', []],
+    ['b', new FakeFileContent('B')],
+    ['c', [
+      ['d', new FakeFileContent('A')],
+      ['e', [
+        ['f', new FakeFileContent('CEF')],
+      ]],
+      ['g', []],
     ]],
-    ['g', []]
-  ]],
-  ['h', [
-    ['i', new FakeFileContent('HI')],
-    ['j', [
-      ['k', new FakeFileContent('HKJ')]
-    ]]
-  ]]
-])
+    ['h', [
+      ['i', new FakeFileContent('HI')],
+      ['j', [
+        ['k', new FakeFileContent('HKJ')],
+      ]],
+    ]],
+  ])
 
 const join = (a: readonly string[], b: string) => a.concat(b)
 
-async function consume<X> (iterable: AsyncIterable<X>) {
+async function consume<X>(iterable: AsyncIterable<X>) {
   const result = []
 
   for await (const item of iterable) {
@@ -32,7 +33,7 @@ async function consume<X> (iterable: AsyncIterable<X>) {
 }
 
 describe('default deep', () => {
-  async function setup (dirname: readonly string[]) {
+  async function setup(dirname: readonly string[]) {
     const fs = create()
     const readdir = jest.fn(fs.readdirSync)
     const stat = jest.fn(fs.statSync)
@@ -40,7 +41,7 @@ describe('default deep', () => {
       dirname,
       join,
       readdir,
-      stat
+      stat,
     }))
     return { dirname, fs, readdir, stat, results }
   }
@@ -59,7 +60,7 @@ describe('default deep', () => {
         basename: expect.any(String),
         dirname: expect.any(Array),
         list: expect.any(Array),
-        level: expect.any(Number)
+        level: expect.any(Number),
       }]))
     })
 
@@ -88,7 +89,7 @@ describe('default deep', () => {
         basename: expect.any(String),
         dirname: expect.any(Array),
         list: expect.any(Array),
-        level: expect.any(Number)
+        level: expect.any(Number),
       }]))
     })
 
@@ -117,7 +118,7 @@ describe('default deep', () => {
         basename: undefined,
         dirname: expect.any(Array),
         list: expect.any(Array),
-        level: expect.any(Number)
+        level: expect.any(Number),
       }]))
     })
 
@@ -146,7 +147,7 @@ describe('default deep', () => {
         basename: expect.any(String),
         dirname: expect.any(Array),
         list: expect.any(Array),
-        level: expect.any(Number)
+        level: expect.any(Number),
       }]))
     })
 
@@ -163,7 +164,7 @@ describe('default deep', () => {
 })
 
 describe('deep that always return true', () => {
-  async function setup () {
+  async function setup() {
     const dirname = Array<string>()
     const fs = create()
     const deep = jest.fn(() => true as const)
@@ -174,7 +175,7 @@ describe('deep that always return true', () => {
       deep,
       join,
       readdir,
-      stat
+      stat,
     }))
     return { dirname, fs, deep, readdir, stat, results }
   }
@@ -190,7 +191,7 @@ describe('deep that always return true', () => {
       basename: expect.any(String),
       dirname: expect.any(Array),
       list: expect.any(Array),
-      level: expect.any(Number)
+      level: expect.any(Number),
     }]))
   })
 
@@ -205,7 +206,7 @@ describe('deep that always return true', () => {
       basename: expect.any(String),
       path: expect.any(Array),
       level: expect.any(Number),
-      container: expect.any(Array)
+      container: expect.any(Array),
     }))
   })
 
@@ -221,11 +222,11 @@ describe('deep that always return true', () => {
 })
 
 describe('deep that returns false when path = ["c", "e"]', () => {
-  function deepImpl (c: string, e: string, rest: readonly string[]) {
+  function deepImpl(c: string, e: string, rest: readonly string[]) {
     return c !== 'c' || e !== 'e' || rest.length !== 0
   }
 
-  async function setup () {
+  async function setup() {
     const dirname = Array<string>()
     const fs = create()
     const deep = jest.fn((param: DeepParam<string[], string[], string>) => {
@@ -239,7 +240,7 @@ describe('deep that returns false when path = ["c", "e"]', () => {
       deep,
       join,
       readdir,
-      stat
+      stat,
     }))
     return { dirname, fs, deep, readdir, stat, results }
   }
@@ -268,7 +269,7 @@ describe('deep that returns false when path = ["c", "e"]', () => {
   it('does not yield { dirname: ["c", "e"] }', async () => {
     const { results } = await setup()
     expect(results).not.toContainEqual(expect.objectContaining({
-      dirname: ['c', 'e']
+      dirname: ['c', 'e'],
     }))
   })
 })

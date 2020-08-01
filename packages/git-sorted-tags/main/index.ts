@@ -9,19 +9,19 @@ const { argv } = yargs
     alias: 'f',
     describe: 'Format to display',
     choices: ['lines', 'array', 'json'],
-    default: 'lines'
+    default: 'lines',
   })
   .option('jsonIndent', {
     alias: 'i',
     describe: 'Indentation of JSON format',
     type: 'number',
-    default: 2
+    default: 2,
   })
   .help()
 
 const {
   format,
-  jsonIndent
+  jsonIndent,
 } = argv as {
   format: 'lines' | 'array' | 'json'
   jsonIndent: number

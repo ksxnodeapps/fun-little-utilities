@@ -4,17 +4,17 @@ import createIteratorResult from './create-iterator-result'
 import IteratorResultInstance from './iterator-result-instance'
 
 export class AsyncIteratorResultInstance<Value> extends Promise<IteratorResultInstance<Value>> {
-  constructor (param: AsyncIteratorResultInstance.ConstructorParam<Value>) {
+  constructor(param: AsyncIteratorResultInstance.ConstructorParam<Value>) {
     super(
       typeof param === 'function'
         ? param // Must be able to take a function
-        : async resolve => resolve(createIteratorResult(await param))
+        : async resolve => resolve(createIteratorResult(await param)),
     )
   }
 
-  public then<Return> (
+  public then<Return>(
     onresolve: (value: IteratorResultInstance<Value>) => Return,
-    onreject: (error: any) => any
+    onreject: (error: any) => any,
   ) {
     return super.then(onresolve, onreject)
   }
@@ -22,8 +22,8 @@ export class AsyncIteratorResultInstance<Value> extends Promise<IteratorResultIn
 
 export namespace AsyncIteratorResultInstance {
   export type ConstructorParam<Value> =
-    AsyncIteratorResultLike<Value> |
-    Executor<Value>
+    | AsyncIteratorResultLike<Value>
+    | Executor<Value>
 
   export interface Executor<Value> {
     (resolve: Resolver<Value>, reject: Rejector): void

@@ -1,11 +1,11 @@
 import once from 'exec-once'
 
-function init<Return> (times: number, impl?: () => Return) {
+function init<Return>(times: number, impl?: () => Return) {
   const fn = jest.fn(impl)
   const exec = once(fn)
   const results = []
   while (times) {
-    --times
+    ;--times
     results.push(exec())
   }
   return { fn, exec, results }

@@ -1,6 +1,6 @@
 dependencies:
-  '@types/node': 14.0.6
-  '@types/shell-quote': 1.6.2
+  '@types/node': 14.0.27
+  '@types/shell-quote': 1.7.0
   convenient-typescript-utilities: 0.0.5
   shell-quote: 1.7.2
   split-shell-buffer: 'link:../split-shell-buffer'
@@ -17,14 +17,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
-  /@types/node/14.0.6:
+  /@types/node/14.0.27:
     dev: false
     resolution:
-      integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==
-  /@types/shell-quote/1.6.2:
+      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+  /@types/shell-quote/1.7.0:
     dev: false
     resolution:
-      integrity: sha512-M5TzVuMwWzRtBqwa/edfiC5xOzuJHjrWVLrPishrLWCN83tTdDxjgMYWJG+anqP01ofPemijD2iWHzPqgkQ+wA==
+      integrity: sha512-0CJaSSayMigMKu/Egx1eVcFjgGYkP6T4dyPRs462BFrMB/OK2FAJFV/24+6R4cGIXw6ZQpZK8XEd2UCVKfkZRw==
   /convenient-typescript-utilities/0.0.5:
     dependencies:
       '@types/node': 13.13.9
@@ -57,8 +57,8 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^14.0.6
-  '@types/shell-quote': ^1.6.2
+  '@types/node': ^14.0.27
+  '@types/shell-quote': ^1.7.0
   convenient-typescript-utilities: ^0.0.5
   shell-quote: ^1.7.2
   split-shell-buffer: ^2.0.8

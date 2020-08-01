@@ -7,10 +7,10 @@ export type JsonScalar = null | boolean | number | string
  * Type of JSON values that cannot be modified
  */
 export type ReadonlyJsonValue<Other = never> =
-  ReadonlyJsonObject<Other> |
-  ReadonlyJsonArray<Other> |
-  JsonScalar |
-  Other
+  | ReadonlyJsonObject<Other>
+  | ReadonlyJsonArray<Other>
+  | JsonScalar
+  | Other
 
 /**
  * Type of JSON objects that cannot be modified
@@ -28,10 +28,10 @@ export interface ReadonlyJsonArray<Other> extends ReadonlyArray<ReadonlyJsonValu
  * Type of JSON values that can be modified if it is object or array
  */
 export type WritableJsonValue<Other = never> =
-  WritableJsonObject<Other> |
-  WritableJsonArray<Other> |
-  JsonScalar |
-  Other
+  | WritableJsonObject<Other>
+  | WritableJsonArray<Other>
+  | JsonScalar
+  | Other
 
 /**
  * Type of JSON objects that can be modified
@@ -59,7 +59,7 @@ export interface Replacer {
   (
     this: WritableJsonObject<WritableJsonValue<never>>,
     key: string,
-    value: WritableJsonValue<never>
+    value: WritableJsonValue<never>,
   ): ReadonlyJsonValue<never> | undefined
 }
 
@@ -77,7 +77,7 @@ export interface Reviver<Return> {
   (
     this: WritableJsonObject<never>,
     key: string,
-    value: WritableJsonValue<never>
+    value: WritableJsonValue<never>,
   ): Return
 }
 
@@ -92,10 +92,10 @@ export interface Dumper {
    * @param space Indentation
    * @returns Valid JSON string
    */
-  <Other = never> (
+  <Other = never>(
     value: ReadonlyJsonValue<Other>,
     replacer?: Replacer,
-    space?: number | string
+    space?: number | string,
   ): string
 }
 
@@ -109,9 +109,9 @@ export interface Loader {
    * @param reviver Function that transforms the result
    * @returns JavaScript value
    */
-  <Other = never> (
+  <Other = never>(
     text: string,
-    reviver?: Reviver<ReadonlyJsonValue<Other> | WritableJsonValue<Other> | Other>
+    reviver?: Reviver<ReadonlyJsonValue<Other> | WritableJsonValue<Other> | Other>,
   ): WritableJsonValue<Other>
 }
 

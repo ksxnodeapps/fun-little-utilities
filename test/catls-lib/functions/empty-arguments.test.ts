@@ -4,7 +4,7 @@ import { StreamInstance } from 'simple-fake-stream'
 const { Quiet, Warn, Error } = EmptyArgumentHandlingMethod
 const { Success, InsufficientArguments } = ExitStatus
 
-function init (method: EmptyArgumentHandlingMethod) {
+function init(method: EmptyArgumentHandlingMethod) {
   const stream = new StreamInstance()
   const status = emptyArguments({ method, stream })
   return { method, stream, status }
