@@ -50,10 +50,7 @@ export function create<
    *
    * It is in this class that key pairs are compared
    */
-  class LocalMultiKeyMap extends MultiKeyMap<
-    [Event, ProvidedListener],
-    TransformedListener,
-  > {
+  class LocalMultiKeyMap extends MultiKeyMap<[Event, ProvidedListener], TransformedListener> {
     constructor() {
       super(Map)
     }
@@ -64,11 +61,7 @@ export function create<
    *
    * It is in this class that `TransformedListener`s are created
    */
-  class LocalInitMap extends InitMap<
-    [Event, ProvidedListener],
-    TransformedListener,
-    LocalMultiKeyMap,
-  > {
+  class LocalInitMap extends InitMap<[Event, ProvidedListener], TransformedListener, LocalMultiKeyMap> {
     constructor() {
       super(
         LocalMultiKeyMap,
