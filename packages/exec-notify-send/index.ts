@@ -18,7 +18,7 @@ export function opts2args(options: Options) {
     hint,
   } = options
 
-  let args = Array<string>()
+  const args = Array<string>()
   if (appName) args.push(`--app-name=${appName}`)
   if (icon) args.push(`--icon=${icon.join(',')}`)
   if (urgency) args.push(`--urgency=${urgency}`)

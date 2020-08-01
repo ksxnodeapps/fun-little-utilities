@@ -1,6 +1,8 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "no-bitwise": false,
+    "ban-types": false,
     "no-console": false,
     "no-empty-interface": false,
     "no-namespace": false,

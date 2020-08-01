@@ -93,7 +93,7 @@ namespace prvEvtEmt {
     Chunk extends string | Buffer,
     Err,
   >(
-    db: Array<MethodCall<Chunk, Err>>,
+    db: MethodCall<Chunk, Err>[],
     name: MethodName.EventModifier,
     event: 'data' | 'error' | 'close',
     listener: any,
