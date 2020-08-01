@@ -22,7 +22,7 @@ function create() {
 }
 
 function getError(fn: () => any) {
-  let value: any = undefined
+  let value: any
 
   try {
     value = fn()

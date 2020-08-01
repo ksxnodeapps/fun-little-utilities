@@ -77,7 +77,7 @@ async function* output(chunks: AsyncIterable<string>, format: Format) {
 }
 
 async function getAsyncArray<Item>(iterable: AsyncIterable<Item>) {
-  let array = []
+  const array = []
 
   for await (const item of iterable) {
     array.push(item)

@@ -45,7 +45,7 @@ export function parseSingleCommandArgument(text: string): ParsingResult {
 }
 
 export function parseCommandArguments(args: Iterable<string>): ParsingResult[] {
-  let result = Array<ParsingResult>()
+  const result = Array<ParsingResult>()
   let afterDoubleDash = false
 
   for (const text of args) {
