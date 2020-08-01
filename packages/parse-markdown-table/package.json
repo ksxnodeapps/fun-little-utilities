@@ -24,6 +24,6 @@
     "tslib": "^2.0.0",
     "string-stream-utils": "^0.0.3",
     "table-parser-base": "^0.0.3",
-    "@types/node": "^14.0.6"
+    "@types/node": "^14.0.27"
   }
 }

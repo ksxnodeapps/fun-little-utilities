@@ -1,5 +1,5 @@
 dependencies:
-  chalk: 4.0.0
+  chalk: 4.1.0
   split-shell-buffer: 'link:../../packages/split-shell-buffer'
   static-type-assert: 4.0.0
 lockfileVersion: 5.1
@@ -17,7 +17,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
-  /chalk/4.0.0:
+  /chalk/4.1.0:
     dependencies:
       ansi-styles: 4.2.1
       supports-color: 7.1.0
@@ -25,7 +25,7 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
+      integrity: sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
   /color-convert/2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -71,6 +71,6 @@ packages:
     resolution:
       integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
 specifiers:
-  chalk: ^4.0.0
+  chalk: ^4.1.0
   split-shell-buffer: 'file:../../packages/split-shell-buffer'
   static-type-assert: ^4.0.0

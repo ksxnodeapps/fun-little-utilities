@@ -1,12 +1,12 @@
 dependencies:
-  '@types/node': 14.0.6
+  '@types/node': 14.0.27
   '@types/node-fetch': 2.5.7
   '@types/yargs': 15.0.5
   line-observable-rxjs: 'link:../line-observable-rxjs'
   node-fetch: 2.6.0
-  rxjs: 6.5.5
+  rxjs: 6.6.2
   tslib: 2.0.0
-  yargs: 15.3.1
+  yargs: 15.4.1
 lockfileVersion: 5.1
 packages:
   /@types/color-name/1.1.1:
@@ -20,6 +20,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-o2WVNf5UhWRkxlf6eq+jMZDu7kjgpgJfl4xVNlvryc95O/6F2ld8ztKX+qu+Rjyet93WAWm5LjeX9H5FGkODvw==
+  /@types/node/14.0.27:
+    dev: false
+    resolution:
+      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
   /@types/node/14.0.6:
     dev: false
     resolution:
@@ -200,14 +204,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
-  /rxjs/6.5.5:
+  /rxjs/6.6.2:
     dependencies:
       tslib: 1.13.0
     dev: false
     engines:
       npm: '>=2.0.0'
     resolution:
-      integrity: sha512-WfQI+1gohdf0Dai/Bbmk5L5ItH5tYqm3ki2c5GdWhKjalzjg93N3avFjVStyZZz+A2Em+ZxKH5bNghw9UeylGQ==
+      integrity: sha512-BHdBMVoWC2sL26w//BCu3YzKT4s2jip/WhwsGEDmeKYBhKDZeYezVUnHatYB7L85v5xs0BAQmg6BEYJEKxBabg==
   /set-blocking/2.0.0:
     dev: false
     resolution:
@@ -265,7 +269,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==
-  /yargs/15.3.1:
+  /yargs/15.4.1:
     dependencies:
       cliui: 6.0.0
       decamelize: 1.2.0
@@ -282,13 +286,13 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-92O1HWEjw27sBfgmXiixJWT5hRBp2eobqXicLtPBIDBhYB+1HpwZlXmbW2luivBJHBzki+7VyCLRtAkScbTBQA==
+      integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@types/node': ^14.0.6
+  '@types/node': ^14.0.27
   '@types/node-fetch': ^2.5.7
   '@types/yargs': ^15.0.5
   line-observable-rxjs: ^0.0.2
   node-fetch: ^2.6.0
-  rxjs: ^6.5.5
+  rxjs: ^6.6.2
   tslib: ^2.0.0
-  yargs: ^15.3.1
+  yargs: ^15.4.1

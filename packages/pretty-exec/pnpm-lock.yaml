@@ -1,7 +1,7 @@
 dependencies:
-  '@types/node': 14.0.6
+  '@types/node': 14.0.27
   '@types/shell-escape': 0.2.0
-  chalk: 4.0.0
+  chalk: 4.1.0
   shell-escape: 0.2.0
   split-string-once: 0.0.2
   tslib: 2.0.0
@@ -15,10 +15,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
-  /@types/node/14.0.6:
+  /@types/node/14.0.27:
     dev: false
     resolution:
-      integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==
+      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
   /@types/shell-escape/0.2.0:
     dev: false
     resolution:
@@ -32,7 +32,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
-  /chalk/4.0.0:
+  /chalk/4.1.0:
     dependencies:
       ansi-styles: 4.2.1
       supports-color: 7.1.0
@@ -40,7 +40,7 @@ packages:
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
+      integrity: sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
   /color-convert/2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -89,9 +89,9 @@ packages:
     resolution:
       integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 specifiers:
-  '@types/node': ^14.0.6
+  '@types/node': ^14.0.27
   '@types/shell-escape': ^0.2.0
-  chalk: ^4.0.0
+  chalk: ^4.1.0
   shell-escape: ^0.2.0
   split-string-once: ^0.0.2
   tslib: ^2.0.0
