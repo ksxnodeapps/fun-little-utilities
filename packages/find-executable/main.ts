@@ -9,13 +9,13 @@ const { argv } = yargs
     alias: 'f',
     describe: 'Display what?',
     choices: [Word, Path, Both],
-    default: Path
+    default: Path,
   })
   .help()
 
 const status = main({
   cliOptions: argv,
-  logger: console
+  logger: console,
 })
 
 process.exit(status)

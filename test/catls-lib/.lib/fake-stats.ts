@@ -9,24 +9,24 @@ const deny = (): false => false
 class Base {
   private readonly [symType]: StatsInstance.Type
 
-  constructor (type: StatsInstance.Type) {
+  constructor(type: StatsInstance.Type) {
     this[symType] = type
     return Object.create(this)
   }
 
-  protected [symMkFn] (expected: StatsInstance.Type) {
+  protected [symMkFn](expected: StatsInstance.Type) {
     return expected === this[symType] ? confirm : deny
   }
 }
 
 class StatsInfoInstance extends Base implements StatInfo.Stats {
-  constructor (
+  constructor(
     type: StatsInstance.Type,
     public readonly size: number,
     public readonly mode: number,
     public readonly atime: StatInfo.Stats.Date,
     public readonly ctime: StatInfo.Stats.Date,
-    public readonly mtime: StatInfo.Stats.Date
+    public readonly mtime: StatInfo.Stats.Date,
   ) {
     super(type)
   }

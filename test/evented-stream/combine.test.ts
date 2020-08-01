@@ -4,23 +4,25 @@ import { iterateEventedStream, combineEventedStream, EventedStream } from 'event
 import getAsyncArray = assets.asyncIter.fns.getArray
 
 enum StreamChunk {
-  A, B, C, D
+  A,
+  B,
+  C,
+  D,
 }
 
 class StreamError extends Error {
-  constructor () {
+  constructor() {
     super('Expected')
     this.name = 'StreamError'
   }
 }
 
-abstract class MockedEmitter<Chunk extends StreamChunk = StreamChunk>
-extends EventEmitter
-implements EventedStream<Chunk, StreamError> {
-  public emit (event: 'data', chunk: StreamChunk): boolean
-  public emit (event: 'error', error: Error): boolean
-  public emit (event: 'close'): boolean
-  public emit (event: any, ...args: any[]): boolean {
+abstract class MockedEmitter<Chunk extends StreamChunk = StreamChunk> extends EventEmitter
+  implements EventedStream<Chunk, StreamError> {
+  public emit(event: 'data', chunk: StreamChunk): boolean
+  public emit(event: 'error', error: Error): boolean
+  public emit(event: 'close'): boolean
+  public emit(event: any, ...args: any[]): boolean {
     return super.emit(event, ...args)
   }
 }
@@ -35,7 +37,7 @@ type StreamCollection = [FirstEmitter, SecondEmitter, ThirdEmitter, FourthEmitte
 class Init {
   private timeout: number = 0
 
-  private forward (fn: () => void, inc = 10): void {
+  private forward(fn: () => void, inc = 10): void {
     this.timeout += inc
     setTimeout(fn, this.timeout)
   }
@@ -44,24 +46,22 @@ class Init {
     new FirstEmitter(),
     new SecondEmitter(),
     new ThirdEmitter(),
-    new FourthEmitter()
+    new FourthEmitter(),
   ]
 
-  public readonly combination =
-    combineEventedStream<MockedEmitter, StreamChunk, StreamError>(this.streamCollection)
+  public readonly combination = combineEventedStream<MockedEmitter, StreamChunk, StreamError>(this.streamCollection)
 
   public readonly emit = {
-    data:
-      <Chunk extends StreamChunk> (chunk: Chunk) =>
-        this.forward(() => this.streamCollection[chunk].emit('data', chunk)),
+    data: <Chunk extends StreamChunk>(chunk: Chunk) =>
+      this.forward(() => this.streamCollection[chunk].emit('data', chunk)),
 
-    error:
-      <Index extends StreamChunk> (index: Index) =>
-        this.forward(() => this.streamCollection[index].emit('error', new StreamError())),
+    error: <Index extends StreamChunk>(index: Index) =>
+      this.forward(() => this.streamCollection[index].emit('error', new StreamError())),
 
-    close: () => this.forward(
-      () => this.streamCollection.forEach(stream => stream.emit('close'))
-    )
+    close: () =>
+      this.forward(
+        () => this.streamCollection.forEach(stream => stream.emit('close')),
+      ),
   }
 
   public readonly iterate = () => iterateEventedStream(this.combination)
@@ -70,13 +70,13 @@ class Init {
 }
 
 expect.addSnapshotSerializer({
-  test (value: any): boolean {
+  test(value: any): boolean {
     return value instanceof MockedEmitter
   },
 
-  print (value: unknown): string {
+  print(value: unknown): string {
     return `${(value as MockedEmitter<any>).constructor.name} {}`
-  }
+  },
 })
 
 describe('when all streams emit data', () => {
@@ -91,13 +91,13 @@ describe('when all streams emit data', () => {
 
   it('data have desired properties', async () => {
     expect(await arrayPromise).toEqual(
-      order.map(chunk => ({ stream: streamCollection[chunk], chunk }))
+      order.map(chunk => ({ stream: streamCollection[chunk], chunk })),
     )
   })
 
   it('data have desired "stream" properties', async () => {
-    (await arrayPromise).forEach(
-      chunk => expect(chunk.stream).toBe(streamCollection[chunk.chunk])
+    ;(await arrayPromise).forEach(
+      chunk => expect(chunk.stream).toBe(streamCollection[chunk.chunk]),
     )
   })
 
@@ -122,7 +122,7 @@ describe('when one of the streams emits error', () => {
   it('rejects with a reason that has desired properties', async () => {
     await expect(arrayPromise).rejects.toMatchObject({
       stream: streamCollection[chosen],
-      error: new StreamError()
+      error: new StreamError(),
     })
   })
 
@@ -131,7 +131,7 @@ describe('when one of the streams emits error', () => {
       () => {
         throw new Error('Expecting it to rejects but it resolves')
       },
-      reason => reason
+      reason => reason,
     )
 
     expect(reason.stream).toBe(streamCollection[chosen])
@@ -140,7 +140,7 @@ describe('when one of the streams emits error', () => {
   it('rejects with a reason that has desired "error" properties', async () => {
     const reason = await arrayPromise.then(
       () => Promise.reject(new Error('Expecting it to reject, but it resolves')),
-      reason => reason
+      reason => reason,
     )
 
     expect(reason.error).toBeInstanceOf(StreamError)

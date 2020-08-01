@@ -1,12 +1,12 @@
 export { Observable, OperatorFunction, MonoTypeOperatorFunction } from 'rxjs'
 
 export type Stream =
-  EventTarget<'data', Chunk> &
-  EventTarget<'close', void>
+  & EventTarget<'data', Chunk>
+  & EventTarget<'close', void>
 
 export interface EventTarget<Type, Info> {
-  addListener (type: Type, listener: Listener<Info>): void
-  removeListener (type: Type, listener: Listener<Info>): void
+  addListener(type: Type, listener: Listener<Info>): void
+  removeListener(type: Type, listener: Listener<Info>): void
 }
 
 export interface Listener<Info> {
@@ -14,5 +14,5 @@ export interface Listener<Info> {
 }
 
 export interface Chunk {
-  toString (): string
+  toString(): string
 }

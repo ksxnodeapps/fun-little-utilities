@@ -1,6 +1,6 @@
 import { main } from 'pretty-exec'
 
-function setup (argv: readonly string[]) {
+function setup(argv: readonly string[]) {
   const status = 123
   const history = Array<any>()
   const spawn = jest.fn(() => {
@@ -17,7 +17,7 @@ function setup (argv: readonly string[]) {
     process: { argv } as const,
     spawn,
     print,
-    error
+    error,
   })
   return { status, history, spawn, print, error, argv, result }
 }

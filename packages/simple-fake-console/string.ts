@@ -7,7 +7,7 @@ import { ConsoleDatabase } from './console'
  * @param options Options
  * @returns Concatenated string from all `Action` of accepted `type: ActionType.WithData`
  */
-export function getString (options: getString.Options): string {
+export function getString(options: getString.Options): string {
   const { console, types, wordSeparator = ' ', lineSeparator = '\n' } = options
   const typeSet = new Set(types)
 

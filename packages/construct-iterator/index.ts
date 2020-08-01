@@ -29,5 +29,5 @@ export {
   AsyncIteratorInstance,
   AsyncIteratorResultInstance,
   done,
-  undone
+  undone,
 }

@@ -2,9 +2,9 @@ import { ArrayTable, createObjectTable } from 'table-parser-base'
 import { getAsyncArray } from './lib/async-array'
 
 class Cells implements ArrayTable<string, any> {
-  constructor (
+  constructor(
     public readonly headers: string[],
-    public readonly rows: any[][]
+    public readonly rows: any[][],
   ) {}
 }
 
@@ -14,8 +14,8 @@ it('no unknown columns', async () => {
     [
       [1, 'John Doe', 'john-doe@gmail.com'],
       [2, 'Peter Smith', 'petersmith22@outlook.com'],
-      [3, 'Julia Jones', 'jjones778@gmail.com']
-    ]
+      [3, 'Julia Jones', 'jjones778@gmail.com'],
+    ],
   )
 
   const list = createObjectTable(cells)
@@ -29,8 +29,8 @@ it('with unknown columns', async () => {
     [
       [1, 'John Doe', 'john-doe@gmail.com'],
       [2, 'Peter Smith', 'petersmith22@outlook.com', 83, 'male', true],
-      [3, 'Julia Jones', 'jjones778@gmail.com', 32]
-    ]
+      [3, 'Julia Jones', 'jjones778@gmail.com', 32],
+    ],
   )
 
   const list = createObjectTable(cells)

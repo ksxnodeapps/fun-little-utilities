@@ -8,21 +8,22 @@ import {
   main,
   getAsyncArray,
   createObjectTable,
-  createArrayTable
+  createArrayTable,
 } from 'table-parser-cli'
 
-const getConsoleString = (console: ConsoleInstance) => getString({
-  console,
-  types: [ActionType.Info]
-})
+const getConsoleString = (console: ConsoleInstance) =>
+  getString({
+    console,
+    types: [ActionType.Info],
+  })
 
 class Chunks implements AsyncIterable<string> {
-  constructor (
+  constructor(
     private readonly text: string,
-    private readonly length = 4
+    private readonly length = 4,
   ) {}
 
-  async * [Symbol.asyncIterator] () {
+  async *[Symbol.asyncIterator]() {
     let count = this.length
     let chunk = ''
     for (const char of this.text) {
@@ -48,18 +49,18 @@ const DICT = [
   {
     id: '1',
     name: 'John Doe',
-    email: 'john-doe@gmail.com'
+    email: 'john-doe@gmail.com',
   },
   {
     id: '2',
     name: 'Peter Smith',
-    email: 'petersmith22@outlook.com'
+    email: 'petersmith22@outlook.com',
   },
   {
     id: '3',
     name: 'Julia Jones',
-    email: 'jjones778@gmail.com'
-  }
+    email: 'jjones778@gmail.com',
+  },
 ]
 
 const LIST = {
@@ -67,12 +68,12 @@ const LIST = {
   rows: [
     ['1', 'John Doe', 'john-doe@gmail.com'],
     ['2', 'Peter Smith', 'petersmith22@outlook.com'],
-    ['3', 'Julia Jones', 'jjones778@gmail.com']
-  ]
+    ['3', 'Julia Jones', 'jjones778@gmail.com'],
+  ],
 }
 
 class JsonStream<Object> extends Chunks {
-  constructor (public readonly object: Object) {
+  constructor(public readonly object: Object) {
     super(JSON.stringify(object, undefined, 2))
   }
 }
@@ -85,7 +86,7 @@ abstract class MockedParam implements MainParam {
   public abstract readonly indentSize: number
 }
 
-async function setup (Param: new () => MockedParam) {
+async function setup(Param: new () => MockedParam) {
   const param = new Param()
   const status = await main(param)
   return { param, status }
@@ -115,7 +116,7 @@ describe('--type arr2obj', () => {
       expect(getConsoleString(param.console)).toBe(JSON.stringify(
         await getAsyncArray(createObjectTable(OBJECT)),
         undefined,
-        2
+        2,
       ))
     })
 
@@ -141,7 +142,7 @@ describe('--type arr2obj', () => {
       expect(getConsoleString(param.console)).toBe(JSON.stringify(
         await getAsyncArray(createObjectTable(OBJECT)),
         undefined,
-        '\t'
+        '\t',
       ))
     })
 
@@ -165,7 +166,7 @@ describe('--type arr2obj', () => {
     it('prints expected JSON output', async () => {
       const { param } = await setup(Param)
       expect(getConsoleString(param.console)).toBe(JSON.stringify(
-        await getAsyncArray(createObjectTable(OBJECT))
+        await getAsyncArray(createObjectTable(OBJECT)),
       ))
     })
 
@@ -184,8 +185,8 @@ describe('--type obj2arr', () => {
     public readonly process = { stdin: new JsonStream(OBJECT) }
   }
 
-  async function * iterateObjectTable () {
-    yield * OBJECT
+  async function* iterateObjectTable() {
+    yield* OBJECT
   }
 
   describe('--indentType space --indentSize 2', () => {
@@ -204,7 +205,7 @@ describe('--type obj2arr', () => {
       expect(getConsoleString(param.console)).toBe(JSON.stringify(
         await createArrayTable(iterateObjectTable()),
         undefined,
-        2
+        2,
       ))
     })
 
@@ -230,7 +231,7 @@ describe('--type obj2arr', () => {
       expect(getConsoleString(param.console)).toBe(JSON.stringify(
         await createArrayTable(iterateObjectTable()),
         undefined,
-        '\t'
+        '\t',
       ))
     })
 
@@ -254,7 +255,7 @@ describe('--type obj2arr', () => {
     it('prints expected JSON output', async () => {
       const { param } = await setup(Param)
       expect(getConsoleString(param.console)).toBe(JSON.stringify(
-        await createArrayTable(iterateObjectTable())
+        await createArrayTable(iterateObjectTable()),
       ))
     })
 

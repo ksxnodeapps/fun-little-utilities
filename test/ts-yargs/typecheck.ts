@@ -6,43 +6,43 @@ const { argv } = yargs
   .option('a', {
     describe: 'required string without coerce',
     required: true,
-    type: 'string'
+    type: 'string',
   })
   .option('b', {
     describe: 'required number without coerce',
     required: true,
-    type: 'number'
+    type: 'number',
   })
   .option('c', {
     describe: 'required boolean without coerce',
     required: true,
-    type: 'boolean'
+    type: 'boolean',
   })
   .option('d', {
     describe: 'optional string without coerce',
     type: 'string',
-    default: 'foo'
+    default: 'foo',
   })
   .option('e', {
     describe: 'optional number without coerce',
     type: 'number',
-    default: 123
+    default: 123,
   })
   .option('f', {
     describe: 'optional boolean without coerce',
     type: 'boolean',
-    default: false
+    default: false,
   })
   .option('g', {
     describe: 'required string with coerce',
     required: true,
     type: 'string',
-    coerce: (value: string) => ({ value })
+    coerce: (value: string) => ({ value }),
   })
   .option('h', {
     describe: 'choices',
     choices: ['foo', 'bar', 123, 456],
-    default: 123
+    default: 123,
   })
 
 assert<{

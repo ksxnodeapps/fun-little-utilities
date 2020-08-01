@@ -8,27 +8,27 @@ import {
   toString,
   fromIterableStream,
   fromEventedStream,
-  fromChildProcess
+  fromChildProcess,
 } from 'split-shell-buffer'
 
 it('correctly indents normal text', async () => {
   const indentedNormalText = [
     '  abc def ghi',
-    '  jkl mno pqrs'
+    '  jkl mno pqrs',
   ].join('\n')
 
   expect(
     await toString(
-      fromString(normalText).withIndent(2)
-    )
+      fromString(normalText).withIndent(2),
+    ),
   ).toBe(indentedNormalText)
 })
 
 it('indented styled text matches snapshot', async () => {
   expect(
     await toString(
-      fromString(styledText).withIndent(2)
-    )
+      fromString(styledText).withIndent(2),
+    ),
   ).toMatchSnapshot()
 })
 
@@ -39,11 +39,11 @@ it('indentation part of indented styled text only contain spaces and leading res
   expect(
     (
       await toString(
-        fromString(styledText).withIndent(indent)
+        fromString(styledText).withIndent(indent),
       )
     )
       .split('\n')
-      .every(text => regex.test(text))
+      .every(text => regex.test(text)),
   ).toBe(true)
 })
 
@@ -57,8 +57,8 @@ it('numbered styled text matches snapshot', async () => {
 
   expect(
     await toString(
-      fromString(styledText).withPrefix(prefix)
-    )
+      fromString(styledText).withPrefix(prefix),
+    ),
   ).toMatchSnapshot()
 })
 
@@ -67,33 +67,33 @@ describe('works with child processes', () => {
     // Some Node.js versions do not support asyncIterator
     const describe = mkDesc(
       'asyncIterator' in Symbol &&
-      Symbol.asyncIterator in process.stdin
+        Symbol.asyncIterator in process.stdin,
     )
 
     describe('via fromIterableStream()', () => {
       it('on stdout', async () => {
         expect(
           await toString(
-            fromIterableStream(spawnExecutable().stdout)
-          )
+            fromIterableStream(spawnExecutable().stdout),
+          ),
         ).toBe([
           'stdout 0',
           'stdout 1',
           'stdout 2',
-          ''
+          '',
         ].join('\n'))
       })
 
       it('on stderr', async () => {
         expect(
           await toString(
-            fromIterableStream(spawnExecutable().stderr)
-          )
+            fromIterableStream(spawnExecutable().stderr),
+          ),
         ).toBe([
           'stderr 0',
           'stderr 1',
           'stderr 2',
-          ''
+          '',
         ].join('\n'))
       })
     })
@@ -103,46 +103,50 @@ describe('works with child processes', () => {
     it('on stdout', async () => {
       expect(
         await toString(
-          fromEventedStream(spawnExecutable().stdout)
-        )
+          fromEventedStream(spawnExecutable().stdout),
+        ),
       ).toBe([
         'stdout 0',
         'stdout 1',
         'stdout 2',
-        ''
+        '',
       ].join('\n'))
     })
 
     it('on stderr', async () => {
       expect(
         await toString(
-          fromEventedStream(spawnExecutable().stderr)
-        )
+          fromEventedStream(spawnExecutable().stderr),
+        ),
       ).toBe([
         'stderr 0',
         'stderr 1',
         'stderr 2',
-        ''
+        '',
       ].join('\n'))
     })
   })
 
   it('via fromChildProcess', async () => {
-    expect(new Set(
-      (
-        await toString(
-          fromChildProcess(spawnExecutable())
+    expect(
+      new Set(
+        (
+          await toString(
+            fromChildProcess(spawnExecutable()),
+          )
         )
-      )
-        .split('\n')
-    )).toEqual(new Set([
-      'stdout 0',
-      'stderr 0',
-      'stdout 1',
-      'stdout 2',
-      'stderr 1',
-      'stderr 2',
-      ''
-    ]))
+          .split('\n'),
+      ),
+    ).toEqual(
+      new Set([
+        'stdout 0',
+        'stderr 0',
+        'stdout 1',
+        'stdout 2',
+        'stderr 1',
+        'stderr 2',
+        '',
+      ]),
+    )
   })
 })

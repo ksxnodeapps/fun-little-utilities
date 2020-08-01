@@ -1,8 +1,7 @@
 import { createMarkdownObjectTable } from 'parse-markdown-table'
 import { getAsyncArray } from './lib/async-array'
 
-const setup = async (text: string) =>
-  getAsyncArray(await createMarkdownObjectTable(text))
+const setup = async (text: string) => getAsyncArray(await createMarkdownObjectTable(text))
 
 describe('empty string', () => {
   const text = ''

@@ -19,7 +19,7 @@ const text = `
  */
 const sleep = ms => new Promise(resolve => setTimeout(() => resolve(), ms))
 
-async function main () {
+async function main() {
   for (const line of text.split('\n')) {
     console.info(line)
     await sleep(SLEEP)

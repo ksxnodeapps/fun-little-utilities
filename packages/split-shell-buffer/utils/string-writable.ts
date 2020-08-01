@@ -7,15 +7,15 @@ export class StringWritable implements types.Writable {
   private readonly [symEncoding]: StringWritable.Encoding
   private [symData] = ''
 
-  constructor (options: StringWritable.ConstructorOptions = {}) {
+  constructor(options: StringWritable.ConstructorOptions = {}) {
     this[symEncoding] = options.encoding || 'utf8'
   }
 
-  public write (buffer: Buffer): void {
+  public write(buffer: Buffer): void {
     this[symData] += buffer.toString(this[symEncoding])
   }
 
-  public toString (): string {
+  public toString(): string {
     return this[symData]
   }
 }

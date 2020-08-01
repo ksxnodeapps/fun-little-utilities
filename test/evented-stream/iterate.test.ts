@@ -4,30 +4,28 @@ import { iterateEventedStream, EventedStream } from 'evented-stream'
 import getAsyncArray = assets.asyncIter.fns.getArray
 const executable = require.resolve('./.data/executable')
 
-const spawnExecutable =
-  () => spawn(executable) as any // quick fix
+const spawnExecutable = () => spawn(executable) as any // quick fix
 
-const getAsyncString =
-  async (stream: EventedStream<Buffer>) =>
-    (await getAsyncArray(iterateEventedStream(stream)))
-      .map(chunk => chunk.toString()).join('')
+const getAsyncString = async (stream: EventedStream<Buffer>) =>
+  (await getAsyncArray(iterateEventedStream(stream)))
+    .map(chunk => chunk.toString()).join('')
 
 it('with ChildProcess::stdout', async () => {
   expect(
-    await getAsyncString(spawnExecutable().stdout)
+    await getAsyncString(spawnExecutable().stdout),
   ).toEqual([
     'stdout 0\n',
     'stdout 1\n',
-    'stdout 2\n'
+    'stdout 2\n',
   ].join(''))
 })
 
 it('with ChildProcess::stderr', async () => {
   expect(
-    await getAsyncString(spawnExecutable().stderr)
+    await getAsyncString(spawnExecutable().stderr),
   ).toEqual([
     'stderr 0\n',
     'stderr 1\n',
-    'stderr 2\n'
+    'stderr 2\n',
   ].join(''))
 })

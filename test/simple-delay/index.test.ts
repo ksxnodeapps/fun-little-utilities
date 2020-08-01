@@ -1,4 +1,4 @@
-async function setup () {
+async function setup() {
   const spy = jest.spyOn(globalThis, 'setTimeout')
   const { simpleDelay } = await import('simple-delay')
   const delay = 5

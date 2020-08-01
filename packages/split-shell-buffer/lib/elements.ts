@@ -11,7 +11,7 @@ const { Zero } = Digit
 const arrayEqual = createArrayEqual<types.Sequence>()
 const RESET = [Start, StartFollow, Zero, End]
 
-export async function * iterateElements (splitter: types.Splitter): AsyncIterableIterator<types.Element> {
+export async function* iterateElements(splitter: types.Splitter): AsyncIterableIterator<types.Element> {
   const { data, prefix, suffix } = splitter
   let leadingCharacters = Array<types.Sequence>()
   let nextLeadingCharacters = Array<types.Sequence>()
@@ -24,14 +24,14 @@ export async function * iterateElements (splitter: types.Splitter): AsyncIterabl
     reset: leadingCharacters.length ? RESET : [],
     main: currentLine,
     prefix: callMaybeFunction(prefix, { splitter, currentLine, leadingCharacters }),
-    suffix: callMaybeFunction(suffix, { splitter, currentLine, leadingCharacters })
+    suffix: callMaybeFunction(suffix, { splitter, currentLine, leadingCharacters }),
   })
 
-  function pushCurrentLine (char: types.Code) {
+  function pushCurrentLine(char: types.Code) {
     currentLine = [...currentLine, char]
   }
 
-  function pushCurrentEscape (char: types.Code) {
+  function pushCurrentEscape(char: types.Code) {
     currentEscape = [...currentEscape, char]
   }
 
@@ -71,6 +71,7 @@ export async function * iterateElements (splitter: types.Splitter): AsyncIterabl
         break
 
       // Restore SGR state from previous line
+
       case EndOfLine:
         yield createYieldValue()
         currentLine = []
@@ -79,6 +80,7 @@ export async function * iterateElements (splitter: types.Splitter): AsyncIterabl
         break
 
       // When the character is not special
+
       default:
         if (isInEscape) pushCurrentEscape(char)
         pushCurrentLine(char)

@@ -1,7 +1,7 @@
 import { executor, Executor, ChildProcess } from 'catls-lib'
 import doNothing from '../.lib/do-nothing'
 
-function mkspawn () {
+function mkspawn() {
   let params: ExecParams
 
   const spawn: Executor = (name, args): ChildProcess => {
@@ -10,13 +10,13 @@ function mkspawn () {
     const eventTarget = {
       addListener: doNothing,
       removeListener: doNothing,
-      once: doNothing
+      once: doNothing,
     }
 
     return {
       ...eventTarget,
       stderr: eventTarget,
-      stdout: eventTarget
+      stdout: eventTarget,
     }
   }
 
@@ -29,11 +29,11 @@ class Init {
   public readonly executeParams: Promise<ExecParams> = this.initExecuteParams()
   public readonly spawnParams: Promise<ExecParams>
 
-  constructor (dontFakeInteractive: boolean) {
+  constructor(dontFakeInteractive: boolean) {
     this.spawnParams = this.initSpawnParams(dontFakeInteractive)
   }
 
-  protected async initSpawnParams (dontFakeInteractive: boolean): Promise<ExecParams> {
+  protected async initSpawnParams(dontFakeInteractive: boolean): Promise<ExecParams> {
     const { spawn, getParams } = mkspawn()
     const { name, args } = await this.executeParams
     const execute = executor({ spawn, dontFakeInteractive })
@@ -41,7 +41,7 @@ class Init {
     return getParams()
   }
 
-  protected async initExecuteParams (): Promise<ExecParams> {
+  protected async initExecuteParams(): Promise<ExecParams> {
     return { name: 'cmd', args: ['foo', 'bar'] }
   }
 }
@@ -64,8 +64,8 @@ describe('when dontFakeInteractive is false', () => {
         '--append',
         '/dev/null',
         '--command',
-        [name, ...args].join(' ')
-      ]
+        [name, ...args].join(' '),
+      ],
     })
   })
 })

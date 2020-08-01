@@ -4,22 +4,22 @@ import { getAsyncArray } from './lib/async-array'
 export const getString = () => 'abcdefghi' as const
 export const getStringArray = () => ['abc', 'def', 'ghi'] as const
 
-export function * getStringIterator () {
+export function* getStringIterator() {
   yield 'abc' as const
   yield 'def' as const
   yield 'ghi' as const
 }
 
-export async function * getStringAsyncIterator () {
-  yield * getStringIterator()
+export async function* getStringAsyncIterator() {
+  yield* getStringIterator()
 }
 
 export const getStringIterable = (): Iterable<string> => ({
-  [Symbol.iterator]: getStringIterator
+  [Symbol.iterator]: getStringIterator,
 })
 
 export const getStringAsyncIterable = (): AsyncIterable<string> => ({
-  [Symbol.asyncIterator]: getStringAsyncIterator
+  [Symbol.asyncIterator]: getStringAsyncIterator,
 })
 
 it('string', async () => {

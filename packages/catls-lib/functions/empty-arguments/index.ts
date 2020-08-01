@@ -3,7 +3,7 @@ import { EmptyArgumentHandlingMethod, ExitStatus } from '../../enums'
 const { Quiet, Warn, Error } = EmptyArgumentHandlingMethod
 const { Success, InsufficientArguments } = ExitStatus
 
-export function emptyArguments (options: EmptyArguments.Param): EmptyArguments.Return {
+export function emptyArguments(options: EmptyArguments.Param): EmptyArguments.Return {
   const { method, stream } = options
 
   switch (method) {

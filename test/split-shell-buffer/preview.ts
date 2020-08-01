@@ -4,11 +4,11 @@ import { fromString, toString, SequenceFunc, fromChildProcess, writeln } from 's
 import { styledText } from './.lib/data'
 const executable = require.resolve('./.data/executable')
 
-function execute () {
+function execute() {
   return spawn('node', [executable]) as any // quick fix
 }
 
-async function main () {
+async function main() {
   console.info('STYLED TEXT')
   console.info(styledText)
   console.info()
@@ -58,7 +58,7 @@ async function main () {
   console.info()
 }
 
-function getNumberingPrefix (): SequenceFunc {
+function getNumberingPrefix(): SequenceFunc {
   let index = 0
 
   return () => {
@@ -69,7 +69,7 @@ function getNumberingPrefix (): SequenceFunc {
 
 enum ExitStatus {
   Success = 0,
-  Failure = 1
+  Failure = 1,
 }
 
 main().then(
@@ -77,5 +77,5 @@ main().then(
   error => {
     console.error(error)
     process.exit(ExitStatus.Failure)
-  }
+  },
 )

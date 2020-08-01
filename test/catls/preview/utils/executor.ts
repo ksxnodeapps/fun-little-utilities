@@ -6,7 +6,7 @@ import { writeln, fromChildProcess } from 'split-shell-buffer'
 import commandTitle from './command-title'
 const script = require.resolve('../executable')
 
-async function execute (args: string[], WDIR: string): Promise<void> {
+async function execute(args: string[], WDIR: string): Promise<void> {
   console.info(commandTitle('catls', args))
 
   const cp = spawn(
@@ -18,9 +18,9 @@ async function execute (args: string[], WDIR: string): Promise<void> {
 
         // I can't change working directory before the script registers TypeScript loader,
         // so I pass it as an environment variable instead
-        WDIR
-      }
-    }
+        WDIR,
+      },
+    },
   )
 
   const closeEventPromise = event2promise<'close', number>(cp, 'close')

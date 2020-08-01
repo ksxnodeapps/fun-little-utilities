@@ -8,7 +8,7 @@ const event = Symbol()
 const param = Symbol()
 
 class EventTargetInstance extends EventEmitter implements awaitEvent.Target<Event, Param> {
-  once (event: Event, listener: awaitEvent.Listener<Param>): this {
+  once(event: Event, listener: awaitEvent.Listener<Param>): this {
     super.once(event, listener as any)
     return this
   }

@@ -30,15 +30,16 @@ interface TransformerParam {
 }
 
 declare class EventTargetInstance implements EventTarget<Event, TransformedListener> {
-  public addListener (event: Event, listener: TransformedListener): void
-  public removeListener (event: Event, listener: TransformedListener): void
+  public addListener(event: Event, listener: TransformedListener): void
+  public removeListener(event: Event, listener: TransformedListener): void
 }
 
 const proxy = create(
   new EventTargetInstance(),
-  ({ event, listener }: TransformerParam) => (param: ProvidedParam) => {
-    listener({ event, listener, param })
-  }
+  ({ event, listener }: TransformerParam) =>
+    (param: ProvidedParam) => {
+      listener({ event, listener, param })
+    },
 )
 
 assert<EventTargetProxy<Event, ProvidedListener>>(proxy)

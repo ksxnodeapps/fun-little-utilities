@@ -5,7 +5,7 @@ import defaultExport, {
   notifySend,
   ExecFunc,
   Urgency,
-  HintType
+  HintType,
 } from 'exec-notify-send'
 
 const mockedExecute = (fn: ExecFunc = () => ({})) => jest.fn(fn)
@@ -24,7 +24,7 @@ it('default command is "notify-send"', async () => {
 
   await notifySend({
     summary: 'summary',
-    execute
+    execute,
   })
 })
 
@@ -54,7 +54,7 @@ it('default execute function works', async () => {
     body: 'body',
     appName: 'app-name',
     icon: ['32x', '16x', '8x'],
-    expireTime: 123
+    expireTime: 123,
   })
 
   expect(await fsx.readFile(output, 'utf8')).toMatchSnapshot()
@@ -64,7 +64,7 @@ it('summary only', async () => {
   const execute = mockedExecute()
   await notifySend({
     summary: 'summary',
-    execute
+    execute,
   })
   expect(execute.mock.calls).toMatchSnapshot()
 })
@@ -74,7 +74,7 @@ it('summary and body', async () => {
   await notifySend({
     summary: 'summary',
     body: 'body',
-    execute
+    execute,
   })
   expect(execute.mock.calls).toMatchSnapshot()
 })
@@ -90,7 +90,7 @@ it('more options', async () => {
     expireTime: 123,
     urgency: Urgency.Critical,
     hint: { name: 'hint', type: HintType.Int, value: 35 },
-    execute
+    execute,
   })
   expect(execute.mock.calls).toMatchSnapshot()
 })

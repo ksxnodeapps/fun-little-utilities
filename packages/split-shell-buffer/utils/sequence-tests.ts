@@ -7,6 +7,4 @@ const { Zero } = Digit
 
 const ZERO_AND_SEP = new Set([Zero, Seperator])
 
-export const isResetSequence =
-  (sequence: Iterable<types.Code>): boolean =>
-    every(x => ZERO_AND_SEP.has(x), sequence)
+export const isResetSequence = (sequence: Iterable<types.Code>): boolean => every(x => ZERO_AND_SEP.has(x), sequence)

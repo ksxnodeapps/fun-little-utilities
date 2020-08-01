@@ -5,12 +5,10 @@ import {
   sep,
   args2arr,
   assertResemble,
-  assertNoSplitter
+  assertNoSplitter,
 } from './utils'
 
-const get =
-  <X> (iter: Iterable<X>, sep: (x: X) => boolean) =>
-    Array.from(splitIterable(iter, sep))
+const get = <X>(iter: Iterable<X>, sep: (x: X) => boolean) => Array.from(splitIterable(iter, sep))
 
 it('with empty array', () => {
   expect(get([], sep)).toEqual([[]])

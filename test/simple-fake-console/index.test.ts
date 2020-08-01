@@ -4,11 +4,11 @@ import * as sfc from 'simple-fake-console'
 abstract class InitBase {
   public readonly console = new sfc.ConsoleInstance()
 
-  constructor () {
+  constructor() {
     this.init(this.console)
   }
 
-  protected abstract init (console: sfc.ConsoleInstance): void
+  protected abstract init(console: sfc.ConsoleInstance): void
 }
 
 it('ActionType matches snapshot', () => {
@@ -17,7 +17,7 @@ it('ActionType matches snapshot', () => {
 
 describe('before executing console methods', () => {
   class Init extends InitBase {
-    protected init () {
+    protected init() {
       return undefined
     }
   }
@@ -33,19 +33,19 @@ describe('before executing console methods', () => {
     snapYaml({
       'log + info': sfc.getString({
         console,
-        types: [sfc.ActionType.Log, sfc.ActionType.Info]
+        types: [sfc.ActionType.Log, sfc.ActionType.Info],
       }),
       'error + warn': sfc.getString({
         console,
-        types: [sfc.ActionType.Error, sfc.ActionType.Warn]
-      })
+        types: [sfc.ActionType.Error, sfc.ActionType.Warn],
+      }),
     })
   })
 })
 
 describe('after executing methods', () => {
   class Init extends InitBase {
-    protected init (console: sfc.ConsoleInstance): void {
+    protected init(console: sfc.ConsoleInstance): void {
       console.log('a', 0)
       console.info('b', 1, 2)
       console.error('c', 3, 4, 5)
@@ -70,12 +70,12 @@ describe('after executing methods', () => {
     snapYaml({
       'log + info': sfc.getString({
         console,
-        types: [sfc.ActionType.Log, sfc.ActionType.Info]
+        types: [sfc.ActionType.Log, sfc.ActionType.Info],
       }),
       'error + warn': sfc.getString({
         console,
-        types: [sfc.ActionType.Error, sfc.ActionType.Warn]
-      })
+        types: [sfc.ActionType.Error, sfc.ActionType.Warn],
+      }),
     })
   })
 })

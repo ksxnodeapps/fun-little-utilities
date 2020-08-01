@@ -9,7 +9,7 @@ interface Undone<Value> {
   readonly value: Value
 }
 
-const undone = <Value> (value: Value): Undone<Value> => ({ done: false, value })
+const undone = <Value>(value: Value): Undone<Value> => ({ done: false, value })
 
 interface Done {
   readonly done: true
@@ -19,8 +19,8 @@ const done: Done = { done: true }
 
 type State<Value> = Undone<Value> | Done
 
-export function iterate<Chunk, Err = any> (
-  stream: EventedStream<Chunk, Err>
+export function iterate<Chunk, Err = any>(
+  stream: EventedStream<Chunk, Err>,
 ): AsyncIterableIterator<Chunk> {
   type Controller = ControlledPromise<State<Chunk>>
   type DataEventListener = EventedStream.DataEventListener<Chunk>
@@ -28,13 +28,12 @@ export function iterate<Chunk, Err = any> (
 
   const promiseDict = new AdvancedMapInitialized<number, Controller>(
     Map,
-    () => createControlledPromise()
+    () => createControlledPromise(),
   )
-
-  ; (() => {
+  ;(() => {
     let promiseDictIndex = 0
 
-    function forward (fn: (chunk: Controller) => void) {
+    function forward(fn: (chunk: Controller) => void) {
       fn(promiseDict.get(promiseDictIndex))
       promiseDictIndex += 1
     }
@@ -45,7 +44,7 @@ export function iterate<Chunk, Err = any> (
     const errorListener: ErrorEventListener = err => forward(ctrl => ctrl.reject(err))
     stream.addListener('error', errorListener)
 
-    stream.addListener('close', function listener () {
+    stream.addListener('close', function listener() {
       forward(ctrl => ctrl.resolve(done))
       stream.removeListener('data', dataListener)
       stream.removeListener('error', errorListener)
@@ -53,14 +52,14 @@ export function iterate<Chunk, Err = any> (
     })
   })()
 
-  async function * iterate (index: number): AsyncIterableIterator<Chunk> {
+  async function* iterate(index: number): AsyncIterableIterator<Chunk> {
     const state = await promiseDict.get(index).promise
     promiseDict.delete(index)
 
     if (state.done) return
 
     yield state.value
-    yield * iterate(index + 1)
+    yield* iterate(index + 1)
   }
 
   return iterate(0)

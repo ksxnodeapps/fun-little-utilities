@@ -1,12 +1,12 @@
 export class UTCDate extends Date {
-  constructor (
+  constructor(
     year: number,
     month: number,
     date: number,
     hours: number = 0,
     minutes: number = 0,
     seconds: number = 0,
-    milliseconds: number = 0
+    milliseconds: number = 0,
   ) {
     super(Date.UTC(
       year,
@@ -15,7 +15,7 @@ export class UTCDate extends Date {
       hours,
       minutes,
       seconds,
-      milliseconds
+      milliseconds,
     ))
   }
 }

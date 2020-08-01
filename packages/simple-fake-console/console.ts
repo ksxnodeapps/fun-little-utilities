@@ -33,7 +33,7 @@ export interface ConsoleDatabase {
    * Get actions from database
    * @returns Array of `Action` objects
    */
-  getActions (): ReadonlyArray<Action>
+  getActions(): ReadonlyArray<Action>
 }
 
 const symActions = Symbol('symActions')
@@ -46,13 +46,15 @@ const symFnWithoutData = Symbol('symFnWithoutData')
 export class ConsoleInstance implements Console, ConsoleDatabase {
   private readonly [symActions] = Array<ActionInstance>()
 
-  private readonly [symFnWithData] = (type: ActionType.WithData): FnWithData => (...data) => {
-    this[symActions].push(new ActionInstance.WithData(type, data))
-  }
+  private readonly [symFnWithData] = (type: ActionType.WithData): FnWithData =>
+    (...data) => {
+      this[symActions].push(new ActionInstance.WithData(type, data))
+    }
 
-  private readonly [symFnWithoutData] = (type: ActionType.WithoutData): FnWithoutData => () => {
-    this[symActions].push(new ActionInstance.WithoutData(type))
-  }
+  private readonly [symFnWithoutData] = (type: ActionType.WithoutData): FnWithoutData =>
+    () => {
+      this[symActions].push(new ActionInstance.WithoutData(type))
+    }
 
   /**
    * Get all recorded actions

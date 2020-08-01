@@ -7,7 +7,7 @@ export {
   DisplaySelection,
   display,
   find,
-  main
+  main,
 }
 
 export * from './lib/types'

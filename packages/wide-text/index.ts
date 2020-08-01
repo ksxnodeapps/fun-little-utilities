@@ -5,10 +5,10 @@ import { Options } from 'wide-text-types'
  * @param text Input text
  * @param options Options
  */
-export function createWideText (text: string, options: Options = {}) {
+export function createWideText(text: string, options: Options = {}) {
   const {
     charSep = 1,
-    wordSep = 2
+    wordSep = 2,
   } = options
 
   const actualCharSep = ' '.repeat(charSep)

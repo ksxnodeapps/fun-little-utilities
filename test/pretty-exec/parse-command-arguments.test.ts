@@ -1,28 +1,28 @@
 import {
   ParsingResult,
   parseSingleCommandArgument,
-  parseCommandArguments
+  parseCommandArguments,
 } from 'pretty-exec'
 
 describe('parseSingleCommandArguments', () => {
   it('"argument"', () => {
     expect(parseSingleCommandArgument('argument')).toEqual({
       type: ParsingResult.Type.Argument,
-      text: 'argument'
+      text: 'argument',
     })
   })
 
   it('"--flag"', () => {
     expect(parseSingleCommandArgument('--flag')).toEqual({
       type: ParsingResult.Type.Flag,
-      text: '--flag'
+      text: '--flag',
     })
   })
 
   it('"-flag"', () => {
     expect(parseSingleCommandArgument('-flag')).toEqual({
       type: ParsingResult.Type.Flag,
-      text: '-flag'
+      text: '-flag',
     })
   })
 
@@ -31,7 +31,7 @@ describe('parseSingleCommandArguments', () => {
       type: ParsingResult.Type.Option,
       text: '--option-key=option-value',
       key: '--option-key',
-      value: 'option-value'
+      value: 'option-value',
     })
   })
 })

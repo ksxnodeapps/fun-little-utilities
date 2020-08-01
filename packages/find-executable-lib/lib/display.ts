@@ -2,7 +2,7 @@ import { FindingResult } from './types'
 import DisplaySelection from './display-selection'
 const { Word, Path, Both } = DisplaySelection
 
-export function display (item: FindingResult.Found, filter: DisplaySelection): string {
+export function display(item: FindingResult.Found, filter: DisplaySelection): string {
   const { word, path } = item
 
   switch (filter) {

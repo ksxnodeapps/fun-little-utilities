@@ -1,27 +1,27 @@
 import { StringPathFileSystem, ErrorKind } from 'simple-fake-fs'
 
-function create () {
+function create() {
   return new StringPathFileSystem('/', {
     a: {
       0: 'zero',
       b: {
         1: 'one',
-        c: {}
-      }
+        c: {},
+      },
     },
     abc: {
       def: {
-        ghi: 'abcdefghi'
-      }
+        ghi: 'abcdefghi',
+      },
     },
     foo: {
       bar: 'foobar',
-      baz: 'foobaz'
-    }
+      baz: 'foobaz',
+    },
   })
 }
 
-function getError (fn: () => any) {
+function getError(fn: () => any) {
   let value: any = undefined
 
   try {
@@ -248,7 +248,7 @@ describe('statSync', () => {
 
   describe('on thing that does not exist: throws an error', () => {
     describe('"thing/that/does/not/exist"', () => {
-      function init () {
+      function init() {
         const path = 'thing/that/does/not/exist'
         const fs = create()
         const fn = () => fs.statSync(path)
@@ -278,7 +278,7 @@ describe('statSync', () => {
     })
 
     describe('"thing-that-does-not-exist"', () => {
-      function init () {
+      function init() {
         const path = 'thing-that-does-not-exist'
         const fs = create()
         const fn = () => fs.statSync(path)
@@ -337,7 +337,7 @@ describe('readdirSync', () => {
   })
 
   describe('on file: throws an error', () => {
-    function init () {
+    function init() {
       const path = 'abc/def/ghi'
       const fs = create()
       const fn = () => fs.readdirSync(path)
@@ -368,7 +368,7 @@ describe('readdirSync', () => {
 
   describe('on thing that does not exist: throws an error', () => {
     describe('"thing/that/does/not/exist"', () => {
-      function init () {
+      function init() {
         const path = 'thing/that/does/not/exist'
         const fs = create()
         const fn = () => fs.readdirSync(path)
@@ -398,7 +398,7 @@ describe('readdirSync', () => {
     })
 
     describe('"thing-that-does-not-exist"', () => {
-      function init () {
+      function init() {
         const path = 'thing-that-does-not-exist'
         const fs = create()
         const fn = () => fs.readdirSync(path)
@@ -445,7 +445,7 @@ describe('readFileSync', () => {
   })
 
   describe('on directory: throws an error', () => {
-    function init () {
+    function init() {
       const path = 'abc/def'
       const fs = create()
       const fn = () => fs.readFileSync(path)
@@ -476,7 +476,7 @@ describe('readFileSync', () => {
 
   describe('on thing that does not exist: throws an error', () => {
     describe('"thing/that/does/not/exist"', () => {
-      function init () {
+      function init() {
         const path = 'thing/that/does/not/exist'
         const fs = create()
         const fn = () => fs.readFileSync(path)
@@ -506,7 +506,7 @@ describe('readFileSync', () => {
     })
 
     describe('"thing-that-does-not-exist""', () => {
-      function init () {
+      function init() {
         const path = 'thing-that-does-not-exist'
         const fs = create()
         const fn = () => fs.readFileSync(path)
@@ -539,7 +539,7 @@ describe('readFileSync', () => {
 
 describe('mkdirSync', () => {
   describe('on path that has yet to be occupied', () => {
-    function init (path: string) {
+    function init(path: string) {
       const fs = create()
       fs.mkdirSync(path)
       return { path, fs }
@@ -587,7 +587,7 @@ describe('mkdirSync', () => {
   })
 
   describe('on path that is occupied by a file: throws an error', () => {
-    function init () {
+    function init() {
       const path = 'abc/def/ghi'
       const fs = create()
       const fn = () => fs.mkdirSync(path)
@@ -617,7 +617,7 @@ describe('mkdirSync', () => {
   })
 
   describe('on path that is occupied by a directory: throws an error', () => {
-    function init () {
+    function init() {
       const path = 'abc'
       const fs = create()
       const fn = () => fs.mkdirSync(path)
@@ -647,7 +647,7 @@ describe('mkdirSync', () => {
   })
 
   describe('on thing that does not exist: throws an error', () => {
-    function init () {
+    function init() {
       const path = 'thing/that/does/not/exist'
       const fs = create()
       const fn = () => fs.mkdirSync(path)
@@ -679,7 +679,7 @@ describe('mkdirSync', () => {
 
 describe('writeFileSync', () => {
   describe('on path that has yet to be occupied', () => {
-    function init (path: string, content: string) {
+    function init(path: string, content: string) {
       const fs = create()
       fs.writeFileSync(path, content)
       return { path, content, fs }
@@ -729,7 +729,7 @@ describe('writeFileSync', () => {
   })
 
   describe('on path that is occupied by a file', () => {
-    function init (path: string, content: string) {
+    function init(path: string, content: string) {
       const fs = create()
       fs.writeFileSync(path, content)
       return { path, content, fs }
@@ -779,7 +779,7 @@ describe('writeFileSync', () => {
   })
 
   describe('on path that is occupied by a directory: throws an error', () => {
-    function init () {
+    function init() {
       const path = 'abc/def'
       const content = 'hello world'
       const fs = create()
@@ -811,7 +811,7 @@ describe('writeFileSync', () => {
 
   describe('on thing that does not exist: throws an error', () => {
     describe('"thing/that/does/not/exist"', () => {
-      function init () {
+      function init() {
         const path = 'thing/that/does/not/exist'
         const content = 'hello world'
         const fs = create()
@@ -844,13 +844,13 @@ describe('writeFileSync', () => {
 })
 
 describe('ensureDirSync', () => {
-  function initSuccess (path: string) {
+  function initSuccess(path: string) {
     const fs = create()
     fs.ensureDirSync(path)
     return { path, fs }
   }
 
-  function initFailure (path: string) {
+  function initFailure(path: string) {
     const fs = create()
     const fn = () => fs.ensureDirSync(path)
     return { path, fs, fn }
@@ -988,13 +988,13 @@ describe('ensureDirSync', () => {
 })
 
 describe('outputFileSync', () => {
-  function initSuccess (path: string, content: string) {
+  function initSuccess(path: string, content: string) {
     const fs = create()
     fs.outputFileSync(path, content)
     return { path, content, fs }
   }
 
-  function initFailure (path: string, content: string) {
+  function initFailure(path: string, content: string) {
     const fs = create()
     const fn = () => fs.outputFileSync(path, content)
     return { path, content, fs, fn }
@@ -1138,13 +1138,13 @@ describe('outputFileSync', () => {
 })
 
 describe('ensureFileSync', () => {
-  function initSuccess (path: string) {
+  function initSuccess(path: string) {
     const fs = create()
     fs.ensureFileSync(path)
     return { path, fs }
   }
 
-  function initFailure (path: string) {
+  function initFailure(path: string) {
     const fs = create()
     const fn = () => fs.ensureFileSync(path)
     return { path, fs, fn }

@@ -30,13 +30,9 @@ export namespace Main {
 
   export type StatusCodeAdder = (current: number, addend: number) => MaybePromise<number>
 
-  export interface FileSystemFunctions extends
-  SymlinkRoutingFunctions.FileSystemFunctions {}
+  export interface FileSystemFunctions extends SymlinkRoutingFunctions.FileSystemFunctions {}
 
-  export interface Stats extends
-    Unit.Stats,
-    StatInfo.Stats,
-    UnknownStatType.Stats {}
+  export interface Stats extends Unit.Stats, StatInfo.Stats, UnknownStatType.Stats {}
 }
 
 export namespace SymlinkRoutingFunctions {
@@ -60,7 +56,7 @@ export namespace SymlinkRoutingFunctions {
 
 export namespace Unit {
   export interface Options {
-    readonly name: string,
+    readonly name: string
     readonly followSymlink: number
     readonly getStat: Options.StatGetter
     readonly getLink: Options.LinkGetter
@@ -147,7 +143,7 @@ export namespace Unit {
   export type LoopBody = (
     name: string,
     followSymlink: number,
-    visited: ReadonlyArray<string>
+    visited: ReadonlyArray<string>,
   ) => MaybePromise<number>
 }
 
@@ -167,16 +163,16 @@ export namespace EmptyArguments {
   }
 
   export type Return =
-    ExitStatus.Success |
-    ExitStatus.InsufficientArguments
+    | ExitStatus.Success
+    | ExitStatus.InsufficientArguments
 }
 
 export namespace UnknownStatType {
   export interface Stats {
-    isBlockDevice (): boolean
-    isCharacterDevice (): boolean
-    isFIFO (): boolean
-    isSocket (): boolean
+    isBlockDevice(): boolean
+    isCharacterDevice(): boolean
+    isFIFO(): boolean
+    isSocket(): boolean
   }
 }
 
@@ -192,11 +188,11 @@ export namespace Executor {
 }
 
 export interface Writable {
-  write (data: string | Buffer): void
+  write(data: string | Buffer): void
 }
 
 export interface ChildProcess extends ChildProcessBase<string | Buffer> {
-  once (event: 'close', listener: (status: number, signal?: string | null) => void): void
+  once(event: 'close', listener: (status: number, signal?: string | null) => void): void
 }
 
 export namespace StatInfo {
@@ -210,7 +206,7 @@ export namespace StatInfo {
 
   export namespace Stats {
     export interface Date {
-      toISOString (): string
+      toISOString(): string
     }
   }
 }

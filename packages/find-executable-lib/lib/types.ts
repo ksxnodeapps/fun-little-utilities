@@ -25,5 +25,5 @@ export interface CommandLineOptions {
 }
 
 export interface Logger {
-  info (...args: any[]): void
+  info(...args: any[]): void
 }

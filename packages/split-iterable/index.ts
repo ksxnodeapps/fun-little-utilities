@@ -2,7 +2,7 @@ interface SepFunc<Item> {
   (item: Item): boolean
 }
 
-export function * splitIterable<Item> (iterable: Iterable<Item>, sep: SepFunc<Item>) {
+export function* splitIterable<Item>(iterable: Iterable<Item>, sep: SepFunc<Item>) {
   let store = Array<Item>()
 
   for (const item of iterable) {
@@ -23,9 +23,9 @@ interface AsyncSepFunc<Item> {
   (item: Item): boolean | Promise<boolean>
 }
 
-export async function * splitAsyncIterable<Item> (
+export async function* splitAsyncIterable<Item>(
   iterable: MaybeAsyncIterable<Item>,
-  sep: AsyncSepFunc<Item>
+  sep: AsyncSepFunc<Item>,
 ) {
   let store = Array<Item>()
 

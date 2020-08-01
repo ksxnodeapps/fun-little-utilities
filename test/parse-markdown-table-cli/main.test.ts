@@ -11,7 +11,7 @@ const STDIN_TEXT = `
 `
 
 class InputStream implements AsyncIterable<string> {
-  async * [Symbol.asyncIterator] () {
+  async *[Symbol.asyncIterator]() {
     let length = 0
     let count = length
     let chunk = ''
@@ -34,18 +34,18 @@ const DICT_OUTPUT = [
   {
     id: '1',
     name: 'John Doe',
-    email: 'john-doe@gmail.com'
+    email: 'john-doe@gmail.com',
   },
   {
     id: '2',
     name: 'Peter Smith',
-    email: 'petersmith22@outlook.com'
+    email: 'petersmith22@outlook.com',
   },
   {
     id: '3',
     name: 'Julia Jones',
-    email: 'jjones778@gmail.com'
-  }
+    email: 'jjones778@gmail.com',
+  },
 ]
 
 const LIST_OUTPUT = {
@@ -53,8 +53,8 @@ const LIST_OUTPUT = {
   rows: [
     ['1', 'John Doe', 'john-doe@gmail.com'],
     ['2', 'Peter Smith', 'petersmith22@outlook.com'],
-    ['3', 'Julia Jones', 'jjones778@gmail.com']
-  ]
+    ['3', 'Julia Jones', 'jjones778@gmail.com'],
+  ],
 }
 
 abstract class MockedParam implements MainParam {
@@ -65,7 +65,7 @@ abstract class MockedParam implements MainParam {
   public abstract readonly indentSize: number
 }
 
-async function setup (Param: new () => MockedParam) {
+async function setup(Param: new () => MockedParam) {
   const param = new Param()
   const status = await main(param)
   return { param, status }
@@ -98,7 +98,7 @@ describe('--format=dict --indentType=space --indentSize=2', () => {
     const { param } = await setup(Param)
     const text = getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })
     const object = JSON.parse(text)
     expect(object).toEqual(DICT_OUTPUT)
@@ -108,7 +108,7 @@ describe('--format=dict --indentType=space --indentSize=2', () => {
     const { param } = await setup(Param)
     expect(getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })).toBe(JSON.stringify(DICT_OUTPUT, undefined, 2))
   })
 
@@ -134,7 +134,7 @@ describe('--format=dict --indentType=tab', () => {
     const { param } = await setup(Param)
     const text = getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })
     const object = JSON.parse(text)
     expect(object).toEqual(DICT_OUTPUT)
@@ -144,7 +144,7 @@ describe('--format=dict --indentType=tab', () => {
     const { param } = await setup(Param)
     expect(getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })).toBe(JSON.stringify(DICT_OUTPUT, undefined, '\t'))
   })
 
@@ -170,7 +170,7 @@ describe('--format=dict --indentType=none', () => {
     const { param } = await setup(Param)
     const text = getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })
     const object = JSON.parse(text)
     expect(object).toEqual(DICT_OUTPUT)
@@ -180,7 +180,7 @@ describe('--format=dict --indentType=none', () => {
     const { param } = await setup(Param)
     expect(getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })).toBe(JSON.stringify(DICT_OUTPUT))
   })
 
@@ -206,7 +206,7 @@ describe('--format=list --indentType=space --indentSize=2', () => {
     const { param } = await setup(Param)
     const text = getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })
     const object = JSON.parse(text)
     expect(object).toEqual(LIST_OUTPUT)
@@ -216,7 +216,7 @@ describe('--format=list --indentType=space --indentSize=2', () => {
     const { param } = await setup(Param)
     expect(getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })).toBe(JSON.stringify(LIST_OUTPUT, undefined, 2))
   })
 
@@ -242,7 +242,7 @@ describe('--format=jsonl', () => {
     const { param } = await setup(Param)
     const text = getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })
     const object = text
       .split('\n')
@@ -255,11 +255,11 @@ describe('--format=jsonl', () => {
     const { param } = await setup(Param)
     expect(getString({
       console: param.console,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     })).toBe(
       DICT_OUTPUT
         .map(x => JSON.stringify(x))
-        .join('\n')
+        .join('\n'),
     )
   })
 

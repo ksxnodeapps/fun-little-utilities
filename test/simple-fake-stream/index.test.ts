@@ -6,11 +6,11 @@ import getAsyncArray = assets.asyncIter.fns.getArray
 abstract class InitBase {
   public readonly stream = new sfs.StreamInstance<string>()
 
-  constructor () {
+  constructor() {
     this.init(this.stream)
   }
 
-  protected abstract init (stream: InitBase['stream']): void
+  protected abstract init(stream: InitBase['stream']): void
 }
 
 it('MethodName matches snapshot', () => {
@@ -19,7 +19,7 @@ it('MethodName matches snapshot', () => {
 
 describe('without method calls', () => {
   class Init extends InitBase {
-    protected init () {
+    protected init() {
       return undefined
     }
   }
@@ -35,7 +35,7 @@ describe('without method calls', () => {
 
 describe('when WritableStream::write is called', () => {
   class Init extends InitBase {
-    protected init (stream: Init['stream']): void {
+    protected init(stream: Init['stream']): void {
       stream.write('foo')
       stream.write('bar')
       stream.write('baz')
@@ -70,10 +70,18 @@ describe('when WritableStream::write is called', () => {
 
 describe('when EventedReadableStream::{addListener,removeListener,on,once} is called', () => {
   class FnSetByMethod {
-    public addListener (): void { return undefined }
-    public removeListener (): void { return undefined }
-    public on (): void { return undefined }
-    public once (): void { return undefined }
+    public addListener(): void {
+      return undefined
+    }
+    public removeListener(): void {
+      return undefined
+    }
+    public on(): void {
+      return undefined
+    }
+    public once(): void {
+      return undefined
+    }
   }
 
   class FnSetByEvent {
@@ -85,7 +93,7 @@ describe('when EventedReadableStream::{addListener,removeListener,on,once} is ca
   const listeners = new FnSetByEvent()
 
   class Init extends InitBase {
-    protected init (stream: Init['stream']): void {
+    protected init(stream: Init['stream']): void {
       stream.addListener('data', listeners.data.addListener)
       stream.removeListener('data', listeners.data.removeListener)
       stream.on('data', listeners.data.on)
@@ -121,7 +129,7 @@ describe('when EventedReadableStream::{addListener,removeListener,on,once} is ca
       new Close(addListener, listeners.close.addListener),
       new Close(removeListener, listeners.close.removeListener),
       new Close(on, listeners.close.on),
-      new Close(once, listeners.close.once)
+      new Close(once, listeners.close.once),
     ])
   })
 })

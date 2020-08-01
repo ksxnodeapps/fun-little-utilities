@@ -24,19 +24,19 @@ abstract class InitBase {
       this.receivedArgs = args
       await this.processChildProcess(this.childProcess)
       return this.childProcess
-    }
+    },
   })
 
-  public get receivedStatus () {
+  public get receivedStatus() {
     return this.promise
   }
 
-  protected abstract processChildProcess (cp: FakeChildProcess): void | Promise<void>
+  protected abstract processChildProcess(cp: FakeChildProcess): void | Promise<void>
 }
 
 describe('calls ShowExecData.Param::execute', () => {
   class Init extends InitBase {
-    protected processChildProcess () {
+    protected processChildProcess() {
       return undefined
     }
   }
@@ -55,7 +55,7 @@ describe('calls ShowExecData.Param::execute', () => {
 describe('when child process emit "close" event', () => {
   it('returns expected status code', async () => {
     class Init extends InitBase {
-      protected processChildProcess (cp: FakeChildProcess) {
+      protected processChildProcess(cp: FakeChildProcess) {
         emitClose(cp, expectedStatus, 100)
       }
     }
@@ -69,7 +69,7 @@ describe('when child process emit "close" event', () => {
 
 it('writes data into ShowExecParam.Param::writable', async () => {
   class Init extends InitBase {
-    protected processChildProcess (cp: FakeChildProcess) {
+    protected processChildProcess(cp: FakeChildProcess) {
       const { stdout, stderr } = cp
 
       // data: 'abc\ndef\nghi\njkl'
@@ -95,6 +95,6 @@ it('writes data into ShowExecParam.Param::writable', async () => {
   snapYaml({
     methodCalls,
     chunks,
-    text
+    text,
   })
 })

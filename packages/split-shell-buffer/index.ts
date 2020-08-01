@@ -31,5 +31,5 @@ export {
   write,
   writeln,
   errorClasses,
-  types
+  types,
 }

@@ -1,7 +1,7 @@
 import { unknownStatType, UnknownStatType, UnknownStatTypeName } from 'catls-lib'
 const { BlockDevice, CharacterDevice, FIFO, Socket, Unknown } = UnknownStatTypeName
 
-function createStatObject (type: UnknownStatTypeName): UnknownStatType.Stats {
+function createStatObject(type: UnknownStatTypeName): UnknownStatType.Stats {
   const mkfn = (expected: UnknownStatTypeName) => () => type === expected
   const isBlockDevice = mkfn(BlockDevice)
   const isCharacterDevice = mkfn(CharacterDevice)
@@ -10,11 +10,12 @@ function createStatObject (type: UnknownStatTypeName): UnknownStatType.Stats {
   return { isBlockDevice, isCharacterDevice, isFIFO, isSocket }
 }
 
-const unit = (expected: UnknownStatTypeName) => () => {
-  const stats = createStatObject(expected)
-  const received = unknownStatType(stats)
-  expect(received).toBe(expected)
-}
+const unit = (expected: UnknownStatTypeName) =>
+  () => {
+    const stats = createStatObject(expected)
+    const received = unknownStatType(stats)
+    expect(received).toBe(expected)
+  }
 
 it('when stats.isBlockDevice() is true', unit(BlockDevice))
 it('when stats.isCharacterDevice() is true', unit(CharacterDevice))

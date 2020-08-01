@@ -7,8 +7,8 @@ export interface NextFuncLike<Value> {
 }
 
 export type IteratorResultLike<Value> =
-  IteratorResultLike.Undone<Value> |
-  IteratorResultLike.Done
+  | IteratorResultLike.Undone<Value>
+  | IteratorResultLike.Done
 
 export namespace IteratorResultLike {
   export interface Undone<Value> {

@@ -4,7 +4,7 @@ import { formatInspector, InspectFormatter, Inspector } from 'string-template-fo
 const object: any = Object.create(null, {
   abc: { value: { a: { b: { c: 'abc' } } }, enumerable: true },
   hidden: { value: 'hidden', enumerable: false },
-  circular: { get: () => object, enumerable: true }
+  circular: { get: () => object, enumerable: true },
 })
 
 describe('formatInspector', () => {
@@ -61,7 +61,7 @@ describe('InspectFormatter', () => {
       getters: true,
       compact: false,
       showHidden: true,
-      maxArrayLength: 0
+      maxArrayLength: 0,
     }
 
     const format = (x: any) => inspect(x, options)

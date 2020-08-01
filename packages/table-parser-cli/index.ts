@@ -4,7 +4,7 @@ export { Console, createArrayTable, createObjectTable }
 
 export const enum Type {
   ArrayToObject = 'arr2obj',
-  ObjectToArray = 'obj2arr'
+  ObjectToArray = 'obj2arr',
 }
 
 export interface Process {
@@ -14,7 +14,7 @@ export interface Process {
 export const enum IndentType {
   Tab = 'tab',
   Space = 'space',
-  None = 'none'
+  None = 'none',
 }
 
 export interface MainParam {
@@ -27,10 +27,10 @@ export interface MainParam {
 
 export const enum Status {
   Success = 0,
-  Failure = 1
+  Failure = 1,
 }
 
-export async function main (param: MainParam): Promise<Status> {
+export async function main(param: MainParam): Promise<Status> {
   const inputText = await readStdIn(param.process.stdin)
   const inputObject = JSON.parse(inputText)
   const outputObject = await convert(inputObject, param.type)
@@ -40,7 +40,7 @@ export async function main (param: MainParam): Promise<Status> {
   return 0
 }
 
-async function readStdIn (stdin: AsyncIterable<string>) {
+async function readStdIn(stdin: AsyncIterable<string>) {
   let text = ''
   for await (const chunk of stdin) {
     text += chunk
@@ -48,7 +48,7 @@ async function readStdIn (stdin: AsyncIterable<string>) {
   return text
 }
 
-async function convert (table: any, type: Type) {
+async function convert(table: any, type: Type) {
   switch (type) {
     case Type.ArrayToObject:
       return getAsyncArray(createObjectTable(table))
@@ -57,7 +57,7 @@ async function convert (table: any, type: Type) {
   }
 }
 
-function getIndent (type: IndentType, size: number) {
+function getIndent(type: IndentType, size: number) {
   switch (type) {
     case IndentType.Space:
       return size
@@ -68,7 +68,7 @@ function getIndent (type: IndentType, size: number) {
   }
 }
 
-export async function getAsyncArray<Item> (iterable: AsyncIterable<Item>) {
+export async function getAsyncArray<Item>(iterable: AsyncIterable<Item>) {
   const array = []
   for await (const item of iterable) {
     array.push(item)

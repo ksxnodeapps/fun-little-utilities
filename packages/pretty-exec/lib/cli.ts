@@ -1,7 +1,7 @@
 import { SpawnFunc, Printer, createPrettyExec } from './pretty-exec'
 
 export interface Writable {
-  write (message: string): void
+  write(message: string): void
 }
 
 export interface Process {
@@ -19,7 +19,7 @@ export interface CliExecEnv<Status> {
   readonly error: Printer
 }
 
-export function main<Status> (options: CliExecEnv<Status>) {
+export function main<Status>(options: CliExecEnv<Status>) {
   const { process, error } = options
   const [command, ...args] = process.argv.slice(2)
   if (!command) {

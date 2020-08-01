@@ -9,31 +9,38 @@ import {
   Console,
   Fetch,
   NPM_REGISTRY,
-  main
+  main,
 } from 'available-npm-name'
 
 class FakeChunk implements Process.Chunk {
-  constructor (
-    private readonly text: string
+  constructor(
+    private readonly text: string,
   ) {}
-  public toString () {
+  public toString() {
     return this.text
   }
 }
 
 class FakeStream extends EventEmitter implements Process.Stream {
-  public async emitAllData () {
+  public async emitAllData() {
     const chunks = [
-      '  abc', '\n',
-      'de', 'f \n',
+      '  abc',
+      '\n',
+      'de',
+      'f \n',
       'ghi\n',
       '  jkl\n',
-      '@abc', '/def', '\n',
-      '', '  \n',
+      '@abc',
+      '/def',
+      '\n',
+      '',
+      '  \n',
       'mno\n',
       '    \n  ',
       'foo\n',
-      'b', 'a', 'r'
+      'b',
+      'a',
+      'r',
     ]
     for (const chunk of chunks) {
       await delay(10)
@@ -48,10 +55,10 @@ class FakeConsole implements Console.Mod {
   public readonly core = new ConsoleInstance()
   public readonly info = jest.fn(this.core.info)
 
-  public getString () {
+  public getString() {
     return '\n' + getString({
       console: this.core,
-      types: [ActionType.Info]
+      types: [ActionType.Info],
     }) + '\n'
   }
 }
@@ -59,28 +66,29 @@ class FakeConsole implements Console.Mod {
 const availableNames = [
   'abc',
   'def',
-  '@abc/def'
+  '@abc/def',
 ]
 
 const occupiedNames = [
   'ghi',
-  'jkl'
+  'jkl',
 ]
 
 const erroredNames = [
   'mno',
   'foo',
-  'bar'
+  'bar',
 ]
 
 const invalidNames = [
   '!!foo',
-  'bar baz'
+  'bar baz',
 ]
 
-const hasUrl = (names: readonly string[], url: string) => names
-  .map(name => resolve(NPM_REGISTRY, encodeURIComponent(name)))
-  .includes(url)
+const hasUrl = (names: readonly string[], url: string) =>
+  names
+    .map(name => resolve(NPM_REGISTRY, encodeURIComponent(name)))
+    .includes(url)
 
 const fetchImpl: Fetch.Fn = async url => {
   if (!url.startsWith(NPM_REGISTRY)) {
@@ -94,7 +102,7 @@ const fetchImpl: Fetch.Fn = async url => {
   throw new RangeError(`URL ${url} is unaccounted for`)
 }
 
-async function setup (args: readonly string[]) {
+async function setup(args: readonly string[]) {
   const console = new FakeConsole()
   const fetch = jest.fn(fetchImpl)
   const stdin = new FakeStream()
@@ -102,13 +110,13 @@ async function setup (args: readonly string[]) {
   const result = await main({
     argv: {
       _: args,
-      registry: NPM_REGISTRY
+      registry: NPM_REGISTRY,
     },
     process: {
-      stdin
+      stdin,
     },
     console,
-    fetch
+    fetch,
   })
   return { console, fetch, stdin, result }
 }
@@ -350,7 +358,7 @@ describe('names are supplied via stdin', () => {
 })
 
 describe('fetch causes some errors', () => {
-  async function setup () {
+  async function setup() {
     const expectedError = Symbol('expectedError')
     const fetchImpl: Fetch.Fn = async url => {
       await delay(10)
@@ -363,13 +371,13 @@ describe('fetch causes some errors', () => {
     const promise = main({
       argv: {
         _: ['abc', 'def', 'ERROR1', 'ghi', 'ERROR2', 'jkl'],
-        registry: NPM_REGISTRY
+        registry: NPM_REGISTRY,
       },
       process: {
-        stdin
+        stdin,
       },
       console,
-      fetch
+      fetch,
     })
     const receivedError = await promise.catch(error => error)
     return { expectedError, fetch, stdin, console, promise, receivedError }

@@ -3,11 +3,11 @@ import { spawn, spawnSync } from 'child_process'
 import { toString, SequenceFunc, fromChildProcess, writeln } from 'split-shell-buffer'
 const executable = require.resolve('./.data/executable.discrete')
 
-function execute () {
+function execute() {
   return spawn('node', [executable]) as any // quick fix
 }
 
-async function main () {
+async function main() {
   console.info('SPAWNED')
   spawnSync('node', [executable], { stdio: 'inherit' })
   console.info()
@@ -27,10 +27,9 @@ async function main () {
   console.info('SPAWNED → SPLITTED AND NUMBERED → TO STRING')
   console.info(await toString(fromChildProcess(execute()).withPrefix(getNumberingPrefix())))
   console.info()
-
 }
 
-function getNumberingPrefix (): SequenceFunc {
+function getNumberingPrefix(): SequenceFunc {
   let index = 0
 
   return () => {
@@ -41,7 +40,7 @@ function getNumberingPrefix (): SequenceFunc {
 
 enum ExitStatus {
   Success = 0,
-  Failure = 1
+  Failure = 1,
 }
 
 main().then(
@@ -49,5 +48,5 @@ main().then(
   error => {
     console.error(error)
     process.exit(ExitStatus.Failure)
-  }
+  },
 )

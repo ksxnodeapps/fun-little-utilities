@@ -1,6 +1,6 @@
 const EMPTY = '((EMPTY))'
 
-export function fmtStdIO (stdio: unknown): string {
+export function fmtStdIO(stdio: unknown): string {
   if (!stdio) return EMPTY
   if (typeof stdio !== 'string') return fmtStdIO(String(stdio))
 

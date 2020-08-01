@@ -1,19 +1,18 @@
 import { createMarkdownArrayTable, createMarkdownObjectTable } from 'parse-markdown-table'
 import { Console } from 'simple-fake-console'
 
-export interface ReadableStream
-extends AsyncIterable<Buffer | string> {}
+export interface ReadableStream extends AsyncIterable<Buffer | string> {}
 
 export const enum Format {
   List = 'list',
   Dict = 'dict',
-  JsonLines = 'jsonl'
+  JsonLines = 'jsonl',
 }
 
 export const enum IndentType {
   Tab = 'tab',
   Space = 'space',
-  None = 'none'
+  None = 'none',
 }
 
 export interface MainParam {
@@ -26,10 +25,10 @@ export interface MainParam {
 
 export const enum Status {
   Success = 0,
-  Failure = 1
+  Failure = 1,
 }
 
-export async function main (options: MainParam): Promise<Status> {
+export async function main(options: MainParam): Promise<Status> {
   const indent = getIndentArgument(options.indentType, options.indentSize, options.format)
   const chunks = readStream(options.stdin)
 
@@ -41,7 +40,7 @@ export async function main (options: MainParam): Promise<Status> {
   return Status.Success
 }
 
-function getIndentArgument (type: IndentType, size: number, format: Format): '\t' | number | undefined {
+function getIndentArgument(type: IndentType, size: number, format: Format): '\t' | number | undefined {
   if (format === Format.JsonLines) return undefined
 
   switch (type) {
@@ -54,13 +53,13 @@ function getIndentArgument (type: IndentType, size: number, format: Format): '\t
   }
 }
 
-async function * readStream (stream: ReadableStream) {
+async function* readStream(stream: ReadableStream) {
   for await (const chunk of stream) {
     yield String(chunk)
   }
 }
 
-async function * output (chunks: AsyncIterable<string>, format: Format) {
+async function* output(chunks: AsyncIterable<string>, format: Format) {
   switch (format) {
     case Format.Dict:
       yield getAsyncArray(await createMarkdownObjectTable(chunks))
@@ -69,15 +68,15 @@ async function * output (chunks: AsyncIterable<string>, format: Format) {
       const { headers, rows } = await createMarkdownArrayTable(chunks)
       yield {
         headers,
-        rows: await getAsyncArray(rows)
+        rows: await getAsyncArray(rows),
       }
       break
     case Format.JsonLines:
-      yield * await createMarkdownObjectTable(chunks)
+      yield* await createMarkdownObjectTable(chunks)
   }
 }
 
-async function getAsyncArray<Item> (iterable: AsyncIterable<Item>) {
+async function getAsyncArray<Item>(iterable: AsyncIterable<Item>) {
   let array = []
 
   for await (const item of iterable) {

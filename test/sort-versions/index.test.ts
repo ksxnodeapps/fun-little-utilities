@@ -10,7 +10,7 @@ it('matches snapshot', () => {
     'invalid 1',
     '1.0.1',
     '0.1.2',
-    'v0.0.0'
+    'v0.0.0',
   ]
 
   expect(sort(input)).toMatchSnapshot()

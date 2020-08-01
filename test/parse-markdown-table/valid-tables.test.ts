@@ -2,7 +2,7 @@ import { createMarkdownObjectTable, createMarkdownArrayTable } from 'parse-markd
 import { getAsyncArray } from './lib/async-array'
 
 describe('full bound', () => {
-  async function setup () {
+  async function setup() {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|
@@ -23,7 +23,7 @@ describe('full bound', () => {
 })
 
 describe('left bound', () => {
-  async function setup () {
+  async function setup() {
     const text = `
       | id | name        | email
       |----|-------------|--------------------------
@@ -44,7 +44,7 @@ describe('left bound', () => {
 })
 
 describe('right bound', () => {
-  async function setup () {
+  async function setup() {
     const text = `
        id | name        | email                    |
       ----|-------------|--------------------------|
@@ -65,7 +65,7 @@ describe('right bound', () => {
 })
 
 describe('no bound', () => {
-  async function setup () {
+  async function setup() {
     const text = `
        id | name        | email
       ----|-------------|--------------------------
@@ -86,7 +86,7 @@ describe('no bound', () => {
 })
 
 describe('unknown columns', () => {
-  async function setup () {
+  async function setup() {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|
@@ -106,14 +106,14 @@ describe('unknown columns', () => {
   })
 })
 
-async function * getChunks (text: string, splitter: string) {
+async function* getChunks(text: string, splitter: string) {
   const [first, ...rest] = text.split(splitter)
   yield first
-  yield * rest.map(chunk => splitter + chunk)
+  yield* rest.map(chunk => splitter + chunk)
 }
 
 describe('iterate by lines', () => {
-  async function setup () {
+  async function setup() {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|
@@ -134,7 +134,7 @@ describe('iterate by lines', () => {
 })
 
 describe('iterate by chunks', () => {
-  async function setup () {
+  async function setup() {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|
@@ -155,7 +155,7 @@ describe('iterate by chunks', () => {
 })
 
 describe('createMarkdownArrayTable', () => {
-  async function setup () {
+  async function setup() {
     const text = `
       | id | name        | email                    |
       |----|-------------|--------------------------|

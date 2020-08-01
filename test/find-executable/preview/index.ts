@@ -1,27 +1,27 @@
 import process from 'process'
 import execute from './utils/execute'
 
-async function main (): Promise<void> {
+async function main(): Promise<void> {
   await execute()
   await execute('--help')
 
   await execute(
     'abcdef',
-    'ghijkl'
+    'ghijkl',
   )
 
   await execute(
     'not-found-0',
     'not-found-1',
     'git',
-    'node'
+    'node',
   )
 
   await execute(
     'not-found-0',
     'not-found-1',
     'git',
-    'node'
+    'node',
   )
 
   await execute(
@@ -29,7 +29,7 @@ async function main (): Promise<void> {
     'not-found-0',
     'not-found-1',
     'git',
-    'node'
+    'node',
   )
 
   await execute(
@@ -37,7 +37,7 @@ async function main (): Promise<void> {
     'not-found-0',
     'not-found-1',
     'git',
-    'node'
+    'node',
   )
 
   await execute(
@@ -45,7 +45,7 @@ async function main (): Promise<void> {
     'not-found-0',
     'not-found-1',
     'git',
-    'node'
+    'node',
   )
 }
 

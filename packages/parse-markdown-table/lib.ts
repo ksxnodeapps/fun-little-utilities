@@ -12,7 +12,7 @@ export interface TableIterationOptions {
 
 const horizontalLineRegex = /^[|-]+$/
 
-export async function * iterateRows (lines: Stream, options: TableIterationOptions) {
+export async function* iterateRows(lines: Stream, options: TableIterationOptions) {
   const { leftBound, rightBound } = options
 
   for await (const line of lines) {
@@ -34,13 +34,13 @@ export async function * iterateRows (lines: Stream, options: TableIterationOptio
 }
 
 export class MarkdownCellTable implements ArrayTable<string, string> {
-  constructor (
+  constructor(
     public readonly headers: readonly string[],
-    public readonly rows: AsyncIterableIterator<readonly string[]>
+    public readonly rows: AsyncIterableIterator<readonly string[]>,
   ) {}
 }
 
-export async function createMarkdownArrayTable (stream: Stream) {
+export async function createMarkdownArrayTable(stream: Stream) {
   const lineIterator = trimmedChunks(iterateLines(stream))
   const firstLineResult = await lineIterator.next()
 
@@ -59,6 +59,6 @@ export async function createMarkdownArrayTable (stream: Stream) {
   return new MarkdownCellTable(headers, rows)
 }
 
-export async function createMarkdownObjectTable (stream: Stream) {
+export async function createMarkdownObjectTable(stream: Stream) {
   return createObjectTable(await createMarkdownArrayTable(stream))
 }

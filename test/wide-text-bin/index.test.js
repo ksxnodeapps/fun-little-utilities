@@ -12,20 +12,23 @@ describe('when call', () => {
   const inputs = [
     'hello world',
     'foo bar baz',
-    'abc de f'
+    'abc de f',
   ]
 
-  const zipObject = outputs => Array
-    .from(iter.zipAll(inputs, outputs))
-    .reduce((prev, [key, value]) => Object.assign(prev, { [key]: value }), {})
+  const zipObject = outputs =>
+    Array
+      .from(iter.zipAll(inputs, outputs))
+      .reduce((prev, [key, value]) => Object.assign(prev, { [key]: value }), {})
 
-  const getExpected = options => zipObject(inputs.map(
-    text => createWideText(text, options)
-  ))
+  const getExpected = options =>
+    zipObject(inputs.map(
+      text => createWideText(text, options),
+    ))
 
-  const getReceived = (argv = []) => zipObject(inputs.map(
-    text => String(spawnSync([bin, text, ...argv], { encoding: 'utf8' }).stdout).trim()
-  ))
+  const getReceived = (argv = []) =>
+    zipObject(inputs.map(
+      text => String(spawnSync([bin, text, ...argv], { encoding: 'utf8' }).stdout).trim(),
+    ))
 
   it('without options', () => {
     const expected = getExpected()

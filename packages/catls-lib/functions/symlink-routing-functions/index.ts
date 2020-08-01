@@ -14,7 +14,7 @@ abstract class ReturnInstance implements Return {
   public abstract readonly getLink: LinkGetter
   public abstract readonly getLoop: LoopGetter
 
-  constructor (fsfn: FileSystemFunctions) {
+  constructor(fsfn: FileSystemFunctions) {
     this[symFns] = fsfn
     return Object.create(this) // hide private properties from jest snapshot
   }
@@ -38,9 +38,9 @@ class UltimateFunctions extends ReturnInstance {
   public readonly getLoop: LoopGetter = body => name => body(name, 0, [])
 }
 
-export function symlinkRoutingFunctions (
+export function symlinkRoutingFunctions(
   resolution: SymlinkResolution,
-  fsfn: FileSystemFunctions
+  fsfn: FileSystemFunctions,
 ): Return {
   switch (resolution) {
     case Agnostic:

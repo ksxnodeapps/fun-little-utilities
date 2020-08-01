@@ -4,7 +4,7 @@ import { getLinesFromStream } from 'line-observable-rxjs'
 import { Process } from './types'
 
 /** Create an observable of input from either cli arguments or stdin stream */
-export function parseInput (param: parseInput.Param): Observable<string> {
+export function parseInput(param: parseInput.Param): Observable<string> {
   const { args, stdin } = param
   if (args.length) return from(args)
   const $result = getLinesFromStream(stdin)

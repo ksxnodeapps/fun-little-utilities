@@ -5,48 +5,49 @@ import defaultImport, {
   create,
   EventTargetProxy,
   EventTarget,
-  ListenerTransformer
+  ListenerTransformer,
 } from 'event-target-proxy'
 
 type AnyEvent = string | symbol
 type AnyListener = (...args: any[]) => void
 type AnyTransformer = ListenerTransformer<AnyEvent, AnyListener, AnyListener>
 
-function expectPairsFrom<Element> (collection: Iterable<Element>) {
+function expectPairsFrom<Element>(collection: Iterable<Element>) {
   type Pair = [Element, Element]
   const equalPairs = new Set<Pair>()
   const notEqualPairs = new Set<Pair>()
 
-  const mkfn = (act: () => void) => (equal: expectPairsFrom.Equal<Element> = Object.is) => {
-    equalPairs.clear()
-    notEqualPairs.clear()
+  const mkfn = (act: () => void) =>
+    (equal: expectPairsFrom.Equal<Element> = Object.is) => {
+      equalPairs.clear()
+      notEqualPairs.clear()
 
-    for (const pair of combinations(collection, 2)) {
-      if (equal(...pair)) {
-        equalPairs.add(pair)
-      } else {
-        notEqualPairs.add(pair)
+      for (const pair of combinations(collection, 2)) {
+        if (equal(...pair)) {
+          equalPairs.add(pair)
+        } else {
+          notEqualPairs.add(pair)
+        }
       }
-    }
 
-    act()
-  }
+      act()
+    }
 
   return {
     toBeAllEqual: mkfn(() => {
       expect({ equalPairs, notEqualPairs }).toEqual({
         equalPairs,
-        notEqualPairs: new Set()
+        notEqualPairs: new Set(),
       })
     }),
 
     not: {
       toBeAllEqual: mkfn(() => {
         expect({ notEqualPairs }).not.toEqual({
-          notEqualPairs: new Set()
+          notEqualPairs: new Set(),
         })
-      })
-    }
+      }),
+    },
   }
 }
 
@@ -57,21 +58,21 @@ namespace expectPairsFrom {
 class MockedEventEmitter extends RealEventEmitter implements EventTarget<any, any> {
   public readonly recordedActions = Array<MockedEventEmitter.RecordedAction>()
 
-  public addListener (event: any, listener: any): this {
+  public addListener(event: any, listener: any): this {
     this.recordedActions.push({
       action: 'addListener',
       event,
-      listener
+      listener,
     })
 
     return super.addListener(event, listener)
   }
 
-  public removeListener (event: any, listener: any): this {
+  public removeListener(event: any, listener: any): this {
     this.recordedActions.push({
       action: 'removeListener',
       event,
-      listener
+      listener,
     })
 
     return super.removeListener(event, listener)
@@ -91,30 +92,31 @@ class Init<Target extends EventTarget<any, any>> {
   public readonly proxy: EventTargetProxy<AnyEvent, AnyListener>
   public readonly getPromise: (event: AnyEvent) => Promise<void>
 
-  constructor (target: Target, transformer: AnyTransformer) {
+  constructor(target: Target, transformer: AnyTransformer) {
     this.target = target
     this.proxy = create(target, transformer)
 
-    this.getPromise = event => new Promise(
-      resolve => target.addListener(event, () => resolve())
-    )
+    this.getPromise = event =>
+      new Promise(
+        resolve => target.addListener(event, () => resolve()),
+      )
   }
 }
 
 class InitEventEmitter extends Init<MockedEventEmitter> {
-  constructor (transformer: AnyTransformer) {
+  constructor(transformer: AnyTransformer) {
     super(new MockedEventEmitter(), transformer)
   }
 }
 
 class InitAsIs extends InitEventEmitter {
-  constructor () {
+  constructor() {
     super(x => x.listener)
   }
 }
 
 class InitRetAsIs extends InitEventEmitter {
-  constructor () {
+  constructor() {
     super(({ listener }) => (...args: any[]) => listener(...args))
   }
 }
@@ -146,9 +148,9 @@ describe('EventTargetProxy::addListener', () => {
     }
 
     expect(
-      target.recordedActions.map(x => x.action)
+      target.recordedActions.map(x => x.action),
     ).toEqual(
-      Array.from('abc').fill('addListener')
+      Array.from('abc').fill('addListener'),
     )
   })
 
@@ -161,9 +163,9 @@ describe('EventTargetProxy::addListener', () => {
     }
 
     expect(
-      target.recordedActions.map(x => x.event)
+      target.recordedActions.map(x => x.event),
     ).toEqual(
-      Array.from('abc')
+      Array.from('abc'),
     )
   })
 
@@ -179,7 +181,7 @@ describe('EventTargetProxy::addListener', () => {
       expect(target.recordedActions).toEqual(
         Array
           .from('abc')
-          .map(event => ({ action: 'addListener', event, listener }))
+          .map(event => ({ action: 'addListener', event, listener })),
       )
     })
   })
@@ -195,13 +197,13 @@ describe('EventTargetProxy::addListener', () => {
 
       it('does not call target.addListener on provided listener', () => {
         expect(
-          target.recordedActions.map(x => x.listener)
+          target.recordedActions.map(x => x.listener),
         ).not.toContain(listener)
       })
 
       it('does not call target.addListener on the same listener', () => {
         expectPairsFrom(
-          target.recordedActions.map(x => x.listener)
+          target.recordedActions.map(x => x.listener),
         ).not.toBeAllEqual()
       })
     })
@@ -217,13 +219,13 @@ describe('EventTargetProxy::addListener', () => {
 
       it('does not call target.addListener on provided listener', () => {
         expect(
-          target.recordedActions.map(x => x.listener)
+          target.recordedActions.map(x => x.listener),
         ).not.toContain(listener)
       })
 
       it('calls target.addListener on the same listener', () => {
         expectPairsFrom(
-          target.recordedActions.map(x => x.listener)
+          target.recordedActions.map(x => x.listener),
         ).toBeAllEqual()
       })
     })
@@ -257,10 +259,10 @@ describe('EventTargetProxy::removeListener', () => {
       }
 
       expect(
-        target.recordedActions.map(x => x.action)
+        target.recordedActions.map(x => x.action),
       ).toEqual([
         ...Array.from('abc').fill('addListener'),
-        ...Array.from('abc').fill('removeListener')
+        ...Array.from('abc').fill('removeListener'),
       ])
     })
 
@@ -277,14 +279,14 @@ describe('EventTargetProxy::removeListener', () => {
       }
 
       expect(
-        target.recordedActions
+        target.recordedActions,
       ).toEqual([
         ...Array
           .from('abbccc')
           .map(event => ({ action: 'addListener', event, listener })),
         ...Array
           .from('abc')
-          .map(event => ({ action: 'removeListener', event, listener }))
+          .map(event => ({ action: 'removeListener', event, listener })),
       ])
     })
 
@@ -301,9 +303,9 @@ describe('EventTargetProxy::removeListener', () => {
       }
 
       expect(
-        target.recordedActions.map(x => x.event)
+        target.recordedActions.map(x => x.event),
       ).toEqual(
-        Array.from('abcabc')
+        Array.from('abcabc'),
       )
     })
 
@@ -325,7 +327,7 @@ describe('EventTargetProxy::removeListener', () => {
             .map(event => ({ action: 'addListener', event, listener })),
           ...Array
             .from('abc')
-            .map(event => ({ action: 'removeListener', event, listener }))
+            .map(event => ({ action: 'removeListener', event, listener })),
         ])
       })
     })
@@ -345,13 +347,13 @@ describe('EventTargetProxy::removeListener', () => {
 
         it('does not call target.removeListener on provided listener', () => {
           expect(
-            target.recordedActions.map(x => x.listener)
+            target.recordedActions.map(x => x.listener),
           ).not.toContain(listener)
         })
 
         it('does not call target.removeListener on the same listener', () => {
           expectPairsFrom(
-            target.recordedActions.map(x => x.listener)
+            target.recordedActions.map(x => x.listener),
           ).not.toBeAllEqual()
         })
       })
@@ -367,7 +369,7 @@ describe('EventTargetProxy::removeListener', () => {
 
         it('does not call target.removeListener on provided listener', () => {
           expect(
-            target.recordedActions.map(x => x.listener)
+            target.recordedActions.map(x => x.listener),
           ).not.toContain(listener)
         })
       })

@@ -23,10 +23,10 @@ interface Options {
   readonly spawnOptions?: SpawnSyncOptions
 }
 
-export function yamlSpawnSync (
+export function yamlSpawnSync(
   spawnSync: SpawnSync,
   argv: readonly string[] = [],
-  options: Options = {}
+  options: Options = {},
 ) {
   const { yamlOptions, spawnOptions } = options
   const result = spawnSync(Array.from(argv), spawnOptions)
@@ -35,7 +35,7 @@ export function yamlSpawnSync (
     signal: result.signal || null,
     status: result.status,
     stdout: fmtStdIO(result.stdout),
-    stderr: fmtStdIO(result.stderr)
+    stderr: fmtStdIO(result.stderr),
   }
   return makeYamlText(object, yamlOptions)
 }
