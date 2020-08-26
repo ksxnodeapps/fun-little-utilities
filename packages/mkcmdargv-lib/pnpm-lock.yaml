@@ -1,5 +1,5 @@
 dependencies:
-  '@tsfun/array': 0.0.5
+  '@tsfun/array': 0.0.6
   '@types/fs-extra': 9.0.1
   '@types/node': 14.0.27
   fs-extra: 9.0.1
@@ -7,23 +7,19 @@ dependencies:
   tslib: 2.0.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/array/0.0.5:
+  /@tsfun/array/0.0.6:
     dependencies:
-      '@types/node': 13.13.9
-      tslib: 1.13.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-f6IaTr16nR3oPKo2bvGd1HV2OyB7ONGZgN9uHiIsr7R0B/iaoYqMmI3CowvMo78GAUIXwM7Akx4Z/finDh/aUA==
+      integrity: sha512-8pKde1W0rPysp2JSjnuFyF+FDU6p3H+MuvQ2Z2QyA/Kdiq7VUUOmZfAGLV1YZ5R58M54H8jOTelslAPYUdTPBQ==
   /@types/fs-extra/9.0.1:
     dependencies:
       '@types/node': 14.0.6
     dev: false
     resolution:
       integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==
-  /@types/node/13.13.9:
-    dev: false
-    resolution:
-      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
   /@types/node/14.0.27:
     dev: false
     resolution:
@@ -32,6 +28,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==
+  /@types/node/14.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /at-least-node/1.0.0:
     dev: false
     engines:
@@ -61,14 +61,14 @@ packages:
       graceful-fs: 4.2.4
     resolution:
       integrity: sha512-jR2b5v7d2vIOust+w3wtFKZIfpC2pnRmFAhAC/BuweZFQR8qZzxH1OyrQ10HmdVYiXWkYUqPVsz91cG7EL2FBg==
-  /tslib/1.13.0:
-    dev: false
-    resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
   /tslib/2.0.0:
     dev: false
     resolution:
       integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+  /tslib/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /universalify/1.0.0:
     dev: false
     engines:
@@ -76,7 +76,7 @@ packages:
     resolution:
       integrity: sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 specifiers:
-  '@tsfun/array': ^0.0.5
+  '@tsfun/array': ^0.0.6
   '@types/fs-extra': ^9.0.1
   '@types/node': ^14.0.27
   fs-extra: ^9.0.1
