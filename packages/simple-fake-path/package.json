@@ -1,6 +1,6 @@
 {
   "name": "simple-fake-path",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Mockable fake path module",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

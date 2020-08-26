@@ -1,6 +1,6 @@
 {
   "name": "parse-markdown-table-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Convert a markdown table from text to JSON objects",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -28,8 +28,8 @@
   "dependencies": {
     "yargs": "^15.4.1",
     "tslib": "^2.0.1",
-    "parse-markdown-table": "^0.0.3",
-    "simple-fake-console": "^0.1.7",
+    "parse-markdown-table": "^0.0.4",
+    "simple-fake-console": "^0.1.8",
     "@types/yargs": "^15.0.5",
     "@types/node": "^14.6.0"
   }

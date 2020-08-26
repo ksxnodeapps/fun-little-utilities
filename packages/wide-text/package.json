@@ -1,6 +1,6 @@
 {
   "name": "wide-text",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Create w i d e  t e x t from normal text",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   "module": "index.mjs",
   "dependencies": {
     "tslib": "^2.0.1",
-    "wide-text-types": "^0.1.7",
+    "wide-text-types": "^0.1.8",
     "@types/node": "^14.6.0"
   },
   "engines": {

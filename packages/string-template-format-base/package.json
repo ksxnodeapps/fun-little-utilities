@@ -1,6 +1,6 @@
 {
   "name": "string-template-format-base",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Create string template tag that transform values into strings",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "catls",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Invoke ls on directories, cat on files",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -19,9 +19,9 @@
   "bin": "catls",
   "dependencies": {
     "fs-extra": "^9.0.1",
-    "ts-yargs": "^0.1.7",
+    "ts-yargs": "^0.1.8",
     "tslib": "^2.0.1",
-    "catls-lib": "^0.1.8",
+    "catls-lib": "^0.1.9",
     "@types/fs-extra": "^9.0.1",
     "@types/node": "^14.6.0"
   },

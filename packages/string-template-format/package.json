@@ -1,6 +1,6 @@
 {
   "name": "string-template-format",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "String template tag that accepts any value and returns a string",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -25,12 +25,12 @@
   "main": "index.js",
   "dependencies": {
     "tslib": "^2.0.1",
-    "string-template-format-base": "^0.1.6",
-    "string-template-format-compose": "^0.1.6",
-    "string-template-format-inspect": "^0.1.7",
-    "string-template-format-json": "^0.1.6",
-    "string-template-format-tostring": "^0.1.6",
-    "string-template-format-uri": "^0.1.6",
+    "string-template-format-base": "^0.1.7",
+    "string-template-format-compose": "^0.1.7",
+    "string-template-format-inspect": "^0.1.8",
+    "string-template-format-json": "^0.1.7",
+    "string-template-format-tostring": "^0.1.7",
+    "string-template-format-uri": "^0.1.7",
     "@types/node": "^14.6.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "simple-fake-fs",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Fake FS-like tree",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

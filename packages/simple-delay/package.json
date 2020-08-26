@@ -1,6 +1,6 @@
 {
   "name": "simple-delay",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create a promise that resolves after a certain amount of time",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

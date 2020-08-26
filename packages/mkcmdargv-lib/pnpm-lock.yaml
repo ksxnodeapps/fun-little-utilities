@@ -72,5 +72,5 @@ specifiers:
   '@types/fs-extra': ^9.0.1
   '@types/node': ^14.6.0
   fs-extra: ^9.0.1
-  split-iterable: ^0.1.7
+  split-iterable: ^0.1.8
   tslib: ^2.0.1

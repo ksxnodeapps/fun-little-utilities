@@ -1,6 +1,6 @@
 {
   "name": "line-observable-rxjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Convert an input stream to observable of lines",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

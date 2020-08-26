@@ -291,7 +291,7 @@ specifiers:
   '@types/node': ^14.6.0
   '@types/node-fetch': ^2.5.7
   '@types/yargs': ^15.0.5
-  line-observable-rxjs: ^0.0.2
+  line-observable-rxjs: ^0.0.3
   node-fetch: ^2.6.0
   rxjs: ^6.6.2
   tslib: ^2.0.1

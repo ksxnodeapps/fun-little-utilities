@@ -61,7 +61,7 @@ specifiers:
   '@types/shell-quote': ^1.7.0
   convenient-typescript-utilities: ^0.0.5
   shell-quote: ^1.7.2
-  split-shell-buffer: ^2.0.8
-  ts-await-event: ^0.1.7
+  split-shell-buffer: ^2.0.9
+  ts-await-event: ^0.1.8
   tslib: ^2.0.1
   typescript-miscellaneous: ^0.1.1
