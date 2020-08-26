@@ -2,7 +2,7 @@ dependencies:
   '@types/node': 14.6.0
   '@types/node-fetch': 2.5.7
   '@types/yargs': 15.0.5
-  line-observable-rxjs: 'link:../line-observable-rxjs'
+  line-observable-rxjs: 0.0.3
   node-fetch: 2.6.0
   rxjs: 6.6.2
   tslib: 2.0.1
@@ -138,6 +138,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==
+  /line-observable-rxjs/0.0.3:
+    dependencies:
+      '@types/node': 14.6.0
+      rxjs: 6.6.2
+      tslib: 2.0.1
+    dev: false
+    resolution:
+      integrity: sha512-r2l7U00zl6RPxppJXzMdknmaMl0sp4DYJP1iZfdIKbgIsgbrJrUJ5lOEID9uP9C6wYu3jWIEdQNcqbkSEOOrdw==
   /locate-path/5.0.0:
     dependencies:
       p-locate: 4.1.0
@@ -291,7 +299,7 @@ specifiers:
   '@types/node': ^14.6.0
   '@types/node-fetch': ^2.5.7
   '@types/yargs': ^15.0.5
-  line-observable-rxjs: ^0.0.2
+  line-observable-rxjs: ^0.0.3
   node-fetch: ^2.6.0
   rxjs: ^6.6.2
   tslib: ^2.0.1
