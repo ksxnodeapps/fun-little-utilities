@@ -1,7 +1,7 @@
 dependencies:
-  '@types/node': 14.0.27
+  '@types/node': 14.6.0
   '@types/yargs': 15.0.5
-  tslib: 2.0.0
+  tslib: 2.0.1
   wide-text: 'link:../wide-text'
   yargs: 15.4.1
 lockfileVersion: 5.1
@@ -10,10 +10,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/node/14.0.27:
+  /@types/node/14.6.0:
     dev: false
     resolution:
-      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /@types/yargs-parser/15.0.0:
     dev: false
     resolution:
@@ -164,10 +164,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  /tslib/2.0.0:
+  /tslib/2.0.1:
     dev: false
     resolution:
-      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /which-module/2.0.0:
     dev: false
     resolution:
@@ -214,8 +214,8 @@ packages:
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@types/node': ^14.0.27
+  '@types/node': ^14.6.0
   '@types/yargs': ^15.0.5
-  tslib: ^2.0.0
+  tslib: ^2.0.1
   wide-text: ^0.1.7
   yargs: ^15.4.1

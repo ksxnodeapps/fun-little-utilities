@@ -1,8 +1,8 @@
 dependencies:
-  '@types/node': 14.0.27
+  '@types/node': 14.6.0
   advanced-map-initialized: 0.0.4
   iter-tools: 6.2.6
-  tslib: 2.0.0
+  tslib: 2.0.1
 lockfileVersion: 5.1
 packages:
   /@babel/runtime-corejs2/7.10.1:
@@ -26,10 +26,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
-  /@types/node/14.0.27:
+  /@types/node/14.6.0:
     dev: false
     resolution:
-      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.13.9
@@ -96,10 +96,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tslib/2.0.0:
+  /tslib/2.0.1:
     dev: false
     resolution:
-      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0
@@ -140,7 +140,7 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@types/node': ^14.0.27
+  '@types/node': ^14.6.0
   advanced-map-initialized: ^0.0.4
   iter-tools: ^6.2.6
-  tslib: ^2.0.0
+  tslib: ^2.0.1

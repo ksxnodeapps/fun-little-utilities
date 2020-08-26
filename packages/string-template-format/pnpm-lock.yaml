@@ -1,28 +1,28 @@
 dependencies:
-  '@types/node': 14.0.27
+  '@types/node': 14.6.0
   string-template-format-base: 'link:../string-template-format-base'
   string-template-format-compose: 'link:../string-template-format-compose'
   string-template-format-inspect: 'link:../string-template-format-inspect'
   string-template-format-json: 'link:../string-template-format-json'
   string-template-format-tostring: 'link:../string-template-format-tostring'
   string-template-format-uri: 'link:../string-template-format-uri'
-  tslib: 2.0.0
+  tslib: 2.0.1
 lockfileVersion: 5.1
 packages:
-  /@types/node/14.0.27:
+  /@types/node/14.6.0:
     dev: false
     resolution:
-      integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
-  /tslib/2.0.0:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
+  /tslib/2.0.1:
     dev: false
     resolution:
-      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 specifiers:
-  '@types/node': ^14.0.27
+  '@types/node': ^14.6.0
   string-template-format-base: ^0.1.6
   string-template-format-compose: ^0.1.6
   string-template-format-inspect: ^0.1.7
   string-template-format-json: ^0.1.6
   string-template-format-tostring: ^0.1.6
   string-template-format-uri: ^0.1.6
-  tslib: ^2.0.0
+  tslib: ^2.0.1
