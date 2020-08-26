@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>string-template-format-inspect — Reference</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for string-template-format-inspect — Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -81,7 +81,7 @@
 				</a>
 				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { InspectFormatter } <span class="hljs-keyword">from</span> <span class="hljs-string">'string-template-format-inspect'</span>
 <span class="hljs-keyword">const</span> dbg = InspectFormatter({ <span class="hljs-attr">getters</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">maxArrayLength</span>: <span class="hljs-number">0</span> })
-<span class="hljs-keyword">const</span> myObject = { <span class="hljs-keyword">get</span> abc () { <span class="hljs-keyword">return</span> <span class="hljs-number">123</span> }, <span class="hljs-attr">def</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>] }
+<span class="hljs-keyword">const</span> myObject = { get abc () { <span class="hljs-keyword">return</span> <span class="hljs-number">123</span> }, <span class="hljs-attr">def</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>] }
 <span class="hljs-built_in">console</span>.log(dbg<span class="hljs-string">`my object is <span class="hljs-subst">${myObject}</span>`</span>)</code></pre>
 				<p><em>should print:</em></p>
 				<pre><code><span class="hljs-selector-tag">my</span> <span class="hljs-selector-tag">object</span> <span class="hljs-selector-tag">is</span> { <span class="hljs-attribute">abc</span>: [Getter: <span class="hljs-number">123</span>], def: [ ... <span class="hljs-number">3</span> more items ] }</code></pre>
@@ -133,6 +133,5 @@
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

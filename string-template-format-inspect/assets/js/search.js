@@ -1,3 +1,0 @@
-var typedoc = typedoc || {};
-            typedoc.search = typedoc.search || {};
-            typedoc.search.data = {"kinds":{"32":"Variable","64":"Function","256":"Interface","4194304":"Type alias"},"rows":[{"id":0,"kind":256,"name":"Inspector","url":"interfaces/inspector.html","classes":"tsd-kind-interface"},{"id":1,"kind":64,"name":"Inspector","url":"globals.html#inspector","classes":"tsd-kind-function"},{"id":2,"kind":4194304,"name":"InspectFormatter","url":"globals.html#inspectformatter","classes":"tsd-kind-type-alias"},{"id":3,"kind":32,"name":"formatInspector","url":"globals.html#formatinspector","classes":"tsd-kind-variable"},{"id":4,"kind":64,"name":"InspectFormatter","url":"globals.html#inspectformatter","classes":"tsd-kind-function"}]};

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>prvEvtEmt | simple-fake-stream — Reference</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for simple-fake-stream — Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -13,7 +13,7 @@
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -82,10 +82,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-namespace tsd-is-external">
 					<a name="streaminstancebase" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> Stream<wbr>Instance<wbr>Base</h3>
-					<div class="tsd-signature tsd-kind-icon">Stream<wbr>Instance<wbr>Base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StreamInstanceBaseClass</span><span class="tsd-signature-symbol"> = class &lt;Chunk extends string | Buffer, Err &#x3D; any&gt;implements Stream&lt;Chunk, Err&gt;, StreamEventEmitter&lt;Chunk, Err&gt;, StreamDatabase&lt;Chunk, Err&gt; {readonly #symEvents &#x3D; new EventEmitter()readonly #symMethodCalls &#x3D; Array&lt;MethodCall&lt;Chunk, Err&gt;&gt;()readonly #symDataEventTimeout: numberconstructor (options: StreamInstance.ConstructorOptions &#x3D; {}) {const { dataEventTimeout &#x3D; 0 } &#x3D; optionsthis.#symDataEventTimeout &#x3D; dataEventTimeout}public addListener (event: any, listener: any): void {this.#symEvents.addListener(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.addListener, event, listener)}public removeListener (event: any, listener: any): void {this.#symEvents.removeListener(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.removeListener, event, listener)}public on (event: any, listener: any): void {this.#symEvents.on(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.on, event, listener)}public once (event: any, listener: any): void {this.#symEvents.once(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.once, event, listener)}public write (chunk: Chunk): void {this.#symMethodCalls.push(new MethodCallInstance.Write(chunk))void this.asyncEmit(&#x27;data&#x27;, chunk)}public emit (...args: [any, ...any[]]): void {this.#symEvents.emit(...args)}public asyncEmit (...args: [any, ...any[]]): Promise&lt;void&gt; {return new Promise(resolve &#x3D;&gt; setTimeout(() &#x3D;&gt; {this.emit(...args)resolve()}, this.#symDataEventTimeout))}public getMethodCalls () {return this.#symMethodCalls}public getChunks () {return this.#symMethodCalls.filter((x): x is MethodCall.Write&lt;Chunk&gt; &#x3D;&gt; x.name &#x3D;&#x3D;&#x3D; MethodName.write).map(x &#x3D;&gt; x.data)}public async * [Symbol.asyncIterator] () {yield * this.getChunks()}}</span></div>
+					<div class="tsd-signature tsd-kind-icon">Stream<wbr>Instance<wbr>Base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StreamInstanceBaseClass</span><span class="tsd-signature-symbol"> = class&lt;Chunk extends string | Buffer, Err &#x3D; any&gt;implements Stream&lt;Chunk, Err&gt;, StreamEventEmitter&lt;Chunk, Err&gt;, StreamDatabase&lt;Chunk, Err&gt; {readonly #symEvents &#x3D; new EventEmitter()readonly #symMethodCalls &#x3D; Array&lt;MethodCall&lt;Chunk, Err&gt;&gt;()readonly #symDataEventTimeout: numberconstructor(options: StreamInstance.ConstructorOptions &#x3D; {}) {const { dataEventTimeout &#x3D; 0 } &#x3D; optionsthis.#symDataEventTimeout &#x3D; dataEventTimeout}public addListener(event: any, listener: any): void {this.#symEvents.addListener(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.addListener, event, listener)}public removeListener(event: any, listener: any): void {this.#symEvents.removeListener(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.removeListener, event, listener)}public on(event: any, listener: any): void {this.#symEvents.on(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.on, event, listener)}public once(event: any, listener: any): void {this.#symEvents.once(event, listener)recordListenerModifier(this.#symMethodCalls, MethodName.once, event, listener)}public write(chunk: Chunk): void {this.#symMethodCalls.push(new MethodCallInstance.Write(chunk))void this.asyncEmit(&#x27;data&#x27;, chunk)}public emit(...args: [any, ...any[]]): void {this.#symEvents.emit(...args)}public asyncEmit(...args: [any, ...any[]]): Promise&lt;void&gt; {return new Promise(resolve &#x3D;&gt;setTimeout(() &#x3D;&gt; {this.emit(...args)resolve()}, this.#symDataEventTimeout))}public getMethodCalls() {return this.#symMethodCalls}public getChunks() {return this.#symMethodCalls.filter((x): x is MethodCall.Write&lt;Chunk&gt; &#x3D;&gt; x.name &#x3D;&#x3D;&#x3D; MethodName.write).map(x &#x3D;&gt; x.data)}public async *[Symbol.asyncIterator]() {yield* this.getChunks()}}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/84eedee1/packages/simple-fake-stream/stream.ts#L112">packages/simple-fake-stream/stream.ts:112</a></li>
+							<li>Defined in <a href="https://github.com/ksxnodeapps/fun-little-utilities/blob/e7d69bfa/packages/simple-fake-stream/stream.ts#L111">packages/simple-fake-stream/stream.ts:111</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -148,6 +148,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

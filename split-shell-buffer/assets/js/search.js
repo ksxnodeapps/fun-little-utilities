@@ -1,3 +1,0 @@
-var typedoc = typedoc || {};
-            typedoc.search = typedoc.search || {};
-            typedoc.search.data = {"kinds":{"65536":"Type literal"},"rows":[{"id":0,"kind":65536,"name":"__type","url":"globals.html#func.__type","classes":"tsd-kind-type-literal tsd-parent-kind-type-alias","parent":"Func"},{"id":1,"kind":65536,"name":"__type","url":"modules/childprocess.html#closeeventlistener.__type","classes":"tsd-kind-type-literal tsd-parent-kind-type-alias","parent":"ChildProcess.CloseEventListener"},{"id":2,"kind":65536,"name":"__type","url":"modules/childprocess.html#erroreventlistener.__type-1","classes":"tsd-kind-type-literal tsd-parent-kind-type-alias","parent":"ChildProcess.ErrorEventListener"}]};
