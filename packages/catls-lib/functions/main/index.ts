@@ -66,8 +66,9 @@ export async function main(param: Main.Param): Promise<number> {
       async handleSymlink(param) {
         stdout.write(statInfo('Symbolic Link', param.stats, [
           ['Target', param.target],
-          ['Data', await readlink(param.options.name)], // don't use param.content for this
-        ]))
+          ['Data', await readlink(param.options.name)],
+        ]) // don't use param.content for this
+        )
 
         return 0
       },
