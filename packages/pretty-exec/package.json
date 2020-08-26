@@ -25,8 +25,8 @@
     "chalk": "^4.1.0",
     "shell-escape": "^0.2.0",
     "split-string-once": "^0.0.2",
-    "tslib": "^2.0.0",
+    "tslib": "^2.0.1",
     "@types/shell-escape": "^0.2.0",
-    "@types/node": "^14.0.27"
+    "@types/node": "^14.6.0"
   }
 }

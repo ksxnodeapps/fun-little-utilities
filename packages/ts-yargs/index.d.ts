@@ -87,7 +87,7 @@ type Desc<TypeName, Type> =
     readonly type: TypeName
   }
   & (
-    | { readonly default: Type; readonly required?: false }
+    | { readonly default: Type, readonly required?: false }
     | { readonly required: true }
   )
 
@@ -102,7 +102,7 @@ type CoercedDesc<
     readonly coerce: (param: Param) => Return
   }
   & (
-    | { readonly default: Param; readonly required?: false }
+    | { readonly default: Param, readonly required?: false }
     | { readonly required: true }
   )
 
@@ -114,7 +114,7 @@ type ChoicesDesc<
     readonly choices: Choices
   }
   & (
-    | { readonly default: IterableElement<Choices>; readonly required?: false }
+    | { readonly default: IterableElement<Choices>, readonly required?: false }
     | { readonly required: true }
   )
 

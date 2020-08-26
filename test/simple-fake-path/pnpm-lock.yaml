@@ -1,20 +1,20 @@
 dependencies:
-  '@tsfun/array': 0.0.5
+  '@tsfun/array': 0.0.6
   simple-fake-path: 'link:../../packages/simple-fake-path'
   static-type-assert: 4.0.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/array/0.0.5:
+  /@tsfun/array/0.0.6:
     dependencies:
-      '@types/node': 13.13.9
-      tslib: 1.13.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-f6IaTr16nR3oPKo2bvGd1HV2OyB7ONGZgN9uHiIsr7R0B/iaoYqMmI3CowvMo78GAUIXwM7Akx4Z/finDh/aUA==
-  /@types/node/13.13.9:
+      integrity: sha512-8pKde1W0rPysp2JSjnuFyF+FDU6p3H+MuvQ2Z2QyA/Kdiq7VUUOmZfAGLV1YZ5R58M54H8jOTelslAPYUdTPBQ==
+  /@types/node/14.6.0:
     dev: false
     resolution:
-      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /static-type-assert/4.0.0:
     dependencies:
       typescript-compare: 0.0.2
@@ -23,10 +23,10 @@ packages:
       typescript: ^3.0.3
     resolution:
       integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
-  /tslib/1.13.0:
+  /tslib/2.0.1:
     dev: false
     resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0
@@ -38,6 +38,6 @@ packages:
     resolution:
       integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
 specifiers:
-  '@tsfun/array': ^0.0.5
+  '@tsfun/array': ^0.0.6
   simple-fake-path: 'file:../../packages/simple-fake-path'
   static-type-assert: ^4.0.0
