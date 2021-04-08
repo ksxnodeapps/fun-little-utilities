@@ -53,6 +53,6 @@ pnpm run repl
 
 ## License
 
-[MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://github.com/KSXGitHub)
+[MIT](https://git.io/fxKXN) © [Hoàng Văn Khải](https://ksxgithub.github.io)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fksxnodeapps%2Ffun-little-utilities.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fksxnodeapps%2Ffun-little-utilities?ref=badge_large)
