@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@tsfun/array': ^0.0.6
+  '@tsfun/array': ^0.0.8
   '@types/fs-extra': ^9.0.1
   '@types/node': ^14.6.0
   fs-extra: ^10.0.0
@@ -9,7 +9,7 @@ specifiers:
   tslib: ^2.0.1
 
 dependencies:
-  '@tsfun/array': 0.0.6
+  '@tsfun/array': 0.0.8
   '@types/fs-extra': 9.0.1
   '@types/node': 14.6.0
   fs-extra: 10.0.0
@@ -18,8 +18,8 @@ dependencies:
 
 packages:
 
-  /@tsfun/array/0.0.6:
-    resolution: {integrity: sha512-8pKde1W0rPysp2JSjnuFyF+FDU6p3H+MuvQ2Z2QyA/Kdiq7VUUOmZfAGLV1YZ5R58M54H8jOTelslAPYUdTPBQ==}
+  /@tsfun/array/0.0.8:
+    resolution: {integrity: sha512-7G8HXcIl5wPTuEdPG2Nz+jrIbtL1rvN6f1zgheG+FLJhWvaxJOgAX5oAC+e1nSK29yXIpW8WuMJDSpyUp2W3ag==}
     dependencies:
       '@types/node': 14.6.0
       tslib: 2.0.1
