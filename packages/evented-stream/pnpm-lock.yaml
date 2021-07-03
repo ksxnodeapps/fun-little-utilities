@@ -1,22 +1,25 @@
-dependencies:
-  '@types/node': 14.6.0
-  combine-evented-stream: 'link:../combine-evented-stream'
-  evented-stream-types: 'link:../evented-stream-types'
-  iterate-evented-stream: 'link:../iterate-evented-stream'
-  tslib: 2.0.1
-lockfileVersion: 5.1
-packages:
-  /@types/node/14.6.0:
-    dev: false
-    resolution:
-      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
-  /tslib/2.0.1:
-    dev: false
-    resolution:
-      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
+lockfileVersion: 5.3
+
 specifiers:
   '@types/node': ^14.6.0
   combine-evented-stream: ^0.1.8
   evented-stream-types: ^0.1.8
   iterate-evented-stream: ^0.1.9
   tslib: ^2.0.1
+
+dependencies:
+  '@types/node': 14.6.0
+  combine-evented-stream: link:../combine-evented-stream
+  evented-stream-types: link:../evented-stream-types
+  iterate-evented-stream: link:../iterate-evented-stream
+  tslib: 2.0.1
+
+packages:
+
+  /@types/node/14.6.0:
+    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+    dev: false
+
+  /tslib/2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
+    dev: false

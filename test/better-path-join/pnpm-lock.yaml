@@ -1,28 +1,31 @@
+lockfileVersion: 5.3
+
+specifiers:
+  better-path-join: file:../../packages/better-path-join
+  static-type-assert: ^4.0.0
+  string-template-format-inspect: file:../../packages/string-template-format-inspect
+
 dependencies:
-  better-path-join: 'link:../../packages/better-path-join'
+  better-path-join: link:../../packages/better-path-join
   static-type-assert: 4.0.0
-  string-template-format-inspect: 'link:../../packages/string-template-format-inspect'
-lockfileVersion: 5.1
+  string-template-format-inspect: link:../../packages/string-template-format-inspect
+
 packages:
+
   /static-type-assert/4.0.0:
+    resolution: {integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==}
+    peerDependencies:
+      typescript: ^3.0.3
     dependencies:
       typescript-compare: 0.0.2
     dev: false
-    peerDependencies:
-      typescript: ^3.0.3
-    resolution:
-      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
+
   /typescript-compare/0.0.2:
+    resolution: {integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==}
     dependencies:
       typescript-logic: 0.0.0
     dev: false
-    resolution:
-      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+
   /typescript-logic/0.0.0:
+    resolution: {integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==}
     dev: false
-    resolution:
-      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
-specifiers:
-  better-path-join: 'file:../../packages/better-path-join'
-  static-type-assert: ^4.0.0
-  string-template-format-inspect: 'file:../../packages/string-template-format-inspect'

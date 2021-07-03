@@ -1,9 +1,11 @@
-dependencies:
-  '@tools/gh-pages': 'link:../gh-pages'
-  '@tools/places': 'link:../places'
-  '@tools/preloaded-node': 'link:../preloaded-node'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  '@tools/gh-pages': 'file:../gh-pages'
-  '@tools/places': 'file:../places'
-  '@tools/preloaded-node': 'file:../preloaded-node'
+  '@tools/gh-pages': file:../gh-pages
+  '@tools/places': file:../places
+  '@tools/preloaded-node': file:../preloaded-node
+
+dependencies:
+  '@tools/gh-pages': link:../gh-pages
+  '@tools/places': link:../places
+  '@tools/preloaded-node': link:../preloaded-node
