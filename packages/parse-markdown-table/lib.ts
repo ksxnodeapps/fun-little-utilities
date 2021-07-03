@@ -12,9 +12,7 @@ export interface TableIterationOptions {
 
 const horizontalLineRegex = /^[|-]+$/
 
-export async function* iterateRows(lines: Stream, options: TableIterationOptions) {
-  const { leftBound, rightBound } = options
-
+export async function* iterateRows(lines: Stream, { leftBound, rightBound }: TableIterationOptions) {
   for await (const line of lines) {
     const trimmedLine = line.trim()
     if (horizontalLineRegex.test(trimmedLine)) continue
