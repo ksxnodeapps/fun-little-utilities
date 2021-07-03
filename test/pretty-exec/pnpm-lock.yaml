@@ -1,5 +1,7 @@
-dependencies:
-  pretty-exec: 'link:../../packages/pretty-exec'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  pretty-exec: 'file:../../packages/pretty-exec'
+  pretty-exec: file:../../packages/pretty-exec
+
+dependencies:
+  pretty-exec: link:../../packages/pretty-exec

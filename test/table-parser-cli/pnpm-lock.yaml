@@ -1,7 +1,9 @@
-dependencies:
-  simple-fake-console: 'link:../../packages/simple-fake-console'
-  table-parser-cli: 'link:../../packages/table-parser-cli'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  simple-fake-console: 'file:../../packages/simple-fake-console'
-  table-parser-cli: 'file:../../packages/table-parser-cli'
+  simple-fake-console: file:../../packages/simple-fake-console
+  table-parser-cli: file:../../packages/table-parser-cli
+
+dependencies:
+  simple-fake-console: link:../../packages/simple-fake-console
+  table-parser-cli: link:../../packages/table-parser-cli

@@ -1,5 +1,7 @@
-dependencies:
-  parse-markdown-table: 'link:../../packages/parse-markdown-table'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  parse-markdown-table: 'file:../../packages/parse-markdown-table'
+  parse-markdown-table: file:../../packages/parse-markdown-table
+
+dependencies:
+  parse-markdown-table: link:../../packages/parse-markdown-table

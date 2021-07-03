@@ -1,5 +1,7 @@
-dependencies:
-  construct-iterator: 'link:../../packages/construct-iterator'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  construct-iterator: 'file:../../packages/construct-iterator'
+  construct-iterator: file:../../packages/construct-iterator
+
+dependencies:
+  construct-iterator: link:../../packages/construct-iterator
