@@ -8,6 +8,11 @@ export interface ArrayTable<Title extends string, Value> {
   readonly rows: MaybeAsyncIterable<readonly Value[]>
 }
 
+export interface ArrayTableSync<Title extends string, Value> {
+  readonly headers: readonly Title[]
+  readonly rows: Iterable<readonly Value[]>
+}
+
 export type ListItem<Key extends string, Value> = {
   readonly [_ in Key | symbol]: Value | undefined
 }
@@ -19,6 +24,8 @@ class UnknownColumns extends AdvMapInit<number, symbol> {
 }
 
 export interface ObjectTable<Title extends string, Value> extends AsyncIterable<ListItem<Title, Value>> {}
+
+export interface ObjectTableSync<Title extends string, Value> extends Iterable<ListItem<Title, Value>> {}
 
 async function getArrayList<Title extends string, Value>(table: ObjectTable<Title, Value>) {
   const headers = Array<Title>()
@@ -56,6 +63,22 @@ async function* getObjectList<Title extends string, Value>(table: ArrayTable<Tit
   }
 }
 
+function* getObjectListSync<Title extends string, Value>(table: ArrayTableSync<Title, Value>) {
+  const { headers, rows } = table
+
+  for (const row of rows) {
+    const item: ListItem<Title, Value> = {} as any
+    let index = 0
+
+    for (const [key, value] of zipAll<any>(headers, row)) {
+      ;(item as any)[key ? key : unknownColumn(index)] = value
+      index += 1
+    }
+
+    yield item
+  }
+}
+
 export async function createArrayTable<Title extends string, Value>(
   objectTable: ObjectTable<Title, Value>,
 ): Promise<ArrayTable<Title, Value>> {
@@ -74,5 +97,13 @@ export function createObjectTable<Title extends string, Value>(
 ): ObjectTable<Title, Value> {
   return new class implements ObjectTable<Title, Value> {
     public readonly [Symbol.asyncIterator] = () => getObjectList(arrayTable)
+  }()
+}
+
+export function createObjectTableSync<Title extends string, Value>(
+  arrayTable: ArrayTableSync<Title, Value>,
+): ObjectTableSync<Title, Value> {
+  return new class implements ObjectTableSync<Title, Value> {
+    public readonly [Symbol.iterator] = () => getObjectListSync(arrayTable)
   }()
 }
