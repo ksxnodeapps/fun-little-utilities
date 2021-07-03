@@ -1,5 +1,7 @@
-dependencies:
-  table-parser-base: 'link:../../packages/table-parser-base'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  table-parser-base: 'file:../../packages/table-parser-base'
+  table-parser-base: file:../../packages/table-parser-base
+
+dependencies:
+  table-parser-base: link:../../packages/table-parser-base

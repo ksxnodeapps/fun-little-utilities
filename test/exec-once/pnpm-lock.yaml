@@ -1,5 +1,7 @@
-dependencies:
-  exec-once: 'link:../../packages/exec-once'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  exec-once: 'file:../../packages/exec-once'
+  exec-once: file:../../packages/exec-once
+
+dependencies:
+  exec-once: link:../../packages/exec-once

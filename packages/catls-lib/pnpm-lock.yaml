@@ -1,61 +1,5 @@
-dependencies:
-  '@types/node': 14.6.0
-  '@types/shell-quote': 1.7.0
-  convenient-typescript-utilities: 0.0.5
-  shell-quote: 1.7.2
-  split-shell-buffer: 'link:../split-shell-buffer'
-  ts-await-event: 'link:../ts-await-event'
-  tslib: 2.0.1
-  typescript-miscellaneous: 0.1.1
-lockfileVersion: 5.1
-packages:
-  /@types/node/10.17.24:
-    dev: false
-    resolution:
-      integrity: sha512-5SCfvCxV74kzR3uWgTYiGxrd69TbT1I6+cMx1A5kEly/IVveJBimtAMlXiEyVFn5DvUFewQWxOOiJhlxeQwxgA==
-  /@types/node/13.13.9:
-    dev: false
-    resolution:
-      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
-  /@types/node/14.6.0:
-    dev: false
-    resolution:
-      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
-  /@types/shell-quote/1.7.0:
-    dev: false
-    resolution:
-      integrity: sha512-0CJaSSayMigMKu/Egx1eVcFjgGYkP6T4dyPRs462BFrMB/OK2FAJFV/24+6R4cGIXw6ZQpZK8XEd2UCVKfkZRw==
-  /convenient-typescript-utilities/0.0.5:
-    dependencies:
-      '@types/node': 13.13.9
-      tslib: 1.13.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-0+wjke1kQm+OXP8pyESsrbMukK994DWGlGvUgo82fqy1I3kUMoz0hYBu3gY+K86wVrR1TdXz5NfVStBHDQVKLg==
-  /shell-quote/1.7.2:
-    dev: false
-    resolution:
-      integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
-  /tslib/1.13.0:
-    dev: false
-    resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tslib/2.0.1:
-    dev: false
-    resolution:
-      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
-  /typescript-miscellaneous/0.1.1:
-    dependencies:
-      '@types/node': 10.17.24
-      tslib: 1.13.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-      typescript: '>= 3.0.0'
-    resolution:
-      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
+lockfileVersion: 5.3
+
 specifiers:
   '@types/node': ^14.6.0
   '@types/shell-quote': ^1.7.0
@@ -65,3 +9,59 @@ specifiers:
   ts-await-event: ^0.1.8
   tslib: ^2.0.1
   typescript-miscellaneous: ^0.1.1
+
+dependencies:
+  '@types/node': 14.6.0
+  '@types/shell-quote': 1.7.0
+  convenient-typescript-utilities: 0.0.5
+  shell-quote: 1.7.2
+  split-shell-buffer: link:../split-shell-buffer
+  ts-await-event: link:../ts-await-event
+  tslib: 2.0.1
+  typescript-miscellaneous: 0.1.1
+
+packages:
+
+  /@types/node/10.17.24:
+    resolution: {integrity: sha512-5SCfvCxV74kzR3uWgTYiGxrd69TbT1I6+cMx1A5kEly/IVveJBimtAMlXiEyVFn5DvUFewQWxOOiJhlxeQwxgA==}
+    dev: false
+
+  /@types/node/13.13.9:
+    resolution: {integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==}
+    dev: false
+
+  /@types/node/14.6.0:
+    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+    dev: false
+
+  /@types/shell-quote/1.7.0:
+    resolution: {integrity: sha512-0CJaSSayMigMKu/Egx1eVcFjgGYkP6T4dyPRs462BFrMB/OK2FAJFV/24+6R4cGIXw6ZQpZK8XEd2UCVKfkZRw==}
+    dev: false
+
+  /convenient-typescript-utilities/0.0.5:
+    resolution: {integrity: sha512-0+wjke1kQm+OXP8pyESsrbMukK994DWGlGvUgo82fqy1I3kUMoz0hYBu3gY+K86wVrR1TdXz5NfVStBHDQVKLg==}
+    engines: {node: '>= 8.9.0'}
+    dependencies:
+      '@types/node': 13.13.9
+      tslib: 1.13.0
+    dev: false
+
+  /shell-quote/1.7.2:
+    resolution: {integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==}
+    dev: false
+
+  /tslib/1.13.0:
+    resolution: {integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==}
+    dev: false
+
+  /tslib/2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
+    dev: false
+
+  /typescript-miscellaneous/0.1.1:
+    resolution: {integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==}
+    engines: {node: '>= 8.9.0', typescript: '>= 3.0.0'}
+    dependencies:
+      '@types/node': 10.17.24
+      tslib: 1.13.0
+    dev: false

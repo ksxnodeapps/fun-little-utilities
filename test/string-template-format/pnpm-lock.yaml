@@ -1,5 +1,7 @@
-dependencies:
-  string-template-format: 'link:../../packages/string-template-format'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  string-template-format: 'file:../../packages/string-template-format'
+  string-template-format: file:../../packages/string-template-format
+
+dependencies:
+  string-template-format: link:../../packages/string-template-format
