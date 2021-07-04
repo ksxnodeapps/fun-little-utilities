@@ -1,6 +1,6 @@
 {
   "name": "parse-markdown-table",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Convert a markdown table from text to JavaScript objects",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

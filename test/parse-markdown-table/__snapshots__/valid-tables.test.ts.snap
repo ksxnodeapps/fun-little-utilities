@@ -196,6 +196,26 @@ Array [
 ]
 `;
 
+exports[`spaces in horizontal line list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
 exports[`unknown columns list matches snapshot 1`] = `
 Array [
   Object {
