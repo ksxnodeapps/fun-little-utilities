@@ -1,53 +1,55 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@tools/test-utils': file:../../tools/test-utils
+  '@tsfun/array': ^0.0.6
+  '@types/shell-quote': ^1.7.0
+  catls-lib: file:../../packages/catls-lib
+  shell-quote: ^1.7.2
+  simple-fake-stream: file:../../packages/simple-fake-stream
+  ts-toolbelt: ^8.0.3
+  utility-types: ^3.10.0
+
 dependencies:
-  '@tools/test-utils': 'link:../../tools/test-utils'
+  '@tools/test-utils': link:../../tools/test-utils
   '@tsfun/array': 0.0.6
   '@types/shell-quote': 1.7.0
-  catls-lib: 'link:../../packages/catls-lib'
+  catls-lib: link:../../packages/catls-lib
   shell-quote: 1.7.2
-  simple-fake-stream: 'link:../../packages/simple-fake-stream'
+  simple-fake-stream: link:../../packages/simple-fake-stream
   ts-toolbelt: 8.0.3
   utility-types: 3.10.0
-lockfileVersion: 5.1
+
 packages:
+
   /@tsfun/array/0.0.6:
+    resolution: {integrity: sha512-8pKde1W0rPysp2JSjnuFyF+FDU6p3H+MuvQ2Z2QyA/Kdiq7VUUOmZfAGLV1YZ5R58M54H8jOTelslAPYUdTPBQ==}
     dependencies:
       '@types/node': 14.6.0
       tslib: 2.0.1
     dev: false
-    resolution:
-      integrity: sha512-8pKde1W0rPysp2JSjnuFyF+FDU6p3H+MuvQ2Z2QyA/Kdiq7VUUOmZfAGLV1YZ5R58M54H8jOTelslAPYUdTPBQ==
+
   /@types/node/14.6.0:
+    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
     dev: false
-    resolution:
-      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
+
   /@types/shell-quote/1.7.0:
+    resolution: {integrity: sha512-0CJaSSayMigMKu/Egx1eVcFjgGYkP6T4dyPRs462BFrMB/OK2FAJFV/24+6R4cGIXw6ZQpZK8XEd2UCVKfkZRw==}
     dev: false
-    resolution:
-      integrity: sha512-0CJaSSayMigMKu/Egx1eVcFjgGYkP6T4dyPRs462BFrMB/OK2FAJFV/24+6R4cGIXw6ZQpZK8XEd2UCVKfkZRw==
+
   /shell-quote/1.7.2:
+    resolution: {integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==}
     dev: false
-    resolution:
-      integrity: sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
+
   /ts-toolbelt/8.0.3:
+    resolution: {integrity: sha512-gxgyIVxf5B1ToZfA4cojFS3h2jPSxYWjvKehkuCVejMdnATeBdxY0tqCSr3okkwfSA3V5TBoWeYGVfLpMBfSMA==}
     dev: false
-    resolution:
-      integrity: sha512-gxgyIVxf5B1ToZfA4cojFS3h2jPSxYWjvKehkuCVejMdnATeBdxY0tqCSr3okkwfSA3V5TBoWeYGVfLpMBfSMA==
+
   /tslib/2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
     dev: false
-    resolution:
-      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
+
   /utility-types/3.10.0:
+    resolution: {integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==}
+    engines: {node: '>= 4'}
     dev: false
-    engines:
-      node: '>= 4'
-    resolution:
-      integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
-specifiers:
-  '@tools/test-utils': 'file:../../tools/test-utils'
-  '@tsfun/array': ^0.0.6
-  '@types/shell-quote': ^1.7.0
-  catls-lib: 'file:../../packages/catls-lib'
-  shell-quote: ^1.7.2
-  simple-fake-stream: 'file:../../packages/simple-fake-stream'
-  ts-toolbelt: ^8.0.3
-  utility-types: ^3.10.0

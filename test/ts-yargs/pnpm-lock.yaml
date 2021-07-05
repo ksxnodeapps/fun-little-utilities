@@ -1,26 +1,29 @@
+lockfileVersion: 5.3
+
+specifiers:
+  static-type-assert: ^4.0.0
+  ts-yargs: file:../../packages/ts-yargs
+
 dependencies:
   static-type-assert: 4.0.0
-  ts-yargs: 'link:../../packages/ts-yargs'
-lockfileVersion: 5.1
+  ts-yargs: link:../../packages/ts-yargs
+
 packages:
+
   /static-type-assert/4.0.0:
+    resolution: {integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==}
+    peerDependencies:
+      typescript: ^3.0.3
     dependencies:
       typescript-compare: 0.0.2
     dev: false
-    peerDependencies:
-      typescript: ^3.0.3
-    resolution:
-      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
+
   /typescript-compare/0.0.2:
+    resolution: {integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==}
     dependencies:
       typescript-logic: 0.0.0
     dev: false
-    resolution:
-      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+
   /typescript-logic/0.0.0:
+    resolution: {integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==}
     dev: false
-    resolution:
-      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
-specifiers:
-  static-type-assert: ^4.0.0
-  ts-yargs: 'file:../../packages/ts-yargs'

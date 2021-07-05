@@ -1,15 +1,17 @@
-dependencies:
-  '@tools/places': 'link:../places'
-  typescript: 4.0.2
-lockfileVersion: 5.1
-packages:
-  /typescript/4.0.2:
-    dev: false
-    engines:
-      node: '>=4.2.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+lockfileVersion: 5.3
+
 specifiers:
-  '@tools/places': 'file:../places'
+  '@tools/places': file:../places
   typescript: ^4.0.2
+
+dependencies:
+  '@tools/places': link:../places
+  typescript: 4.0.2
+
+packages:
+
+  /typescript/4.0.2:
+    resolution: {integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: false

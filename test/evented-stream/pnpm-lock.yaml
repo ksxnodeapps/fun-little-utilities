@@ -1,58 +1,60 @@
+lockfileVersion: 5.3
+
+specifiers:
+  evented-stream: file:../../packages/evented-stream
+  monorepo-shared-assets: ^0.0.19
+  static-type-assert: ^4.0.0
+
 dependencies:
-  evented-stream: 'link:../../packages/evented-stream'
+  evented-stream: link:../../packages/evented-stream
   monorepo-shared-assets: 0.0.19
   static-type-assert: 4.0.0
-lockfileVersion: 5.1
+
 packages:
+
   /@tsfun/array/0.0.0:
+    resolution: {integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==}
     dependencies:
       '@types/node': 13.13.9
       tslib: 1.13.0
     dev: false
-    resolution:
-      integrity: sha512-y18KD65Ba1a7jXJ8PBIGjfkCtR32wd0XOPaV5D8z9uBiNE+pIF0PCnHKVHZ4+GcaRa/Y7HkTWJxmcjs283ggmw==
+
   /@types/node/13.13.9:
+    resolution: {integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==}
     dev: false
-    resolution:
-      integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==
+
   /immutable/4.0.0-rc.12:
+    resolution: {integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==}
     dev: false
-    resolution:
-      integrity: sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
+
   /monorepo-shared-assets/0.0.19:
+    resolution: {integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==}
+    engines: {node: '>= 8.9.0'}
     dependencies:
       '@tsfun/array': 0.0.0
       '@types/node': 13.13.9
       immutable: 4.0.0-rc.12
       tslib: 1.13.0
     dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-xUb+p+UnAiR5Zg34IYv8bO0FlFu84xkBJcZXHLLK5DNQS29NQwiNT/qcwS95BWgAcOGgD8M8Sqs2qoXvR9s5QQ==
+
   /static-type-assert/4.0.0:
+    resolution: {integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==}
+    peerDependencies:
+      typescript: ^3.0.3
     dependencies:
       typescript-compare: 0.0.2
     dev: false
-    peerDependencies:
-      typescript: ^3.0.3
-    resolution:
-      integrity: sha512-Ss1RVV8Hp+DVaAQsGgssl2+xuLqyJQOJzrz/6GJG8wfObU7t8tFbQddquX+U//pwU1tSLghUgTQ4JQPaOxfsww==
+
   /tslib/1.13.0:
+    resolution: {integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==}
     dev: false
-    resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+
   /typescript-compare/0.0.2:
+    resolution: {integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==}
     dependencies:
       typescript-logic: 0.0.0
     dev: false
-    resolution:
-      integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==
+
   /typescript-logic/0.0.0:
+    resolution: {integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==}
     dev: false
-    resolution:
-      integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==
-specifiers:
-  evented-stream: 'file:../../packages/evented-stream'
-  monorepo-shared-assets: ^0.0.19
-  static-type-assert: ^4.0.0

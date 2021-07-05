@@ -1,5 +1,7 @@
-dependencies:
-  split-iterable: 'link:../../packages/split-iterable'
-lockfileVersion: 5.1
+lockfileVersion: 5.3
+
 specifiers:
-  split-iterable: 'file:../../packages/split-iterable'
+  split-iterable: file:../../packages/split-iterable
+
+dependencies:
+  split-iterable: link:../../packages/split-iterable
