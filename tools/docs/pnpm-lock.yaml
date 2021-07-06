@@ -4,7 +4,7 @@ specifiers:
   '@tools/places': file:../places
   '@tools/preloaded-node': file:../preloaded-node
   '@tools/utils': file:../utils
-  '@tsfun/array': ^0.0.6
+  '@tsfun/array': ^0.0.8
   '@types/fs-extra': ^9.0.1
   '@types/minimatch': ^3.0.3
   '@types/pretty': ^2.0.0
@@ -18,7 +18,7 @@ dependencies:
   '@tools/places': link:../places
   '@tools/preloaded-node': link:../preloaded-node
   '@tools/utils': link:../utils
-  '@tsfun/array': 0.0.6
+  '@tsfun/array': 0.0.8
   '@types/fs-extra': 9.0.1
   '@types/minimatch': 3.0.3
   '@types/pretty': 2.0.0
@@ -30,8 +30,8 @@ dependencies:
 
 packages:
 
-  /@tsfun/array/0.0.6:
-    resolution: {integrity: sha512-8pKde1W0rPysp2JSjnuFyF+FDU6p3H+MuvQ2Z2QyA/Kdiq7VUUOmZfAGLV1YZ5R58M54H8jOTelslAPYUdTPBQ==}
+  /@tsfun/array/0.0.8:
+    resolution: {integrity: sha512-7G8HXcIl5wPTuEdPG2Nz+jrIbtL1rvN6f1zgheG+FLJhWvaxJOgAX5oAC+e1nSK29yXIpW8WuMJDSpyUp2W3ag==}
     dependencies:
       '@types/node': 14.6.0
       tslib: 2.0.1
