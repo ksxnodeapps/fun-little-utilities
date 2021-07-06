@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`empty string matches snapshot 1`] = `[SyntaxError: Text is empty]`;
+exports[`async empty string matches snapshot 1`] = `[SyntaxError: Text is empty]`;
 
-exports[`inconsistent left bound matches snapshot 1`] = `[SyntaxError: Inconsistent left bound]`;
+exports[`async inconsistent left bound matches snapshot 1`] = `[SyntaxError: Inconsistent left bound]`;
 
-exports[`inconsistent right bound matches snapshot 1`] = `[SyntaxError: Inconsistent right bound]`;
+exports[`async inconsistent right bound matches snapshot 1`] = `[SyntaxError: Inconsistent right bound]`;
 
-exports[`string with naught but whitespaces matches snapshot 1`] = `[SyntaxError: Text is empty]`;
+exports[`async string with naught but whitespaces matches snapshot 1`] = `[SyntaxError: Text is empty]`;
+
+exports[`sync empty string matches snapshot 1`] = `[SyntaxError: Text is empty]`;
+
+exports[`sync inconsistent left bound matches snapshot 1`] = `[SyntaxError: Inconsistent left bound]`;
+
+exports[`sync inconsistent right bound matches snapshot 1`] = `[SyntaxError: Inconsistent right bound]`;
+
+exports[`sync string with naught but whitespaces matches snapshot 1`] = `[SyntaxError: Text is empty]`;

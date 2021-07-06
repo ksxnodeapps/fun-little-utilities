@@ -1,7 +1,52 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@tsfun/result': ^0.0.20
   parse-markdown-table: file:../../packages/parse-markdown-table
 
 dependencies:
+  '@tsfun/result': 0.0.20
   parse-markdown-table: link:../../packages/parse-markdown-table
+
+packages:
+
+  /@tsfun/prv-option-result-common/0.0.15:
+    resolution: {integrity: sha512-oqmmMHkoD1IXADxtOupJ9JFBcocuToxbSuqMIw3VszZIyvysJ3t9y+LlP+qxo92pOj/GJz4oohhzKBHkaaLqWA==}
+    engines: {node: '>= 8.9.0'}
+    dependencies:
+      '@types/node': 14.14.45
+      tslib: 2.2.0
+    dev: false
+
+  /@tsfun/prv-types/0.0.10:
+    resolution: {integrity: sha512-8QJUR81Zyf9gLhl7llp10bTZ+4WgXBM6LaiKZTmgjmviggFIQobm1hDzirZ9gUMxG1lGtTr4glszSkvuCcSjaA==}
+    dependencies:
+      '@types/node': 14.14.45
+      tslib: 2.2.0
+    dev: false
+
+  /@tsfun/result/0.0.20:
+    resolution: {integrity: sha512-7IXm8ab6hRl7dNliHvFCoHdDXcDITSOPFKZl+7VxEKTXXmSrUe5QupvzzBro1G5Q104do/xiHZT1RBhwLzg1iw==}
+    engines: {node: '>= 8.9.0'}
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.15
+      '@tsfun/prv-types': 0.0.10
+      '@tsfun/tap': 0.0.14
+      '@types/node': 14.14.45
+      tslib: 2.2.0
+    dev: false
+
+  /@tsfun/tap/0.0.14:
+    resolution: {integrity: sha512-hXrhnrFidsbi4zeo6HaiHEMFLcjNTSc4osYps2Py7cgbgwW6nNxcZwRbDlQaMIdvpuQuHFd1+bxhDYQ0C9r6xA==}
+    dependencies:
+      '@types/node': 14.14.45
+      tslib: 2.2.0
+    dev: false
+
+  /@types/node/14.14.45:
+    resolution: {integrity: sha512-DssMqTV9UnnoxDWu959sDLZzfvqCF0qDNRjaWeYSui9xkFe61kKo4l1TWNTQONpuXEm+gLMRvdlzvNHBamzmEw==}
+    dev: false
+
+  /tslib/2.2.0:
+    resolution: {integrity: sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==}
+    dev: false
