@@ -1,6 +1,6 @@
 {
   "name": "parse-markdown-table",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Convert a markdown table from text to JavaScript objects",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "dependencies": {
     "tslib": "^2.0.1",
     "string-stream-utils": "^0.0.4",
-    "table-parser-base": "^0.0.4",
+    "table-parser-base": "^0.0.5",
     "@types/node": "^14.6.0"
   }
 }
