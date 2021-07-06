@@ -10,7 +10,7 @@ export interface TableIterationOptions {
   readonly rightBound: boolean
 }
 
-const horizontalLineRegex = /^[|\- ]+$/
+const horizontalLineRegex = /^[| -]+$/
 
 export async function* iterateRows(lines: Stream, options: TableIterationOptions) {
   const { leftBound, rightBound } = options
