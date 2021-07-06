@@ -1,4 +1,9 @@
-import { createMarkdownObjectTable, createMarkdownArrayTable } from 'parse-markdown-table'
+import {
+  createMarkdownObjectTable,
+  createMarkdownArrayTable,
+  createMarkdownArrayTableSync,
+  createMarkdownObjectTableSync,
+} from 'parse-markdown-table'
 import { getAsyncArray } from './lib/async-array'
 
 describe('full bound', () => {
@@ -178,6 +183,52 @@ describe('createMarkdownArrayTable', () => {
   it('headers matches snapshot', async () => {
     const { rows } = await setup()
     expect(rows).toMatchSnapshot()
+  })
+})
+
+describe('createMarkdownArrayTableSync', () => {
+  function setup() {
+    const text = `
+      | id | name        | email                    |
+      |----|-------------|--------------------------|
+      |  1 | John Doe    | john-doe@gmail.com       |
+      |  2 | Peter Smith | petersmith22@outlook.com |
+      |  3 | Julia Jones | jjones778@gmail.com      |
+    `
+
+    const table = createMarkdownArrayTableSync(text)
+    const headers = table.headers
+    const rows = Array.from(table.rows)
+    return { text, table, headers, rows }
+  }
+
+  it('headers matches snapshot', () => {
+    const { headers } = setup()
+    expect(headers).toMatchSnapshot()
+  })
+
+  it('headers matches snapshot', () => {
+    const { rows } = setup()
+    expect(rows).toMatchSnapshot()
+  })
+})
+
+describe('createMarkdownObjectTableSync', () => {
+  function setup() {
+    const text = `
+      | id | name        | email                    |
+      |----|-------------|--------------------------|
+      |  1 | John Doe    | john-doe@gmail.com       |
+      |  2 | Peter Smith | petersmith22@outlook.com |
+      |  3 | Julia Jones | jjones778@gmail.com      |
+    `
+
+    return Array.from(createMarkdownObjectTableSync(text))
+  }
+
+  it('list matches snapshot', () => {
+    const list = setup()
+    expect(list).toMatchSnapshot()
   })
 })
 

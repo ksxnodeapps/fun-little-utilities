@@ -28,6 +28,54 @@ Array [
 ]
 `;
 
+exports[`createMarkdownArrayTableSync headers matches snapshot 1`] = `
+Array [
+  "id",
+  "name",
+  "email",
+]
+`;
+
+exports[`createMarkdownArrayTableSync headers matches snapshot 2`] = `
+Array [
+  Array [
+    "1",
+    "John Doe",
+    "john-doe@gmail.com",
+  ],
+  Array [
+    "2",
+    "Peter Smith",
+    "petersmith22@outlook.com",
+  ],
+  Array [
+    "3",
+    "Julia Jones",
+    "jjones778@gmail.com",
+  ],
+]
+`;
+
+exports[`createMarkdownObjectTableSync list matches snapshot 1`] = `
+Array [
+  Object {
+    "email": "john-doe@gmail.com",
+    "id": "1",
+    "name": "John Doe",
+  },
+  Object {
+    "email": "petersmith22@outlook.com",
+    "id": "2",
+    "name": "Peter Smith",
+  },
+  Object {
+    "email": "jjones778@gmail.com",
+    "id": "3",
+    "name": "Julia Jones",
+  },
+]
+`;
+
 exports[`full bound list matches snapshot 1`] = `
 Array [
   Object {
