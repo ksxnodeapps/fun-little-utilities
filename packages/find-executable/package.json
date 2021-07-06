@@ -21,10 +21,10 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "yargs": "^15.4.1",
+    "yargs": "^17.0.0",
     "find-executable-lib": "^0.1.9",
     "tslib": "^2.0.1",
-    "@types/yargs": "^15.0.5",
+    "@types/yargs": "^17.0.0",
     "@types/node": "^14.6.0"
   },
   "engines": {
