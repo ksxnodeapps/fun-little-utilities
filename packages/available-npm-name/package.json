@@ -22,12 +22,12 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.0.0",
     "rxjs": "^6.6.2",
     "yargs": "^15.4.1",
     "tslib": "^2.0.1",
     "line-observable-rxjs": "^0.0.3",
-    "@types/node-fetch": "^2.5.7",
+    "@types/node-fetch": "^3.0.0",
     "@types/yargs": "^15.0.5",
     "@types/node": "^14.6.0"
   }
