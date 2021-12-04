@@ -1,12 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^14.6.0
+  '@types/node': ^16.0.0
   monorepo-shared-assets: ^0.0.19
   tslib: ^2.0.1
 
 dependencies:
-  '@types/node': 14.6.0
+  '@types/node': 16.11.11
   monorepo-shared-assets: 0.0.19
   tslib: 2.0.1
 
@@ -23,8 +23,8 @@ packages:
     resolution: {integrity: sha512-EPZBIGed5gNnfWCiwEIwTE2Jdg4813odnG8iNPMQGrqVxrI+wL68SPtPeCX+ZxGBaA6pKAVc6jaKgP/Q0QzfdQ==}
     dev: false
 
-  /@types/node/14.6.0:
-    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
     dev: false
 
   /immutable/4.0.0-rc.12:

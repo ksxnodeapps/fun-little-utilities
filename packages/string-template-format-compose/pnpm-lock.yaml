@@ -2,13 +2,13 @@ lockfileVersion: 5.3
 
 specifiers:
   '@tsfun/function': ^0.0.11
-  '@types/node': ^14.6.0
+  '@types/node': ^16.0.0
   string-template-format-base: ^0.1.7
   tslib: ^2.0.1
 
 dependencies:
   '@tsfun/function': 0.0.11
-  '@types/node': 14.6.0
+  '@types/node': 16.11.11
   string-template-format-base: link:../string-template-format-base
   tslib: 2.0.1
 
@@ -28,6 +28,10 @@ packages:
 
   /@types/node/14.6.0:
     resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+    dev: false
+
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
     dev: false
 
   /ts-pipe-compose/0.2.0:

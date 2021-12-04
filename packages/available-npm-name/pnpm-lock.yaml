@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^14.6.0
+  '@types/node': ^16.0.0
   '@types/node-fetch': ^2.5.7
   '@types/yargs': ^15.0.5
   line-observable-rxjs: ^0.0.3
@@ -11,7 +11,7 @@ specifiers:
   yargs: ^15.4.1
 
 dependencies:
-  '@types/node': 14.6.0
+  '@types/node': 16.11.11
   '@types/node-fetch': 2.5.7
   '@types/yargs': 15.0.5
   line-observable-rxjs: link:../line-observable-rxjs
@@ -29,16 +29,12 @@ packages:
   /@types/node-fetch/2.5.7:
     resolution: {integrity: sha512-o2WVNf5UhWRkxlf6eq+jMZDu7kjgpgJfl4xVNlvryc95O/6F2ld8ztKX+qu+Rjyet93WAWm5LjeX9H5FGkODvw==}
     dependencies:
-      '@types/node': 14.0.6
+      '@types/node': 16.11.11
       form-data: 3.0.0
     dev: false
 
-  /@types/node/14.0.6:
-    resolution: {integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==}
-    dev: false
-
-  /@types/node/14.6.0:
-    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
     dev: false
 
   /@types/yargs-parser/15.0.0:

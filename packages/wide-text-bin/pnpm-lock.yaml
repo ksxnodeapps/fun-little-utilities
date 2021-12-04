@@ -1,14 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^14.6.0
+  '@types/node': ^16.0.0
   '@types/yargs': ^15.0.5
   tslib: ^2.0.1
   wide-text: ^0.1.8
   yargs: ^15.4.1
 
 dependencies:
-  '@types/node': 14.6.0
+  '@types/node': 16.11.11
   '@types/yargs': 15.0.5
   tslib: 2.0.1
   wide-text: link:../wide-text
@@ -20,8 +20,8 @@ packages:
     resolution: {integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==}
     dev: false
 
-  /@types/node/14.6.0:
-    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
     dev: false
 
   /@types/yargs-parser/15.0.0:

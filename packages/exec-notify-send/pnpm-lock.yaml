@@ -1,29 +1,29 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^14.6.0
+  '@types/node': ^16.0.0
   advanced-spawn-async: ^0.1.3
   tslib: ^2.0.1
 
 dependencies:
-  '@types/node': 14.6.0
+  '@types/node': 16.11.11
   advanced-spawn-async: 0.1.3
   tslib: 2.0.1
 
 packages:
 
-  /@types/node/14.0.6:
-    resolution: {integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==}
-    dev: false
-
   /@types/node/14.6.0:
     resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+    dev: false
+
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
     dev: false
 
   /advanced-spawn-async/0.1.3:
     resolution: {integrity: sha512-ixm/qUCBQe08t2bWeXLIhrKiUFpBhZ25npthn+E+6GlszgjiITWbNAf07H3Q+oqoNLiteSldxetabufQDXiPAw==}
     dependencies:
-      '@types/node': 14.0.6
+      '@types/node': 14.6.0
       tslib: 2.0.0
     dev: false
 

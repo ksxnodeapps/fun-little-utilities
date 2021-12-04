@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@tsfun/array': ^0.0.6
   '@types/fs-extra': ^9.0.1
-  '@types/node': ^14.6.0
+  '@types/node': ^16.0.0
   fs-extra: ^10.0.0
   split-iterable: ^0.1.8
   tslib: ^2.0.1
@@ -11,7 +11,7 @@ specifiers:
 dependencies:
   '@tsfun/array': 0.0.6
   '@types/fs-extra': 9.0.1
-  '@types/node': 14.6.0
+  '@types/node': 16.11.11
   fs-extra: 10.0.0
   split-iterable: link:../split-iterable
   tslib: 2.0.1
@@ -28,15 +28,15 @@ packages:
   /@types/fs-extra/9.0.1:
     resolution: {integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==}
     dependencies:
-      '@types/node': 14.0.6
-    dev: false
-
-  /@types/node/14.0.6:
-    resolution: {integrity: sha512-FbNmu4F67d3oZMWBV6Y4MaPER+0EpE9eIYf2yaHhCWovc1dlXCZkqGX4NLHfVVr6umt20TNBdRzrNJIzIKfdbw==}
+      '@types/node': 16.11.11
     dev: false
 
   /@types/node/14.6.0:
     resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
+    dev: false
+
+  /@types/node/16.11.11:
+    resolution: {integrity: sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==}
     dev: false
 
   /fs-extra/10.0.0:

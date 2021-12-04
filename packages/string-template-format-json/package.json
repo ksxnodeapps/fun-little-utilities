@@ -28,6 +28,6 @@
     "tslib": "^2.0.1",
     "just-json-type": "^0.1.7",
     "string-template-format-base": "^0.1.7",
-    "@types/node": "^14.6.0"
+    "@types/node": "^16.0.0"
   }
 }
