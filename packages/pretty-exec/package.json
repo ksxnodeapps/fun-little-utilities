@@ -22,7 +22,7 @@
   "module": "index.mjs",
   "main": "index.js",
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^5.0.0",
     "shell-escape": "^0.2.0",
     "split-string-once": "^0.0.2",
     "tslib": "^2.0.1",
