@@ -1,25 +1,26 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@sane-fmt/wasm32-wasi': ^0.4.5
+  '@sane-fmt/wasm32-wasi': ^0.17.0
   '@tools/places': file:../places
   exec-inline: ^0.0.5
   isomorphic-git: ^1.7.4
 
 dependencies:
-  '@sane-fmt/wasm32-wasi': 0.4.5
+  '@sane-fmt/wasm32-wasi': 0.17.0
   '@tools/places': link:../places
   exec-inline: 0.0.5
   isomorphic-git: 1.7.4
 
 packages:
 
-  /@sane-fmt/wasm32-wasi/0.4.5:
-    resolution: {integrity: sha512-0rKREKqE1RuaIkIPpDpgOnwRWjAZEgP1RUWNgsemHkbVADdl5FFPhewS3dlVPU6chAaOCJXIjADRxLAxXTlgCA==}
+  /@sane-fmt/wasm32-wasi/0.17.0:
+    resolution: {integrity: sha512-DMORldyJ0CiBjbY+uzlbx8N00Z3jBYqcqNYqUvKvSNU9cuDgQ4+U287mN7Ak/kF76OHYfwx5DrZWrpCghf/Pgw==}
+    engines: {node: '>= 14.0.0'}
     hasBin: true
     dependencies:
-      '@types/node': 13.13.15
-      '@wasmer/wasi': 0.11.2
+      '@types/node': 16.18.3
+      '@wasmer/wasi': 0.12.0
       tslib: 2.0.0
     dev: false
 
@@ -27,8 +28,12 @@ packages:
     resolution: {integrity: sha512-kwbcs0jySLxzLsa2nWUAGOd/s21WU1jebrEdtzhsj1D4Yps1EOuyI1Qcu+FD56dL7NRNIJtDDjcqIG22NwkgLw==}
     dev: false
 
-  /@wasmer/wasi/0.11.2:
-    resolution: {integrity: sha512-9Oi68ZsD8HTZRjWj5VvnhN0dLL6nSacrgGvdwJeHd9q5bMrlFaXTckQAYm84zXJWg+b5yeFhaEZqGEhe7q4VFQ==}
+  /@types/node/16.18.3:
+    resolution: {integrity: sha512-jh6m0QUhIRcZpNv7Z/rpN+ZWXOicUUQbSoWks7Htkbb9IjFQj4kzcX/xFCkjstCj5flMsN8FiSvt+q+Tcs4Llg==}
+    dev: false
+
+  /@wasmer/wasi/0.12.0:
+    resolution: {integrity: sha512-FJhLZKAfLWm/yjQI7eCRHNbA8ezmb7LSpUYFkHruZXs2mXk2+DaQtSElEtOoNrVQ4vApTyVaAd5/b7uEu8w6wQ==}
     dependencies:
       browser-process-hrtime: 1.0.0
       buffer-es6: 4.9.3
@@ -45,7 +50,7 @@ packages:
     dev: false
 
   /buffer-es6/4.9.3:
-    resolution: {integrity: sha1-8mNHuC33b9N+GLy1KIxJcM/VxAQ=}
+    resolution: {integrity: sha512-Ibt+oXxhmeYJSsCkODPqNpPmyegefiD8rfutH1NYGhMZQhSp95Rz7haemgnJ6dxa6LT+JLLbtgOMORRluwKktw==}
     dev: false
 
   /clean-git-ref/2.0.1:
